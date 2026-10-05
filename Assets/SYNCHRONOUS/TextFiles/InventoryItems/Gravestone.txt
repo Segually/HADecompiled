@@ -1,0 +1,41 @@
+Description_TAI = บางครั้ง เพื่อนร่วมทาง ในอดีต ของคุณ จะ ปรากฏ ขึ้น ใกล้ ๆ !
+Name_TAI = หลุม ศพ
+Description_POR = Às vezes, seus companheiros do passado aparecerão por perto!
+Description_SPN = A veces tus compañeros del pasado aparecerán cerca.
+Description_RUS = Иногда рядом с вами могут появиться ваши бывшие спутники!
+Description_IND = Terkadang teman masa lalumu akan muncul di dekatmu!
+Name_POR = Lápide
+Name_SPN = Lápida
+Name_RUS = Надгробие
+Name_IND = Batu Nisan
+Description = Sometimes your past companions will spawn nearby!
+
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 8
+Type = Place_in_world
+World_obj_path = Buildables/Gravestone
+World_geometry = 1_by_1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+PaintLayout0_SolidColors = 0-1, 1-5, 2-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+Default Coloring = Debug - Stone
+Default Stamp = Skull Stamp
+model3d_camDist = 3
+show_model3d = true
+model3d_fov = 32.5
+model3d_yRot = 10
+model3d_xRot = -90
+model3d_objRot = 8
+model3d_camHeight = 0.3
+model3d_recenterX = 1
+model3d_recenterY = 3

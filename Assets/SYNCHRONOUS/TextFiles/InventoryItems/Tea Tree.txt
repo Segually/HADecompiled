@@ -1,0 +1,35 @@
+Description_TAI = ต้นไม้ ขนาดเล็ก ที่ ผลิต ใบชา
+Name_TAI = ต้น ชา
+Description_POR = Uma pequena árvore que produz folhas de chá.
+Description_SPN = Un pequeño árbol que produce hojas de té.
+Description_RUS = Небольшое дерево, которое производит чайные листья.
+Description_IND = Pohon kecil yang menghasilkan daun teh.
+Name_POR = Árvore-do-Chá
+Name_SPN = Árbol de Té
+Name_RUS = Чайное дерево
+Name_IND = Pohon Teh
+Description = A small tree that produces tea leaves.
+
+Type = Place_in_world
+World_obj_path = Buildables/Tea Tree
+World_geometry = 1_by_1
+Market Cost = 350
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 1 to 2
+
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 32.5
+model3d_yRot = 35
+model3d_xRot = -15
+model3d_objRot = 3
+model3d_camHeight = 0.3
+model3d_recenterX = -1
+model3d_recenterY = 3
+model3d_override_glow_col = 115,255,150
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = collect_spawn

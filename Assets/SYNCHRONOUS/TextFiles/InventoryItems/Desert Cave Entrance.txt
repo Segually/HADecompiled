@@ -1,0 +1,14 @@
+Name_TAI = ทาง เข้า ถ้ำ ทะเลทราย
+Name_POR = Entrada da Caverna do Deserto
+Name_SPN = Entrada de Cueva del Desierto
+Name_RUS = Вход в пустынную пещеру
+Name_IND = Pintu Masuk Gua Gurun
+
+Type = Place_in_world
+World_obj_path = Buildables/Desert Cave Entrance
+World_geometry = 3_by_3
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

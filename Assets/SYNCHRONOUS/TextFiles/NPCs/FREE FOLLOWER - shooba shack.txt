@@ -1,0 +1,106 @@
+----- DIALOGUE -----
+[0]
+otherspeak=My treehouse was destroyed by the wind...
+otherspeak_POR=Minha casa da árvore foi destruída pelo vento ...
+otherspeak_RUS=Мой домик на дереве разрушил ветер ...
+otherspeak_IND=Rumah pohon saya hancur oleh angin ...
+otherspeak_SPN=Mi casa del árbol fue destruida por el viento ...
+otherspeak_TAI=บ้านต้นไม้ของฉันถูกลมพัดพัง ...
+goto=001
+
+[1]
+otherspeak=...I have nowhere to live now. I am sad :(
+otherspeak_POR=... Não tenho onde morar agora. Estou triste :(
+otherspeak_RUS=... Мне теперь негде жить. Мне грустно :(
+otherspeak_IND=... Saya tidak punya tempat tinggal sekarang. Aku sedih :(
+otherspeak_SPN=... No tengo dónde vivir ahora. Estoy triste :(
+otherspeak_TAI=... ตอนนี้ฉันไม่มีที่จะอยู่แล้ว ฉันกำลังเสียใจ :(
+goto=002
+
+[2]
+optionA=You can come with me!
+optionA_POR=Você pode vir comigo!
+optionA_RUS=Ты можешь пойти со мной!
+optionA_IND=Anda bisa ikut dengan saya!
+optionA_SPN=¡Puedes venir conmigo!
+optionA_TAI=คุณมากับฉันได้!
+gotoA=003
+
+[3]
+otherspeak=REALLY?! Are you sure?
+otherspeak_POR=REALMENTE?! Tem certeza?
+otherspeak_RUS=В САМОМ ДЕЛЕ?! Уверены ли вы?
+otherspeak_IND=BETULKAH?! Apakah kamu yakin
+otherspeak_SPN=¡¿DE VERDAD?! ¿Está seguro?
+otherspeak_TAI=จริงๆ?! คุณแน่ใจไหม?
+goto=004
+boxPosition=-91.82607,-191.5218
+
+[4]
+optionA=YES! Come along!
+optionA_POR=SIM! Venha comigo!
+optionA_RUS=ДА! Пойдем!
+optionA_IND=IYA! Ayo ikut!
+optionA_SPN=¡SÍ! ¡Venir también!
+optionA_TAI=ใช่! ตามมา!
+gotoA=005
+optionB=Actually, no
+optionB_POR=Na verdade não
+optionB_RUS=Вообще-то, нет
+optionB_IND=Sebenarnya tidak
+optionB_SPN=En realidad no
+optionB_TAI=จริงๆแล้วไม่
+gotoB=009
+boxPosition=-95.30431,-259.3044
+
+[9]
+otherspeak=Aw... okay... (starts crying)
+otherspeak_POR=Ah ... tudo bem ... (começa a chorar)
+otherspeak_RUS=Ой ... хорошо ... (начинает плакать)
+otherspeak_IND=Aw ... oke ... (mulai menangis)
+otherspeak_SPN=Aw ... está bien ... (comienza a llorar)
+otherspeak_TAI=อ๊ะ ... โอเค ... (เริ่มร้องไห้)
+highlight=(starts crying)
+highlight_POR=(começa a chorar)
+highlight_RUS=(начинает плакать)
+highlight_IND=(mulai menangis)
+highlight_SPN=(comienza a llorar)
+highlight_TAI=(เริ่มร้องไห้)
+goto=-1
+
+[5]
+*test LESS_THAN_2_COMPANIONS*
+goto_true=006
+goto_false=007
+boxPosition=-205.913,-325.3045
+
+[6]
+otherspeak=Thank you so much! I will help where I can!
+otherspeak_POR=Muito obrigado! Ajudarei onde puder!
+otherspeak_RUS=Большое спасибо! Помогу где смогу!
+otherspeak_IND=Terima kasih banyak! Saya akan membantu di mana saya bisa!
+otherspeak_SPN=¡Muchas gracias! ¡Ayudaré donde pueda!
+otherspeak_TAI=ขอบคุณมาก! ฉันจะช่วยทุกที่ที่ทำได้!
+goto=-55
+boxPosition=-317.913,-397.2611
+
+[7]
+otherspeak=Oh.. you have too many followers
+otherspeak_POR=Oh .. você tem muitos seguidores
+otherspeak_RUS=Ой .. у тебя слишком много подписчиков
+otherspeak_IND=Oh .. Anda memiliki terlalu banyak pengikut
+otherspeak_SPN=Oh ... tienes demasiados seguidores
+otherspeak_TAI=โอ้.. คุณมีผู้ติดตามมากเกินไป
+goto=008
+boxPosition=-82.08699,-396.1739
+
+[8]
+*EXIT_WITH_POPUP*
+popuptext=You can only have 2 followers at a time!
+popuptext_POR=Você só pode ter 2 seguidores por vez!
+popuptext_RUS=У вас может быть только 2 подписчика одновременно!
+popuptext_IND=Anda hanya dapat memiliki 2 pengikut dalam satu waktu!
+popuptext_SPN=¡Solo puedes tener 2 seguidores a la vez!
+popuptext_TAI=คุณสามารถมีผู้ติดตามได้ครั้งละ 2 คนเท่านั้น!
+boxPosition=-79.99999,-466.0434
+

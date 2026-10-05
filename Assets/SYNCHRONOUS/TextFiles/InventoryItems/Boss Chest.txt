@@ -1,0 +1,10 @@
+Type = Place_in_world
+World_obj_path = Buildables/Boss Chest
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+CopyPaintLayout = Chest
+Default Coloring = Weapon - Magma
+
+not_obtainable = true

@@ -1,0 +1,32 @@
+Metal Bar
+Metal Pick
+Metal Helmet
+Metal Sword
+Metal Armor
+Metal DoubleDagger
+Metal Legion Helm
+Metal Cleaver
+Titanium Bar
+Titanium Pick
+Titanium Legion Helm
+Titanium DoubleDagger
+Titanium Armor
+Titanium Cleaver
+Titanium Valkyrie Helm
+Titanium CurveSword
+Titanium Shovel
+Gold Bar
+Gold Valkyrie Helm
+Gold Cleaver
+Gold Armor
+Gold CurveSword
+Gold Shogun Helm
+Gold DoubleSword
+Uranium Bar
+Uranium Shogun Helm
+Uranium CurveSword
+Uranium Armor
+Uranium DoubleSword
+Uranium Brute Helm
+Uranium Hasta
+Crucible

@@ -1,0 +1,111 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[2,6] = Stone Vein (rot 0)
+
+[1,0] = Stone Vein (rot 1)
+
+[2,1] = Dug-up Purple Mushroom (rot 1)
+
+[5,0] = Willow Tree (rot 0)
+
+[2,5] = Navpost (rot 1)
+	sign_text = *string* Muckwood
+	text_col = *string* purple
+	paint = *string* Basic Black
+
+[6,8] = Rotting Stump (rot 2)
+
+[9,7] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,8] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,9] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[7,1] = Metal Vein (rot 2)
+
+[7,8] = Dug-up Brown Mushroom (rot 0)
+
+[9,6] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[0,2] = Cobblestone Path (rot 1)
+
+[0,3] = Cobblestone Path (rot 1)
+
+[1,3] = Cobblestone Path (rot 1)
+
+[2,3] = Cobblestone Path (rot 1)
+
+[3,3] = Cobblestone Path (rot 1)
+
+[4,3] = Cobblestone Path (rot 1)
+
+[5,3] = Cobblestone Path (rot 1)
+
+[5,4] = Cobblestone Path (rot 1)
+
+[0,4] = Cobblestone Path (rot 0)
+
+[0,5] = Cobblestone Path (rot 0)
+
+[0,6] = Cobblestone Path (rot 0)
+
+[0,7] = Cobblestone Path (rot 0)
+
+[0,8] = Cobblestone Path (rot 0)
+
+[0,9] = Cobblestone Path (rot 0)
+
+[9,2] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,1] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[6,4] = Cobblestone Path (rot 0)
+
+[7,4] = Cobblestone Path (rot 0)
+
+[9,4] = Stone Bricks (rot 0)
+
+[9,3] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[8,3] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[8,5] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,5] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,3] = Stone Bricks (rot 0)
+
+[9,5] = Stone Bricks (rot 0)
+
+[8,5] = Stone Bricks (rot 0)
+
+[8,4] = Stone Bricks (rot 0)
+
+[8,3] = Stone Bricks (rot 0)
+
+[3,9] = Cobblestone Path (rot 2)
+
+[1,8] = Cobblestone Path (rot 2)
+
+[2,8] = Cobblestone Path (rot 2)
+
+[2,9] = Cobblestone Path (rot 0)
+
+[5,5] = Titanium Chest (rot 1)
+	basket_id = *long* 9006
+

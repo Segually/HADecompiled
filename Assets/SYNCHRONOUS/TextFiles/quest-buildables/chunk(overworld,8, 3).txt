@@ -1,0 +1,33 @@
+*auto_version=1*
+*forced_biome=1*
+
+[4,0] = Dirt Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[4,7] = Dirt Path (rot 0)
+
+[0,2] = Igloo (rot 0)
+	shack_id = *long* 9062
+	password = *string* DEV_LOCKED
+
+[3,2] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[2,2] = Dirt Path (rot 0)
+
+[4,6] = Dirt Path (rot 0)
+
+[3,7] = Dirt Path (rot 0)
+
+[3,8] = Dirt Path (rot 0)
+
+[3,9] = Dirt Path (rot 0)
+

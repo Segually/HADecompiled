@@ -1,0 +1,13 @@
+Full Name = Sticky Web
+Description = Stops your enemy from moving
+Detailed Description = No movement for GetInt[EFFECT_WEBBED, "Duration", remove " seconds"] seconds DiffInt[EFFECT_WEBBED, "Duration", remove " seconds", add " seconds"] on target.
+Energy Cost = 65%
+On cast = [EFFECT_WEBBED] on projectile(model=perk_sticky_web_projectile,target=enemies)
+Max level = 8
+-
+[EFFECT_WEBBED]
+Type = Duration Effect
+Duration = CLAMP (4 seconds @ lvl_1 ... 12 seconds @ lvl_8)
+Particle (Duration) = perk_sticky_web_duration
+Scale Particle With Creature Size = true
+Walk Speed = 0%

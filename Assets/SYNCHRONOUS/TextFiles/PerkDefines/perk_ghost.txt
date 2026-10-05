@@ -1,0 +1,18 @@
+Full Name = Summon Ghost
+Description = Call out to another dimension!
+On cast = [EFFECT_SUMMON] on self
+Not_unlockable = true
+-
+[EFFECT_SUMMON]
+Type = Duration Effect
+Num Creatures To Summon = 1
+Duration @ lvl_1 = 20 seconds
+Duration @ lvl_15 = 40 seconds
+Summoned Creature Level @ lvl_1 = 15
+Summoned Creature Level @ lvl_15 = 300
+Summoned Creature Follow Distance = 2.5
+Summoned Creature Name = Ghost
+Summoned Creature Combo = [RANDOM]
+Summoned Creature Skin Mat = Blue Glow
+Particle (Instant) = cast_ghost
+Scale Particle With Creature Size = false

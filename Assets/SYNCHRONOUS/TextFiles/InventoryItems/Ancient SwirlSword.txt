@@ -1,0 +1,34 @@
+Description_TAI = ดาบ หมุนวน ลึกลับ ที่ ถ่ายทอด พลัง งาน โบราณ
+Name_TAI = ดาบ หมุน เวียน โบราณ
+Description_POR = Uma misteriosa espada giratória que canaliza energias antigas.
+Description_SPN = Una misteriosa espada giratoria que canaliza energías antiguas.
+Description_RUS = Таинственный вихревой меч, проводящий древние энергии.
+Description_IND = Sebuah pedang berputar misterius yang menyalurkan energi kuno.
+Name_POR = EspadaEspiral Antiga
+Name_SPN = EspadaTorbellino Antigua
+Name_RUS = Древний Вихревой Меч
+Name_IND = PedangPusaran Kuno
+Description = A mysterious swirling sword that channels ancient energies.
+
+Crafting_ingredient_A = Ancient Bones
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/SwirlSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 78
+Craft_required_lvl = 126
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 61
+
+CopyPaintLayout = Dark SwirlSword
+Default Coloring = Weapon - Ancient
+
+show_model3d = true
+Copy3dModelPosition = Dark SwirlSword
+
+weapon_display_copy = Dark SwirlSword

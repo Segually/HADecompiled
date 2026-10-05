@@ -1,0 +1,77 @@
+*auto_version=4*
+*is_blank=true*
+
+[9,3] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[5,3] = Dirt Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[3,3] = Dirt Path (rot 0)
+
+[0,3] = Dirt Path (rot 0)
+
+[2,3] = Dirt Path (rot 0)
+
+[1,3] = Dirt Path (rot 0)
+
+[5,5] = Teleporter (rot 0)
+
+[3,4] = Dirt Path (rot 0)
+
+[0,0] = Dirt Path (rot 0)
+
+[0,2] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[3,2] = Dirt Path (rot 0)
+
+[2,2] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[2,4] = Dirt Path (rot 0)
+
+[0,1] = Dirt Path (rot 0)
+
+[3,0] = Stump Chair (rot 2)
+
+[2,0] = Campfire (rot 0)
+
+[2,1] = Dirt Path (rot 0)
+
+[1,0] = Stump Chair (rot 0)
+
+[3,1] = Dirt Path (rot 0)
+
+[1,1] = Dirt Path (rot 0)
+
+[1,2] = Dirt Path (rot 0)
+
+[1,4] = Dirt Path (rot 0)
+
+[2,7] = Shack (rot 1)
+	shack_id = *long* 9128
+	paint = *string* Forest Green
+
+[0,5] = Anvil (rot 3)
+	paint = *string* Lumberjack
+
+[1,0] = DEBUG-npc (rot 3)
+	npc_file = *string* Traveller 250m
+	creature_A = *string* bear
+	creature_B = *string* rhino
+	npc_icon = *string* Info_giver
+	voice = *string* male
+
+[0,4] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+

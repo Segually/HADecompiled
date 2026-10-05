@@ -1,0 +1,6 @@
+Description = Used to revive yourself if you die, or to unlock things in the Mutant Market
+IAP_KEY = 60gems
+Type = consumable
+Gem_price = cash_only
+Bg_color = cyan
+Model_path = shop_gems30

@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ สำหรับ การ สร้างสรรค์
+Name_TAI = ผ้า ไหม
+Description_POR = Material de fabricação
+Description_SPN = Material de fabricación
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Seda
+Name_SPN = Seda
+Name_RUS = Шелк
+Name_IND = Sutra
+Description = Crafting material
+
+Inventory_sprite_path = item silk
+Crafting_makes = 5
+Market Cost = 75
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Clothing Materials
+NumSell = 3 to 8

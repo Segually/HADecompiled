@@ -1,0 +1,12 @@
+Description = Adds animals: politician, ninja, influencer, angel, samurai
+IAP_KEY = creature_pack_9
+Type = permanent
+Gem_price = medium
+Bg_color = purple
+Model_path = shop_creaturePack9
+
+animal0 = politician
+animal1 = ninja
+animal2 = influencer
+animal3 = angel
+animal4 = samurai

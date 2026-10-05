@@ -1,0 +1,26 @@
+Description_TAI = ทำ ให้ เฟอร์นิเจอร์ ของ คุณ ดู เหมือน ทำ จาก หิมะ
+Name_TAI = ธาร น้ำแข็ง
+Description_POR = Faz com que seus móveis pareçam feitos de neve.
+Description_SPN = Hace que tus muebles parezcan hechos de nieve.
+Description_RUS = Заставляет вашу мебель выглядеть так, как будто она сделана из снега.
+Description_IND = Membuat furnitur Anda terlihat seperti terbuat dari salju
+Name_POR = Geleira
+Name_SPN = Glaciar
+Name_RUS = Ледник
+Name_IND = Gletser
+Description = Makes your furniture look like it's made of snow
+
+Crafting_ingredient_A = Snowball
+Crafting_ingredient_A_count = 3
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

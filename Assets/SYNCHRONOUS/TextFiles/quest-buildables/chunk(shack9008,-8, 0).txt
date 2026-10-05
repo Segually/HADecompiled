@@ -1,0 +1,73 @@
+*auto_version=1*
+*forced_floor_rot=1*
+*forced_floor_model=1*
+*is_blank=true*
+
+[4,1] = Cave Chest (rot 3)
+	basket_id = *long* 9134
+
+[4,8] = Cave Chest (rot 1)
+	basket_id = *long* 9135
+
+[5,8] = Old Torch (rot 0)
+
+[5,1] = Old Torch (rot 0)
+
+[2,3] = Spawner - Bones (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[8,0] = DEBUG-1x1-fillempty (rot 0)
+
+[7,0] = DEBUG-1x1-fillempty (rot 0)
+
+[6,0] = DEBUG-1x1-fillempty (rot 0)
+
+[5,0] = DEBUG-1x1-fillempty (rot 0)
+
+[4,0] = DEBUG-1x1-fillempty (rot 0)
+
+[3,0] = DEBUG-1x1-fillempty (rot 0)
+
+[2,0] = DEBUG-1x1-fillempty (rot 0)
+
+[1,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,1] = DEBUG-1x1-fillempty (rot 0)
+
+[0,2] = DEBUG-1x1-fillempty (rot 0)
+
+[0,3] = DEBUG-1x1-fillempty (rot 0)
+
+[0,4] = DEBUG-1x1-fillempty (rot 0)
+
+[0,5] = DEBUG-1x1-fillempty (rot 0)
+
+[0,6] = DEBUG-1x1-fillempty (rot 0)
+
+[0,7] = DEBUG-1x1-fillempty (rot 0)
+
+[0,8] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[1,9] = DEBUG-1x1-fillempty (rot 0)
+
+[2,9] = DEBUG-1x1-fillempty (rot 0)
+
+[3,9] = DEBUG-1x1-fillempty (rot 0)
+
+[4,9] = DEBUG-1x1-fillempty (rot 0)
+
+[5,9] = DEBUG-1x1-fillempty (rot 0)
+
+[6,9] = DEBUG-1x1-fillempty (rot 0)
+
+[7,9] = DEBUG-1x1-fillempty (rot 0)
+
+[8,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+

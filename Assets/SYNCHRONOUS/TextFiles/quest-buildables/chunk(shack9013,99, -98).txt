@@ -1,0 +1,40 @@
+*auto_version=4*
+
+[3,3] = Poison Spikes (rot 0)
+
+[3,1] = Poison Spikes (rot 0)
+
+[1,7] = Poison Spikes (rot 0)
+
+[1,9] = Poison Spikes (rot 0)
+
+[5,3] = Poison Spikes (rot 0)
+
+[9,4] = Poison Spikes (rot 0)
+
+[9,2] = Poison Spikes (rot 0)
+
+[6,6] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[0,4] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[3,9] = Giant Puncher (rot 2)
+
+[4,5] = Poison Spikes (rot 2)
+
+[5,9] = Poison Spikes (rot 2)
+
+[6,8] = Poison Spikes (rot 2)
+
+[7,8] = Poison Spikes (rot 3)
+
+[7,6] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2

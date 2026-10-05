@@ -1,0 +1,391 @@
+Name_POR=Ala Rei
+Name_RUS=Крыло короля
+Name_IND=Sayap Raja
+Name_SPN=Ala rey
+Name_TAI=ปีกกษัตริย์
+
+----- DIALOGUE -----
+[0]
+*test IS_MY_WORLD*
+goto_true=8000
+goto_false=9005
+
+[9005]
+otherspeak=Be gone, filthy peasant!!
+otherspeak_POR=Vá embora, camponês imundo !!
+otherspeak_RUS=Уходи, грязный мужичок !!
+otherspeak_IND=Pergi, petani kotor !!
+otherspeak_SPN=¡Vete, asqueroso campesino!
+otherspeak_TAI=ไปเถอะชาวนาลามก !!
+goto=-1
+boxPosition=108.2024,-65.69807
+
+[8000]
+*test QUEST_PROGRESS* (The Bandit King == 0)
+goto_true=9000
+goto_false=8001
+boxPosition=-168.0734,-65.21637
+swapLineCols=true
+
+[8001]
+*test QUEST_PROGRESS* (The Bandit King == 1)
+goto_true=015
+goto_false=8002
+boxPosition=-510.5241,-185.5892
+
+[8002]
+*test QUEST_PROGRESS* (The Bandit King == 2)
+goto_true=015
+goto_false=8004
+boxPosition=-457.8347,-273.5552
+
+[8004]
+*test QUEST_PROGRESS* (The Bandit King == 4)
+goto_true=019
+goto_false=8005
+boxPosition=-346.3612,-347.7027
+
+[8005]
+*test QUEST_READY_TO_RESTART* (The Bandit King)
+goto_true=100
+goto_false=023
+boxPosition=-277.778,-426.8117
+
+[9000]
+otherspeak=Who dares to approach me?!
+otherspeak_POR=Quem se atreve a se aproximar de mim ?!
+otherspeak_RUS=Кто смеет ко мне подойти ?!
+otherspeak_IND=Siapa yang berani mendekatiku ?!
+otherspeak_SPN=¡¿Quién se atreve a acercarse a mí ?!
+otherspeak_TAI=ใครกล้าเข้าใกล้ฉัน?!
+goto=001
+boxPosition=138.581,-156.864
+
+[1]
+otherspeak=I am 'King Wing', tyrant of the ice!
+otherspeak_POR=Eu sou 'King Wing', tirano do gelo!
+otherspeak_RUS=Я «King Wing», тиран льда!
+otherspeak_IND=Saya 'King Wing', tiran es!
+otherspeak_SPN=¡Soy 'King Wing', tirano del hielo!
+otherspeak_TAI=ฉันคือ 'คิงวิง' ทรราชแห่งน้ำแข็ง!
+goto=002
+boxPosition=149.0477,-231.9035
+
+[2]
+optionA=Can I be of assistance?
+optionA_POR=Posso ajudar?
+optionA_RUS=Могу я чем-нибудь помочь?
+optionA_IND=Bisakah saya membantu?
+optionA_SPN=¿Puedo ser de ayuda?
+optionA_TAI=ฉันสามารถให้ความ ช่วยเหลือได้หรือไม่?
+gotoA=003
+boxPosition=162.28,-306.1739
+
+[3]
+otherspeak=Hmmm.. yes, I suppose...
+otherspeak_POR=Hmmm .. sim, eu suponho ...
+otherspeak_RUS=Хммм .. да, полагаю ...
+otherspeak_IND=Hmmm .. ya, saya kira ...
+otherspeak_SPN=Hmmm ... sí, supongo ...
+otherspeak_TAI=อืม .. ใช่ฉันคิดว่า ...
+goto=004
+boxPosition=171.4451,-392.7763
+
+[4]
+otherspeak=Yet another Bandit camp has appeared near Shindo..
+otherspeak_POR=No entanto, outro acampamento de bandidos apareceu perto de Shindo ..
+otherspeak_RUS=Очередной лагерь бандитов появился недалеко от Шиндох.
+otherspeak_IND=Namun kamp Bandit lain telah muncul di dekat Syindo ..
+otherspeak_SPN=Otro campamento de bandidos ha aparecido cerca de Schindo.
+otherspeak_TAI=ยังมีอีกค่ายโจรโผล่มาใกล้ชินโด ..
+goto=005
+boxPosition=193.7137,-462.0711
+
+[5]
+otherspeak=.. it must be destroyed
+otherspeak_POR=.. deve ser destruído
+otherspeak_RUS=.. это должно быть уничтожено
+otherspeak_IND=.. itu harus dihancurkan
+otherspeak_SPN=.. debe ser destruido
+otherspeak_TAI=.. มันจะต้องถูกทำลาย
+goto=006
+boxPosition=203.0913,-539.4365
+
+[6]
+otherspeak=One of my warriors hurt his back and cannot fight..
+otherspeak_POR=Um dos meus guerreiros machucou as costas e não pode lutar ..
+otherspeak_RUS=Один из моих воинов повредил спину и не может сражаться ..
+otherspeak_IND=Salah satu prajurit saya melukai punggungnya dan tidak bisa melawan ..
+otherspeak_SPN=Uno de mis guerreros se lastimó la espalda y no puede luchar.
+otherspeak_TAI=นักรบคนหนึ่งของฉันเจ็บที่หลังและสู้ไม่ได้ ..
+goto=007
+boxPosition=199.7194,-612.6122
+
+[7]
+otherspeak=.. do you wish to take his place?
+otherspeak_POR=.. você deseja tomar o lugar dele?
+otherspeak_RUS=.. ты хочешь занять его место?
+otherspeak_IND=.. Apakah Anda ingin menggantikannya?
+otherspeak_SPN=.. ¿desea ocupar su lugar?
+otherspeak_TAI=.. คุณต้องการรับตำแหน่งของเขาหรือไม่?
+goto=008
+boxPosition=214.3111,-676.4789
+
+[8]
+optionA=I'll do it!
+optionA_POR=Eu vou fazer isso!
+optionA_RUS=Я сделаю это!
+optionA_IND=Aku akan melakukannya!
+optionA_SPN=¡Lo haré!
+optionA_TAI=ฉันจะทำมัน!
+gotoA=9003
+optionB=Nevermind..
+optionB_POR=Deixa pra lá..
+optionB_RUS=Не берите в голову..
+optionB_IND=Lupakan..
+optionB_SPN=No importa..
+optionB_TAI=ไม่เป็นไร..
+gotoB=009
+boxPosition=196.901,-763.1138
+
+[9]
+otherspeak=DON'T WASTE MY TIME!
+otherspeak_POR=NÃO PERCA MEU TEMPO!
+otherspeak_RUS=НЕ ТЕРЯЙТЕ МОЕ ВРЕМЯ!
+otherspeak_IND=JANGAN BUANG WAKTU SAYA!
+otherspeak_SPN=¡NO PIERDAS MI TIEMPO!
+otherspeak_TAI=อย่าเสียเวลาของฉัน!
+goto=-1
+boxPosition=339.2295,-829.7095
+
+[9003]
+*ADVANCE_QUEST* (The Bandit King => 1)
+goto=011
+boxPosition=-178.2954,-1303.739
+
+[11]
+otherspeak=Very well... are you ready to fight them now?
+otherspeak_POR=Muito bem ... você está pronto para lutar contra eles agora?
+otherspeak_RUS=Хорошо ... ты готов сразиться с ними сейчас?
+otherspeak_IND=Baiklah ... apakah Anda siap untuk melawan mereka sekarang?
+otherspeak_SPN=Muy bien ... ¿estás listo para luchar contra ellos ahora?
+otherspeak_TAI=ดีมาก ... ตอนนี้คุณพร้อมที่จะต่อสู้กับพวกเขาแล้วหรือยัง?
+goto=012
+boxPosition=-397.6482,-1378.942
+
+[12]
+optionA=I'm ready
+optionA_POR=estou pronto
+optionA_RUS=я готов
+optionA_IND=saya siap
+optionA_SPN=Estoy listo
+optionA_TAI=ฉันพร้อมแล้ว
+gotoA=9002
+optionB=I'll be right back
+optionB_POR=eu volto já
+optionB_RUS=Я скоро вернусь
+optionB_IND=aku akan segera kembali
+optionB_SPN=Ya vuelvo
+optionB_TAI=ฉันจะกลับมา
+gotoB=9001
+boxPosition=-473.6798,-1457.009
+
+[9002]
+otherspeak=THEY SHALL TASTE THE WRATH OF SHINDO!!
+otherspeak_POR=ELES PROVARÃO A IRA DE SHINDO !!
+otherspeak_RUS=ОНИ ПОПРОБУЮТ Гнев ШИHДOX !!
+otherspeak_IND=MEREKA AKAN MERASA KEREN SYINDO !!
+otherspeak_SPN=¡DEBEN SABIR LA IRA DE SCHINDO!
+otherspeak_TAI=พวกเขาลิ้มรสความผิดของชินโด !!
+goto=018
+boxPosition=-632.4393,-1635.067
+
+[18]
+*ADVANCE_QUEST* (The Bandit King => 3)
+goto=-1
+boxPosition=-622.8596,-1772.774
+
+[9001]
+*ADVANCE_QUEST* (The Bandit King => 2)
+goto=014
+boxPosition=-342.2928,-1545.233
+
+[14]
+otherspeak=... Don't keep me waiting
+otherspeak_POR=... Não me deixe esperando
+otherspeak_RUS=... Не заставляй меня ждать
+otherspeak_IND=... Jangan biarkan aku menunggu
+otherspeak_SPN=... no me hagas esperar
+otherspeak_TAI=... อย่าให้ฉันรอ
+goto=-1
+boxPosition=-325.1803,-1629.69
+
+[15]
+otherspeak=Warrior, are you prepared to fight the bandits?
+otherspeak_POR=Guerreiro, você está preparado para lutar contra os bandidos?
+otherspeak_RUS=Воин, ты готов сразиться с бандитами?
+otherspeak_IND=Prajurit, apakah Anda siap untuk melawan para bandit?
+otherspeak_SPN=Guerrero, ¿estás preparado para luchar contra los bandidos?
+otherspeak_TAI=นักรบ คุณพร้อมที่จะต่อสู้กับโจรแล้วหรือยัง?
+goto=016
+boxPosition=-695.3038,-338.5352
+
+[16]
+optionA=I'm ready
+optionA_POR=estou pronto
+optionA_RUS=я готов
+optionA_IND=saya siap
+optionA_SPN=Estoy listo
+optionA_TAI=ฉันพร้อมแล้ว
+gotoA=9002
+optionB=Not ready yet
+optionB_POR=Ainda não está pronto
+optionB_RUS=Еще не готово
+optionB_IND=Belum siap
+optionB_SPN=No está listo todavía
+optionB_TAI=ยังไม่พร้อม
+gotoB=017
+boxPosition=-718.6868,-1210.445
+
+[17]
+otherspeak=You are truly the slowest creature to have ever existed
+otherspeak_POR=Você é realmente a criatura mais lenta que já existiu
+otherspeak_RUS=Вы действительно самое медленное существо из когда-либо существовавших
+otherspeak_IND=Anda benar-benar makhluk paling lambat yang pernah ada
+otherspeak_SPN=Eres realmente la criatura más lenta que jamás haya existido.
+otherspeak_TAI=คุณเป็นสิ่งมีชีวิตที่ช้าที่สุดที่เคยมีมา
+goto=-1
+boxPosition=-594.2402,-1311.311
+
+[19]
+otherspeak=Well done, Warrior! The bandits are destroyed!
+otherspeak_POR=Muito bem, Guerreiro! Os bandidos estão destruídos!
+otherspeak_RUS=Молодец, Воин! Бандиты уничтожены!
+otherspeak_IND=Kerja bagus, Warrior! Para bandit dihancurkan!
+otherspeak_SPN=¡Bien hecho, Guerrero! ¡Los bandidos están destruidos!
+otherspeak_TAI=ทำได้ดีนักรบ! โจรพังยับ!
+goto=020
+boxPosition=-531.9122,-430.4921
+
+[20]
+otherspeak=You are not as useless as I once thought...
+otherspeak_POR=Você não é tão inútil quanto eu pensava ...
+otherspeak_RUS=Вы не так бесполезны, как я когда-то думал ...
+otherspeak_IND=Anda tidak berguna seperti yang pernah saya pikirkan ...
+otherspeak_SPN=No eres tan inútil como alguna vez pensé ...
+otherspeak_TAI=คุณไม่ได้ไร้ประโยชน์อย่างที่ฉันเคยคิด ...
+goto=021
+boxPosition=-526.5456,-545.5626
+
+[21]
+otherspeak=Here.. take this as a token of my gratitude
+otherspeak_POR=Aqui .. tome isso como um símbolo da minha gratidão
+otherspeak_RUS=Вот .. прими это в знак моей признательности
+otherspeak_IND=Ini .. ambillah ini sebagai tanda terima kasihku
+otherspeak_SPN=Toma ... toma esto como muestra de mi gratitud
+otherspeak_TAI=นี่.. ถือเป็นสัญลักษณ์แห่งความกตัญญูกตเวทีของฉัน
+goto=022
+boxPosition=-528.5714,-625.6413
+
+[22]
+*TRY_GIVE_QUEST_REWARD* (The Bandit King) (if succeed, advance quest to 5)
+goto=-1
+boxPosition=-540.3478,-708.8068
+
+[23]
+otherspeak=Greetings, Warrior.
+otherspeak_POR=Saudações, guerreiro.
+otherspeak_RUS=Привет, Воин.
+otherspeak_IND=Salam, Prajurit.
+otherspeak_SPN=Saludos Guerrero.
+otherspeak_TAI=สวัสดีนักรบ
+goto=024
+boxPosition=-53.12143,-552.7887
+
+[24]
+otherspeak=Shindo is safe again, thanks to you.
+otherspeak_POR=Shindo está seguro novamente, graças a você.
+otherspeak_RUS=Благодаря тебе Шиндох снова в безопасности.
+otherspeak_IND=Syindo aman lagi, terima kasih.
+otherspeak_SPN=Schindo está a salvo de nuevo, gracias a ti.
+otherspeak_TAI=ชินโดปลอดภัยอีกครั้งขอบคุณ
+goto=-1
+boxPosition=-47.91424,-629.7078
+
+[100]
+otherspeak=Greetings, Warrior.
+otherspeak_POR=Saudações, guerreiro.
+otherspeak_RUS=Привет, Воин.
+otherspeak_IND=Salam, Prajurit.
+otherspeak_SPN=Saludos Guerrero.
+otherspeak_TAI=สวัสดีนักรบ
+goto=101
+boxPosition=-273.0512,-553.8889
+
+[101]
+otherspeak=Your battle with the bandits was truly legendary..
+otherspeak_POR=Sua batalha com os bandidos foi verdadeiramente lendária ..
+otherspeak_RUS=Ваша битва с бандитами была поистине легендарной ..
+otherspeak_IND=Pertarunganmu dengan para bandit benar-benar legendaris ..
+otherspeak_SPN=Tu batalla con los bandidos fue verdaderamente legendaria ...
+otherspeak_TAI=การต่อสู้ของคุณกับกลุ่มโจรเป็นตำนานอย่างแท้จริง ..
+goto=102
+boxPosition=-268.2167,-627.9454
+
+[102]
+otherspeak=..however, the bandits have returned
+otherspeak_POR=.. no entanto, os bandidos voltaram
+otherspeak_RUS=.. однако бандиты вернулись
+otherspeak_IND=..tapi, para bandit telah kembali
+otherspeak_SPN=..sin embargo, los bandidos han regresado
+otherspeak_TAI=.. อย่างไรก็ตามโจรกลับมาแล้ว
+goto=103
+boxPosition=-272.7841,-707.3902
+
+[103]
+otherspeak=Will you help me destroy them yet again?
+otherspeak_POR=Você vai me ajudar a destruí-los novamente?
+otherspeak_RUS=Вы поможете мне снова их уничтожить?
+otherspeak_IND=Maukah Anda membantu saya menghancurkan mereka lagi?
+otherspeak_SPN=¿Me ayudarás a destruirlos una vez más?
+otherspeak_TAI=คุณจะช่วยฉันทำลายพวกเขาอีกครั้งหรือไม่?
+goto=104
+boxPosition=-274.6595,-761.5433
+
+[104]
+optionA=Yes!
+optionA_POR=Sim!
+optionA_RUS=Да!
+optionA_IND=Iya!
+optionA_SPN=¡Sí!
+optionA_TAI=ใช่
+gotoA=9003
+optionB=Not now
+optionB_POR=Agora não
+optionB_RUS=Не сейчас
+optionB_IND=Tidak sekarang
+optionB_SPN=Ahora no
+optionB_TAI=ไม่ใช่ตอนนี้
+gotoB=105
+boxPosition=-287.0921,-823.8536
+
+[105]
+otherspeak=What a shame..
+otherspeak_POR=Que pena..
+otherspeak_RUS=Какая досада ..
+otherspeak_IND=Sayang sekali..
+otherspeak_SPN=Qué vergüenza..
+otherspeak_TAI=เสียดายอะไร ..
+goto=106
+boxPosition=-131.3828,-911.6198
+
+[106]
+otherspeak=BE GONE!
+otherspeak_POR=SEJA!
+otherspeak_RUS=Уйти!
+otherspeak_IND=PERGI!
+otherspeak_SPN=¡SEA!
+otherspeak_TAI=หายไป!
+goto=-1
+boxPosition=-120.2893,-989.2612
+

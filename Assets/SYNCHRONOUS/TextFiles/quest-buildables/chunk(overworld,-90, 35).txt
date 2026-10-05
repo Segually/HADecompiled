@@ -1,0 +1,10 @@
+*auto_version=3*
+
+[7,0] = Dirt Path (rot 0)
+
+[7,1] = Dirt Path (rot 0)
+
+[6,0] = Torch (rot 0)
+
+[7,2] = Teleporter (rot 0)
+

@@ -1,0 +1,46 @@
+Description_TAI = เทเลพอร์ตเตอร์ ของ คุณเอง! ปรับแต่ง สี ชื่อ และ คำอธิบาย
+Name_TAI = อุปกรณ์ เคลื่อนย้าย ข้ามมิติ
+Description_POR = Seu próprio teletransportador! Personalize a cor, o nome e a descrição.
+Description_SPN = ¡Tu propio teletransportador! Personaliza el color, nombre y descripción.
+Description_RUS = Ваш собственный телепорт! Настройте цвет, имя и описание.
+Description_IND = Teleporter pribadi Anda! Sesuaikan warna, nama, & deskripsi.
+Name_POR = Teletransportador
+Name_SPN = Teletransportador
+Name_RUS = Телепортер
+Name_IND = Teleporter
+Description = Your own teleporter! Customize the color, name, & description
+
+Inventory_sprite_path = item teleporter
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 1
+Type = Place_in_world
+World_obj_path = Buildables/Teleporter
+World_geometry = 1_by_1
+Craft_required_lvl = 60
+Market Cost = CALCULATE
+IAP_required = recipe_teleporters
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-3, 2-2, 
+PaintLayout0_Pastels = 0-3, 1-2, 2-1, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-1, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 
+Default Coloring = Debug - Stone
+model3d_camDist = 3.8
+
+show_model3d = true
+model3d_fov = 40
+model3d_yRot = 45
+model3d_xRot = -135
+model3d_recenterY = -5
+model3d_camHeight = 0.2
+model3d_recenterX = 1
+model3d_override_particle_bg_col = 115,255,150
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 

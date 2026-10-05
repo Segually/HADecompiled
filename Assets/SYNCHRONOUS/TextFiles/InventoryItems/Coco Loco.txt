@@ -1,0 +1,23 @@
+Description_TAI = เครื่องดื่มมะพร้าวที่อร่อยช่วยฟื้นฟูพลังชีวิตบางส่วน
+Name_TAI = โคโค่ โลโค่
+Description_POR = Uma deliciosa bebida de coco que restaura um pouco de saúde.
+Description_SPN = Una sabrosa bebida de coco que cura algo de salud.
+Description_RUS = Вкусный кокосовый напиток, который восстанавливает часть здоровья.
+Description_IND = Minuman kelapa yang lezat yang memulihkan sebagian kesehatan.
+Name_POR = Coco Loco
+Name_SPN = Coco Loco
+Name_RUS = Коко Локо
+Name_IND = Coco Loco
+Description = A tasty coconut drink that heals some health
+
+Inventory_sprite_path = item coco loco
+Crafting_ingredient_A = Coconut
+Crafting_ingredient_A_count = 2
+Type = Consumable
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 2 to 4

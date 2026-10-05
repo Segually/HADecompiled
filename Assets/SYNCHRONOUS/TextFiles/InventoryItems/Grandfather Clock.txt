@@ -1,0 +1,24 @@
+Description_TAI = ติ๊ก ต๊อก
+Name_TAI = นาฬิกา ตั้ง พื้น โบราณ
+Description_POR = Tique-taque.
+Description_SPN = Tic tac.
+Description_RUS = Тик-так.
+Description_IND = Tik tok.
+Name_POR = Relógio de Chão
+Name_SPN = Reloj de pie
+Name_RUS = Напольные часы
+Name_IND = Jam Kakek
+Description = Tick tock.
+
+Inventory_sprite_path = item clock
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stick
+Crafting_ingredient_B_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Grandfather Clock
+World_geometry = 1_by_1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+Vendor0 = Furniture

@@ -1,0 +1,13 @@
+Full Name = Screech
+Description = Decrease your pursuer's accuracy!
+Detailed Description = GetFloat[EFFECT_CONFUSE, "Accuracy Percent Mod On Attack Other", remove "%"]% accuracy DiffFloat[EFFECT_CONFUSE, "Accuracy Percent Mod On Attack Other", remove "%", add "%"] for GetInt[EFFECT_CONFUSE, "Duration", remove " seconds"] seconds DiffInt[EFFECT_CONFUSE, "Duration", remove " seconds", add " seconds"] on target.
+Energy Cost = 35%
+On cast = [EFFECT_CONFUSE] on projectile(model=perk_screech_projectile,target=enemies)
+Max level = 15
+-
+[EFFECT_CONFUSE]
+Type = Duration Effect
+Duration = CLAMP (12 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+Particle (Duration) = perk_poison_sting_duration
+Scale Particle With Creature Size = true
+Accuracy Percent Mod On Attack Other = CLAMP (85% @ lvl_1 ... 60% @ lvl_15)

@@ -1,0 +1,23 @@
+Full Name = Summon Bandits
+Description = Call out to aggressive mercenaries!
+Detailed Description = Summon two level-GetInt[EFFECT_SUMMON, "Summoned Creature Level", remove ""] DiffInt[EFFECT_SUMMON, "Summoned Creature Level", remove "", add " levels"] bandits for GetInt[EFFECT_SUMMON, "Duration", remove " seconds"] seconds DiffInt[EFFECT_SUMMON, "Duration", remove " seconds", add " seconds"].
+Ultra Detailed Description = Summoned bandits are extra aggressive, and will attack neutral animals unprovoked!
+Energy Cost = 80%
+Unlock Prerequisite = perk_summon_pack(lvl.2)
+On cast = [EFFECT_SUMMON] on self
+-
+[EFFECT_SUMMON]
+Type = Duration Effect
+Num Creatures To Summon = 2
+Duration = CLAMP (20 seconds @ lvl_1 ... 40 seconds @ lvl_15)
+Summoned Creature Level = RANGE (15%-25%-35% of own level)
+Summoned Creature Follow Distance = 2.5
+Summoned Creature Name = Bandit
+Summoned Creature Combo = wolf+shark
+Summoned Creature Hat = Grey Wizard Hat
+Summoned Creature Body = Wood Armor
+Summoned Creature Wep = Stone Sword
+Summoned Creature Walk Speed = 0.051
+Summoned Creature Extra Aggression = true
+Particle (Instant) = perk_summon_bandits_particle
+Scale Particle With Creature Size = false

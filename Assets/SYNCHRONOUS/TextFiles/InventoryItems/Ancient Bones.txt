@@ -1,0 +1,19 @@
+Description_TAI = กระดูก ที่ เก่าแก่ ที่สุด ที่ ฉัน เคย เห็น
+Name_TAI = กระดูก โบราณ
+Description_POR = Os ossos mais antigos que já vi
+Description_SPN = Los huesos más antiguos que he visto.
+Description_RUS = Самые старые кости, которые я когда-либо видел.
+Description_IND = Tulang tertua yang pernah saya lihat
+Name_POR = Ossos Antigos
+Name_SPN = Huesos Antiguos
+Name_RUS = Древние кости
+Name_IND = Tulang Kuno
+Description = The oldest bones I've ever seen
+
+Inventory_sprite_path = item ancient bones
+Market Cost = 1000
+
+Vendor0 = Harvested Item
+Vendor1 = Ores
+Vendor2 = Refined Materials
+NumSell = 1 to 2

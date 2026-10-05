@@ -1,0 +1,39 @@
+*auto_version=15*
+
+[9,0] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,0] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,1] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,2] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,3] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,4] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,6] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,9] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[9,9] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2

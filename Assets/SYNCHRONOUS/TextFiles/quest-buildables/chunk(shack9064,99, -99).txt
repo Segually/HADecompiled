@@ -1,0 +1,6 @@
+*auto_version=2*
+
+[3,7] = Pocket World Snow (rot 0)
+	password = *string* DEV_LOCKED
+	shack_id = *long* 9065
+	quest_miniworld = *string* true

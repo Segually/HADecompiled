@@ -1,0 +1,25 @@
+Description_TAI = ลูกอมที่มีรสหวานที่ทำให้คุณวิ่งได้เร็วเป็นเวลา 30 วินาที
+Name_TAI = ผู้ โจมตี
+Description_POR = Doce açucarado que faz você correr rápido por 30 segundos.
+Description_SPN = Caramelo azucarado que te hace correr rápido durante 30 segundos.
+Description_RUS = Сладкая конфета, которая заставляет вас быстро бежать в течение 30 секунд.
+Description_IND = Permen manis yang membuat Anda berlari cepat selama 30 detik.
+Name_POR = Corredores
+Name_SPN = Corredores
+Name_RUS = Быстроногие
+Name_IND = Pelari
+Description = Sugary candy that makes you run fast for 30 seconds.
+
+Inventory_sprite_path = item rushers
+Crafting_ingredient_A = Honeycomb
+Crafting_ingredient_A_count = 1
+Crafting_makes = 5
+Type = Consumable
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+Max_stack = 10
+
+Vendor0 = Potions
+NumSell = 5 to 13

@@ -1,0 +1,22 @@
+Description_TAI = วิธี ที่ ดี กว่า ใน การ อวด ความ ร่ำรวย ของ คุณ!
+Name_TAI = กอง เหรียญ ขนาด ใหญ่
+Description_POR = Uma maneira melhor de exibir sua riqueza!
+Description_SPN = ¡Una mejor manera de mostrar tu riqueza!
+Description_RUS = Лучший способ продемонстрировать своё богатство!
+Description_IND = Cara yang lebih baik untuk memamerkan kekayaan Anda!
+Name_POR = Enorme Tesouro de Moedas
+Name_SPN = Gran Tesoro de Monedas
+Name_RUS = Огромная Куча Монет
+Name_IND = Tumpukan Koin Besar
+Description = A better way to show off your wealth!
+
+Inventory_sprite_path = item huge coin hoard
+Crafting_ingredient_A = Coin Hoard
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Huge Coin Hoard
+World_geometry = 1_by_1
+Craft_required_lvl = 90
+Market Cost = 30000
+
+Vendor0 = Furniture

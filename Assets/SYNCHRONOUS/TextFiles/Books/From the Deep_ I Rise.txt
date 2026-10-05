@@ -1,0 +1,113 @@
+[paint]
+Lavender Bloom
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+I was born in the deep, dark sea, far from the sight of the land-dwellers, where the waves are merciless and the creatures are cruel.
+
+[page 2 - English]
+They say I was the last of my kind, a beast twisted by the tides, born with the strength of the ocean itself.
+
+[page 3 - English]
+When I first came ashore, the land-folk feared me, but they were no match for my fury—no one was.
+
+[page 4 - English]
+Now, as leader of the Riptide Bandits, I rule the shores with a sea-salt grip, ready to claim what is rightfully mine.
+
+[page 5 - English]
+Signed "Saltfang"
+
+[book name - English]
+From the Deep, I Rise
+
+[book name - Indonesian]
+Dari Kedalaman, Aku Bangkit
+
+[page 1 - Indonesian]
+Aku dilahirkan di laut yang dalam dan gelap, jauh dari pandangan penghuni darat, di mana ombak tidak kenal ampun dan makhluk-makhluknya kejam.
+
+[page 2 - Indonesian]
+Mereka bilang aku adalah yang terakhir dari jenis ku, seekor makhluk yang dipelintir oleh gelombang, lahir dengan kekuatan dari lautan itu sendiri.
+
+[page 3 - Indonesian]
+Ketika aku pertama kali tiba di darat, orang-orang darat takut padaku, tetapi mereka tidak bisa menandingi amarah ku—tidak ada yang bisa.
+
+[page 4 - Indonesian]
+Sekarang, sebagai pemimpin Bajak Laut Riptide, aku menguasai pantai dengan genggaman garam laut, siap untuk mengklaim apa yang seharusnya menjadi milikku.
+
+[page 5 - Indonesian]
+Ditandatangani "Saltfang"
+
+[book name - Portuguese]
+Das Profundezas, Eu Me Ergo
+
+[page 1 - Portuguese]
+Nasci no fundo, no mar escuro, longe da vista dos habitantes da terra, onde as ondas são implacáveis e as criaturas são cruéis.
+
+[page 2 - Portuguese]
+Dizem que fui o último da minha espécie, uma besta distorcida pelas marés, nascida com a força do próprio oceano.
+
+[page 3 - Portuguese]
+Quando eu cheguei à costa pela primeira vez, o povo da terra temeu-me, mas eles não eram páreo para minha fúria—ninguém era.
+
+[page 4 - Portuguese]
+Agora, como líder dos Bandidos do Redemoinho, governo as costas com um aperto cheio de sal do mar, pronto para reivindicar o que é meu por direito.
+
+[page 5 - Portuguese]
+Assinado "Dente de Sal"
+
+[book name - Russian]
+Из глубин, я восстаю
+
+[page 1 - Russian]
+Я родился в глубоком, тёмном море, далеко от взора обитателей суши, где волны беспощадны, а существа жестоки.
+
+[page 2 - Russian]
+Говорят, я был последним в своём роде, чудовищем, искривлённым приливами, рожденным с силой самого океана.
+
+[page 3 - Russian]
+Когда я впервые вышел на берег, земные жители боялись меня, но они не могли сравниться с моей яростью — никто не мог.
+
+[page 4 - Russian]
+Теперь, как лидер Бандитов Приливов, я правлю побережьями с хваткой морской соли, готовый захватить то, что по праву моё.
+
+[page 5 - Russian]
+Подписано «Солёный Клык»
+
+[book name - Spanish]
+Desde las Profundidades, Me Levanto
+
+[page 1 - Spanish]
+Nací en el mar profundo y oscuro, lejos de la vista de los habitantes de la tierra, donde las olas son despiadadas y las criaturas son crueles.
+
+[page 2 - Spanish]
+Dicen que fui el último de mi especie, una bestia retorcida por las mareas, nacida con la fuerza del mismo océano.
+
+[page 3 - Spanish]
+Cuando llegué por primera vez a tierra, la gente del lugar me temía, pero no eran rivales para mi furia—nadie lo era.
+
+[page 4 - Spanish]
+Ahora, como líder de los Bandidos de la Marea, gobierno las costas con un agarre de sal marina, listo para reclamar lo que es legítimamente mío.
+
+[page 5 - Spanish]
+Firmado "DientedeSal"
+
+[book name - Thai]
+จากส่ว นลึก,  ฉันขึ้ นมา
+
+[page 1 - Thai]
+ฉันเกิ ดในทะเ ลลึกมื ดมิด ไ กลจากส ายตาขอ งคนที่ อยู่บน บก ที่ ซึ่งคล ื่นไม่ ปรานีแ ละสิ่ง มีชีวิ ตโหดเห ี้ยม
+
+[page 2 - Thai]
+พวกเขา บอกว่า ฉันเป็ นคนสุด ท้ายใน สายพัน ธุ์ของ ฉัน สั ตว์ประ หลาดที ่บิดเบ ี้ยวไป ตามกระ แสน้ำ  เกิดมา พร้อมก ับพลัง ของมหา สมุทรเ อง
+
+[page 3 - Thai]
+เมื่อฉ ันขึ้น ฝั่งเป ็นครั้ งแรก ค นบนแผ่ นดินกล ัวฉัน  แต่พวก เขาไม่ สามารถ สู้กับ ความโก รธของฉ ันได้  — ไม่ม ีใครเล ย
+
+[page 4 - Thai]
+ตอนนี้  ในฐาน ะผู้นำ ของเหล ่าโจรน ้ำวน ฉ ันครอบ ครองชา ยฝั่งด ้วยกำม ือน้ำท ะเล พร ้อมที่ จะยึดส ิ่งที่ เป็นขอ งฉันโด ยชอบธร รม
+
+[page 5 - Thai]
+ลงชื่อ  "ฟันเ กลือ"

@@ -1,0 +1,33 @@
+Magma Brute Helm
+Magma DoubleSword
+Magma Armor
+Magma Hasta
+Magma Menace Helm
+Magma SwirlSword
+Magma Shovel
+Ice Menace Helm
+Ice DoubleSword
+Ice Armor
+Ice Hasta
+Ice Solaris Helm
+Ice SwirlSword
+Dark Solaris Helm
+Dark Hasta
+Dark Armor
+Dark SwirlSword
+Dark Skull Helm
+Dark Scythe
+Speed Helm
+Ancient Skull Helm
+Ancient SwirlSword
+Ancient Armor
+Ancient Scythe
+Ancient Eldritch Helm
+Ancient Lance
+Spirit Eldritch Helm
+Spirit Scythe
+Spirit Armor
+Spirit Lance
+Personal Mine
+Boss Spawner - Yandeon
+Boss Spawner - Shindeon

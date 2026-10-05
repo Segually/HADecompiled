@@ -1,0 +1,22 @@
+Description_TAI = ปรับปรุง การมองเห็น ของคุณ!
+Name_TAI = น้ำ ผลไม้ เบอร์รี่ จันทรา
+Description_POR = Melhora sua visão!
+Description_SPN = ¡Mejora tu visión!
+Description_RUS = Улучшает ваше зрение!
+Description_IND = Meningkatkan penglihatan Anda!
+Name_POR = Suco de Amora Lunar
+Name_SPN = Jugo de bayas lunares
+Name_RUS = Сок из лунной ягоды
+Name_IND = Jus Berry Bulan
+Description = Improves your vision!
+
+Inventory_sprite_path = item moonberry juice
+Crafting_ingredient_A = MoonBerry
+Crafting_ingredient_A_count = 2
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+NumSell = 2 to 3

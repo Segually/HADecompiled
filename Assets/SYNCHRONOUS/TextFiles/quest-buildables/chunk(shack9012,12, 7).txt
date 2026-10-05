@@ -1,0 +1,39 @@
+*auto_version=33*
+
+[2,9] = Crate (rot 2)
+	password = *string* DEV_LOCKED
+	stamp = *string* Sun Stamp
+
+[2,4] = Wood Rails (rot 3)
+
+[2,5] = Wood Rails (rot 3)
+
+[2,6] = Wood Rails (rot 3)
+
+[6,4] = Wood Rails (rot 3)
+
+[6,5] = Wood Rails (rot 3)
+
+[2,8] = Wood Rails (rot 0)
+
+[2,7] = Wood Rails (rot 0)
+
+[6,9] = Wood Rails (rot 0)
+
+[6,8] = Wood Rails (rot 0)
+
+[8,9] = DEBUG-npc (rot 0)
+	npc_file = *string* Jacklin
+	creature_A = *string* hummingbird
+	creature_B = *string* panda
+	npc_icon = *string* Merchant
+	voice = *string* panther
+	merchant_type = *string* OnlineItems
+
+[8,7] = Circular Rug (rot 0)
+	paint = *string* Utility Red
+
+[7,5] = 8-day Land Claim (rot 0)
+	password = *string* DEV_LOCKED
+	has_respawn_landclaim_spawn = *string* true
+	UTC_dateTime_landclaim_spawn = *string* 2099-01-19T20:03:05.1316606Z

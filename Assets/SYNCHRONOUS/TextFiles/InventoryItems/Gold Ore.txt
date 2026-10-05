@@ -1,0 +1,11 @@
+Name_TAI = แร่ ทองคำ
+Name_POR = Minério de Ouro
+Name_SPN = Mineral de oro
+Name_RUS = Золотая руда
+Name_IND = Bijih Emas
+
+Inventory_sprite_path = item gold ore
+Market Cost = 40
+
+Vendor0 = Ores
+NumSell = 4 to 8

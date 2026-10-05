@@ -1,0 +1,20 @@
+Name_TAI = สาย แร่ หิน (ทะเลทราย)
+Name_POR = Veia de Pedra (Deserto)
+Name_SPN = Veta de Piedra (Desierto)
+Name_RUS = Каменная Жила (Пустыня)
+Name_IND = Urat Batu (Gurun)
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Stone Vein (Desert)
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+show_model3d = true
+Copy3dModelPosition = Stone Vein
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = mob_spawn

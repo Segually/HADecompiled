@@ -1,0 +1,9 @@
+[Sell Percent = 0.26]
+
+"Egg Fuser"
+"Uranium Bar"
+"Egg"
+
+"Egg"
+"Egg"
+"Egg"

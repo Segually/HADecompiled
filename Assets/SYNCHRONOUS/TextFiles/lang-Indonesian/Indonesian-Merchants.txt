@@ -1,0 +1,72 @@
+Convert to Merchant
+Konversikan ke Pedagang
+
+-
+
+Description
+Keterangan
+
+Dialogue
+Dialog
+
+Example Items
+Contoh Item
+
+Greetings.
+Salam.
+
+Can I interest you in some items?
+Ingin membeli sesuatu?
+
+BUY/SELL ITEMS
+BELI/JUAL BARANG
+
+-
+
+Potions
+Ramuan
+
+Food
+Makanan
+
+Farming
+Pertanian
+
+Ranger
+Penjaga Hutan
+
+Clothing
+Pakaian
+
+Furniture
+Mebel
+
+Music
+Musik
+
+Paintings
+Lukisan
+
+Paintbrushes & Stamps
+Kuas & Perangko
+
+Random Items
+Item Acak
+
+Mining
+Pertambangan
+
+Buys Anything
+Membeli Apa Saja
+
+Weapons & Armor
+Senjata & Baju Zirah
+
+Traps
+Jebakan
+
+Eggs
+Telur
+
+Bone Juice
+jus tulang

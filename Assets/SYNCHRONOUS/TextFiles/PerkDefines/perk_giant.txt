@@ -1,0 +1,23 @@
+Full Name = Giant
+Description = Become huge and squish enemies!
+Detailed Description = GetFloat[EFFECT_HUGE, "Player Size", remove "%"]% size DiffFloat[EFFECT_HUGE, "Player Size", remove "%", add "%"] for GetInt[EFFECT_HUGE, "Duration", remove " seconds"] seconds DiffInt[EFFECT_HUGE, "Duration", remove " seconds", add " seconds"] on self. GetInt[EFFECT_CRUSH_ONE, "Damage", remove ""] damage DiffInt[EFFECT_CRUSH_ONE, "Damage", add ""] on mobs within GetFloat[EFFECT_CRUSH_ALL, "Area Effect Radius", remove "m"]m DiffFloat[EFFECT_CRUSH_ALL, "Area Effect Radius", remove "m", add "m"].
+Energy Cost = 90%
+On cast = [EFFECT_CRUSH_ALL,EFFECT_HUGE] on self
+-
+[EFFECT_CRUSH_ALL]
+Type = Area Effect
+Area Effect to apply = [EFFECT_CRUSH_ONE]
+Area Effect Radius = CLAMP (2.7m @ lvl_1 ... 3.2m @ lvl_15)
+Duration = CLAMP (7 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+Apply every = 1 seconds
+-
+[EFFECT_HUGE]
+Type = Duration Effect
+Player Size = CLAMP (410% @ lvl_1 ... 450% @ lvl_15)
+Particle (Instant) = perk_giant_particle
+Scale Particle With Creature Size = false
+Duration = CLAMP (7 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+-
+[EFFECT_CRUSH_ONE]
+Type = Instant Effect
+Damage = RANGE (25%-55%-70% of own HP)

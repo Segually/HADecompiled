@@ -1,0 +1,6 @@
+Description = Unlocks items: Pool Table, Karaoke Game
+IAP_KEY = recipe_pooltable
+Type = permanent
+Gem_price = medium
+Bg_color = light_orange
+Model_path = shop_pooltable

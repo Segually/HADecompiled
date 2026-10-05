@@ -1,0 +1,12 @@
+*auto_version=3*
+*is_blank=true*
+*forced_biome=3*
+
+[2,0] = Torch (rot 0)
+
+[6,0] = Tent (rot 1)
+	shack_id = *long* 9070
+	paint = *string* Black & Gold
+	stamp = *string* Swords Stamp
+
+[9,0] = Dug-up Red Mushroom (rot 0)

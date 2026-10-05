@@ -1,0 +1,38 @@
+[grasslands]
+
+[snow]
+The Frozen Creed
+The Seige of Shindo Castle
+The Unyielding Wing
+
+[desert]
+The Sandskull Creed
+Prophecy of the Sands
+Shadows Beneath
+
+[evergreen]
+Roots of Wrath
+The Beast Beneath the Bark
+Flight of the Aether Dragon
+
+[ocean]
+Salt of the Sea
+From the Deep, I Rise
+Purists in the Rising Tide
+
+[swamp]
+The Path of the Leech
+The Sisters' Secrets
+A Cold Snap
+
+[woodlands]
+The Fox's Hunt
+The Autumn King's Pledge
+A Thorn In Their Side
+
+[sakura]
+The Silent Strike
+The Poisonous Path
+Vanished Without a Trace
+
+

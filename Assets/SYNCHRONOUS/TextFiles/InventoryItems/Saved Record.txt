@@ -1,0 +1,14 @@
+Description_TAI = เพลง ง่าย ๆ
+Name_TAI = บันทึก ที่ บันทึก ไว้
+Description_POR = Uma canção simples
+Description_SPN = Una canción sencilla
+Description_RUS = Простая песня
+Description_IND = Sebuah lagu sederhana
+Name_POR = Registro Salvo
+Name_SPN = Registro Guardado
+Name_RUS = Сохранённая запись
+Name_IND = Rekaman Tersimpan
+Description = A simple song
+
+Inventory_sprite_path = item record
+Market Cost = 30

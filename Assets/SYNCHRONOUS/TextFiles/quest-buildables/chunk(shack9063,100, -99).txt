@@ -1,0 +1,14 @@
+*auto_version=1*
+
+[0,2] = Underground Room (rot 1)
+	shack_id = *long* 9009
+
+[1,2] = Sign (rot 0)
+	sign_text = *string* Filbert Minigame Variants
+
+[3,2] = Underground Room (rot 1)
+	shack_id = *long* 9011
+
+[4,2] = Sign (rot 0)
+	sign_text = *string* Critter Crush Variants
+

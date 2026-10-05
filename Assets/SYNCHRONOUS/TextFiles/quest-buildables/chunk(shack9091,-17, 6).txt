@@ -1,0 +1,24 @@
+*auto_version=17*
+
+[5,0] = Painting (rot 0)
+	dev_painting_id = *short* 6
+	paint = *string* Basic Black
+
+[5,2] = Painting (rot 0)
+	dev_painting_id = *short* 4
+	paint = *string* Basic Black
+
+[8,4] = Painting Easel (rot 0)
+
+[6,3] = DEBUG-npc (rot 3)
+	npc_file = *string* Pantara
+	creature_A = *string* panther
+	creature_B = *string* chameleon
+	npc_icon = *string* Merchant
+	voice = *string* panther
+	merchant_type = *string* Paintings
+
+[6,5] = Painting (rot 0)
+	dev_painting_id = *short* 3
+	paint = *string* Basic Black
+

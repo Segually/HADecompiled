@@ -1,0 +1,43 @@
+Description_TAI = ไฟ อบอุ่น กะพริบ ปะทุ
+Name_TAI = เตาผิง
+Description_POR = Fogueira aconchegante crepitante
+Description_SPN = Fuego reconfortante crepitante
+Description_RUS = Потрескивающий уютный огонь
+Description_IND = Api nyaman berderak
+Name_POR = Lareira
+Name_SPN = Chimenea
+Name_RUS = Камин
+Name_IND = Perapian
+Description = Crackling cozy fire
+
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Fireplace
+World_geometry = x_plus_1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-2, 1-2, 2-1, 3-2, 
+PaintLayout0_Pastels = 0-3, 1-3, 2-1, 3-2, 
+PaintLayout0_Trimmed = 0-3, 1-3, 2-1, 3-3, 
+PaintLayout0_Candycane = 0-2, 1-2, 2-1, 3-3, 
+PaintLayout0_TriColor = 0-2, 1-2, 2-1, 3-3, 
+Default Coloring = Debug - Stone & Wood
+PaintLayout0_Stone & Wood = 0-4, 1-2, 2-1, 3-1, 
+model3d_camDist = 3.9
+show_model3d = true
+model3d_fov = 42.5
+model3d_camHeight = 0.6
+model3d_xRot = -90
+model3d_yRot = 20
+model3d_recenterX = 24
+model3d_objRot = 22
+model3d_recenterY = -4
+PaintLayout0_Nomad = 0-2, 1-2, 2-1, 3-3, 
+PaintLayout0_Goldy = 0-2, 1-2, 2-1, 3-3, 

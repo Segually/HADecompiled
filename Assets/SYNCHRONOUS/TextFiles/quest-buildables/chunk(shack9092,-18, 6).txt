@@ -1,0 +1,18 @@
+*auto_version=28*
+
+[6,1] = Oven (rot 3)
+
+[6,2] = Oven (rot 3)
+
+[8,3] = DEBUG-npc (rot 0)
+	creature_A = *string* pumpkin
+	creature_B = *string* shiba inu
+	npc_icon = *string* Merchant
+	merchant_type = *string* Food
+	npc_file = *string* Jacques
+
+[6,0] = Oven (rot 3)
+
+[7,1] = Circular Rug (rot 0)
+	stamp = *string* Food Stamp
+

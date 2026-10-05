@@ -1,0 +1,12 @@
+[Sell Percent = 0.26]
+
+Mining Tools(1-400)
+Mining Tools(1-400)
+Ores(1-300)
+
+Ores(1-300)
+Ores(1-300)
+Ores(1-300)
+
+Refined Materials(1-350)
+Mining Accessories(1-2000)

@@ -1,0 +1,24 @@
+Description_TAI = เครื่องดื่ม ที่ ช่วย ให้ ผ่อนคลาย ซึ่ง สามารถ ขจัด ผลกระทบ พิเศษ ได้ ทั้งหมด
+Name_TAI = มัทฉะ
+Description_POR = Uma bebida calmante que remove todos os efeitos especiais.
+Description_SPN = Una bebida relajante que elimina todos los efectos especiales.
+Description_RUS = Успокаивающий напиток, который удаляет все специальные эффекты.
+Description_IND = Minuman penenang yang menghilangkan semua efek spesial.
+Name_POR = Matcha
+Name_SPN = Matcha
+Name_RUS = Матча
+Name_IND = Matcha
+Description = A calming drink that removes all special effects
+
+Inventory_sprite_path = item matcha
+Crafting_ingredient_A = Tea Leaves
+Crafting_ingredient_A_count = 2
+Type = Consumable
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+Vendor1 = Food
+NumSell = 1 to 3

@@ -1,0 +1,9 @@
+[Sell Percent = 0.06]
+
+Random(1-1000)
+Random(1-1000)
+Random(1-1000)
+
+Random(1-1000)
+Random(1-1000)
+Random(1-1000)

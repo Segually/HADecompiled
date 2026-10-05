@@ -1,0 +1,40 @@
+﻿Name_POR=Gatinho de Polvo
+Name_RUS=Осьминог-Китти
+Name_IND=Kucing Gurita
+Name_SPN=Gatito pulpo
+Name_TAI=ปลาหมึกยักษ์คิตตี้
+
+----- DIALOGUE -----
+[000]
+otherspeak=Meeeooow
+otherspeak_POR=Miaaaau
+otherspeak_RUS=Myyaauu
+otherspeak_IND=Meeeong
+otherspeak_SPN=Miaaaau
+otherspeak_TAI=เหมียว
+goto=001
+
+[001]
+otherspeak=Meeoow Meeoow?
+otherspeak_POR=Miaau Miaau?
+otherspeak_RUS=Myyauu Myyauu?
+otherspeak_IND=Meeong Meeong?
+otherspeak_SPN=¿Miaau Miaau?
+otherspeak_TAI=เหมียว เหมียว?
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

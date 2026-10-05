@@ -1,0 +1,7 @@
+Name_TAI = เปลือก หอย ทองคำ
+Name_POR = Concha de Ouro
+Name_SPN = Concha de Oro
+Name_RUS = Золотая оболочка
+Name_IND = Kerang Emas
+
+Inventory_sprite_path = item seashell gold

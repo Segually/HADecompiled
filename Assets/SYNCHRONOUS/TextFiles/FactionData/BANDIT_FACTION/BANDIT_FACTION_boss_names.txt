@@ -1,0 +1,175 @@
+[grasslands]
+Vrax the Terrible
+Sable Swordbane
+Kael the Unforgiving
+Graven of the Hollow
+Karn the Wretched
+Jax Ironshroud
+Drek the Bonebreaker
+Myra the Vile
+Balor of Ashenfell
+Fenra the Cruel
+Drask the Merciless
+Malric the Betrayer
+Tahl the Silent
+Virak the Ravager
+Zann Ironclaw
+Kezzar the Forsaken
+Zarnak the Unchained
+Othrik Bonegrinder
+Thorne Skullbrand
+Yvra the Grim
+
+[snow]
+Varyn Icefang
+Astra the Snow Reaver
+Dren Coldfist
+Thalor Frostscar
+Cryn Wintershade
+Rime the Frozen Dagger
+Valkar Frostbrand
+Fjorn the Iceback Marauder
+Glacius Icehide
+Morvok the Winter Claw
+Sivra the Frostfang Outlaw
+Brynn Icehook
+Vex the Shivering Shadow
+Fenrik the Frostblade Savage
+Arin Snowfang
+Kyla Icebreaker
+Frostbite Fenrir
+Korrek the Frozen Scourge
+Nyssa Frostcloak
+Varrik the Snow Reaper
+
+[desert]
+Khalid the Sandscourge
+Zara the Sunshade
+Malik Dunecrusher
+Nadir the Dustborn
+Sahira of the Shifting Sands
+Yara Sandstrider
+Faizan the Mirage Maker
+Layla the Desert Wraith
+Tariq Sunshatter
+Zayn the Heatseeker
+Kamil Bladebreeze
+Hadiya Dustcloaked
+Nasim Sandwhisper
+Samir the Sunflayer
+Basira the Dune Reaver
+Zafir the Scorched
+Rami Windcarver
+Yasmin Dustspite
+Nadim the Sandwalker
+Aaliyah Sunbane
+
+[evergreen]
+Garrick Thornblade
+Lysa Greybark
+Bramm the Pinebreaker
+Felkan Mossfang
+Tahlia Rootlash
+Krag the Barksplitter
+Sylric Shadowbranch
+Grimholt Fernscar
+Breyra Ironroot
+Kaela Sapfang
+Sylra Breakbranch
+Havrek Thornfang
+Willen the Bramblebane
+Zayra Barklash
+Drenn Firclaw
+Lorrick Ravenspine
+Torrin Fernshard
+Relkar Blacktwig
+Kessra Thorneye
+Grendak Mossraid
+
+[ocean]
+Daggerjaw Marlow
+Tidebreaker Sevrin
+Rynna Stormshard
+Kelvok the Brineblade
+Edrik of the Black Current
+Sharktooth Kren
+Sylla the Abysswalker
+Valkar Stormfang
+Sirena Sirenblood
+Grath the Saltreaver
+Kael Wavecleaver
+Vexra Daggerfin
+Morrik the Undertow
+Darkwater Vexis
+Tarnak the Reefblade
+Dravok the Hullbreaker
+Jyrra Saltsting
+Nyssa the Eelborne
+Vayra Daggerwake
+Korrik the Driftfang
+
+[swamp]
+Skorg the Mirefiend
+Vandra Mudvein
+Torrak Swampscourge
+Dregg the Bogfang
+Hask Sludgestalker
+Wretch Bogstrider
+Rusk Mireblade
+Gorrid Leechscar
+Thaska Rotbranch
+Barin the Fenwraith
+Ulga Swampshroud
+Mossk the Marshbane
+Fenrik Slimecloak
+Krevyn Murkshade
+Wylk the Boghowler
+Zadra Reedrot
+Mirk the Fenfang
+Thorne Croakfang
+Vryss Slimeshadow
+Marrick Mirethorn
+
+[woodlands]
+Ashthorn the Crimson
+Ravenleaf the Silent
+Bramblejack Rootscar
+Scarlet Shroud
+Morrowshade the Reaper
+Jackstraw Bloodharvest
+Rotroot the Weaver
+Amberthorn the Ruthless
+Pinewick Hayblade
+Goldbranch the Thief King
+Frostbark the Hollow Soul
+Hawkshade the Red Wind
+Felthorn of the Broken Harvest
+Scarlet Hollowshade
+Autumnbane
+Ravenspire the Crimson Cloak
+Haythorn Jack
+Hollowbranch the Dreaded
+Cinderleaf the Shadowbrand
+Harvestblight the Ravager
+
+[sakura]
+Akane the Bloomslayer
+Kazuki Thornblade
+Kaede Poisonfang
+Riku Cherryshade
+Aiko Deathblossom
+Haruto the Night Petal
+Ranmaru the Scarlet Bough
+Tsubaki the Blossom Thief
+Kenji Petalstorm
+Sakura the Silent Thorn
+Ren Nightshade
+Mitsuko Poisonleaf
+Daichi Bladeflower
+Asuka Bloomreaver
+Kaito Shadowbloom
+Ryuu the Withered Blossom
+Airi Thornshadow
+Takumi of the Deadly Bloom
+Hikaru Venomblossom
+Setsuna the Cherryblade

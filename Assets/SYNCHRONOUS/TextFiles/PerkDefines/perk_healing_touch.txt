@@ -1,0 +1,12 @@
+Full Name = Healing Touch
+Description = Quickly heal a friend
+Detailed Description = +GetInt[EFFECT_HEAL, "Heal", remove ""] health points DiffInt[EFFECT_HEAL, "Heal", add ""] on target.
+Energy Cost = 45%
+Unlock Prerequisite = perk_rejuvenate(lvl.1)
+On cast = [EFFECT_HEAL] on projectile(model=perk_healing_touch_projectile,target=allies)
+-
+[EFFECT_HEAL]
+Type = Instant Effect
+Heal = RANGE (12%-25%-30% of own HP)
+Particle (Instant) = perk_healing_touch_collide
+Scale Particle With Creature Size = true

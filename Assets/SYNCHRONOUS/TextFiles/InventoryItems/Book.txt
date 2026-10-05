@@ -1,0 +1,28 @@
+Name_POR = Livro
+Name_TAI = หนังสือ
+Name_SPN = Libro
+Name_RUS = Книга
+Name_IND = Buku
+
+Inventory_sprite_path = item book
+Market Cost = 5
+
+World_obj_path = 3D Item Graphics/Book
+
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_SolidColors = 0-2, 1-4, 2-5, 3-6, 
+PaintLayout0_Nomad = 0-1, 1-4, 2-2, 3-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 3-5, 
+model3d_camDist = 5.1
+show_model3d = true
+model3d_fov = 45
+model3d_yRot = 50
+PaintLayout0_Stone & Wood = 0-4, 1-6, 2-1, 3-3, 
+Default Coloring = Debug - Wood & Metal & Gold
+model3d_objRot = 4
+model3d_xRot = -5
+model3d_recenterX = -6
+model3d_recenterY = -14

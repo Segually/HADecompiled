@@ -1,0 +1,23 @@
+[1][max_stack=5] Snowball
+[3] Bones
+[3][max_stack=5] Stick
+[4][max_stack=5] Lavender
+[4][max_stack=5] Nut
+[4][max_stack=5] Wheat
+[5][max_stack=5] Berry
+[5][max_stack=5] Brown Mushroom
+[5] Honeycomb
+[9][max_stack=5] Cotton
+[10] Cactus Chunk
+[15][max_stack=5] MoonBerry
+[15][max_stack=5] Red Mushroom
+[15][max_stack=5] SalmonBerry
+[18][max_stack=5] Tea Leaves
+[20] Coconut
+[20] Hot Pepper
+[25] Pumpkin
+[40][max_stack=5] Purple Mushroom
+[75][max_stack=5] Silk
+[100] Fossil
+[100][max_stack=5] GoldBerry
+[1000] Ancient Bones

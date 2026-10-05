@@ -1,0 +1,17 @@
+*auto_version=8*
+*forced_biome=9*
+
+[9,9] = Dirt Path (rot 0)
+
+[8,9] = Dirt Path (rot 0)
+
+[7,9] = Dirt Path (rot 0)
+
+[6,9] = Dirt Path (rot 0)
+
+[5,9] = Dirt Path (rot 0)
+
+[4,9] = Sign (rot 3)
+	sign_text = *string* "Bloom Town" coming soon!
+	paint = *string* Industrial Hazard
+

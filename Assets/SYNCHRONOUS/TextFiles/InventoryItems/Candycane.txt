@@ -1,0 +1,31 @@
+Description_TAI = ใช้ สำหรับ ทาสี เฟอร์นิเจอร์
+Name_TAI = ไม้ เท้า ลูกกวาด
+Description_POR = Usado para pintar móveis.
+Description_SPN = Se utiliza para pintar muebles.
+Description_RUS = Используется для покраски мебели.
+Description_IND = Digunakan untuk mengecat furnitur.
+Name_POR = Bengala Doce
+Name_SPN = Bastón de caramelo
+Name_RUS = Карамельная трость
+Name_IND = Tongkat Permen
+Description = Used to paint furniture.
+
+Inventory_sprite_path = item paint candycane
+Crafting_ingredient_A = Basic Red
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Basic White
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

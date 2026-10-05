@@ -1,0 +1,45 @@
+Description_TAI = ใบมีด สีน้ำเงิน โค้ง ที่ มีน้ำหนักเบา และ แม่นยำ
+Name_TAI = ดาบ โค้ง ไทเทเนียม
+Description_POR = Uma lâmina azul curvada que é leve e precisa.
+Description_SPN = Una hoja curva azul que es ligera y precisa.
+Description_RUS = Изогнутый синий клинок, который легкий и точный.
+Description_IND = Sebuah bilah biru melengkung yang ringan dan presisi.
+Name_POR = Espada Curva de Titânio
+Name_SPN = Espada Curva de Titanio
+Name_RUS = Титановый изогнутый меч
+Name_IND = Pedang Lengkung Titanium
+Description = A curved blue blade that is lightweight and precise
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/CurveSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 8
+
+Default Coloring = Weapon - Titanium
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_SolidColors = 0-2, 1-3, 2-6, 3-5, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 3-4, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-3, 3-1, 
+
+model3d_camDist = 1.7
+show_model3d = true
+model3d_fov = 42.5
+model3d_xRot = -60
+model3d_recenterX = 18
+model3d_recenterY = 22
+
+
+weapon_display_localPosition = -0.065,-0.023,-0.571
+weapon_display_localRotation = -0.013,51.7,89.7
+weapon_display_localScale = 1,1,1
+ParticleTransform0 = 0.004,0.175,0.379:-0.4226183,0,0,0.9063079:1,1,1:CONE:0.75:0.15

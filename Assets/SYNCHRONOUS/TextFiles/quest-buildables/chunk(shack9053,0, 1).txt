@@ -1,0 +1,24 @@
+*auto_version=2*
+
+[0,3] = Armor Display (rot 1)
+	password = *string* DEV_LOCKED
+	hat = *string* Top Hat
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Lavender Bloom
+
+[0,5] = Armor Display (rot 1)
+	password = *string* DEV_LOCKED
+	hat = *string* Sombrero
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Lavender Bloom
+
+[0,4] = Chest (rot 2)
+	password = *string* DEV_LOCKED
+	paint = *string* Lavender Bloom
+
+[0,6] = Music Box (rot 2)
+	password = *string* DEV_LOCKED
+	paint = *string* Lavender Plum
+

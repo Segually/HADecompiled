@@ -1,0 +1,18 @@
+Name_TAI = หีบ ถ้ำ
+Name_POR = Baú de Caverna
+Name_SPN = Cofre de Cueva
+Name_RUS = Пещерный сундук
+Name_IND = Dada Gua
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Cave Chest
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+paintable_by_player = true
+CopyPaintLayout = Chest
+Default Coloring = Debug - Metal DK

@@ -1,0 +1,26 @@
+Description_TAI = ถ้า ใคร แตะ สิ่ง นี้ มัน จะ เจ็บ พวก เขา !
+Name_TAI = หนาม พิษ
+Description_POR = Se alguém tocar nisso, vai se machucar!
+Description_SPN = ¡Si alguien toca esto, le hará daño!
+Description_RUS = Если кто-то дотронется до этого, ему будет больно!
+Description_IND = Jika seseorang menyentuh ini, mereka akan terluka!
+Name_POR = Espinhos Venenosos
+Name_SPN = Pinchos Venenosos
+Name_RUS = Ядовитые шипы
+Name_IND = Paku Beracun
+Description = If anyone touches this, it hurts them!
+
+Inventory_sprite_path = item poison spikes
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Purple Mushroom
+Crafting_ingredient_B_count = 1
+Type = Place_in_world
+World_obj_path = Buildables/Poison Spikes
+World_geometry = 1_by_1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+Vendor0 = Ranger Accessories
+Vendor1 = Traps
+NumSell = 2 to 4

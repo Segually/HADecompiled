@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ เฟอร์นิเจอร์ ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตรา เฟอร์นิเจอร์
+Description_POR = Adicione um símbolo de mobília à sua mobília!
+Description_SPN = ¡Añade un símbolo de mobiliario a tu mueble!
+Description_RUS = Добавьте символ мебели к вашей мебели!
+Description_IND = Tambahkan simbol Furnitur ke furnitur Anda!
+Name_POR = Selo de Mobiliário
+Name_SPN = Sello de Muebles
+Name_RUS = Штамп для мебели
+Name_IND = Cap Stempel Furnitur
+Description = Add a Furniture symbol to your furniture!
+
+Inventory_sprite_path = item stamp furniture
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

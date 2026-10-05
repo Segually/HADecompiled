@@ -1,0 +1,32 @@
+Description_TAI = หมวกเหล็ก เปล่งแสง ด้วยบารมี ที่น่ากลัว
+Name_TAI = หมวก กัน แกร่ง แม็กม่า
+Description_POR = Elmo ardente que brilha com uma aura ameaçadora.
+Description_SPN = Yelmo ardiente que brilla con un aura amenazante.
+Description_RUS = Пламенный шлем, излучающий зловещую ауру.
+Description_IND = Helm berapi yang bersinar dengan aura mengancam.
+Name_POR = Elmo da Ameaça de Magma
+Name_SPN = Yelmo de la Amenaza de Magma
+Name_RUS = Шлем Магматической Угрозы
+Name_IND = Helm Ancaman Magma
+Description = Fiery helm that glows with a threatening aura
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/MenaceHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 30
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ice Menace Helm
+Default Coloring = Weapon - Magma
+
+Defend Amount = 11
+
+show_model3d = true
+Copy3dModelPosition = Ice Menace Helm
+
+Vendor0 = Armor
+NumSell = 1 to 2

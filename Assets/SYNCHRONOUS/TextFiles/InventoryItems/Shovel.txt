@@ -1,0 +1,22 @@
+Description_TAI = ช่วย ให้ คุณ สามารถ เคลื่อนย้าย พุ่มไม้ เห็ด และ รังผึ้ง ได้
+Name_TAI = พลั่ว
+Description_POR = Permite mover arbustos, cogumelos e colmeias.
+Description_SPN = Te permite mover arbustos, setas y colmenas.
+Description_RUS = Позволяет перемещать кусты, грибы и ульи.
+Description_IND = Memungkinkan Anda untuk memindahkan semak, jamur, dan sarang lebah.
+Name_POR = Pá
+Name_SPN = Pala
+Name_RUS = Лопата
+Name_IND = Sekop
+Description = Allows you to move bushes, mushrooms, and bee hives.
+
+Inventory_sprite_path = item shovel
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Market Cost = CALCULATE
+
+Vendor0 = Farm Tools
+Vendor1 = Mining Tools

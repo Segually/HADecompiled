@@ -1,0 +1,41 @@
+Description_TAI = แผ่นเหล็กแข็งแกร่งที่ถูกตีขึ้นรูปด้วยความเย็น แข็งและไม่ยอมอ่อนข้อต่อสิ่งใด
+Name_TAI = เกราะ น้ำแข็ง
+Description_POR = Placas sólidas forjadas em geada, frias e inflexíveis.
+Description_SPN = Placas sólidas forjadas en escarcha, frías e inflexibles.
+Description_RUS = Твердые морозно-кузнечные пластины, холодные и непоколебимые.
+Description_IND = Pelat yang ditempa dari es yang kokoh, dingin dan tak tergoyahkan.
+Name_POR = Armadura de Gelo
+Name_SPN = Armadura de Hielo
+Name_RUS = Ледяная броня
+Name_IND = Zirah Es
+Description = Solid frost-forged plates, cold and unyielding
+
+Inventory_sprite_path = item ice armor
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/IceArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 42
+Craft_required_lvl = 60
+Market Cost = CALCULATE
+
+Vendor0 = Armor
+PaintLayout0_SolidColors = 0-6, 1-5, 2-2, 3-4, 
+Default Coloring = Weapon - Ice
+model3d_camDist = 2.4
+show_model3d = true
+model3d_fov = 27.5
+model3d_objRot = 27
+model3d_xRot = -45
+model3d_recenterX = 1
+model3d_recenterY = 2
+model3d_yRot = 10
+
+Defend Amount = 14
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 3-3, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-1, 3-3, 
+PaintLayout0_Pastels = 0-3, 1-2, 2-1, 3-3, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 3-3, 
+PaintLayout0_Nomad = 0-2, 1-3, 2-1, 3-4, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 3-2, 

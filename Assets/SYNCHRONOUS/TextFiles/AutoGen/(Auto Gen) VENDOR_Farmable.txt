@@ -1,0 +1,22 @@
+[5][paintable][max_stack=5] Flowers
+[25] Cactus
+[40] Dug-up Brown Mushroom
+[40] Dug-up Purple Mushroom
+[40] Dug-up Red Mushroom
+[80] Berry Bush
+[80] Dug-up Pumpkin
+[80] Dug-up Wheat
+[80] Giant Brown Mushroom
+[80] Lavender Bush
+[90] Giant Red Mushroom
+[110] Giant Purple Mushroom
+[120] MoonBerry Bush
+[150][paintable] Bonsai Tree
+[170] Cotton Plant
+[180] Salmonberry Bush
+[275] Beehive
+[300] Dug-up Giant Pumpkin
+[350] Hot Pepper Plant
+[350] Tea Tree
+[400] Goldberry Bush
+[400] Spiderhive

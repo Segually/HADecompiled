@@ -1,0 +1,22 @@
+Description_TAI = ของ ว่าง กรอบ ที่ รักษา สุขภาพ บางส่วน
+Name_TAI = ก้อน ขนมปัง
+Description_POR = Um lanche crocante que recupera um pouco de vida.
+Description_SPN = Un snack crujiente que recupera algo de salud.
+Description_RUS = Хрустящий перекус, который восстанавливает часть здоровья.
+Description_IND = Camilan renyah yang memulihkan sebagian kesehatan.
+Name_POR = Pão de Forma
+Name_SPN = Hogaza de Pan
+Name_RUS = Буханка хлеба
+Name_IND = Roti Bulat
+Description = A crunchy snack that heals some health
+
+Inventory_sprite_path = item bread loaf
+Crafting_ingredient_A = Wheat
+Crafting_ingredient_A_count = 2
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 3 to 6

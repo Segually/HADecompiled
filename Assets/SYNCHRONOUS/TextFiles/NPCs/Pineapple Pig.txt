@@ -1,0 +1,40 @@
+﻿Name_POR=Porco de Abacaxi
+Name_RUS=Ананас свинья
+Name_IND=Babi Nanas
+Name_SPN=Cerdo de piña
+Name_TAI=หมูสับปะรด
+
+----- DIALOGUE -----
+[000]
+otherspeak=The world is dangerous out there...
+otherspeak_POR=O mundo é perigoso lá fora ...
+otherspeak_RUS=Мир там опасен ...
+otherspeak_IND=Dunia berbahaya di luar sana ...
+otherspeak_SPN=El mundo es peligroso ahí fuera ...
+otherspeak_TAI=โลกนี้อันตราย ...
+goto=001
+
+[001]
+otherspeak=Unless you are spikey like me!
+otherspeak_POR=A menos que você seja espetado como eu!
+otherspeak_RUS=Если только ты не такой острый, как я!
+otherspeak_IND=Kecuali jika Anda spikey seperti saya!
+otherspeak_SPN=A menos que seas puntiagudo como yo!
+otherspeak_TAI=เว้นแต่คุณจะเข็มแข็งเหมือนฉัน!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

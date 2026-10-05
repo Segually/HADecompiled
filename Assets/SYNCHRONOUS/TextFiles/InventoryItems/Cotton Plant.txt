@@ -1,0 +1,25 @@
+Description_TAI = พุ่มไม้ ที่ ให้ ผลิต ฝ้าย
+Name_TAI = ต้น ฝ้าย
+Description_POR = Um arbusto que produz algodão.
+Description_SPN = Un arbusto que produce algodón.
+Description_RUS = Куст, который производит хлопок.
+Description_IND = Sebuah semak yang menghasilkan kapas.
+Name_POR = Planta de Algodão
+Name_SPN = Planta de algodón
+Name_RUS = Хлопковое растение
+Name_IND = Tanaman Kapas
+Description = A bush that produces cotton.
+
+Inventory_sprite_path = item cotton plant
+Type = Place_in_world
+World_obj_path = Buildables/Cotton Plant
+World_geometry = 1_by_1
+Market Cost = 170
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 2 to 3
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

@@ -1,0 +1,97 @@
+[1][max_stack=10000] Coins
+[1][max_stack=5] Snowball
+[2] Builder Tools
+[2] Old Torch
+[2] Rotting Stump
+[3] Bones
+[3][max_stack=5] Stick
+[4][max_stack=5] Lavender
+[4][max_stack=5] Nut
+[4][max_stack=5] Wheat
+[5][max_stack=5] Berry
+[5] Book
+[5][max_stack=5] Brown Mushroom
+[5][max_stack=5] Feathers
+[5][max_stack=5] Flowers
+[5] Honeycomb
+[8] Bug Meat
+[9][max_stack=5] Cotton
+[9] Fur
+[9][max_stack=5] Scales
+[9][max_stack=5] Sharp Tooth
+[10] Cactus Chunk
+[10] Stone Ore
+[15][max_stack=5] MoonBerry
+[15] Old Land Claim
+[15][max_stack=5] Red Mushroom
+[15][max_stack=5] SalmonBerry
+[15] Uncooked Meat
+[18][max_stack=5] Tea Leaves
+[20] Coconut
+[20] Hot Pepper
+[20][max_stack=10] Lava
+[20] Metal Ore
+[25] Blank Record
+[25] Cactus
+[25] Frozen Tree
+[25] Mossy Tree
+[25] Pumpkin
+[30] Birch Tree (Variant 1)
+[30] Birch Tree (Variant 2)
+[30] Evergreen Tree
+[30] Large Mossy Tree
+[30] Sakura Tree
+[30] Saved Record
+[30] Venom
+[35] Titanium Ore
+[40] Dug-up Brown Mushroom
+[40] Dug-up Purple Mushroom
+[40] Dug-up Red Mushroom
+[40] Gold Ore
+[40][max_stack=5] Purple Mushroom
+[50] Uranium Ore
+[60] Magmite Ore
+[60] Palm Tree
+[60] Willow Tree
+[70] Silver
+[75][max_stack=5] Silk
+[80] Berry Bush
+[80] Dug-up Pumpkin
+[80] Dug-up Wheat
+[80] Giant Brown Mushroom
+[80] Lavender Bush
+[85] Amber
+[85] Amethyst
+[85] Emerald
+[85] Ruby
+[85] Sapphire
+[90] Giant Red Mushroom
+[100] Fossil
+[100][max_stack=5] GoldBerry
+[110] Giant Purple Mushroom
+[120] MoonBerry Bush
+[150] Bonsai Tree
+[150] Egg
+[170] Cotton Plant
+[180] Salmonberry Bush
+[200] Blue Torch
+[200] Red Torch
+[275] Beehive
+[300] Dug-up Giant Pumpkin
+[350] Hot Pepper Plant
+[350] Tea Tree
+[400] Goldberry Bush
+[400] Holiday Lights
+[400] Ice Shard
+[400] Spiderhive
+[800] Painting
+[850] Dark Shard
+[1000] Ancient Bones
+[1000][max_stack=5] Spirit Branch
+[1000] Super Top Hat
+[1000] Super White Top Hat
+[3000] Storm Wizard Hat
+[5000] Magic Bean
+[5000] Spooky Well
+[10000] Coin Hoard
+[30000] Huge Coin Hoard

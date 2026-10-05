@@ -1,0 +1,4 @@
+*auto_version=1*
+
+[0,9] = Tall Stone Wall (rot 0)
+

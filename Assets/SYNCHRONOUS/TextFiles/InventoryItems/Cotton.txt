@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ สำหรับ การ สร้าง
+Name_TAI = ฝ้าย
+Description_POR = Material de criação
+Description_SPN = Material de fabricación
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Algodão
+Name_SPN = Algodón
+Name_RUS = Хлопок
+Name_IND = Kapas
+Description = Crafting material
+
+Inventory_sprite_path = item cotton
+Crafting_makes = 5
+Market Cost = 9
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Clothing Materials
+NumSell = 8 to 15

@@ -1,0 +1,11 @@
+Name_TAI = แร่ ไทเทเนียม
+Name_POR = Minério de Titânio
+Name_SPN = Mineral de titanio
+Name_RUS = Титановая руда
+Name_IND = Bijih Titanium
+
+Inventory_sprite_path = item titanium ore
+Market Cost = 35
+
+Vendor0 = Ores
+NumSell = 5 to 10

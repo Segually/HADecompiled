@@ -1,0 +1,46 @@
+Description_TAI = รั้ว ไม้ ที่ ใช้ กั้น สิ่ง ของ ไม่ ให้ ออก ไป
+Name_TAI = ราง ไม้
+Description_POR = Uma cerca de madeira que mantém as coisas dentro.
+Description_SPN = Una cerca de madera que mantiene las cosas dentro.
+Description_RUS = Деревянный забор, который удерживает вещи внутри.
+Description_IND = Pagar kayu yang menjaga segala sesuatu tetap di dalam.
+Name_POR = Trilhos de Madeira
+Name_SPN = Rieles de Madera
+Name_RUS = Деревянные рельсы
+Name_IND = Rel Kayu
+Description = A wood fence that keeps things in.
+
+Inventory_sprite_path = item wood rails
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 4
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Max_stack = 10
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 10 to 20
+
+is_wall_obj = true
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 
+PaintLayout0_SolidColors = 0-1, 1-3, 2-6, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 
+Default Coloring = Debug - Wood DK
+PaintLayout0_Default = 0-0, 1-0, 2-0, 
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+model3d_camDist = 3
+show_model3d = true
+model3d_fov = 42.5
+model3d_recenterX = 61
+model3d_yRot = 15
+model3d_camHeight = 0.2
+model3d_xRot = -10
+model3d_recenterY = 7
+PaintLayout0_Goldy = 0-1, 1-3, 2-2, 

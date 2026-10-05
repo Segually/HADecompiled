@@ -1,0 +1,11 @@
+*auto_version=5*
+
+[9,0] = Stone Bricks (rot 0)
+
+[4,1] = Basket (rot 0)
+	basket_id = *long* 9075
+
+[6,2] = Mob - Storm Wizard (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Dark and Forgotten Magic
+	associated_quest_step = *short* 3

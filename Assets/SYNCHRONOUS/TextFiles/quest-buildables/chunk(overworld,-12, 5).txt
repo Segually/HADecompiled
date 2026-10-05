@@ -1,0 +1,47 @@
+*auto_version=16*
+*forced_biome=3*
+
+[5,2] = Magic Bean (rot 0)
+	shack_id = *long* 9061
+	password = *string* DEV_LOCKED
+
+[3,0] = Torch (rot 0)
+
+[5,1] = Cobblestone Path (rot 0)
+
+[6,1] = Cobblestone Path (rot 0)
+
+[6,2] = Cobblestone Path (rot 0)
+
+[6,3] = Cobblestone Path (rot 0)
+
+[5,3] = Cobblestone Path (rot 0)
+
+[4,3] = Cobblestone Path (rot 0)
+
+[4,2] = Cobblestone Path (rot 0)
+
+[4,1] = Cobblestone Path (rot 0)
+
+[8,0] = Dirt Path (rot 0)
+
+[8,1] = Dirt Path (rot 0)
+
+[8,2] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[8,4] = Dirt Path (rot 0)
+
+[8,5] = Dirt Path (rot 0)
+
+[8,6] = Dirt Path (rot 0)
+
+[8,7] = Dirt Path (rot 0)
+
+[9,7] = Dirt Path (rot 0)
+
+[9,8] = Dirt Path (rot 0)
+
+[9,9] = Dirt Path (rot 0)
+

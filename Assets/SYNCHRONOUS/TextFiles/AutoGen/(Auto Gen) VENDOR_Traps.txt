@@ -1,0 +1,7 @@
+[20][max_stack=10] Lava
+[155][paintable][max_stack=10] Bouncy Floor
+[316] Poison Spikes
+[1430][paintable] Pop-up Saw
+[2443] Giant Puncher
+[454099] Boss Spawner - Shindeon
+[669199] Boss Spawner - Yandeon

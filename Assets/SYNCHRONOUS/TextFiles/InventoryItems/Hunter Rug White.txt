@@ -1,0 +1,24 @@
+Description_TAI = ฉัน ไม่ อยาก เชื่อ ว่า มัน ไม่ใช่ ขนสัตว์ จริง!
+Name_TAI = พรม นักล่า
+Description_POR = Não consigo acreditar que não é pelo verdadeiro!
+Description_SPN = ¡No puedo creer que no sea piel auténtica!
+Description_RUS = Я не могу поверить, что это не настоящий мех!
+Description_IND = Saya tidak percaya ini bukan bulu asli!
+Name_POR = Tapete do Caçador
+Name_SPN = Alfombra de Cazador
+Name_RUS = Охотничий ковёр
+Name_IND = Permadani Pemburu
+Overwrite_name = Hunter Rug
+Description = I can't believe it's not real fur!
+
+Inventory_sprite_path = item hunter rug white
+Crafting_ingredient_A = Fur
+Crafting_ingredient_A_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Rug Hunter White
+World_geometry = Rug_shape
+Layer = flooring
+Craft_required_lvl = 78
+Market Cost = CALCULATE
+
+Vendor0 = Furniture

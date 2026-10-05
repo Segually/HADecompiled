@@ -1,0 +1,60 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[9,5] = Stone Vein (rot 1)
+
+[2,1] = Stone Lantern (rot 1)
+	paint = *string* Basic Black
+
+[5,2] = Rotting Stump (rot 2)
+
+[1,9] = Giant Purple Mushroom (rot 0)
+
+[0,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,0] = Cobblestone Path (rot 0)
+
+[0,0] = Cobblestone Path (rot 0)
+
+[0,1] = Cobblestone Path (rot 0)
+
+[0,2] = Cobblestone Path (rot 0)
+
+[0,3] = Cobblestone Path (rot 0)
+
+[0,4] = Cobblestone Path (rot 0)
+
+[0,5] = Cobblestone Path (rot 0)
+
+[0,6] = Cobblestone Path (rot 0)
+
+[1,6] = Cobblestone Path (rot 0)
+
+[2,6] = Cobblestone Path (rot 0)
+
+[3,6] = Cobblestone Path (rot 0)
+
+[4,6] = Cobblestone Path (rot 0)
+
+[4,7] = Cobblestone Path (rot 0)
+
+[4,8] = Cobblestone Path (rot 0)
+
+[5,8] = Cobblestone Path (rot 0)
+
+[6,8] = Cobblestone Path (rot 0)
+
+[7,8] = Cobblestone Path (rot 0)
+
+[7,9] = Cobblestone Path (rot 0)
+
+[3,3] = Willow Tree (rot 1)
+
+[2,8] = Dug-up Purple Mushroom (rot 0)
+
+[8,2] = Igloo (rot 1)
+	shack_id = *long* 9002
+	paint = *string* Sludge
+

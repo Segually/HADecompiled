@@ -1,0 +1,25 @@
+Name_POR=Gus
+Name_RUS=Гас
+Name_IND=Gus
+Name_SPN=Gus
+Name_TAI=กัส
+
+----- DIALOGUE -----
+[0]
+otherspeak=Bought what I thought was a magic bean here
+otherspeak_POR=Comprei o que pensei ser um feijão mágico aqui
+otherspeak_RUS=Купил здесь то, что думал, магический боб
+otherspeak_IND=Membeli apa yang kukira sebagai biji ajaib di sini
+otherspeak_SPN=Compré lo que pensé que era una judía mágica aquí
+otherspeak_TAI=ซื้อสิ่งที่คิดว่าเป็นถั่ววิเศษที่นี่
+goto=001
+
+[1]
+otherspeak=Turned out to be just a bean
+otherspeak_POR=Acabou por ser apenas um feijão
+otherspeak_RUS=Оказалось, это просто боб
+otherspeak_IND=Ternyata itu hanya sebatang kacang biasa
+otherspeak_SPN=Resultó ser solo una judía
+otherspeak_TAI=มันกลับเป็นเพียงแค่ถั่วเท่านั้น
+goto=-1
+

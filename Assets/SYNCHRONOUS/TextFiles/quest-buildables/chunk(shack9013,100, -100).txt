@@ -1,0 +1,67 @@
+*auto_version=23*
+
+[1,8] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,8] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[3,8] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,7] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,6] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,5] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,4] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[4,8] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,3] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[2,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[3,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[4,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[6,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[5,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[7,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[8,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[9,2] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[3,3] = Torch (rot 0)
+
+[4,5] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[8,5] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[5,1] = Pop-up Saw (rot 1)
+

@@ -1,0 +1,17 @@
+*auto_version=11*
+
+[9,3] = Anvil (rot 1)
+	paint = *string* Debug - Wood DK
+
+[5,0] = Chest (rot 0)
+	basket_id = *long* 9046
+	paint = *string* Debug - Wood DK
+
+[6,0] = Hunter Rug (rot 1)
+
+[8,0] = Mob - Elite Everthorn Bandit (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* The Bandit King
+	associated_quest_step = *short* 3
+	overwrite_mob_name = *string* Elite Bandit
+	overwrite_mob_level = *string* PLAYER_LEVEL*0.43

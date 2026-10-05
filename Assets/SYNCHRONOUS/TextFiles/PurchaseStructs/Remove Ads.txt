@@ -1,0 +1,7 @@
+Description = Play without ads for 6 months! (Subscription, Auto-Renew)
+IAP_KEY = no_ads_subscr
+Alt_IAP_KEY = no_ads_subscription
+Type = subscription
+Gem_price = cash_only
+Bg_color = orange
+Model_path = shop_ads

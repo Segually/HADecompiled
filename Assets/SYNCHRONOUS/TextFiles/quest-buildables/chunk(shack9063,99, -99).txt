@@ -1,0 +1,8 @@
+*auto_version=1*
+
+[8,0] = Underground Room (rot 0)
+	shack_id = *long* 9064
+
+[8,1] = Sign (rot 3)
+	sign_text = *string* King Wing Quest Variants
+

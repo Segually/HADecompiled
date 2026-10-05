@@ -1,0 +1,14 @@
+Full Name = Ignite
+Description = Burn your enemy
+Energy Cost = 40%
+On cast = [EFFECT_BURN] on self
+Not_unlockable = true
+-
+[EFFECT_BURN]
+Type = Duration Effect
+Damage = 9999
+Duration = 3 seconds
+Particle (Duration) = perk_ignite_duration
+Scale Particle With Creature Size = true
+Dont Double Apply = true
+Apply every = 1 seconds

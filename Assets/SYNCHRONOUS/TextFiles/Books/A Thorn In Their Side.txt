@@ -1,0 +1,77 @@
+[paint]
+Lumberjack
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+The Frostbite Bandits thought they could take our food and run back to their ice caves, but they underestimated us.
+
+[page 2 - English]
+We waited in the crimson leaves as they crossed the harvest fields, then sprang forward with the power of autumn winds.
+
+[page 3 - English]
+Their icy weapons shattered in the clash, and we pushed them back with ease, reclaiming the fields we fought to protect.
+
+[book name - English]
+A Thorn In Their Side
+
+[book name - Indonesian]
+Duri di Pihak Mereka
+
+[page 1 - Indonesian]
+Bandit Frostbite berpikir mereka bisa mengambil makanan kita dan lari kembali ke gua es mereka, tetapi mereka meremehkan kita.
+
+[page 2 - Indonesian]
+Kami menunggu di antara daun-daun merah saat mereka melintasi ladang panen, lalu melompat ke depan dengan kekuatan angin musim gugur.
+
+[page 3 - Indonesian]
+Senjata-senjata es mereka hancur dalam bentrokan, dan kami mendorong mereka mundur dengan mudah, merebut kembali ladang yang kami perjuangkan untuk lindungi.
+
+[book name - Portuguese]
+Um Espinho no Lado Deles
+
+[page 1 - Portuguese]
+Os Bandidos da Geada pensaram que poderiam roubar nossa comida e voltar correndo para suas cavernas de gelo, mas nos subestimaram.
+
+[page 2 - Portuguese]
+Esperamos nas folhas carmesim enquanto eles atravessavam os campos de colheita, então avançamos com o poder dos ventos de outono.
+
+[page 3 - Portuguese]
+Suas armas geladas se despedaçaram no confronto, e nós os empurramos de volta com facilidade, retomando os campos que lutamos para proteger.
+
+[book name - Russian]
+Шип в их боку
+
+[page 1 - Russian]
+Бандиты из Морозного Кусания думали, что смогут забрать нашу еду и вернуться в свои ледяные пещеры, но они нас недооценили.
+
+[page 2 - Russian]
+Мы ждали в багряных листьях, пока они пересекали поля урожая, затем выскочили вперед с силой осенних ветров.
+
+[page 3 - Russian]
+Их ледяное оружие разбилось в столкновении, и мы легко отбросили их назад, возвращая поля, которые сражались, чтобы защитить.
+
+[book name - Spanish]
+Una Espina En Su Costado
+
+[page 1 - Spanish]
+Los Bandidos de la Escarcha pensaron que podían llevarse nuestra comida y volver corriendo a sus cuevas de hielo, pero nos subestimaron.
+
+[page 2 - Spanish]
+Esperamos entre las hojas carmesí mientras cruzaban los campos de cosecha, luego avanzamos con la fuerza de los vientos otoñales.
+
+[page 3 - Spanish]
+Sus armas heladas se hicieron añicos en el choque, y los hicimos retroceder con facilidad, reclamando los campos que luchamos por proteger.
+
+[book name - Thai]
+หนามใน ใจของพ วกเขา
+
+[page 1 - Thai]
+โจรฟรอ สต์ไบท ์คิดว่ าพวกเข าสามาร ถขโมยอ าหารขอ งเราแล ะกลับไ ปยังถ้ ำเย็นข องพวกเ ขาได้  แต่พวก เขาก็ป ระเมิน เราต่ำ เกินไป
+
+[page 2 - Thai]
+เรารออ ยู่ในใ บไม้สี แดงเข้ มขณะที ่พวกเข าข้ามท ุ่งเก็ บเกี่ย ว แล้ว พุ่งไป ข้างหน ้าด้วย พลังขอ งลมฤดู ใบไม้ร ่วง
+
+[page 3 - Thai]
+อาวุธเ ยือกแข ็งของพ วกเขาแ ตกพังใ นขณะปะ ทะ และ เราผลั กดันพว กเขากล ับอย่า งง่ายด าย ได้ ทวงคืน ทุ่งที ่เราสู ้เพื่อ ปกป้อง

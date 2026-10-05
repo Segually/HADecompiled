@@ -1,0 +1,18 @@
+Description_TAI = วัสดุ สำหรับ การ ประดิษฐ์
+Name_TAI = ขน สัตว์
+Description_POR = Material de artesanato
+Description_SPN = Material de elaboración
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Pele
+Name_SPN = Piel
+Name_RUS = Мех
+Name_IND = Bulu
+Description = Crafting material
+
+Inventory_sprite_path = item fur
+Market Cost = 9
+
+Vendor0 = Mob Drops
+Vendor1 = Clothing Materials
+NumSell = 3 to 6

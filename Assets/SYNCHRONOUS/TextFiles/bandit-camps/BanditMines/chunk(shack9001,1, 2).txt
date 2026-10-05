@@ -1,0 +1,18 @@
+*forced_floor_model=5*
+
+[9,8] = Torch (rot 0)
+
+[2,7] = RANDOM_BIOME_GEM_LARGE (rot 2)
+
+[0,7] = BIOME_SMALL_STALAGMITE (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[4,3] = Mob - BANDIT_FACTION Weak (rot 1)
+

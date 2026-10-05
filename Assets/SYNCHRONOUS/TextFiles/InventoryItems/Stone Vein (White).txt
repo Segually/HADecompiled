@@ -1,0 +1,20 @@
+Name_TAI = สาย แร่ หิน (ขาว)
+Name_POR = Veia de Pedra (Branca)
+Name_SPN = Veta de Piedra (Blanca)
+Name_RUS = Жила камня (белая)
+Name_IND = Urat Batu (Putih)
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Stone Vein (White)
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+show_model3d = true
+Copy3dModelPosition = Stone Vein
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = mob_spawn

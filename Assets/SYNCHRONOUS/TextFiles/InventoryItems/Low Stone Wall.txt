@@ -1,0 +1,46 @@
+Description_TAI = กัน สิ่ง ต่าง ๆ ไม่ ให้ เข้า มา
+Name_TAI = กำแพง หิน เตี้ย
+Description_POR = Mantém as coisas fora.
+Description_SPN = Mantiene las cosas fuera.
+Description_RUS = Держит вещи снаружи.
+Description_IND = Menjaga agar sesuatu tetap di luar.
+Name_POR = Muro de Pedra Baixo
+Name_SPN = Muro Bajo de Piedra
+Name_RUS = Низкая каменная стена
+Name_IND = Tembok Batu Rendah
+Description = Keeps things out.
+
+Inventory_sprite_path = item low stone wall
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 7
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Max_stack = 10
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 10 to 20
+
+is_wall_obj = true
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-2, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout0_Pastels = 0-2, 1-1, 2-3, 
+Default Coloring = Debug - Stone Lite
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+model3d_camDist = 4.2
+show_model3d = true
+model3d_fov = 35
+model3d_yRot = 15
+model3d_objRot = 10
+model3d_xRot = -85
+model3d_camHeight = 0.1
+model3d_recenterX = -53
+model3d_recenterY = 17
+PaintLayout0_Goldy = 0-3, 1-1, 2-2, 

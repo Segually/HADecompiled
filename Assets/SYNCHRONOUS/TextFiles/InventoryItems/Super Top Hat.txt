@@ -1,0 +1,20 @@
+Description_TAI = เสื้อ ผ้า
+Name_TAI = หมวก ท็อป แฮต ขั้นสุดยอด
+Description_POR = Roupas
+Description_SPN = Ropa
+Description_RUS = Одежда
+Description_IND = Pakaian
+Name_POR = Super Cartola
+Name_SPN = Super Sombrero de Copa
+Name_RUS = Супер Цилиндр
+Name_IND = Topi Tinggi Super
+Description = Clothing
+
+Inventory_sprite_path = item top hat
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/hat_topHat_SUPER
+Market Cost = 1000
+
+Vendor0 = Clothing
+exclude_from_vendors = true

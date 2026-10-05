@@ -1,0 +1,8 @@
+*auto_version=5*
+
+[9,1] = Dirt Path (rot 0)
+
+[8,0] = Dirt Path (rot 0)
+
+[8,1] = Dirt Path (rot 0)
+

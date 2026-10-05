@@ -1,0 +1,65 @@
+[1] Spawner - Sticks
+[1] Spawner - Snowballs
+[1] Spawner - Nuts
+[1] Spawner - Coconuts
+[1] Spawner - Bones
+[1] Salmonberry Bush
+[1] MoonBerry Bush
+[1] Lavender Bush
+[1] Green Blob
+[1] Dug-up Wheat
+[1] Dug-up Red Mushroom
+[1] Dug-up Brown Mushroom
+[1] Cotton Plant
+[1] Cactus
+[1] Berry Bush
+[2] Tea Tree
+[2] Stone Vein
+[2] Stone Vein (White)
+[2] Stone Vein (Snowy)
+[2] Stone Vein (Sakura)
+[2] Stone Vein (Ocean)
+[2] Stone Vein (Desert)
+[2] Red Blob
+[2] Mob - Tiny
+[2] Large Stone Vein
+[2] Hot Pepper Plant
+[2] Goldberry Bush
+[2] Dug-up Purple Mushroom
+[2] Dug-up Pumpkin
+[3] Mob - Normal
+[3] Metal Vein
+[3] Large Metal Vein
+[3] Giant Red Mushroom
+[3] Giant Purple Mushroom
+[3] Giant Brown Mushroom
+[3] Beehive
+[4] Titanium Vein
+[4] Titanium Vein (Sakura)
+[4] Spiderhive
+[4] Large Titanium Vein
+[4] Dug-up Giant Pumpkin
+[4] Blue Blob
+[5] Mob - Big
+[7] Mob - Giant
+[8] Large Gold Vein
+[8] Gold Vein
+[10] Uranium Vein
+[10] Large Uranium Vein
+[12] Silver Vein
+[12] Large Silver Vein
+[13] Magmite Vein
+[15] Sapphire Vein
+[15] Ruby Vein
+[15] Large Sapphire Vein
+[15] Large Ruby Vein
+[15] Large Emerald Vein
+[15] Large Amethyst Vein
+[15] Large Amber Vein
+[15] Emerald Vein
+[15] Amethyst Vein
+[15] Amber Vein
+[30] Large Ice Shard Vein
+[30] Ice Shard Vein
+[50] Large Dark Shard Vein
+[50] Dark Shard Vein

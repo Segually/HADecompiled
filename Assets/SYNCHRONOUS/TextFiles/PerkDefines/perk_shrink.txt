@@ -1,0 +1,27 @@
+Full Name = Shrink
+Description = Become small and hard to hit!
+Detailed Description = GetFloat[EFFECT_SMALL, "Player Size", remove "%"]% size DiffFloat[EFFECT_SMALL, "Player Size", remove "%", add "%"] for GetInt[EFFECT_SMALL, "Duration", remove " seconds"] seconds DiffInt[EFFECT_SMALL, "Duration", remove " seconds", add " seconds"] on self. Accuracy of attacker reduced to GetFloat[EFFECT_SMALL, "Accuracy Percent Mod On Was-Hit", remove "%"]% DiffFloat[EFFECT_SMALL, "Accuracy Percent Mod On Was-Hit", remove "%", add "%"], but GetFloat[EFFECT_SMALL, "Damage Percent Mod On Was-Hit", remove "%"]% damage recieved DiffFloat[EFFECT_SMALL, "Damage Percent Mod On Was-Hit", remove "%", add "%"] on hit.
+Ultra Detailed Description = Confuses any mobs targetting you for GetInt[EFFECT_UNPURSUABLE, "Duration", remove " seconds"] seconds (does not apply to Online Players). You are also instantly un-targetted in Online Mode. You are also invisible to mobs, if not already in combat.
+Large Upgrade Description Box = true
+Energy Cost = 70%
+On cast = [EFFECT_SMALL,EFFECT_UNPURSUABLE,EFFECT_LOSE_TARGET] on self
+Max level = 15
+-
+[EFFECT_SMALL]
+Type = Duration Effect
+Player Size = 35%
+Particle (Instant) = perk_shrink_particle
+Scale Particle With Creature Size = false
+Invisible To Mobs If Not Already Targetted = true
+Duration = CLAMP (10 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+Damage Percent Mod On Was-Hit = CLAMP (250% @ lvl_1 ... 210% @ lvl_15)
+Accuracy Percent Mod On Was-Hit = CLAMP (80% @ lvl_1 ... 65% @ lvl_15)
+-
+[EFFECT_UNPURSUABLE]
+Type = Duration Effect
+Mobs Targetting Me Will Pause = true
+Duration = 2 seconds
+-
+[EFFECT_LOSE_TARGET]
+Type = Instant Effect
+Lose Me As Target In Online Mode = true

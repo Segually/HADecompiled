@@ -1,0 +1,4 @@
+[6][paintable] Torch
+[20][max_stack=10] Lava
+[5000] Spooky Well
+[27999] Personal Mine

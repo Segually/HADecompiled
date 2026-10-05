@@ -1,0 +1,44 @@
+Description_TAI = หมวกเหล็ก แห่ง น้ำแข็ง แผ่พลัง อันตราย เย็นเยือก
+Name_TAI = หมวก น้ำแข็ง อันตราย
+Description_POR = Um elmo de gelo, emanando uma ameaça gelada e perigosa
+Description_SPN = Un yelmo de escarcha, irradiando una peligrosa amenaza helada.
+Description_RUS = Шлем льда, излучающий опасную ледяную угрозу.
+Description_IND = Sebuah helm es, memancarkan ancaman dingin yang berbahaya.
+Name_POR = Elmo da Ameaça de Gelo
+Name_SPN = Yelmo de la Amenaza de Hielo
+Name_RUS = Шлем Ледяной Угрозы
+Name_IND = Helm Ancaman Es
+Description = A helm of frost, radiating a dangerous, icy threat
+
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/MenaceHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 36
+Craft_required_lvl = 54
+Market Cost = CALCULATE
+
+Default Coloring = Weapon - Ice
+PaintLayout0_SolidColors = 0-2, 1-6, 2-3, 3-5, 
+
+Defend Amount = 13
+model3d_camDist = 1.8
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -130
+model3d_objRot = 1
+model3d_yRot = 10
+model3d_recenterY = 6
+model3d_recenterX = 0
+
+Vendor0 = Armor
+NumSell = 1 to 2
+ParticleTransform0 = 0,1.116,0:-0.7071068,0,0,0.7071068:1,1,1:CONE:0.4:0.4
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Nomad = 0-1, 1-4, 2-3, 3-2, 

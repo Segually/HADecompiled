@@ -1,0 +1,28 @@
+Description_TAI = พุ่ม ไม้ ที่ ผลิต ผลเบอร์รี่
+Name_TAI = พุ่ม แซลมอนเบอร์รี่
+Description_POR = Um arbusto que produz frutas.
+Description_SPN = Un arbusto que produce bayas.
+Description_RUS = Куст, который производит ягоды.
+Description_IND = Sebuah semak yang menghasilkan buah beri.
+Name_POR = Arbusto de Amora-Salmão
+Name_SPN = Arbusto de salmonberry
+Name_RUS = Куст лососевой ягоды
+Name_IND = Semak Salmonberry
+Description = A bush that produces berries.
+
+Type = Place_in_world
+World_obj_path = Buildables/Salmonberry Bush
+World_geometry = 1_by_1
+Market Cost = 180
+
+Vendor0 = Farmable
+NumSell = 1 to 2
+
+tool_required_to_move = Shovel
+
+show_model3d = true
+Copy3dModelPosition = Berry Bush
+model3d_override_glow_col = yellow
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

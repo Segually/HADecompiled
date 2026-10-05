@@ -1,0 +1,23 @@
+[1][max_stack=10] Muffin
+[1][max_stack=5] Toasted Nuts
+[5][max_stack=5] Berry
+[5][max_stack=5] Brown Mushroom
+[8] Bug Meat
+[9] Bread Loaf
+[15][max_stack=5] MoonBerry
+[15][max_stack=5] Red Mushroom
+[15][max_stack=5] SalmonBerry
+[15] Uncooked Meat
+[16] Cooked Meat
+[16] Jam
+[16] Mushroom Stew
+[20] Hot Pepper
+[21] Salmonberry Scone
+[32] Pumpkin Pie
+[40][max_stack=5] Purple Mushroom
+[64] Matcha
+[71] Coco Loco
+[89] Red Curry
+[100][max_stack=5] GoldBerry
+[169] Fried Egg
+[596] Super Jam

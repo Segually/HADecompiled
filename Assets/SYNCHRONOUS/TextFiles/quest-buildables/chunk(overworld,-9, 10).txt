@@ -1,0 +1,166 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[0,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,1] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,2] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,3] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,4] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,5] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,6] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,7] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,8] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[0,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[1,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[2,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[3,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[4,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[5,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[6,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[7,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[8,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,9] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,8] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,7] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,6] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,5] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,4] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,3] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,2] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,1] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[9,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[8,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[7,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[1,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[4,7] = Spirit Tree (rot 0)
+
+[6,5] = Stone Lantern (rot 0)
+	paint = *string* Basic Black
+
+[4,3] = Cobblestone Path (rot 0)
+
+[4,4] = Cobblestone Path (rot 0)
+
+[6,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[4,2] = Cobblestone Path (rot 0)
+
+[4,0] = Stone Bricks (rot 0)
+
+[2,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[5,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[3,0] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[3,1] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[5,1] = Wood Rails (rot 0)
+	paint = *string* Storm Grey
+
+[3,0] = Stone Bricks (rot 0)
+
+[5,0] = Stone Bricks (rot 0)
+
+[3,1] = Stone Bricks (rot 0)
+
+[4,1] = Stone Bricks (rot 0)
+
+[5,1] = Stone Bricks (rot 0)
+
+[1,2] = Gravestone (rot 0)
+	sign_text = *string* Here lies Marvin Muck, who in the swamp found his luck; tripped over a root, now forever stuck
+	stamp = *string* Skull Stamp
+
+[1,4] = Gravestone (rot 0)
+	sign_text = *string* Here lies Joe, loved his boat; forgot to row, now doesn't float.
+	stamp = *string* Skull Stamp
+
+[1,6] = Gravestone (rot 0)
+	sign_text = *string* Marshy Mary, quite contrary; ate a berry, now legendary.
+	stamp = *string* Skull Stamp
+
+[8,6] = Gravestone (rot 2)
+	sign_text = *string* Wading Wanda, fond of yonder; took a ponder, now down under.
+	stamp = *string* Skull Stamp
+
+[8,4] = Gravestone (rot 2)
+	sign_text = *string* Beneath this stone lies Gilly Green, loved muddy baths and was rarely seen; slipped in the mud, now part of the scene
+	stamp = *string* Skull Stamp
+
+[8,2] = Gravestone (rot 2)
+	sign_text = *string* Mossy Matt, hugged a tree; it hugged back, now history.
+	stamp = *string* Skull Stamp
+
+[4,5] = Sign (rot 0)
+	paint = *string* Basic Black
+	sign_text = *string* The Silent Marsh
+

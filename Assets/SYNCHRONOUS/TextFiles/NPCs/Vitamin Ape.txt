@@ -1,0 +1,363 @@
+Name_POR=Macaco de Vitamina
+Name_RUS=Витамин обезьяна
+Name_IND=Kera Vitamin
+Name_SPN=Mono de vitamina
+Name_TAI=วิตามินเอเป้
+
+----- DIALOGUE -----
+[0]
+otherspeak=What is my Vitamin of choice? ...
+otherspeak_POR=Qual é a minha vitamina de escolha? ...
+otherspeak_RUS=Какой витамин я предпочитаю? ...
+otherspeak_IND=Apa Vitamin pilihan saya? ...
+otherspeak_SPN=¿Cuál es mi vitamina de elección? ...
+otherspeak_TAI=วิตามินที่ฉันเลือกคืออะไร? ...
+goto=001
+
+[1]
+otherspeak=TITANIUM, fresh from the crucible!
+otherspeak_POR=TITÂNIO, recém-saído do cadinho!
+otherspeak_RUS=ТИТАН, свежий из тигля!
+otherspeak_IND=TITANIUM, segar dari wadahnya!
+otherspeak_SPN=¡TITANIO, recién salido del crisol!
+otherspeak_TAI=ไทเทเนียมสดจากเบ้าหลอม!
+goto=002
+boxPosition=0,-65
+
+[2]
+*test IS_MY_WORLD*
+goto_true=999
+goto_false=010
+boxPosition=0,-130
+
+[10]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99
+boxPosition=113.9528,-198.8303
+
+[999]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 0)
+goto_true=1000
+goto_false=1001
+boxPosition=-112.9952,-201.5873
+
+[1001]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 2)
+goto_true=1002
+goto_false=2000
+boxPosition=105.8561,-282.9025
+
+[2000]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 6)
+goto_true=2001
+goto_false=3000
+boxPosition=245.2206,-378.2413
+
+[3000]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 7)
+goto_true=4000
+goto_false=-1
+boxPosition=548.0668,-444.8625
+
+[4000]
+*test QUEST_READY_TO_RESTART* (Dark and Forgotten Magic)
+goto_true=4001
+goto_false=3001
+boxPosition=563.6611,-540.9291
+
+[1000]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=Where is Yandeon?
+optionB_POR=Onde está Yandeon?
+optionB_RUS=Где яндеон?
+optionB_IND=Dimana Yandeon?
+optionB_SPN=¿Dónde está Yandeon?
+optionB_TAI=Yandeon อยู่ที่ไหน?
+gotoB=003
+boxPosition=-296.1957,-287.5101
+
+[3]
+otherspeak=Yandeon ... is no longer with us
+otherspeak_POR=Yandeon ... não está mais conosco
+otherspeak_RUS=Яндеон ... больше не с нами
+otherspeak_IND=Yandeon ... tidak lagi bersama kita
+otherspeak_SPN=Yandeon ... ya no está con nosotros
+otherspeak_TAI=Yandeon ... ไม่ได้อยู่กับเราอีกต่อไป
+goto=004
+boxPosition=-286.8737,-374.8404
+
+[4]
+otherspeak=But his spirit protects our Forest to this day..
+otherspeak_POR=Mas seu espírito protege nossa floresta até hoje ..
+otherspeak_RUS=Но его дух по сей день защищает наш Лес.
+otherspeak_IND=Tapi rohnya melindungi Hutan kita sampai hari ini ..
+otherspeak_SPN=Pero su espíritu protege nuestro bosque hasta el día de hoy.
+otherspeak_TAI=แต่วิญญาณของเขาปกป้องผืนป่าของเราจนถึงทุกวันนี้ ..
+goto=005
+boxPosition=-302.3134,-466.7427
+
+[5]
+otherspeak=Want to visit his spirit?
+otherspeak_POR=Quer visitar seu espírito?
+otherspeak_RUS=Хотите посетить его дух?
+otherspeak_IND=Ingin mengunjungi arwahnya?
+otherspeak_SPN=¿Quieres visitar su espíritu?
+otherspeak_TAI=ต้องการเยี่ยมวิญญาณของเขาหรือไม่?
+goto=006
+boxPosition=-316.3279,-555.7676
+
+[6]
+optionA=Yeah!
+optionA_POR=Isso!
+optionA_RUS=Ага!
+optionA_IND=Ya!
+optionA_SPN=¡Si!
+optionA_TAI=ใช่
+gotoA=008
+optionB=Not now
+optionB_POR=Agora não
+optionB_RUS=Не сейчас
+optionB_IND=Tidak sekarang
+optionB_SPN=Ahora no
+optionB_TAI=ไม่ใช่ตอนนี้
+gotoB=007
+boxPosition=-175.0992,-1216.712
+
+[7]
+otherspeak=Alright, suit yourself
+otherspeak_POR=Tudo bem, fique à vontade
+otherspeak_RUS=Хорошо, устраивайся
+otherspeak_IND=Baiklah, terserah dirimu
+otherspeak_SPN=Está bien, haz lo que quieras
+otherspeak_TAI=เอาล่ะเหมาะกับตัวเอง
+goto=-1
+boxPosition=-36.42873,-1423.818
+
+[8]
+otherspeak=Let's roll out!
+otherspeak_POR=Vamos começar!
+otherspeak_RUS=Давай выкатимся!
+otherspeak_IND=Ayo mulai!
+otherspeak_SPN=¡Desplácese!
+otherspeak_TAI=มาเปิดตัวกันเถอะ!
+goto=009
+boxPosition=-348.5569,-1420.665
+
+[9]
+*ADVANCE_QUEST* (Dark and Forgotten Magic => 1)
+goto=-1
+boxPosition=-349.1147,-1502.646
+
+[1002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=Storm Wizards..
+optionB_POR=Storm Wizards ..
+optionB_RUS=Мастера бури ..
+optionB_IND=Penyihir Badai ..
+optionB_SPN=Storm Wizards ..
+optionB_TAI=พ่อมดแห่งพายุ ..
+gotoB=1003
+boxPosition=-20.02075,-564.4397
+
+[1003]
+otherspeak=Are you ready to fight the Storm Wizards?
+otherspeak_POR=Você está pronto para lutar contra os Storm Wizards?
+otherspeak_RUS=Готовы ли вы сразиться с волшебниками бури?
+otherspeak_IND=Apakah Anda siap untuk melawan Storm Wizards?
+otherspeak_SPN=¿Estás listo para luchar contra los Storm Wizards?
+otherspeak_TAI=คุณพร้อมที่จะต่อสู้กับ Storm Wizards แล้วหรือยัง?
+goto=1004
+boxPosition=42.04358,-721.5352
+
+[1004]
+optionA=Yes!
+optionA_POR=Sim!
+optionA_RUS=Да!
+optionA_IND=Iya!
+optionA_SPN=¡Sí!
+optionA_TAI=ใช่
+gotoA=1005
+optionB=Not yet
+optionB_POR=Ainda não
+optionB_RUS=Еще нет
+optionB_IND=Belum
+optionB_SPN=Aún no
+optionB_TAI=ยัง
+gotoB=1007
+boxPosition=46.04773,-816.5663
+
+[1005]
+otherspeak=Let's roll out!
+otherspeak_POR=Vamos começar!
+otherspeak_RUS=Давай выкатимся!
+otherspeak_IND=Ayo mulai!
+otherspeak_SPN=¡Desplácese!
+otherspeak_TAI=มาเปิดตัวกันเถอะ!
+goto=1006
+boxPosition=-42.04358,-929.6161
+
+[1006]
+*ADVANCE_QUEST* (Dark and Forgotten Magic => 3)
+goto=-1
+boxPosition=-46.04773,-1034.658
+
+[1007]
+otherspeak=Well, let me know when you are
+otherspeak_POR=Bem, deixe-me saber quando você estiver
+otherspeak_RUS=Дай мне знать, когда будешь
+otherspeak_IND=Nah, beri tahu saya kapan Anda berada
+otherspeak_SPN=Bueno, avísame cuando estés
+otherspeak_TAI=แจ้งให้เราทราบเมื่อคุณอยู่
+goto=-1
+boxPosition=208.2158,-929.4812
+
+[2001]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=Storm Wizards..
+optionB_POR=Storm Wizards ..
+optionB_RUS=Мастера бури ..
+optionB_IND=Penyihir Badai ..
+optionB_SPN=Storm Wizards ..
+optionB_TAI=พ่อมดแห่งพายุ ..
+gotoB=2002
+boxPosition=138.1432,-467.9354
+
+[2002]
+otherspeak=We showed those wizards who's boss, didn't we?!
+otherspeak_POR=Mostramos àqueles bruxos quem manda, não é ?!
+otherspeak_RUS=Мы показали этим волшебникам, кто в доме хозяин, не так ли ?!
+otherspeak_IND=Kami menunjukkan kepada penyihir itu siapa bosnya, bukan ?!
+otherspeak_SPN=Les mostramos a esos magos quién es el jefe, ¿no?
+otherspeak_TAI=เราแสดงให้พ่อมดเหล่านั้นเป็นเจ้านายไม่ใช่เหรอ!
+goto=2003
+boxPosition=252.2615,-568.9728
+
+[2003]
+otherspeak=Yandeon wanted you to have this...
+otherspeak_POR=Yandeon queria que você tivesse isso ...
+otherspeak_RUS=Яндеон хотел, чтобы вы получили это ...
+otherspeak_IND=Yandeon ingin kamu memiliki ini ...
+otherspeak_SPN=Yandeon quería que tuvieras esto ...
+otherspeak_TAI=Yandeon ต้องการให้คุณมีสิ่งนี้ ...
+goto=2004
+boxPosition=271.2426,-729.8995
+
+[2004]
+*TRY_GIVE_QUEST_REWARD* (Dark and Forgotten Magic) (if succeed, advance quest to 7)
+goto=-1
+boxPosition=276.3284,-818.2768
+
+[3001]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=Storm Wizards..
+optionB_POR=Storm Wizards ..
+optionB_RUS=Мастера бури ..
+optionB_IND=Penyihir Badai ..
+optionB_SPN=Storm Wizards ..
+optionB_TAI=พ่อมดแห่งพายุ ..
+gotoB=3002
+boxPosition=698.2751,-644.0758
+
+[3002]
+otherspeak=We showed those wizards who's boss, didn't we?!
+otherspeak_POR=Mostramos àqueles bruxos quem manda, não é ?!
+otherspeak_RUS=Мы показали этим волшебникам, кто в доме хозяин, не так ли ?!
+otherspeak_IND=Kami menunjukkan kepada penyihir itu siapa bosnya, bukan ?!
+otherspeak_SPN=Les mostramos a esos magos quién es el jefe, ¿no?
+otherspeak_TAI=เราแสดงให้พ่อมดเหล่านั้นเป็นเจ้านายไม่ใช่เหรอ!
+goto=3003
+boxPosition=803.502,-724.6808
+
+[3003]
+otherspeak=Yandi Forest is safe again, thanks to you
+otherspeak_POR=Yandi Forest está seguro novamente, graças a você
+otherspeak_RUS=Лес Янди снова в безопасности, благодаря тебе
+otherspeak_IND=Hutan Yandi aman kembali, terima kasih
+otherspeak_SPN=Yandi Forest está a salvo de nuevo, gracias a ti
+otherspeak_TAI=Yandi Forest ปลอดภัยอีกครั้งขอบคุณ
+goto=-1
+boxPosition=814.5885,-818.5161
+
+[4001]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=Yandeon?
+optionB_POR=Yandeon?
+optionB_RUS=Яндеон?
+optionB_IND=Yandeon?
+optionB_SPN=Yandeon?
+optionB_TAI=ยันเดอน?
+gotoB=4002
+boxPosition=467.9299,-642.0686
+
+[4002]
+otherspeak=I was visiting Yandeon's spirit the other day...
+otherspeak_POR=Eu estava visitando o espírito de Yandeon outro dia ...
+otherspeak_RUS=На днях я был в гостях у духа Яндеона ...
+otherspeak_IND=Saya mengunjungi roh Yandeon beberapa hari yang lalu ...
+otherspeak_SPN=Estaba visitando el espíritu de Yandeon el otro día ...
+otherspeak_TAI=วันก่อนฉันไปเยี่ยมวิญญาณของ Yandeon ...
+goto=4003
+boxPosition=558.6083,-723.7903
+
+[4003]
+otherspeak=... and he seemed distressed
+otherspeak_POR=... e ele parecia angustiado
+otherspeak_RUS=... и он казался огорченным
+otherspeak_IND=... dan dia tampak tertekan
+otherspeak_SPN=... y parecía angustiado
+otherspeak_TAI=... และเขาก็ดูมีความสุข
+goto=4004
+boxPosition=564.7136,-819.3151
+
+[4004]
+otherspeak=Should we go visit him again?
+otherspeak_POR=Devemos visitá-lo novamente?
+otherspeak_RUS=Может, нам еще раз навестить его?
+otherspeak_IND=Haruskah kita mengunjunginya lagi?
+otherspeak_SPN=¿Deberíamos ir a visitarlo de nuevo?
+otherspeak_TAI=เราควรไปเยี่ยมเขาอีกครั้งไหม?
+goto=6
+boxPosition=573.8709,-930.1023
+

@@ -1,0 +1,12 @@
+Name_TAI = กระดูก
+Name_POR = Ossos
+Name_SPN = Huesos
+Name_RUS = Кости
+Name_IND = Tulang-tulang
+
+Inventory_sprite_path = item bones
+Market Cost = 3
+
+Vendor0 = Harvested Item
+Vendor1 = Ores
+NumSell = 2 to 7

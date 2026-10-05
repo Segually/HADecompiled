@@ -1,0 +1,13 @@
+Name_TAI = ทาง เข้า ถ้ำ หญ้า
+Name_POR = Entrada da Caverna de Grama
+Name_SPN = Entrada a la Cueva de Hierba
+Name_RUS = Вход в травяную пещеру
+Name_IND = Pintu Masuk Gua Rumput
+
+Type = Place_in_world
+World_obj_path = Buildables/Grass Cave Entrance
+World_geometry = 3_by_3
+
+tool_required_to_move = Drill
+
+not_obtainable = true

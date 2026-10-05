@@ -1,0 +1,15 @@
+*auto_version=1*
+*forced_floor_rot=0*
+*forced_floor_model=1*
+
+[2,3] = Cave Basket (rot 0)
+	basket_id = *long* 9142
+
+[4,2] = Cave Basket (rot 0)
+	basket_id = *long* 9143
+
+[6,2] = Cave Basket (rot 0)
+	basket_id = *long* 9144
+
+[7,5] = Old Torch (rot 0)
+

@@ -1,0 +1,12 @@
+Description = Adds animals: chinchilla, gecko, hedgehog, manatee, puffin
+IAP_KEY = creature_pack_12
+Type = permanent
+Gem_price = medium
+Bg_color = cyan
+Model_path = shop_creaturePack12
+
+animal0 = chinchilla
+animal1 = gecko
+animal2 = hedgehog
+animal3 = manatee
+animal4 = puffin

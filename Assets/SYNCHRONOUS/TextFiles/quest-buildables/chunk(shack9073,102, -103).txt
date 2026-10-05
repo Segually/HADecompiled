@@ -1,0 +1,10 @@
+*auto_version=1*
+
+[1,8] = Tall Stone Wall (rot 0)
+
+[1,9] = Tall Stone Wall (rot 0)
+
+[1,7] = Tall Stone Wall (rot 0)
+
+[0,7] = Tall Stone Wall (rot 0)
+

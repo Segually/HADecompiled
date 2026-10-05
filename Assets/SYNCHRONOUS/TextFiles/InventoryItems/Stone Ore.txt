@@ -1,0 +1,11 @@
+Name_TAI = หิน แร่
+Name_POR = Minério de Pedra
+Name_SPN = Mineral de piedra
+Name_RUS = Каменная руда
+Name_IND = Bijih Batu
+
+Inventory_sprite_path = item rocks
+Market Cost = 10
+
+Vendor0 = Ores
+NumSell = 7 to 15

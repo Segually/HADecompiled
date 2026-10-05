@@ -1,0 +1,4 @@
+*auto_version=1*
+
+[2,0] = Torch (rot 0)
+

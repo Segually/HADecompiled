@@ -1,0 +1,95 @@
+[paint]
+Iron & Oak
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+While looting an old ruin, the Dune Bandits found tunnels that pulsed with a faint green glow.
+
+[page 2 - English]
+The walls were cold and slick, carved with strange symbols that seemed to shift when we looked away.
+
+[page 3 - English]
+The deeper we ventured, the more the air felt heavy, as if the Genecrafters themselves were keeping us out.
+
+[page 4 - English]
+Sandskull finally ordered a retreat, declaring that even the Dune Bandits know when a treasure is cursed.
+
+[book name - English]
+Shadows Beneath
+
+[book name - Indonesian]
+Bayangan di Bawah
+
+[page 1 - Indonesian]
+Saat menjarah reruntuhan tua, Bandit Dune menemukan terowongan yang berdenyut dengan cahaya hijau samar.
+
+[page 2 - Indonesian]
+Dindingnya dingin dan licin, diukir dengan simbol aneh yang tampaknya berubah saat kami memalingkan pandangan.
+
+[page 3 - Indonesian]
+Semakin dalam kami masuk, semakin udara terasa berat, seolah-olah para Pencipta Gen sedang menghalangi kami.
+
+[page 4 - Indonesian]
+Sandskull akhirnya memerintahkan mundur, menyatakan bahwa bahkan Bandit Dune tahu kapan sebuah harta dikutuk.
+
+[book name - Portuguese]
+Sombras Sob
+
+[page 1 - Portuguese]
+Enquanto saqueavam uma velha ruína, os Bandidos das Dunas encontraram túneis que pulsavam com um leve brilho verde.
+
+[page 2 - Portuguese]
+As paredes eram frias e escorregadias, esculpidas com símbolos estranhos que pareciam mudar quando desviávamos o olhar.
+
+[page 3 - Portuguese]
+Quanto mais nos aventurávamos, mais o ar parecia pesado, como se os Genecrafters próprios estivessem nos impedindo de entrar.
+
+[page 4 - Portuguese]
+Sandskull finalmente ordenou uma retirada, declarando que até mesmo os Bandidos das Dunas sabem quando um tesouro está amaldiçoado.
+
+[book name - Russian]
+Тени Под Землей
+
+[page 1 - Russian]
+Грабя старые руины, Песчаные Бандиты нашли туннели, пульсирующие слабым зеленым свечением.
+
+[page 2 - Russian]
+Стены были холодными и скользкими, покрытыми странными символами, которые, казалось, менялись, когда мы отворачивались.
+
+[page 3 - Russian]
+Чем глубже мы погружались, тем тяжелее становился воздух, как будто сами Создатели Генов не пускали нас внутрь.
+
+[page 4 - Russian]
+Наконец Песчаный Череп приказал отступать, заявив, что даже Песчаные Бандиты знают, когда сокровище проклято.
+
+[book name - Spanish]
+Sombras Bajo
+
+[page 1 - Spanish]
+Mientras saqueaban una antigua ruina, los Bandidos de las Dunas encontraron túneles que palpitaban con un tenue resplandor verde.
+
+[page 2 - Spanish]
+Las paredes estaban frías y resbaladizas, talladas con extraños símbolos que parecían cambiar cuando apartábamos la mirada.
+
+[page 3 - Spanish]
+Cuanto más nos adentrábamos, más denso se sentía el aire, como si los Genecrafters mismos nos estuvieran manteniendo alejados.
+
+[page 4 - Spanish]
+Sandskull finalmente ordenó una retirada, declarando que incluso los Bandidos de las Dunas saben cuándo un tesoro está maldito.
+
+[book name - Thai]
+เงาใต้ ผืนทรา ย
+
+[page 1 - Thai]
+ขณะที่ กำลังป ล้นซาก ปรักหั กพังเก ่า โจร ทะเลทร ายพบอุ โมงค์ท ี่มีแส งเขียว จางๆ ก ระพริบ อยู่
+
+[page 2 - Thai]
+ผนังเย ็นและล ื่น มี การแกะ สลักสั ญลักษณ ์แปลกๆ  ที่ดู เหมือน จะเคลื ่อนไหว เมื่อเ รามองไ ปทางอื ่น
+
+[page 3 - Thai]
+ยิ่งเร าเข้าไ ปลึกมา กเท่าไ ร อากา ศยิ่งร ู้สึกห นักอึ้ ง ราวก ับว่าผ ู้สร้า งพันธุ กรรมเอ งก็พยา ยามกีด กันพวก เราออก ไป
+
+[page 4 - Thai]
+ท้ายที ่สุด แ ซนด์สก ัลสั่ง ถอนตัว  ประกา ศว่าแม ้แต่โจ รทะเลท รายก็ร ู้ว่าเ มื่อไห ร่ที่ส มบัติถ ูกสาป

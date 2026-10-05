@@ -1,0 +1,11 @@
+*auto_version=1*
+
+[2,0] = Big Table (rot 1)
+	paint = *string* Lumberjack
+
+[2,1] = Chair (rot 1)
+	paint = *string* Pinewood
+
+[0,2] = Crafting Table (rot 1)
+	paint = *string* Pinewood
+

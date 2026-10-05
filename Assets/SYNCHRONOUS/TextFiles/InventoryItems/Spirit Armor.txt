@@ -1,0 +1,33 @@
+Description_TAI = แผ่นเกราะ อีเธอเรียล สลับระหว่าง โลกนี้ และ โลกหน้า
+Name_TAI = เกราะ วิญญาณ
+Description_POR = Placas etéreas, cintilando entre este mundo e o próximo
+Description_SPN = Placas etéreas, parpadeando entre este mundo y el siguiente.
+Description_RUS = Эфирная броня, мерцающая между этим миром и следующим.
+Description_IND = Pelat etereal, berkelap-kelip antara dunia ini dan dunia berikutnya
+Name_POR = Armadura Espiritual
+Name_SPN = Armadura Espiritual
+Name_RUS = Духовная Броня
+Name_IND = Zirah Roh
+Description = Ethereal plating, flickering between this world and the next
+
+Inventory_sprite_path = item spirit armor
+Crafting_ingredient_A = Spirit Branch
+Crafting_ingredient_A_count = 6
+Crafting_ingredient_B = Ice Shard
+Crafting_ingredient_B_count = 6
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/AncientArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 126
+Craft_required_lvl = 192
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ancient Armor
+Default Coloring = Weapon - Spirit
+
+Vendor0 = Armor
+
+show_model3d = true
+Copy3dModelPosition = Ancient Armor
+
+Defend Amount = 44

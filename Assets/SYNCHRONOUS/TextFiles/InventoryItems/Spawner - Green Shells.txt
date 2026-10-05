@@ -1,0 +1,14 @@
+Name_TAI = ตัว กำเนิด - เปลือก หอย สี เขียว
+Name_POR = Gerador - Conchas Verdes
+Name_SPN = Generador - Conchas Verdes
+Name_RUS = Спавнер - Зелёные Панцири
+Name_IND = Pemijah - Cangkang Hijau
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Green Shells
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

@@ -1,0 +1,46 @@
+Description_TAI = เก็บ สิ่ง ของ ไว้ ข้าง นอก
+Name_TAI = กำแพง หิน สูง
+Description_POR = Mantém as coisas fora.
+Description_SPN = Mantiene las cosas afuera.
+Description_RUS = Не позволяет попасть внутрь.
+Description_IND = Menjaga agar barang tetap di luar.
+Name_POR = Muro de Pedra Alto
+Name_SPN = Muro de Piedra Alto
+Name_RUS = Высокая каменная стена
+Name_IND = Dinding Batu Tinggi
+Description = Keeps things out.
+
+Inventory_sprite_path = item tall stone wall
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 7
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Max_stack = 10
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 12 to 22
+
+is_wall_obj = true
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-2, 
+PaintLayout0_Pastels = 0-2, 1-1, 2-3, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+Default Coloring = Debug - Stone Lite
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+model3d_camDist = 3.7
+show_model3d = true
+model3d_fov = 45
+model3d_objRot = 2
+model3d_recenterX = -50
+model3d_xRot = -90
+model3d_camHeight = 0.8
+model3d_recenterY = 6
+model3d_yRot = 5
+PaintLayout0_Goldy = 0-3, 1-1, 2-2, 

@@ -1,0 +1,31 @@
+Description_TAI = สว่างไสว แต่ หนาแน่น ทำให้ คุณ เป็น ป้อมปราการ แผ่รัศมี
+Name_TAI = เกราะ ทองคำ
+Description_POR = Deslumbrante, mas denso, transformando você em uma fortaleza radiante.
+Description_SPN = Deslumbrante pero denso, convirtiéndote en una fortaleza radiante.
+Description_RUS = Ослепительный, но плотный, превращающий вас в сияющую крепость.
+Description_IND = Memesona namun padat, menjadikanmu benteng bersinar.
+Name_POR = Armadura de Ouro
+Name_SPN = Armadura de Oro
+Name_RUS = Золотая Броня
+Name_IND = Zirah Emas
+Description = Dazzling yet dense, making you a radiant fortress
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/MetalArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+CopyPaintLayout = Metal Armor
+Default Coloring = Weapon - Gold
+
+Vendor0 = Armor
+NumSell = 1 to 2
+
+show_model3d = true
+Copy3dModelPosition = Metal Armor
+
+Defend Amount = 6

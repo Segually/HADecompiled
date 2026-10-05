@@ -1,0 +1,15 @@
+Name_TAI = บ่อ ทาร์
+Name_POR = Poço de Piche
+Name_SPN = Fosa de alquitrán
+Name_RUS = Смоляная яма
+Name_IND = Lubang Ter
+
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Tar Pit
+World_geometry = 5_by_5
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

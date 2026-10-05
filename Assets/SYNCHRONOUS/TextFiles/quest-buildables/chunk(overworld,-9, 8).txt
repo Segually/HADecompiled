@@ -1,0 +1,33 @@
+*auto_version=1*
+*forced_biome=6*
+
+[0,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[1,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[3,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[5,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[6,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[7,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[9,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[2,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+

@@ -1,0 +1,6 @@
+*auto_version=1*
+
+[4,5] = Underground Room (rot 0)
+	password = *string* DEV_LOCKED
+	shack_id = *long* 9063
+

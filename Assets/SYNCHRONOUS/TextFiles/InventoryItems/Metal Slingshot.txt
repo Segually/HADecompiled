@@ -1,0 +1,13 @@
+Name_POR = Estilingue de Metal
+Name_TAI = หนังสติ๊ก โลหะ
+Name_SPN = Honda de metal
+Name_RUS = Металлическая рогатка
+Name_IND = Ketapel Logam
+Type = Holdable
+
+Default Coloring = Weapon - Metal
+
+not_obtainable = true
+
+PaintLayout0_SolidColors = 0-2, 1-5, 2-6, 3-4, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-2, 3-3, 

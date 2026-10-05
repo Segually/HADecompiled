@@ -1,0 +1,25 @@
+Description_TAI = สำหรับ ออนไลน์ หยุด คน อื่น จาก การ ทำลาย ของ ของคุณ
+Name_TAI = สิทธิ์ ยึด ที่ดิน 3 วัน
+Description_POR = Para uso online. Impede que outras pessoas destruam suas coisas.
+Description_SPN = Para jugar en línea. Evita que otras personas destruyan tus cosas.
+Description_RUS = Для онлайн-игры. Предотвращает уничтожение ваших вещей другими игроками.
+Description_IND = Untuk online. Menghentikan orang lain dari merusak barang-barang Anda.
+Name_POR = Reivindicação de Terreno de 3 Dias
+Name_SPN = Reclamación de Terreno de 3 días
+Name_RUS = Трехдневное право на землю
+Name_IND = Klaim Tanah 3 Hari
+Description = For online. Stops other people from destroying your stuff.
+
+Vendor0 = OnlineItems
+NumSell = 2 to 5
+
+Inventory_sprite_path = item land claim 3 day
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Silver
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Land Claim - 3 day
+World_geometry = 1_by_1
+Craft_required_lvl = 18
+Market Cost = CALCULATE

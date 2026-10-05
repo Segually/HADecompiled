@@ -1,0 +1,23 @@
+*auto_version=12*
+
+[1,2] = Torch (rot 0)
+	paint = *string* Debug - Wood DK
+
+[5,3] = Basket (rot 0)
+	basket_id = *long* 9042
+	paint = *string* Debug - Wood DK
+
+[3,3] = Basket (rot 0)
+	basket_id = *long* 9040
+	paint = *string* Debug - Wood DK
+
+[4,3] = Basket (rot 0)
+	basket_id = *long* 9041
+	paint = *string* Debug - Wood DK
+
+[6,1] = Mob - Elite Everthorn Bandit (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* The Bandit King
+	associated_quest_step = *short* 3
+	overwrite_mob_name = *string* Elite Bandit
+	overwrite_mob_level = *string* PLAYER_LEVEL*0.43

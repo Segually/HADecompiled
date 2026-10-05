@@ -1,0 +1,30 @@
+Description_TAI = เพิ่ม สัญลักษณ์ มังกร ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตราประทับ มังกร
+Description_POR = Adicione um símbolo de Dragão ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de Dragón a tus muebles!
+Description_RUS = Добавьте символ дракона к вашей мебели!
+Description_IND = Tambahkan simbol Naga ke furnitur Anda!
+Name_POR = Selo de Dragão
+Name_SPN = Sello de Dragón
+Name_RUS = Драконий штамп
+Name_IND = Cap Naga
+Description = Add a Dragon symbol to your furniture!
+
+Inventory_sprite_path = item stamp dragon
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

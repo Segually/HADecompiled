@@ -1,0 +1,40 @@
+Name_POR=Petunia
+Name_RUS=Петуния
+Name_IND=Petunia
+Name_SPN=Petunia
+Name_TAI=พิทูเนีย
+
+----- DIALOGUE -----
+[000]
+otherspeak=Oh dear!
+otherspeak_POR=Oh céus!
+otherspeak_RUS=О, Боже!
+otherspeak_IND=Aduh Buyung!
+otherspeak_SPN=¡Oh querido!
+otherspeak_TAI=โอ้ที่รัก!
+goto=001
+
+[001]
+otherspeak=Looks like you need some new clothes, honey
+otherspeak_POR=Parece que você precisa de roupas novas, querida
+otherspeak_RUS=Похоже, тебе нужна новая одежда, дорогая
+otherspeak_IND=Sepertinya Anda butuh baju baru, sayang
+otherspeak_SPN=Parece que necesitas ropa nueva, cariño
+otherspeak_TAI=ดูเหมือนว่าคุณต้องการเสื้อผ้าใหม่นะที่รัก
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

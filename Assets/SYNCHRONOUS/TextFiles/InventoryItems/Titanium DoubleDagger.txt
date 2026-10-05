@@ -1,0 +1,35 @@
+Description_TAI = มีดสั้น สีฟ้า สองเล่ม ที่ เรียบลื่น เบา และ รวดเร็ว
+Name_TAI = ไทเทเนียม ดับเบิลแด็กเกอร์
+Description_POR = Um par de elegantes adagas azuis, leves e ágeis.
+Description_SPN = Un par de elegantes dagas azules, ligeras y veloces.
+Description_RUS = Пара изящных синих кинжалов, легких и быстрых.
+Description_IND = Sepasang belati biru yang ramping, ringan, dan cepat.
+Name_POR = AdagaDupla de Titânio
+Name_SPN = DagaDoble de Titanio
+Name_RUS = Титановый Двойной Кинжал
+Name_IND = Belati Ganda Titanium
+Description = A pair of sleek blue daggers, light and swift
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 2
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/DoubleDagger
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+NumSell = 2 to 3
+
+Damage Base = 6
+
+CopyPaintLayout = Metal DoubleDagger
+Default Coloring = Weapon - Titanium
+
+dual_wield = true
+
+show_model3d = true
+Copy3dModelPosition = Metal DoubleDagger
+
+weapon_display_copy = Metal DoubleDagger

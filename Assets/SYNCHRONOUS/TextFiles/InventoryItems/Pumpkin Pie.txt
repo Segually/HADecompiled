@@ -1,0 +1,24 @@
+Description_TAI = พาย อร่อย ที่ ฟื้นฟู สุขภาพ บางส่วน
+Name_TAI = พาย ฟักทอง
+Description_POR = Um torta saborosa que restaura um pouco de saúde.
+Description_SPN = Un sabroso pastel que recupera algo de salud.
+Description_RUS = Вкусный пирог, который восстанавливает немного здоровья.
+Description_IND = Pai lezat yang memulihkan sebagian kesehatan.
+Name_POR = Torta de Abóbora
+Name_SPN = Tarta de calabaza
+Name_RUS = Тыквенный пирог
+Name_IND = Pai Labu
+Description = A tasty pie that heals some health
+
+Inventory_sprite_path = item pumpkin pie
+Crafting_ingredient_A = Wheat
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Pumpkin
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 2 to 3

@@ -1,0 +1,14 @@
+Name_TAI = บ่อน้ำ น่ากลัว
+Name_POR = Poço Assombrado
+Name_SPN = Pozo Escalofriante
+Name_RUS = Жуткий Колодец
+Name_IND = Sumur Menyeramkan
+
+Inventory_sprite_path = item spooky well
+Type = Place_in_world
+World_obj_path = Buildables/Spooky Well
+World_geometry = 2_by_2
+Market Cost = 5000
+
+Vendor0 = Houses
+Vendor1 = Mining Accessories

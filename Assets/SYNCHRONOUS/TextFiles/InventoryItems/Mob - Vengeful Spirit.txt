@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - วิญญาณ พยาบาท
+Name_POR = Mob - Espírito Vingativo
+Name_SPN = Espectro Vengativo
+Name_RUS = Моб - Мстительный Дух
+Name_IND = Gerombolan - Arwah Pendendam
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

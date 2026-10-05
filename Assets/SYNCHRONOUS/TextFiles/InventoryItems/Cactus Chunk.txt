@@ -1,0 +1,11 @@
+Name_TAI = ก้อน กระบองเพชร
+Name_POR = Pedaço de Cacto
+Name_SPN = Trozo de Cactus
+Name_RUS = Кусок Кактуса
+Name_IND = Potongan Kaktus
+
+Inventory_sprite_path = item cactus chunk
+Market Cost = 10
+
+Vendor0 = Harvested Item
+NumSell = 3 to 6

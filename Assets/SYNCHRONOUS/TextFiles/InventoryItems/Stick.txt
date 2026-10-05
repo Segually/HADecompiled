@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ การ ประดิษฐ์
+Name_TAI = ไม้เท้า
+Description_POR = Material de fabricação
+Description_SPN = Material de elaboración
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Graveto
+Name_SPN = Palo
+Name_RUS = Палка
+Name_IND = Tongkat
+Description = Crafting material
+
+Inventory_sprite_path = item stick
+Market Cost = 3
+Max_stack = 5
+Crafting_makes = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Furniture
+NumSell = 5 to 12

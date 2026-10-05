@@ -1,0 +1,26 @@
+Description_TAI = หมวก โลหะ ที่ ทนทาน มอบ การ ป้องกัน ที่ เชื่อถือ ได้
+Name_TAI = หมวก โลหะ แหลม
+Description_POR = Um capacete de metal durável, oferecendo proteção confiável.
+Description_SPN = Un casco de metal duradero, que ofrece protección confiable.
+Description_RUS = Прочный металлический шлем, обеспечивающий надежную защиту.
+Description_IND = Helm logam yang tahan lama, menawarkan perlindungan yang andal.
+Name_POR = Elmo de Espigão Metálico
+Name_SPN = Casco de Pinchos de Metal
+Name_RUS = Шлем с металлическими шипами
+Name_IND = Helm Duri Logam
+Overwrite_name = Metal Spike Helm
+Description = A durable metal helmet, offering reliable protection
+
+Inventory_sprite_path = item metal helm
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/hat_metalHelm
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Defend Amount = 2
+
+Vendor0 = Armor
+NumSell = 1 to 2

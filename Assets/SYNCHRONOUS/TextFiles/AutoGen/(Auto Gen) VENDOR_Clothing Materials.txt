@@ -1,0 +1,4 @@
+[5][max_stack=5] Feathers
+[9][max_stack=5] Cotton
+[9] Fur
+[75][max_stack=5] Silk

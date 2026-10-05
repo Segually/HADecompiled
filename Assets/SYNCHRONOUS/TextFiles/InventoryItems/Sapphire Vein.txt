@@ -1,0 +1,17 @@
+Name_TAI = สายแร่ ไพลิน
+Name_POR = Veio de Safira
+Name_SPN = Veta de Zafiro
+Name_RUS = Сапфировая Жила
+Name_IND = Urat Safir
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Sapphire Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 15
+Pollinator Regen RespawnId = mob_spawn

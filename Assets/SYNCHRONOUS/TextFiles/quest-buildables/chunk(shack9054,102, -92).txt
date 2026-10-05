@@ -1,0 +1,10 @@
+*auto_version=1*
+
+[0,6] = Stone Wall (rot 2)
+
+[3,6] = Stone Wall (rot 2)
+
+[6,6] = Stone Wall (rot 2)
+
+[9,6] = Stone Wall (rot 2)
+

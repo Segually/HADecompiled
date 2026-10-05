@@ -1,0 +1,7 @@
+Name_TAI = กุญแจ
+Name_POR = Chave
+Name_SPN = Llave
+Name_RUS = Ключ
+Name_IND = Kunci
+
+Inventory_sprite_path = item key

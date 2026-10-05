@@ -1,0 +1,80 @@
+﻿Hello!
+Halo!
+
+Shall I come with you?
+Haruskah aku ikut denganmu?
+
+FOLLOW ME
+IKUTI AKU
+
+Hey boss!
+Halo bos!
+
+Is my guard duty finished?
+Apakah pekerjaan saya sebagai penjaga sudah selesai?
+
+It's a statue of somebody ...
+Itu patung seseorang...
+
+... I wonder who it is
+... Aku ingin tahu siapa itu
+
+WAIT SETTINGS
+PENGATURAN TUNGGU
+
+VISUAL SETTINGS
+PENGATURAN VISUAL
+
+GUARD SETTINGS
+PENGATURAN PENJAGA
+
+FOLLOW SETTINGS
+PENGATURAN MENGIKUTI
+
+Wait Dialogue
+Tunggu Dialog
+
+Follow/Wait Icon
+Ikon Ikuti/Tunggu
+
+Overhead name color
+Warna nama overhead
+
+Guard Dialogue
+Dialog Penjaga
+
+Automatically attack EXP Orbs when following?
+Secara otomatis menyerang Orb XP saat mengikuti?
+
+YES
+YA
+
+NO
+TIDAK
+
+Advanced
+Canggih
+
+SAVE
+MENYIMPAN
+
+< BACK
+< MEMBATALKAN
+
+Shindo Guard
+Penjaga Syindo
+
+Royal Guard
+Penjaga kerajaan
+
+Move along, citizen...
+Maju terus, warga...
+
+Don't get any ideas...
+Jangan lakukan apa yang saya pikir akan Anda lakukan...
+
+Welcome to Shindo!
+Selamat datang di Syindo!
+
+Enjoy your stay.
+Nikmati masa tinggal Anda.

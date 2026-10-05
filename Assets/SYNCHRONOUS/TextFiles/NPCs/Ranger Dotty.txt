@@ -1,0 +1,40 @@
+﻿Name_POR=Guarda Manchada
+Name_RUS=Пятнистая лесничий
+Name_IND=Penjaga Hutan Tutul
+Name_SPN=Guardabosque Manchada
+Name_TAI=ด่างดวง
+
+----- DIALOGUE -----
+[000]
+otherspeak=Welcome to Outpost 250m!
+otherspeak_POR=Bem-vindo a "Posto Avançado 250m"!
+otherspeak_RUS=Добро пожаловать в "Застава 250m"!
+otherspeak_IND=Selamat datang di "Pos Terdepan 250m"!
+otherspeak_SPN=Bienvenido a "Avanzada 250m"!
+otherspeak_TAI=ยินดีต้อนรับสู่ "ด่านหน้า 250m" นักเดินทาง!
+goto=001
+
+[001]
+otherspeak=Stock up here for your journey ahead!
+otherspeak_POR=Estoque aqui para sua jornada pela frente!
+otherspeak_RUS=Запаситесь здесь для вашего будущего путешествия!
+otherspeak_IND=Persediaan di sini untuk perjalanan Anda ke depan!
+otherspeak_SPN=¡Abastécete aquí para el viaje que tienes por delante!
+otherspeak_TAI=ตุนไว้ที่นี่สำหรับการเดินทางของคุณต่อไป!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

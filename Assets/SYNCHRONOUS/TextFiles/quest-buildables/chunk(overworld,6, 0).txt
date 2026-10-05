@@ -1,0 +1,48 @@
+*auto_version=17*
+*is_blank=true*
+*forced_biome=1*
+
+[8,9] = Shack (rot 0)
+	shack_id = *long* 9056
+	paint = *string* Basic Cyan
+
+[9,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,7] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,4] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[8,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,9] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,6] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[8,5] = Frozen Tree (rot 3)
+
+[1,9] = Fancy Torch (rot 0)
+	paint = *string* Glacier
+
+[0,6] = Frozen Tree (rot 0)
+

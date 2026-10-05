@@ -1,0 +1,14 @@
+Name_TAI = เครื่องสร้าง - เปลือก หอย สี ฟ้า
+Name_POR = Gerador - Conchas Azuis
+Name_SPN = Generador - Conchas Azules
+Name_RUS = Спавнер - Синие Ракушки
+Name_IND = Pemijahan - Kulit Biru
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Blue Shells
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

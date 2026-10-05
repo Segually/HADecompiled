@@ -1,0 +1,42 @@
+Description_TAI = ป้าย ที่ มี ไอคอน อยู่ บน มัน!
+Name_TAI = ป้าย ร้านค้า
+Description_POR = Um sinal com um ícone nele!
+Description_SPN = ¡Un cartel con un ícono!
+Description_RUS = Знак с изображением на нем!
+Description_IND = Sebuah tanda dengan ikon di atasnya!
+Name_POR = Placa de Loja
+Name_SPN = Cartel de tienda
+Name_RUS = Табличка магазина
+Name_IND = Papan Toko
+Overwrite_name = Shop Sign
+Description = A sign with an icon on it!
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Merchant Sign
+World_geometry = 1_by_1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-2, 1-3, 2-1, 3-1, 
+PaintLayout0_SolidColors = 0-5, 1-1, 2-3, 3-1, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 3-1, 
+PaintLayout0_Pastels = 0-3, 1-2, 2-1, 3-1, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-3, 
+Default Coloring = Debug - Wood
+Default Stamp = Coins Stamp
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 52.5
+model3d_yRot = 10
+model3d_xRot = -85
+model3d_objRot = 14
+model3d_camHeight = 0.6
+model3d_recenterX = 21
+model3d_recenterY = 8
+PaintLayout0_Nomad = 0-5, 1-3, 2-2, 3-2, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 3-3, 

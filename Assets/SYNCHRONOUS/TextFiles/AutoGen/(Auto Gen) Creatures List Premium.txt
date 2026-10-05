@@ -1,0 +1,122 @@
+[30 Gems]
+
+[60 Gems]
+
+[Animal Pack (Birds)]
+crow
+seagull
+hummingbird
+vulture
+peacock
+
+[Animal Pack (Bugs)]
+butterfly
+caterpillar
+ladybug
+mantis
+cockroach
+
+[Animal Pack (Cute 1)]
+alpaca
+unicorn
+red panda
+fox
+mouse
+
+[Animal Pack (Cute 2)]
+chinchilla
+gecko
+hedgehog
+manatee
+puffin
+
+[Animal Pack (Dogs)]
+chihuahua
+pug
+shiba inu
+great dane
+corgi
+
+[Animal Pack (Food 1)]
+avocado
+pumpkin
+corn
+carrot
+asparagus
+
+[Animal Pack (Food 2)]
+banana
+pineapple
+cookie
+cupcake
+watermelon
+
+[Animal Pack (Food 3)]
+hotdog
+frenchfries
+doughnut
+pizza
+chickenwing
+
+[Animal Pack (Jungle)]
+orangutan
+baboon
+chameleon
+panther
+macaw
+
+[Animal Pack (Mix 1)]
+cow
+raptor
+komodoDragon
+skunk
+panda
+
+[Animal Pack (Mix 2)]
+kitten
+astronaut
+devil
+tree
+slide
+
+[Animal Pack (Mix 3)]
+dragon
+flamingo
+grasshopper
+fly
+eagle
+
+[Animal Pack (People)]
+politician
+ninja
+influencer
+angel
+samurai
+
+[Animal Pack (Vehicles)]
+bicycle
+garbagetruck
+helicopter
+airplane
+car
+
+[Companion Egg]
+
+[Custom Teleporters]
+
+[Furniture Pack (Games)]
+
+[Furniture Pack (Mixed)]
+
+[Furniture Pack (Online Items)]
+
+[Furniture Pack (Painting)]
+
+[Huge Inventory]
+
+[Music Boxes]
+
+[Mutation]
+
+[Remove Ads]
+

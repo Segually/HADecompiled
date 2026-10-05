@@ -1,0 +1,32 @@
+Description_TAI = หมวกเหล็ก น่าสะพรึงกลัว รูปทรงเหมือน กะโหลก ศีรษะ อันชั่วร้าย
+Name_TAI = หมวก กะโหลก มืด
+Description_POR = Um elmo sombrio em forma de caveira sinistra.
+Description_SPN = Un yelmo lúgubre con forma de calavera siniestra.
+Description_RUS = Мрачный шлем в виде зловещего черепа.
+Description_IND = Sebuah helm suram yang berbentuk seperti tengkorak jahat.
+Name_POR = Elmo de Caveira Sombria
+Name_SPN = Yelmo de Calavera Oscura
+Name_RUS = Шлем Тёмного Черепа
+Name_IND = Helm Tengkorak Gelap
+Description = A grim helm shaped like a sinister skull
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/SkullHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 66
+Craft_required_lvl = 102
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ancient Skull Helm
+Default Coloring = Weapon - Dark
+
+Defend Amount = 23
+
+show_model3d = true
+Copy3dModelPosition = Ancient Skull Helm
+
+Vendor0 = Armor
+NumSell = 1 to 2

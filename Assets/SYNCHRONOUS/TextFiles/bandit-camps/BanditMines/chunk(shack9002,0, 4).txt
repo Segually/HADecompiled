@@ -1,0 +1,26 @@
+*forced_floor_rot=2*
+*forced_floor_model=5*
+
+[5,5] = RANDOM_BIOME_GEM_LARGE (rot 0)
+
+[6,3] = RANDOM_BIOME_GEM (rot 1)
+
+[3,9] = RANDOM_BIOME_GEM (rot 2)
+
+[2,0] = Torch (rot 1)
+	paint = *string* BANDIT_COMPL
+
+[3,4] = BIOME_SMALL_STALAGMITE (rot 3)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[8,3] = Mob - BANDIT_FACTION Stronger (rot 0)
+
+[1,6] = Mob - BANDIT_FACTION Stronger (rot 0)
+

@@ -1,0 +1,14 @@
+*auto_version=1*
+*forced_floor_rot=2*
+*forced_floor_model=1*
+
+[7,0] = Blue Torch (rot 0)
+
+[2,2] = Old Torch (rot 0)
+
+[5,7] = Cave Chest (rot 1)
+	basket_id = *long* 9140
+
+[7,6] = Cave Basket (rot 0)
+	basket_id = *long* 9141
+

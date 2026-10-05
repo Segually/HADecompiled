@@ -1,0 +1,14 @@
+Name_TAI = เครื่องวางไข่ - เปลือก ทองคำ
+Name_POR = Spawner - Conchas de Ouro
+Name_SPN = Generador - Cáscaras Doradas
+Name_RUS = Спавнер - Золотые Ракушки
+Name_IND = Pemijahan - Kulit Emas
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Gold Shells
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

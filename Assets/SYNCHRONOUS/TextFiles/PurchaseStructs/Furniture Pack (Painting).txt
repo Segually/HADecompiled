@@ -1,0 +1,6 @@
+Description = Unlocks items: Paint Shaker, Stamp Maker, Painting Easel
+IAP_KEY = recipe_painting
+Type = permanent
+Gem_price = medium
+Bg_color = yellow
+Model_path = shop_painting

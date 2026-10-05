@@ -1,0 +1,41 @@
+Description_TAI = นั่ง บน มัน
+Name_TAI = เก้าอี้ โลหะ
+Description_POR = Sente-se nele.
+Description_SPN = Siéntate en él.
+Description_RUS = Сядь на него.
+Description_IND = Duduk di atasnya.
+Name_POR = Cadeira de Metal
+Name_SPN = Silla de metal
+Name_RUS = Металлический стул
+Name_IND = Kursi Logam
+Description = Sit on it.
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Metal Chair
+World_geometry = 1_by_1
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 2 to 4
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-3, 1-1, 2-5, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_Trimmed = 0-3, 1-2, 2-1, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+Default Coloring = Debug - Metal DK
+
+show_model3d = true
+model3d_fov = 41
+model3d_camDist = 1.7
+model3d_camHeight = 0.2
+model3d_yRot = 15
+model3d_recenterY = 8
+model3d_recenterX = 2
+model3d_xRot = -95
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

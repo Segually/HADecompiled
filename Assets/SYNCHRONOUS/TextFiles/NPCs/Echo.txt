@@ -1,0 +1,25 @@
+Name_POR=Echo
+Name_RUS=Эхо
+Name_IND=Echo
+Name_SPN=Eco
+Name_TAI=เอคโค่
+
+----- DIALOGUE -----
+[0]
+otherspeak=In the evening's dim light, we slide and we sneak.
+otherspeak_POR=Na ténue luz da noite, deslizamos e esgueiramos.
+otherspeak_RUS=В сумеречном свете вечера мы скользим и крадемся.
+otherspeak_IND=Di cahaya remang-remang malam, kita meluncur dan menyelinap.
+otherspeak_SPN=En la luz tenue del anochecer, nos deslizamos y nos escabullimos.
+otherspeak_TAI=ในแสงสว่างอันไกลโพ้นของเวลาค่ำคืน, เราคลานและเราลอบลับ.
+goto=001
+
+[1]
+otherspeak=Secrets we find, but never we speak.
+otherspeak_POR=Descobrimos segredos, mas nunca os revelamos.
+otherspeak_RUS=Тайны мы находим, но никогда не разглашаем.
+otherspeak_IND=Rahasia yang kita temukan, namun tak pernah kita bicarakan.
+otherspeak_SPN=Secretos encontramos, pero nunca los pronunciamos.
+otherspeak_TAI=ความลับที่เราค้นพบ, แต่เราจะไม่เคยพูด.
+goto=-1
+

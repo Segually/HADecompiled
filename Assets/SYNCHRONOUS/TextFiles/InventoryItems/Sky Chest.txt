@@ -1,0 +1,24 @@
+Name_TAI = หีบ ท้องฟ้า
+Name_POR = Baú Celeste
+Name_SPN = Cofre Celestial
+Name_RUS = Небесный сундук
+Name_IND = Dada Langit
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Place_in_world
+World_obj_path = Buildables/Sky Chest
+World_geometry = 1_by_1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+paintable_by_player = true
+CopyPaintLayout = Chest
+Default Coloring = Basic Blue
+
+not_obtainable = true
+
+show_model3d = true
+Copy3dModelPosition = Chest

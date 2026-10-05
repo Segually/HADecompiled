@@ -1,0 +1,23 @@
+Description_TAI = ลบ สี และ รอย ประทับ ออกจาก เฟอร์นิเจอร์
+Name_TAI = ทินเนอร์ ลบ สี
+Description_POR = Remove tinta e selos de móveis.
+Description_SPN = Quita pintura y estampados de los muebles.
+Description_RUS = Удаляет краску и следы от штампов с мебели.
+Description_IND = Menghilangkan cat dan cap dari furnitur
+Name_POR = Diluente de Tinta
+Name_SPN = Diluyente de pintura
+Name_RUS = Растворитель краски
+Name_IND = Pengencer Cat
+Description = Takes paint and stamps off furniture
+
+Inventory_sprite_path = item paint thinner
+Crafting_ingredient_A = Purple Mushroom
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Venom
+Crafting_ingredient_B_count = 1
+Crafting_makes = 10
+Max_stack = 10
+Type = Tool
+Market Cost = CALCULATE
+
+NumSell = 6 to 9

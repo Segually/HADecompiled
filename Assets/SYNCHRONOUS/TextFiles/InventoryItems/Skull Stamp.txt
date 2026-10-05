@@ -1,0 +1,30 @@
+Description_TAI = เพิ่ม สัญลักษณ์ กะโหลก ลง ใน เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตรา กะโหลก
+Description_POR = Adicione um símbolo de Caveira ao seu móvel!
+Description_SPN = ¡Agrega un símbolo de calavera a tus muebles!
+Description_RUS = Добавьте символ черепа к вашей мебели!
+Description_IND = Tambahkan simbol Tengkorak ke furnitur Anda!
+Name_POR = Carimbo de Caveira
+Name_SPN = Sello de Calavera
+Name_RUS = Черепный Штамп
+Name_IND = Stempel Tengkorak
+Description = Add a Skull symbol to your furniture!
+
+Inventory_sprite_path = item stamp skull
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

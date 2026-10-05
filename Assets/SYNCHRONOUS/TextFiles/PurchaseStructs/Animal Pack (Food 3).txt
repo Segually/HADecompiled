@@ -1,0 +1,12 @@
+Description = Adds animals: hotdog, frenchfries, doughnut, pizza, chickenwing
+IAP_KEY = creature_pack_3
+Type = permanent
+Gem_price = medium
+Bg_color = yellow
+Model_path = shop_creaturePack3
+
+animal0 = hotdog
+animal1 = frenchfries
+animal2 = doughnut
+animal3 = pizza
+animal4 = chickenwing

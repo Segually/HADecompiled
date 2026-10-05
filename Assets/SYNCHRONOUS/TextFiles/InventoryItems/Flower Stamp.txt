@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ ดอกไม้ ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตรา ดอกไม้
+Description_POR = Adicione um símbolo de flor ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de flor a tus muebles!
+Description_RUS = Добавьте символ цветка к вашей мебели!
+Description_IND = Tambahkan simbol Bunga ke furnitur Anda!
+Name_POR = Carimbo de Flor
+Name_SPN = Sello de Flor
+Name_RUS = Цветочная печать
+Name_IND = Stempel Bunga
+Description = Add a Flower symbol to your furniture!
+
+Inventory_sprite_path = item stamp flower
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

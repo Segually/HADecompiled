@@ -1,0 +1,7 @@
+Name_TAI = เปลือก สี แดง
+Name_POR = Casco Vermelho
+Name_SPN = Caparazón Rojo
+Name_RUS = Красная ракушка
+Name_IND = Kulit Merah
+
+Inventory_sprite_path = item seashell red

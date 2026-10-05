@@ -1,0 +1,18 @@
+Description_TAI = แร่ หายาก มาก พบ ใน พื้นที่ ที่ มี หิมะ
+Name_TAI = เศษ น้ำแข็ง
+Description_POR = Mineral extremamente raro, encontrado em áreas nevadas.
+Description_SPN = Mineral extremadamente raro, encontrado en áreas nevadas.
+Description_RUS = Чрезвычайно редкий минерал, встречающийся в заснеженных районах.
+Description_IND = Mineral yang sangat langka, ditemukan di daerah bersalju
+Name_POR = Estilhaço de Gelo
+Name_SPN = Fragmento de Hielo
+Name_RUS = Ледяной осколок
+Name_IND = Pecahan Es
+Description = Extremely rare mineral, found in snowy areas
+
+Inventory_sprite_path = item ice shard
+Market Cost = 400
+
+Vendor0 = Ores
+Vendor1 = Refined Materials
+NumSell = 2 to 3

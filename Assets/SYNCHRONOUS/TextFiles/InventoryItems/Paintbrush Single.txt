@@ -1,0 +1,22 @@
+Name_TAI = พู่กัน เดี่ยว
+Name_POR = Pincel Único
+Name_SPN = Pincel Individual
+Name_RUS = Кисть одиночная
+Name_IND = Kuas Cat Tunggal
+World_obj_path = 3D Item Graphics/Paintbrush Single
+
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 27.5
+model3d_xRot = -70
+model3d_objRot = 2
+model3d_camHeight = 0.2
+model3d_recenterX = -5
+model3d_recenterY = 4
+PaintLayout0_SolidColors = 0-1, 
+PaintLayout0_Pastels = 0-2, 
+PaintLayout0_Trimmed = 0-1, 
+PaintLayout0_Nomad = 0-1, 
+
+not_obtainable = true
+

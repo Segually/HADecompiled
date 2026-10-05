@@ -1,0 +1,17 @@
+Description_TAI = ส่วนผสม
+Name_TAI = รัง ผึ้ง
+Description_POR = Ingrediente.
+Description_SPN = Ingrediente.
+Description_RUS = Ингредиент.
+Description_IND = Bahan.
+Name_POR = Favo de mel
+Name_SPN = Panal
+Name_RUS = Соты
+Name_IND = Sarang Lebah
+Description = Ingredient.
+
+Inventory_sprite_path = item honeycomb
+Market Cost = 5
+
+Vendor0 = Harvested Item
+NumSell = 3 to 5

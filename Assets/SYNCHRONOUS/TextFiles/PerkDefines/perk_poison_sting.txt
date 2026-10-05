@@ -1,0 +1,14 @@
+Full Name = Poison Sting
+Description = Poisons your enemy
+Detailed Description = GetInt[EFFECT_POISON, "Damage", remove ""] damage DiffInt[EFFECT_POISON, "Damage", add ""] per second for GetInt[EFFECT_POISON, "Duration", remove " seconds"] seconds DiffInt[EFFECT_POISON, "Duration", remove " seconds", add " seconds"] on target.
+Energy Cost = 40%
+On cast = [EFFECT_POISON] on projectile(model=perk_poison_sting_projectile,target=enemies)
+-
+[EFFECT_POISON]
+Type = Duration Effect
+Damage = RANGE (1%-3%-5% of own HP)
+Duration = CLAMP (3 seconds @ lvl_1 ... 9 seconds @ lvl_15)
+Particle (Duration) = perk_poison_sting_duration
+Scale Particle With Creature Size = true
+Apply every = 1 seconds
+Splat color = green

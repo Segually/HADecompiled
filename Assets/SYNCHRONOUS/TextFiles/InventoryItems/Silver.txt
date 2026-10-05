@@ -1,0 +1,11 @@
+Name_TAI = เงิน
+Name_POR = Prata
+Name_SPN = Plata
+Name_RUS = Серебро
+Name_IND = Perak
+
+Inventory_sprite_path = item silver
+Market Cost = 70
+
+Vendor0 = Ores
+NumSell = 2 to 4

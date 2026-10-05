@@ -1,0 +1,17 @@
+Name_TAI = สายแร่ ทองคำ
+Name_POR = Veio de Ouro
+Name_SPN = Veta de Oro
+Name_RUS = Золотая Жила
+Name_IND = Urat Emas
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Gold Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 8
+Pollinator Regen RespawnId = mob_spawn

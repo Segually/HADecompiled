@@ -1,0 +1,40 @@
+Name_POR=Chonk
+Name_RUS=Чонк
+Name_IND=Chonk
+Name_SPN=Chonk
+Name_TAI=ชอง
+
+----- DIALOGUE -----
+[000]
+otherspeak=Oi! Lookin for some rare eggs?
+otherspeak_POR=Oi! Procurando alguns ovos raros?
+otherspeak_RUS=Ой! Ищете редкие яйца?
+otherspeak_IND=Oi! Mencari beberapa telur langka?
+otherspeak_SPN=¡Oi! ¿Buscas huevos raros?
+otherspeak_TAI=เฮ้ย! มองหาไข่หายากอยู่หรือเปล่า?
+goto=001
+
+[001]
+otherspeak=My collection comes from worlds away!
+otherspeak_POR=Minha coleção vem de mundos distantes!
+otherspeak_RUS=Моя коллекция пришла из дальних миров!
+otherspeak_IND=Koleksi saya berasal dari dunia yang jauh!
+otherspeak_SPN=¡Mi colección viene de mundos lejanos!
+otherspeak_TAI=คอลเลกชันของฉันมาจากโลกที่ห่างไกล!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOSf
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

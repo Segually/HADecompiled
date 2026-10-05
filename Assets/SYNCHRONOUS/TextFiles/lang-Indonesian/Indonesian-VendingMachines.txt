@@ -1,0 +1,41 @@
+﻿ITEMS FOR SALE
+BARANG DIJUAL
+
+ITEMS
+BARANG
+
+PROFITS
+KEUNTUNGAN
+
+SOLD OUT
+TERJUAL HABIS
+
+COLLECT PROFIT
+KUMPULKAN KEUNTUNGAN
+
+TAKE ITEM
+AMBIL BARANG
+
+Out of stock, come back another time!
+Stok habis, kembali lagi lain waktu!
+
+ADD ITEM
+TAMBAHKAN BARANG
+
+Select an item from your inventory to add
+Pilih item dari inventaris Anda untuk ditambahkan
+
+ACCEPT
+MENERIMA
+
+Set Price
+Tetapkan Harga
+
+To buy this, you need
+Untuk membeli ini, Anda perlu
+
+Buy XYZ for
+Beli XYZ seharga
+
+Buy ABC XYZ for
+Beli ABC XYZ seharga

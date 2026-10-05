@@ -1,0 +1,34 @@
+Description_TAI = มีดอีโต้ ไทเทเนียม ขนาด มหึมา เบา อย่าง หลอกลวง
+Name_TAI = มี ด ตั ด เนื้อ ไทเทเนียม
+Description_POR = Um cutelo colossal de titânio, enganadoramente leve.
+Description_SPN = Un colosal cuchillo de titanio, engañosamente ligero.
+Description_RUS = Огромный титановый нож, обманчиво легкий.
+Description_IND = Sebuah parang titanium kolosal, tampak ringan secara menipu.
+Name_POR = Cutelo de Titânio
+Name_SPN = Machete de Titanio
+Name_RUS = Титановый клевец
+Name_IND = Pisau Besar Titanium
+Description = A colossal titanium cleaver, deceptively light
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/BigSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+NumSell = 1 to 2
+
+Damage Base = 7
+
+CopyPaintLayout = Metal Cleaver
+Default Coloring = Weapon - Titanium
+
+show_model3d = true
+Copy3dModelPosition = Metal Cleaver
+
+weapon_display_copy = Metal Cleaver

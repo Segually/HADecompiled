@@ -1,0 +1,37 @@
+Description_TAI = ใบมีด น้ำแข็ง ที่ ถูก ร่าย มนตร์ ซึ่ง ตัด ด้วย โอกาส ที่ จะ แช่แข็ง ศัตรู
+Name_TAI = ดาบ น้ำแข็ง คู่
+Description_POR = Lâminas de gelo encantadas que cortam com chance de congelar os inimigos.
+Description_SPN = Hojas de hielo encantadas que cortan con una probabilidad de congelar a los enemigos
+Description_RUS = Зачарованные ледяные клинки, которые режут с шансом заморозить врагов.
+Description_IND = Pisau es yang terpesona yang memotong dengan kemungkinan membekukan musuh.
+Name_POR = Espada Gêmea de Gelo
+Name_SPN = Espada Gemela de Hielo
+Name_RUS = Ледяной Двойной Меч
+Name_IND = Pedang Kembar Es
+Overwrite_name = Ice TwinSword
+Description = Enchanted ice blades that slice with a chance to freeze foes
+
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/DoubleSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 36
+Craft_required_lvl = 54
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 26
+Damage Perk = perk_freeze
+Damage Perk Odds = 0.25
+
+CopyPaintLayout = Uranium DoubleSword
+Default Coloring = Weapon - Ice
+
+dual_wield = true
+
+show_model3d = true
+Copy3dModelPosition = Uranium DoubleSword
+
+weapon_display_copy = Uranium DoubleSword

@@ -1,0 +1,17 @@
+Name_TAI = เครื่องสร้าง - ไม้เท้า
+Name_POR = Gerador - Gravetos
+Name_SPN = Generador - Palos
+Name_RUS = Создатель - Палочки
+Name_IND = Pemijat - Tongkat
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Sticks
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

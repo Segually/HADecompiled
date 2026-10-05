@@ -1,0 +1,42 @@
+Description_TAI = นุ่ม สบาย และ ผ่อนคลาย
+Name_TAI = เก้าอี้ โซฟา
+Description_POR = Confortável e relaxante
+Description_SPN = Cómodo y relajante
+Description_RUS = Мягкий и расслабляющий
+Description_IND = Menyenangkan dan santai
+Name_POR = Cadeira-Sofá
+Name_SPN = Sillón sofá
+Name_RUS = Диван-кресло
+Name_IND = Kursi Sofa
+Description = Cooshy and relaxing
+
+Crafting_ingredient_A = Cotton
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Stick
+Crafting_ingredient_B_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Sofa Chair
+World_geometry = 1_by_1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_SolidColors = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+Default Coloring = Basic Red
+model3d_camDist = 2.8
+show_model3d = true
+model3d_fov = 37.5
+model3d_xRot = -95
+model3d_camHeight = 0.3
+model3d_yRot = 15
+model3d_recenterX = 0
+model3d_recenterY = 2
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-2, 

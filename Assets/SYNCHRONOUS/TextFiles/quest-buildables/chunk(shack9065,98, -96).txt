@@ -1,0 +1,38 @@
+*auto_version=13*
+
+[9,6] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,2] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,1] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[8,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,5] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,8] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,7] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,9] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+

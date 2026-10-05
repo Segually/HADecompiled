@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณเป็นสีเทาเข้ม!
+Name_TAI = พายุ สีเทา
+Description_POR = Pinte seus móveis de Cinza Escuro!
+Description_SPN = ¡Pinta tus muebles de gris oscuro!
+Description_RUS = Покрасьте свою мебель в темно-серый цвет!
+Description_IND = Catlah perabotan Anda dengan warna Abu-abu Tua!
+Name_POR = Cinza Tempestade
+Name_SPN = Gris Tormenta
+Name_RUS = Штормовой Серый
+Name_IND = Abu Badai
+Description = Paint your furniture a Dark Grey!
+
+Inventory_sprite_path = item paint storm grey
+Crafting_ingredient_A = Basic Black
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Snowball
+Crafting_ingredient_B_count = 2
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

@@ -1,0 +1,31 @@
+Description_TAI = สี ทา เฟอร์นิเจอร์ ที่ เข้า กัน กับ สี แดง
+Name_TAI = รอยัล เรด
+Description_POR = Tinta para móveis que combina bem com vermelho.
+Description_SPN = Pintura para muebles que combina bien con rojo.
+Description_RUS = Краска для мебели, которая хорошо сочетается с красным.
+Description_IND = Cat furnitur yang cocok dengan warna merah.
+Name_POR = Vermelho Real
+Name_SPN = Rojo Real
+Name_RUS = Королевский Красный
+Name_IND = Merah Kerajaan
+Description = Furniture paint that goes well with Red.
+
+Inventory_sprite_path = item paint royal red
+Crafting_ingredient_A = Basic Red
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Basic Yellow
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

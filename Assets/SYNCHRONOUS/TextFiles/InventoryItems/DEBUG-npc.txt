@@ -1,0 +1,13 @@
+Name_TAI = ดีบั๊ก-เอ็นพีซี
+Name_POR = DEPURAR-pnj
+Name_SPN = DEPURACIÓN-pnj
+Name_RUS = ОТЛАДКА-npc
+Name_IND = DEBUG-npc
+Type = Place_in_world
+World_obj_path = Buildables/DEBUG-npc
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

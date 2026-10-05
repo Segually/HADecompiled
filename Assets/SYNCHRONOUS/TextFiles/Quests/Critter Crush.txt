@@ -1,0 +1,66 @@
+﻿questname_POR = Triturador Insetos
+questname_RUS = измельчитель насекомых
+questname_IND = Penghancur Serangga
+questname_SPN = Trituradora Insectos
+questname_TAI = เครื่องบดแมลง
+Complete_text = I helped squash the rat-roaches in Shindo Castle!
+Complete_text_POR = Eu ajudei a esmagar as baratas-rato no Castelo Shindo!
+Complete_text_RUS = Я помогал раздавить тараканов в замке Шиндох!
+Complete_text_IND = Saya membantu menghancurkan tikus-kecoak di Kastil Syindo!
+Complete_text_SPN = ¡Ayudé a aplastar las cucarachas-rata en el castillo de Schindo!
+Complete_text_TAI = ฉันช่วยสควอชหนูแมลงสาบในปราสาทชินโด!
+Reward0_item = Key
+Reward0_count = 1
+Reward0_key_name = Nelly
+Repeat_hours = 28
+RewardSuperChest0 = 9014
+
+[step 0]
+Hint = I should talk to Housekeeper Nelly at Shindo Castle
+Hint_POR = Eu deveria falar com a Governanta Nelly no Castelo Shindo
+Hint_RUS = Мне нужно поговорить с Домработница Нелли в замке Шиндох
+Hint_IND = Saya harus berbicara dengan Pengurus Rumah Tangga Nelly di Kastil Syindo
+Hint_SPN = Debería hablar con la ama de llaves Nelly en el castillo de Schindo
+Hint_TAI = ฉันควรคุยกับแม่บ้านเนลลีที่ปราสาทชินโด
+
+[step 1]
+Hint = There is a rat-roach infestation in the basement of Shindo Castle. I should speak to Housekeeper Nelly again.
+Hint_POR = Há uma infestação de baratas-rato no porão do Castelo Shindo. Devo falar com a Governanta Nelly novamente.
+Hint_RUS = В подвале замка Шиндох обитает таракан. Я должен снова поговорить с Домработница Нелли.
+Hint_IND = Ada infestasi tikus-kecoak di ruang bawah tanah Kastil Syindo. Saya harus berbicara dengan Pengurus Rumah Tangga Nelly lagi.
+Hint_SPN = Hay una plaga de cucarachas en el sótano del castillo de Schindo. Debería volver a hablar con el ama de llaves Nelly.
+Hint_TAI = มีแมลงสาบหนูอยู่บริเวณชั้น ใต้ดินของปราสาทชินโด ฉันควรคุยกับแม่บ้านเนลลีอีกครั้ง
+
+[step 2]
+Hint = I need to squish at least [GOAL_KILLS] rat-roaches!
+Hint_POR = Eu preciso esmagar pelo menos [GOAL_KILLS] baratas-rato!
+Hint_RUS = Мне нужно раздавить как минимум [GOAL_KILLS] тараканов!
+Hint_IND = Saya perlu menghancurkan setidaknya [GOAL_KILLS] kecoak tikus!
+Hint_SPN = ¡Necesito aplastar al menos [GOAL_KILLS] cucarachas rata!
+Hint_TAI = ฉันต้องขยี้หนูแมลงสาบอย่างน้อย [GOAL_KILLS] ตัว!
+Instantly teleport to = chunk(shack9013,99, -99) 0 0
+Apply perk to player = perk_cockroach_squish
+Disable companions = true
+Goal kills = 35
+Time limit = 60
+On logout revert to step = 1
+Step type = Kill As Many Mobs As Possible
+Soundtrack = Race 1
+
+[step 3]
+Hint = I don't think I squished enough rat-roaches... I should talk to Nelly.
+Hint_POR = Acho que não esmaguei rato-baratas o suficiente ... Devia falar com a Nelly.
+Hint_RUS = Не думаю, что я раздавил достаточно тараканов ... Мне нужно поговорить с Нелли.
+Hint_IND = Kurasa aku tidak cukup menekan kecoak... Aku harus bicara dengan Nelly.
+Hint_SPN = No creo que haya aplastado suficientes cucarachas rata ... Debería hablar con Nelly.
+Hint_TAI = ฉันไม่คิดว่าฉันบีบหนูแมลงสาบมากพอ... ฉันควรคุยกับเนลลี
+Instantly teleport to = chunk(shack9059,4, 2) 3 8
+
+[step 4]
+Hint = I fixed the rat-roach infestation! I should talk to Nelly for my reward.
+Hint_POR = Consertei a infestação de baratas-rato! Devo falar com Nelly para receber minha recompensa.
+Hint_RUS = Я устранил нашествие крыс-тараканов! Я должен поговорить с Нелли о награде.
+Hint_IND = Saya memperbaiki infestasi tikus-kecoak! Saya harus berbicara dengan Nelly untuk hadiah saya.
+Hint_SPN = ¡Arreglé la plaga de cucarachas! Debería hablar con Nelly por mi recompensa.
+Hint_TAI = ฉันแก้ไขการรบกวนของหนูแมลงสาบ! ฉันควรคุยกับเนลลี่เพื่อรับรางวัล
+Instantly teleport to = chunk(shack9059,4, 2) 3 8

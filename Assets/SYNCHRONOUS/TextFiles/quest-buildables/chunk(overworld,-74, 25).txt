@@ -1,0 +1,24 @@
+*auto_version=3*
+
+[4,0] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[4,6] = Dirt Path (rot 0)
+
+[3,6] = Dirt Path (rot 0)
+
+[2,6] = Dirt Path (rot 0)
+
+[1,6] = Dirt Path (rot 0)
+
+[0,6] = Dirt Path (rot 0)
+

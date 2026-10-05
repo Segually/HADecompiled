@@ -1,0 +1,15 @@
+*auto_version=5*
+*forced_biome=0*
+
+[8,0] = Cobblestone Path (rot 0)
+
+[8,3] = Shack (rot 1)
+	shack_id = *long* 9052
+	paint = *string* Mystic Dusk
+
+[6,1] = Merchant Sign (rot 0)
+	stamp = *string* Potion Stamp
+	sign_header = *string* Octo-Kitty's Potion Shop
+	sign_text = *string* Our snacks and potions are Purrrfect
+	paint = *string* Mystic Dusk
+

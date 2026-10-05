@@ -1,0 +1,12 @@
+Description = Adds animals: kitten, astronaut, devil, tree, plastic slide
+IAP_KEY = creature_pack_1
+Type = permanent
+Gem_price = medium
+Bg_color = light_orange
+Model_path = shop_creaturePack
+
+animal0 = kitten
+animal1 = astronaut
+animal2 = devil
+animal3 = tree
+animal4 = slide

@@ -1,0 +1,11 @@
+Name_TAI = ทับทิม
+Name_POR = Rubi
+Name_SPN = Rubí
+Name_RUS = Рубин
+Name_IND = Berlian merah
+
+Inventory_sprite_path = item ruby
+Market Cost = 85
+
+Vendor0 = Ores
+NumSell = 2 to 4

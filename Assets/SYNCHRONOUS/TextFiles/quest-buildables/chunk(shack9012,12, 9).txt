@@ -1,0 +1,33 @@
+*auto_version=16*
+
+[2,0] = Wood Rails (rot 3)
+
+[2,1] = Wood Rails (rot 3)
+
+[2,2] = Wood Rails (rot 3)
+
+[2,3] = Wood Rails (rot 3)
+
+[6,2] = DEBUG-npc (rot 0)
+	npc_file = *string* Deeno
+	creature_A = *string* dragon
+	creature_B = *string* giraffe
+	npc_icon = *string* Merchant
+	voice = *string* old
+	merchant_type = *string* Traps
+
+[3,1] = Crafting Table (rot 0)
+	paint = *string* Titanium Trim
+
+[9,3] = Painting (rot 0)
+	dev_painting_id = *short* 9
+	paint = *string* Black & Gold
+
+[1,3] = Stamp Maker (rot 0)
+
+[4,3] = Pop-up Saw (rot 0)
+	paint = *string* Industrial Hazard
+
+[7,3] = Pop-up Saw (rot 0)
+	paint = *string* Industrial Hazard
+

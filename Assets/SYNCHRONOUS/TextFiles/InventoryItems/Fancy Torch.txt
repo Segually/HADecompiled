@@ -1,0 +1,43 @@
+Description_TAI = การตกแต่ง ขนาดใหญ่
+Name_TAI = คบเพลิง หรูหรา
+Description_POR = Uma grande decoração
+Description_SPN = Una gran decoración
+Description_RUS = Большое украшение
+Description_IND = Dekorasi besar
+Name_POR = Tocha Elegante
+Name_SPN = Antorcha Elegante
+Name_RUS = Факел с украшениями
+Name_IND = Obor Mewah
+Description = A large decoration
+
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Place_in_world
+World_obj_path = Buildables/Fancy Torch
+World_geometry = 1_by_1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 2 to 5
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-3, 1-2, 2-3, 3-1, 
+PaintLayout0_SolidColors = 0-2, 1-6, 2-3, 3-1, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 3-1, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 3-1, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-2, 3-1, 
+Default Coloring = Debug - Stone & Wood
+PaintLayout0_Stone & Wood = 0-1, 1-3, 2-3, 3-1, 
+PaintLayout0_Nomad = 0-2, 1-6, 2-3, 3-1, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-2, 3-1, 
+
+model3d_camDist = 3
+show_model3d = true
+model3d_fov = 42.5
+model3d_yRot = 20
+model3d_camHeight = 0.7
+model3d_xRot = -85
+model3d_recenterY = -1

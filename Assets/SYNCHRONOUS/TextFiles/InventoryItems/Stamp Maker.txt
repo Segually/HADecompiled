@@ -1,0 +1,44 @@
+Description_TAI = ช่วย ให้ คุณ สร้าง แสตมป์
+Name_TAI = เครื่อง ทำ ตรา
+Description_POR = Permite criar Selos
+Description_SPN = Te permite crear Estampas
+Description_RUS = Позволяет создавать штампы.
+Description_IND = Memungkinkan Anda untuk membuat Cap.
+Name_POR = Criador de Selos
+Name_SPN = Creador de Sellos
+Name_RUS = Штамп-мейкер
+Name_IND = Pembuat Stempel
+Description = Allows you to create Stamps
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 8
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Stamp Maker
+World_geometry = 1_by_1
+Craft_required_lvl = 66
+Market Cost = CALCULATE
+IAP_required = recipe_painting
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 3-2, 
+Default Coloring = Utility Red
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_SolidColors = 0-2, 1-3, 2-1, 3-5, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 3-1, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 3-3, 
+
+show_model3d = true
+model3d_camDist = 2.8
+model3d_fov = 42.5
+model3d_yRot = 15
+model3d_xRot = -85
+model3d_objRot = 6
+model3d_camHeight = 0.6
+model3d_recenterX = 4
+model3d_recenterY = 1
+PaintLayout0_Nomad = 0-2, 1-3, 2-1, 3-5, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-2, 3-3, 

@@ -1,0 +1,40 @@
+Name_POR=Dino
+Name_RUS=Дино
+Name_IND=Deeno
+Name_SPN=Dino
+Name_TAI=ไดโน
+
+----- DIALOGUE -----
+[000]
+otherspeak=Ayyy! Got pests? Nosy neighbours?
+otherspeak_POR=Eiii! Tem pragas? Vizinhos curiosos?
+otherspeak_RUS=Эййй! Завелись вредители? Любопытные соседи?
+otherspeak_IND=Haiii! Punya hama? Tetangga usil?
+otherspeak_SPN=¡Oyeee! ¿Tienes plagas? Vecinos entrometidos?
+otherspeak_TAI=เฮ้! มีศัตรูพืช? เพื่อนบ้านที่มีจมูกยาว?
+goto=001
+
+[001]
+otherspeak=Fix it with a trap or two! Or five!
+otherspeak_POR=Conserte tudo com uma ou duas armadilhas! Ou cinco!
+otherspeak_RUS=Исправьте все с помощью ловушки или двух! Или пять!
+otherspeak_IND=Perbaiki semuanya dengan satu atau dua jebakan! Atau lima!
+otherspeak_SPN=¡Arregla todo con una trampa o dos! ¡O cinco!
+otherspeak_TAI=แก้ไขทุกอย่างด้วยกับดัก! หรือห้า!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

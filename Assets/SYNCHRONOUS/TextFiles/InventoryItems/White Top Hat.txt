@@ -1,0 +1,23 @@
+Description_TAI = เสื้อผ้า
+Name_TAI = หมวก ทรง สูง
+Description_POR = Vestuário
+Description_SPN = Ropa
+Description_RUS = Одежда
+Description_IND = Pakaian
+Name_POR = Cartola
+Name_SPN = Sombrero de copa
+Name_RUS = Цилиндр
+Name_IND = Topi Tinggi
+Overwrite_name = Top Hat
+Description = Clothing
+
+Inventory_sprite_path = item top hat white
+Crafting_ingredient_A = Silk
+Crafting_ingredient_A_count = 2
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/hat_topHat_white
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+Vendor0 = Clothing

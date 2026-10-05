@@ -1,0 +1,25 @@
+Description_TAI = ทำ ให้ คุณ แข็งแรง เหมือน ปลา แซลมอน ว่าย ทวนน้ำ
+Name_TAI = ส คอน แซล มอน เบอร์ รี
+Description_POR = Torna você forte como um salmão nadando rio acima.
+Description_SPN = Te hace fuerte como un salmón nadando río arriba.
+Description_RUS = Делает вас сильным, как лосось, плывущий вверх по течению.
+Description_IND = Membuatmu kuat seperti ikan salmon yang berenang melawan arus.
+Name_POR = Scone de Amora-Salmão
+Name_SPN = Scon de salmonberry
+Name_RUS = Сконы с морошкой
+Name_IND = Skon Salmonberry
+Description = Makes you strong like a salmon swimming upstream
+
+Inventory_sprite_path = item salmonberry scone
+Crafting_ingredient_A = Wheat
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = SalmonBerry
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+Vendor1 = Food
+NumSell = 2 to 3

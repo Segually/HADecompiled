@@ -1,0 +1,26 @@
+Description_TAI = ทำ ให้ ฉัน รู้สึก เหมือน กำลัง ติด ไฟ!
+Name_TAI = แกง เผ็ด
+Description_POR = Me faz sentir como se eu estivesse pegando fogo!
+Description_SPN = ¡Me hace sentir como si estuviera en llamas!
+Description_RUS = Заставляет меня чувствовать себя так, словно я в огне!
+Description_IND = Membuatku merasa seperti terbakar!
+Name_POR = Caril Vermelho
+Name_SPN = Curry Rojo
+Name_RUS = Красное карри
+Name_IND = Kari Merah
+Description = Makes me feel like I'm on fire!
+
+Inventory_sprite_path = item red curry
+Crafting_ingredient_A = Hot Pepper
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Uncooked Meat
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+Vendor1 = Food
+NumSell = 1 to 3

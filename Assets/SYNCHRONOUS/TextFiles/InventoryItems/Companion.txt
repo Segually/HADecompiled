@@ -1,0 +1,14 @@
+Name_TAI = เพื่อน ร่วม ทาง
+Name_POR = Companheiro
+Name_SPN = Compañero
+Name_RUS = Спутник
+Name_IND = Pendamping
+
+Type = Place_in_world
+World_obj_path = Buildables/Companion
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

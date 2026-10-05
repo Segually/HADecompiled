@@ -1,0 +1,43 @@
+Description_TAI = อนุญาต ให้ คุณ สร้าง พู่กัน สี พื้นฐาน
+Name_TAI = เครื่อง ผสม สี
+Description_POR = Permite criar Pincéis de Pintura básicos.
+Description_SPN = Te permite crear pinceles básicos.
+Description_RUS = Позволяет создать базовые кисти для рисования.
+Description_IND = Memungkinkan Anda membuat Kuas Cat dasar
+Name_POR = Misturador de Tinta
+Name_SPN = Mezclador de Pintura
+Name_RUS = Миксер для краски
+Name_IND = Pencampur Cat
+Description = Allows you to create basic Paint Brushes
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 4
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Paint Mixer
+World_geometry = 1_by_1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Paintbrush Accessories
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_SolidColors = 0-1, 1-3, 2-5, 3-4, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-1, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-2, 
+Default Coloring = Utility Red
+
+model3d_camDist = 3
+show_model3d = true
+model3d_fov = 32.5
+model3d_yRot = 30
+model3d_xRot = -40
+model3d_recenterY = 16
+model3d_objRot = 7
+model3d_recenterX = 2
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 3-2, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 3-3, 

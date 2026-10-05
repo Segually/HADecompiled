@@ -1,0 +1,77 @@
+[paint]
+Mystic Dusk
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+The Nightshade Bandits speak of how Lady Gloom was born from a single poisonous bloom that grew in the heart of the flower biome.
+
+[page 2 - English]
+It is said that when the petals opened, they revealed a hybrid who could control the flowers themselves, twisting them into deadly traps.
+
+[page 3 - English]
+Lady Gloom quickly gathered followers who admired her power, forming the Nightshade Bandits to dominate the region with her poisonous influence.
+
+[book name - English]
+The Poisonous Path
+
+[book name - Indonesian]
+Jalur Beracun
+
+[page 1 - Indonesian]
+Para Bandit Nightshade berbicara tentang bagaimana Lady Gloom lahir dari satu bunga beracun yang tumbuh di jantung bioma bunga.
+
+[page 2 - Indonesian]
+Dikatakan bahwa ketika kelopak bunga itu terbuka, mereka menunjukkan hibrida yang dapat mengendalikan bunga itu sendiri, memelintirnya menjadi jebakan mematikan.
+
+[page 3 - Indonesian]
+Lady Gloom dengan cepat mengumpulkan pengikut yang mengagumi kekuatannya, membentuk Bandit Nightshade untuk mendominasi wilayah itu dengan pengaruh beracunnya.
+
+[book name - Portuguese]
+O Caminho Venenoso
+
+[page 1 - Portuguese]
+Os Bandidos da Beladona falam de como Lady Gloom nasceu de uma única flor venenosa que cresceu no coração do bioma das flores.
+
+[page 2 - Portuguese]
+Diz-se que quando as pétalas se abriram, revelaram um híbrido que podia controlar as próprias flores, transformando-as em armadilhas mortais.
+
+[page 3 - Portuguese]
+Lady Gloom rapidamente reuniu seguidores que admiravam seu poder, formando os Bandidos da Beladona para dominar a região com sua influência venenosa.
+
+[book name - Russian]
+Ядовитый Путь
+
+[page 1 - Russian]
+Бандиты паслёна рассказывают о том, как Леди Глум родилась из одного ядовитого цветка, который рос в сердце цветочной биомы.
+
+[page 2 - Russian]
+Говорят, что когда лепестки раскрылись, они явили гибрид, который мог управлять самими цветами, превращая их в смертельные ловушки.
+
+[page 3 - Russian]
+Леди Глум быстро собрала последователей, восхищённых её силой, образовав банду паслёна, чтобы с её ядовитым влиянием подчинить себе регион.
+
+[book name - Spanish]
+El Camino Venenoso
+
+[page 1 - Spanish]
+Los Bandidos de Belladona hablan de cómo Lady Gloom nació de una única flor venenosa que creció en el corazón del bioma floral.
+
+[page 2 - Spanish]
+Se dice que cuando los pétalos se abrieron, revelaron un híbrido que podía controlar las flores mismas, convirtiéndolas en trampas mortales.
+
+[page 3 - Spanish]
+Lady Gloom rápidamente reunió seguidores que admiraban su poder, formando los Bandidos de Belladona para dominar la región con su influencia venenosa.
+
+[book name - Thai]
+เส้นทา งแห่งพ ิษ
+
+[page 1 - Thai]
+กลุ่มโ จรไนท์ เชดพูด ถึงว่า เลดี้ก ลูมเกิ ดจากดอ กพิษเพ ียงหนึ ่งเดีย วที่เต ิบโตใน ใจกลาง ของเขต ชีวนิเ วศดอกไ ม้
+
+[page 2 - Thai]
+มีการก ล่าวว่ าเมื่อ กลีบดอ กเปิดอ อก พวก เขาเผย ให้เห็ นตัวลู กผสมที ่สามาร ถควบคุ มดอกไม ้เอง บ ิดเบือ นพวกมั นให้กล ายเป็น กับดัก ซึ่งอั นตราย
+
+[page 3 - Thai]
+เลดี้ก ลูมรวบ รวมผู้ ติดตาม ที่ชื่ นชมพลั งของเธ ออย่าง รวดเร็ ว และไ ด้ก่อต ั้งกลุ ่มโจรไ นท์เชด เพื่อค รอบงำภ ูมิภาค ด้วยอิ ทธิพลแ ห่งพิษ ของเธอ

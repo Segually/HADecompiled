@@ -1,0 +1,756 @@
+Name_POR=Coletor Fóssil
+Name_RUS=Ископаемый коллекционер
+Name_IND=Kolektor Fosil
+Name_SPN=Colector de Fósiles
+Name_TAI=สะสมซากดึกดําบรรพ์
+
+----- DIALOGUE -----
+[0]
+*test IS_MY_WORLD*
+goto_true=1000
+goto_false=900
+
+[1000]
+*test QUEST_PROGRESS* (The Fossil Record == 0)
+goto_true=400
+goto_false=600
+boxPosition=-198.5055,-85.59054
+
+[600]
+*test QUEST_PROGRESS* (The Fossil Record == 1)
+goto_true=401
+goto_false=601
+boxPosition=-3.838675,-163.8507
+swapLineCols=true
+
+[601]
+*test QUEST_PROGRESS* (The Fossil Record == 2)
+goto_true=502
+goto_false=602
+boxPosition=-379.8238,-331.9473
+swapLineCols=true
+
+[602]
+*test QUEST_PROGRESS* (The Fossil Record == 3)
+goto_true=700
+goto_false=-1
+boxPosition=-474.7594,-575.0892
+
+[400]
+otherspeak=Wha- Who are you?!
+otherspeak_POR=Que? Quem é você?!
+otherspeak_RUS=что? Ты кто?!
+otherspeak_IND=Apa? Siapa kamu?!
+otherspeak_SPN=¿Qué? ¡¿Quién eres?!
+otherspeak_TAI=อะไรนะ คุณเป็นใคร !
+goto=001
+boxPosition=-444.0865,-175.7767
+
+[1]
+otherspeak=What year is it?!?
+otherspeak_POR=Que ano é esse?!?
+otherspeak_RUS=Какой сейчас год?!?
+otherspeak_IND=Tahun berapa sekarang?!?
+otherspeak_SPN=¿Qué año es?!?
+otherspeak_TAI=นี่มันปีอะไร?!?
+goto=002
+boxPosition=-870.6642,-328.2261
+
+[2]
+optionA=Are you okay?
+optionA_POR=Você está bem?
+optionA_RUS=У тебя все нормально?
+optionA_IND=Apakah kamu baik-baik saja?
+optionA_SPN=¿Estás bien?
+optionA_TAI=คุณสบายดีไหม?
+gotoA=003
+optionB=I'm me, duh!
+optionB_POR=Eu sou eu, dã!
+optionB_RUS=Я это я, да!
+optionB_IND=Aku adalah aku, duh!
+optionB_SPN=¡Soy yo, duh!
+optionB_TAI=ฉันเป็นตัวของ ตัวเองชัดๆ!
+gotoB=007
+boxPosition=-874.758,-429.0008
+
+[7]
+otherspeak=Well hello... You...
+otherspeak_POR=Bem, olá ... Você ...
+otherspeak_RUS=Привет ... Ты ...
+otherspeak_IND=Baiklah halo ... Kamu ...
+otherspeak_SPN=Bueno hola ... Tu ...
+otherspeak_TAI=สวัสดีครับ ... คุณ ...
+goto=008
+boxPosition=-756.7078,-509.8348
+
+[8]
+otherspeak=I need some help...
+otherspeak_POR=Eu preciso de ajuda...
+otherspeak_RUS=Мне нужна помощь...
+otherspeak_IND=Aku butuh bantuan...
+otherspeak_SPN=Necesito algo de ayuda...
+otherspeak_TAI=ฉันต้องการความช่วยเหลือ...
+goto=003
+boxPosition=-758.8307,-572.0796
+
+[3]
+otherspeak=I've been down here so long... 
+otherspeak_POR=Estou aqui há tanto tempo ...
+otherspeak_RUS=Я здесь так долго ...
+otherspeak_IND=Aku sudah lama disini ...
+otherspeak_SPN=He estado aquí tanto tiempo ...
+otherspeak_TAI=ฉันลงที่นี่มานานแล้ว ...
+goto=004
+boxPosition=-962.6735,-684.2563
+
+[4]
+otherspeak=I've lost track of time..
+otherspeak_POR=Perdi a noção do tempo ..
+otherspeak_RUS=Я потерял счет времени ..
+otherspeak_IND=Aku lupa waktu ..
+otherspeak_SPN=Perdí la noción del tiempo ...
+otherspeak_TAI=ฉันหลงทาง ..
+goto=005
+boxPosition=-961.2931,-765.5598
+
+[5]
+otherspeak=How long has it been? A month? A year?!
+otherspeak_POR=Faz quanto tempo? Um mês? Um ano?!
+otherspeak_RUS=Сколько времени прошло? Месяц? Год?!
+otherspeak_IND=Sudah berapa lama? Sebulan? Tahun?!
+otherspeak_SPN=¿Cuánto tiempo ha pasado? ¿Un mes? ¡¿Un año?!
+otherspeak_TAI=มันนานแค่ไหนแล้ว? หนึ่งเดือน? ต่อปี?!
+goto=006
+boxPosition=-966.343,-848.6363
+
+[6]
+optionA=Why are you here?
+optionA_POR=Por quê você está aqui?
+optionA_RUS=Почему ты здесь?
+optionA_IND=Mengapa kamu di sini?
+optionA_SPN=¿Por qué estás aquí?
+optionA_TAI=ทำไมเธอถึงอยู่ที่นี่?
+gotoA=100
+optionB=(Joke) You have been down here 20 years.
+optionB_POR=(Piada) Você está aqui há 20 anos.
+optionB_RUS=(Шутка) Вы здесь 20 лет.
+optionB_IND=(Lelucon) Anda telah berada di sini 20 tahun.
+optionB_SPN=(Broma) Llevas aquí 20 años.
+optionB_TAI=(ตลก) คุณอยู่ที่นี่มา 20 ปีแล้ว
+gotoB=009
+boxPosition=-962.8954,-935.2653
+
+[9]
+otherspeak=20 YEARS?!?
+otherspeak_POR=20 ANOS?!?
+otherspeak_RUS=20 ЛЕТ?!?
+otherspeak_IND=20 TAHUN?!?
+otherspeak_SPN=¿¡¿20 AÑOS?!?
+otherspeak_TAI=20 ปี?!?
+goto=010
+boxPosition=-776.8923,-1015.794
+
+[10]
+otherspeak=NOO!!! NOOOO!!
+otherspeak_POR=NÃO !!! NÃÃOO !!
+otherspeak_RUS=НЕТ !!! НЕЕЕТ !!
+otherspeak_IND=TIDAK !!! TIDAAAK !!
+otherspeak_SPN=NOO !!! NOOOO !!
+otherspeak_TAI=นู๋ !!! อู้ววว !!
+goto=011
+boxPosition=-770.0765,-1096.128
+
+[11]
+otherspeak=I left a pie in the oven at home!!!
+otherspeak_POR=Deixei uma torta no forno em casa !!!
+otherspeak_RUS=Оставила дома пирог в духовке !!!
+otherspeak_IND=Aku meninggalkan pai di oven di rumah !!!
+otherspeak_SPN=Dejé una tarta en el horno de casa !!!
+otherspeak_TAI=ฉันทิ้งพายไว้ในเตาอบที่บ้าน !!!
+goto=012
+boxPosition=-765.9308,-1165.187
+
+[12]
+optionA=Why are you here?
+optionA_POR=Por quê você está aqui?
+optionA_RUS=Почему ты здесь?
+optionA_IND=Mengapa kamu di sini?
+optionA_SPN=¿Por qué estás aquí?
+optionA_TAI=ทำไมเธอถึงอยู่ที่นี่?
+gotoA=100
+optionB=Just joking! It's been 50 years.
+optionB_POR=Apenas brincando! Já se passaram 50 anos.
+optionB_RUS=Просто шутка! Прошло 50 лет.
+optionB_IND=Hanya bercanda! Sudah 50 tahun.
+optionB_SPN=¡Solo bromeaba! Han pasado 50 años.
+optionB_TAI=แค่ล้อเล่น! เป็นเวลา 50 ปีแล้ว
+gotoB=013
+boxPosition=-761.6447,-1252.561
+
+[13]
+otherspeak=50 YEARS?!?!?
+otherspeak_POR=50 ANOS?!?!?
+otherspeak_RUS=50 ЛЕТ?!?!?
+otherspeak_IND=50 TAHUN?!?!?
+otherspeak_SPN=¿¡¿¡¿50 AÑOS?!?!?
+otherspeak_TAI=50 ปี?!?!?
+goto=014
+boxPosition=-645.1224,-1356.192
+
+[14]
+otherspeak=My pie is burnt for sure!!!
+otherspeak_POR=Minha torta está queimada com certeza !!!
+otherspeak_RUS=Мой пирог точно сгорел !!!
+otherspeak_IND=Pai saya pasti gosong !!!
+otherspeak_SPN=¡¡¡Mi pastel está quemado seguro !!!
+otherspeak_TAI=พายของฉันไหม้แน่ !!!
+goto=015
+boxPosition=-632.0275,-1425.807
+
+[15]
+optionA=Why are you here?
+optionA_POR=Por quê você está aqui?
+optionA_RUS=Почему ты здесь?
+optionA_IND=Mengapa kamu di sini?
+optionA_SPN=¿Por qué estás aquí?
+optionA_TAI=ทำไมเธอถึงอยู่ที่นี่?
+gotoA=100
+optionB=Strap yourself in. It's actually 1000 years
+optionB_POR=Na verdade, são 1000 anos
+optionB_RUS=На самом деле прошло 1000 лет.
+optionB_IND=Ini sebenarnya 1000 tahun
+optionB_SPN=En realidad son 1000 años
+optionB_TAI=จริงๆแล้วเป็นเวลา 1,000 ปี
+gotoB=016
+boxPosition=-629.1887,-1502.839
+
+[16]
+otherspeak=1000 YEARS?!?!?
+otherspeak_POR=1000 ANOS?!?!?
+otherspeak_RUS=1000 ЛЕТ?!?!?
+otherspeak_IND=1000 TAHUN?!?!?
+otherspeak_SPN=¿¡¿¡¿1000 AÑOS?!?!?
+otherspeak_TAI=1,000 ปี?!?!?
+goto=017
+boxPosition=-519.8298,-1601.203
+
+[17]
+otherspeak=I am probably the oldest racoon-thing ever!!
+otherspeak_POR=Eu sou provavelmente o mais velho guaxinim de todos os tempos !!
+otherspeak_RUS=Я, наверное, самый старый енот на свете !!
+otherspeak_IND=Aku mungkin rakun tertua yang pernah ada !!
+otherspeak_SPN=¡Soy probablemente el mapache más viejo de todos los tiempos!
+otherspeak_TAI=ฉันอาจจะเป็นแรคคูนที่เก่าแก่ที่สุดที่เคยมีมา !!
+goto=018
+boxPosition=-511.3127,-1682.033
+
+[18]
+otherspeak=And I look so youthful! Wow!!!
+otherspeak_POR=E eu pareço tão jovem! Uau!!!
+otherspeak_RUS=И я выгляжу такой молодой! Ух ты!!!
+otherspeak_IND=Dan saya terlihat sangat muda! Wow!!!
+otherspeak_SPN=¡Y me veo tan joven! ¡¡¡Guau!!!
+otherspeak_TAI=และฉันดูอ่อนเยาว์มาก! ว้าว!!!
+goto=019
+boxPosition=-498.6785,-1775.819
+
+[19]
+optionA=Why are you here?
+optionA_POR=Por quê você está aqui?
+optionA_RUS=Почему ты здесь?
+optionA_IND=Mengapa kamu di sini?
+optionA_SPN=¿Por qué estás aquí?
+optionA_TAI=ทำไมเธอถึงอยู่ที่นี่?
+gotoA=100
+optionB=2000 years
+optionB_POR=2000 anos
+optionB_RUS=2000 лет
+optionB_IND=2000 tahun
+optionB_SPN=2000 años
+optionB_TAI=2,000 ปี
+gotoB=020
+boxPosition=-492.2201,-1867.047
+
+[20]
+otherspeak=2000 YEARS?!?!?!?!
+otherspeak_POR=2000 ANOS?!?!?!?!
+otherspeak_RUS=2000 ЛЕТ?!?!?!?!
+otherspeak_IND=2000 TAHUN?!?!?!?!
+otherspeak_SPN=2000 AÑOS?!?!?!?!
+otherspeak_TAI=ปี 2000?!?!?!?!
+goto=021
+boxPosition=-388.0508,-1951.176
+
+[21]
+otherspeak=My mom must be so proud of me!!!!
+otherspeak_POR=Minha mãe deve estar tão orgulhosa de mim !!!!
+otherspeak_RUS=Моя мама, должно быть, так мной гордится !!!!
+otherspeak_IND=Ibuku pasti sangat bangga padaku !!!!
+otherspeak_SPN=¡Mi mamá debe estar muy orgullosa de mí!
+otherspeak_TAI=แม่ต้องภูมิใจในตัวฉันมากแน่ ๆ !!!!
+goto=022
+boxPosition=-389.0311,-2035.956
+
+[22]
+optionA=Why are you here?
+optionA_POR=Por quê você está aqui?
+optionA_RUS=Почему ты здесь?
+optionA_IND=Mengapa kamu di sini?
+optionA_SPN=¿Por qué estás aquí?
+optionA_TAI=ทำไมเธอถึงอยู่ที่นี่?
+gotoA=100
+boxPosition=-391.9742,-2115.961
+
+[100]
+otherspeak=FOSSILS! I'm searching for fossils!
+otherspeak_POR=FÓSSEIS! Estou procurando fósseis!
+otherspeak_RUS=ИСКОПАЕМЫЕ! Я ищу окаменелости!
+otherspeak_IND=FOSIL! Saya mencari fosil!
+otherspeak_SPN=¡FÓSILES! ¡Estoy buscando fósiles!
+otherspeak_TAI=ฟอสซิล! ฉันกำลังค้นหาฟอสซิล!
+goto=101
+boxPosition=-723.4787,-2333.041
+
+[101]
+otherspeak=I've collected so many, but not enough!
+otherspeak_POR=Eu colecionei tantos, mas não o suficiente!
+otherspeak_RUS=Я собрал так много, но мало!
+otherspeak_IND=Saya telah mengumpulkan begitu banyak, tetapi tidak cukup!
+otherspeak_SPN=¡He reunido tantos, pero no los suficientes!
+otherspeak_TAI=ฉันรวบรวมไว้มากมาย แต่ยังไม่เพียงพอ!
+goto=102
+boxPosition=-728.6962,-2434.563
+
+[102]
+optionA=Want some help finding fossils?
+optionA_POR=Quer ajuda para encontrar fósseis?
+optionA_RUS=Нужна помощь в поиске окаменелостей?
+optionA_IND=Ingin bantuan menemukan fosil?
+optionA_SPN=¿Quieres ayuda para encontrar fósiles?
+optionA_TAI=ต้องการความช่วย เหลือหรือไม่?
+gotoA=103
+boxPosition=-728.6964,-2543.046
+
+[103]
+otherspeak=Hmmm.. yes, I suppose that's a good idea!
+otherspeak_POR=Hmmm .. sim, acho que é uma boa ideia!
+otherspeak_RUS=Хммм .. да, я полагаю, это хорошая идея!
+otherspeak_IND=Hmmm .. ya, saya rasa itu ide yang bagus!
+otherspeak_SPN=Hmmm ... sí, ¡supongo que es una buena idea!
+otherspeak_TAI=อืม .. ใช่ฉันคิดว่านั่นเป็นความคิดที่ดี!
+goto=104
+boxPosition=-850.4352,-2670.654
+
+[104]
+otherspeak=I love my fossils, but I always need back up copies!
+otherspeak_POR=Eu amo meus fósseis, mas sempre preciso de cópias de backup!
+otherspeak_RUS=Я люблю свои окаменелости, но мне всегда нужны резервные копии!
+otherspeak_IND=Saya suka fosil saya, tetapi saya selalu membutuhkan salinan cadangan!
+otherspeak_SPN=Amo mis fósiles, ¡pero siempre necesito copias de seguridad!
+otherspeak_TAI=ฉันรักฟอสซิลของฉัน แต่ฉันต้องการสำเนาสำรองเสมอ!
+goto=105
+boxPosition=-863.5801,-2740.233
+
+[105]
+otherspeak=Bring me two copies of any fossil...
+otherspeak_POR=Traga-me duas cópias de qualquer fóssil ...
+otherspeak_RUS=Принесите мне две копии любого ископаемого ...
+otherspeak_IND=Bawakan saya dua salinan dari setiap fosil ...
+otherspeak_SPN=Tráeme dos copias de cualquier fósil ...
+otherspeak_TAI=เอาฟอสซิลมาให้ฉันสองชุด ...
+highlight=two copies of any fossil
+highlight_POR=duas cópias de qualquer fóssil
+highlight_RUS=две копии любого ископаемого
+highlight_IND=dua salinan dari setiap fosil
+highlight_SPN=dos copias de cualquier fósil
+highlight_TAI=ฟอสซิลสองชุด
+goto=106
+boxPosition=-860.0338,-2827.307
+
+[106]
+otherspeak=... and I'll give you this weird item I dug up
+otherspeak_POR=... e eu vou te dar este item estranho que desenterrei
+otherspeak_RUS=... и я дам вам этот странный предмет, который я откопал
+otherspeak_IND=... dan saya akan memberikan barang aneh yang saya gali ini
+otherspeak_SPN=... y te daré este artículo extraño que desenterré
+otherspeak_TAI=... และฉันจะให้ของแปลก ๆ ที่ฉันขุดขึ้นมา
+*SHOW_REWARD_ITEM* (The Fossil Record)
+goto=107
+boxPosition=-859.2764,-2905.852
+
+[107]
+optionA=Sounds good to me
+optionA_POR=Parece bom para mim
+optionA_RUS=Звучит неплохо
+optionA_IND=Terdengar bagus untukku
+optionA_SPN=Suena bien para mí
+optionA_TAI=ฟังดูดีสำหรับฉัน
+gotoA=200
+optionB=Not now
+optionB_POR=Agora não
+optionB_RUS=Не сейчас
+optionB_IND=Tidak sekarang
+optionB_SPN=Ahora no
+optionB_TAI=ไม่ใช่ตอนนี้
+gotoB=108
+boxPosition=-863.6938,-2992.74
+
+[108]
+otherspeak=Okay... well, I'll be here looking for Fossils!
+otherspeak_POR=Ok ... bem, estarei aqui procurando Fósseis!
+otherspeak_RUS=Ладно ... ладно, я буду искать ископаемые!
+otherspeak_IND=Oke ... baiklah, saya akan berada di sini mencari Fosil!
+otherspeak_SPN=Está bien ... bueno, ¡estaré aquí buscando fósiles!
+otherspeak_TAI=โอเค ... ฉันจะมาที่นี่เพื่อตามหาฟอสซิล!
+goto=-1
+boxPosition=-736.2571,-3087.919
+
+[200]
+otherspeak=FOSSIL FRIENDS!!
+otherspeak_POR=AMIGOS FÓSSEIS !!
+otherspeak_RUS=ИСКОПАЕМЫЕ ДРУЗЬЯ !!
+otherspeak_IND=TEMAN-TEMAN FOSIL !!
+otherspeak_SPN=AMIGOS FÓSILES !!
+otherspeak_TAI=เพื่อนฟอสซิล !!
+goto=201
+boxPosition=-793.3765,-3362.316
+
+[201]
+*ADVANCE_QUEST* (The Fossil Record => 1)
+goto=-1
+boxPosition=-793.0786,-3455.074
+
+[401]
+otherspeak=My fossil friend!!
+otherspeak_POR=Meu amigo fóssil !!
+otherspeak_RUS=Мой ископаемый друг !!
+otherspeak_IND=Teman fosilku !!
+otherspeak_SPN=¡¡Mi amigo fósil !!
+otherspeak_TAI=เพื่อนฟอสซิลของฉัน !!
+goto=402
+boxPosition=292.6299,-325.9759
+
+[402]
+otherspeak=How goes the search??
+otherspeak_POR=Como vai a busca ??
+otherspeak_RUS=Как идет поиск ??
+otherspeak_IND=Bagaimana pencariannya ??
+otherspeak_SPN=¿Cómo va la búsqueda?
+otherspeak_TAI=ค้นหายังไง ??
+goto=403
+boxPosition=292.888,-403.3605
+
+[403]
+*test HAS_ANY_QUEST_ITEMS* (The Fossil Record, step 1)
+goto_true=404
+goto_false=405
+boxPosition=295.6566,-498.7874
+
+[404]
+optionA=Here are some fossils
+optionA_POR=Aqui estão alguns fósseis
+optionA_RUS=Вот несколько окаменелостей
+optionA_IND=Ini beberapa fosilnya
+optionA_SPN=Aquí hay algunos fósiles
+optionA_TAI=นี่คือฟอสซิลบางส่วน
+gotoA=408
+optionB=Never mind
+optionB_POR=Deixa pra lá
+optionB_RUS=Неважно
+optionB_IND=Lupakan
+optionB_SPN=No importa
+optionB_TAI=ไม่เป็นไร
+gotoB=406
+boxPosition=165.9779,-581.8608
+
+[405]
+optionA=I haven't found anything
+optionA_POR=Eu não encontrei nada
+optionA_RUS=Я ничего не нашел
+optionA_IND=Saya belum menemukan apa pun
+optionA_SPN=No he encontrado nada
+optionA_TAI=ฉันไม่พบอะไรเลย
+gotoA=406
+boxPosition=434.175,-578.6568
+
+[406]
+otherspeak=Quite alright!
+otherspeak_POR=Muito bem!
+otherspeak_RUS=Все в порядке!
+otherspeak_IND=Cukup baik!
+otherspeak_SPN=¡Muy bien!
+otherspeak_TAI=ไม่เป็นไร!
+goto=407
+boxPosition=407.4747,-754.6243
+
+[407]
+otherspeak=A good set of fossils is not easily found!!
+otherspeak_POR=Um bom conjunto de fósseis não é facilmente encontrado !!
+otherspeak_RUS=Нелегко найти хороший набор окаменелостей !!
+otherspeak_IND=Satu set fosil yang bagus tidak mudah ditemukan !!
+otherspeak_SPN=¡¡No es fácil encontrar un buen conjunto de fósiles !!
+otherspeak_TAI=ฟอสซิลชุดดีๆหาไม่ได้ง่ายๆ !!
+goto=-1
+boxPosition=412.0534,-833.4601
+
+[408]
+*test HAS_ALL_QUEST_ITEMS* (The Fossil Record, step 1)
+goto_true=500
+goto_false=409
+boxPosition=58.71088,-676.9527
+
+[409]
+otherspeak=Uh...
+otherspeak_POR=Uh...
+otherspeak_RUS=Эм-м-м...
+otherspeak_IND=Uh ...
+otherspeak_SPN=Oh...
+otherspeak_TAI=เอ่อ ...
+goto=410
+boxPosition=163.8074,-760.078
+
+[410]
+otherspeak=... maybe I explained it wrong ...
+otherspeak_POR=... talvez eu tenha explicado errado ...
+otherspeak_RUS=... может я неправильно объяснил ...
+otherspeak_IND=... mungkin saya salah menjelaskannya ...
+otherspeak_SPN=... tal vez lo expliqué mal ...
+otherspeak_TAI=... บางทีผมอธิบายผิด ...
+goto=411
+boxPosition=168.2206,-833.1444
+
+[411]
+otherspeak=I am looking for TWO of the SAME fossil!
+otherspeak_POR=Estou procurando DOIS do MESMO fóssil!
+otherspeak_RUS=Я ищу ДВА ОДИНАКОВЫХ ископаемых!
+otherspeak_IND=Saya mencari DUA fosil yang SAMA!
+otherspeak_SPN=¡Estoy buscando DOS del MISMO fósil!
+otherspeak_TAI=ฉันกำลังมองหาฟอสซิลเดียวกันสองตัว!
+highlight=TWO of the SAME fossil!
+highlight_POR=DOIS do MESMO fóssil
+highlight_RUS=ДВА ОДИНАКОВЫХ ископаемых
+highlight_IND=DUA fosil yang SAMA
+highlight_SPN=DOS del MISMO fósil
+highlight_TAI=ฟอสซิลเดียวกันสองชิ้น
+goto=412
+boxPosition=165.0564,-921.3994
+
+[412]
+otherspeak=Please keep looking!
+otherspeak_POR=Continue procurando!
+otherspeak_RUS=Пожалуйста, продолжайте поиски!
+otherspeak_IND=Tolong terus cari!
+otherspeak_SPN=¡Sigue buscando!
+otherspeak_TAI=โปรดดูต่อไป!
+goto=-1
+boxPosition=168.1328,-1000.401
+
+[500]
+*TAKE_QUEST_ITEMS* (The Fossil Record, step 1) (if all collected, advance quest to 2)
+goto=501
+boxPosition=-96.20352,-754.6766
+
+[501]
+otherspeak=Wonderful! WONDERFUL!!!
+otherspeak_POR=Maravilhoso! MARAVILHOSO!!!
+otherspeak_RUS=Замечательный! ЗАМЕЧАТЕЛЬНЫЙ!!!
+otherspeak_IND=Hebat! HEBAT!!!
+otherspeak_SPN=¡Maravilloso! ¡¡¡MARAVILLOSO!!!
+otherspeak_TAI=วิเศษมาก! มหัศจรรย์มาก !!!
+goto=502
+boxPosition=-97.93013,-832.1169
+
+[502]
+otherspeak=These samples are perfect!!
+otherspeak_POR=Essas amostras são perfeitas !!
+otherspeak_RUS=Эти образцы идеальны !!
+otherspeak_IND=Sampel ini sempurna !!
+otherspeak_SPN=¡Estas muestras son perfectas!
+otherspeak_TAI=ตัวอย่างนี้เป๊ะ !!
+goto=503
+boxPosition=-207.7726,-996.5305
+
+[503]
+otherspeak=Please, take this! For all your hard work!
+otherspeak_POR=Por favor, pegue isso! Por todo o seu trabalho árduo!
+otherspeak_RUS=Пожалуйста, возьми это! За всю вашу тяжелую работу!
+otherspeak_IND=Tolong, ambil ini! Untuk semua kerja kerasmu!
+otherspeak_SPN=¡Por favor tome esta! ¡Por todo tu arduo trabajo!
+otherspeak_TAI=ได้โปรดรับสิ่งนี้! สำหรับการทำงานหนักของคุณ!
+goto=504
+boxPosition=-203.06,-1083.246
+
+[504]
+*TRY_GIVE_QUEST_REWARD* (The Fossil Record) (if succeed, advance quest to 3)
+goto=-1
+boxPosition=-191.0029,-1188.601
+
+[700]
+*test QUEST_READY_TO_RESTART* (The Fossil Record)
+goto_true=800
+goto_false=701
+boxPosition=-469.1689,-1083.895
+
+[701]
+otherspeak=The fossils you gave me ...
+otherspeak_POR=Os fósseis que você me deu ...
+otherspeak_RUS=Окаменелости, которые ты мне дал ...
+otherspeak_IND=Fosil yang kamu berikan padaku ...
+otherspeak_SPN=Los fósiles que me diste ...
+otherspeak_TAI=ฟอสซิลที่คุณให้ฉัน ...
+goto=702
+boxPosition=86.56174,-1680.907
+
+[702]
+otherspeak=... they are so detailed!
+otherspeak_POR=... eles são tão detalhados!
+otherspeak_RUS=... они такие подробные!
+otherspeak_IND=... sangat detail!
+otherspeak_SPN=... ¡son tan detallados!
+otherspeak_TAI=... ละเอียดมาก!
+goto=703
+boxPosition=96.1693,-1760.455
+
+[703]
+otherspeak=My goodness, I can't take my eyes off of them!
+otherspeak_POR=Meu Deus, não consigo tirar os olhos deles!
+otherspeak_RUS=Боже мой, я не могу оторвать от них глаз!
+otherspeak_IND=Ya ampun, aku tidak bisa mengalihkan pandangan dari mereka!
+otherspeak_SPN=¡Dios mío, no puedo apartar los ojos de ellos!
+otherspeak_TAI=ความดีของฉันฉันไม่สามารถละสายตาจากพวกเขาได้!
+goto=-1
+boxPosition=93.27818,-1857.396
+
+[800]
+otherspeak=AAAAAHHHHHHHHH!!!
+otherspeak_POR=AAAAAHHHHHHHHH !!!
+otherspeak_RUS=AAAAAHHHHHHHHH !!!
+otherspeak_IND=AAAAAHHHHHHHHH !!!
+otherspeak_SPN=AAAAAHHHHHHHHH !!!
+otherspeak_TAI=AAAAAHHHHHHHH !!!
+goto=801
+boxPosition=-164.8669,-1689.754
+
+[801]
+otherspeak=Oh, it's you...
+otherspeak_POR=Ah é você...
+otherspeak_RUS=Это Ты...
+otherspeak_IND=Oh itu kamu...
+otherspeak_SPN=Oh, eres tú...
+otherspeak_TAI=โอ้คุณ ...
+goto=802
+boxPosition=-152.5679,-1762.557
+
+[802]
+otherspeak=The fossils you gave me are incredible
+otherspeak_POR=Os fósseis que você me deu são incríveis
+otherspeak_RUS=Окаменелости, которые вы мне дали, невероятны
+otherspeak_IND=Fosil yang Anda berikan kepada saya luar biasa
+otherspeak_SPN=Los fósiles que me diste son increíbles
+otherspeak_TAI=ฟอสซิลที่คุณให้ฉันมันเหลือเชื่อมาก
+goto=803
+boxPosition=-146.7584,-1856.97
+
+[803]
+otherspeak=But ... I want ... MORE!!
+otherspeak_POR=Mas eu quero mais!!
+otherspeak_RUS=Но ... Я хочу ... БОЛЬШЕ !!
+otherspeak_IND=Tapi ... Aku ingin ... LEBIH BANYAK !!
+otherspeak_SPN=¡¡Pero yo quiero más!!
+otherspeak_TAI=แต่ ... อยาก ... มากกว่านี้ !!
+goto=804
+boxPosition=-141.8223,-1947.441
+
+[804]
+otherspeak=Will you help me find another pair of fossils??
+otherspeak_POR=Você vai me ajudar a encontrar outro par de fósseis ??
+otherspeak_RUS=Вы поможете мне найти еще одну пару окаменелостей ??
+otherspeak_IND=Maukah Anda membantu saya menemukan sepasang fosil lain ??
+otherspeak_SPN=¿Me ayudarás a encontrar otro par de fósiles?
+otherspeak_TAI=คุณจะช่วยหาฟอสซิลคู่อื่นให้ฉันได้ไหม ??
+highlight=pair of fossils
+highlight_POR=par de fósseis
+highlight_RUS=пару окаменелостей 
+highlight_IND=sepasang fosil lain
+highlight_SPN=otro par de fósiles
+highlight_TAI=ฟอสซิลคู่อื่น
+goto=805
+boxPosition=-143.3938,-2033.81
+
+[805]
+optionA=Sure!
+optionA_POR=Certo!
+optionA_RUS=Конечно!
+optionA_IND=Tentu!
+optionA_SPN=¡Seguro!
+optionA_TAI=ชัวร์!
+gotoA=806
+optionB=Not now
+optionB_POR=Agora não
+optionB_RUS=Не сейчас
+optionB_IND=Tidak sekarang
+optionB_SPN=Ahora no
+optionB_TAI=ไม่ใช่ตอนนี้
+gotoB=807
+boxPosition=-197.1642,-2651.164
+
+[806]
+otherspeak=HORRAY!!
+otherspeak_POR=HORRAY !!
+otherspeak_RUS=УЖАС !!
+otherspeak_IND=HORRAY !!
+otherspeak_SPN=¡¡HORRAY !!
+otherspeak_TAI=ฮอเรย์ !!
+goto=200
+boxPosition=-679.5857,-3193.451
+
+[807]
+otherspeak=Oh.. Alright..
+otherspeak_POR=Oh .. tudo bem ..
+otherspeak_RUS=Ох .. Хорошо ..
+otherspeak_IND=Oh .. Baiklah ..
+otherspeak_SPN=Oh esta bien..
+otherspeak_TAI=อ่ะ.. เอาล่ะ ..
+goto=808
+boxPosition=-93.79269,-2725.842
+
+[808]
+otherspeak=Well, I'll be here. Staring at my fossils...
+otherspeak_POR=Bem, estarei aqui. Olhando para os meus fósseis ...
+otherspeak_RUS=Хорошо, я буду здесь. Смотря на мои окаменелости ...
+otherspeak_IND=Baiklah, saya akan berada di sini. Menatap fosil saya ...
+otherspeak_SPN=Bueno, estaré aquí. Mirando mis fósiles ...
+otherspeak_TAI=ฉันจะอยู่ที่นี่ จ้องมองฟอสซิลของฉัน ...
+goto=809
+boxPosition=-91.36047,-2803.725
+
+[809]
+otherspeak=Staring... For hours...
+otherspeak_POR=Olhando ... por horas ...
+otherspeak_RUS=Смотрю ... Часами ...
+otherspeak_IND=Menatap ... Selama berjam-jam ...
+otherspeak_SPN=Mirando ... durante horas ...
+otherspeak_TAI=จ้องมอง ... เป็นชั่วโมง ...
+goto=-1
+boxPosition=-91.21921,-2882.151
+
+[900]
+otherspeak=AAAAAHHHHHHHHH!!!
+otherspeak_POR=AAAAAHHHHHHHHH !!!
+otherspeak_RUS=AAAAAHHHHHHHHH !!!
+otherspeak_IND=AAAAAHHHHHHHHH !!!
+otherspeak_SPN=AAAAAHHHHHHHHH !!!
+otherspeak_TAI=AAAAAHHHHHHHH !!!
+goto=901
+boxPosition=283.0686,-85.86047
+
+[901]
+otherspeak=YOU AREN'T MY FOSSIL FRIEND!!
+otherspeak_POR=VOCÊ NÃO É MEU AMIGO FÓSSIL !!
+otherspeak_RUS=ТЫ НЕ МОЙ ИСКОПАЕМЫЙ ДРУГ !!
+otherspeak_IND=ANDA BUKAN TEMAN FOSIL SAYA !!
+otherspeak_SPN=¡¡NO ERES MI AMIGO FÓSIL !!
+otherspeak_TAI=คุณไม่ใช่เพื่อน FOSSIL ของฉัน !!
+goto=-1
+boxPosition=284.4055,-165.9522
+

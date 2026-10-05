@@ -1,0 +1,52 @@
+Description_TAI = ช่วย ให้ คุณ สร้าง พู่กัน ขั้นสูง ได้
+Name_TAI = เครื่อง เขย่า สี
+Description_POR = Permite que você crie Pincéis Avançados.
+Description_SPN = Te permite crear pinceles avanzados.
+Description_RUS = Позволяет создавать продвинутые кисти.
+Description_IND = Memungkinkan Anda untuk membuat Kuas Lukis Lanjutan
+Name_POR = Agitador de Tinta
+Name_SPN = Agitador de Pintura
+Name_RUS = Шейкер для краски
+Name_IND = Pengocok Cat
+Description = Allows you to create Advanced Paintbrushes
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Paint Shaker
+World_geometry = 1_by_1
+Craft_required_lvl = 78
+Market Cost = CALCULATE
+IAP_required = recipe_painting
+
+Vendor0 = Furniture
+Vendor1 = Paintbrush Accessories
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+PaintLayout1_TriColor = 0-2, 1-3, 2-1, 
+PaintLayout0_SolidColors = 0-3, 1-1, 2-3, 
+PaintLayout1_SolidColors = 0-3, 1-5, 2-2, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-2, 
+PaintLayout1_Trimmed = 0-3, 1-2, 2-1, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout1_Candycane = 0-2, 1-3, 2-1, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+PaintLayout1_Pastels = 0-3, 1-2, 2-2, 
+Default Coloring = Debug - Metal DK
+
+model3d_camDist = 2.4
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -95
+model3d_yRot = 30
+model3d_objRot = 10
+model3d_camHeight = 0.3
+model3d_recenterY = 1
+model3d_recenterX = 0
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout1_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-1, 2-3, 
+PaintLayout1_Goldy = 0-3, 1-2, 2-1, 

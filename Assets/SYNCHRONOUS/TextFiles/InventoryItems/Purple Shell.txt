@@ -1,0 +1,7 @@
+Name_TAI = เปลือก สีม่วง
+Name_POR = Concha Roxa
+Name_SPN = Concha Púrpura
+Name_RUS = Фиолетовая раковина
+Name_IND = Kerang Ungu
+
+Inventory_sprite_path = item seashell purple

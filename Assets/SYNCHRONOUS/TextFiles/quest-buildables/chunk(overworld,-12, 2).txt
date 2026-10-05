@@ -1,0 +1,31 @@
+*auto_version=1*
+*forced_biome=3*
+
+[8,7] = Dirt Path (rot 0)
+
+[7,6] = Dirt Path (rot 0)
+
+[8,9] = Dirt Path (rot 0)
+
+[8,8] = Dirt Path (rot 0)
+
+[6,2] = Torch (rot 0)
+
+[9,0] = Dirt Path (rot 0)
+
+[8,0] = Dirt Path (rot 0)
+
+[8,1] = Dirt Path (rot 0)
+
+[7,1] = Dirt Path (rot 0)
+
+[7,2] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[7,4] = Dirt Path (rot 0)
+
+[7,5] = Dirt Path (rot 0)
+
+[8,6] = Dirt Path (rot 0)
+

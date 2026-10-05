@@ -1,0 +1,30 @@
+*auto_version=3*
+*is_blank=true*
+*forced_biome=2*
+
+[9,2] = Stone Bricks (rot 0)
+
+[9,1] = Stone Bricks (rot 0)
+
+[9,3] = Stone Bricks (rot 0)
+
+[8,1] = Stone Bricks (rot 0)
+
+[8,3] = Stone Bricks (rot 0)
+
+[8,2] = Stone Bricks (rot 0)
+
+[7,2] = Warehouse (rot 0)
+	shack_id = *long* 9012
+
+[7,1] = Stone Bricks (rot 0)
+
+[6,1] = Stone Bricks (rot 0)
+
+[7,3] = Stone Bricks (rot 0)
+
+[6,3] = Stone Bricks (rot 0)
+
+[6,2] = Stone Bricks (rot 0)
+
+[6,0] = Stone Vein (Desert) (rot 1)

@@ -1,0 +1,38 @@
+Description_TAI = อนุญาต ให้ คุณ แลกเปลี่ยน กับ ผู้เล่น คนอื่น ๆ ได้!
+Name_TAI = โต๊ะ ค้า ขาย
+Description_POR = Permite que você troque com outros jogadores!
+Description_SPN = ¡Te permite intercambiar con otros jugadores!
+Description_RUS = Позволяет обмениваться с другими игроками!
+Description_IND = Memungkinkan Anda untuk berdagang dengan pemain lain!
+Name_POR = Mesa de Comércio
+Name_SPN = Mesa de Comercio
+Name_RUS = Торговый стол
+Name_IND = Meja Perdagangan
+Description = Allows you to trade with other players!
+
+Type = Place_in_world
+World_obj_path = Buildables/Trading Table
+World_geometry = x_plus_1
+
+IAP_required = recipe_online
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-3, 4-2, 
+PaintLayout0_SolidColors = 0-1, 1-3, 2-2, 3-4, 4-5, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-2, 3-3, 4-2, 
+PaintLayout0_Candycane = 0-1, 1-1, 2-2, 3-3, 4-3, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 3-3, 4-3, 
+PaintLayout0_Nomad = 0-1, 1-4, 2-2, 3-3, 4-3, 
+PaintLayout0_Stone & Wood = 0-1, 1-3, 2-4, 3-6, 4-5, 
+Default Coloring = Debug - Bad Trading Table
+Default Stamp = Coins Stamp
+model3d_camDist = 3.1
+show_model3d = true
+model3d_fov = 62.5
+model3d_yRot = 20
+model3d_xRot = -95
+model3d_recenterX = -16
+model3d_objRot = 2
+model3d_camHeight = 1
+model3d_recenterY = 8
+PaintLayout0_Goldy = 0-1, 1-2, 2-2, 3-3, 4-3, 

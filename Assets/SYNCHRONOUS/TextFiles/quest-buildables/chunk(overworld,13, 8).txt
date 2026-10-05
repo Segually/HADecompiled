@@ -1,0 +1,23 @@
+*auto_version=1*
+*forced_biome=2*
+
+[0,1] = Dirt Path (rot 0)
+
+[0,0] = Dirt Path (rot 0)
+
+[0,5] = Arena (rot 1)
+
+[1,1] = Dirt Path (rot 1)
+
+[1,0] = Dirt Path (rot 1)
+
+[1,2] = Red Torch (rot 1)
+
+[0,3] = Stone Bricks (rot 1)
+
+[0,2] = Sign (rot 0)
+	paint = *string* Industrial Hazard
+	sign_text = *string* Battle Arena coming soon!
+
+[0,2] = Stone Bricks (rot 0)
+

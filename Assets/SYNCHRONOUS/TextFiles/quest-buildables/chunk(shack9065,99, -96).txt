@@ -1,0 +1,86 @@
+*auto_version=14*
+
+[7,0] = Dirt Path (rot 0)
+
+[7,1] = Dirt Path (rot 0)
+
+[7,2] = Dirt Path (rot 0)
+
+[8,2] = Dirt Path (rot 0)
+
+[4,0] = Dirt Path (rot 0)
+
+[5,0] = Dirt Path (rot 0)
+
+[6,0] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[5,1] = Dirt Path (rot 0)
+
+[6,1] = Dirt Path (rot 0)
+
+[5,2] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[6,2] = Dirt Path (rot 0)
+
+[5,3] = Dirt Path (rot 0)
+
+[5,4] = Dirt Path (rot 0)
+
+[5,5] = Dirt Path (rot 0)
+
+[9,2] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[8,1] = Dirt Path (rot 0)
+
+[5,6] = Dirt Path (rot 0)
+
+[5,7] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[9,8] = Dirt Path (rot 0)
+
+[6,7] = Dirt Path (rot 0)
+
+[6,8] = Dirt Path (rot 0)
+
+[4,6] = Dirt Path (rot 0)
+
+[9,3] = Dirt Path (rot 0)
+
+[1,6] = Tent (rot 0)
+	shack_id = *long* 9068
+	quest_miniworld = *string* true
+	paint = *string* Lumberjack
+
+[8,8] = Dirt Path (rot 0)
+
+[6,4] = Dirt Path (rot 0)
+
+[6,5] = Dirt Path (rot 0)
+
+[6,6] = Dirt Path (rot 0)
+
+[7,7] = Dirt Path (rot 0)
+
+[6,9] = Torch (rot 0)
+	paint = *string* Lumberjack
+
+[1,0] = Poison Spikes (rot 0)
+
+[7,8] = Dirt Path (rot 0)
+
+[3,0] = Mob - Everthorn Bandit (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* The Bandit King
+	associated_quest_step = *short* 3
+	overwrite_mob_name = *string* Bandit
+	overwrite_mob_level = *string* PLAYER_LEVEL*0.39

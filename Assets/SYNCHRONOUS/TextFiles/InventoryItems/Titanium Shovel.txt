@@ -1,0 +1,23 @@
+Description_TAI = ช่วย ให้ คุณ ย้าย ต้นไม้ ขนาดใหญ่
+Name_TAI = พลั่ว ไทเทเนียม
+Description_POR = Permite mover grandes árvores.
+Description_SPN = Te permite mover árboles grandes
+Description_RUS = Позволяет перемещать большие деревья.
+Description_IND = Memungkinkan Anda untuk memindahkan pohon besar.
+Name_POR = Pá de Titânio
+Name_SPN = Pala de titanio
+Name_RUS = Титановая лопата
+Name_IND = Sekop Titanium
+Description = Allows you to move big trees
+
+Inventory_sprite_path = item titanium shovel
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Titanium Bar
+Crafting_ingredient_B_count = 3
+Craft_required_lvl = 18
+Type = Tool
+Market Cost = CALCULATE
+
+Vendor0 = Farm Tools
+Vendor1 = Mining Tools

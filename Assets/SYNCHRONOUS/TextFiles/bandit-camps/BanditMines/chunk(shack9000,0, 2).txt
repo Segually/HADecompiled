@@ -1,0 +1,45 @@
+
+[3,7] = Bed (rot 1)
+	paint = *string* BANDIT_COMPL
+
+[5,7] = Bed (rot 1)
+	paint = *string* BANDIT_COMPL
+
+[3,0] = Bed (rot 3)
+	paint = *string* BANDIT_COMPL
+
+[5,0] = Bed (rot 3)
+	paint = *string* BANDIT_COMPL
+
+[6,7] = Torch (rot 3)
+	paint = *string* BANDIT_WALL
+
+[6,0] = Torch (rot 3)
+	paint = *string* BANDIT_WALL
+
+[4,1] = Basic Rug (rot 2)
+	paint = *string* BANDIT_WALL
+
+[4,6] = Basic Rug (rot 0)
+	paint = *string* BANDIT_WALL
+
+[2,7] = Torch (rot 0)
+	paint = *string* BANDIT_WALL
+
+[2,0] = Torch (rot 0)
+	paint = *string* BANDIT_WALL
+
+[1,3] = Loot Chest (rot 0)
+	basket_id = *long* 9006
+
+[1,4] = Loot Chest (rot 0)
+	basket_id = *long* 9007
+
+[7,0] = Loot Basket (rot 0)
+	basket_id = *long* 9008
+
+[7,7] = Loot Basket (rot 0)
+	basket_id = *long* 9009
+
+[3,4] = Mob - BANDIT_FACTION Stronger (rot 1)
+

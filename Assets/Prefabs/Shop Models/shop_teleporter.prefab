@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1901924065389199
+GameObject:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Component:
+  - component: {fileID: 4986056838929277}
+  - component: {fileID: 114862842411597159}
+  - component: {fileID: 210914843876758344}
+  - component: {fileID: 114257687446506924}
+  m_Layer: 10
+  m_Name: shop_teleporter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4986056838929277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901924065389199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 127.94639, y: 0.52443373, z: 11.033284}
+  m_LocalScale: {x: 0.796, y: 0.796, z: 0.796}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0, z: -0}
+--- !u!114 &114862842411597159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901924065389199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0caac085bf63438f1fd4fd7662c831, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  scale: 3
+  dont_spin: 1
+  override_speed: 0
+  spin_axis: 0
+--- !u!210 &210914843876758344
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901924065389199}
+  m_Enabled: 1
+  m_SortingLayerID: -1041096251
+  m_SortingLayer: 1
+  m_SortingOrder: 0
+--- !u!114 &114257687446506924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901924065389199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57f7e35ef6647f975307a13802fe03e6, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  item_A: Teleporter
+  item_B:
+  item_C:
+  item_A_scale: 2.8
+  item_A_pos: {x: 0, y: 0.33, z: 0}
+  item_A_rot: {x: -45, y: 0, z: 0}
+  item_B_scale: 0
+  item_B_pos: {x: 0, y: 0, z: 0}
+  item_B_rot: {x: 0, y: 0, z: 0}
+  item_C_scale: 0
+  item_C_pos: {x: 0, y: 0, z: 0}
+  item_C_rot: {x: 0, y: 0, z: 0}

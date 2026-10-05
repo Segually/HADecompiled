@@ -1,0 +1,11 @@
+Name_TAI = อเมทิสต์
+Name_POR = Ametista
+Name_SPN = Amatista
+Name_RUS = Аметист
+Name_IND = Amethyst
+
+Inventory_sprite_path = item amethyst
+Market Cost = 85
+
+Vendor0 = Ores
+NumSell = 2 to 4

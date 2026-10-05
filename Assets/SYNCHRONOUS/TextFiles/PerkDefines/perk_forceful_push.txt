@@ -1,0 +1,21 @@
+Full Name = Forceful Push
+Description = Push all nearby animals away.
+Detailed Description = GetInt[EFFECT_BLAST_ONE, "Damage", remove ""] damage DiffInt[EFFECT_BLAST_ONE, "Damage", add ""] and GetInt[EFFECT_BLAST_ONE, "Blastback", remove "%"]% blast-back DiffInt[EFFECT_BLAST_ONE, "Blastback", remove "%", add "%"] on enemies within GetFloat[EFFECT_BLAST_ALL, "Area Effect Radius", remove "m"]m DiffFloat[EFFECT_BLAST_ALL, "Area Effect Radius", remove "m", add "m"].
+Energy Cost = 35%
+On cast = [EFFECT_PARTICLE,EFFECT_BLAST_ALL] on self
+-
+[EFFECT_PARTICLE]
+Type = Instant Effect
+Particle (Instant) = perk_forceful_push_particle
+Scale Particle With Creature Size = false
+Particle Radius = CLAMP (2.0m @ lvl_1 ... 5.0m @ lvl_15)
+-
+[EFFECT_BLAST_ALL]
+Type = Area Effect
+Area Effect to apply = [EFFECT_BLAST_ONE]
+Area Effect Radius = CLAMP (2.0m @ lvl_1 ... 5.0m @ lvl_15)
+-
+[EFFECT_BLAST_ONE]
+Type = Instant Effect
+Damage = RANGE (6%-12%-17% of own HP)
+Blastback = CLAMP (35% @ lvl_1 ... 100% @ lvl_15)

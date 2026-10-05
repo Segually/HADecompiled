@@ -1,0 +1,24 @@
+Description_TAI = รัง แมงมุม ที่ ผลิต ไหม
+Name_TAI = รัง แมงมุม
+Description_POR = Uma colmeia de aranhas que produz seda.
+Description_SPN = Una colmena de arañas que produce seda.
+Description_RUS = Улей пауков, производящий шелк.
+Description_IND = Sarang laba-laba yang menghasilkan sutra.
+Name_POR = Colmeia de Aranhas
+Name_SPN = Colmena de arañas
+Name_RUS = Паучий улей
+Name_IND = Sarang Laba-laba
+Description = A spider hive that produces silk.
+
+Inventory_sprite_path = item spiderhive
+Type = Place_in_world
+World_obj_path = Buildables/Spiderhive
+World_geometry = 1_by_1
+Market Cost = 400
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+
+Pollinator Regen Level = 4
+Pollinator Regen RespawnId = collect_spawn

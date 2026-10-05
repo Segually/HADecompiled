@@ -1,0 +1,693 @@
+Name_POR=Caranguejo-cupcake
+Name_RUS=Кекс Краб
+Name_IND=Kepiting Cupcake
+Name_SPN=Cangrejo cupcake
+Name_TAI=ปูคัพเค้ก
+
+----- DIALOGUE -----
+[0]
+otherspeak=I'll buy anything!
+otherspeak_POR=Vou comprar qualquer coisa!
+otherspeak_RUS=Я куплю все!
+otherspeak_IND=Saya akan membeli apa saja!
+otherspeak_SPN=¡Compraré lo que sea!
+otherspeak_TAI=ฉันจะซื้ออะไรก็ได้!
+goto=001
+
+[1]
+otherspeak=... but I won't pay much, hehehe
+otherspeak_POR=... mas não vou pagar muito hehehe
+otherspeak_RUS=... но я не буду платить много, хе-хе-хе
+otherspeak_IND=... tapi saya tidak akan membayar banyak, hehehe
+otherspeak_SPN=... pero no pagaré mucho, jejeje
+otherspeak_TAI=... แต่ฉันจะไม่จ่ายมากฮิฮิฮิ
+goto=500
+boxPosition=-4.188482,-65
+
+[500]
+*test IS_MY_WORLD*
+goto_true=400
+goto_false=403
+boxPosition=-6.577139,-126.1545
+swapLineCols=true
+
+[400]
+*test QUEST_PROGRESS* (Colors of the Sea == 3)
+goto_true=402
+goto_false=401
+boxPosition=86.26093,-191.8695
+
+[402]
+*test QUEST_READY_TO_RESTART* (Colors of the Sea)
+goto_true=404
+goto_false=403
+boxPosition=-54.26097,-263.4788
+swapLineCols=true
+
+[403]
+optionA=SELL ITEMS
+optionA_POR=VENDER ARTIGOS
+optionA_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionA_IND=MENJUAL BARANG
+optionA_SPN=VENDER ARTÍCULOS
+optionA_TAI=ขายสินค้า
+gotoA=-99
+boxPosition=-552.4764,-384.7669
+
+[401]
+*test QUEST_PROGRESS* (Colors of the Sea == 0)
+goto_true=002
+goto_false=901
+boxPosition=216.0001,-264.7827
+
+[2]
+optionA=SELL ITEMS
+optionA_POR=VENDER ARTIGOS
+optionA_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionA_IND=MENJUAL BARANG
+optionA_SPN=VENDER ARTÍCULOS
+optionA_TAI=ขายสินค้า
+gotoA=-99
+optionB=Want anything special?
+optionB_POR=Quer algo especial?
+optionB_RUS=Хотите чего-нибудь особенного?
+optionB_IND=Ingin sesuatu yang istimewa?
+optionB_SPN=¿Quieres algo especial?
+optionB_TAI=คุณต้องการอะไร เป็นพิเศษหรือไม่?
+gotoB=003
+boxPosition=82.1771,-379.9479
+
+[3]
+otherspeak=Now that you mention it...
+otherspeak_POR=Já que você tocou no assunto...
+otherspeak_RUS=Теперь, когда вы упомянули об этом ...
+otherspeak_IND=Sekarang setelah Anda menyebutkannya ...
+otherspeak_SPN=Ahora que lo mencionas...
+otherspeak_TAI=ตอนนี้ที่คุณพูดถึง ...
+goto=004
+boxPosition=78.74947,-465.7803
+
+[4]
+otherspeak=I've wanted to get my claws on some SEA SHELLS!
+otherspeak_POR=Eu queria colocar minhas garras em alguns SEA SHELLS!
+otherspeak_RUS=Я хотел заполучить МОРСКИЕ РАКУШКИ!
+otherspeak_IND=Saya ingin mendapatkan cakar saya di beberapa SEA SHELLS!
+otherspeak_SPN=¡Quería poner mis garras en algunas CONCHAS MARINAS!
+otherspeak_TAI=ฉันอยากได้กรงเล็บของฉันบนเปลือกหอยทะเล!
+goto=005
+boxPosition=74.28735,-538.6896
+
+[5]
+otherspeak=I would get them myself, but ...
+otherspeak_POR=Eu mesmo os compraria, mas ...
+otherspeak_RUS=Я бы сам их достал, но ...
+otherspeak_IND=Saya akan mendapatkannya sendiri, tapi ...
+otherspeak_SPN=Los conseguiría yo mismo, pero ...
+otherspeak_TAI=ฉันจะได้รับมันเอง แต่ ...
+goto=006
+boxPosition=71.05721,-615.2172
+
+[6]
+optionA=I'll get you some sea shells
+optionA_POR=Vou pegar algumas conchas do mar
+optionA_RUS=Я принесу тебе морские ракушки
+optionA_IND=Aku akan memberimu beberapa kerang laut
+optionA_SPN=Te traeré algunas conchas marinas
+optionA_TAI=ฉันจะหาหอย ทะเลให้คุณ
+gotoA=020
+optionB=Why can't you get them yourself?
+optionB_POR=Por que você mesmo não pode obtê-los?
+optionB_RUS=Почему ты не можешь получить их самостоятельно?
+optionB_IND=Mengapa Anda tidak bisa mendapatkannya sendiri?
+optionB_SPN=¿Por qué no puedes conseguirlos tú mismo?
+optionB_TAI=ทำไมคุณไม่สามารถ รับพวกเขาด้วยตัวเอง?
+gotoB=007
+boxPosition=66.882,-691.3475
+
+[7]
+otherspeak=I may have scammed the wrong hybrids...
+otherspeak_POR=Posso ter enganado os híbridos errados ...
+otherspeak_RUS=Возможно, я обманул не те гибриды ...
+otherspeak_IND=Saya mungkin telah menipu hibrida yang salah ...
+otherspeak_SPN=Puede que haya estafado a los híbridos equivocados ...
+otherspeak_TAI=ฉันอาจหลอกลวงลูกผสมผิด ...
+goto=008
+boxPosition=161.2919,-776.2235
+
+[8]
+otherspeak=and I might be permanently banned from the sea...
+otherspeak_POR=e posso ser banido permanentemente do mar ...
+otherspeak_RUS=и мне могут навсегда запретить выход в море ...
+otherspeak_IND=dan saya mungkin akan dilarang secara permanen dari laut ...
+otherspeak_SPN=y podría ser expulsado permanentemente del mar ...
+otherspeak_TAI=และฉันอาจถูกห้ามออกทะเลอย่างถาวร ...
+goto=009
+boxPosition=155.0311,-844.4034
+
+[9]
+otherspeak=...I'm also banned from bakeries...
+otherspeak_POR=... Também estou banido de padarias ...
+otherspeak_RUS=... Мне тоже запретили пекарни ...
+otherspeak_IND=... Saya juga dilarang dari toko roti ...
+otherspeak_SPN=... También estoy prohibido en las panaderías ...
+otherspeak_TAI=... ฉันห้ามทำเบเกอรี่ด้วย ...
+goto=010
+boxPosition=150.6583,-914.6705
+
+[10]
+otherspeak=...anyways...
+otherspeak_POR=...enfim...
+otherspeak_RUS=...в любом случае...
+otherspeak_IND=... lagian ...
+otherspeak_SPN=...de todos modos...
+otherspeak_TAI=...อย่างไรก็ตาม...
+goto=011
+boxPosition=156.9193,-981.8572
+
+[11]
+optionA=I'll get you your sea shells
+optionA_POR=Vou pegar suas conchas do mar
+optionA_RUS=Я принесу тебе морские ракушки
+optionA_IND=Aku akan membuatkanmu kerang lautmu
+optionA_SPN=Te traeré tus conchas marinas
+optionA_TAI=ฉันจะหาหอย ทะเลให้คุณ
+gotoA=020
+optionB=You're a bad person
+optionB_POR=Você é uma pessoa má
+optionB_RUS=Ты плохой человек
+optionB_IND=Anda orang jahat
+optionB_SPN=Eres una mala persona
+optionB_TAI=คุณเป็น คนไม่ดี
+gotoB=600
+boxPosition=161.292,-1046.26
+
+[600]
+otherspeak=Wrong! I'm not a bad person...
+otherspeak_POR=Errado! Não sou má pessoa ...
+otherspeak_RUS=Неправильный! Я не плохой человек ...
+otherspeak_IND=Salah! Aku bukan orang jahat ...
+otherspeak_SPN=¡Equivocado! Yo no soy una mala persona...
+otherspeak_TAI=ไม่ถูกต้อง! ฉันไม่ใช่คนเลว ...
+goto=601
+boxPosition=257.9877,-1118.415
+
+[601]
+otherspeak=... I'm a bad CRAB! hehehe
+otherspeak_POR=... Eu sou um CRAB ruim! hehehe
+otherspeak_RUS=... Я плохой КРАБ! хе-хе
+otherspeak_IND=... Saya KEPITING yang buruk! hehehe
+otherspeak_SPN=... ¡Soy un CANGREJO malo! jejeje
+otherspeak_TAI=... ฉันมันเลว! ฮิฮิ
+goto=602
+boxPosition=261.7639,-1179.64
+
+[602]
+optionA=I'll get you your sea shells
+optionA_POR=Vou pegar suas conchas do mar
+optionA_RUS=Я принесу тебе морские ракушки
+optionA_IND=Aku akan membuatkanmu kerang lautmu
+optionA_SPN=Te traeré tus conchas marinas
+optionA_TAI=ฉันจะหาหอย ทะเลให้คุณ
+gotoA=020
+boxPosition=261.3665,-1254.577
+
+[20]
+*ADVANCE_QUEST* (Colors of the Sea => 1)
+goto=666
+boxPosition=-262.2609,-1462.784
+
+[666]
+otherspeak=Excellent!
+otherspeak_POR=Excelente!
+otherspeak_RUS=Отлично!
+otherspeak_IND=Luar biasa!
+otherspeak_SPN=¡Excelente!
+otherspeak_TAI=ยอดเยี่ยม!
+goto=021
+boxPosition=-262.2609,-1532.651
+
+[21]
+otherspeak=There are 4 shells that I want...
+otherspeak_POR=Existem 4 conchas que eu quero ...
+otherspeak_RUS=Я хочу 4 ракушки ...
+otherspeak_IND=Ada 4 kerang yang saya inginkan ...
+otherspeak_SPN=Hay 4 conchas que quiero ...
+otherspeak_TAI=มี 4 หอยที่อยากได้ ...
+highlight=4 shells
+highlight_POR=4 conchas
+highlight_RUS=4 ракушки
+highlight_IND=4 kerang
+highlight_SPN=4 conchas
+highlight_TAI=4
+goto=022
+boxPosition=-262.2608,-1597.651
+
+[22]
+otherspeak=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+otherspeak_POR=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+otherspeak_RUS=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+otherspeak_IND=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+otherspeak_SPN=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+otherspeak_TAI=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 0)
+goto=023
+boxPosition=-269.2174,-1666.13
+
+[23]
+otherspeak=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+otherspeak_POR=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+otherspeak_RUS=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+otherspeak_IND=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+otherspeak_SPN=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+otherspeak_TAI=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 1)
+goto=024
+boxPosition=-267.1306,-1741.566
+
+[24]
+otherspeak=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+otherspeak_POR=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+otherspeak_RUS=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+otherspeak_IND=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+otherspeak_SPN=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+otherspeak_TAI=1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 2)
+goto=025
+boxPosition=-269.9132,-1813.522
+
+[25]
+otherspeak=and 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+otherspeak_POR=e 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+otherspeak_RUS=и 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+otherspeak_IND=dan 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+otherspeak_SPN=y 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+otherspeak_TAI=ด้วย 1 SHOW_QUEST_ITEM(Colors of the Sea, step 1, item 3)
+goto=029
+boxPosition=-272.6955,-1878.522
+
+[29]
+otherspeak=Get me them all!!
+otherspeak_POR=Pegue todos eles !!
+otherspeak_RUS=Принеси мне их всех !!
+otherspeak_IND=Dapatkan aku semuanya !!
+otherspeak_SPN=¡¡Consígueme todos !!
+otherspeak_TAI=รับทั้งหมด !!
+goto=030
+boxPosition=-273.3913,-1947.001
+
+[30]
+optionA=Okay! I will find them!
+optionA_POR=OK! Eu vou encontrá-los!
+optionA_RUS=Хорошо! Я найду их!
+optionA_IND=Baik! Saya akan menemukan mereka!
+optionA_SPN=¡Okey! ¡Los encontraré!
+optionA_TAI=ตกลง! ฉันจะพบพวกเขา!
+gotoA=034
+optionB=What's in it for me?
+optionB_POR=O quê tem pra mim?
+optionB_RUS=Что это значит для меня?
+optionB_IND=Apa untungnya bagi saya?
+optionB_SPN=¿Qué hay para mi ahí dentro?
+optionB_TAI=มีอะไร ให้ฉันบ้าง?
+gotoB=031
+boxPosition=-273.3914,-2016.173
+
+[31]
+otherspeak=If you can find them all for me...
+otherspeak_POR=Se você puder encontrar todos eles para mim ...
+otherspeak_RUS=Если ты найдешь их все для меня ...
+otherspeak_IND=Jika Anda dapat menemukan semuanya untuk saya ...
+otherspeak_SPN=Si puedes encontrarlos todos para mí ...
+otherspeak_TAI=ถ้าคุณสามารถหาทั้งหมดให้ฉัน ...
+goto=032
+boxPosition=-164.8696,-2089.519
+
+[32]
+otherspeak=I'll give you a super secret item that a merchant left behind
+otherspeak_POR=Vou te dar um item supersecreto que um comerciante deixou para trás
+otherspeak_RUS=Я дам вам суперсекретный предмет, оставленный торговцем
+otherspeak_IND=Aku akan memberimu barang super rahasia yang ditinggalkan pedagang
+otherspeak_SPN=Te daré un artículo súper secreto que dejó un comerciante
+otherspeak_TAI=ฉันจะมอบไอเท็มลับสุดยอดที่พ่อค้าทิ้งไว้ให้
+*SHOW_REWARD_ITEM* (Colors of the Sea)
+goto=033
+boxPosition=-162.087,-2153.131
+
+[33]
+optionA=Sounds good to me!
+optionA_POR=Parece bom para mim!
+optionA_RUS=Звучит неплохо!
+optionA_IND=Terdengar bagus untukku!
+optionA_SPN=¡Suena bien para mí!
+optionA_TAI=ฟังดูดี สำหรับฉัน!
+gotoA=034
+optionB=Please don't be a scam..
+optionB_POR=Por favor, não seja um embuste ..
+optionB_RUS=Пожалуйста, не обманывайся ..
+optionB_IND=Tolong jangan menjadi scam ..
+optionB_SPN=Por favor, no seas una estafa ...
+optionB_TAI=กรุณาอย่า หลอกลวง ...
+gotoB=035
+boxPosition=-161.3913,-2239.001
+
+[34]
+otherspeak=Good luck!!
+otherspeak_POR=Boa sorte!!
+otherspeak_RUS=Удачи!!
+otherspeak_IND=Semoga berhasil!!
+otherspeak_SPN=¡¡Buena suerte!!
+otherspeak_TAI=โชคดี!!
+goto=-1
+boxPosition=-396.5217,-2452.174
+
+[35]
+otherspeak=HE HE HE HE HE
+otherspeak_POR=ELE ELE ELE ELE ELE
+otherspeak_RUS=ОН ОН ОН ОН
+otherspeak_IND=DIA DIA DIA DIA
+otherspeak_SPN=HE HE HE HE HE
+otherspeak_TAI=ฮ่า ๆ ๆ
+highlight=HE HE HE HE HE
+highlight_POR=ELE ELE ELE ELE ELE
+highlight_RUS=ОН ОН ОН ОН
+highlight_IND=DIA DIA DIA DIA
+highlight_SPN=HE HE HE HE HE
+highlight_TAI=ฮ่า ๆ ๆ
+highlight_col=#ff3f2e
+goto=034
+boxPosition=-65.39133,-2295.26
+
+[901]
+optionA=SELL ITEMS
+optionA_POR=VENDER ARTIGOS
+optionA_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionA_IND=MENJUAL BARANG
+optionA_SPN=VENDER ARTÍCULOS
+optionA_TAI=ขายสินค้า
+gotoA=-99
+optionB=About those shells...
+optionB_POR=Sobre aquelas conchas ...
+optionB_RUS=Об этих снарядах ...
+optionB_IND=Tentang cangkang itu ...
+optionB_SPN=Sobre esas conchas ...
+optionB_TAI=เกี่ยวกับหอยเหล่านั้น ...
+gotoB=999
+boxPosition=524.5229,-383.215
+
+[999]
+*test QUEST_PROGRESS* (Colors of the Sea == 1)
+goto_true=902
+goto_false=-1
+boxPosition=658.5635,-466.8991
+
+[902]
+otherspeak=Do you have them?!
+otherspeak_POR=Você os tem?!
+otherspeak_RUS=Они у тебя есть ?!
+otherspeak_IND=Apakah Anda memilikinya ?!
+otherspeak_SPN=¡¿Los tienes?!
+otherspeak_TAI=คุณมีหรือไม่!
+goto=903
+boxPosition=654.3774,-569.5636
+
+[903]
+*test HAS_ANY_QUEST_ITEMS* (Colors of the Sea, step 1)
+goto_true=700
+goto_false=904
+boxPosition=649.0436,-654.2745
+
+[700]
+optionA=(Give Shells)
+optionA_POR=(Dê conchas)
+optionA_RUS=(Дайте снаряды)
+optionA_IND=(Berikan Kerang)
+optionA_SPN=(Dar conchas)
+optionA_TAI=(ให้หอย)
+gotoA=888
+optionB=No...
+optionB_POR=Não...
+optionB_RUS=Нет...
+optionB_IND=Tidak...
+optionB_SPN=No...
+optionB_TAI=ไม่ ...
+gotoB=905
+boxPosition=502.9564,-734.5793
+
+[904]
+optionA=No...
+optionA_POR=Não...
+optionA_RUS=Нет...
+optionA_IND=Tidak...
+optionA_SPN=No...
+optionA_TAI=ไม่ ...
+gotoA=905
+boxPosition=776.1162,-731.6373
+
+[905]
+otherspeak=AGHH! Well come back when you do ...
+otherspeak_POR=AGHH! Bem, volte quando você fizer ...
+otherspeak_RUS=АГХХ! Хорошо, вернись, когда сделаешь ...
+otherspeak_IND=AGHH! Kembalilah saat Anda melakukan ...
+otherspeak_SPN=¡AGHH! Bueno, vuelve cuando lo hagas ...
+otherspeak_TAI=อ๊ากกก! กลับมาเมื่อคุณทำ ...
+goto=-1
+boxPosition=707.8806,-836.2386
+
+[888]
+*TAKE_QUEST_ITEMS* (Colors of the Sea, step 1) (if all collected, advance quest to 2)
+goto=800
+boxPosition=567.3594,-905.7747
+
+[800]
+otherspeak=WOW! WOW! WOOW!!!
+otherspeak_POR=UAU! UAU! WOOW !!!
+otherspeak_RUS=УХ ТЫ! УХ ТЫ! ВУУ !!!
+otherspeak_IND=WOW! WOW! WOOW !!!
+otherspeak_SPN=¡GUAU! ¡GUAU! ¡¡¡GUAU !!!
+otherspeak_TAI=ว้าว! ว้าว! ว้าว !!!
+goto=801
+boxPosition=568.225,-973.5518
+
+[801]
+otherspeak=WHAT BEAUTIFUL SHELLS!
+otherspeak_POR=QUE BONITOS SHELLS!
+otherspeak_RUS=КАКИЕ КРАСИВЫЕ ОБОЛОЧКИ!
+otherspeak_IND=APA YANG INDAH!
+otherspeak_SPN=¡QUÉ HERMOSAS CONCHAS!
+otherspeak_TAI=หอยอะไรสวย!
+goto=802
+boxPosition=569.2876,-1029.55
+
+[802]
+*test FINISHED_COLLECTING_QUEST_ITEMS* (Colors of the Sea, step 1)
+goto_true=805
+goto_false=803
+boxPosition=571.3467,-1086.13
+swapLineCols=true
+
+[803]
+otherspeak=Thanks so much!!
+otherspeak_POR=Muito obrigado!!
+otherspeak_RUS=Огромное спасибо!!
+otherspeak_IND=Terima kasih banyak!!
+otherspeak_SPN=¡¡Muchas gracias!!
+otherspeak_TAI=ขอบคุณมาก!!
+goto=-1
+boxPosition=507.9341,-1175.688
+
+[805]
+otherspeak=Looks like that's all of them!
+otherspeak_POR=Parece que são todos eles!
+otherspeak_RUS=Похоже, это все они!
+otherspeak_IND=Sepertinya itu semuanya!
+otherspeak_SPN=¡Parece que son todos!
+otherspeak_TAI=ดูเหมือนว่าทั้งหมดนี้!
+goto=806
+boxPosition=741.0356,-1179.586
+
+[806]
+otherspeak=As for your reward...
+otherspeak_POR=Quanto à sua recompensa ...
+otherspeak_RUS=Что касается награды ...
+otherspeak_IND=Adapun upahmu ...
+otherspeak_SPN=En cuanto a tu recompensa ...
+otherspeak_TAI=ส่วนรางวัลของคุณ ...
+goto=807
+boxPosition=746.0631,-1238.817
+
+[807]
+otherspeak=......
+otherspeak_POR=......
+otherspeak_RUS=......
+otherspeak_IND=......
+otherspeak_SPN=......
+otherspeak_TAI=......
+goto=808
+boxPosition=758.004,-1321.526
+
+[808]
+otherspeak=HERE YOU GO!
+otherspeak_POR=AQUI ESTÁ!
+otherspeak_RUS=НУ ВОТ!
+otherspeak_IND=DI SINI KAMU PERGI!
+otherspeak_SPN=¡AQUI TIENES!
+otherspeak_TAI=ไปที่นี่!
+goto=809
+boxPosition=762.8737,-1389.822
+
+[809]
+*TRY_GIVE_QUEST_REWARD* (Colors of the Sea) (if succeed, advance quest to 3)
+goto=-1
+boxPosition=758.5395,-1452.485
+
+[404]
+optionA=SELL ITEMS
+optionA_POR=VENDER ARTIGOS
+optionA_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionA_IND=MENJUAL BARANG
+optionA_SPN=VENDER ARTÍCULOS
+optionA_TAI=ขายสินค้า
+gotoA=-99
+optionB=Enjoying your shells?
+optionB_POR=Gostando de suas conchas?
+optionB_RUS=Нравится ваши ракушки?
+optionB_IND=Menikmati cangkang Anda?
+optionB_SPN=¿Disfrutando de tus conchas?
+optionB_TAI=เพลิดเพลินกับเปลือก หอยของคุณหรือไม่?
+gotoB=405
+boxPosition=-293.9355,-386.4945
+
+[405]
+otherspeak=My... shells?...
+otherspeak_POR=Minhas ... conchas? ...
+otherspeak_RUS=Мои ... снаряды? ...
+otherspeak_IND=Saya ... cangkang? ...
+otherspeak_SPN=Mis ... conchas? ...
+otherspeak_TAI=มาย ... หอยเหรอ ...
+goto=406
+boxPosition=-301.4164,-467.4025
+
+[406]
+otherspeak=OH NOOO! MY SHELLS!!
+otherspeak_POR=OH NÃOOO! MINHAS ESCUDAS !!
+otherspeak_RUS=О НЕТ! МОИ ОБОЛОЧКИ !!
+otherspeak_IND=OH NOOO! KERANG SAYA !!
+otherspeak_SPN=¡OH NOOO! MIS CONCHAS !!
+otherspeak_TAI=โอ้โห! หอยของฉัน !!
+goto=407
+boxPosition=-299.0317,-537.0722
+
+[407]
+otherspeak=Where did I put them?! I can't remember!!
+otherspeak_POR=Onde eu os coloquei ?! Não consigo me lembrar !!
+otherspeak_RUS=Куда я их засунул ?! Я не помню !!
+otherspeak_IND=Di mana saya menaruhnya ?! Saya tidak ingat !!
+otherspeak_SPN=¡¿Dónde los puse ?! ¡¡No puedo recordar !!
+otherspeak_TAI=ฉันเอามันไปไว้ที่ไหน! จำไม่ได้ !!
+goto=408
+boxPosition=-301.2178,-618.3717
+
+[408]
+optionA=I'll find you some new ones!
+optionA_POR=Vou encontrar alguns novos para você!
+optionA_RUS=Я найду тебе новые!
+optionA_IND=Saya akan mencarikan Anda beberapa yang baru!
+optionA_SPN=¡Te encontraré algunos nuevos!
+optionA_TAI=ฉันจะหาคน ใหม่ให้คุณ!
+gotoA=413
+optionB=Think harder, dummy!
+optionB_POR=Pense mais, idiota!
+optionB_RUS=Подумай, болван!
+optionB_IND=Berpikir lebih keras, bodoh!
+optionB_SPN=¡Piensa más, tonto!
+optionB_TAI=คิดหนักขึ้นหุ่น!
+gotoB=409
+boxPosition=-301.9465,-690.627
+
+[409]
+otherspeak=I'm trying.....
+otherspeak_POR=Estou tentando.....
+otherspeak_RUS=Я пытаюсь.....
+otherspeak_IND=Saya mencoba.....
+otherspeak_SPN=Lo estoy intentando.....
+otherspeak_TAI=ฉันกำลังพยายาม .....
+goto=410
+boxPosition=-208.3316,-773.0178
+
+[410]
+otherspeak=But my brain is only the size of a cranberry
+otherspeak_POR=Mas meu cérebro é apenas do tamanho de uma amora
+otherspeak_RUS=Но мой мозг размером с клюкву
+otherspeak_IND=Tapi otakku hanya seukuran buah cranberry
+otherspeak_SPN=Pero mi cerebro es solo del tamaño de un arándano
+otherspeak_TAI=แต่สมองของฉันมีขนาดเท่าผลแครนเบอร์รี่เท่านั้น
+goto=411
+boxPosition=-203.6938,-833.1509
+
+[411]
+otherspeak=.... I can't remember :(
+otherspeak_POR=.... Não me lembro :(
+otherspeak_RUS=.... не помню :(
+otherspeak_IND=.... Saya tidak ingat :(
+otherspeak_SPN=.... No recuerdo :(
+otherspeak_TAI=.... จำไม่ได้ :(
+goto=412
+boxPosition=-213.8636,-900.4346
+
+[412]
+optionA=I'll find you some new shells
+optionA_POR=Eu vou te encontrar algumas novas conchas
+optionA_RUS=Я найду тебе новые снаряды
+optionA_IND=Aku akan mencarikanmu beberapa cangkang baru
+optionA_SPN=Te encontraré algunas conchas nuevas
+optionA_TAI=ฉันจะหาเปลือก หอยใหม่ให้คุณ
+gotoA=413
+boxPosition=-216.6131,-975.6035
+
+[413]
+otherspeak=REALLY?!
+otherspeak_POR=REALMENTE?!
+otherspeak_RUS=В САМОМ ДЕЛЕ?!
+otherspeak_IND=BETULKAH?!
+otherspeak_SPN=¡¿DE VERDAD?!
+otherspeak_TAI=จริงๆ?!
+goto=414
+boxPosition=-424.845,-1031.926
+
+[414]
+otherspeak=ou are the nicest person to have ever lived!
+otherspeak_POR=Você é a pessoa mais legal que já viveu!
+otherspeak_RUS=Ты самый приятный человек на свете!
+otherspeak_IND=ou adalah orang terbaik yang pernah hidup!
+otherspeak_SPN=¡Eres la persona más agradable que jamás haya vivido!
+otherspeak_TAI=คุณเป็นคนที่ดีที่สุดที่เคยมีชีวิตอยู่!
+goto=415
+boxPosition=-421.3665,-1112.332
+
+[415]
+otherspeak=I was getting tired of those old shells anyways..
+otherspeak_POR=Eu estava ficando cansado daquelas cascas velhas de qualquer maneira ..
+otherspeak_RUS=Я все равно устал от этих старых снарядов ..
+otherspeak_IND=Lagipula aku bosan dengan cangkang tua itu ..
+otherspeak_SPN=De todos modos, me estaba cansando de esos viejos caparazones ...
+otherspeak_TAI=ฉันเริ่มเบื่อกับเปลือกหอยเก่า ๆ แล้วล่ะ ..
+goto=416
+boxPosition=-428.9193,-1184.086
+
+[416]
+otherspeak=Can you get me some different colors?
+otherspeak_POR=Você pode me dar algumas cores diferentes?
+otherspeak_RUS=Можете ли вы принести мне другие цвета?
+otherspeak_IND=Bisakah Anda memberi saya beberapa warna berbeda?
+otherspeak_SPN=¿Puedes conseguirme algunos colores diferentes?
+otherspeak_TAI=ช่วยหาสีที่แตกต่างให้ฉันหน่อยได้ไหม
+goto=417
+boxPosition=-424.3479,-1253.161
+
+[417]
+optionA=Okay
+optionA_POR=OK
+optionA_RUS=Хорошо
+optionA_IND=baik
+optionA_SPN=Okey
+optionA_TAI=ตกลง
+gotoA=020
+boxPosition=-428.4226,-1324.523
+

@@ -1,0 +1,31 @@
+*auto_version=11*
+*is_blank=true*
+*forced_biome=0*
+
+[7,0] = Gold Chest (rot 1)
+	basket_id = *long* 9001
+
+[7,0] = Dirt Path (rot 0)
+
+[8,1] = Flowers (rot 0)
+	paint = *string* Lavender Plum
+
+[3,0] = Green Blob (rot 0)
+
+[2,1] = Large Mossy Tree (rot 2)
+
+[4,4] = Berry Bush (rot 0)
+
+[3,6] = Berry Bush (rot 0)
+
+[5,5] = Berry Bush (rot 0)
+
+[7,6] = Spawner - Sticks (rot 0)
+
+[2,2] = Spawner - Sticks (rot 0)
+
+[4,7] = Stone Vein (rot 1)
+
+[2,8] = Green Blob (rot 0)
+
+

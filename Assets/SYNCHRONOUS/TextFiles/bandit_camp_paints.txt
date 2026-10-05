@@ -1,0 +1,19 @@
+[BANDIT_WALL]
+grasslands=
+snow=Glacier
+desert=Storm Grey
+evergreen=Debug - Wood
+ocean=Spirit Grey
+swamp=Basic Black
+woodlands=Debug - Wood DK
+sakura=Sludge
+
+[BANDIT_COMPL]
+grasslands=
+snow=Glacier
+desert=Iron & Oak
+evergreen=Royal Sage
+ocean=Lavender Bloom
+swamp=Black & Gold
+woodlands=Lumberjack
+sakura=Mystic Dusk

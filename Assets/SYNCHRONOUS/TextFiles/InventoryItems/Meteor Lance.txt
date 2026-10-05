@@ -1,0 +1,14 @@
+Name_TAI = หอก อุกกาบาต
+Name_POR = Lança Meteoro
+Name_SPN = Lanza Meteoro
+Name_RUS = Метеоритное копье
+Name_IND = Tombak Meteor
+Type = Holdable
+
+World_obj_path = Equipment/holdables/new-weapon-models/Lance
+
+CopyPaintLayout = Spirit Lance
+Default Coloring = Weapon - Meteor
+
+not_obtainable = true
+

@@ -1,0 +1,11 @@
+Name_TAI = แซฟไฟร์
+Name_POR = Safira
+Name_SPN = Zafiro
+Name_RUS = Сапфир
+Name_IND = Safir
+
+Inventory_sprite_path = item sapphire
+Market Cost = 85
+
+Vendor0 = Ores
+NumSell = 2 to 4

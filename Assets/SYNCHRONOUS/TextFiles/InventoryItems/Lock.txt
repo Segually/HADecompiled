@@ -1,0 +1,22 @@
+Description_TAI = ใช้ มัน เพื่อ ล็อค หีบ ตะกร้า บ้าน เป็นต้น
+Name_TAI = ล็อก
+Description_POR = Use-o para trancar seus baús, cestos, casas, etc.
+Description_SPN = Úsalo para cerrar con llave tus cofres, cestas, casas, etc.
+Description_RUS = Используйте это, чтобы запереть свои сундуки, корзины, дома и т.д.
+Description_IND = Gunakan untuk mengunci peti, keranjang, rumah, dll.
+Name_POR = Tranca
+Name_SPN = Cerradura
+Name_RUS = Замок
+Name_IND = Kunci
+Description = Use it to lock your chests, baskets, houses, etc.
+
+Inventory_sprite_path = item lock
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 2
+Type = Tool
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = OnlineItems
+NumSell = 2 to 3

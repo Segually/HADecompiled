@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - โจรปล้น
+Name_POR = Mob - Bandido
+Name_SPN = Enemigo - Bandido
+Name_RUS = Моб - Бандит
+Name_IND = Gerombolan - Bandit
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

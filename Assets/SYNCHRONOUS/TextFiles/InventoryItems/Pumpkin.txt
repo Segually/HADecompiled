@@ -1,0 +1,30 @@
+Name_TAI = ชิ้น ฟักทอง
+Name_POR = Pedaços de Abóbora
+Name_SPN = Trozos de calabaza
+Name_RUS = Кусочки тыквы
+Name_IND = Potongan Labu
+Overwrite_name = Pumpkin Chunks
+
+Inventory_sprite_path = item pumpkin chunks
+Market Cost = 25
+
+Vendor0 = Harvested Item
+NumSell = 1 to 3
+PaintLayout0_SolidColors = 0-6, 1-1, 
+PaintLayout0_Candycane = 0-3, 1-1, 
+PaintLayout0_Trimmed = 0-3, 1-1, 
+PaintLayout0_Nomad = 0-3, 1-1, 
+PaintLayout0_TriColor = 0-3, 1-1, 
+PaintLayout0_Pastels = 0-3, 1-1, 
+Default Coloring = Pumpkin Orange
+
+World_obj_path = 3D Item Graphics/Pumpkin Chunks
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 30
+model3d_yRot = 30
+model3d_xRot = -100
+model3d_recenterX = -13
+model3d_recenterY = 7
+model3d_objRot = 8
+PaintLayout0_Goldy = 0-2, 1-1, 

@@ -1,0 +1,6 @@
+Description = Unlock the ability to buy and build your own Music Boxes
+IAP_KEY = recipe_musicboxes
+Type = permanent
+Gem_price = medium
+Bg_color = light_blue
+Model_path = shop_musicbox

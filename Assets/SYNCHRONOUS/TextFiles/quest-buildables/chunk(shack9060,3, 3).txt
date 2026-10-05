@@ -1,0 +1,5 @@
+*auto_version=1*
+
+[9,3] = Painting (rot 2)
+	dev_painting_id = *short* 11
+

@@ -1,0 +1,6 @@
+*auto_version=5*
+
+[1,0] = Karaoke (rot 3)
+	minigame_id = *long* 9034
+	paint = *string* Basic Purple
+

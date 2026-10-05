@@ -1,0 +1,12 @@
+*auto_version=1*
+*forced_floor_model=5*
+*is_blank=true*
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+

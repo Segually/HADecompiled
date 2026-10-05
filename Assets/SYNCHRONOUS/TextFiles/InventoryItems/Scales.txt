@@ -1,0 +1,19 @@
+Description_TAI = วัสดุ สำหรับ การ สร้าง
+Name_TAI = เกล็ด
+Description_POR = Material de artesanato
+Description_SPN = Material de artesanía
+Description_RUS = Материал для создания вещей
+Description_IND = Bahan kerajinan
+Name_POR = Escamas
+Name_SPN = Escamas
+Name_RUS = Весы
+Name_IND = Sisik
+Description = Crafting material
+
+Inventory_sprite_path = item scales
+Crafting_makes = 5
+Market Cost = 9
+Max_stack = 5
+
+Vendor0 = Mob Drops
+NumSell = 3 to 9

@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ แฟชั่น ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = แฟชั่น แสตมป์
+Description_POR = Adicione um símbolo de Moda ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de moda a tus muebles!
+Description_RUS = Добавьте символ моды к вашей мебели!
+Description_IND = Tambahkan simbol Fashion ke furnitur Anda!
+Name_POR = Carimbo de Moda
+Name_SPN = Sello de Moda
+Name_RUS = Модная печать
+Name_IND = Cap Mode
+Description = Add a Fashion symbol to your furniture!
+
+Inventory_sprite_path = item stamp fashion
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

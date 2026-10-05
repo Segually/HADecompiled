@@ -1,0 +1,22 @@
+Description_TAI = เสื้อผ้า
+Name_TAI = หมวก ซอมเบรโร
+Description_POR = Roupas
+Description_SPN = Ropa
+Description_RUS = Одежда
+Description_IND = Pakaian
+Name_POR = Sombrero
+Name_SPN = Sombrero
+Name_RUS = Сомбреро
+Name_IND = Sombrero
+Description = Clothing
+
+Inventory_sprite_path = item sombrero
+Crafting_ingredient_A = Cotton
+Crafting_ingredient_A_count = 2
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/hat_sombrero
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Clothing

@@ -1,0 +1,17 @@
+Name_TAI = สายแร่ ทับทิม
+Name_POR = Veio de Rubi
+Name_SPN = Veta de rubí
+Name_RUS = Жила рубина
+Name_IND = Urat Ruby
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Ruby Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 15
+Pollinator Regen RespawnId = mob_spawn

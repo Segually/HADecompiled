@@ -1,0 +1,35 @@
+Description_TAI = ดาบ คู่ ทำจาก ทองคำ บริสุทธิ์ ทั้ง สง่างาม และ คมกริบ
+Name_TAI = ดาบ คู่ ทองคำ
+Description_POR = Espadas gêmeas de ouro puro, ambas régias e afiadas como navalha.
+Description_SPN = Espadas gemelas de oro puro, ambas reales y afiladas como navajas.
+Description_RUS = Парные мечи из чистого золота, величественные и острые как бритва.
+Description_IND = Pedang kembar dari emas murni, keduanya megah dan tajam seperti pisau cukur.
+Name_POR = Espada Gêmea de Ouro
+Name_SPN = Espada Doble de Oro
+Name_RUS = Золотые Двойные Мечи
+Name_IND = Pedang Kembar Emas
+Overwrite_name = Gold TwinSword
+Description = Twin swords of pure gold, both regal and razor-sharp
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 5
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/DoubleSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 18
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 11
+
+CopyPaintLayout = Uranium DoubleSword
+Default Coloring = Weapon - Gold
+
+dual_wield = true
+
+show_model3d = true
+Copy3dModelPosition = Uranium DoubleSword
+
+weapon_display_copy = Uranium DoubleSword

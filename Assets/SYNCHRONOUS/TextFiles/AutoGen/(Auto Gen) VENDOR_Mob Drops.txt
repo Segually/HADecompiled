@@ -1,0 +1,7 @@
+[5][max_stack=5] Feathers
+[8] Bug Meat
+[9] Fur
+[9][max_stack=5] Scales
+[9][max_stack=5] Sharp Tooth
+[15] Uncooked Meat
+[30] Venom

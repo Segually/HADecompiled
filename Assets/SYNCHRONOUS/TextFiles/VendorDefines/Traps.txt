@@ -1,0 +1,5 @@
+[Sell Percent = 0.26]
+
+Traps(1-3000)
+Traps(1-3000)
+Traps(1-3000)

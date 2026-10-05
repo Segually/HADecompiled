@@ -1,0 +1,9 @@
+[Sell Percent = 0.26]
+
+"Painting Easel"
+"Blank Canvas"
+"Painting"
+
+"Painting"
+"Painting"
+"Painting"

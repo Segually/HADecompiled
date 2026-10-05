@@ -1,0 +1,6 @@
+*auto_version=1*
+
+[9,3] = Paint Shaker (rot 0)
+
+[7,3] = Paint Mixer (rot 0)
+

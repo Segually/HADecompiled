@@ -1,0 +1,25 @@
+Name_POR=Milo
+Name_RUS=Майло
+Name_IND=Milo
+Name_SPN=Milo
+Name_TAI=ไมโล
+
+----- DIALOGUE -----
+[0]
+otherspeak=Oh hello!
+otherspeak_POR=Oh, olá!
+otherspeak_RUS=О, привет!
+otherspeak_IND=Oh, halo!
+otherspeak_SPN=¡Oh hola!
+otherspeak_TAI=โอ้ สวัสดีครับ!
+goto=001
+
+[1]
+otherspeak=Isn't it a beautiful day to be in the woods?
+otherspeak_POR=Não é um belo dia para estar na floresta?
+otherspeak_RUS=Разве не прекрасный день для прогулки по лесу?
+otherspeak_IND=Bukankah ini hari yang indah untuk berada di hutan?
+otherspeak_SPN=¿No es un hermoso día para estar en el bosque?
+otherspeak_TAI=วันนี้ไม่ใช่วันที่ดีแล้วเหรอที่จะมาที่ป่า?
+goto=-1
+

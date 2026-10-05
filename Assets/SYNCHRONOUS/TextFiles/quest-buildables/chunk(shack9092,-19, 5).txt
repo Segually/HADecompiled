@@ -1,0 +1,8 @@
+*auto_version=4*
+
+[9,4] = Vending Machine (rot 0)
+	password = *string* DEV_LOCKED
+
+[9,5] = Vending Machine (rot 0)
+	password = *string* DEV_LOCKED
+

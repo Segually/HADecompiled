@@ -1,0 +1,22 @@
+Description_TAI = ผลไม้ เบอร์รี่ หายาก!
+Name_TAI = ซาลมอน เบอร์รี่
+Description_POR = Uma baga rara!
+Description_SPN = ¡Una baya rara!
+Description_RUS = Редкая ягода!
+Description_IND = Sebuah berry langka!
+Name_POR = SalmonBerry
+Name_SPN = Baya de Salmón
+Name_RUS = Салмонберри
+Name_IND = SalmonBerry
+Description = A rare berry!
+
+Inventory_sprite_path = item salmonberry
+Type = Consumable
+Crafting_makes = 5
+Market Cost = 15
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 4 to 9

@@ -1,0 +1,84 @@
+*auto_version=37*
+
+[9,6] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[9,1] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[6,1] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[7,6] = Double Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[7,1] = Double Crate (rot 1)
+	password = *string* DEV_LOCKED
+
+[6,0] = Double Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[8,6] = Crate (rot 1)
+	password = *string* DEV_LOCKED
+
+[6,6] = Crate (rot 1)
+	password = *string* DEV_LOCKED
+
+[8,1] = Crate (rot 3)
+	password = *string* DEV_LOCKED
+
+[0,6] = Crate (rot 3)
+	password = *string* DEV_LOCKED
+
+[1,6] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[2,1] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[2,0] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,1] = Crate (rot 1)
+	password = *string* DEV_LOCKED
+
+[1,1] = Double Crate (rot 3)
+	password = *string* DEV_LOCKED
+
+[2,7] = Crate (rot 3)
+	password = *string* DEV_LOCKED
+
+[2,9] = Wood Rails (rot 0)
+
+[2,8] = Wood Rails (rot 0)
+
+[8,0] = Trading Table (rot 0)
+	paint = *string* Basic Green
+	password = *string* DEV_LOCKED
+
+[1,0] = Red String Lights (rot 0)
+	model1_chunkX = *short* 12
+	model1_chunkZ = *short* 8
+	model1_innerX = *short* 7
+	model1_innerZ = *short* 0
+
+[1,7] = Blue String Lights (rot 0)
+	model1_chunkX = *short* 12
+	model1_chunkZ = *short* 8
+	model1_innerX = *short* 7
+	model1_innerZ = *short* 7
+
+[2,6] = Double Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[6,7] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,5] = DEBUG-npc (rot 0)
+	npc_file = *string* Gus
+	creature_A = *string* bat
+	creature_B = *string* vulture
+	npc_icon = *string* Info_giver
+
+[0,5] = Park Bench (rot 0)
+

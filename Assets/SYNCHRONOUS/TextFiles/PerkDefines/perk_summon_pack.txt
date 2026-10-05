@@ -1,0 +1,19 @@
+Full Name = Summon Pack
+Description = Call out to your pack!
+Detailed Description = Summon three level-GetInt[EFFECT_SUMMON, "Summoned Creature Level", remove ""] DiffInt[EFFECT_SUMMON, "Summoned Creature Level", remove "", add " levels"] clones of yourself for GetInt[EFFECT_SUMMON, "Duration", remove " seconds"] seconds DiffInt[EFFECT_SUMMON, "Duration", remove " seconds", add " seconds"].
+Ultra Detailed Description = Since you are the "pack leader", your pack mates are only GetFloat[EFFECT_SUMMON, "Summoned Creature Size", remove "%"]% as big as you
+Energy Cost = 75%
+On cast = [EFFECT_SUMMON] on self
+-
+[EFFECT_SUMMON]
+Type = Duration Effect
+Num Creatures To Summon = 3
+Duration = CLAMP (20 seconds @ lvl_1 ... 40 seconds @ lvl_15)
+Summoned Creature Level = RANGE (10%-18%-25% of own level)
+Summoned Creature Follow Distance = 2.5
+Summoned Creature Name = [PLAYER_NAME]
+Summoned Creature Combo = [PLAYER_COMBO]
+Summoned Creature Walk Speed = [PLAYER_SPEED]
+Summoned Creature Size = 85%
+Particle (Instant) = perk_summon_pack_particle
+Scale Particle With Creature Size = false

@@ -1,0 +1,32 @@
+Description_TAI = ดาบ หนัก อัดแน่น ด้วย พลังงาน ออกแบบ สำหรับ การ โจมตี ทำลายล้าง
+Name_TAI = ดาบ โค้ง ยูเรเนียม
+Description_POR = Espada pesada e energizada, projetada para golpes destrutivos
+Description_SPN = Espada pesada y energizada diseñada para golpes destructivos.
+Description_RUS = Тяжелый, энергозависимый меч, созданный для разрушительных ударов.
+Description_IND = Pedang berat bertenaga yang dirancang untuk serangan destruktif
+Name_POR = Espada Curva de Urânio
+Name_SPN = EspadaCurva de Uranio
+Name_RUS = Урановый Изогнутый Меч
+Name_IND = PedangLengkung Uranium
+Description = Heavy, energized sword designed for destructive strikes
+
+Crafting_ingredient_A = Uranium Bar
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/CurveSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 18
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 12
+
+CopyPaintLayout = Titanium CurveSword
+Default Coloring = Weapon - Uranium
+
+show_model3d = true
+Copy3dModelPosition = Titanium CurveSword
+
+weapon_display_copy = Titanium CurveSword

@@ -1,0 +1,25 @@
+Description_TAI = ปลูกนี่ไว้ที่ไหนสักแห่ง แล้วมันจะผลิตเห็ด!
+Name_TAI = เห็ด ยักษ์
+Description_POR = Plante isto em algum lugar e ele produzirá cogumelos!
+Description_SPN = ¡Planta esto en algún lugar, y producirá hongos!
+Description_RUS = Посадите это где-нибудь, и оно будет давать грибы!
+Description_IND = Tanam ini di suatu tempat, dan itu akan menghasilkan jamur!
+Name_POR = Cogumelo Gigante
+Name_SPN = Hongo Gigante
+Name_RUS = Гигантский гриб
+Name_IND = Jamur Raksasa
+Overwrite_name = Giant Mushroom
+Description = Plant this somewhere, and it will produce mushrooms!
+
+Inventory_sprite_path = item giant purple mushroom
+Type = Place_in_world
+World_obj_path = Buildables/Giant Purple Mushroom (planted)
+World_geometry = 1_by_1
+Market Cost = 110
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+
+Pollinator Regen Level = 3
+Pollinator Regen RespawnId = collect_spawn

@@ -1,0 +1,27 @@
+Description_TAI = ลองใส่อันนี้ลงบนฟักทองดู...
+Name_TAI = ตราประทับ ผีดิบ
+Description_POR = Tente colocar isso em uma abóbora...
+Description_SPN = Intenta poner esto en una calabaza...
+Description_RUS = Попробуйте надеть это на тыкву...
+Description_IND = Cobalah meletakkan ini pada labu...
+Name_POR = Selo do Ghoul
+Name_SPN = Sello de Fantasma
+Name_RUS = Печать вурдалака
+Name_IND = Stempel Ghoul
+Description = Try putting this on a pumpkin...
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

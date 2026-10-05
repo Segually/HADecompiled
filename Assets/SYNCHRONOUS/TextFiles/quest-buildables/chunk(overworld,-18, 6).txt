@@ -1,0 +1,22 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=8*
+
+[4,2] = Low Stone Wall (rot 0)
+
+[3,2] = Low Stone Wall (rot 0)
+
+[2,2] = Low Stone Wall (rot 0)
+
+[1,2] = Low Stone Wall (rot 0)
+
+[7,2] = Low Stone Wall (rot 0)
+
+[0,2] = Low Stone Wall (rot 0)
+
+[8,2] = Low Stone Wall (rot 0)
+
+[9,0] = Stone Vein (White) (rot 3)
+
+[9,2] = Low Stone Wall (rot 0)
+

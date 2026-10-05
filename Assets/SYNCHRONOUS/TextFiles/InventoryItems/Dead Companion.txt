@@ -1,0 +1,12 @@
+Name_TAI = สหาย ผู้ ล่วงลับ
+Name_POR = Companheiro Morto
+Name_SPN = Compañero Muerto
+Name_RUS = Мёртвый спутник
+Name_IND = Teman yang Mati
+
+Type = Place_in_world
+World_obj_path = Buildables/DEBUG-npc
+World_geometry = 1_by_1
+
+not_obtainable = true
+

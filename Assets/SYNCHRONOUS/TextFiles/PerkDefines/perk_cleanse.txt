@@ -1,0 +1,10 @@
+Full Name = Cleanse
+Description = For Matcha
+On cast = [EFFECT_CLEANSE] on self
+Not_unlockable = true
+-
+[EFFECT_CLEANSE]
+Type = Instant Effect
+Particle (Instant) = perk_cleanse_particle
+Remove All Effects = true
+Scale Particle With Creature Size = true

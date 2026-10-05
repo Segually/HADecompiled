@@ -1,0 +1,9 @@
+Name_TAI = เหรียญ
+Name_POR = Moedas
+Name_SPN = Monedas
+Name_RUS = Монеты
+Name_IND = Koin
+
+Max_stack = 10000
+
+Market Cost = 1

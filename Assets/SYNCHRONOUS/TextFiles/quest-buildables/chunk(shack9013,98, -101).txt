@@ -1,0 +1,67 @@
+*auto_version=4*
+
+[9,7] = Lava (rot 0)
+
+[9,6] = Lava (rot 0)
+
+[9,5] = Lava (rot 0)
+
+[9,4] = Lava (rot 0)
+
+[5,0] = Lava (rot 0)
+
+[6,0] = Lava (rot 0)
+
+[5,1] = Lava (rot 0)
+
+[6,1] = Lava (rot 0)
+
+[8,7] = Lava (rot 0)
+
+[8,6] = Lava (rot 0)
+
+[7,7] = Lava (rot 0)
+
+[6,7] = Lava (rot 0)
+
+[6,6] = Lava (rot 0)
+
+[6,5] = Lava (rot 0)
+
+[6,4] = Lava (rot 0)
+
+[7,4] = Lava (rot 0)
+
+[7,6] = Lava (rot 0)
+
+[7,5] = Lava (rot 0)
+
+[5,5] = Lava (rot 0)
+
+[5,4] = Lava (rot 0)
+
+[6,3] = Lava (rot 0)
+
+[5,3] = Lava (rot 0)
+
+[5,2] = Lava (rot 0)
+
+[6,2] = Lava (rot 0)
+
+[4,0] = Lava (rot 0)
+
+[4,1] = Lava (rot 0)
+
+[4,2] = Lava (rot 0)
+
+[4,3] = Lava (rot 0)
+
+[9,1] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[1,0] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2

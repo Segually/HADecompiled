@@ -1,0 +1,15 @@
+Full Name = Defensive Shell
+Description = Shield yourself from attackers!
+Detailed Description = Only receive GetFloat[EFFECT_DEFEND, "Damage Percent Mod On Was-Hit", remove "%"]% damage DiffFloat[EFFECT_DEFEND, "Damage Percent Mod On Was-Hit", remove "%", add "%"] for GetInt[EFFECT_DEFEND, "Duration", remove " seconds"] seconds DiffInt[EFFECT_DEFEND, "Duration", remove " seconds", add " seconds"] on self. +GetInt[EFFECT_DEFEND, "Fewer Damage Points On Was-Hit", remove ""] additional defense points DiffInt[EFFECT_DEFEND, "Fewer Damage Points On Was-Hit", remove "", add ""].
+Ultra Detailed Description = Walk speed reduced to GetFloat[EFFECT_DEFEND, "Walk Speed", remove "%"]% on self.
+Energy Cost = 60%
+On cast = [EFFECT_DEFEND] on self
+-
+[EFFECT_DEFEND]
+Type = Duration Effect
+Duration = CLAMP (6 seconds @ lvl_1 ... 12 seconds @ lvl_15)
+Particle (Duration) = perk_defensive_shell_duration
+Scale Particle With Creature Size = true
+Damage Percent Mod On Was-Hit = CLAMP (85% @ lvl_1 ... 70% @ lvl_15)
+Fewer Damage Points On Was-Hit = RANGE (0.25%-1.25%-2.0% of own HP)
+Walk Speed = 75%

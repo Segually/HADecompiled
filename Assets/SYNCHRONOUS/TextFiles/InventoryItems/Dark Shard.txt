@@ -1,0 +1,18 @@
+Description_TAI = แร่ ที่ หายาก อย่าง ยิ่ง พบ ใน ทะเลทราย
+Name_TAI = เศษ สี ดำ
+Description_POR = Mineral extremamente raro, encontrado no deserto.
+Description_SPN = Mineral extremadamente raro, encontrado en el desierto.
+Description_RUS = Чрезвычайно редкий минерал, найденный в пустыне.
+Description_IND = Mineral yang sangat langka, ditemukan di padang pasir.
+Name_POR = Estilhaço Sombrio
+Name_SPN = Fragmento Oscuro
+Name_RUS = Тёмный осколок
+Name_IND = Pecahan Gelap
+Description = Extremely rare mineral, found in the desert
+
+Inventory_sprite_path = item dark shard
+Market Cost = 850
+
+Vendor0 = Ores
+Vendor1 = Refined Materials
+NumSell = 2 to 3

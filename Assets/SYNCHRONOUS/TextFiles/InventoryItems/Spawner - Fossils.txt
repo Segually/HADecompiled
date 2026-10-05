@@ -1,0 +1,14 @@
+Name_TAI = ตัว วาง ไข่ - ฟอสซิล
+Name_POR = Gerador - Fósseis
+Name_SPN = Generador - Fósiles
+Name_RUS = Спавнер - Ископаемые
+Name_IND = Pemijah - Fosil
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Fossils
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

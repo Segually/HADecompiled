@@ -1,0 +1,49 @@
+*auto_version=5*
+*is_blank=true*
+*forced_biome=3*
+
+[5,2] = Torch (rot 0)
+
+[5,0] = Stone Bricks (rot 0)
+
+[9,0] = Stone Bricks (rot 0)
+
+[6,0] = Stone Bricks (rot 0)
+
+[8,0] = Stone Bricks (rot 0)
+
+[8,5] = Tent (rot 1)
+	shack_id = *long* 9058
+	paint = *string* Nomad Red
+	stamp = *string* Paw Stamp
+
+[1,2] = Stump Chair (rot 1)
+
+[1,1] = Campfire (rot 0)
+
+[8,1] = Stone Bricks (rot 0)
+
+[8,2] = Stone Bricks (rot 0)
+
+[7,0] = Stone Bricks (rot 0)
+
+[4,0] = Stone Bricks (rot 0)
+
+[0,1] = Stump Chair (rot 0)
+
+[4,2] = Custom Statue (rot 0)
+	password = *string* DEV_LOCKED
+	creature_A = *string* chimpanzee
+	creature_B = *string* frog
+	statue_message1 = *string* This is a statue of Yandeon ...
+	statue_message2 = *string* ... the creator of Yandi
+	hat = *string* White Wizard Hat
+	body = *string* Metal Armor
+
+[4,6] = Evergreen Tree (rot 0)
+
+[1,7] = Evergreen Tree (rot 0)
+
+[2,5] = Large Stone Vein (rot 0)
+
+

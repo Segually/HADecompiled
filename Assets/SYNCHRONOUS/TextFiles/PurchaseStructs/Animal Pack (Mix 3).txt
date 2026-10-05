@@ -1,0 +1,12 @@
+Description = Adds animals: dragon, flamingo, grasshopper, fly, eagle
+IAP_KEY = creature_pack_2
+Type = permanent
+Gem_price = medium
+Bg_color = yellow
+Model_path = shop_creaturePack2
+
+animal0 = dragon
+animal1 = flamingo
+animal2 = grasshopper
+animal3 = fly
+animal4 = eagle

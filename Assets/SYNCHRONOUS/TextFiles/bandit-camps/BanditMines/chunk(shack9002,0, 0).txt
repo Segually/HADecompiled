@@ -1,0 +1,39 @@
+*forced_floor_model=4*
+
+[2,9] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[1,8] = Loot Basket (rot 0)
+	basket_id = *long* 9010
+
+[1,7] = Loot Basket (rot 0)
+	basket_id = *long* 9011
+
+[2,5] = BIOME_LARGE_STALAGMITE (rot 0)
+
+[7,0] = BIOME_LARGE_STALAGMITE (rot 1)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,1] = DEBUG-1x1-fillempty (rot 0)
+
+[0,3] = DEBUG-1x1-fillempty (rot 0)
+
+[0,2] = DEBUG-1x1-fillempty (rot 0)
+
+[0,4] = DEBUG-1x1-fillempty (rot 0)
+
+[0,5] = DEBUG-1x1-fillempty (rot 0)
+
+[0,6] = DEBUG-1x1-fillempty (rot 0)
+
+[0,7] = DEBUG-1x1-fillempty (rot 0)
+
+[0,8] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+

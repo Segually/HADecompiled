@@ -1,0 +1,7 @@
+Name_TAI = เปลือก หอย สี ขาว
+Name_POR = Concha Branca
+Name_SPN = Concha Blanca
+Name_RUS = Белая ракушка
+Name_IND = Cangkang Putih
+
+Inventory_sprite_path = item seashell white

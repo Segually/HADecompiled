@@ -1,0 +1,215 @@
+[0][paintable][max_stack=10] Dirt Path
+[1][max_stack=10] Muffin
+[1][max_stack=10] Rushers
+[1][max_stack=5] Snowball
+[1][max_stack=5] Toasted Nuts
+[2] Builder Tools
+[2][paintable] Old Torch
+[2] Rotting Stump
+[3] Bones
+[3][max_stack=5] Stick
+[4][max_stack=5] Lavender
+[4][max_stack=5] Nut
+[4] Snowman
+[4][max_stack=5] Wheat
+[4][paintable][max_stack=10] Wood Rails
+[5][max_stack=5] Berry
+[5][max_stack=5] Brown Mushroom
+[5][paintable][max_stack=10] Cobblestone Path
+[5][max_stack=5] Feathers
+[5][paintable][max_stack=5] Flowers
+[5] Honeycomb
+[6][paintable] Stump Chair
+[6][paintable] Torch
+[7][max_stack=10] Paint Thinner
+[8] Bug Meat
+[8][paintable][max_stack=10] Palisade Wall
+[9] Bread Loaf
+[9][max_stack=5] Cotton
+[9] Fur
+[9][max_stack=5] Scales
+[9][max_stack=5] Sharp Tooth
+[10] Cactus Chunk
+[10][paintable] Crafting Table
+[10][paintable][max_stack=10] Stone Bricks
+[10] Stone Ore
+[10] Wood Pick
+[13][paintable] Basket
+[15][max_stack=5] MoonBerry
+[15] Old Land Claim
+[15][max_stack=5] Red Mushroom
+[15][max_stack=5] SalmonBerry
+[15] Uncooked Meat
+[16] Cooked Meat
+[16] Jam
+[16] Mushroom Stew
+[16][paintable] Sign
+[18][max_stack=5] Tea Leaves
+[20] Coconut
+[20] Hot Pepper
+[20][max_stack=10] Lava
+[20] Metal Ore
+[21] Salmonberry Scone
+[23][paintable][max_stack=10] Low Stone Wall
+[23][paintable] Shack
+[25] Blank Record
+[25] Cactus
+[25] Frozen Tree
+[25] Mossy Tree
+[25] Pumpkin
+[25] Shovel
+[26][paintable] Chair
+[26][paintable] Igloo
+[30] Birch Tree (Variant 1)
+[30] Birch Tree (Variant 2)
+[30] Bone Juice
+[30] Charm Bomb
+[30] Evergreen Tree
+[30] Large Mossy Tree
+[30] Sakura Tree
+[30] Venom
+[32] Pumpkin Pie
+[32] Sombrero
+[32] Top Hat
+[33] Moonberry Juice
+[34][paintable][max_stack=10] Tall Stone Wall
+[35] Campfire
+[35] Metal Bar
+[35] Titanium Ore
+[40] Dug-up Brown Mushroom
+[40] Dug-up Purple Mushroom
+[40] Dug-up Red Mushroom
+[40] Gold Ore
+[40][max_stack=5] Purple Mushroom
+[46][paintable] Loom
+[48] Stone Pick
+[50] Uranium Ore
+[60] Magmite Ore
+[60] Palm Tree
+[60] Willow Tree
+[61][paintable] Small Table
+[64] Matcha
+[69][paintable] Basic Rug
+[70] Silver
+[71] Coco Loco
+[73] Blank Canvas
+[74][paintable] Bed
+[74][paintable] Chest
+[75][max_stack=5] Silk
+[80] Berry Bush
+[80][paintable] Dug-up Pumpkin
+[80] Dug-up Wheat
+[80] Giant Brown Mushroom
+[80] Lavender Bush
+[85] Amber
+[85] Amethyst
+[85] Emerald
+[85][paintable] Navpost
+[85] Ruby
+[85] Sapphire
+[89] Red Curry
+[89] Titanium Bar
+[90] Giant Red Mushroom
+[96][paintable] Merchant Sign
+[100][paintable] Big Table
+[100][max_stack=5] GoldBerry
+[110] Giant Purple Mushroom
+[111][paintable] Circular Rug
+[120] MoonBerry Bush
+[133] Gold Bar
+[133] Lock
+[138] Expando Bread
+[138][paintable] Sofa Chair
+[147] Metal Pick
+[155][paintable][max_stack=10] Bouncy Floor
+[164][paintable] Metal Chair
+[169] Fried Egg
+[170] Cotton Plant
+[173][paintable] Paint Mixer
+[180] Salmonberry Bush
+[200][paintable] Anvil
+[200] Blue Torch
+[200] Red Torch
+[205] Uranium Bar
+[214][paintable] Lamp Post
+[238][paintable] Bookshelf
+[240][paintable] Tent
+[247][paintable] Big Stone Head
+[254][paintable] Park Bench
+[258][paintable] Stone Lantern
+[275] Beehive
+[283][paintable] Fancy Torch
+[284][paintable] Painting Easel
+[293][paintable] Cauldron
+[300][paintable] Dug-up Giant Pumpkin
+[316] Poison Spikes
+[340] Drill
+[350] Hot Pepper Plant
+[350] Tea Tree
+[355] Grandfather Clock
+[372] Hunter Rug
+[374][paintable] Armor Display
+[386] Blue Wizard Hat
+[386] Grey Wizard Hat
+[386] Purple Wizard Hat
+[398][paintable] Music Box
+[400] Goldberry Bush
+[400] Holiday Lights
+[400] Ice Shard
+[400] Spiderhive
+[401] Hunter Rug White
+[417] Titanium Shovel
+[454][paintable] Gravestone
+[489][paintable] Oven
+[497] 3-day Land Claim
+[511][paintable] Fireplace
+[516][paintable] Metal Lamp Post
+[527][paintable] Crate
+[570] Titanium Pick
+[596] Super Jam
+[625][paintable] Weapon Display
+[633] String Lights
+[709][paintable] Pool Table
+[734] White Top Hat
+[850] Dark Shard
+[879][paintable] Teleporter
+[915][paintable] Large Weapon Display
+[996][paintable] Stamp Maker
+[1000] Ancient Bones
+[1000][max_stack=5] Spirit Branch
+[1000] Super Top Hat
+[1000] Super White Top Hat
+[1040][paintable] Mansion
+[1158][paintable] Egg Fuser
+[1213][paintable] Double Crate
+[1231][paintable] Custom Statue
+[1430][paintable] Pop-up Saw
+[1844][paintable] Karaoke
+[1916][paintable] Windmill
+[2004] Black Wizard Hat
+[2227][paintable] Paint Shaker
+[2443] Giant Puncher
+[2526] 8-day Land Claim
+[2539][paintable] Vending Machine
+[3000] Storm Wizard Hat
+[3341][paintable] Throne
+[3422][paintable] Warehouse
+[3575] White Wizard Hat
+[4598] Blue String Lights
+[4598] Red String Lights
+[4972] Amethyst Crown
+[4972] Emerald Crown
+[4972] Ruby Crown
+[4972] Sapphire Crown
+[4996][paintable] Underground Room
+[4996][paintable] Upstairs Room
+[5000] Magic Bean
+[5000] Spooky Well
+[5146][paintable] Castle
+[7457] Magma Shovel
+[10000] Coin Hoard
+[24139][paintable] Crucible
+[27999] Personal Mine
+[30000] Huge Coin Hoard
+[454099] Boss Spawner - Shindeon
+[669199] Boss Spawner - Yandeon

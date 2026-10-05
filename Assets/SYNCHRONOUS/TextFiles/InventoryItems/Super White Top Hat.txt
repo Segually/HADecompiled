@@ -1,0 +1,24 @@
+Description_TAI = เสื้อ ผ้า
+Name_TAI = ซูเปอร์ ท็อป แฮต
+Description_POR = Vestuário
+Description_SPN = Ropa
+Description_RUS = Одежда
+Description_IND = Pakaian
+Name_POR = Super Cartola
+Name_SPN = Super Sombrero de Copa
+Name_RUS = Суперцилиндр
+Name_IND = Topi Tinggi Super
+Overwrite_name = Super Top Hat
+Description = Clothing
+
+Inventory_sprite_path = item top hat white
+Crafting_ingredient_A = Silk
+Crafting_ingredient_A_count = 2
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/hat_topHat_white_SUPER
+Craft_required_lvl = 30
+Market Cost = 1000
+
+Vendor0 = Clothing
+exclude_from_vendors = true

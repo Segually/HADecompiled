@@ -1,0 +1,67 @@
+*auto_version=17*
+*forced_biome=1*
+
+[0,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[9,7] = Dirt Path (rot 0)
+
+[6,7] = DEBUG-npc (rot 0)
+	npc_file = *string* Bone Juice Seller
+	creature_A = *string* cow
+	creature_B = *string* rhino
+	npc_icon = *string* Merchant
+	voice = *string* pig
+	merchant_type = *string* Bone Juice
+
+[9,8] = Dirt Path (rot 0)
+
+[2,9] = Stone Bricks (rot 0)
+
+[9,9] = Dirt Path (rot 0)
+
+[9,6] = Dirt Path (rot 0)
+
+[1,9] = Stone Bricks (rot 0)
+
+[1,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[2,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,4] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,6] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,7] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,9] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[8,8] = Stone Vein (Snowy) (rot 2)
+

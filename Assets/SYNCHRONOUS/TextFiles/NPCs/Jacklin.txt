@@ -1,0 +1,40 @@
+Name_POR=Jacklin
+Name_RUS=Джеклин
+Name_IND=Jacklin
+Name_SPN=Jacklin
+Name_TAI=แจ็คลิน
+
+----- DIALOGUE -----
+[000]
+otherspeak=Venturing into "Online Mode"?
+otherspeak_POR=Aventurando-se no "Modo Online"?
+otherspeak_RUS=Переходите в «Онлайн-режим»?
+otherspeak_IND=Menjelajah ke "Mode Online"?
+otherspeak_SPN=¿Aventurándose en el "Modo en línea"?
+otherspeak_TAI=เข้าสู่ "โหมดออนไลน์" หรือไม่?
+goto=001
+
+[001]
+otherspeak=Well, it's a wild world... make sure you're prepared!
+otherspeak_POR=Bem, é um mundo selvagem... certifique-se de estar preparado!
+otherspeak_RUS=Ну, это дикий мир... убедитесь, что вы готовы!
+otherspeak_IND=Yah, ini dunia yang liar... pastikan kamu siap!
+otherspeak_SPN=Bueno, es un mundo salvaje ... ¡asegúrate de estar preparada!
+otherspeak_TAI=นี่มันโลกป่าเถื่อน... เตรียมตัวให้พร้อม!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

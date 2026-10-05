@@ -1,0 +1,30 @@
+Description_TAI = เพิ่ม สัญลักษณ์ มงกุฎ ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตรา ประทับ มงกุฎ
+Description_POR = Adicione um símbolo de coroa ao seu móvel!
+Description_SPN = ¡Añade un símbolo de corona a tus muebles!
+Description_RUS = Добавьте символ короны к вашей мебели!
+Description_IND = Tambahkan simbol Mahkota ke furnitur Anda!
+Name_POR = Selo da Coroa
+Name_SPN = Sello de Corona
+Name_RUS = Печать короны
+Name_IND = Stempel Mahkota
+Description = Add a Crown symbol to your furniture!
+
+Inventory_sprite_path = item stamp crown
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

@@ -1,0 +1,21 @@
+Description_TAI = แหล่ง พลังงาน แปลก ประหลาด
+Name_TAI = แท่ง ยูเรเนียม
+Description_POR = Fonte de energia estranha
+Description_SPN = Fuente de energía extraña
+Description_RUS = Странный источник энергии
+Description_IND = Sumber daya aneh
+Name_POR = Barra de Urânio
+Name_SPN = Barra de uranio
+Name_RUS = Урановый слиток
+Name_IND = Batangan Uranium
+Description = Strange power source
+
+Inventory_sprite_path = item uranium bar
+Crafting_ingredient_A = Uranium Ore
+Crafting_ingredient_A_count = 1
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Refined Materials
+Vendor1 = Potion Accessories
+NumSell = 3 to 4

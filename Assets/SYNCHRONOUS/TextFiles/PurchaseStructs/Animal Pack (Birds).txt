@@ -1,0 +1,12 @@
+Description = Adds animals: crow, seagull, hummingbird, vulture, peacock
+IAP_KEY = creature_pack_13
+Type = permanent
+Gem_price = medium
+Bg_color = cyan
+Model_path = shop_creaturePack13
+
+animal0 = crow
+animal1 = seagull
+animal2 = hummingbird
+animal3 = vulture
+animal4 = peacock

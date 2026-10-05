@@ -1,0 +1,130 @@
+Admin Land Claim
+Amber Vein
+Amethyst Vein
+Ancient Pillars
+Arena
+Battle Start Pad
+Black Shell
+Blue Blob
+Blue Shell
+Boss Chest
+Cave Basket
+Cave Chest
+Chaos Lance
+Clouds
+Companion
+Creature Nest
+Dark Shard Vein
+Dead Companion
+Debug Paint
+DEBUG-1x1-fillempty
+DEBUG-happy-header-android
+DEBUG-happy-header-ios
+DEBUG-npc
+DEBUG-quest-header-equals
+DEBUG-question-mark
+Desert Cave Entrance
+Emerald Vein
+Evergreen Cave Entrance
+Fishing Rod
+Flagpole
+Frozen Pond
+Gold Bow
+Gold Chest
+Gold Shell
+Gold Vein
+Grass Cave Entrance
+Green Blob
+Green Shell
+Ice Shard Vein
+Key
+Large Amber Vein
+Large Amethyst Vein
+Large Black Stalagmite
+Large Dark Shard Vein
+Large Emerald Vein
+Large Gold Vein
+Large Ice Shard Vein
+Large Metal Vein
+Large Ocean Stalagmite
+Large Ruby Vein
+Large Sapphire Vein
+Large Silver Vein
+Large Snow Stalagmite
+Large Stone Vein
+Large Titanium Vein
+Large Uranium Vein
+Loot Basket
+Loot Chest
+Magmite Vein
+Metal Slingshot
+Metal Vein
+Meteor Lance
+Mob - Bandit King
+Mob - Bandit
+Mob - BANDIT_FACTION Boss
+Mob - BANDIT_FACTION Stronger
+Mob - BANDIT_FACTION Weak
+Mob - Big
+Mob - Elite Bandit
+Mob - Giant
+Mob - Normal
+Mob - Ratroach
+Mob - Storm Wizard
+Mob - Tiny
+Mob - Vengeful Spirit
+Ocean Cave Entrance
+Paintbrush Dual
+Paintbrush Single
+Pocket World Basement
+Pocket World Evergreen
+Pocket World Snow
+Pond
+Purple Shell
+Red Blob
+Red Shell
+Ruby Vein
+Sakura Pond
+Sapphire Vein
+Silver Vein
+Small Black Stalagmite
+Small Ocean Stalagmite
+Small Snow Stalagmite
+Snow Cave Entrance
+Spawner - Ancient Bones
+Spawner - Black Shells
+Spawner - Blue Shells
+Spawner - Bones
+Spawner - Coconuts
+Spawner - Fossils
+Spawner - Gold Shells
+Spawner - Green Shells
+Spawner - Nuts
+Spawner - Purple Shells
+Spawner - Red Shells
+Spawner - Snowballs
+Spawner - Spirit Branch
+Spawner - Sticks
+Spawner - White Shells
+Spirit Tree
+Stamp
+Stone Vein (Desert)
+Stone Vein (Ocean)
+Stone Vein (Sakura)
+Stone Vein (Snowy)
+Stone Vein (White)
+Stone Vein
+Super Carrot
+Swamp Cave Entrance
+Tar Pit
+Temple
+Titanium Boomerang
+Titanium Chest
+Titanium Vein (Sakura)
+Titanium Vein
+Trading Table
+Trophy
+Uranium Crossbow
+Uranium Vein
+White Shell
+Wizard Hat

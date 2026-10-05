@@ -1,0 +1,16 @@
+[Sell Percent = 0.26]
+
+"Builder Tools"
+Houses(1-5500)
+Houses(1-5500)
+
+"Basic Rug"
+Furniture(1-5000)
+Furniture(1-5000)
+
+Furniture(1-5000)
+Furniture(1-5000)
+Furniture(1-5000)
+
+Paintbrushes(1-500)
+Stamps(1-300)

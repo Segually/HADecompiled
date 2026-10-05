@@ -1,0 +1,10 @@
+Name_TAI = ดีบัก-เครื่องหมาย-คำถาม
+Name_POR = DEPURAÇÃO-ponto-de-interrogação
+Name_SPN = DEPURACIÓN-signo-de-interrogación
+Name_RUS = ОТЛАДКА-вопросительный-знак
+Name_IND = DEBUG-tanda-tanya
+
+Inventory_sprite_path = item question mark
+
+not_obtainable = true
+

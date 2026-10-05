@@ -1,0 +1,51 @@
+Description_TAI = พื้นหินบรรจุแน่น
+Name_TAI = ก้อน หิน อิฐ
+Description_POR = Pavimento de pedra compactada
+Description_SPN = Piso de piedra compactado
+Description_RUS = Плотно уложенное каменное покрытие
+Description_IND = Lantai batu yang tersusun rapat
+Name_POR = Tijolos de Pedra
+Name_SPN = Ladrillos de Piedra
+Name_RUS = Каменные кирпичи
+Name_IND = Batu Bata
+Description = Tightly packed stone flooring
+
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 3
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = flooring
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+Max_stack = 10
+
+Vendor0 = Furniture
+NumSell = 15 to 30
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Stone Bricks
+
+paintable_by_player = true
+Default Coloring = Debug - Stone Lite
+PaintLayout0_TriColor = 0-1,
+PaintLayout0_SolidColors = 0-1,
+PaintLayout0_Trimmed = 0-1,
+PaintLayout0_Candycane = 0-1,
+PaintLayout0_Pastels = 0-1,
+PaintLayout0_Nomad = 0-1,
+PaintLayout0_RENDERQUEUE = 1994
+
+show_model3d = true
+Copy3dModelPosition = Dirt Path
+
+PaintLayout1_TriColor = 0-2, 
+PaintLayout1_SolidColors = 0-5, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout1_Candycane = 0-2, 
+PaintLayout1_Pastels = 0-2, 
+PaintLayout1_Nomad = 0-2, 
+PaintLayout1_RENDERQUEUE = 1993
+PaintLayout0_Goldy = 0-1, 
+PaintLayout1_Goldy = 0-3, 

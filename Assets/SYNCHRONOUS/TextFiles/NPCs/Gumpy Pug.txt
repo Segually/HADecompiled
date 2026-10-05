@@ -1,0 +1,40 @@
+﻿Name_POR=Pug Rabugento
+Name_RUS=Ворчливый мопс
+Name_IND=Pug Pemarah
+Name_SPN=Gruñón Pug
+Name_TAI=ปั๊กเกร็ง
+
+----- DIALOGUE -----
+[000]
+otherspeak=I know furniture. I have the best furniture.
+otherspeak_POR=Eu conheço móveis. Eu tenho os melhores móveis.
+otherspeak_RUS=Я знаю мебель. У меня лучшая мебель.
+otherspeak_IND=Saya tahu furnitur. Saya memiliki furnitur terbaik.
+otherspeak_SPN=Conozco muebles. Tengo los mejores muebles.
+otherspeak_TAI=ฉันรู้จักเฟอร์นิเจอร์ ฉันมีเฟอร์นิเจอร์ที่ดีที่สุด
+goto=001
+
+[001]
+otherspeak=Nobody knows furniture better than me.
+otherspeak_POR=Ninguém conhece móveis melhor do que eu.
+otherspeak_RUS=Никто не разбирается в мебели лучше меня.
+otherspeak_IND=Tidak ada yang tahu furnitur lebih baik dari saya.
+otherspeak_SPN=Nadie conoce los muebles mejor que yo.
+otherspeak_TAI=ไม่มีใครรู้จักเฟอร์นิเจอร์ดีไปกว่าฉัน
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

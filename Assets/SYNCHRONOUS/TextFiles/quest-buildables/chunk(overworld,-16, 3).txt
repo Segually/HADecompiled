@@ -1,0 +1,30 @@
+*auto_version=7*
+*is_blank=true*
+*forced_biome=8*
+
+[7,8] = Low Stone Wall (rot 0)
+
+[7,9] = Low Stone Wall (rot 0)
+
+[7,7] = Low Stone Wall (rot 0)
+
+[5,7] = Low Stone Wall (rot 0)
+
+[6,7] = Low Stone Wall (rot 0)
+
+[3,7] = Low Stone Wall (rot 0)
+
+[4,7] = Low Stone Wall (rot 0)
+
+[0,7] = Low Stone Wall (rot 0)
+
+[0,5] = Stone Vein (White) (rot 3)
+
+[3,6] = DEBUG-npc (rot 0)
+	npc_file = *string* Milo
+	creature_A = *string* corgi
+	creature_B = *string* hotdog
+	npc_icon = *string* Info_giver
+
+[3,6] = Park Bench (rot 0)
+

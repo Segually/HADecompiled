@@ -1,0 +1,39 @@
+*is_blank=true*
+
+[5,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[5,3] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[6,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[7,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[8,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[5,2] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[5,0] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[5,1] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[9,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[9,0] = Dirt Path (rot 3)
+
+[7,0] = Tent (rot 0)
+	shack_id = *long* 9000
+	paint = *string* BANDIT_COMPL
+
+[9,6] = BIOME_2x2 (rot 0)
+
+[1,7] = BIOME_2x2 (rot 0)
+

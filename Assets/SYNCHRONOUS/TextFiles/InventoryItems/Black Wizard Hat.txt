@@ -1,0 +1,29 @@
+Description_TAI = เพิ่ม พลังงาน พลัง ของคุณ ขึ้น 50%
+Name_TAI = หมวก ผู้วิเศษ สีดำ
+Description_POR = Adiciona +50% à sua energia de poder
+Description_SPN = Añade +50% a tu energía de poder.
+Description_RUS = Добавляет +50% к вашей энергетической мощности
+Description_IND = Menambahkan +50% ke energi daya Anda.
+Name_POR = Chapéu de Feiticeiro Preto
+Name_SPN = Sombrero de Mago Negro
+Name_RUS = Шляпа Чёрного Мага
+Name_IND = Topi Penyihir Hitam
+Description = Adds +50% to your power energy
+
+Crafting_ingredient_A = Silk
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 2
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/new-hat-models/WizardHat
+Craft_required_lvl = 54
+Market Cost = CALCULATE
+
+Vendor0 = Clothing
+
+CopyPaintLayout = Wizard Hat
+Default Coloring = Black & Gold
+
+show_model3d = true
+Copy3dModelPosition = Wizard Hat

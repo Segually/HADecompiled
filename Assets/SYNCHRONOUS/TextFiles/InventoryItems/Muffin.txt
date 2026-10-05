@@ -1,0 +1,25 @@
+Description_TAI = ของว่าง ขนาดเล็ก ที่ ฟื้นฟู พลังชีวิต เล็กน้อย
+Name_TAI = มัฟฟิน
+Description_POR = Um mini lanche que cura um pouco de saúde.
+Description_SPN = Un mini bocadillo que cura un poco de salud
+Description_RUS = Мини-снек, который немного восстанавливает здоровье.
+Description_IND = Snack mini yang menyembuhkan sedikit kesehatan.
+Name_POR = Muffin
+Name_SPN = Magdalena
+Name_RUS = Маффин
+Name_IND = Muffin
+Description = A mini snack that heals a little health
+
+Inventory_sprite_path = item muffin
+Crafting_ingredient_A = Wheat
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Honeycomb
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+Crafting_makes = 10
+Max_stack = 10
+
+Vendor0 = Food

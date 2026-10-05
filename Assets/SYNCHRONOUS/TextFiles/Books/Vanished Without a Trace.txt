@@ -1,0 +1,77 @@
+[paint]
+Mystic Dusk
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+I’ve been to the tunnels myself, so I know it’s true: the Genecrafters’ tunnels are real, and it’s worse than any Bandit could imagine.
+
+[page 2 - English]
+The Nightshade Bandits who entered the tunnels were following something, or someone, but they never sent word after they went deeper.
+
+[page 3 - English]
+We all heard the sound of scratching in the darkness, but there was nothing there.
+
+[book name - English]
+Vanished Without a Trace
+
+[book name - Indonesian]
+Menghilang Tanpa Jejak
+
+[page 1 - Indonesian]
+Saya sendiri telah pergi ke terowongan itu, jadi saya tahu itu benar: terowongan Genecrafters itu nyata, dan itu lebih buruk dari yang bisa dibayangkan oleh Bandit manapun.
+
+[page 2 - Indonesian]
+Para Bandit Nightshade yang masuk ke terowongan itu mengikuti sesuatu, atau seseorang, tetapi mereka tidak pernah mengirim kabar setelah mereka masuk lebih dalam.
+
+[page 3 - Indonesian]
+Kami semua mendengar suara goresan dalam kegelapan, tetapi tidak ada apa-apa di sana.
+
+[book name - Portuguese]
+Desaparecidos Sem Deixar Rastro
+
+[page 1 - Portuguese]
+Eu mesmo estive nos túneis, então sei que é verdade: os túneis dos Criadores de Genes são reais, e é pior do que qualquer Bandido poderia imaginar.
+
+[page 2 - Portuguese]
+Os Bandidos Nightshade que entraram nos túneis estavam seguindo algo, ou alguém, mas nunca enviaram notícias depois que foram mais fundo.
+
+[page 3 - Portuguese]
+Todos nós ouvimos o som de arranhões na escuridão, mas não havia nada lá.
+
+[book name - Russian]
+Исчезнувший без следа
+
+[page 1 - Russian]
+Я сам был в этих туннелях, поэтому знаю, что это правда: туннели Генекрафтеров реальны, и это хуже, чем может представить себе любой Бандит.
+
+[page 2 - Russian]
+Бандиты Найтшейда, которые вошли в туннели, следили за чем-то или кем-то, но они не прислали никаких вестей после того, как углубились.
+
+[page 3 - Russian]
+Мы все слышали звук царапания в темноте, но там ничего не было.
+
+[book name - Spanish]
+Desaparecido Sin Dejar Rastro
+
+[page 1 - Spanish]
+He estado en los túneles yo mismo, así que sé que es cierto: los túneles de los Genecrafters son reales, y es peor de lo que cualquier Bandido podría imaginar.
+
+[page 2 - Spanish]
+Los Bandidos Sombra Nocturna que entraron en los túneles estaban siguiendo algo, o alguien, pero nunca enviaron noticias después de adentrarse más.
+
+[page 3 - Spanish]
+Todos escuchamos el sonido de rasguños en la oscuridad, pero no había nada allí.
+
+[book name - Thai]
+หายไปไ ร้ร่อง รอย
+
+[page 1 - Thai]
+ฉันเคย ไปที่อ ุโมงค์ เหล่าน ั้นด้ว ยตัวเอ ง ดังน ั้นฉัน รู้ว่า มันเป็ นความจ ริง: อ ุโมงค์ ของนัก สร้างพ ันธุกร รมมีอย ู่จริง  และมั นแย่กว ่าที่โ จรใดจะ จินตนา การได้
+
+[page 2 - Thai]
+โจรแห่ งรัตติ กาลที่ เข้าไป ในอุโม งค์นั้ นกำลัง ตามหาอ ะไรบาง อย่าง  หรือบา งคน แต ่พวกเข าไม่เค ยส่งข่ าวหลัง จากที่ พวกเขา เข้าไป ลึกกว่ าเดิม
+
+[page 3 - Thai]
+พวกเรา ทุกคนไ ด้ยินเ สียงขู ดขีดใน ความมื ด แต่ก ็ไม่มี อะไรอย ู่ที่น ั่น

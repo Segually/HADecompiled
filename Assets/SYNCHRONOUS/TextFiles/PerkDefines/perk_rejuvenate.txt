@@ -1,0 +1,11 @@
+Full Name = Rejuvenate
+Description = Quickly heal your own wounds
+Detailed Description = +GetInt[EFFECT_HEAL, "Heal", remove ""] health points DiffInt[EFFECT_HEAL, "Heal", add ""] on self.
+Energy Cost = 45%
+On cast = [EFFECT_HEAL] on self
+-
+[EFFECT_HEAL]
+Type = Instant Effect
+Heal = RANGE (12%-25%-30% of own HP)
+Particle (Instant) = perk_rejuvenate_particle
+Scale Particle With Creature Size = true

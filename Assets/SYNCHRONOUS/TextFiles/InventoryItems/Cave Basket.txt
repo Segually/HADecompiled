@@ -1,0 +1,18 @@
+Name_TAI = ตะกร้า ถ้ำ
+Name_POR = Cesto de Caverna
+Name_SPN = Canasta de Cueva
+Name_RUS = Пещерная корзина
+Name_IND = Keranjang Gua
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Cave Basket
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+paintable_by_player = true
+CopyPaintLayout = Basket
+Default Coloring = Debug - Metal DK

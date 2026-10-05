@@ -1,0 +1,17 @@
+*auto_version=4*
+
+[6,8] = DEBUG-npc (rot 3)
+	npc_file = *string* Game Guy
+	creature_A = *string* elephant
+	creature_B = *string* bat
+	hat = *string* White Top Hat
+	npc_icon = *string* Info_giver
+	voice = *string* bongo
+
+[7,5] = Pool Table (rot 1)
+	minigame_id = *long* 9033
+
+[5,5] = Chair (rot 0)
+
+[5,4] = Chair (rot 0)
+

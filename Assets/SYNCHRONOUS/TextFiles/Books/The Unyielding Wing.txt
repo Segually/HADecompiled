@@ -1,0 +1,95 @@
+[paint]
+Basic Blue
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+Once, the Frostbite Bandits were nothing but feuding tribes, each frozen in their own greed.
+
+[page 2 - English]
+Then came King Wing, who promised power through unity and crushed any who refused to follow.
+
+[page 3 - English]
+Under his rule, we took the throne of Shindo, a testament to our strength in the heart of the tundra.
+
+[page 4 - English]
+Now, the Frostbite Bandits are a storm of ice and fury, driven by King Wing’s unbreakable vision.
+
+[book name - English]
+The Unyielding Wing
+
+[book name - Indonesian]
+Sayap yang Tak Terbendung
+
+[page 1 - Indonesian]
+Dulu, Bandit Frostbite hanyalah suku-suku yang berseteru, masing-masing membeku dalam keserakahannya sendiri.
+
+[page 2 - Indonesian]
+Lalu datanglah Raja Wing, yang menjanjikan kekuatan melalui persatuan dan menghancurkan siapa saja yang menolak mengikutinya.
+
+[page 3 - Indonesian]
+Di bawah kepemimpinannya, kami merebut tahta Shindo, sebuah bukti kekuatan kami di jantung tundra.
+
+[page 4 - Indonesian]
+Kini, Bandit Frostbite adalah badai es dan amarah, digerakkan oleh visi tak tergoyahkan Raja Wing.
+
+[book name - Portuguese]
+A Asa Inquebrantável
+
+[page 1 - Portuguese]
+Um dia, os Bandidos da Congelação eram apenas tribos em disputa, cada uma congelada em sua própria ganância.
+
+[page 2 - Portuguese]
+Então veio o Rei Asa, que prometeu poder através da união e esmagou todos que se recusaram a segui-lo.
+
+[page 3 - Portuguese]
+Sob seu comando, tomamos o trono de Shindo, um testemunho de nossa força no coração da tundra.
+
+[page 4 - Portuguese]
+Agora, os Bandidos da Congelação são uma tempestade de gelo e fúria, impulsionados pela visão inquebrantável do Rei Asa.
+
+[book name - Russian]
+Непреклонное Крыло
+
+[page 1 - Russian]
+Когда-то Бандиты Мороза были лишь враждующими племенами, каждая из которых замерзала в собственной жадности.
+
+[page 2 - Russian]
+Затем пришел Король Крыло, который обещал силу через единство и сокрушил тех, кто отказывался следовать.
+
+[page 3 - Russian]
+Под его правлением мы захватили трон Шиндо, что стало свидетельством нашей силы в самом сердце тундры.
+
+[page 4 - Russian]
+Теперь Бандиты Мороза — это буря льда и ярости, движимая несокрушимым видением Короля Крыла.
+
+[book name - Spanish]
+El Ala Inquebrantable
+
+[page 1 - Spanish]
+Una vez, los Bandidos del Hielo eran solo tribus en disputa, cada una congelada en su propia avaricia.
+
+[page 2 - Spanish]
+Luego vino el Rey Ala, que prometió poder a través de la unidad y aplastó a cualquiera que se negara a seguirlo.
+
+[page 3 - Spanish]
+Bajo su mandato, tomamos el trono de Shindo, un testimonio de nuestra fuerza en el corazón de la tundra.
+
+[page 4 - Spanish]
+Ahora, los Bandidos del Hielo son una tormenta de hielo y furia, impulsados por la visión inquebrantable del Rey Ala.
+
+[book name - Thai]
+ปีกที่ ไม่ยอม แพ้
+
+[page 1 - Thai]
+ครั้งห นึ่ง โ จรน้ำแ ข็งเคย เป็นเพ ียงชนเ ผ่าที่ ทะเลาะ กันเอง  แต่ละ เผ่าต่ างติดอ ยู่ในค วามโลภ ของตัว เอง
+
+[page 2 - Thai]
+แล้วก็ มาถึงก ษัตริย ์วิง ผ ู้ที่ส ัญญาจะ ให้พลั งด้วยค วามเป็ นอันหน ึ่งอัน เดียวก ัน และ บดขยี้ ใครก็ต ามที่ป ฏิเสธท ี่จะติ ดตาม
+
+[page 3 - Thai]
+ภายใต้ การปกค รองของ เขา เร าได้คร องบัลล ังก์ชิ นโด เป ็นข้อพ ิสูจน์ ถึงพลั งของเร าในใจก ลางของ ทุนดรา
+
+[page 4 - Thai]
+ตอนนี้  โจรน้ ำแข็งค ือพายุ แห่งน้ ำแข็งแ ละความ โกรธเก รี้ยว  ขับเคล ื่อนด้ วยวิสั ยทัศน์ ที่ไม่ แตกหัก ของกษั ตริย์ว ิง

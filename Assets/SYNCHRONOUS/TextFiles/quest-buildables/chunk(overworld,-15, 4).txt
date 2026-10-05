@@ -1,0 +1,15 @@
+*auto_version=1*
+*forced_biome=8*
+
+[0,8] = Low Stone Wall (rot 0)
+
+[0,7] = Low Stone Wall (rot 0)
+
+[0,6] = Low Stone Wall (rot 0)
+
+[0,5] = Low Stone Wall (rot 0)
+
+[0,4] = Low Stone Wall (rot 0)
+
+[0,9] = Low Stone Wall (rot 0)
+

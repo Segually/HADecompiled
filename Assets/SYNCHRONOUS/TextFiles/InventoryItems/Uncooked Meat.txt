@@ -1,0 +1,21 @@
+Description_TAI = ฉัน ควร จะ ปรุง อาหาร นี้ ก่อน
+Name_TAI = เนื้อ ดิบ
+Description_POR = Eu provavelmente deveria cozinhar isso primeiro.
+Description_SPN = Probablemente debería cocinar esto primero.
+Description_RUS = Наверное, мне стоит сначала это приготовить
+Description_IND = Saya sebaiknya memasaknya terlebih dahulu.
+Name_POR = Carne Crua
+Name_SPN = Carne Cruda
+Name_RUS = Сырое мясо
+Name_IND = Daging Mentah
+Overwrite_name = Raw Meat
+Description = I should probably cook this first
+
+Inventory_sprite_path = item uncooked meat
+Type = Consumable
+Market Cost = 15
+Sound on Use = Crunch
+
+Vendor0 = Mob Drops
+Vendor1 = Food
+NumSell = 2 to 4

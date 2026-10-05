@@ -1,0 +1,6 @@
+*auto_version=1*
+*forced_biome=6*
+
+[9,0] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+

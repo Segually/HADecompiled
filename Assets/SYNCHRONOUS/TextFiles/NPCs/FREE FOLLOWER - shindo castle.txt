@@ -1,0 +1,100 @@
+----- DIALOGUE -----
+[0]
+otherspeak=My life as a Shindo Warrior has been long and harsh...
+otherspeak_POR=Minha vida como Guerreiro Shindo tem sido longa e dura ...
+otherspeak_RUS=Моя жизнь как воина Шиндох была долгой и суровой ...
+otherspeak_IND=Hidup saya sebagai Prajurit Syindo telah lama dan keras ...
+otherspeak_SPN=Mi vida como Guerrero Schindo ha sido larga y dura ...
+otherspeak_TAI=ชีวิตของฉันในฐานะนักรบชินโดนั้นยาวนานและโหดร้าย ...
+goto=001
+
+[1]
+otherspeak=...I can feel my age catching up to me
+otherspeak_POR=... eu posso sentir minha idade me alcançando
+otherspeak_RUS=... Я чувствую, что мой возраст догоняет меня
+otherspeak_IND=... Saya bisa merasakan usia saya menyusul saya
+otherspeak_SPN=... Puedo sentir que mi edad me alcanza
+otherspeak_TAI=... ฉันรู้สึกได้ว่าอายุกำลังจับใจฉัน
+goto=002
+
+[2]
+optionA=Retire now old man! Come with me!
+optionA_POR=Aposente-se agora, velho! Venha comigo!
+optionA_RUS=На пенсию, старик! Пойдем со мной!
+optionA_IND=Pensiun sekarang, pak tua! Ikut denganku!
+optionA_SPN=¡Retírate ahora viejo! ¡Ven conmigo!
+optionA_TAI=เกษียณเดี๋ยวนี้คนแก่! มากับฉัน!
+gotoA=003
+
+[3]
+otherspeak=Are you sure? But what if King Wing finds out?
+otherspeak_POR=Tem certeza? Mas e se King Wing descobrir?
+otherspeak_RUS=Уверены ли вы? Но что, если King Wing узнает?
+otherspeak_IND=Apakah kamu yakin Tapi bagaimana jika King Wing mengetahuinya?
+otherspeak_SPN=¿Está seguro? Pero, ¿y si King Wing se entera?
+otherspeak_TAI=คุณแน่ใจไหม? แต่ถ้าคิงวิงค้นพบล่ะ?
+goto=004
+boxPosition=-97.39135,-194.3044
+
+[4]
+optionA=Who cares! Let's go!
+optionA_POR=Quem se importa! Vamos!
+optionA_RUS=Какая разница! Пошли!
+optionA_IND=Siapa peduli! Ayo pergi!
+optionA_SPN=¡A quién le importa! ¡Vamos!
+optionA_TAI=ใครสน! ไปกันเถอะ!
+gotoA=005
+optionB=Good point. You should stay here.
+optionB_POR=Bom ponto. Você deveria ficar aqui.
+optionB_RUS=Хорошая точка зрения. Тебе стоит остаться здесь.
+optionB_IND=Poin yang bagus. Anda harus tetap di sini.
+optionB_SPN=Buen punto. Deberías quedarte aquí.
+optionB_TAI=จุดดี. คุณควรอยู่ที่นี่
+gotoB=009
+boxPosition=-97.39141,-257.9131
+
+[9]
+otherspeak=A wise decision.
+otherspeak_POR=Uma decisão sábia.
+otherspeak_RUS=Мудрое решение.
+otherspeak_IND=Keputusan yang bijaksana.
+otherspeak_SPN=Una sabia decisión.
+otherspeak_TAI=การตัดสินใจที่ชาญฉลาด
+goto=-1
+
+[5]
+*test LESS_THAN_2_COMPANIONS*
+goto_true=006
+goto_false=007
+boxPosition=-206.6086,-326.0002
+
+[6]
+otherspeak=Very well, fearless leader!
+otherspeak_POR=Muito bem, líder destemido!
+otherspeak_RUS=Ну что ж, бесстрашный лидер!
+otherspeak_IND=Baiklah, pemimpin yang tak kenal takut!
+otherspeak_SPN=¡Muy bien, líder intrépido!
+otherspeak_TAI=เป็นผู้นำที่ดีมาก!
+goto=-55
+boxPosition=-308.1739,-395.1739
+
+[7]
+otherspeak=Hmm.. you have too many followers
+otherspeak_POR=Hmm .. você tem muitos seguidores
+otherspeak_RUS=Хм .. у вас слишком много подписчиков
+otherspeak_IND=Hmm .. Anda memiliki terlalu banyak pengikut
+otherspeak_SPN=Hmm ... tienes demasiados seguidores
+otherspeak_TAI=อืม .. คุณมีผู้ติดตามมากเกินไป
+goto=008
+boxPosition=-75.13046,-398.2607
+
+[8]
+*EXIT_WITH_POPUP*
+popuptext=You can only have 2 followers at a time!
+popuptext_POR=Você só pode ter 2 seguidores por vez!
+popuptext_RUS=У вас может быть только 2 подписчика одновременно!
+popuptext_IND=Anda hanya dapat memiliki 2 pengikut dalam satu waktu!
+popuptext_SPN=¡Solo puedes tener 2 seguidores a la vez!
+popuptext_TAI=คุณสามารถมีผู้ติดตามได้ครั้งละ 2 คนเท่านั้น!
+boxPosition=-73.04349,-475.087
+

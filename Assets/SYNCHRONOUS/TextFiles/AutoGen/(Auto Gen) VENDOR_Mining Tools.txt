@@ -1,0 +1,8 @@
+[10] Wood Pick
+[25] Shovel
+[48] Stone Pick
+[147] Metal Pick
+[340] Drill
+[417] Titanium Shovel
+[570] Titanium Pick
+[7457] Magma Shovel

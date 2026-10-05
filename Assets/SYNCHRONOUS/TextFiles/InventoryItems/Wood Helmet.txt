@@ -1,0 +1,24 @@
+Description_TAI = หมวกกันน็อค พื้นฐาน ทำจาก ไม้ แข็ง
+Name_TAI = หมวก ไม้
+Description_POR = Um capacete básico feito de madeira endurecida.
+Description_SPN = Un casco básico fabricado con madera endurecida.
+Description_RUS = Простой шлем, изготовленный из закалённой древесины.
+Description_IND = Sebuah helm dasar yang dibuat dari kayu yang diperkeras
+Name_POR = Capacete de Madeira
+Name_SPN = Casco de Madera
+Name_RUS = Деревянный шлем
+Name_IND = Helm Kayu
+Description = A basic helmet crafted from hardened wood
+
+Inventory_sprite_path = item wood helm
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 4
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/hat_woodHelm
+Market Cost = CALCULATE
+
+Defend Amount = 1
+
+Vendor0 = Armor
+NumSell = 2 to 3

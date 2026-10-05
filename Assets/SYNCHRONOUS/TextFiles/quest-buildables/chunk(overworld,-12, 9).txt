@@ -1,0 +1,112 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[3,0] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[3,1] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[3,2] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[3,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,3] = Stone Lantern (rot 0)
+	paint = *string* Basic Black
+
+[6,4] = Willow Tree (rot 1)
+
+[5,7] = Campfire (rot 1)
+
+[2,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[1,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[0,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[1,6] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[1,5] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[9,0] = Cobblestone Path (rot 1)
+
+[9,1] = Cobblestone Path (rot 1)
+
+[8,1] = Cobblestone Path (rot 1)
+
+[7,1] = Cobblestone Path (rot 1)
+
+[9,2] = Cobblestone Path (rot 1)
+
+[9,9] = Cobblestone Path (rot 0)
+
+[8,9] = Cobblestone Path (rot 0)
+
+[7,9] = Cobblestone Path (rot 0)
+
+[5,9] = Cobblestone Path (rot 0)
+
+[4,9] = Cobblestone Path (rot 0)
+
+[3,9] = Cobblestone Path (rot 0)
+
+[2,9] = Cobblestone Path (rot 0)
+
+[1,9] = Cobblestone Path (rot 0)
+
+[0,8] = Cobblestone Path (rot 0)
+
+[0,9] = Cobblestone Path (rot 0)
+
+[0,4] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[1,4] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[0,6] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[0,7] = Cobblestone Path (rot 2)
+
+[0,5] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[0,5] = Crucible (rot 2)
+
+[6,7] = Stump Chair (rot 2)
+	paint = *string* Storm Grey
+
+[5,1] = Igloo (rot 0)
+	shack_id = *long* 9004
+	paint = *string* Sludge
+
+[6,9] = Cobblestone Path (rot 0)
+
+[4,7] = DEBUG-npc (rot 3)
+	npc_file = *string* Bogbeard
+	creature_A = *string* goat
+	creature_B = *string* komodoDragon
+	npc_icon = *string* Info_giver
+	voice = *string* old
+	wep = *string* Fishing Rod
+
+[5,6] = DEBUG-npc (rot 2)
+	npc_file = *string* FREE FOLLOWER - muckwood
+	npc_is_free_follower = *string* true
+	npc_icon = *string* Happy_face
+
+[4,7] = Stump Chair (rot 0)
+	paint = *string* Storm Grey
+
+[5,6] = Stump Chair (rot 3)
+	paint = *string* Storm Grey
+

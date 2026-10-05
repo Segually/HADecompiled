@@ -1,0 +1,20 @@
+*forced_floor_model=5*
+
+[0,8] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[9,8] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,1] = BIOME_LARGE_STALAGMITE (rot 2)
+
+[1,9] = BIOME_SMALL_STALAGMITE (rot 2)
+

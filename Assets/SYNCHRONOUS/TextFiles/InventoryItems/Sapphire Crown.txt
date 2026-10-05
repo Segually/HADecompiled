@@ -1,0 +1,24 @@
+Description_TAI = เสื้อผ้า ราคาแพง
+Name_TAI = มงกุฎ ไพลิน
+Description_POR = Roupas caras
+Description_SPN = Ropa cara
+Description_RUS = Дорогая одежда
+Description_IND = Pakaian mahal
+Name_POR = Coroa de Safira
+Name_SPN = Corona de Zafiro
+Name_RUS = Сапфировая Корона
+Name_IND = Mahkota Safir
+Description = Expensive clothing
+
+Inventory_sprite_path = item sapphire crown
+Crafting_ingredient_A = Sapphire
+Crafting_ingredient_A_count = 4
+Crafting_ingredient_B = Silver
+Crafting_ingredient_B_count = 2
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/hat_crown_sapphire
+Craft_required_lvl = 72
+Market Cost = CALCULATE
+
+Vendor0 = Clothing

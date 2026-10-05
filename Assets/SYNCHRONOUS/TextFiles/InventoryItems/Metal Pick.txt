@@ -1,0 +1,28 @@
+Description_TAI = ช่วยให้คุณขุด ไทเทเนียม และ ทองคำ
+Name_TAI = ขวาน โลหะ
+Description_POR = Permite que você mine titânio e ouro.
+Description_SPN = Te permite extraer titanio y oro.
+Description_RUS = Позволяет добывать титан и золото.
+Description_IND = Memungkinkan Anda untuk menambang titanium dan emas.
+Name_POR = Picareta de Metal
+Name_SPN = Pico de metal
+Name_RUS = Металлический кирка
+Name_IND = Kapak Logam
+Description = Allows you to mine titanium and gold.
+
+Inventory_sprite_path = item metal pick
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/PICK_metal
+Equip_required_stat = Mining
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Mining Tools
+NumSell = 1 to 2
+
+weapon_display_copy = Wood Pick

@@ -1,0 +1,12 @@
+Description = Adds animals: cow, raptor, komodoDragon, skunk, panda
+IAP_KEY = creature_pack_7
+Type = permanent
+Gem_price = medium
+Bg_color = red
+Model_path = shop_creaturePack7
+
+animal0 = cow
+animal1 = raptor
+animal2 = komodoDragon
+animal3 = skunk
+animal4 = panda

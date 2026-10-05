@@ -1,0 +1,41 @@
+*auto_version=5*
+
+[9,2] = Stone Bricks (rot 0)
+
+[9,3] = Stone Bricks (rot 0)
+
+[9,4] = Stone Bricks (rot 0)
+
+[9,8] = Stone Bricks (rot 0)
+
+[7,5] = Stone Bricks (rot 0)
+
+[9,9] = Stone Bricks (rot 0)
+
+[7,7] = Stone Bricks (rot 0)
+
+[8,4] = Stone Bricks (rot 0)
+
+[8,5] = Stone Bricks (rot 0)
+
+[8,6] = Stone Bricks (rot 0)
+
+[8,7] = Stone Bricks (rot 0)
+
+[8,8] = Stone Bricks (rot 0)
+
+[8,3] = Stone Bricks (rot 0)
+
+[8,9] = Stone Bricks (rot 0)
+
+[7,6] = Stone Bricks (rot 0)
+
+[6,5] = Mob - Storm Wizard (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Dark and Forgotten Magic
+	associated_quest_step = *short* 3
+
+[7,4] = Red Torch (rot 0)
+
+[7,8] = Red Torch (rot 0)
+

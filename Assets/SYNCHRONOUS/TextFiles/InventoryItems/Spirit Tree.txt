@@ -1,0 +1,14 @@
+Name_TAI = วิญญาณ ต้นไม้
+Name_POR = Árvore Espiritual
+Name_SPN = Árbol Espiritual
+Name_RUS = Древо Духа
+Name_IND = Pohon Roh
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spirit Tree
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

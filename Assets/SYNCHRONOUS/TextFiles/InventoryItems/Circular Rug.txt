@@ -1,0 +1,49 @@
+Description_TAI = พรม ขนาด ใหญ่ ที่ สามารถ ทาสี ได้
+Name_TAI = พรม ทรง กลม
+Description_POR = Um grande tapete que pode ser pintado.
+Description_SPN = Una alfombra grande que se puede pintar.
+Description_RUS = Большой ковер, который можно раскрасить.
+Description_IND = Karpet besar yang bisa dicat.
+Name_POR = Tapete Circular
+Name_SPN = Alfombra Circular
+Name_RUS = Круглый ковер
+Name_IND = Karpet Bundar
+Description = A large rug that can be painted
+
+Crafting_ingredient_A = Cotton
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Circular Rug
+World_geometry = 2_by_2
+Layer = flooring
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+Default Coloring = Debug - Tan
+PaintLayout0_RENDERQUEUE = 1997
+PaintLayout1_RENDERQUEUE = 1997
+PaintLayout0_TriColor = 0-6, 1-1, 
+PaintLayout1_TriColor = 0-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 
+PaintLayout1_SolidColors = 0-3, 
+PaintLayout0_Trimmed = 0-1, 1-3, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 
+PaintLayout1_Candycane = 0-3, 
+PaintLayout0_Pastels = 0-2, 1-3, 
+PaintLayout1_Pastels = 0-1, 
+PaintLayout0_Nomad = 0-2, 1-1, 
+PaintLayout1_Nomad = 0-3, 
+
+model3d_camDist = 2.9
+show_model3d = true
+model3d_fov = 50
+model3d_yRot = 45
+model3d_camHeight = 0.5
+model3d_recenterX = 34
+model3d_recenterY = -31
+PaintLayout0_Goldy = 0-1, 1-2, 
+PaintLayout1_Goldy = 0-3, 

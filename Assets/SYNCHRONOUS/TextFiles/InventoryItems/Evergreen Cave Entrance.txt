@@ -1,0 +1,14 @@
+Name_TAI = ทาง เข้า ถ้ำ เอเวอร์กรีน
+Name_POR = Entrada da Caverna Sempre Verde
+Name_SPN = Entrada a la Cueva Siempreverde
+Name_RUS = Вход в Пещеру Вечнозеленых
+Name_IND = Pintu Masuk Gua Hijau Abadi
+
+Type = Place_in_world
+World_obj_path = Buildables/Evergreen Cave Entrance
+World_geometry = 3_by_3
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

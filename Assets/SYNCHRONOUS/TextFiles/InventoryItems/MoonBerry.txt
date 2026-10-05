@@ -1,0 +1,22 @@
+Description_TAI = ผล เบอร์รี่ หายาก!
+Name_TAI = เบอร์รี่ แห่ง จันทร์
+Description_POR = Uma fruta rara!
+Description_SPN = ¡Una baya rara!
+Description_RUS = Редкая ягода!
+Description_IND = Sebuah buah langka!
+Name_POR = Berry da Lua
+Name_SPN = Baya Lunar
+Name_RUS = Лунная Ягода
+Name_IND = MoonBerry
+Description = A rare berry!
+
+Inventory_sprite_path = item moonberry
+Type = Consumable
+Crafting_makes = 5
+Market Cost = 15
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 4 to 9

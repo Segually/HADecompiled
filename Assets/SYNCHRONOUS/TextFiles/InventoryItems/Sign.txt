@@ -1,0 +1,41 @@
+Description_TAI = ป้าย ที่ คุณ สามารถ เขียน บน ได้
+Name_TAI = ป้าย
+Description_POR = Um sinal no qual você pode escrever.
+Description_SPN = Un cartel en el que puedes escribir.
+Description_RUS = Знак, на котором можно писать.
+Description_IND = Sebuah papan yang bisa kamu tulis.
+Name_POR = Placa
+Name_SPN = Señal
+Name_RUS = Знак
+Name_IND = Tanda
+Description = A sign that you can write on.
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Sign
+World_geometry = 1_by_1
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-5, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+Default Coloring = Debug - Wood
+model3d_camDist = 3.1
+show_model3d = true
+model3d_fov = 35
+model3d_yRot = 15
+model3d_xRot = -85
+model3d_objRot = 6
+model3d_camHeight = 0.4
+model3d_recenterY = 11
+model3d_recenterX = 1
+PaintLayout0_Nomad = 0-2, 1-3, 2-1, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-2, 

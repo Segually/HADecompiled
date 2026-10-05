@@ -1,0 +1,27 @@
+Name_TAI = สาย แร่ หิน
+Name_POR = Veia de Pedra
+Name_SPN = Veta de Piedra
+Name_RUS = Каменная Жилка
+Name_IND = Urat Batu
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Stone Vein
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+model3d_camDist = 5.3
+show_model3d = true
+model3d_fov = 25
+model3d_yRot = 10
+model3d_xRot = 10
+model3d_recenterX = -31
+model3d_objRot = 12
+model3d_camHeight = 0.2
+model3d_recenterY = -5
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = mob_spawn

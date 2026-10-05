@@ -1,0 +1,34 @@
+Description_TAI = ใบมีด หมุนวน ที่ หลอม จาก ไฟ มี ความสามารถ ใน การ จุดไฟ ศัตรู
+Name_TAI = ดาบ หมุนวน ลาวา
+Description_POR = Uma lâmina giratória forjada em fogo, capaz de incendiar inimigos.
+Description_SPN = Una hoja giratoria forjada de fuego, capaz de encender a los enemigos.
+Description_RUS = Кружащийся клинок, выкованный из огня, способный поджигать врагов.
+Description_IND = Sebuah pedang berputar yang ditempa dari api, mampu membakar musuh.
+Name_POR = EspadaRedemoinho de Magma
+Name_SPN = EspadaTurbulenta de Magma
+Name_RUS = Магмовый Вихревой Меч
+Name_IND = PedangPusaranMagma
+Description = A swirling blade forged of fire, capable of igniting foes
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/SwirlSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 30
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 23
+Damage Perk = perk_ignite
+Damage Perk Odds = 0.5
+
+CopyPaintLayout = Dark SwirlSword
+Default Coloring = Weapon - Magma
+
+show_model3d = true
+Copy3dModelPosition = Dark SwirlSword
+
+weapon_display_copy = Dark SwirlSword

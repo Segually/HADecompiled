@@ -1,0 +1,31 @@
+Description_TAI = เกราะ ร้อนระอุ ลุกโชน ด้วย ความโกรธ แห่ง หินหลอมเหลว
+Name_TAI = เกราะ แม็กมา
+Description_POR = Armadura fumegante em chamas com fúria fundida
+Description_SPN = Armadura humeante en llamas con furia fundida.
+Description_RUS = Дымящиеся доспехи, пылающие расплавленной яростью
+Description_IND = Baju zirah berasap yang menyala dengan amarah cairan magma.
+Name_POR = Armadura de Magma
+Name_SPN = Armadura de Magma
+Name_RUS = Магмовая Броня
+Name_IND = Zirah Magma
+Description = Smoldering armor ablaze with molten fury
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/IceArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 30
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ice Armor
+Default Coloring = Weapon - Magma
+
+Vendor0 = Armor
+NumSell = 1 to 2
+
+show_model3d = true
+Copy3dModelPosition = Ice Armor
+
+Defend Amount = 10

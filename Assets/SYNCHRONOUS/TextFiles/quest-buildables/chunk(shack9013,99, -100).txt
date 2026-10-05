@@ -1,0 +1,43 @@
+*auto_version=13*
+
+[0,6] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[3,6] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[4,6] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[5,6] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[5,7] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[5,8] = Wood Rails (rot 0)
+	paint = *string* Industrial Hazard
+
+[5,5] = Fancy Torch (rot 0)
+	paint = *string* Crash-Pad Blue
+
+[8,6] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[9,0] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[1,8] = Mob - Ratroach (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[1,4] = Mob - Ratroach (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+

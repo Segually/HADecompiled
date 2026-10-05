@@ -1,0 +1,12 @@
+[23][paintable] Shack
+[26][paintable] Igloo
+[240][paintable] Tent
+[1040][paintable] Mansion
+[1916][paintable] Windmill
+[3422][paintable] Warehouse
+[4996][paintable] Underground Room
+[4996][paintable] Upstairs Room
+[5000] Magic Bean
+[5000] Spooky Well
+[5146][paintable] Castle
+[27999] Personal Mine

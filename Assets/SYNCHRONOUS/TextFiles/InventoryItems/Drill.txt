@@ -1,0 +1,21 @@
+Description_TAI = ทำลาย วัตถุ ธรรมชาติ ทุกชนิด อย่างถาวร!
+Name_TAI = ส ว่า น เจาะ
+Description_POR = Destrua permanentemente quaisquer objetos naturais!
+Description_SPN = ¡Destruye permanentemente cualquier objeto natural!
+Description_RUS = Навсегда уничтожайте любые природные объекты!
+Description_IND = Hancurkan secara permanen semua objek alami!
+Name_POR = Broca
+Name_SPN = Taladro
+Name_RUS = Дрель
+Name_IND = Bor
+Description = Permanently destroy any natural objects!
+
+Inventory_sprite_path = item drill
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Tool
+Market Cost = CALCULATE
+Craft_required_lvl = 36
+
+Vendor0 = Farm Tools
+Vendor1 = Mining Tools

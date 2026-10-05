@@ -1,0 +1,30 @@
+*auto_version=7*
+
+[0,2] = Music Box (rot 3)
+	npc_record_index = *short* 5
+	paint = *string* Marble White
+
+[3,9] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+
+[3,2] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+
+[8,2] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+
+[0,9] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+
+[9,7] = Custom Statue (rot 1)
+	password = *string* DEV_LOCKED
+	creature_A = *string* kangaroo
+	creature_B = *string* devil
+	statue_message1 = *string* This is a statue of Shindeon ...
+	statue_message2 = *string* ... the first ruler of Shindo
+	body = *string* Metal Armor
+	paint = *string* Marble White
+
+[8,9] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+

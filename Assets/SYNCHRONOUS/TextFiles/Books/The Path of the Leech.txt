@@ -1,0 +1,95 @@
+[paint]
+Black & Gold
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+To thrive, we must first learn to take - to suck the life from what is weak.
+
+[page 2 - English]
+The swamp teaches us this: the stillest waters hold the deadliest creatures.
+
+[page 3 - English]
+In the Blackmire Bandits, every member is like the leech, patient and unyielding.
+
+[page 4 - English]
+No one escapes the grip of the leech — not the strong, not the quick, and not the wise.
+
+[book name - English]
+The Path of the Leech
+
+[book name - Indonesian]
+Jalan Lintah
+
+[page 1 - Indonesian]
+Untuk berkembang, kita harus terlebih dahulu belajar mengambil - menyedot kehidupan dari yang lemah.
+
+[page 2 - Indonesian]
+Rawa mengajarkan kita ini: air yang paling tenang menyimpan makhluk paling mematikan.
+
+[page 3 - Indonesian]
+Dalam Perampok Blackmire, setiap anggota seperti lintah, sabar dan tak kenal menyerah.
+
+[page 4 - Indonesian]
+Tidak ada yang lolos dari cengkeraman lintah — tidak yang kuat, tidak yang cepat, dan tidak yang bijak.
+
+[book name - Portuguese]
+O Caminho da Sanguessuga
+
+[page 1 - Portuguese]
+Para prosperar, devemos primeiro aprender a tomar - sugar a vida do que é fraco.
+
+[page 2 - Portuguese]
+O pântano nos ensina isso: as águas mais paradas abrigam as criaturas mais mortais.
+
+[page 3 - Portuguese]
+Nos Bandidos de Blackmire, cada membro é como a sanguessuga, paciente e inflexível.
+
+[page 4 - Portuguese]
+Ninguém escapa do aperto da sanguessuga — nem os fortes, nem os rápidos, nem os sábios.
+
+[book name - Russian]
+Путь Пиявки
+
+[page 1 - Russian]
+Чтобы процветать, мы должны сначала научиться брать - высасывать жизнь из того, что слабо.
+
+[page 2 - Russian]
+Болото учит нас этому: самые неподвижные воды таят в себе самых смертоносных существ.
+
+[page 3 - Russian]
+В банде Чернильных Мошенников каждый член подобен пиявке, терпелив и непреклонен.
+
+[page 4 - Russian]
+Никто не ускользнет из хватки пиявки — ни сильные, ни быстрые, ни мудрые.
+
+[book name - Spanish]
+El Camino de la Sanguijuela
+
+[page 1 - Spanish]
+Para prosperar, primero debemos aprender a tomar: a chupar la vida de lo que es débil.
+
+[page 2 - Spanish]
+El pantano nos enseña esto: las aguas más tranquilas albergan las criaturas más mortíferas.
+
+[page 3 - Spanish]
+En los Bandidos de Blackmire, cada miembro es como la sanguijuela, paciente e intransigente.
+
+[page 4 - Spanish]
+Nadie escapa del agarre de la sanguijuela: ni el fuerte, ni el rápido, ni el sabio.
+
+[book name - Thai]
+เส้นทา งของปล ิง
+
+[page 1 - Thai]
+เพื่อท ี่จะเจ ริญเติ บโต เร าต้องเ รียนรู ้ที่จะ ดึงเอา ชีวิตจ ากสิ่ง ที่อ่อ นแอมาก ่อน
+
+[page 2 - Thai]
+หนองน้ ำนั้นส อนเราแ บบนี้:  น้ำที ่นิ่งท ี่สุดม ีสิ่งม ีชีวิต ที่อัน ตรายที ่สุดแฝ งอยู่
+
+[page 3 - Thai]
+ในกลุ่ มโจร B lackmi re ทุก คนเป็น เหมือน ปลิง อ ดทนและ ไม่ยอม แพ้
+
+[page 4 - Thai]
+ไม่มีใ ครหนีพ ้นจากก ารยึดจ ับของป ลิงได้  ไม่ว่ าจะเป็ นผู้ที ่แข็งแ กร่ง ร วดเร็ว  หรือฉ ลาด

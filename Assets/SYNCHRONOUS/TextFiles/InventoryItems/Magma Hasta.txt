@@ -1,0 +1,34 @@
+Description_TAI = หอกที่ลุกเป็นไฟที่สามารถทำให้ศัตรุลุกโชนได้ทุกครั้งที่แทง
+Name_TAI = หอก มัคม่า
+Description_POR = Uma hasta ardente que pode incendiar inimigos a cada golpe.
+Description_SPN = Una hasta ardiente que puede prender fuego a los enemigos con cada estocada.
+Description_RUS = Пламенная хаста, способная поджигать врагов каждым уколом.
+Description_IND = Hasta berapi yang dapat membakar musuh dengan setiap tusukan.
+Name_POR = Lança de Magma
+Name_SPN = Hasta de Magma
+Name_RUS = Магма Хаста
+Name_IND = Magma Hasta
+Description = A fiery hasta that can set enemies ablaze with each thrust
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Hasta
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 30
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 20
+Damage Perk = perk_ignite
+Damage Perk Odds = 0.5
+
+CopyPaintLayout = Ice Hasta
+Default Coloring = Weapon - Magma
+
+show_model3d = true
+Copy3dModelPosition = Ice Hasta
+
+weapon_display_copy = Ice Hasta

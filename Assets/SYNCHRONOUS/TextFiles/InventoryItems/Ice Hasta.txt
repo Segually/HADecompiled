@@ -1,0 +1,49 @@
+Description_TAI = หอก น้ำแข็ง ที่ แช่แข็ง ศัตรู เมื่อ สัมผัส
+Name_TAI = ไอซ์ ฮัสตา
+Description_POR = Lança congelante que congela inimigos ao contato.
+Description_SPN = Lanza ligada a la escarcha que congela a los enemigos al contacto.
+Description_RUS = Копье, закованное в лед, замораживающее врагов при соприкосновении.
+Description_IND = Tombak terikat es yang membekukan musuh saat kontak.
+Name_POR = Hasta de Gelo
+Name_SPN = Hasta de Hielo
+Name_RUS = Ледяная Хаста
+Name_IND = Hasta Es◆
+Description = Frost-bound spear that freezes foes upon contact
+
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Hasta
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 42
+Craft_required_lvl = 66
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 31
+Damage Perk = perk_freeze
+Damage Perk Odds = 0.25
+
+Default Coloring = Weapon - Ice
+PaintLayout0_SolidColors = 0-2, 1-3, 2-6, 3-5, 4-1, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-3, 4-1, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 3-2, 4-1, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 3-2, 4-1, 
+PaintLayout0_Nomad = 0-1, 1-2, 2-4, 3-3, 4-1, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-4, 3-1, 4-2, 
+
+model3d_camHeight = -0.1
+show_model3d = true
+model3d_camDist = 2.6
+model3d_fov = 47.5
+model3d_xRot = -70
+model3d_recenterX = 16
+model3d_recenterY = 30
+model3d_yRot = 25
+model3d_wep_tilt = 50
+
+weapon_display_localPosition = 0,0,-0.152
+weapon_display_localRotation = 0,0,90
+weapon_display_localScale = 0.91,0.91,0.91
+ParticleTransform0 = -0.002,-0.125,0.92:-0.1114744,0.03614796,8.195638E-08,0.9931097:1,1,1:CONE:0.6:0.1

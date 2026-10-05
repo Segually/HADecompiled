@@ -1,0 +1,26 @@
+Description_TAI = สร้าง ทางเข้า ไป ยัง ถ้ำ ได้ ทุก ที่!
+Name_TAI = ทุ่น ระเบิด ส่วนตัว
+Description_POR = Crie uma entrada para cavernas, em qualquer lugar!
+Description_SPN = ¡Crea una entrada a las cuevas, en cualquier lugar!
+Description_RUS = Создайте вход в пещеры где угодно!
+Description_IND = Buat pintu masuk ke gua, di mana saja!
+Name_POR = Mina Pessoal
+Name_SPN = Mina Personal
+Name_RUS = Персональная мина
+Name_IND = Ranjau Pribadi
+Description = Create an entrance to caves, anywhere!
+
+Inventory_sprite_path = item personal mine
+Crafting_ingredient_A = Tall Stone Wall
+Crafting_ingredient_A_count = 100
+Type = Place_in_world
+World_obj_path = Buildables/Evergreen Cave Entrance
+World_geometry = 3_by_3
+Craft_required_lvl = 300
+Market Cost = CALCULATE
+
+Vendor0 = Houses
+Vendor1 = Farm Accessories
+Vendor2 = Mining Accessories
+
+tool_required_to_move = Drill

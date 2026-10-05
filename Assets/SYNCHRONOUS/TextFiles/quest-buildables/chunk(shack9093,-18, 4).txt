@@ -1,0 +1,26 @@
+*auto_version=6*
+
+[0,3] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+	paint = *string* Utility Red
+
+[0,1] = Egg Fuser (rot 0)
+	basket_id = *long* 9099
+	paint = *string* Utility Red
+
+[0,2] = Egg Fuser (rot 0)
+	basket_id = *long* 9098
+	paint = *string* Utility Red
+
+[2,3] = DEBUG-npc (rot 0)
+	npc_file = *string* Chonk
+	creature_A = *string* manatee
+	creature_B = *string* alligator
+	npc_icon = *string* Merchant
+	voice = *string* fart
+	merchant_type = *string* Eggs
+
+[3,4] = Painting (rot 0)
+	dev_painting_id = *short* 17
+	paint = *string* Spirit Grey
+

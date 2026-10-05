@@ -1,0 +1,20 @@
+*auto_version=14*
+
+[4,8] = Painting (rot 0)
+	dev_painting_id = *short* 1
+	paint = *string* Basic White
+
+[4,6] = Painting (rot 0)
+	dev_painting_id = *short* 2
+	paint = *string* Basic White
+
+[4,4] = Painting (rot 0)
+	dev_painting_id = *short* 7
+	paint = *string* Basic White
+
+[5,9] = String Lights (rot 0)
+	model1_chunkX = *short* -17
+	model1_chunkZ = *short* 6
+	model1_innerX = *short* 5
+	model1_innerZ = *short* 4
+

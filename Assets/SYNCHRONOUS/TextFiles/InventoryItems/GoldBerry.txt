@@ -1,0 +1,21 @@
+Description_TAI = เบอร์รี่ หายาก มาก!
+Name_TAI = เบอร์รี่ ทองคำ
+Description_POR = Uma baga super rara!
+Description_SPN = ¡Una baya super rara!
+Description_RUS = Очень редкая ягода!
+Description_IND = Sebuah buah beri yang sangat langka!
+Name_POR = BagaDourada
+Name_SPN = Baya Dorada
+Name_RUS = ЗолотаяЯгода
+Name_IND = EmasBerry
+Description = A super rare berry!
+
+Inventory_sprite_path = item goldberry
+Type = Consumable
+Market Cost = 100
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 2 to 3

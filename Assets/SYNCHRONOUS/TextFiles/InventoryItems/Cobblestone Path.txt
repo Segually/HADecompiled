@@ -1,0 +1,56 @@
+Description_TAI = สำหรับ เดิน บน
+Name_TAI = ทางเดิน ก้อนหิน
+Description_POR = Para caminhar sobre.
+Description_SPN = Para caminar sobre.
+Description_RUS = Для ходьбы.
+Description_IND = Untuk berjalan.
+Name_POR = Caminho de Paralelepípedos
+Name_SPN = Camino de Adoquines
+Name_RUS = Дорожка из брусчатки
+Name_IND = Jalan Setapak Batu Kumpai
+Description = For walking on.
+
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 2
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = flooring
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+Max_stack = 10
+
+Vendor0 = Furniture
+NumSell = 15 to 25
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Cobblestone Path
+
+show_model3d = true
+model3d_camDist = 4
+model3d_fov = 50
+model3d_yRot = 40
+model3d_xRot = -15
+model3d_recenterX = 34
+model3d_recenterY = -7
+model3d_camHeight = -0.1
+
+paintable_by_player = true
+Default Coloring = Debug - Stone Lite
+PaintLayout0_RENDERQUEUE = 1994
+PaintLayout1_RENDERQUEUE = 1993
+PaintLayout0_TriColor = 0-2, 
+PaintLayout1_TriColor = 0-1, 
+PaintLayout0_SolidColors = 0-1, 
+PaintLayout1_SolidColors = 0-5, 
+PaintLayout0_Trimmed = 0-1, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout0_Candycane = 0-2, 
+PaintLayout1_Candycane = 0-1, 
+PaintLayout0_Pastels = 0-2, 
+PaintLayout1_Pastels = 0-1, 
+PaintLayout0_Nomad = 0-2, 
+PaintLayout1_Nomad = 0-1, 
+PaintLayout0_Goldy = 0-3, 
+PaintLayout1_Goldy = 0-1, 

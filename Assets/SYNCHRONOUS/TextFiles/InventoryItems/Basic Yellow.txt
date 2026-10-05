@@ -1,0 +1,29 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณให้เป็นสีเหลือง!
+Name_TAI = พื้นฐาน สีเหลือง
+Description_POR = Pinte seus móveis de amarelo!
+Description_SPN = ¡Pinta tus muebles de amarillo!
+Description_RUS = Покрасьте вашу мебель в желтый цвет!
+Description_IND = Warnai furnitur Anda dengan warna kuning!
+Name_POR = Amarelo Básico
+Name_SPN = Amarillo Básico
+Name_RUS = Базовый жёлтый
+Name_IND = Kuning Dasar
+Description =  Paint your furniture Yellow!
+
+Inventory_sprite_path = item paint basic yellow
+Crafting_ingredient_A = Honeycomb
+Crafting_ingredient_A_count = 2
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

@@ -1,0 +1,42 @@
+Description_TAI = ภาชนะ ขนาดใหญ่ มีหน้า จัดเก็บ 3 หน้า!
+Name_TAI = ลัง คู่
+Description_POR = Recipiente maciço com 3 páginas de armazenamento!
+Description_SPN = ¡Contenedor masivo con 3 páginas de almacenamiento!
+Description_RUS = Огромный контейнер с 3 страницами для хранения!
+Description_IND = Kontainer besar dengan 3 halaman penyimpanan!
+Name_POR = Caixa Dupla
+Name_SPN = Caja Doble
+Name_RUS = Двойной ящик
+Name_IND = Kotak Ganda
+Description = Massive container with 3 pages of storage!
+
+Type = Place_in_world
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 30
+World_obj_path = Buildables/Double Crate
+World_geometry = 1_by_1
+Craft_required_lvl = 96
+Market Cost = CALCULATE
+IAP_required = 30day_landclaim
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-2, 2-5, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-1, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 
+Default Coloring = Debug - Tan
+
+model3d_camDist = 3
+show_model3d = true
+model3d_fov = 50
+model3d_yRot = 20
+model3d_xRot = -90
+model3d_camHeight = 0.7
+model3d_recenterY = 2
+model3d_recenterX = -1
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 

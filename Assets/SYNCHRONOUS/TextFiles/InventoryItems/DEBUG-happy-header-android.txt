@@ -1,0 +1,10 @@
+Name_TAI = ดีบัก-แฮปปี้-เฮดเดอร์-แอนดรอยด์
+Name_POR = DEBUG-happy-header-android
+Name_SPN = DEPURACIÓN-feliz-encabezado-android
+Name_RUS = ОТЛАДКА-счастливый-заголовок-андроид
+Name_IND = DEBUG-header-bahagia-android
+
+Inventory_sprite_path = item happy header android
+
+not_obtainable = true
+

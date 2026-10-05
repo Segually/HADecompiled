@@ -1,0 +1,34 @@
+Description_TAI = ใบมีด หมุนวน หลอม จาก น้ำแข็ง ที่ แช่แข็ง ศัตรู ใน เส้นทาง ของ พวกเขา
+Name_TAI = ดาบ หมุนวน น้ำแข็ง
+Description_POR = Lâmina giratória forjada de gelo que congela os inimigos em seu caminho.
+Description_SPN = Hoja giratoria forjada de hielo que congela a los enemigos en su lugar.
+Description_RUS = Вихревой клинок, выкованный изо льда, который замораживает врагов на месте.
+Description_IND = Pisau berputar yang ditempa dari es yang membekukan musuh di tempat.
+Name_POR = Espada de Redemoinho de Gelo
+Name_SPN = EspadaTorbellino de Hielo
+Name_RUS = Ледяной Вихревой Меч
+Name_IND = PedangPusaranEs
+Description = Swirling blade forged of ice that freezes foes in their tracks
+
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/SwirlSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 48
+Craft_required_lvl = 72
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 36
+Damage Perk = perk_freeze
+Damage Perk Odds = 0.25
+
+CopyPaintLayout = Dark SwirlSword
+Default Coloring = Weapon - Ice
+
+show_model3d = true
+Copy3dModelPosition = Dark SwirlSword
+
+weapon_display_copy = Dark SwirlSword

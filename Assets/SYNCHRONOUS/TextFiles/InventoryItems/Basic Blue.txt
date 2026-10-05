@@ -1,0 +1,29 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณให้เป็นสีฟ้า!
+Name_TAI = พื้นฐาน สีฟ้า
+Description_POR = Pinte seus móveis de azul!
+Description_SPN = ¡Pinta tus muebles de azul!
+Description_RUS = Покрасьте вашу мебель в синий!
+Description_IND = Cat perabotan Anda dengan warna Biru!
+Name_POR = Azul Básico
+Name_SPN = Azul Básico
+Name_RUS = Базовый Синий
+Name_IND = Biru Dasar
+Description =  Paint your furniture Blue!
+
+Inventory_sprite_path = item paint basic blue
+Crafting_ingredient_A = Berry
+Crafting_ingredient_A_count = 3
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

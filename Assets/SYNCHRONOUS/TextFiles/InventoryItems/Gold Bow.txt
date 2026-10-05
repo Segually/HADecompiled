@@ -1,0 +1,15 @@
+Name_POR = Arco de Ouro
+Name_TAI = ธนู ทองคำ
+Name_SPN = Arco de Oro
+Name_RUS = Золотой лук
+Name_IND = Busur Emas
+Type = Holdable
+
+Default Coloring = Weapon - Gold
+
+not_obtainable = true
+
+
+
+PaintLayout0_SolidColors = 0-1, 1-2, 2-5, 
+PaintLayout1_SolidColors = 0-6, 1-4, 

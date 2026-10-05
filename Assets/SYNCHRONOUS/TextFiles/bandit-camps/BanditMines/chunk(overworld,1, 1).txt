@@ -1,0 +1,193 @@
+*is_blank=true*
+
+[4,9] = Dirt Path (rot 0)
+
+[5,9] = Dirt Path (rot 0)
+
+[6,9] = Dirt Path (rot 0)
+
+[7,9] = Dirt Path (rot 0)
+
+[4,8] = Dirt Path (rot 0)
+
+[5,8] = Dirt Path (rot 0)
+
+[6,8] = Dirt Path (rot 0)
+
+[7,8] = Dirt Path (rot 0)
+
+[7,7] = Dirt Path (rot 0)
+
+[7,6] = Dirt Path (rot 0)
+
+[0,3] = Dirt Path (rot 0)
+
+[0,4] = Dirt Path (rot 0)
+
+[0,5] = Dirt Path (rot 0)
+
+[1,5] = Dirt Path (rot 0)
+
+[1,4] = Dirt Path (rot 0)
+
+[1,3] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[2,4] = Dirt Path (rot 0)
+
+[2,3] = Dirt Path (rot 0)
+
+[3,4] = Dirt Path (rot 0)
+
+[3,5] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[3,3] = Dirt Path (rot 0)
+
+[3,2] = Dirt Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[5,3] = Dirt Path (rot 0)
+
+[5,2] = Dirt Path (rot 0)
+
+[6,2] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[6,4] = Dirt Path (rot 0)
+
+[7,5] = Dirt Path (rot 0)
+
+[7,4] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[7,2] = Dirt Path (rot 0)
+
+[6,1] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[5,1] = Dirt Path (rot 0)
+
+[3,1] = Dirt Path (rot 0)
+
+[3,0] = Dirt Path (rot 0)
+
+[4,0] = Dirt Path (rot 0)
+
+[5,0] = Dirt Path (rot 0)
+
+[6,0] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[8,4] = Dirt Path (rot 0)
+
+[8,5] = Dirt Path (rot 0)
+
+[8,6] = Dirt Path (rot 0)
+
+[9,3] = Dirt Path (rot 0)
+
+[9,4] = Dirt Path (rot 0)
+
+[9,5] = Dirt Path (rot 0)
+
+[9,6] = Dirt Path (rot 0)
+
+[3,6] = Dirt Path (rot 3)
+
+[8,7] = Dirt Path (rot 3)
+
+[2,0] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[2,1] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[2,2] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[1,2] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[0,2] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[1,1] = RANDOM_BIOME_GEM (rot 0)
+
+[0,6] = Dirt Path (rot 0)
+
+[1,6] = Dirt Path (rot 2)
+
+[2,6] = Dirt Path (rot 2)
+
+[8,9] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[8,8] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[9,8] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[0,1] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[7,0] = Anvil (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[4,6] = Dirt Path (rot 0)
+
+[4,7] = Dirt Path (rot 0)
+
+[5,7] = Dirt Path (rot 0)
+
+[6,7] = Dirt Path (rot 0)
+
+[6,6] = Dirt Path (rot 0)
+
+[3,7] = Dirt Path (rot 0)
+
+[5,5] = Campfire (rot 0)
+
+[5,5] = Dirt Path (rot 0)
+
+[2,7] = Dirt Path (rot 0)
+
+[3,8] = Dirt Path (rot 0)
+
+[5,6] = Stump Chair (rot 1)
+	paint = *string* BANDIT_COMPL
+
+[6,5] = Stump Chair (rot 2)
+	paint = *string* BANDIT_COMPL
+
+[5,4] = Stump Chair (rot 3)
+	paint = *string* BANDIT_COMPL
+
+[4,5] = Dirt Path (rot 3)
+
+[5,6] = Dirt Path (rot 3)
+
+[6,5] = Dirt Path (rot 3)
+
+[5,4] = Dirt Path (rot 3)
+
+[1,8] = BIOME_1x1 (rot 3)
+
+[7,1] = Loot Basket (rot 0)
+	basket_id = *long* 9005
+
+[9,9] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[5,0] = Mob - BANDIT_FACTION Weak (rot 0)
+

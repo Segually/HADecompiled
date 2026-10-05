@@ -1,0 +1,95 @@
+[paint]
+Royal Sage
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+Grimroot wasn’t born—he was made, from the very soil of the forest itself, shaped by its ancient power.
+
+[page 2 - English]
+The Timber Bandits found him in the depths of the darkest woods, where the trees whisper and the air smells of moss.
+
+[page 3 - English]
+His rise was not a simple one; it was the result of years spent listening to the forest, understanding its pulse and its pain.
+
+[page 4 - English]
+We followed him because Grimroot understands the forest’s true nature: ruthless, silent, and unstoppable.
+
+[book name - English]
+The Beast Beneath the Bark
+
+[book name - Indonesian]
+Binatang di Bawah Kulit Pohon
+
+[page 1 - Indonesian]
+Grimroot tidak dilahirkan—dia diciptakan, dari tanah hutan itu sendiri, dibentuk oleh kekuatan kunonya.
+
+[page 2 - Indonesian]
+Para Bandit Kayu menemukannya di kedalaman hutan tergelap, di mana pohon-pohon berbisik dan udara beraroma lumut.
+
+[page 3 - Indonesian]
+Kebangkitannya tidaklah sederhana; itu adalah hasil dari bertahun-tahun mendengarkan hutan, memahami nadinya dan rasa sakitnya.
+
+[page 4 - Indonesian]
+Kami mengikutinya karena Grimroot memahami sifat sejati hutan: kejam, senyap, dan tak terhentikan.
+
+[book name - Portuguese]
+A Besta Sob a Casca
+
+[page 1 - Portuguese]
+Grimroot não nasceu—ele foi feito, do próprio solo da floresta, moldado por seu antigo poder.
+
+[page 2 - Portuguese]
+Os Bandidos da Madeira o encontraram nas profundezas da floresta mais escura, onde as árvores sussurram e o ar cheira a musgo.
+
+[page 3 - Portuguese]
+Sua ascensão não foi simples; foi o resultado de anos passados ouvindo a floresta, entendendo seu pulsar e sua dor.
+
+[page 4 - Portuguese]
+Nós o seguimos porque Grimroot entende a verdadeira natureza da floresta: impiedosa, silenciosa e imparável.
+
+[book name - Russian]
+Зверь под корой
+
+[page 1 - Russian]
+Гримрут не родился — он был создан, из самой почвы леса, сотканный его древней силой.
+
+[page 2 - Russian]
+Лесные бандиты нашли его в дебрях самого тёмного леса, где деревья шепчут и воздух пахнет мхом.
+
+[page 3 - Russian]
+Его восхождение было нелёгким; это был результат многих лет, проведённых в слушании леса, понимании его пульса и боли.
+
+[page 4 - Russian]
+Мы следовали за ним, потому что Гримрут понимает истинную природу леса: беспощадную, безмолвную и неудержимую.
+
+[book name - Spanish]
+La Bestia Bajo la Corteza
+
+[page 1 - Spanish]
+Grimroot no nació, fue creado, de la misma tierra del bosque, moldeado por su antiguo poder.
+
+[page 2 - Spanish]
+Los Bandidos de la Madera lo encontraron en lo profundo de los bosques más oscuros, donde los árboles susurran y el aire huele a musgo.
+
+[page 3 - Spanish]
+Su ascenso no fue sencillo; fue el resultado de años pasados escuchando al bosque, entendiendo su pulso y su dolor.
+
+[page 4 - Spanish]
+Lo seguimos porque Grimroot entiende la verdadera naturaleza del bosque: implacable, silenciosa e imparable.
+
+[book name - Thai]
+สัตว์ร ้ายใต้ เปลือก ไม้
+
+[page 1 - Thai]
+กริมรู ทไม่ได ้เกิดข ึ้นเอง  - เขา ถูกสร้ างขึ้น มาจากด ินของป ่าเอง  ก่อตัว ด้วยพล ังโบรา ณของมั น
+
+[page 2 - Thai]
+กลุ่มโ จรป่าไ ม้พบเข าในส่ว นลึกขอ งป่าที ่มืดที ่สุด ท ี่ซึ่ง ต้นไม้ กระซิบ และอาก าศมีกล ิ่นตะไ คร่น้ำ
+
+[page 3 - Thai]
+การขึ้ นสู่จุ ดยอดขอ งเขาไม ่ใช่เร ื่องง่ าย มัน เป็นผล มาจากก ารใช้เ วลาหลา ยปีฟัง เสียงข องป่า  เข้าใจ จังหวะ และควา มเจ็บป วดของม ัน
+
+[page 4 - Thai]
+พวกเรา ติดตาม เขาเพร าะกริม รูทรู้ ความจร ิงแท้ข องป่า:  โหดร้ าย เงี ยบ และ หยุดไม ่อยู่

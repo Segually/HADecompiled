@@ -1,0 +1,22 @@
+Description_TAI = ไข่ ที่ อร่อย ที่ ช่วย ฟื้นฟู สุขภาพ บางส่วน
+Name_TAI = ไข่ ดาว ทอด
+Description_POR = Um ovo saboroso que cura um pouco de saúde.
+Description_SPN = Un sabroso huevo que cura algo de salud.
+Description_RUS = Вкусное яйцо, которое восстанавливает немного здоровья.
+Description_IND = Telur lezat yang menyembuhkan sedikit kesehatan.
+Name_POR = Ovo Frito
+Name_SPN = Huevo Frito
+Name_RUS = Жареное яйцо
+Name_IND = Telur Goreng
+Description = A tasty egg that heal some health.
+
+Inventory_sprite_path = item fried egg
+Crafting_ingredient_A = Egg
+Crafting_ingredient_A_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 3 to 8

@@ -1,0 +1,22 @@
+Description_TAI = ต้นไม้ ที่ ปกคลุม ด้วย มอส!
+Name_TAI = ต้นไม้ ที่ มี มอส
+Description_POR = Uma árvore coberta de musgo!
+Description_SPN = ¡Un árbol cubierto de musgo!
+Description_RUS = Дерево, покрытое мхом!
+Description_IND = Pohon yang tertutup lumut!
+Name_POR = Árvore Musgosa
+Name_SPN = Árbol Musgoso
+Name_RUS = Моховое дерево
+Name_IND = Pohon Berlumut
+Description = A tree covered in moss!
+
+Inventory_sprite_path = item mossy tree
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Mossy Tree
+World_geometry = 2_by_2
+Market Cost = 25
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 2

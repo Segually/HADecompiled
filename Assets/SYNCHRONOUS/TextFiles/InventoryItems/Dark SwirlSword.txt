@@ -1,0 +1,49 @@
+Description_TAI = ดาบ อำมหิต ที่ มี ใบ มีด มืด ที่ หมุนวน ซึ่ง ขับไล่ ศัตรู
+Name_TAI = ดาบ หมุนวน แห่ง ความมืด
+Description_POR = Espada sinistra com uma lâmina escura e giratória que bane inimigos.
+Description_SPN = Espada siniestra con una hoja oscura y arremolinada que destierra a los enemigos.
+Description_RUS = Зловещий меч с темным, закрученным лезвием, изгоняющим врагов.
+Description_IND = Pedang jahat dengan bilah gelap berputar yang mengusir musuh.
+Name_POR = EspadaVórtice Sombria
+Name_SPN = EspadaRemolinoOscuro
+Name_RUS = Тёмный ВихрьМеч
+Name_IND = PedangPusaranGelap
+Description = Sinister sword with a dark, swirling blade that banishes enemies
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/SwirlSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 60
+Craft_required_lvl = 96
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+NumSell = 1
+
+Damage Base = 46
+
+Default Coloring = Weapon - Dark
+PaintLayout0_TriColor = 0-3, 1-1, 2-2, 3-2, 
+PaintLayout0_SolidColors = 0-6, 1-2, 2-3, 3-5, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-3, 3-2, 
+PaintLayout0_Candycane = 0-3, 1-1, 2-2, 3-3, 
+PaintLayout0_Goldy = 0-4, 1-2, 2-3, 3-1, 
+PaintLayout0_Nomad = 0-3, 1-1, 2-2, 3-4, 
+PaintLayout0_Pastels = 0-2, 1-1, 2-3, 3-3, 
+
+model3d_camDist = 2.2
+show_model3d = true
+model3d_fov = 60
+model3d_yRot = 90
+model3d_xRot = -5
+model3d_recenterY = 2
+model3d_recenterX = -1
+
+weapon_display_localPosition = 0,0,0
+weapon_display_localRotation = 0,0,0
+weapon_display_localScale = 0.85,1,0.66
+ParticleTransform0 = 0.012,-0.017,0.572:-0.007832901,0.07272295,0.003260836,0.9973161:1,1,1:CONE:0.75:0.25
+ParticleTransform1 = 0.097,-0.047,-0.517:0.002434366,-0.98447,0.008127904,0.1753481:1,1,1:CONE:0.75:0.25

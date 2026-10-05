@@ -1,0 +1,12 @@
+Name_TAI = ก้อน หิมะ
+Name_POR = Bola de Neve
+Name_SPN = Bola de nieve
+Name_RUS = Снежок
+Name_IND = Bola Salju
+
+Inventory_sprite_path = item snowball
+Market Cost = 1
+Max_stack = 5
+
+Vendor0 = Harvested Item
+NumSell = 5 to 15

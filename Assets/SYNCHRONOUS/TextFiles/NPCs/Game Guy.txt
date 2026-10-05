@@ -1,0 +1,33 @@
+﻿Name_POR=Cara do jogo
+Name_RUS=игра парень
+Name_IND=Pria Permainan
+Name_SPN=Chico del Juego
+Name_TAI=คนเล่นเกม
+
+----- DIALOGUE -----
+[000]
+otherspeak=Welcome to the Tent of Games!!
+otherspeak_POR=Bem-vindo à Tenda dos Jogos !!
+otherspeak_RUS=Добро пожаловать в Шатер игр !!
+otherspeak_IND=Selamat datang di Tent of Games !!
+otherspeak_SPN=¡¡Bienvenidos a la Carpa de Juegos !!
+otherspeak_TAI=ยินดีต้อนรับสู่เต็นท์ของเกม!!
+goto=001
+
+[001]
+otherspeak=Pick a game, any game!
+otherspeak_POR=Escolha um jogo, qualquer jogo!
+otherspeak_RUS=Выберите игру, любую игру!
+otherspeak_IND=Pilih game, game apa saja!
+otherspeak_SPN=¡Elige un juego, cualquier juego!
+otherspeak_TAI=เลือกเกมเกมใดก็ได้!
+goto=002
+
+[002]
+otherspeak=Beat me and you'll win a prize!
+otherspeak_POR=Vença-me e ganhará um prêmio!
+otherspeak_RUS=Побей меня, и ты выиграешь приз!
+otherspeak_IND=Kalahkan saya dan Anda akan memenangkan hadiah!
+otherspeak_SPN=¡Golpéame y ganarás un premio!
+otherspeak_TAI=เอาชนะฉันแล้วคุณจะได้รับรางวัล!
+goto=-1

@@ -1,0 +1,12 @@
+[Sell Percent = 0.26]
+
+"Paint Thinner"
+Paintbrushes(1-600)
+Paintbrushes(1-600)
+
+Paintbrushes(1-600)
+Stamps(1-400)
+Stamps(1-400)
+
+Paintbrush Accessories(1-3000)
+"Stamp Maker"

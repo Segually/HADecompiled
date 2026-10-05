@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ สำหรับ การ สร้าง
+Name_TAI = พิษ
+Description_POR = Material de construção
+Description_SPN = Material de artesanía
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Veneno
+Name_SPN = Veneno
+Name_RUS = Яд
+Name_IND = Bisa
+Description = Crafting material
+
+Inventory_sprite_path = item venom
+Type = Consumable
+Market Cost = 30
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Mob Drops
+NumSell = 2 to 3

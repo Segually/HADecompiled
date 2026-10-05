@@ -1,0 +1,21 @@
+Full Name = DEBUG - COCKROACH SQUISH
+Description = Squish the cockroaches
+On cast = [EFFECT_QUICK,EFFECT_CRUSH_ALL] on self
+Not_unlockable = true
+-
+[EFFECT_CRUSH_ALL]
+Type = Area Effect
+Area Effect to apply = [EFFECT_CRUSH_ONE]
+Area Effect Radius = 1m
+Duration = 900 seconds
+Apply every = 0.25 seconds
+-
+[EFFECT_QUICK]
+Type = Duration Effect
+Duration = 900 seconds
+Walk Speed = 150%
+-
+[EFFECT_CRUSH_ONE]
+Type = Instant Effect
+Damage = 999
+Splat color = green

@@ -1,0 +1,58 @@
+Description_TAI = เดิน บน มัน แล้ว คุณ จะ ยิง ขึ้น ข้างบน!
+Name_TAI = พื้น เด้ง ดึ๋ง
+Description_POR = Pise nele e você será lançado para cima!
+Description_SPN = ¡Písalo y te dispararás hacia arriba!
+Description_RUS = Пройдите по нему, и вы выстрелите вверх!
+Description_IND = Berjalan di atasnya dan Anda akan ditembakkan ke atas!
+Name_POR = Chão Elástico
+Name_SPN = Suelo Elástico
+Name_RUS = Пружинистый Пол
+Name_IND = Lantai Lentur
+Description = Walk on it and you'll shoot upwards!
+
+Crafting_makes = 10
+Crafting_ingredient_A = Silk
+Crafting_ingredient_A_count = 2
+Craft_required_lvl = 72
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = flooring
+Market Cost = CALCULATE
+Max_stack = 10
+
+Vendor0 = Furniture
+Vendor1 = Traps
+NumSell = 8 to 15
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Bouncy Floor
+
+show_model3d = true
+model3d_camDist = 4.7
+model3d_fov = 50
+model3d_yRot = 40
+model3d_xRot = -15
+model3d_recenterX = 34
+model3d_recenterY = -7
+model3d_camHeight = -0.2
+
+paintable_by_player = true
+Default Coloring = Crash-Pad Blue
+PaintLayout0_TriColor = 0-1,
+PaintLayout0_SolidColors = 0-2, lue
+PaintLayout0_Trimmed = 0-1,
+PaintLayout0_Candycane = 0-1,
+PaintLayout0_Pastels = 0-1,
+PaintLayout0_Nomad = 0-1,
+PaintLayout0_RENDERQUEUE = 1993
+
+PaintLayout1_Candycane = 0-2, 
+PaintLayout1_TriColor = 0-2, 
+PaintLayout1_SolidColors = 0-5, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout1_Pastels = 0-2, 
+PaintLayout1_Nomad = 0-2, 
+PaintLayout1_RENDERQUEUE = 1994
+PaintLayout0_Goldy = 0-3, 
+PaintLayout1_Goldy = 0-2, 

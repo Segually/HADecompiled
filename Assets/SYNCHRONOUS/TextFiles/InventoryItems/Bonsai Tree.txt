@@ -1,0 +1,39 @@
+Description_TAI = ช่างเป็นต้นไม้ต้นเล็กอะไรเช่นนี้! ฉันสงสัยว่ามันมีอายุกี่ปีแล้ว...
+Name_TAI = ต้น บอนไซ
+Description_POR = Que árvore pequenininha! Eu me pergunto quantos anos ela tem...
+Description_SPN = ¡Qué árbol tan pequeño! Me pregunto cuántos años tiene...
+Description_RUS = Какое маленькое дерево! Интересно, сколько ему лет...
+Description_IND = Pohon kecil sekali! Aku penasaran berapa umurnya...
+Name_POR = Árvore de Bonsai
+Name_SPN = Árbol Bonsái
+Name_RUS = Бонсай дерево
+Name_IND = Pohon Bonsai
+Description = Such a tiny tree! I wonder how old it is...
+
+Inventory_sprite_path = item bonsai tree
+Type = Place_in_world
+World_obj_path = Buildables/Bonsai Tree
+World_geometry = 1_by_1
+Market Cost = 150
+
+Vendor0 = Furniture
+Vendor1 = Farmable
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-4, 2-1, 3-1, 4-3, 
+PaintLayout0_Pastels = 0-2, 1-1, 2-3, 3-1, 4-2, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-3, 3-1, 4-2, 
+PaintLayout0_Candycane = 0-3, 1-1, 2-2, 3-1, 4-1, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-2, 3-3, 4-1, 
+Default Coloring = Debug - Bad Bonsai
+PaintLayout0_Stone & Wood = 0-6, 1-1, 2-5, 3-4, 4-3, 
+model3d_camDist = 2.2
+show_model3d = true
+model3d_fov = 45
+model3d_yRot = 30
+model3d_xRot = -110
+model3d_camHeight = 0.2
+model3d_recenterY = 17
+model3d_objRot = 8
+PaintLayout0_Nomad = 0-1, 1-4, 2-3, 3-5, 4-2, 
+PaintLayout0_Goldy = 0-3, 1-1, 2-2, 3-1, 4-3, 

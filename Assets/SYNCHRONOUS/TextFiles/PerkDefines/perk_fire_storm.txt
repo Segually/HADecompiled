@@ -1,0 +1,26 @@
+Full Name = Fire Storm
+Description = Creates a tornado of fire!
+Detailed Description = Tornado lasts GetInt[EFFECT_BURN_ALL, "Duration", remove " seconds"] seconds DiffInt[EFFECT_BURN_ALL, "Duration", remove " seconds", add " seconds"] and burns enemies within GetFloat[EFFECT_BURN_ALL, "Area Effect Radius", remove "m"]m DiffFloat[EFFECT_BURN_ALL, "Area Effect Radius", remove "m", add "m"]. Burned enemies receive GetInt[EFFECT_BURN_ONE, "Damage", remove ""] damage DiffInt[EFFECT_BURN_ONE, "Damage", add ""] per second for GetInt[EFFECT_BURN_ONE, "Duration", remove "seconds"] seconds DiffInt[EFFECT_BURN_ONE, "Duration", remove "seconds", add " seconds"].  
+Large Upgrade Description Box = true
+Energy Cost = 75%
+Unlock Prerequisite = perk_fireball(lvl.3)
+On cast = [EFFECT_BURN_ALL] on self
+-
+[EFFECT_BURN_ALL]
+Type = Area Effect
+Area Effect to apply = [EFFECT_BURN_ONE]
+Particle (Duration) = perk_fire_storm_duration_self
+Scale Particle With Creature Size = false
+Area Effect Radius = CLAMP (1.25m @ lvl_1 ... 3.5m @ lvl_15)
+Particle Radius = CLAMP (1.25m @ lvl_1 ... 3.5m @ lvl_15)
+Duration = CLAMP (6 seconds @ lvl_1 ... 14 seconds @ lvl_15)
+Apply every = 1 seconds
+-
+[EFFECT_BURN_ONE]
+Type = Duration Effect
+Damage = RANGE (1%-2.5%-3.5% of own HP)
+Duration = 4 seconds
+Particle (Duration) = perk_fire_storm_duration_other
+Scale Particle With Creature Size = true
+Dont Double Apply = true
+Apply every = 1 seconds

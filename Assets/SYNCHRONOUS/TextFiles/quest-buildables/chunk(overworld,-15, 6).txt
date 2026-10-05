@@ -1,0 +1,5 @@
+*auto_version=1*
+*forced_biome=8*
+
+[0,0] = Low Stone Wall (rot 0)
+

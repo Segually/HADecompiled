@@ -1,0 +1,46 @@
+*auto_version=13*
+*is_blank=true*
+*forced_biome=1*
+
+[3,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[9,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[8,2] = Shack (rot 1)
+	shack_id = *long* 9055
+	paint = *string* Basic Green
+
+[2,2] = Frozen Tree (rot 0)
+
+[8,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[4,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[2,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[1,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[0,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,0] = Merchant Sign (rot 0)
+	stamp = *string* Furniture Stamp
+	sign_header = *string* Bongo-Banana's Furniture Imporium
+	sign_text = *string* Dis banana got whatchu want!
+	paint = *string* Banana Bruise
+

@@ -1,0 +1,7 @@
+*auto_version=1*
+*forced_biome=2*
+
+[0,9] = Dirt Path (rot 0)
+
+[1,9] = Dirt Path (rot 1)
+

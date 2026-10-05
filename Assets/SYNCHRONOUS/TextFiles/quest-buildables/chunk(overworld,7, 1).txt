@@ -1,0 +1,128 @@
+*auto_version=16*
+*is_blank=true*
+*forced_biome=1*
+
+[9,6] = Dirt Path (rot 0)
+
+[9,4] = Dirt Path (rot 0)
+
+[5,4] = Stone Bricks (rot 0)
+
+[1,6] = Stone Bricks (rot 0)
+
+[9,2] = Dirt Path (rot 0)
+
+[3,6] = Stone Bricks (rot 0)
+
+[2,1] = Stone Bricks (rot 0)
+
+[1,5] = Stone Bricks (rot 0)
+
+[5,6] = Stone Bricks (rot 0)
+
+[9,0] = Dirt Path (rot 0)
+
+[5,0] = Stone Vein (Snowy) (rot 0)
+
+[7,6] = Stone Bricks (rot 0)
+
+[4,8] = Stone Bricks (rot 0)
+
+[0,2] = Stone Bricks (rot 0)
+
+[0,7] = Stone Bricks (rot 0)
+
+[6,6] = Stone Bricks (rot 0)
+
+[0,3] = Stone Bricks (rot 0)
+
+[0,1] = Stone Bricks (rot 0)
+
+[1,1] = Stone Bricks (rot 0)
+
+[4,9] = Stone Bricks (rot 0)
+
+[2,0] = Stone Bricks (rot 0)
+
+[8,6] = Dirt Path (rot 0)
+
+[9,5] = Dirt Path (rot 0)
+
+[9,3] = Dirt Path (rot 0)
+
+[9,1] = Dirt Path (rot 0)
+
+[1,7] = Stone Bricks (rot 0)
+
+[2,5] = Stone Bricks (rot 0)
+
+[3,5] = Stone Bricks (rot 0)
+
+[0,6] = Stone Bricks (rot 0)
+
+[4,5] = Stone Bricks (rot 0)
+
+[5,5] = Stone Bricks (rot 0)
+
+[2,6] = Stone Bricks (rot 0)
+
+[2,7] = Stone Bricks (rot 0)
+
+[3,7] = Stone Bricks (rot 0)
+
+[4,7] = Stone Bricks (rot 0)
+
+[4,6] = Stone Bricks (rot 0)
+
+[5,7] = Stone Bricks (rot 0)
+
+[0,5] = Stone Bricks (rot 0)
+
+[0,4] = Stone Bricks (rot 0)
+
+[1,4] = Stone Bricks (rot 0)
+
+[2,4] = Stone Bricks (rot 0)
+
+[3,4] = Stone Bricks (rot 0)
+
+[4,4] = Stone Bricks (rot 1)
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,2] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,1] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,0] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,9] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[0,9] = Snowman (rot 1)
+
+[8,8] = Companion (rot 3)
+	companion_mode = *string* guard
+	creature_A = *string* wolf
+	creature_B = *string* shark
+	hat = *string* Wizard Hat
+	body = *string* Metal Armor
+	wep = *string* Titanium DoubleDagger
+	npc_display_name = *string* Shindo Guard
+	hat_paint = *string* Glacier
+	armor_paint = *string* Glacier
+	level = *long* 75
+	guard_message1 = *string* Move along, citizen...
+	voice = *string* male
+
+[7,4] = Palisade Wall (rot 0)
+	stamp = *string* Dragon Stamp
+	paint = *string* Glacier
+
+[7,8] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+

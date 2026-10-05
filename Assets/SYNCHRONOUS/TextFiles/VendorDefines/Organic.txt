@@ -1,0 +1,11 @@
+[Sell Percent = 0.26]
+
+Farm Tools(1-500)
+Farmable(1-400)
+Farmable(1-400)
+
+Harvested Item(1-350)
+Harvested Item(1-350)
+Harvested Item(1-350)
+
+Uprooted Trees(1-200)

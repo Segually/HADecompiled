@@ -1,0 +1,70 @@
+Torch
+Shovel
+Dirt Path
+Builder Tools
+Chair
+Sign
+Palisade Wall
+Campfire
+Cobblestone Path
+Chest
+Small Table
+Loom
+Lock
+Paint Mixer
+3-day Land Claim
+Stone Bricks
+Anvil
+Low Stone Wall
+Big Table
+Bookshelf
+Lamp Post
+Metal Chair
+Wood Rails
+Big Stone Head
+Cauldron
+Oven
+Park Bench
+Tall Stone Wall
+Painting Easel
+Blank Canvas
+Navpost
+Fireplace
+Fancy Torch
+Pool Table
+Gravestone
+Drill
+Stone Lantern
+Mansion
+String Lights
+Grandfather Clock
+Armor Display
+Metal Lamp Post
+Merchant Sign
+Poison Spikes
+Music Box
+Egg Fuser
+8-day Land Claim
+Weapon Display
+Karaoke
+Large Weapon Display
+Custom Statue
+Teleporter
+Crate
+Stamp Maker
+Red String Lights
+Blue String Lights
+Windmill
+Bouncy Floor
+Coin Hoard
+Throne
+Castle
+Paint Shaker
+Pop-up Saw
+Giant Puncher
+Vending Machine
+Huge Coin Hoard
+Double Crate
+Warehouse
+Underground Room
+Upstairs Room

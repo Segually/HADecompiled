@@ -1,0 +1,57 @@
+[13] Wood Armor
+[13] Wood Helmet
+[37] Stone Sword
+[46] Stone DoubleDagger
+[102] Metal DoubleDagger
+[106] Metal Helmet
+[106] Metal Sword
+[153] Metal Armor
+[153] Metal Cleaver
+[153] Metal Legion Helm
+[179] Titanium DoubleDagger
+[268] Titanium Legion Helm
+[350] Titanium Cleaver
+[350] Titanium Valkyrie Helm
+[400] Gold Cleaver
+[400] Gold Valkyrie Helm
+[467] Titanium CurveSword
+[494] Gold Shogun Helm
+[584] Titanium Armor
+[617] Uranium Shogun Helm
+[659] Gold Armor
+[659] Gold CurveSword
+[823] Gold DoubleSword
+[823] Uranium CurveSword
+[851] Uranium Brute Helm
+[979] Uranium Armor
+[1135] Uranium Hasta
+[1224] Uranium DoubleSword
+[1363] Magma Brute Helm
+[1363] Magma DoubleSword
+[1550] Magma Armor
+[1550] Magma Hasta
+[1737] Magma Menace Helm
+[1737] Magma SwirlSword
+[3322] Speed Helm
+[9623] Ice DoubleSword
+[9623] Ice Menace Helm
+[11495] Ice Hasta
+[12431] Ice Solaris Helm
+[12431] Ice SwirlSword
+[14079] Ice Armor
+[28406] Dark Solaris Helm
+[30395] Dark Hasta
+[34373] Dark SwirlSword
+[36362] Dark Skull Helm
+[38351] Dark Scythe
+[43179] Dark Armor
+[92129] Ancient Skull Helm
+[96458] Ancient SwirlSword
+[102479] Spirit Scythe
+[105116] Ancient Scythe
+[109445] Ancient Eldritch Helm
+[115583] Spirit Lance
+[118103] Ancient Lance
+[127903] Spirit Eldritch Helm
+[134383] Ancient Armor
+[218063] Spirit Armor

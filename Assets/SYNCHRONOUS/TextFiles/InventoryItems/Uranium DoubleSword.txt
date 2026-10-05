@@ -1,0 +1,51 @@
+Description_TAI = ดาบ ที่ มี พลังงาน ที่ ฟัน ด้วย พลัง อัน แรงกล้า
+Name_TAI = ยูเรเนียม ทวิน ซอร์ด
+Description_POR = Espadas energizadas que cortam com força poderosa.
+Description_SPN = Espadas energizadas que cortan con un poder contundente.
+Description_RUS = Энергетические мечи, которые наносят мощные удары.
+Description_IND = Pedang berenergi yang menebas dengan kekuatan dahsyat
+Name_POR = Espada Gêmea de Urânio
+Name_SPN = EspadaDoble de Uranio
+Name_RUS = Урановый Двойной Меч
+Name_IND = Pedang Kembar Uranium
+Overwrite_name = Uranium TwinSword
+Description = Energized swords that slash with forceful power
+
+Crafting_ingredient_A = Uranium Bar
+Crafting_ingredient_A_count = 5
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/DoubleSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 18
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 13
+
+PaintLayout0_SolidColors = 0-2, 1-6, 2-5, 3-1, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-3, 
+Default Coloring = Weapon - Uranium
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 3-1, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 3-2, 
+
+dual_wield = true
+
+show_model3d = true
+model3d_camDist = 1.8
+model3d_fov = 45
+model3d_xRot = -60
+model3d_yRot = 5
+model3d_recenterX = 15
+model3d_recenterY = 22
+model3d_wep_tilt = 20
+model3d_wep_dual_wield_offset = 0,0,0.633
+model3d_wep_dual_wield_rotate = 0,0,180
+
+weapon_display_localPosition = 0.175,-0.049,-0.456
+weapon_display_localRotation = -0.733,7.767,91.34
+weapon_display_localScale = 0.92,0.92,0.92
+ParticleTransform0 = 0,0.183,0.32:-0.258819,0,0,0.9659259:1,1,1:CONE:1:0.11

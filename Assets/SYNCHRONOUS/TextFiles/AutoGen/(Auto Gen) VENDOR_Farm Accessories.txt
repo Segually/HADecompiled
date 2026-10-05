@@ -1,0 +1,3 @@
+[0][paintable][max_stack=10] Dirt Path
+[5000] Magic Bean
+[27999] Personal Mine

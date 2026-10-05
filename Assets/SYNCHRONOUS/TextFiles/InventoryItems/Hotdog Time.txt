@@ -1,0 +1,28 @@
+Description_TAI = คลุม เฟอร์นิเจอร์ ของคุณ ด้วย ฮอทด็อก
+Name_TAI = ฮอตด็อก ไทม์
+Description_POR = Cubra seus móveis com cachorros-quentes
+Description_SPN = Cubre tus muebles con perritos calientes
+Description_RUS = Накройте вашу мебель хот-догами.
+Description_IND = Tutup furnitur Anda dengan Hotdog
+Name_POR = Hora do Cachorro-Quente
+Name_SPN = Hora del Perro Caliente
+Name_RUS = Хотдог-время
+Name_IND = Waktu Hotdog
+Description =  Cover your furniture in Hotdogs
+
+Crafting_ingredient_A = Basic Blue
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Basic Yellow
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 26
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

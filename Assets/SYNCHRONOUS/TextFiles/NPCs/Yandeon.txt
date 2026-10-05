@@ -1,0 +1,325 @@
+Name_POR=Yandeon
+Name_RUS=Яндеон
+Name_IND=Yandeon
+Name_SPN=Yandeon
+Name_TAI=ยานเดียน
+
+----- DIALOGUE -----
+[0]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 1)
+goto_true=999
+goto_false=1000
+
+[1000]
+*test QUEST_PROGRESS* (Dark and Forgotten Magic == 5)
+goto_true=1001
+goto_false=-1
+boxPosition=332.3579,-73.85779
+
+[999]
+otherspeak=Creature of the Forest..
+otherspeak_POR=Criatura da Floresta ..
+otherspeak_RUS=Существо леса ..
+otherspeak_IND=Makhluk Hutan ..
+otherspeak_SPN=Criatura del bosque.
+otherspeak_TAI=สิ่งมีชีวิตแห่งผืนป่า ..
+goto=001
+boxPosition=-177.7268,-77.18098
+
+[1]
+otherspeak=.. I call upon you
+otherspeak_POR=.. eu te invoco
+otherspeak_RUS=.. Я обращаюсь к вам
+otherspeak_IND=.. Aku memanggilmu
+otherspeak_SPN=.. te llamo
+otherspeak_TAI=.. ฉันขอเรียกร้องให้คุณ
+goto=002
+boxPosition=-181.848,-145.4852
+
+[2]
+optionA=Yes?
+optionA_POR=Sim?
+optionA_RUS=Да?
+optionA_IND=Iya?
+optionA_SPN=¿Sí?
+optionA_TAI=ใช่?
+gotoA=003
+optionB=AHH! A GHOST!
+optionB_POR=AHH! UM FANTASMA!
+optionB_RUS=АХ! ПРИЗРАК!
+optionB_IND=AHH! HANTU!
+optionB_SPN=¡AH! ¡UN FANTASMA!
+optionB_TAI=อ๊า! ผี!
+gotoB=008
+boxPosition=-198.9502,-226.1296
+
+[8]
+otherspeak=Do not fear me, little one
+otherspeak_POR=Não tenha medo de mim, pequena
+otherspeak_RUS=Не бойся меня, малышка
+otherspeak_IND=Jangan takut padaku, anak kecil
+otherspeak_SPN=No me temas pequeña
+otherspeak_TAI=อย่ากลัวฉันเลยเจ้าตัวน้อย
+goto=009
+boxPosition=-49.16534,-299.8713
+
+[9]
+otherspeak=..Unless you are an agent of darkness
+otherspeak_POR=..A menos que você seja um agente das trevas
+otherspeak_RUS=..Если вы не агент тьмы
+otherspeak_IND=..Kecuali jika Anda adalah agen kegelapan
+otherspeak_SPN=.. A menos que seas un agente de las tinieblas
+otherspeak_TAI=.. ถ้าคุณไม่ใช่ตัวแทนแห่งความมืด
+goto=010
+boxPosition=-42.64999,-369.1601
+
+[10]
+optionA=How can I help you?
+optionA_POR=Como posso ajudá-lo?
+optionA_RUS=Чем я могу помочь вам?
+optionA_IND=Apa yang bisa saya bantu?
+optionA_SPN=¿Le puedo ayudar en algo?
+optionA_TAI=ฉันจะช่วยคุณได้อย่างไร?
+gotoA=003
+optionB=I'm an agent of darkness
+optionB_POR=Eu sou um agente das trevas
+optionB_RUS=Я агент тьмы
+optionB_IND=Saya seorang agen kegelapan
+optionB_SPN=Soy un agente de la oscuridad
+optionB_TAI=ฉันคือตัวแทนแห่งความมืด
+gotoB=011
+boxPosition=-7.841053,-440.3734
+
+[11]
+otherspeak=Is that so ...
+otherspeak_POR=É assim mesmo ...
+otherspeak_RUS=Это так ...
+otherspeak_IND=Apakah begitu ...
+otherspeak_SPN=Es eso así ...
+otherspeak_TAI=ขนาดนั้นเลยเหรอ ...
+goto=012
+boxPosition=87.2547,-505.2357
+
+[12]
+otherspeak=Then be gone, or I shall unleash the fires of The Aether upon you
+otherspeak_POR=Então vá embora, ou eu irei liberar o fogo do Éter sobre você
+otherspeak_RUS=Тогда уходи, или я выпущу на тебя огонь эфира
+otherspeak_IND=Kalau begitu pergilah, atau aku akan melepaskan api The Aether padamu
+otherspeak_SPN=Entonces vete, o desataré los fuegos del éter sobre ti
+otherspeak_TAI=แล้วจะหายไปหรือฉันจะปล่อยไฟของ The Aether ใส่คุณ
+goto=-1
+boxPosition=103.5035,-588.1064
+
+[3]
+otherspeak=A dark storm is brewing in this world..
+otherspeak_POR=Uma tempestade negra está se formando neste mundo ..
+otherspeak_RUS=В этом мире надвигается темная буря ..
+otherspeak_IND=Badai gelap sedang terjadi di dunia ini ..
+otherspeak_SPN=Una tormenta oscura se está gestando en este mundo.
+otherspeak_TAI=พายุแห่งความมืดกำลังก่อตัวขึ้นในโลกนี้ ..
+goto=004
+boxPosition=-262.8214,-507.5577
+
+[4]
+otherspeak=.. I fear I cannot stop it..
+otherspeak_POR=.. Eu temo que não posso pará-lo ..
+otherspeak_RUS=.. Боюсь, я не могу это остановить ..
+otherspeak_IND=.. Aku takut aku tidak bisa menghentikannya ..
+otherspeak_SPN=.. Me temo que no puedo detenerlo ..
+otherspeak_TAI=.. กลัวจะหยุดไม่ได้ ..
+goto=005
+boxPosition=-256.7726,-591.4464
+
+[5]
+otherspeak=.. with every passing day my power fades
+otherspeak_POR=.. a cada dia que passa meu poder enfraquece
+otherspeak_RUS=.. с каждым днем ​​моя сила тает
+otherspeak_IND=.. dengan berlalunya hari kekuatanku memudar
+otherspeak_SPN=.. con cada día que pasa mi poder se desvanece
+otherspeak_TAI=.. ทุกวันที่ผ่านไปพลังของฉันก็เลือนลาง
+goto=006
+boxPosition=-263.1237,-668.7346
+
+[6]
+optionA=I'll help you
+optionA_POR=vou te ajudar
+optionA_RUS=Я помогу тебе
+optionA_IND=Aku akan membantumu
+optionA_SPN=Te ayudare
+optionA_TAI=ฉันจะช่วยคุณ
+gotoA=013
+optionB=I'm busy Mr Glowy
+optionB_POR=Estou ocupado senhor glowy
+optionB_RUS=Я занят мистер глоуи
+optionB_IND=Aku sibuk, Tuan Glowy
+optionB_SPN=Estoy ocupado señor resplandeciente
+optionB_TAI=ฉันไม่ว่างคุณ Glowy
+gotoB=007
+boxPosition=-262.0792,-769.0368
+
+[7]
+otherspeak=I am ... disappointed
+otherspeak_POR=Estou desapontado
+otherspeak_RUS=Я расстроен
+otherspeak_IND=Saya kecewa
+otherspeak_SPN=Estoy decepcionado
+otherspeak_TAI=ฉันผิดหวัง
+goto=-1
+boxPosition=-140.0364,-845.5826
+
+[13]
+otherspeak=Good.. Good..
+otherspeak_POR=Bom Bom..
+otherspeak_RUS=Хорошо хорошо..
+otherspeak_IND=Bagus..
+otherspeak_SPN=Bien bien..
+otherspeak_TAI=ดีดี..
+goto=014
+boxPosition=-369.9356,-848.3663
+
+[14]
+otherspeak=Storm Wizards have invaded Yandi Forest..
+otherspeak_POR=Os feiticeiros da tempestade invadiram a floresta de Yandi ..
+otherspeak_RUS=Штормовые волшебники вторглись в лес Янди.
+otherspeak_IND=Penyihir Badai telah menginvasi Hutan Yandi ..
+otherspeak_SPN=Los magos de las tormentas han invadido el bosque de Yandi.
+otherspeak_TAI=Storm Wizards ได้บุกป่า Yandi ..
+goto=015
+boxPosition=-378.9269,-939.2103
+
+[15]
+otherspeak=..and are summoning Shindeon The Wicked
+otherspeak_POR=..e estão convocando Shindeon, o malvado
+otherspeak_RUS=..и вызывают Шиндеон Злой
+otherspeak_IND=..dan memanggil Shindeon The Wicked
+otherspeak_SPN=..y están convocando a Shindeon The Wicked
+otherspeak_TAI=.. และกำลังเรียก Shindeon The Wicked
+goto=016
+boxPosition=-393.0868,-1029.174
+
+[16]
+otherspeak=They must be stopped.
+otherspeak_POR=Eles devem ser parados.
+otherspeak_RUS=Их нужно остановить.
+otherspeak_IND=Mereka harus dihentikan.
+otherspeak_SPN=Deben detenerse.
+otherspeak_TAI=พวกเขาจะต้องหยุด
+goto=017
+boxPosition=-395.1491,-1114.573
+
+[17]
+otherspeak=Are you prepared to fight the Storm Wizards?
+otherspeak_POR=Você está preparado para lutar contra os Storm Wizards?
+otherspeak_RUS=Готовы ли вы сразиться с волшебниками бури?
+otherspeak_IND=Apakah Anda siap untuk melawan Storm Wizards?
+otherspeak_SPN=¿Estás preparado para luchar contra los Storm Wizards?
+otherspeak_TAI=คุณพร้อมที่จะต่อสู้กับ Storm Wizards หรือไม่?
+goto=018
+boxPosition=-389.8423,-1198.956
+
+[18]
+optionA=I'm ready
+optionA_POR=estou pronto
+optionA_RUS=я готов
+optionA_IND=saya siap
+optionA_SPN=Estoy listo
+optionA_TAI=ฉันพร้อมแล้ว
+gotoA=022
+optionB=I'll be right back
+optionB_POR=eu volto já
+optionB_RUS=Я скоро вернусь
+optionB_IND=aku akan segera kembali
+optionB_SPN=Ya vuelvo
+optionB_TAI=ฉันจะกลับมา
+gotoB=019
+boxPosition=-383.0513,-1280.671
+
+[19]
+otherspeak=Make haste...
+otherspeak_POR=Depressa...
+otherspeak_RUS=Поторопитесь ...
+otherspeak_IND=Cepatlah ...
+otherspeak_SPN=Darse prisa...
+otherspeak_TAI=เร่งรีบ ...
+goto=020
+boxPosition=-253.7245,-1372.093
+
+[20]
+otherspeak=Speak again with Vitamin Ape when you are ready
+otherspeak_POR=Fale novamente com Vitamin Ape quando estiver pronto
+otherspeak_RUS=Поговорите еще раз с Vitamin Ape, когда будете готовы
+otherspeak_IND=Bicaralah lagi dengan Vitamin Ape saat Anda siap
+otherspeak_SPN=Habla de nuevo con Vitamin Ape cuando estés listo
+otherspeak_TAI=พูดอีกครั้งกับวิตามินเอเมื่อคุณพร้อม
+goto=021
+boxPosition=-229.6669,-1442.702
+
+[21]
+*ADVANCE_QUEST* (Dark and Forgotten Magic => 2)
+goto=-1
+boxPosition=-225.0759,-1541.907
+
+[22]
+otherspeak=... may The Aether grant you a swift victory
+otherspeak_POR=... que o Éter lhe conceda uma vitória rápida
+otherspeak_RUS=... пусть Эфир подарит вам быструю победу
+otherspeak_IND=... semoga The Aether memberimu kemenangan cepat
+otherspeak_SPN=... que The Aether te conceda una rápida victoria
+otherspeak_TAI=... ขอให้ The Aether ให้คุณได้รับชัยชนะอย่างรวดเร็ว
+goto=023
+boxPosition=-491.7878,-1447.053
+
+[23]
+*ADVANCE_QUEST* (Dark and Forgotten Magic => 3)
+goto=-1
+boxPosition=-497.2323,-1537.648
+
+[1001]
+otherspeak=Well done tiny creature ...
+otherspeak_POR=Criaturinha bem feito ...
+otherspeak_RUS=Молодец крохотное существо ...
+otherspeak_IND=Makhluk kecil yang dilakukan dengan baik ...
+otherspeak_SPN=Bien hecho pequeña criatura ...
+otherspeak_TAI=สิ่งมีชีวิตตัวเล็ก ๆ ทำได้ดีมาก ...
+goto=1002
+boxPosition=313.1184,-152.4514
+
+[1002]
+otherspeak=Shindeon did not trample my forest today
+otherspeak_POR=Shindeon não pisou na minha floresta hoje
+otherspeak_RUS=Шиндеон сегодня не топтал мой лес
+otherspeak_IND=Shindeon tidak menginjak-injak hutan saya hari ini
+otherspeak_SPN=Shindeon no pisoteó mi bosque hoy
+otherspeak_TAI=วันนี้ Shindeon ไม่ได้เหยียบย่ำป่าของฉัน
+goto=1003
+boxPosition=322.4869,-232.4985
+
+[1003]
+otherspeak=Here, take this ... 
+otherspeak_POR=Aqui, pegue isso ...
+otherspeak_RUS=Вот, возьми это ...
+otherspeak_IND=Ambil ini ...
+otherspeak_SPN=Ten esto ...
+otherspeak_TAI=นี่เอานี่ ...
+goto=1004
+boxPosition=323.6778,-301.843
+
+[1004]
+otherspeak=I'm sure Vitamin Ape won't mind, he he he
+otherspeak_POR=Tenho certeza que Vitamin Ape não vai se importar, he he he
+otherspeak_RUS=Я уверен, что Vitamin Ape не будет возражать, он, он, он
+otherspeak_IND=Saya yakin Vitamin Ape tidak akan keberatan, he he he
+otherspeak_SPN=Estoy seguro de que a Vitamin Ape no le importará, jejeje
+otherspeak_TAI=ฉันแน่ใจว่าวิตามินเอจะไม่รังเกียจเขาเขา
+goto=1005
+boxPosition=316.0122,-369.3353
+
+[1005]
+*TRY_GIVE_QUEST_REWARD* (Dark and Forgotten Magic) (if succeed, advance quest to 7)
+goto=1006
+boxPosition=319.9196,-447.7685
+
+[1006]
+*TELEPORT* (chunk(shack9070,-10, 2) 3 5)
+boxPosition=330.2101,-509.5739
+

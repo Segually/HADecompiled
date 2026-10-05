@@ -1,0 +1,32 @@
+Description_TAI = หมวกทองคำ ที่เปล่งประกาย แสดงถึง พลังแห่ง ขุนศึก โบราณ
+Name_TAI = หมวก กันน็อค โชกุน ทองคำ
+Description_POR = Um elmo dourado brilhante, exalando a força dos antigos senhores da guerra.
+Description_SPN = Un brillante yelmo de oro, que emana el poder de antiguos caudillos.
+Description_RUS = Яркий золотой шлем, источающий мощь древних полководцев.
+Description_IND = Sebuah ketopong emas cemerlang, memancarkan kekuatan panglima perang kuno.
+Name_POR = Elmo Shogun de Ouro
+Name_SPN = Yelmo de Shogun de Oro
+Name_RUS = Золотой шлем сегуна
+Name_IND = Helm Shogun Emas
+Description = A brilliant gold helm, exuding the might of ancient warlords
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/ShogunHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 18
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+CopyPaintLayout = Uranium Shogun Helm
+Default Coloring = Weapon - Gold
+
+show_model3d = true
+Copy3dModelPosition = Uranium Shogun Helm
+
+Defend Amount = 7
+
+Vendor0 = Armor
+NumSell = 1 to 2

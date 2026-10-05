@@ -1,0 +1,17 @@
+Name_TAI = หีบ ไทเทเนียม
+Name_POR = Baú de Titânio
+Name_SPN = Cofre de Titanio
+Name_RUS = Титановый сундук
+Name_IND = Dada Titanium
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Titanium Chest
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+CopyPaintLayout = Chest
+Default Coloring = Titanium Trim
+
+not_obtainable = true
+

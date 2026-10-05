@@ -1,0 +1,24 @@
+Description_TAI = ช่วย ให้ คุณ ทำ อาหาร พื้นฐาน ได้
+Name_TAI = กอง ไฟ แคมป์
+Description_POR = Permite que você cozinhe refeições básicas.
+Description_SPN = Te permite cocinar comidas básicas.
+Description_RUS = Позволяет готовить простые блюда.
+Description_IND = Memungkinkan Anda untuk memasak hidangan dasar
+Name_POR = Fogueira
+Name_SPN = Hoguera
+Name_RUS = Костёр
+Name_IND = Api Unggun
+Description = Allows you to cook basic meals
+
+Inventory_sprite_path = item campfire
+Crafting_ingredient_A = Stone Ore
+Crafting_ingredient_A_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Campfire
+World_geometry = 1_by_1
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Ranger Accessories
+Vendor2 = Food Accessories

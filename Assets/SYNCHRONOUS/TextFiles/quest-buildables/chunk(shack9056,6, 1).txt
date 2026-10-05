@@ -1,0 +1,35 @@
+*auto_version=2*
+
+[5,4] = Karaoke (rot 3)
+	minigame_id = *long* 9035
+	paint = *string* Winter Pastel
+
+[3,1] = Stump Chair (rot 0)
+
+[3,1] = DEBUG-npc (rot 3)
+	npc_file = *string* Tweeto
+	creature_A = *string* puffin
+	creature_B = *string* owl
+	npc_icon = *string* Merchant
+	voice = *string* owl
+	merchant_type = *string* Records
+
+[3,3] = Bonsai Tree (rot 1)
+	bonsai_age = *short* 160
+	paint = *string* Winter Pastel
+
+[7,4] = Chest (rot 1)
+	password = *string* DEV_LOCKED
+	paint = *string* Winter Pastel
+
+[6,4] = Painting (rot 0)
+	dev_painting_id = *short* 14
+	paint = *string* Basic Cyan
+
+[7,0] = Chair (rot 1)
+	paint = *string* Winter Pastel
+
+[4,1] = Basic Rug (rot 3)
+	paint = *string* Basic Pink
+	stamp = *string* Feather Stamp
+

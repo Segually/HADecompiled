@@ -1,0 +1,28 @@
+Description_TAI = สี ทา เฟอร์นิเจอร์ ที่ เข้ากัน ได้ ดีกับ สี ม่วง
+Name_TAI = รุ่งอรุณ ลึกลับ
+Description_POR = Tinta para móveis que combina bem com roxo.
+Description_SPN = Pintura para muebles que combina bien con el morado.
+Description_RUS = Краска для мебели, которая хорошо сочетается с фиолетовым.
+Description_IND = Cat furnitur yang cocok dengan warna ungu.
+Name_POR = Aurora Mística
+Name_SPN = Amanecer Místico
+Name_RUS = Мистический Рассвет
+Name_IND = Fajar Mistis
+Description = Furniture paint that goes well with Purple.
+
+Crafting_ingredient_A = Basic Purple
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Basic Yellow
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

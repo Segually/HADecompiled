@@ -1,0 +1,18 @@
+Name_TAI = หมวก พ่อมด พายุ
+Name_POR = Chapéu do Mago da Tempestade
+Name_SPN = Sombrero de Mago de Tormenta
+Name_RUS = Шляпа Шторма Волшебника
+Name_IND = Topi Penyihir Badai
+
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/new-hat-models/WizardHat
+Market Cost = 3000
+
+Vendor0 = Clothing
+
+CopyPaintLayout = Wizard Hat
+Default Coloring = Royal Red
+
+show_model3d = true
+Copy3dModelPosition = Wizard Hat

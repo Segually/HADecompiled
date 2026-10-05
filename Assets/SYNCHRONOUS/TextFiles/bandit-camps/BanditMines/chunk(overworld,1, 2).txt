@@ -1,0 +1,114 @@
+*is_blank=true*
+
+[0,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[1,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[2,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[3,4] = Palisade Wall (rot 1)
+	paint = *string* BANDIT_WALL
+
+[8,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[9,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,4] = Dirt Path (rot 0)
+
+[6,4] = Dirt Path (rot 0)
+
+[7,4] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[5,3] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[5,2] = Dirt Path (rot 0)
+
+[6,2] = Dirt Path (rot 0)
+
+[7,2] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[5,1] = Dirt Path (rot 0)
+
+[6,1] = Dirt Path (rot 0)
+
+[7,1] = Dirt Path (rot 0)
+
+[7,0] = Dirt Path (rot 0)
+
+[6,0] = Dirt Path (rot 0)
+
+[5,0] = Dirt Path (rot 0)
+
+[4,0] = Dirt Path (rot 0)
+
+[5,5] = Dirt Path (rot 0)
+
+[6,5] = Dirt Path (rot 0)
+
+[7,5] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[5,6] = Dirt Path (rot 0)
+
+[6,6] = Dirt Path (rot 0)
+
+[0,0] = Dirt Path (rot 3)
+
+[1,0] = Dirt Path (rot 3)
+
+[2,0] = Dirt Path (rot 3)
+
+[3,0] = Dirt Path (rot 3)
+
+[3,5] = Poison Spikes (rot 3)
+
+[3,6] = Poison Spikes (rot 3)
+
+[8,5] = Poison Spikes (rot 3)
+
+[8,6] = Poison Spikes (rot 3)
+
+[8,3] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[8,2] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[8,1] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[8,0] = Wood Rails (rot 3)
+	paint = *string* BANDIT_WALL
+
+[3,2] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[1,3] = Loot Basket (rot 0)
+	basket_id = *long* 9003
+
+[2,3] = Loot Basket (rot 0)
+	basket_id = *long* 9004
+
+[0,3] = Crafting Table (rot 1)
+	paint = *string* BANDIT_COMPL
+
+[6,5] = Mob - BANDIT_FACTION Weak (rot 0)
+

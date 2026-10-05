@@ -1,0 +1,19 @@
+Description_TAI = ย้าย วัตถุ ของ คุณ หรือ หยิบ กลับ ขึ้น มา
+Name_TAI = เครื่องมือ ช่าง
+Description_POR = Mova seus objetos ou recolha-os.
+Description_SPN = Mueve tus objetos o recógelos nuevamente.
+Description_RUS = Перемещайте свои объекты или поднимайте их обратно.
+Description_IND = Pindahkan objek Anda, atau ambil kembali.
+Name_POR = Ferramentas de Construtor
+Name_SPN = Herramientas de Constructor
+Name_RUS = Инструменты Строителя
+Name_IND = Alat Pembuat
+Description = Move your objects, or pick them back up.
+
+Inventory_sprite_path = item builder tools
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 1
+Type = Tool
+Market Cost = 2
+
+NumSell = 3 to 3

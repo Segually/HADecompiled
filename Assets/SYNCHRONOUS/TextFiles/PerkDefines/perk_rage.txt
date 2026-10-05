@@ -1,0 +1,21 @@
+Full Name = Rage
+Description = Do extra damage!
+Detailed Description = GetFloat[EFFECT_RAGE, "Damage Percent Mod On Attack Other", remove "%"]% damage DiffFloat[EFFECT_RAGE, "Damage Percent Mod On Attack Other", remove "%", add "%"] for GetInt[EFFECT_RAGE, "Duration", remove " seconds"] seconds DiffInt[EFFECT_RAGE, "Duration", remove " seconds", add " seconds"] on self. +GetInt[EFFECT_RAGE, "Additional Damage Points On Attack Other", remove ""] additional damage points DiffInt[EFFECT_RAGE, "Additional Damage Points On Attack Other", remove "", add ""].
+Energy Cost = 80%
+Unlock Prerequisite = perk_ram(lvl.2)
+On cast = [EFFECT_RAGE,FLAME_PARTICLE] on self
+-
+[EFFECT_RAGE]
+Type = Duration Effect
+Particle (Screen Overlay) = perk_rage_overlay
+Duration = CLAMP (6 seconds @ lvl_1 ... 16 seconds @ lvl_15)
+Damage Percent Mod On Attack Other = CLAMP (110% @ lvl_1 ... 130% @ lvl_15)
+Additional Damage Points On Attack Other = RANGE (0.5%-3%-5% of own HP)
+Walk Speed = 125%
+Player Vision = 80%
+-
+[FLAME_PARTICLE]
+Type = Duration Effect
+Particle (Duration) = perk_rage_duration
+Scale Particle With Creature Size = true
+Duration = CLAMP (6 seconds @ lvl_1 ... 16 seconds @ lvl_15)

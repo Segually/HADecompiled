@@ -1,0 +1,36 @@
+Description_TAI = ต้นกระบองเพชรที่ขุดขึ้นมา
+Name_TAI = ต้น กระบองเพชร ขุด ขึ้น
+Description_POR = Um cacus desenterrado
+Description_SPN = Un cactus desenterrado
+Description_RUS = Вырытый кактус
+Description_IND = Sebuah cacus yang digali
+Name_POR = Cacto Desenterrado
+Name_SPN = Cactus Desenterrado
+Name_RUS = Выкопанный кактус
+Name_IND = Kaktus Tergali
+Overwrite_name = Dug-up Cactus
+Description = A dug up cacus
+
+Type = Place_in_world
+World_obj_path = Buildables/Cactus
+World_geometry = 1_by_1
+Market Cost = 25
+
+Vendor0 = Farmable
+NumSell = 1 to 2
+
+tool_required_to_move = Shovel
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = mob_spawn
+
+model3d_camDist = 2.3
+show_model3d = true
+model3d_fov = 60
+model3d_camHeight = 0.9
+model3d_xRot = -80
+model3d_objRot = 7
+model3d_recenterX = -5
+model3d_recenterY = -2
+model3d_yRot = 15
+model3d_override_glow_col = yellow

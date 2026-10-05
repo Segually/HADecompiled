@@ -1,0 +1,32 @@
+Description_TAI = อย่า แตะ มัน มิฉะนั้น คุณ จะ ลุก เป็น ไฟ!
+Name_TAI = ลาวา
+Description_POR = Não toque nisso, ou você vai pegar fogo!
+Description_SPN = ¡No lo toques, o te prenderás fuego!
+Description_RUS = Не трогай это, иначе вспыхнешь!
+Description_IND = Jangan sentuh, atau kamu akan terbakar!
+Name_POR = Lava
+Name_SPN = Lava
+Name_RUS = Лава
+Name_IND = Lava
+Description = Don't touch it, or you'll burst into flames!
+
+Inventory_sprite_path = item lava
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = sub_flooring
+Max_stack = 10
+Crafting_makes = 10
+Market Cost = 20
+
+CopyPaintLayout = Clouds
+Default Coloring = Debug - Lava
+
+Vendor0 = Mining Accessories
+Vendor1 = Traps
+NumSell = 6 to 15
+
+tool_required_to_move = Magma Shovel
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Clouds

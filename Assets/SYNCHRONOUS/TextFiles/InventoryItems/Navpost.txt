@@ -1,0 +1,40 @@
+Description_TAI = ช่วยให้คุณตั้งชื่อเมืองของคุณเอง!
+Name_TAI = จุด นำ ทาง
+Description_POR = Permite que você nomeie a sua própria cidade!
+Description_SPN = ¡Te permite nombrar tu propio pueblo!
+Description_RUS = Позволяет вам назвать свой собственный город!
+Description_IND = Memungkinkan Anda untuk memberi nama kota Anda sendiri!
+Name_POR = Posto de Navegação
+Name_SPN = Navposte
+Name_RUS = Навпост
+Name_IND = Posnavigasi
+Description = Allows you to name your own town!
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Navpost
+World_geometry = 1_by_1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-1, 2-2, 3-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-1, 3-2, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-1, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-1, 3-3, 
+PaintLayout0_TriColor = 0-1, 1-1, 2-2, 3-3, 
+Default Coloring = Debug - Wood DK
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 57.5
+model3d_camHeight = 1
+model3d_xRot = -55
+model3d_yRot = 20
+model3d_objRot = 1
+model3d_recenterX = 1
+model3d_recenterY = -1
+PaintLayout0_Nomad = 0-1, 1-1, 2-2, 3-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-1, 3-3, 

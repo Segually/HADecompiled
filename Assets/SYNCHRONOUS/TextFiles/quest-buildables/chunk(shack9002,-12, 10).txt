@@ -1,0 +1,12 @@
+*auto_version=18*
+
+[3,3] = Crafting Table (rot 0)
+
+[8,5] = DEBUG-npc (rot 1)
+	npc_file = *string* Willow
+	creature_A = *string* turtle
+	creature_B = *string* beaver
+	npc_icon = *string* Merchant
+	merchant_type = *string* Mining 2
+	voice = *string* female
+

@@ -1,0 +1,25 @@
+Description_TAI = ขนมปัง ผสม ยูเรเนียม เปลี่ยน คุณ ให้ เป็น ยักษ์
+Name_TAI = ขนมปัง ขยายตัว
+Description_POR = Pão com infusão de urânio. Transforma você em um gigante.
+Description_SPN = Pan con infusión de uranio. Te convierte en un gigante.
+Description_RUS = Хлеб с урановой примесью. Превращает вас в гиганта.
+Description_IND = Roti dengan infus Uranium. Mengubahmu menjadi raksasa.
+Name_POR = Pão Expansível
+Name_SPN = Pan Expansible
+Name_RUS = Расширяющийся Хлеб
+Name_IND = Roti Expando
+Description = Bread with Uranium infused. Turns you into a giant.
+
+Inventory_sprite_path = item expando bread
+Crafting_ingredient_A = Wheat
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Uranium Ore
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+NumSell = 3 to 6

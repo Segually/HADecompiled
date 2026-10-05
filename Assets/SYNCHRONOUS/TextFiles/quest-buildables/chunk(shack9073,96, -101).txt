@@ -1,0 +1,5 @@
+*auto_version=1*
+
+[9,7] = Basket (rot 0)
+	basket_id = *long* 9074
+

@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - พ่อมด พายุ
+Name_POR = Mob - Mago da Tempestade
+Name_SPN = Mago de la Tormenta
+Name_RUS = Моб - Маг Бури
+Name_IND = Gerombolan - Penyihir Badai
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

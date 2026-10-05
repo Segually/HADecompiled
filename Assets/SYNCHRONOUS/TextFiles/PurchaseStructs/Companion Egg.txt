@@ -1,0 +1,6 @@
+Description = Hatches into a friendly monster that follows you and fights with you!
+IAP_KEY = doCOMPANION
+Type = consumable
+Gem_price = cheap
+Bg_color = light_blue
+Model_path = shop_companion

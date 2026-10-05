@@ -1,0 +1,40 @@
+﻿Name_POR=Banana Bongô
+Name_RUS=бонго банан
+Name_IND=Pisang Bongo
+Name_SPN=Plátano Bongo
+Name_TAI=บองโก บานาน่า
+
+----- DIALOGUE -----
+[000]
+otherspeak=Ey mon!
+otherspeak_POR=Olá meu bom amigo!
+otherspeak_RUS=Привет мой добрый друг!
+otherspeak_IND=Halo teman baikku!
+otherspeak_SPN=Hola mi buen amigo!
+otherspeak_TAI=สวัสดีเพื่อนที่ดีของฉัน!
+goto=001
+
+[001]
+otherspeak=Dis banana got da best stuff in da town mon!
+otherspeak_POR=Eu tenho o melhor do melhor em toda a cidade!
+otherspeak_RUS=У меня самые лучшие вещи в городе!
+otherspeak_IND=Aku punya barang terbaik dari barang terbaik di seluruh kota!
+otherspeak_SPN=¡Tengo lo mejor de lo mejor de toda la ciudad!
+otherspeak_TAI=ฉันมีของดีที่สุดในเมืองทั้งหมด!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

@@ -1,0 +1,42 @@
+Description_TAI = เหมาะ สำหรับ การ ดู นก
+Name_TAI = ม้านั่ง สวนสาธารณะ
+Description_POR = Ótimo para observação de pássaros.
+Description_SPN = Ideal para la observación de aves.
+Description_RUS = Отлично подходит для наблюдения за птицами.
+Description_IND = Sangat bagus untuk mengamati burung.
+Name_POR = Banco de Parque
+Name_SPN = Banco de parque
+Name_RUS = Парковая скамейка
+Name_IND = Bangku Taman
+Description = Great for bird watching
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 4
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Park Bench
+World_geometry = x_plus_1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-5, 1-2, 
+PaintLayout0_Pastels = 0-3, 1-1, 
+PaintLayout0_Trimmed = 0-3, 1-1, 
+PaintLayout0_Candycane = 0-2, 1-1, 
+PaintLayout0_TriColor = 0-3, 1-1, 
+Default Coloring = Iron & Oak
+model3d_camDist = 2.9
+show_model3d = true
+model3d_fov = 47.5
+model3d_xRot = -95
+model3d_camHeight = 0.6
+model3d_objRot = 6
+model3d_recenterX = 24
+model3d_yRot = 20
+model3d_recenterY = -18
+PaintLayout0_Nomad = 0-5, 1-2, 
+PaintLayout0_Goldy = 0-2, 1-1, 

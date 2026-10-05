@@ -1,0 +1,47 @@
+Description_TAI = ขาย ไอเทม ของ คุณ โดย อัตโนมัติ!
+Name_TAI = ตู้ จำหน่าย สินค้า อัตโนมัติ
+Description_POR = Venda seus itens automaticamente!
+Description_SPN = ¡Vende tus artículos automáticamente!
+Description_RUS = Продавайте ваши предметы автоматически!
+Description_IND = Jual barang-barang Anda secara otomatis!
+Name_POR = Máquina de Vendas
+Name_SPN = Máquina Expendedora
+Name_RUS = Торговый автомат
+Name_IND = Mesin Penjual Otomatis
+Description = Sell your items, automatically!
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Vending Machine
+World_geometry = 1_by_1
+
+IAP_required = recipe_online
+
+Market Cost = CALCULATE
+Vendor0 = OnlineItems
+Vendor1 = Furniture
+
+Craft_required_lvl = 90
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+PaintLayout0_SolidColors = 0-1, 1-2, 2-4, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+Default Coloring = Debug - Metal DK
+PaintLayout0_Stone & Wood = 0-2, 1-5, 2-6, 
+
+model3d_camDist = 2.6
+show_model3d = true
+model3d_fov = 45
+model3d_xRot = -95
+model3d_camHeight = 0.6
+model3d_yRot = 15
+model3d_recenterX = -2
+model3d_recenterY = 2
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

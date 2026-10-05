@@ -1,0 +1,6 @@
+*auto_version=1*
+
+[6,3] = Grass Cave Entrance (rot 0)
+	shack_id = *long* 9072
+	quest_miniworld = *string* true
+

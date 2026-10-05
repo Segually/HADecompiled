@@ -1,0 +1,7 @@
+Name_TAI = เปลือก หอย สี น้ำเงิน
+Name_POR = Concha Azul
+Name_SPN = Concha Azul
+Name_RUS = Синяя раковина
+Name_IND = Cangkang Biru
+
+Inventory_sprite_path = item seashell blue

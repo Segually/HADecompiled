@@ -1,0 +1,4 @@
+*auto_version=1*
+
+[0,0] = DEBUG-npc (rot 0)
+

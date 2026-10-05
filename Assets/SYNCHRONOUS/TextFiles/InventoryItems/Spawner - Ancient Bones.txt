@@ -1,0 +1,14 @@
+Name_TAI = เครื่องสร้าง - กระดูก โบราณ
+Name_POR = Gerador - Ossos Ancestrais
+Name_SPN = Generador - Huesos Antiguos
+Name_RUS = Спавнер - Древние Кости
+Name_IND = Pemijahan - Tulang Kuno
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Ancient Bones
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

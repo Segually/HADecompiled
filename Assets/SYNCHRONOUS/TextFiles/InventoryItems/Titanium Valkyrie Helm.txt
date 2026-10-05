@@ -1,0 +1,33 @@
+Description_TAI = หมวก ไทเทเนียม ทันสมัย ออกแบบ สำหรับ การต่อสู้ ที่ คล่องแคล่ว
+Name_TAI = หมวก ปีก ไททาเนียม
+Description_POR = Elmo elegante de titânio, projetado para combate ágil.
+Description_SPN = Casco elegante de titanio diseñado para el combate ágil.
+Description_RUS = Элегантный титановый шлем, разработанный для ловкого боя.
+Description_IND = Helm titanium ramping yang dirancang untuk pertempuran lincah
+Name_POR = Elmo de Asa de Titânio
+Name_SPN = Yelmo de Ala de Titanio
+Name_RUS = Титановый шлем-крыло
+Name_IND = Helm Sayap Titanium
+Overwrite_name = Titanium Wing Helm
+Description = Sleek, titanium helm designed for agile combat
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/ValkyrieHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+CopyPaintLayout = Gold Valkyrie Helm
+Default Coloring = Weapon - Titanium
+
+show_model3d = true
+Copy3dModelPosition = Gold Valkyrie Helm
+
+Defend Amount = 5
+
+Vendor0 = Armor
+NumSell = 1 to 2

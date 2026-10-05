@@ -1,0 +1,27 @@
+Full Name = Charm
+Description = For Charm Bomb
+On cast = [CREATE_CHARM_CLOUD] on self
+Not_unlockable = true
+-
+[CREATE_CHARM_CLOUD]
+Type = Drop Effect
+Apply effect to drop = [EFFECT_CHARM_CLOUD]
+-
+[EFFECT_CHARM_CLOUD]
+Type = Area Effect
+Area Effect to apply = [EFFECT_CHARMED]
+Particle (Instant) = perk_charm_particle
+Scale Particle With Creature Size = false
+Particle Radius = 6.0m
+Area Effect Radius = 6.0m
+Dont Apply To Caster = true
+Dont Apply To Combatant_Stationary = true
+Dont Apply To Combatant_Minerals = true
+-
+[EFFECT_CHARMED]
+Type = Duration Effect
+Duration = 10 seconds
+Particle (Duration) = perk_charm_duration
+Scale Particle With Creature Size = true
+Custom Brain = Charmed
+Change Icon To = 2

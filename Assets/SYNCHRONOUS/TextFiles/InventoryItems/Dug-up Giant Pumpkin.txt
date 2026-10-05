@@ -1,0 +1,40 @@
+Description_TAI = ปลูก สิ่ง นี้ ที่ ใด ก็ได้ แล้ว มัน จะ ผลิต ฟักทอง!
+Name_TAI = ฟักทอง ยักษ์ ขุด ขึ้น มา
+Description_POR = Plante isso em algum lugar, e ele produzirá abóboras!
+Description_SPN = ¡Planta esto en algún lugar y producirá calabazas!
+Description_RUS = Посадите это где-нибудь, и оно будет приносить тыквы!
+Description_IND = Tanam ini di suatu tempat, dan itu akan menghasilkan labu!
+Name_POR = Abóbora Gigante Desenterrada
+Name_SPN = Calabaza Gigante Desenterrada
+Name_RUS = Вырытая гигантская тыква
+Name_IND = Labu Raksasa yang Dikeruk
+Description = Plant this somewhere, and it will produce pumpkins!
+
+Inventory_sprite_path = item dug up giant pumpkin
+Type = Place_in_world
+World_obj_path = Buildables/Dug-up Giant Pumpkin
+World_geometry = 2_by_2
+Market Cost = 300
+
+Vendor0 = Farmable
+
+tool_required_to_move = Shovel
+
+dont_sell_painted = true
+
+CopyPaintLayout = Dug-up Pumpkin
+Default Coloring = Pumpkin Orange
+model3d_camDist = 2.1
+show_model3d = true
+model3d_fov = 62.5
+model3d_yRot = 0
+
+paintable_by_player = true
+model3d_recenterX = 27
+model3d_xRot = -75
+model3d_objRot = 6
+model3d_recenterY = 24
+model3d_camHeight = 0.1
+
+Pollinator Regen Level = 4
+Pollinator Regen RespawnId = collect_spawn

@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 1101aaae576246045b397ca8428c2451
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: menu button-3_1
+  - first:
+      213: 21300002
+    second: menu buttons_0
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 65
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 0
+  flipbookColumns: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: menu button-3_1
+      rect:
+        serializedVersion: 2
+        x: 8.07612
+        y: 128
+        width: 495.84778
+        height: 192
+      alignment: 9
+      pivot: {x: 0.49999997, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -203.00002, y: -96}
+        - {x: -248.00002, y: -52.999996}
+        - {x: -248.00002, y: 94}
+        - {x: -224.00002, y: 96}
+        - {x: 222.99998, y: 96}
+        - {x: 247.99998, y: 65}
+        - {x: 247.99998, y: -64}
+        - {x: 213, y: -96}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dff2619a9384f1bae30cca3292d9af8
+      internalID: 21300000
+      vertices:
+      - {x: 470.9239, y: 192}
+      - {x: 495.9239, y: 32}
+      - {x: 495.9239, y: 161}
+      - {x: 460.9239, y: 0}
+      - {x: 44.92389, y: 0}
+      - {x: 23.92389, y: 192}
+      - {x: -0.07611084, y: 190}
+      - {x: -0.07611084, y: 43.000004}
+      indices: 070000000600000004000000050000000400000006000000000000000400000005000000030000000400000000000000010000000300000000000000020000000100000000000000
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: menu buttons_0
+      rect:
+        serializedVersion: 2
+        x: 13.07612
+        y: 18.07612
+        width: 480.84778
+        height: 101.84776
+      alignment: 9
+      pivot: {x: 0.50519913, y: 0.4509071}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -212.50003, y: -51}
+        - {x: -240.50002, y: -26}
+        - {x: -240.50002, y: 49.000004}
+        - {x: -211.50003, y: 51}
+        - {x: 240.5, y: 51}
+        - {x: 240.5, y: -34}
+        - {x: 219.49998, y: -51}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eae5779896c4f05a7cf3d713c391fc4
+      internalID: 21300002
+      vertices:
+      - {x: 478.4239, y: 106.92388}
+      - {x: 457.4239, y: 4.9238815}
+      - {x: 478.4239, y: 21.923882}
+      - {x: 26.423874, y: 106.92388}
+      - {x: 25.423874, y: 4.9238815}
+      - {x: -2.5761108, y: 104.92389}
+      - {x: -2.5761108, y: 29.923882}
+      indices: 060000000500000004000000030000000400000005000000010000000400000003000000000000000100000003000000020000000100000000000000
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      menu button-3_1: 21300000
+      menu buttons_0: 21300002
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

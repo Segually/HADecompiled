@@ -1,0 +1,21 @@
+Description_TAI = เพื่อน ที่ ทำ จาก หิมะ
+Name_TAI = มนุษย์ หิมะ
+Description_POR = Um amigo feito de neve
+Description_SPN = Un amigo hecho de nieve
+Description_RUS = Друг, сделанный из снега.
+Description_IND = Seorang teman yang terbuat dari salju
+Name_POR = Boneco de Neve
+Name_SPN = Muñeco de nieve
+Name_RUS = Снеговик
+Name_IND = Manusia Salju
+Description = A friend made of snow
+
+Inventory_sprite_path = item snowman
+Crafting_ingredient_A = Snowball
+Crafting_ingredient_A_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Snowman
+World_geometry = 1_by_1
+Market Cost = CALCULATE
+
+Vendor0 = Furniture

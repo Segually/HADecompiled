@@ -1,0 +1,56 @@
+*auto_version=5*
+*is_blank=true*
+*forced_biome=3*
+
+[3,8] = Dirt Path (rot 0)
+
+[9,9] = Stone Bricks (rot 0)
+
+[4,8] = Bonsai Tree (rot 1)
+	bonsai_age = *short* 370
+
+[9,8] = Stone Bricks (rot 0)
+
+[1,9] = Berry Bush (rot 0)
+
+[1,8] = Berry Bush (rot 0)
+
+[8,9] = Stone Bricks (rot 0)
+
+[3,9] = Dirt Path (rot 0)
+
+[2,8] = Dirt Path (rot 0)
+
+[2,9] = Dirt Path (rot 0)
+
+[4,9] = Bonsai Tree (rot 0)
+	bonsai_age = *short* 105
+
+[5,9] = Wood Rails (rot 0)
+
+[5,8] = Wood Rails (rot 0)
+
+[5,7] = Wood Rails (rot 0)
+
+[0,9] = Wood Rails (rot 0)
+
+[0,8] = Wood Rails (rot 0)
+
+[0,7] = Wood Rails (rot 0)
+
+[1,7] = Wood Rails (rot 0)
+
+[2,7] = Wood Rails (rot 0)
+
+[3,7] = Wood Rails (rot 0)
+
+[4,7] = Wood Rails (rot 0)
+
+[5,4] = Evergreen Tree (rot 0)
+
+[9,5] = Dug-up Brown Mushroom (rot 0)
+
+[8,1] = Stone Vein (rot 0)
+
+[8,8] = Stone Bricks (rot 0)
+

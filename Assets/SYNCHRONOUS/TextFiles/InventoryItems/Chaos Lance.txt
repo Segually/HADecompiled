@@ -1,0 +1,14 @@
+Name_TAI = หอก แห่ง ความโกลาหล
+Name_POR = Lança do Caos
+Name_SPN = Lanza del Caos
+Name_RUS = Копье Хаоса
+Name_IND = Tombak Kekacauan
+Type = Holdable
+
+World_obj_path = Equipment/holdables/new-weapon-models/Lance
+
+CopyPaintLayout = Spirit Lance
+Default Coloring = Weapon - Chaos
+
+not_obtainable = true
+

@@ -1,0 +1,23 @@
+Description_TAI = ใช้ สำหรับ ทาสี เฟอร์นิเจอร์
+Name_TAI = ดีบัก เพนท์
+Description_POR = Usado para pintar móveis.
+Description_SPN = Se utiliza para pintar muebles.
+Description_RUS = Используется для покраски мебели.
+Description_IND = Digunakan untuk mengecat furnitur.
+Name_POR = Pintura de Depuração
+Name_SPN = Pintura de Depuración
+Name_RUS = Отладочная краска
+Name_IND = Cat Perbaikan
+Description = Used to paint furniture.
+
+not_obtainable = true
+
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = GoldBerry
+Crafting_ingredient_B_count = 3
+Type = Tool
+Craft_required_lvl = 84
+
+

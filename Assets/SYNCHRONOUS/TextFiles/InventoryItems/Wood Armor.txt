@@ -1,0 +1,23 @@
+Description_TAI = แผ่นไม้ธรรมดา มีความทนทานไม่น่าเชื่อในสถานการณ์ฉุกเฉิน
+Name_TAI = เกราะ ไม้
+Description_POR = Placas de madeira simples, surpreendentemente robustas em uma emergência.
+Description_SPN = Placas de madera simples, sorprendentemente resistentes en un apuro.
+Description_RUS = Простая деревянная обшивка, удивительно прочная в критической ситуации.
+Description_IND = Pelat kayu sederhana, ternyata kokoh saat dibutuhkan
+Name_POR = Armadura de Madeira
+Name_SPN = Armadura de Madera
+Name_RUS = Деревянная броня
+Name_IND = Baju Zirah Kayu
+Description = Simple wooden plating, surprisingly sturdy in a pinch
+
+Inventory_sprite_path = item wood armor
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/ARMOR_wood
+Market Cost = CALCULATE
+
+Vendor0 = Armor
+NumSell = 2 to 3
+
+Defend Amount = 1

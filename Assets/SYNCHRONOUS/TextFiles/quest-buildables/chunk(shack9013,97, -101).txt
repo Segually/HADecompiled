@@ -1,0 +1,61 @@
+*auto_version=13*
+
+[8,0] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,1] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,3] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,2] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,4] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,6] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,9] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[9,6] = Bed (rot 0)
+	paint = *string* Lumberjack
+
+[9,4] = Bed (rot 0)
+	paint = *string* Lumberjack
+
+[9,1] = Double Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[9,6] = DEBUG-npc (rot 0)
+	npc_file = *string* Shindo Warrior (Sleeping)
+	creature_A = *string* shark
+	creature_B = *string* wolf
+	npc_icon = *string* Info_giver
+	hat = *string* Wizard Hat
+	body = *string* Metal Armor
+	hat_paint = *string* Glacier
+	armor_paint = *string* Glacier
+	voice = *string* male
+
+[9,8] = Sign (rot 3)
+	sign_text = *string* Shindo Warrior Sleeping Quarters
+
+[9,0] = Crate (rot 3)
+	password = *string* DEV_LOCKED
+
+[9,2] = Bed (rot 0)
+	paint = *string* Lumberjack
+

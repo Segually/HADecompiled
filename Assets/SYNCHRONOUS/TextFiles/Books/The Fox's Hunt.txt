@@ -1,0 +1,95 @@
+[paint]
+Lumberjack
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+Like the fox, we are silent, waiting until the moment is right to take what is ours.
+
+[page 2 - English]
+The fox is clever, and so are we; we take what others do not protect, and leave nothing behind.
+
+[page 3 - English]
+To the weak, we are the wind in the trees, moving unseen until we strike with perfect timing.
+
+[page 4 - English]
+When you hear the rustling of the leaves, you’ll know the Everthorn Bandits are near.
+
+[book name - English]
+The Fox's Hunt
+
+[book name - Indonesian]
+Perburuan Rubah
+
+[page 1 - Indonesian]
+Seperti rubah, kita diam, menunggu hingga saat yang tepat untuk mengambil apa yang menjadi milik kita.
+
+[page 2 - Indonesian]
+Rubah itu cerdik, begitu pula kami; kami mengambil apa yang tidak dilindungi orang lain, dan tidak meninggalkan apa pun.
+
+[page 3 - Indonesian]
+Bagi yang lemah, kami adalah angin di pepohonan, bergerak tak terlihat hingga kami menyerang dengan waktu yang sempurna.
+
+[page 4 - Indonesian]
+Saat Anda mendengar gemerisik dedaunan, Anda akan tahu bahwa Bandit Everthorn sudah dekat.
+
+[book name - Portuguese]
+A Caça da Raposa
+
+[page 1 - Portuguese]
+Como a raposa, somos silenciosos, esperando até que o momento seja certo para tomar o que é nosso.
+
+[page 2 - Portuguese]
+A raposa é astuta, e nós também; pegamos o que os outros não protegem, e não deixamos nada para trás.
+
+[page 3 - Portuguese]
+Para os fracos, somos o vento nas árvores, movendo-nos invisíveis até atacarmos com timing perfeito.
+
+[page 4 - Portuguese]
+Quando você ouvir o farfalhar das folhas, saberá que os Bandidos Everthorn estão perto.
+
+[book name - Russian]
+Охота Лисы
+
+[page 1 - Russian]
+Как лиса, мы молчим, ждем, пока не наступит подходящий момент, чтобы забрать то, что принадлежит нам.
+
+[page 2 - Russian]
+Лиса хитра, и мы тоже; мы берем то, что другие не защищают, и не оставляем ничего позади.
+
+[page 3 - Russian]
+Для слабых мы — ветер в деревьях, движущийся незаметно, пока не ударим в идеальный момент.
+
+[page 4 - Russian]
+Когда вы услышите шелест листвы, вы поймете, что Бандиты из Вечношипа рядом.
+
+[book name - Spanish]
+La Caza del Zorro
+
+[page 1 - Spanish]
+Como el zorro, somos silenciosos, esperando hasta que el momento sea adecuado para tomar lo que es nuestro.
+
+[page 2 - Spanish]
+El zorro es astuto, y nosotros también; tomamos lo que otros no protegen y no dejamos nada atrás.
+
+[page 3 - Spanish]
+Para los débiles, somos el viento en los árboles, moviéndonos sin ser vistos hasta que atacamos con tiempo perfecto.
+
+[page 4 - Spanish]
+Cuando escuches el susurro de las hojas, sabrás que los Bandidos de Everthorn están cerca.
+
+[book name - Thai]
+การล่า ของสุน ัขจิ้ง จอก
+
+[page 1 - Thai]
+เช่นเด ียวกับ สุนัขจ ิ้งจอก  พวกเร านิ่งเ งียบ ร อคอยจน ถึงเวล าที่เห มาะสมใ นการถื อเอาสิ ่งที่เ ป็นของ เรา
+
+[page 2 - Thai]
+สุนัขจ ิ้งจอก ฉลาด แ ละเราก ็เช่นก ัน เรา รับในส ิ่งที่ ผู้อื่ นไม่ปก ป้อง แ ละไม่ท ิ้งอะไ รไว้เบ ื้องหล ัง
+
+[page 3 - Thai]
+สู่ควา มอ่อนแ อ พวกเ ราเป็น สายลมใ นต้นไม ้ เคลื ่อนไหว โดยไม่ เห็นจน กระทั่ งเราตี อย่างท ันเวลา
+
+[page 4 - Thai]
+เมื่อค ุณได้ย ินเสีย งใบไม้ สั่นไห ว คุณจ ะรู้ว่ ากลุ่ม โจร Ev erthor n อยู่ ใกล้

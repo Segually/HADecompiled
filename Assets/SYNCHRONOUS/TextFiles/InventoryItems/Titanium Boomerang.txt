@@ -1,0 +1,13 @@
+Name_POR = Bumerangue de Titânio
+Name_TAI = บูมเมอแรง ไทเทเนียม
+Name_SPN = Bumerán de titanio
+Name_RUS = Титановый бумеранг
+Name_IND = Bumerang Titanium
+Type = Holdable
+
+Default Coloring = Weapon - Titanium
+
+not_obtainable = true
+
+PaintLayout0_SolidColors = 0-5, 1-1, 2-3, 3-4, 
+PaintLayout0_Trimmed = 0-0, 1-0, 2-0, 3-0, 

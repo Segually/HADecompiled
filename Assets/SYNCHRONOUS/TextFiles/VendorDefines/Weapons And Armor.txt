@@ -1,0 +1,15 @@
+[Sell Percent = 0.26]
+
+Weapons(1-1500)
+Weapons(1-1500)
+Weapons(1-1500)
+
+Armor(1-1000)
+Armor(1-1000)
+Armor(1-1000)
+
+Refined Materials(1-200)
+Refined Materials(1-200)
+Weapon Accessories(1-700)
+
+Armor Accessories(1-700)

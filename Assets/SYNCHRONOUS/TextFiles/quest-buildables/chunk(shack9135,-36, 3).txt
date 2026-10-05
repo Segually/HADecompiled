@@ -1,0 +1,18 @@
+*auto_version=1*
+
+[5,2] = Old Torch (rot 0)
+
+[4,3] = Bed (rot 2)
+	paint = *string* Forest Green
+
+[1,3] = Crafting Table (rot 1)
+
+[0,0] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,1] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,2] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+

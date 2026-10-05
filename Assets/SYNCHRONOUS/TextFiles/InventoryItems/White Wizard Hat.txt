@@ -1,0 +1,29 @@
+Description_TAI = เพิ่ม +100% ให้ กับ พลังงาน ของ คุณ
+Name_TAI = หมวก พ่อมด สีขาว
+Description_POR = Adiciona +100% à sua energia de poder
+Description_SPN = Agrega +100% a tu energía de poder
+Description_RUS = Добавляет +100% к вашей энергетической мощности
+Description_IND = Menambahkan +100% ke energi kekuatan Anda
+Name_POR = Chapéu de Mago Branco
+Name_SPN = Sombrero de Mago Blanco
+Name_RUS = Шляпа белого волшебника
+Name_IND = Topi Penyihir Putih
+Description = Adds +100% to your power energy
+
+Crafting_ingredient_A = Silk
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 3
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/new-hat-models/WizardHat
+Craft_required_lvl = 84
+Market Cost = CALCULATE
+
+Vendor0 = Clothing
+
+CopyPaintLayout = Wizard Hat
+Default Coloring = Spirit Grey
+
+show_model3d = true
+Copy3dModelPosition = Wizard Hat

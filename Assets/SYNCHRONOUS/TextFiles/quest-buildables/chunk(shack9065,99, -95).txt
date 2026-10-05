@@ -1,0 +1,53 @@
+*auto_version=22*
+
+[6,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[1,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,1] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[3,0] = Poison Spikes (rot 0)
+
+[8,0] = Mob - Everthorn Bandit (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* The Bandit King
+	associated_quest_step = *short* 3
+	overwrite_mob_name = *string* Bandit
+	overwrite_mob_level = *string* PLAYER_LEVEL*0.39
+
+[8,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[0,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,2] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[3,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[4,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[5,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+

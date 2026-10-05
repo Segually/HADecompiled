@@ -1,0 +1,8 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[7,9] = Rotting Stump (rot 2)
+
+[5,6] = Willow Tree (rot 1)
+

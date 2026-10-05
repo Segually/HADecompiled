@@ -1,0 +1,13 @@
+Name_TAI = วิหาร
+Name_POR = Templo
+Name_SPN = Templo
+Name_RUS = Храм
+Name_IND = Kuil
+
+Inventory_sprite_path = item shack
+Type = Place_in_world
+World_obj_path = Buildables/Temple
+World_geometry = Shack_shape
+
+not_obtainable = true
+

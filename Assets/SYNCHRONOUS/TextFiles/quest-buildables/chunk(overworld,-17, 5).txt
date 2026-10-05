@@ -1,0 +1,13 @@
+*auto_version=2*
+*is_blank=true*
+*forced_biome=8*
+
+[1,1] = Windmill (rot 1)
+	shack_id = *long* 9092
+
+[5,0] = Birch Tree (Variant 1) (rot 0)
+
+[5,8] = Birch Tree (Variant 2) (rot 1)
+
+[8,8] = Stone Vein (White) (rot 3)
+

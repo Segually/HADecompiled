@@ -1,0 +1,12 @@
+Name_TAI = ถั่ว
+Name_POR = Noz
+Name_SPN = Nuez
+Name_RUS = Орех
+Name_IND = Kacang
+
+Inventory_sprite_path = item nut
+Market Cost = 4
+Max_stack = 5
+
+Vendor0 = Harvested Item
+NumSell = 2 to 6

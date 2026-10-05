@@ -1,0 +1,38 @@
+*auto_version=5*
+
+[8,4] = Crafting Table (rot 2)
+	paint = *string* Banana Bruise
+
+[8,6] = Chest (rot 2)
+	password = *string* DEV_LOCKED
+	paint = *string* Banana Dessert
+
+[3,6] = Music Box (rot 0)
+	npc_record_index = *short* 3
+	paint = *string* Banana Bruise
+
+[3,4] = Big Stone Head (rot 0)
+	paint = *string* Banana Dessert
+
+[6,7] = DEBUG-npc (rot 0)
+	npc_file = *string* Bongo Banana
+	creature_A = *string* human
+	creature_B = *string* banana
+	npc_icon = *string* Merchant
+	voice = *string* bongo
+	merchant_type = *string* Furniture 2
+
+[3,3] = Bonsai Tree (rot 1)
+	bonsai_age = *short* 68
+	paint = *string* Basic Yellow
+
+[4,7] = Painting (rot 0)
+	dev_painting_id = *short* 1
+	paint = *string* Basic Yellow
+
+[3,5] = Sofa Chair (rot 0)
+	paint = *string* Banana Bruise
+
+[6,6] = Basic Rug (rot 0)
+	paint = *string* Basic Yellow
+

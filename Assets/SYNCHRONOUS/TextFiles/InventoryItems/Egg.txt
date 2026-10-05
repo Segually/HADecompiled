@@ -1,0 +1,16 @@
+Description_TAI = นำไปใส่ในเครื่องหลอมไข่เพื่อสร้างสัตว์เลี้ยง!
+Name_TAI = ไข่
+Description_POR = Coloque-o em um Fundidor de Ovo para criar um mascote!
+Description_SPN = Ponlo en un Fusionador de Huevos para crear una mascota.
+Description_RUS = Положите это в Яйцесоединитель, чтобы создать питомца!
+Description_IND = Masukkan ke dalam Penggabung Telur untuk membuat hewan peliharaan!
+Name_POR = Ovo
+Name_SPN = Huevo
+Name_RUS = Яйцо
+Name_IND = Telur
+Description = Put it in an Egg Fuser to make a pet!
+
+Inventory_sprite_path = item egg
+Market Cost = 150
+
+NumSell = 1 to 2

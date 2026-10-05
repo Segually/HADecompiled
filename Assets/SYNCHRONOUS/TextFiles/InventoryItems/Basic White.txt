@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณเป็นสีขาว!
+Name_TAI = พื้นฐาน สีขาว
+Description_POR = Pinte seus móveis de branco!
+Description_SPN = ¡Pinta tus muebles de blanco!
+Description_RUS = Покрасьте вашу мебель в белый цвет!
+Description_IND = Cat perabotan Anda menjadi Putih!
+Name_POR = Branco Básico
+Name_SPN = Blanco Básico
+Name_RUS = Базовый белый
+Name_IND = Putih Dasar
+Description =  Paint your furniture White!
+
+Inventory_sprite_path = item paint basic white
+Crafting_ingredient_A = Bones
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Snowball
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

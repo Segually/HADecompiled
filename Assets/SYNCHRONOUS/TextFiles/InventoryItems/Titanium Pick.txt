@@ -1,0 +1,27 @@
+Description_TAI = สามารถ ขุด หา ชาร์ด มืด และ ชาร์ด น้ำแข็ง ได้
+Name_TAI = ขวาน ไทเทเนียม
+Description_POR = Permite que você minere fragmento escuro e fragmento de gelo.
+Description_SPN = Te permite minar fragmento oscuro y fragmento de hielo.
+Description_RUS = Позволяет добывать темный осколок и ледяной осколок.
+Description_IND = Memungkinkan Anda untuk menambang pecahan gelap dan pecahan es.
+Name_POR = Picareta de Titânio
+Name_SPN = Pico de titanio
+Name_RUS = Титановая кирка
+Name_IND = Belati Titanium
+Description = Allows you to mine dark shard and ice shard.
+
+Inventory_sprite_path = item titanium pick
+Crafting_ingredient_A = Metal Pick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Titanium Bar
+Crafting_ingredient_B_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/PICK_titanium
+Equip_required_stat = Mining
+Equip_required_stat_lvl = 30
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Mining Tools
+
+weapon_display_copy = Wood Pick

@@ -1,0 +1,32 @@
+Description_TAI = หมวก กันน็อค น้ำหนักเบา สำหรับ ผู้กล้า ใน สนามรบ
+Name_TAI = หมวก เหล็ก ไทเทเนียม กองทัพ
+Description_POR = Um capacete leve para a elite do campo de batalha
+Description_SPN = Un casco ligero para la élite del campo de batalla
+Description_RUS = Легкий шлем для элиты на поле боя.
+Description_IND = Sebuah helm ringan untuk pasukan elit medan perang.
+Name_POR = Elmo da Legião de Titânio
+Name_SPN = Yelmo de la Legión de Titanio
+Name_RUS = Титановый шлем легиона
+Name_IND = Helm Legiun Titanium
+Description = A lightweight helmet for the battlefield elite
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/LegionHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+CopyPaintLayout = Metal Legion Helm
+Default Coloring = Weapon - Titanium
+
+show_model3d = true
+Copy3dModelPosition = Metal Legion Helm
+
+Defend Amount = 4
+
+Vendor0 = Armor
+NumSell = 1 to 2

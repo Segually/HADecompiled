@@ -1,0 +1,34 @@
+Description_TAI = หมวกเหล็ก เวทมนตร์ ที่เต็มไปด้วย พลัง ที่ถูกลืม
+Name_TAI = หมวกโบราณ ลี้ลับ
+Description_POR = Elmo arcano imbuído com poderes esquecidos.
+Description_SPN = Yelmo arcano imbuido con poderes olvidados
+Description_RUS = Арканный шлем, наделенный забытыми силами.
+Description_IND = Topi baja gaib yang dipenuhi kekuatan terlupakan
+Name_POR = Elmo Ancestral Eldritch
+Name_SPN = Yelmo Antiguo de Eldritch
+Name_RUS = Древний Шлем Элдритч
+Name_IND = Helm Eldritch Kuno
+Description = Arcane helm imbued with forgotten powers
+
+Crafting_ingredient_A = Ancient Bones
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/EldritchHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 102
+Craft_required_lvl = 144
+Market Cost = CALCULATE
+
+Defend Amount = 34
+
+CopyPaintLayout = Spirit Eldritch Helm
+Default Coloring = Weapon - Ancient
+
+show_model3d = true
+Copy3dModelPosition = Spirit Eldritch Helm
+
+Vendor0 = Armor
+NumSell = 1 to 2

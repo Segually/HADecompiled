@@ -1,0 +1,42 @@
+Description_TAI = สำหรับ ทำ อาหาร และ ยา
+Name_TAI = หม้อ ต้ม ยา
+Description_POR = Para fazer comida e poções
+Description_SPN = Para hacer alimentos y pociones
+Description_RUS = Для приготовления еды и зелий
+Description_IND = Untuk membuat makanan dan ramuan
+Name_POR = Caldeirão
+Name_SPN = Caldero
+Name_RUS = Котел
+Name_IND = Kuali besar
+Description = For making food and potions
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Cauldron
+World_geometry = 1_by_1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Potion Accessories
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-3, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+Default Coloring = Debug - Metal V DK
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+PaintLayout0_Goldy = 0-2, 1-1, 2-3, 
+
+model3d_fov = 37.5
+show_model3d = true
+model3d_camDist = 2.7
+model3d_yRot = 30
+model3d_xRot = -125
+model3d_recenterY = 14
+model3d_recenterX = 0
+model3d_objRot = 1
+

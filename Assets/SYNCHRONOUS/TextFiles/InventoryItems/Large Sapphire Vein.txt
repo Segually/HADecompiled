@@ -1,0 +1,17 @@
+Name_TAI = สาย แร่ ไพลิน ขนาด ใหญ่
+Name_POR = Grande Veia de Safira
+Name_SPN = Veta Grande de Zafiro
+Name_RUS = Крупная сапфировая жила
+Name_IND = Urat Safir Besar
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Large Sapphire Vein
+World_geometry = 3_by_3
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 15
+Pollinator Regen RespawnId = mob_spawn

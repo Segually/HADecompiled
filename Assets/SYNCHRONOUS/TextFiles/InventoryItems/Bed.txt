@@ -1,0 +1,42 @@
+Description_TAI = จำเป็น ต้อง นอน หลับ เพื่อ ความ สวยงาม
+Name_TAI = เตียง ขนาด เล็ก
+Description_POR = Sono de beleza necessário.
+Description_SPN = Sueño reparador necesario.
+Description_RUS = Требуется сон красоты.
+Description_IND = Tidur cantik diperlukan.
+Name_POR = Cama Pequena
+Name_SPN = Cama Pequeña
+Name_RUS = Маленькая кровать
+Name_IND = Tempat Tidur Kecil
+Overwrite_name = Small Bed
+Description = Beauty sleep required.
+
+Inventory_sprite_path = item bed
+Crafting_ingredient_A = Cotton
+Crafting_ingredient_A_count = 6
+Crafting_ingredient_B = Stick
+Crafting_ingredient_B_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Bed
+World_geometry = x_plus_1
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-4, 2-2, 3-3, 
+PaintLayout0_Pastels = 0-3, 1-2, 2-1, 3-1, 
+PaintLayout0_Trimmed = 0-2, 1-1, 2-1, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-1, 2-2, 3-3, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 3-3, 
+Default Coloring = Debug - Wood & Blue
+model3d_camDist = 3.9
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -100
+model3d_camHeight = 0.3
+model3d_yRot = 40
+model3d_recenterX = -14
+model3d_recenterY = -17
+PaintLayout0_Nomad = 0-1, 1-4, 2-2, 3-3, 
+PaintLayout0_Goldy = 0-2, 1-5, 2-1, 3-2, 

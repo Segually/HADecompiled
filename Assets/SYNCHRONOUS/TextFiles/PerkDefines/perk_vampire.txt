@@ -1,0 +1,16 @@
+Full Name = Vampire
+Description = Drain your enemy's health for yourself!
+Detailed Description = GetInt[EFFECT_VAMPIRE, "Steal HP", remove ""] damage DiffInt[EFFECT_VAMPIRE, "Steal HP", add ""] per second for GetInt[EFFECT_VAMPIRE, "Duration", remove " seconds"] seconds DiffInt[EFFECT_VAMPIRE, "Duration", remove " seconds", add " seconds"] on target. +GetInt[EFFECT_VAMPIRE, "Steal HP", remove ""] health points DiffInt[EFFECT_VAMPIRE, "Steal HP", add ""] per second for GetInt[EFFECT_VAMPIRE, "Duration", remove " seconds"] seconds DiffInt[EFFECT_VAMPIRE, "Duration", remove " seconds", add " seconds"] on self.
+Large Upgrade Description Box = true
+Energy Cost = 40%
+Unlock Prerequisite = perk_weaken(lvl.2)
+On cast = [EFFECT_VAMPIRE] on projectile(model=perk_vampire_projectile,target=enemies)
+-
+[EFFECT_VAMPIRE]
+Type = Duration Effect
+Steal HP = RANGE (1%-2.5%-4% of own HP)
+Duration = CLAMP (3 seconds @ lvl_1 ... 7 seconds @ lvl_15)
+Particle (Duration) = perk_vampire_duration
+Scale Particle With Creature Size = true
+Apply every = 1 seconds
+Splat color = purple

@@ -1,0 +1,10 @@
+[1][max_stack=10] Rushers
+[16] Jam
+[21] Salmonberry Scone
+[30] Bone Juice
+[30] Charm Bomb
+[33] Moonberry Juice
+[64] Matcha
+[89] Red Curry
+[138] Expando Bread
+[596] Super Jam

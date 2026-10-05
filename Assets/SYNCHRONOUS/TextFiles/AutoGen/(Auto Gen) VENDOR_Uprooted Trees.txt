@@ -1,0 +1,10 @@
+[2] Rotting Stump
+[25] Frozen Tree
+[25] Mossy Tree
+[30] Birch Tree (Variant 1)
+[30] Birch Tree (Variant 2)
+[30] Evergreen Tree
+[30] Large Mossy Tree
+[30] Sakura Tree
+[60] Palm Tree
+[60] Willow Tree

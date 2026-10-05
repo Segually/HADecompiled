@@ -1,0 +1,57 @@
+*auto_version=6*
+
+[3,9] = Dirt Path (rot 0)
+
+[4,9] = Dirt Path (rot 0)
+
+[4,8] = Dirt Path (rot 0)
+
+[4,7] = Dirt Path (rot 0)
+
+[3,8] = Dirt Path (rot 0)
+
+[3,7] = Dirt Path (rot 0)
+
+[2,9] = Dirt Path (rot 0)
+
+[2,8] = Dirt Path (rot 0)
+
+[2,7] = Dirt Path (rot 0)
+
+[2,6] = Dirt Path (rot 0)
+
+[3,6] = Dirt Path (rot 0)
+
+[4,6] = Dirt Path (rot 0)
+
+[5,7] = Dirt Path (rot 0)
+
+[5,8] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[5,9] = Torch (rot 0)
+	paint = *string* Glacier
+
+[3,5] = Dirt Path (rot 0)
+
+[3,4] = Dirt Path (rot 0)
+
+[1,8] = DEBUG-npc (rot 3)
+	npc_file = *string* King Wing (at bandit camp)
+	creature_A = *string* eagle
+	creature_B = *string* samurai
+	npc_icon = *string* Info_giver
+	voice = *string* dragon
+
+[4,4] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[5,6] = Dirt Path (rot 0)
+
+[2,4] = Dirt Path (rot 0)
+
+[1,6] = Torch (rot 0)
+	paint = *string* Glacier
+

@@ -1,0 +1,39 @@
+*auto_version=14*
+
+[8,2] = DEBUG-npc (rot 1)
+	npc_file = *string* FREE FOLLOWER - shindo castle
+	npc_is_free_follower = *string* true
+	hat = *string* Wizard Hat
+	hat_paint = *string* Glacier
+	body = *string* Metal Armor
+	armor_paint = *string* Glacier
+	npc_icon = *string* Happy_face
+
+[3,1] = Weapon Display (rot 0)
+	password = *string* DEV_LOCKED
+	wep = *string* Ice DoubleSword
+	paint = *string* King of Spades
+
+[5,5] = Anvil (rot 1)
+	paint = *string* Marble White
+
+[0,4] = Huge Coin Hoard (rot 1)
+
+[3,3] = Large Weapon Display (rot 0)
+	password = *string* DEV_LOCKED
+	wep = *string* Metal Sword
+	wep2 = *string* Metal Sword
+	paint = *string* King of Spades
+
+[0,1] = Coin Hoard (rot 1)
+
+[8,2] = Metal Chair (rot 2)
+	paint = *string* Marble White
+
+[7,5] = Armor Display (rot 0)
+	password = *string* DEV_LOCKED
+	body = *string* Metal Armor
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* King of Spades
+

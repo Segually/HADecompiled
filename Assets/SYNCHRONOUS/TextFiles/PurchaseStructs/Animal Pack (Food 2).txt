@@ -1,0 +1,12 @@
+Description = Adds animals: banana, pineapple, cookie, cupcake, watermelon
+IAP_KEY = creature_pack_6
+Type = permanent
+Gem_price = medium
+Bg_color = light_orange
+Model_path = shop_creaturePack6
+
+animal0 = banana
+animal1 = pineapple
+animal2 = cookie
+animal3 = cupcake
+animal4 = watermelon

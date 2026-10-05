@@ -1,0 +1,46 @@
+Description_TAI = ช่วย ให้ คุณ สามารถ แสดง อาวุธ สอง ชิ้น เป็น เฟอร์นิเจอร์
+Name_TAI = อาวุธ ขนาด ใหญ่ แสดง
+Description_POR = Permite exibir duas armas como móveis.
+Description_SPN = Te permite exhibir dos armas como muebles
+Description_RUS = Позволяет отображать два оружия в виде мебели.
+Description_IND = Memungkinkan Anda menampilkan dua senjata sebagai furnitur.
+Name_POR = Grande Expositor de Armas
+Name_SPN = Gran Exhibidor de Armas
+Name_RUS = Дисплей для Большого Оружия
+Name_IND = Pajangan Senjata Besar
+Overwrite_name = Big Weapon Display
+Description = Allows you to display two weapons as furniture
+
+Inventory_sprite_path = item large weapon display
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 8
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Large Weapon Display
+World_geometry = 1_by_1
+Craft_required_lvl = 60
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Weapon Accessories
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-2, 1-3, 2-1, 
+PaintLayout0_SolidColors = 0-5, 1-1, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_5cols = 0-0, 1-0, 2-0, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 
+Default Coloring = Debug - Wood DK
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -95
+model3d_camHeight = 0.3
+model3d_yRot = 35
+model3d_recenterX = 1
+model3d_recenterY = 3
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 

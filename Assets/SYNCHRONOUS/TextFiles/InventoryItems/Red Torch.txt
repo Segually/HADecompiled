@@ -1,0 +1,27 @@
+Description_TAI = คบเพลิง ที่ หายาก ซึ่ง มี เปลวไฟ สีแดง
+Name_TAI = คบเพลิง สีแดง
+Description_POR = Uma tocha rara que tem uma chama vermelha
+Description_SPN = Una antorcha rara que tiene una llama roja.
+Description_RUS = Редкий факел с красным пламенем.
+Description_IND = Obor langka yang memiliki nyala api merah.
+Name_POR = Tocha Vermelha
+Name_SPN = Antorcha Roja
+Name_RUS = Красный факел
+Name_IND = Obor Merah
+Description = A rare torch that has a red flame
+
+Inventory_sprite_path = item red torch
+Type = Place_in_world
+World_obj_path = Buildables/Red Torch
+World_geometry = 1_by_1
+Market Cost = 200
+
+Vendor0 = Furniture
+
+CopyPaintLayout = Torch
+Default Coloring = Debug - Metal DK
+
+show_model3d = true
+Copy3dModelPosition = Torch
+
+NumSell = 1 to 2

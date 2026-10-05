@@ -1,0 +1,47 @@
+*auto_version=15*
+*is_blank=true*
+*forced_biome=1*
+
+[8,2] = Castle (rot 1)
+	shack_id = *long* 9054
+	paint = *string* Glacier
+	stamp = *string* Snowflake Stamp
+
+[4,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[7,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,2] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,0] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,1] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[9,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[8,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[5,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,3] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,4] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[3,5] = Palisade Wall (rot 0)
+	paint = *string* Glacier
+
+[6,0] = Stone Vein (Snowy) (rot 2)
+

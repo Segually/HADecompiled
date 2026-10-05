@@ -1,0 +1,10 @@
+Name_TAI = ดีบั๊ก - เควสต์ - เฮดเดอร์ - อีควอลส์
+Name_POR = DEBUG-missão-cabeçalho-igual
+Name_SPN = DEBUG-encabezado-de-misión-igual
+Name_RUS = ОТЛАДКА-квест-заголовок-равняется
+Name_IND = DEBUG-quest-header-sama dengan
+
+Inventory_sprite_path = item quest header equals
+
+not_obtainable = true
+

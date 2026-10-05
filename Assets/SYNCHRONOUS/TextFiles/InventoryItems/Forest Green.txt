@@ -1,0 +1,29 @@
+Description_TAI = ใช้ สำหรับ ทาสี เฟอร์นิเจอร์
+Name_TAI = ป่า สีเขียว
+Description_POR = Usado para pintar móveis.
+Description_SPN = Se utiliza para pintar muebles.
+Description_RUS = Используется для покраски мебели.
+Description_IND = Digunakan untuk mengecat furnitur.
+Name_POR = Verde Floresta
+Name_SPN = Verde Bosque
+Name_RUS = Лесной зелёный
+Name_IND = Hutan Hijau
+Description = Used to paint furniture.
+
+Inventory_sprite_path = item paint forest green
+Crafting_ingredient_A = Basic Green
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stick
+Crafting_ingredient_B_count = 5
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

@@ -1,0 +1,11 @@
+Name_TAI = แร่ ยูเรเนียม
+Name_POR = Minério de Urânio
+Name_SPN = Mineral de uranio
+Name_RUS = Урановая руда
+Name_IND = Bijih Uranium
+
+Inventory_sprite_path = item uranium ore
+Market Cost = 50
+
+Vendor0 = Ores
+NumSell = 3 to 6

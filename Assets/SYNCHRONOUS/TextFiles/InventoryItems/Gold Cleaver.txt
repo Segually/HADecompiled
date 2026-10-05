@@ -1,0 +1,34 @@
+Description_TAI = ดาบ ทอง อัน ใหญ่โต ทั้ง ทรงพลัง และ ยิ่งใหญ่
+Name_TAI = มีดสั้น ทองคำ
+Description_POR = Uma enorme espada de ouro, tanto devastadora quanto grandiosa.
+Description_SPN = Una enorme espada de oro, tanto devastadora como grandiosa.
+Description_RUS = Огромный золотой меч, и разрушительный, и величественный.
+Description_IND = Pedang emas besar, baik menghancurkan maupun megah
+Name_POR = Cutelo de Ouro
+Name_SPN = Hacha de Oro
+Name_RUS = Золотой тесак
+Name_IND = Kapak Emas
+Description = A huge gold sword, both devastating and grand
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/BigSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+NumSell = 1 to 2
+
+Damage Base = 9
+
+CopyPaintLayout = Metal Cleaver
+Default Coloring = Weapon - Gold
+
+show_model3d = true
+Copy3dModelPosition = Metal Cleaver
+
+weapon_display_copy = Metal Cleaver

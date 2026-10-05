@@ -1,0 +1,38 @@
+Description_TAI = วิธี ที่ หรูหรา ใน การ ส่องสว่าง ถนน
+Name_TAI = เสา โคมไฟ โลหะ
+Description_POR = Uma maneira elegante de iluminar a rua.
+Description_SPN = Una manera elegante de iluminar la calle
+Description_RUS = Элегантный способ освещения улицы.
+Description_IND = Cara mewah untuk menerangi jalan.
+Name_POR = Poste de Lâmpada de Metal
+Name_SPN = Poste de Lámpara de Metal
+Name_RUS = Металлический Фонарный Столб
+Name_IND = Tiang Lampu Logam
+Description = A fancy way to light up the street
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 4
+Type = Place_in_world
+World_obj_path = Buildables/Metal Lamp Post
+World_geometry = 1_by_1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 2 to 4
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-6, 2-5, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+Default Coloring = Debug - Metal DK
+model3d_fov = 70
+show_model3d = true
+model3d_camDist = 3.2
+model3d_camHeight = 1.7
+model3d_yRot = 20
+model3d_recenterY = 0
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

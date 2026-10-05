@@ -1,0 +1,12 @@
+Name_TAI = ห้อง ใต้ดิน ของ โลก พกพา
+Name_POR = Porão do Mundo de Bolso
+Name_SPN = Sótano de Mundo de Bolsillo
+Name_RUS = Карманный мир: Подвал
+Name_IND = Ruang Bawah Tanah Dunia Saku
+
+Type = Place_in_world
+World_obj_path = Buildables/Pocket World Basement
+World_geometry = 1_by_1
+
+not_obtainable = true
+

@@ -1,0 +1,22 @@
+Description_TAI = ต้นไม้ สีฟ้า ขนาดใหญ่ ที่มีใบเป็นเส้นๆ
+Name_TAI = ต้น ไม้ หอม
+Description_POR = Uma grande árvore ciano com folhas finas.
+Description_SPN = Un gran árbol cian con hojas filamentosas
+Description_RUS = Большое голубовато-зеленое дерево с длинными листьями.
+Description_IND = Pohon besar berwarna sian dengan daun-daun yang bercabang-cabang.
+Name_POR = Salgueiro
+Name_SPN = Árbol de sauce
+Name_RUS = Ива
+Name_IND = Pohon Willow
+Description = A large cyan tree with stringy leaves
+
+Inventory_sprite_path = item willow tree
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Willow Tree
+World_geometry = 2_by_2
+Market Cost = 60
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 2

@@ -1,0 +1,26 @@
+Full Name = Ink Squirt
+Description = Makes it hard for your enemy to see!
+Detailed Description = Chaotic movement and GetFloat[EFFECT_INK, "Walk Speed", remove "%"]% Walk Speed DiffFloat[EFFECT_INK, "Walk Speed", remove "%", add "%"] for GetInt[EFFECT_INK, "Duration", remove " seconds"] seconds DiffInt[EFFECT_INK, "Duration", remove " seconds", add " seconds"] on mob targets.
+Ultra Detailed Description = Does not cause chaotic movement for Online players. In Online Mode, ink will splatter all over the target's screen, making it difficult to see. Accuracy of target reduced to GetFloat[EFFECT_INK, "Accuracy Percent Mod On Attack Other", remove "%"]%.
+Energy Cost = 65%
+On cast = [EFFECT_INK,EFFECT_SCREEN_OVERLAY,EFFECT_LOSE_ALL_TARGETS] on projectile(model=perk_ink_cannon_projectile,target=enemies)
+Max level = 12
+-
+[EFFECT_INK]
+Type = Duration Effect
+Change skin mat = Black Inked
+Duration = CLAMP (3 seconds @ lvl_1 ... 11 seconds @ lvl_12)
+Particle (Duration) = perk_ink_cannon_duration
+Scale Particle With Creature Size = true
+Walk Speed = 80%
+Custom Brain = Chaotic
+Accuracy Percent Mod On Attack Other = 85%
+-
+[EFFECT_SCREEN_OVERLAY]
+Type = Duration Effect
+Duration = CLAMP (3 seconds @ lvl_1 ... 11 seconds @ lvl_12)
+Particle (Screen Overlay) = perk_ink_cannon_overlay
+-
+[EFFECT_LOSE_ALL_TARGETS]
+Type = Instant Effect
+Lose All Targets In Online Mode = true

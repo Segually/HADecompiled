@@ -1,0 +1,20 @@
+Name_TAI = หิน สายแร่ (ซากุระ)
+Name_POR = Veia de Pedra (Sakura)
+Name_SPN = Veta de Piedra (Sakura)
+Name_RUS = Каменная жила (Сакура)
+Name_IND = Urat Batu (Sakura)
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Stone Vein (Sakura)
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+show_model3d = true
+Copy3dModelPosition = Stone Vein
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = mob_spawn

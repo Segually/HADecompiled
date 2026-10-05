@@ -1,0 +1,11 @@
+Name_TAI = ม็อด ที่ดิน อ้างสิทธิ์
+Name_POR = Mod de Reivindicação de Terreno
+Name_SPN = Mod de Reclamo de Terreno
+Name_RUS = Мод Захват Территории
+Name_IND = Mod Klaim Lahan
+Overwrite_name = Mod Land Claim
+
+Inventory_sprite_path = item land claim admin
+Type = Place_in_world
+World_obj_path = Buildables/Land Claim - Admin
+World_geometry = 1_by_1

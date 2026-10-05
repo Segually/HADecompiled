@@ -1,0 +1,24 @@
+Description_TAI = ฟื้นฟู พลังชีวิต บางส่วน เมื่อ ใช้งาน
+Name_TAI = ถั่ว อบ
+Description_POR = Cura um pouco de saúde quando usado.
+Description_SPN = Cura algo de salud cuando se usa.
+Description_RUS = Восстанавливает некоторое количество здоровья при использовании.
+Description_IND = Menyembuhkan sebagian kesehatan saat digunakan.
+Name_POR = Nozes Torradas
+Name_SPN = Nueces Tostadas
+Name_RUS = Поджаренные орехи
+Name_IND = Kacang Panggang
+Description = Heals some health when used.
+
+Inventory_sprite_path = item toasted nuts
+Crafting_ingredient_A = Nut
+Crafting_ingredient_A_count = 2
+Crafting_makes = 5
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Crunch
+Sound on Craft = Bubbles
+Max_stack = 5
+
+Vendor0 = Food
+NumSell = 6 to 12

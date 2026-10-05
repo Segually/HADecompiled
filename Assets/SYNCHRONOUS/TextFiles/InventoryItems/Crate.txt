@@ -1,0 +1,41 @@
+Description_TAI = ภาชนะ ขนาดใหญ่ พร้อม พื้นที่ เก็บของ 2 หน้า!
+Name_TAI = ลัง
+Description_POR = Contêiner enorme com 2 páginas de armazenamento!
+Description_SPN = ¡Contenedor enorme con 2 páginas de almacenamiento!
+Description_RUS = Огромный контейнер с 2 страницами хранения!
+Description_IND = Kontainer besar dengan 2 halaman penyimpanan!
+Name_POR = Caixa
+Name_SPN = Caja
+Name_RUS = Ящик
+Name_IND = Peti
+Description = Huge container with 2 pages of storage!
+
+Type = Place_in_world
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 20
+World_obj_path = Buildables/Crate
+World_geometry = 1_by_1
+Craft_required_lvl = 60
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 1 to 3
+
+paintable_by_player = true
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 
+PaintLayout0_SolidColors = 0-1, 1-2, 2-5, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-1, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 
+Default Coloring = Debug - Tan
+
+model3d_fov = 32.5
+show_model3d = true
+model3d_camDist = 3.8
+model3d_yRot = 25
+model3d_xRot = -95
+model3d_camHeight = 0.1
+model3d_recenterY = 15
+model3d_recenterX = 0
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-3, 2-1, 

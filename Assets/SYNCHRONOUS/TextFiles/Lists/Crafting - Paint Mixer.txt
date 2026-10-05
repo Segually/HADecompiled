@@ -1,0 +1,18 @@
+Paint Thinner
+Basic Red
+Basic Green
+Basic Blue
+Basic Brown
+Basic Yellow
+Basic Orange
+Basic Pink
+Basic Cyan
+Basic White
+Basic Purple
+Basic Black
+Spirit Grey
+Storm Grey
+Olive Green
+Glacier
+Pinewood
+Gold Leaf

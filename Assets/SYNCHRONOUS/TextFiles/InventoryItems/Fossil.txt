@@ -1,0 +1,17 @@
+Description_TAI = หิน โบราณ ที่ มี รอย ประทับ ของ สัตว์
+Name_TAI = ซาก ดึกดำบรรพ์
+Description_POR = Uma pedra antiga com a impressão de um animal.
+Description_SPN = Una piedra antigua con la impresión de un animal.
+Description_RUS = Древний камень с отпечатком животного
+Description_IND = Sebuah batu kuno dengan kesan seekor binatang
+Name_POR = Fóssil
+Name_SPN = Fósil
+Name_RUS = Окаменелость
+Name_IND = Fosil
+Description = An ancient stone with an impression of an animal
+
+Inventory_sprite_path = item fossil
+Market Cost = 100
+
+Vendor0 = Harvested Item
+Vendor1 = Ores

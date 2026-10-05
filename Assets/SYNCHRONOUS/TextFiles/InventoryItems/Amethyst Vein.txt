@@ -1,0 +1,17 @@
+Name_TAI = เส้น เลือด พลอย อเมทิสต์
+Name_POR = Veia de Ametista
+Name_SPN = Veta de Amatista
+Name_RUS = Аметистовая жила
+Name_IND = Urat Amethyst
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Amethyst Vein
+World_geometry = 1_by_1
+
+not_obtainable = true
+
+
+tool_required_to_move = Drill
+
+Pollinator Regen Level = 15
+Pollinator Regen RespawnId = mob_spawn

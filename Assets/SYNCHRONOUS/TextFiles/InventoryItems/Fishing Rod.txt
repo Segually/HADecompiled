@@ -1,0 +1,17 @@
+Description_TAI = I'm sorry, but it seems there is no item description provided for translation. Could you please provide the text you want translated into Thai?
+Name_TAI = คัน เบ็ด ตก ปลา
+Description_POR = ???
+Description_SPN = ???
+Description_RUS = Извините, мне нужно немного больше информации, чтобы помочь вам. Можете предоставить описание предмета, которое вы хотите перевести?
+Description_IND = Maaf, saya tidak dapat menerjemahkan teks yang tidak jelas. Mohon berikan deskripsi item yang lengkap untuk diterjemahkan.
+Name_POR = Vara de Pesca
+Name_SPN = Caña de pescar
+Name_RUS = Удочка
+Name_IND = Pancing
+Description = ???
+
+Type = Holdable
+World_obj_path = Equipment/holdables/Fishing Rod
+
+not_obtainable = true
+

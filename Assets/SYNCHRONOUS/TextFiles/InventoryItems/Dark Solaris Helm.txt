@@ -1,0 +1,46 @@
+Description_TAI = หมวกเหล็ก น่ากลัว มีสไตล์เหมือนดวงอาทิตย์มืด เหมาะสำหรับทรราช
+Name_TAI = หมวก เหล็ก แสง อาทิตย์ ทมิฬ
+Description_POR = Elmo ameaçador com estilo de sol negro, adequado para um tirano.
+Description_SPN = Yelmo amenazante con el estilo de un sol oscuro, adecuado para un tirano.
+Description_RUS = Зловещий шлем, стилизованный под темное солнце, подходит для тирана.
+Description_IND = Helm menakutkan bergaya seperti matahari gelap, cocok untuk seorang tiran.
+Name_POR = Elmo do Solaris Sombrio
+Name_SPN = Yelmo de Solaris Oscuro
+Name_RUS = Шлем Тёмного Соляриса
+Name_IND = Helm Solaris Gelap
+Description = Menacing helm styled like a dark sun, suited for a tyrant
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/SolarisHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 54
+Craft_required_lvl = 78
+Market Cost = CALCULATE
+
+Default Coloring = Weapon - Dark
+PaintLayout0_SolidColors = 0-2, 1-4, 2-1, 3-6, 
+
+Defend Amount = 20
+
+model3d_camDist = 1.3
+show_model3d = true
+model3d_fov = 50
+model3d_xRot = -80
+model3d_objRot = 2
+model3d_recenterY = 7
+model3d_recenterX = 2
+model3d_yRot = 10
+
+Vendor0 = Armor
+NumSell = 1 to 2
+model3d_camHeight = 0
+ParticleTransform0 = -2.861489E-06,1.18,0.003986531:0,0,0,1:1,1,1:CONE:0.2:1
+PaintLayout0_TriColor = 0-1, 1-2, 2-2, 3-3, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-4, 3-2, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-2, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 3-3, 
+PaintLayout0_Nomad = 0-1, 1-2, 2-4, 3-3, 

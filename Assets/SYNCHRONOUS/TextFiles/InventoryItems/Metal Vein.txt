@@ -1,0 +1,17 @@
+Name_TAI = สาย แร่ โลหะ
+Name_POR = Veia de Metal
+Name_SPN = Veta de metal
+Name_RUS = Металлическая Жила
+Name_IND = Urat Logam
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Metal Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 3
+Pollinator Regen RespawnId = mob_spawn

@@ -1,0 +1,23 @@
+Description_TAI = ให้ คุณ +30 exp
+Name_TAI = น้ำ กระดูก
+Description_POR = Concede +30 exp
+Description_SPN = Te otorga +30 exp
+Description_RUS = Дает вам +30 опыта
+Description_IND = Memberikanmu +30 exp
+Name_POR = Suco de Osso
+Name_SPN = Jugo de Hueso
+Name_RUS = Костяной сок
+Name_IND = Jus Tulang
+Description = Gives you +30 exp
+
+Inventory_sprite_path = item bone juice
+Crafting_ingredient_A = Bones
+Crafting_ingredient_A_count = 3
+Type = Consumable
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+NumSell = 3 to 6

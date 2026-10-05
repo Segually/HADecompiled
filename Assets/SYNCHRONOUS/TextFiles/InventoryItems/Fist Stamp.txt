@@ -1,0 +1,27 @@
+Description_POR = Um punho erguido
+Description_TAI = กำปั้น ที่ ยก ขึ้น
+Description_SPN = Un puño en alto
+Description_RUS = Поднятый кулак
+Description_IND = Kepalan tangan terangkat
+Name_POR = Carimbo de Punho
+Name_TAI = ตราประทับ หมัด
+Name_SPN = Sello de Puño
+Name_RUS = Печать кулака
+Name_IND = Stempel Tinju
+Description = A raised fist
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

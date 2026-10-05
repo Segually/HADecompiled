@@ -1,0 +1,22 @@
+*auto_version=5*
+
+[1,8] = Chest (rot 1)
+	basket_id = *long* 9047
+	paint = *string* Basic Black
+
+[2,8] = Chest (rot 1)
+	basket_id = *long* 9048
+	paint = *string* Basic Black
+
+[3,8] = Chest (rot 1)
+	basket_id = *long* 9049
+	paint = *string* Basic Black
+
+[4,8] = Chest (rot 1)
+	basket_id = *long* 9050
+	paint = *string* Basic Black
+
+[0,8] = Red Torch (rot 0)
+
+[5,8] = Red Torch (rot 0)
+

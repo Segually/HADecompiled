@@ -1,0 +1,11 @@
+*auto_version=4*
+
+[0,6] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,1] = Crate (rot 0)
+	password = *string* DEV_LOCKED
+
+[0,0] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+

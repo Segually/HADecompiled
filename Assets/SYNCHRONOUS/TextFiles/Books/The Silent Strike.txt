@@ -1,0 +1,95 @@
+[paint]
+Mystic Dusk
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+There is strength in silence, strength in the stillness of the night, like the blossom waiting to bloom.
+
+[page 2 - English]
+The Nightshade Bandits have no need to shout; our enemies know the sting of our strike before it ever lands.
+
+[page 3 - English]
+Just as flowers bloom in secret, we work in the shadows, preparing for the perfect moment.
+
+[page 4 - English]
+In the end, we will be the last to stand, for we know that everything, like a flower, eventually fades — except us.
+
+[book name - English]
+The Silent Strike
+
+[book name - Indonesian]
+Serangan Senyap
+
+[page 1 - Indonesian]
+Ada kekuatan dalam keheningan, kekuatan dalam ketenangan malam, seperti bunga yang menunggu untuk mekar.
+
+[page 2 - Indonesian]
+Perampok Belladonna tidak perlu berteriak; musuh-musuh kami tahu sengatan serangan kami sebelum itu mendarat.
+
+[page 3 - Indonesian]
+Seperti bunga yang mekar secara diam-diam, kami bekerja dalam bayang-bayang, menyiapkan momen yang sempurna.
+
+[page 4 - Indonesian]
+Pada akhirnya, kami akan menjadi yang terakhir berdiri, karena kami tahu bahwa segalanya, seperti bunga, pada akhirnya memudar — kecuali kami.
+
+[book name - Portuguese]
+O Golpe Silencioso
+
+[page 1 - Portuguese]
+Há força no silêncio, força na quietude da noite, como a flor esperando para florescer.
+
+[page 2 - Portuguese]
+Os Bandidos da Solanaceae não precisam gritar; nossos inimigos conhecem o impacto do nosso golpe antes mesmo de ele acontecer.
+
+[page 3 - Portuguese]
+Assim como as flores desabrocham em segredo, nós trabalhamos nas sombras, preparando-nos para o momento perfeito.
+
+[page 4 - Portuguese]
+No final, seremos os últimos a permanecer de pé, pois sabemos que tudo, assim como uma flor, eventualmente desaparece — exceto nós.
+
+[book name - Russian]
+Тихий Удар
+
+[page 1 - Russian]
+В тишине есть сила, сила в неподвижности ночи, как цветок, ждущий своего расцвета.
+
+[page 2 - Russian]
+Бандиты Ночной Тени не нуждаются в криках; наши враги знают остроту нашего удара прежде, чем он обрушится.
+
+[page 3 - Russian]
+Как цветы, тайно распускающиеся, мы работаем в тени, готовясь к идеальному моменту.
+
+[page 4 - Russian]
+В конце концов, мы будем последними стоять, потому что знаем, что всё, как цветок, со временем увядает — кроме нас.
+
+[book name - Spanish]
+El Golpe Silencioso
+
+[page 1 - Spanish]
+Hay fuerza en el silencio, fuerza en la quietud de la noche, como la flor esperando florecer.
+
+[page 2 - Spanish]
+Los Bandidos de la Belladona no necesitan gritar; nuestros enemigos conocen el aguijón de nuestro golpe antes de que suceda.
+
+[page 3 - Spanish]
+Así como las flores florecen en secreto, trabajamos en las sombras, preparándonos para el momento perfecto.
+
+[page 4 - Spanish]
+Al final, seremos los últimos en pie, pues sabemos que todo, como una flor, eventualmente se desvanece, excepto nosotros.
+
+[book name - Thai]
+การโจม ตีที่เ งียบสง บ
+
+[page 1 - Thai]
+มีพลัง ในความ เงียบ  พลังใน ความสง บของคื น เหมื อนดอกไ ม้ที่ร อเบ่งบ าน
+
+[page 2 - Thai]
+โจรไนท ์เชดไม ่จำเป็ นต้องต ะโกน ศ ัตรูขอ งเรารู ้ถึงคว ามเจ็บ ปวดของ การโจม ตีของเ ราก่อน มันจะม าถึง
+
+[page 3 - Thai]
+เช่นเด ียวกับ ดอกไม้ ที่เบ่ งบานใน ความลั บ เราท ำงานใน เงามืด  เตรีย มพร้อม สำหรับ ช่วงเว ลาที่เ หมาะสม
+
+[page 4 - Thai]
+ในที่ส ุด เรา จะเป็น คนสุดท ้ายที่ ยืนอยู ่ เพรา ะเรารู ้ว่าทุ กสิ่งท ุกอย่า ง เหมื อนดอกไ ม้ ในท ี่สุดก ็จางหา ย ยกเว ้นเรา

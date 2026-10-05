@@ -1,0 +1,45 @@
+Description_TAI = ช่วยให้ คุณ สามารถ แสดง อาวุธ เป็น เฟอร์นิเจอร์
+Name_TAI = อาวุธ แสดงผล
+Description_POR = Permite que você exiba uma arma como mobília
+Description_SPN = Te permite mostrar un arma como mueble.
+Description_RUS = Позволяет использовать оружие в качестве мебели.
+Description_IND = Memungkinkan Anda menampilkan senjata sebagai furnitur.
+Name_POR = Expositor de Armas
+Name_SPN = Pantalla de Armas
+Name_RUS = Демонстрация Оружия
+Name_IND = Tampilan Senjata
+Description = Allows you to display a weapon as furniture
+
+Inventory_sprite_path = item weapon display
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 6
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Weapon Display
+World_geometry = 1_by_1
+Craft_required_lvl = 54
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Weapon Accessories
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-3, 1-5, 2-1, 
+PaintLayout0_Pastels = 0-2, 1-1, 2-3, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-3, 1-1, 2-2, 
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+Default Coloring = Debug - Wood DK
+model3d_camDist = 2.8
+show_model3d = true
+model3d_fov = 32.5
+model3d_xRot = -100
+model3d_camHeight = 0.2
+model3d_yRot = 35
+model3d_recenterX = 1
+model3d_recenterY = 5
+model3d_objRot = 4
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

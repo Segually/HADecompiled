@@ -1,0 +1,69 @@
+*forced_floor_model=1*
+
+[7,4] = Loot Chest (rot 2)
+	basket_id = *long* 9026
+
+[7,3] = Coin Hoard (rot 2)
+
+[2,8] = RANDOM_BIOME_GEM (rot 2)
+
+[2,1] = BIOME_LARGE_STALAGMITE (rot 0)
+
+[1,9] = BIOME_SMALL_STALAGMITE (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,8] = DEBUG-1x1-fillempty (rot 0)
+
+[9,7] = DEBUG-1x1-fillempty (rot 0)
+
+[9,6] = DEBUG-1x1-fillempty (rot 0)
+
+[9,5] = DEBUG-1x1-fillempty (rot 0)
+
+[9,4] = DEBUG-1x1-fillempty (rot 0)
+
+[9,3] = DEBUG-1x1-fillempty (rot 0)
+
+[9,2] = DEBUG-1x1-fillempty (rot 0)
+
+[9,1] = DEBUG-1x1-fillempty (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[8,0] = DEBUG-1x1-fillempty (rot 0)
+
+[7,0] = DEBUG-1x1-fillempty (rot 0)
+
+[6,0] = DEBUG-1x1-fillempty (rot 0)
+
+[5,0] = DEBUG-1x1-fillempty (rot 0)
+
+[4,0] = DEBUG-1x1-fillempty (rot 0)
+
+[2,0] = DEBUG-1x1-fillempty (rot 0)
+
+[3,0] = DEBUG-1x1-fillempty (rot 0)
+
+[1,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,1] = DEBUG-1x1-fillempty (rot 0)
+
+[0,2] = DEBUG-1x1-fillempty (rot 0)
+
+[0,3] = DEBUG-1x1-fillempty (rot 0)
+
+[0,4] = DEBUG-1x1-fillempty (rot 0)
+
+[0,5] = DEBUG-1x1-fillempty (rot 0)
+
+[0,6] = DEBUG-1x1-fillempty (rot 0)
+
+[0,7] = DEBUG-1x1-fillempty (rot 0)
+
+[0,8] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+

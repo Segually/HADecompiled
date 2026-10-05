@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณเป็นสีดำ!
+Name_TAI = พื้นฐาน สีดำ
+Description_POR = Pinte seus móveis de preto!
+Description_SPN = ¡Pinta tus muebles de negro!
+Description_RUS = Покрасьте вашу мебель в черный цвет!
+Description_IND = Cat perabotan Anda menjadi hitam!
+Name_POR = Preto Básico
+Name_SPN = Negro Básico
+Name_RUS = Базовый Черный
+Name_IND = Hitam Dasar
+Description =  Paint your furniture Black!
+
+Inventory_sprite_path = item paint basic black
+Crafting_ingredient_A = Metal Ore
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stone Ore
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

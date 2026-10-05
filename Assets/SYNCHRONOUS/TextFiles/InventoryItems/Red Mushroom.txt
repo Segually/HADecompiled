@@ -1,0 +1,22 @@
+Description_TAI = เห็ด หายาก !
+Name_TAI = เห็ด สี แดง
+Description_POR = Um cogumelo raro!
+Description_SPN = ¡Un hongo raro!
+Description_RUS = Редкий гриб!
+Description_IND = Jamur langka!
+Name_POR = Cogumelo Vermelho
+Name_SPN = Hongo Rojo
+Name_RUS = Красный гриб
+Name_IND = Jamur Merah
+Description = A rare mushroom!
+
+Inventory_sprite_path = item red mushroom
+Type = Consumable
+Crafting_makes = 5
+Market Cost = 15
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 2 to 4

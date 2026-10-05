@@ -1,0 +1,12 @@
+Description = Adds animals: alpaca, unicorn, red panda, fox, mouse
+IAP_KEY = creature_pack_11
+Type = permanent
+Gem_price = medium
+Bg_color = pink
+Model_path = shop_creaturePack11
+
+animal0 = alpaca
+animal1 = unicorn
+animal2 = red panda
+animal3 = fox
+animal4 = mouse

@@ -1,0 +1,20 @@
+Name_TAI = ตรา
+Name_POR = Selo
+Name_SPN = Sello
+Name_RUS = Печать
+Name_IND = Stempel
+World_obj_path = 3D Item Graphics/Stamp
+
+Default Coloring = Utility Red
+
+show_model3d = true
+
+model3d_fov = 42.5
+model3d_camDist = 5.5
+model3d_xRot = -45
+model3d_objRot = 19
+model3d_camHeight = -0.7
+model3d_yRot = 20
+model3d_recenterY = 9
+model3d_recenterX = -27
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 

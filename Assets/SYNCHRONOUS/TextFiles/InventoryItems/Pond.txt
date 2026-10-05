@@ -1,0 +1,14 @@
+Name_TAI = บ่อน้ำ
+Name_POR = Lagoa
+Name_SPN = Estanque
+Name_RUS = Пруд
+Name_IND = Kolam
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Pond
+World_geometry = 5_by_5
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

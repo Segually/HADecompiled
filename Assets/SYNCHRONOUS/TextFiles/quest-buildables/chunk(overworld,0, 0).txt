@@ -1,0 +1,54 @@
+*auto_version=8*
+*is_blank=true*
+*forced_biome=0*
+
+[9,3] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[0,9] = Cobblestone Path (rot 0)
+
+[4,3] = Dirt Path (rot 0)
+
+[2,3] = Dirt Path (rot 0)
+
+[0,8] = Cobblestone Path (rot 0)
+
+[2,9] = Merchant Sign (rot 2)
+	stamp = *string* Fashion Stamp
+	sign_header = *string* Petunia's Clothing Shop
+	sign_text = *string* Because not everyone is part butterfly
+	paint = *string* Basic Blue
+
+[1,3] = Dirt Path (rot 0)
+
+[3,3] = Dirt Path (rot 0)
+
+[0,3] = Dirt Path (rot 0)
+
+[7,3] = Dirt Path (rot 0)
+
+[5,3] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[7,4] = DEBUG-npc (rot 0)
+	npc_file = *string* Cupcake Crab
+	creature_A = *string* cupcake
+	creature_B = *string* crab
+	npc_icon = *string* Merchant
+	npc_icon2 = *string* Quest
+	voice = *string* hedgehog
+	merchant_type = *string* BuyerOnly 2
+
+[8,4] = Torch (rot 0)
+
+[3,4] = Berry Bush (rot 0)
+
+[2,5] = Berry Bush (rot 0)
+
+[4,6] = Spawner - Sticks (rot 0)
+
+[7,7] = Large Stone Vein (rot 0)
+
+[1,0] = Green Blob (rot 0)

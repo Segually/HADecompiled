@@ -1,0 +1,74 @@
+[0][paintable][max_stack=10] Dirt Path
+[2][paintable] Old Torch
+[3][max_stack=5] Stick
+[4] Snowman
+[4][paintable][max_stack=10] Wood Rails
+[5][paintable][max_stack=10] Cobblestone Path
+[6][paintable] Stump Chair
+[6][paintable] Torch
+[8][paintable][max_stack=10] Palisade Wall
+[10][paintable] Crafting Table
+[10][paintable][max_stack=10] Stone Bricks
+[13][paintable] Basket
+[15] Old Land Claim
+[16][paintable] Sign
+[23][paintable][max_stack=10] Low Stone Wall
+[26][paintable] Chair
+[34][paintable][max_stack=10] Tall Stone Wall
+[35] Campfire
+[46][paintable] Loom
+[61][paintable] Small Table
+[69][paintable] Basic Rug
+[74][paintable] Bed
+[74][paintable] Chest
+[85][paintable] Navpost
+[96][paintable] Merchant Sign
+[100][paintable] Big Table
+[111][paintable] Circular Rug
+[133] Lock
+[138][paintable] Sofa Chair
+[150][paintable] Bonsai Tree
+[155][paintable][max_stack=10] Bouncy Floor
+[164][paintable] Metal Chair
+[173][paintable] Paint Mixer
+[200][paintable] Anvil
+[200] Blue Torch
+[200] Red Torch
+[214][paintable] Lamp Post
+[238][paintable] Bookshelf
+[247][paintable] Big Stone Head
+[254][paintable] Park Bench
+[258][paintable] Stone Lantern
+[283][paintable] Fancy Torch
+[284][paintable] Painting Easel
+[293][paintable] Cauldron
+[355] Grandfather Clock
+[372] Hunter Rug
+[374][paintable] Armor Display
+[398][paintable] Music Box
+[400] Holiday Lights
+[401] Hunter Rug White
+[454][paintable] Gravestone
+[489][paintable] Oven
+[511][paintable] Fireplace
+[516][paintable] Metal Lamp Post
+[527][paintable] Crate
+[625][paintable] Weapon Display
+[633] String Lights
+[709][paintable] Pool Table
+[800][paintable] Painting
+[879][paintable] Teleporter
+[915][paintable] Large Weapon Display
+[996][paintable] Stamp Maker
+[1158][paintable] Egg Fuser
+[1213][paintable] Double Crate
+[1231][paintable] Custom Statue
+[1844][paintable] Karaoke
+[2227][paintable] Paint Shaker
+[2539][paintable] Vending Machine
+[3341][paintable] Throne
+[4598] Blue String Lights
+[4598] Red String Lights
+[10000] Coin Hoard
+[24139][paintable] Crucible
+[30000] Huge Coin Hoard

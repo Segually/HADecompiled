@@ -1,0 +1,47 @@
+Description_TAI = หมวกเกราะ วิญญาณ ที่ ระยิบระยับ ระหว่าง มิติ
+Name_TAI = วิญญาณ เอลดริช หมวกเหล็ก
+Description_POR = Elmo espectral que oscila entre os reinos
+Description_SPN = Yelmo fantasmal que parpadea entre los reinos
+Description_RUS = Призрачный шлем, мерцающий между мирами
+Description_IND = Helm hantu yang berpendar di antara alam-alam.
+Name_POR = Elmo Espírita Ancestral
+Name_SPN = Yelmo Eldritch Espiritual
+Name_RUS = Шлем Древнего Духа
+Name_IND = Helm Arwah Eldritch
+Description = Ghostly helm that flickers between realms
+
+Crafting_ingredient_A = Spirit Branch
+Crafting_ingredient_A_count = 4
+Crafting_ingredient_B = Ice Shard
+Crafting_ingredient_B_count = 4
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/EldritchHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 114
+Craft_required_lvl = 168
+Market Cost = CALCULATE
+
+Default Coloring = Weapon - Spirit
+
+Defend Amount = 44
+
+PaintLayout0_SolidColors = 0-4, 1-6, 2-5, 3-2, 4-1, 
+model3d_camDist = 1.6
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -80
+model3d_objRot = 2
+model3d_recenterY = 8
+model3d_recenterX = -2
+model3d_yRot = 0
+
+Vendor0 = Armor
+NumSell = 1 to 2
+ParticleTransform0 = 0.01,0.99,0.011:-0.7071068,0,0,0.7071068:1,1,1:CONE:0.6:0.6
+PaintLayout0_Trimmed = 0-3, 1-3, 2-3, 3-2, 4-1, 
+PaintLayout0_Pastels = 0-2, 1-2, 2-3, 3-1, 4-1, 
+PaintLayout0_TriColor = 0-3, 1-3, 2-2, 3-1, 4-1, 
+PaintLayout0_Candycane = 0-3, 1-2, 2-2, 3-1, 4-1, 
+PaintLayout0_Nomad = 0-3, 1-5, 2-2, 3-4, 4-1, 
+PaintLayout0_Goldy = 0-3, 1-2, 2-2, 3-4, 4-1, 

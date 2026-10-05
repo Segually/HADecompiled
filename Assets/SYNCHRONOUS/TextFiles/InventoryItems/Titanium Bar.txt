@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ ขั้นสูง
+Name_TAI = แท่ง ไทเทเนียม
+Description_POR = Material avançado
+Description_SPN = Material avanzado
+Description_RUS = Продвинутый материал
+Description_IND = Material canggih
+Name_POR = Barra de Titânio
+Name_SPN = Barra de titanio
+Name_RUS = Титановый слиток
+Name_IND = Batangan Titanium
+Description = Advanced material
+
+Inventory_sprite_path = item titanium bar
+Crafting_ingredient_A = Titanium Ore
+Crafting_ingredient_A_count = 1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Refined Materials
+NumSell = 3 to 6

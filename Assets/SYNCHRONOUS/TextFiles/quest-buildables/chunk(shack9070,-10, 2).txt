@@ -1,0 +1,49 @@
+*auto_version=11*
+
+[3,5] = Hunter Rug White (rot 0)
+
+[3,6] = DEBUG-npc (rot 0)
+	npc_file = *string* Vitamin Ape
+	creature_A = *string* carrot
+	creature_B = *string* gorilla
+	npc_icon = *string* Merchant
+	npc_icon2 = *string* Quest
+	voice = *string* male
+	merchant_type = *string* Weapons And Armor 2
+
+[0,4] = Weapon Display (rot 0)
+	password = *string* DEV_LOCKED
+	wep = *string* Dark Scythe
+	paint = *string* Black & Gold
+
+[0,2] = Anvil (rot 0)
+	paint = *string* Black & Gold
+
+[7,2] = Large Weapon Display (rot 2)
+	password = *string* DEV_LOCKED
+	wep = *string* Metal Sword
+	wep2 = *string* Metal Sword
+	paint = *string* Black & Gold
+
+[7,4] = Chest (rot 2)
+	password = *string* DEV_LOCKED
+	basket_id = *long* 9036
+	quest_key_req = *string* VA_chest
+	paint = *string* Black & Gold
+
+[4,7] = Painting (rot 0)
+	dev_painting_id = *short* 2
+	paint = *string* Basic Black
+
+[6,7] = Bonsai Tree (rot 0)
+	bonsai_age = *short* 175
+	paint = *string* Gold Leaf
+
+[0,6] = Armor Display (rot 3)
+	password = *string* DEV_LOCKED
+	hat = *string* Dark Solaris Helm
+	body = *string* Dark Armor
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Black & Gold
+

@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ ของ คุณ เป็น สีชมพู!
+Name_TAI = พื้นฐาน สีชมพู
+Description_POR = Pinte seus móveis de rosa!
+Description_SPN = ¡Pinta tus muebles de rosa!
+Description_RUS = Покрасьте вашу мебель в розовый цвет!
+Description_IND = Catkan furnitur Anda dengan warna Merah Muda!
+Name_POR = Rosa Básico
+Name_SPN = Rosa Básico
+Name_RUS = Базовый розовый
+Name_IND = Merah Muda Dasar
+Description =  Paint your furniture Pink!
+
+Inventory_sprite_path = item paint basic pink
+Crafting_ingredient_A = SalmonBerry
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Snowball
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

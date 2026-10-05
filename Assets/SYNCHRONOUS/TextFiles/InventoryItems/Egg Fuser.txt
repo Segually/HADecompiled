@@ -1,0 +1,42 @@
+Description_TAI = ช่วยให้ คุณ รวม ไข่ สอง ฟอง และ สร้าง สัตว์เลี้ยง ลูกผสม!
+Name_TAI = เครื่อง ผสม ไข่
+Description_POR = Permite que você fundir dois ovos e crie um animal de estimação híbrido!
+Description_SPN = ¡Te permite fusionar dos huevos y crear una mascota híbrida!
+Description_RUS = Позволяет вам объединить два яйца и создать гибридного питомца!
+Description_IND = Memungkinkan Anda untuk menggabungkan dua telur dan membuat peliharaan hibrida!
+Name_POR = Fusor de Ovos
+Name_SPN = Fusionador de Huevos
+Name_RUS = Яйцевая слияльная установка
+Name_IND = Penggabung Telur
+Description = Allows you to fuse two eggs and make a hybrid pet!
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Uranium Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Egg Fuser
+World_geometry = 1_by_1
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-5, 1-2, 2-3, 3-1, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-1, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-3, 3-1, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 3-1, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-3, 3-2, 
+Default Coloring = Basic Green
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 45
+model3d_recenterX = 5
+model3d_xRot = -95
+model3d_yRot = 30
+model3d_camHeight = 0.3
+model3d_recenterY = 9
+model3d_override_particle_bg_col = 115,255,150
+PaintLayout0_Nomad = 0-5, 1-2, 2-3, 3-1, 
+PaintLayout0_Goldy = 0-3, 1-2, 2-2, 3-1, 

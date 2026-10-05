@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - กลุ่มโจร อ่อนแอ
+Name_POR = Mob - FRAÇÃO_BANDIDO Fraca
+Name_SPN = Enemigo - FACCIÓN_BANDIDO Débil
+Name_RUS = Моб - БАНДИТ_ФРАКЦИЯ Слабый
+Name_IND = Gerombolan - FRAKSI_BANDIT Lemah
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - บอส ฝ่าย โจร
+Name_POR = Mob - Chefe_Facção_BANDIDO
+Name_SPN = Jefe de facción de bandidos
+Name_RUS = Моб - БОСС ФРАКЦИИ БАНДИТОВ
+Name_IND = Gerombolan - Bos FACTION_BANDIT
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

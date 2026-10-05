@@ -1,0 +1,29 @@
+Description_TAI = ทาสี เฟอร์นิเจอร์ ของคุณ เป็นสี น้ำตาล!
+Name_TAI = พื้นฐาน สีน้ำตาล
+Description_POR = Pinte seus móveis de marrom!
+Description_SPN = ¡Pinta tus muebles de marrón!
+Description_RUS = Покрасьте вашу мебель в коричневый цвет!
+Description_IND = Warnai furnitur Anda dengan Cokelat!
+Name_POR = Marrom Básico
+Name_SPN = Marrón Básico
+Name_RUS = Базовый Коричневый
+Name_IND = Cokelat Dasar
+Description =  Paint your furniture Brown!
+
+Inventory_sprite_path = item paint basic brown
+Crafting_ingredient_A = Toasted Nuts
+Crafting_ingredient_A_count = 2
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

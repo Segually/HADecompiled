@@ -1,0 +1,45 @@
+Full Name = Dash
+Description = Quickly evade your enemies!
+Detailed Description = Quickly move to desired location. Confuses any mobs targetting you for GetInt[EFFECT_UNPURSUABLE, "Duration", remove " seconds"] seconds.
+Ultra Detailed Description = You are also instantly un-targetted in Online Mode. Confusion does not apply to Online Players.
+Energy Cost = CLAMP (65% @ lvl_1 ... 35% @ lvl_5)
+Unlock Prerequisite = perk_sprint(lvl.3)
+On cast = [CREATE_DESTINATION] on click_location, [EFFECT_DASH,EFFECT_UNPURSUABLE,EFFECT_LOSE_TARGET,EFFECT_DISAPPEAR] on self
+Max level = 5
+-
+[CREATE_DESTINATION]
+Type = Drop Effect
+Apply effect to drop = [EFFECT_DESTINATION_EXIST]
+Set MoveAt To Drop Location = true
+-
+[EFFECT_DESTINATION_EXIST]
+Type = Duration Effect
+Duration = 5 seconds
+-
+[EFFECT_SUPER_SPEED_START]
+Type = Duration Effect
+Walk Speed = 400%
+Duration = 5 seconds
+-
+[EFFECT_SUPER_SPEED_END]
+Type = Instant Effect
+Remove Effect = [EFFECT_SUPER_SPEED_START]
+-
+[EFFECT_DASH]
+Type = Instant Effect
+Animation prefab = perk_dash_animation
+Walk Speed = 0%
+-
+[EFFECT_UNPURSUABLE]
+Type = Duration Effect
+Mobs Targetting Me Will Pause = true
+Duration = 3 seconds
+-
+[EFFECT_LOSE_TARGET]
+Type = Instant Effect
+Lose Me As Target In Online Mode = true
+-
+[EFFECT_DISAPPEAR]
+Type = Duration Effect
+Duration = 2 seconds
+Invisible To Mobs If Not Already Targetted = true

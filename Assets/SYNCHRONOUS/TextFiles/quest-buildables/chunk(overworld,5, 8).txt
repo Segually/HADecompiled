@@ -1,0 +1,5 @@
+*auto_version=2*
+*forced_biome=9*
+
+[7,0] = Metal Lamp Post (rot 3)
+

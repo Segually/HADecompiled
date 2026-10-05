@@ -1,0 +1,16 @@
+Full Name = Ram
+Description = Blast your enemy backwards!
+Detailed Description = GetInt[EFFECT_BLASTBACK, "Damage", remove ""] damage DiffInt[EFFECT_BLASTBACK, "Damage", add ""] and GetInt[EFFECT_BLASTBACK, "Blastback", remove "%"]% blast-back DiffInt[EFFECT_BLASTBACK, "Blastback", remove "%", add "%"] on target.
+Energy Cost = 60%
+On cast = [EFFECT_BLASTBACK] on quick_tag, [EFFECT_ROAR] on self
+-
+[EFFECT_ROAR]
+Type = Instant Effect
+Particle (Instant) = perk_ram_particle
+-
+[EFFECT_BLASTBACK]
+Type = Instant Effect
+Damage = RANGE (10%-20%-27% of own HP)
+Blastback = CLAMP (35% @ lvl_1 ... 100% @ lvl_15)
+Particle (Instant) = perk_fireball_collide
+Scale Particle With Creature Size = true

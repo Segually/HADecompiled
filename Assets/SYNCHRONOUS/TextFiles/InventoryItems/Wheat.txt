@@ -1,0 +1,20 @@
+Description_TAI = ใช้ สำหรับ ทำ ขนมปัง
+Name_TAI = ข้าวสาลี
+Description_POR = Usado para fazer pão
+Description_SPN = Usado para hacer pan
+Description_RUS = Используется для выпечки хлеба
+Description_IND = Digunakan untuk membuat roti
+Name_POR = Trigo
+Name_SPN = Trigo
+Name_RUS = Пшеница
+Name_IND = Gandum
+Description = Used for making bread
+
+Inventory_sprite_path = item wheat
+Max_stack = 5
+Crafting_makes = 5
+
+Market Cost = 4
+
+Vendor0 = Harvested Item
+NumSell = 4 to 8

@@ -1,0 +1,26 @@
+Description_TAI = ช่วย ให้ คุณ ขุด แร่ โลหะ ได้ เมื่อ สวมใส่
+Name_TAI = ขวาน หิน
+Description_POR = Permite que você mine metal quando equipado.
+Description_SPN = Permite extraer metal cuando está equipada.
+Description_RUS = Позволяет добывать металл, когда экипирован.
+Description_IND = Memungkinkan Anda untuk menambang logam saat dilengkapi.
+Name_POR = Picareta de Pedra
+Name_SPN = Pico de Piedra
+Name_RUS = Каменная кирка
+Name_IND = Kapak Batu
+Description = Allows you to mine metal when equipped.
+
+Inventory_sprite_path = item stone pick
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stone Ore
+Crafting_ingredient_B_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/PICK_stone
+Market Cost = CALCULATE
+
+Vendor0 = Farm Tools
+Vendor1 = Mining Tools
+NumSell = 1 to 3
+
+weapon_display_copy = Wood Pick

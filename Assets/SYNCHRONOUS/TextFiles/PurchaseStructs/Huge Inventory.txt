@@ -1,0 +1,6 @@
+Description = Permanently adds a second page to your inventory!
+IAP_KEY = big_inv
+Type = permanent
+Gem_price = medium
+Bg_color = red
+Model_path = shop_extInv

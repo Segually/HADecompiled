@@ -1,0 +1,9 @@
+[Sell Percent = 0.26]
+
+Food Accessories(1-700)
+Food(1-200)
+Food(1-200)
+
+Food(1-200)
+Food(1-200)
+Harvested Item(1-200)

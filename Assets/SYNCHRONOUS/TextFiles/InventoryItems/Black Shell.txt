@@ -1,0 +1,7 @@
+Name_TAI = เปลือก หอย สี ดำ
+Name_POR = Concha Preta
+Name_SPN = Concha Negra
+Name_RUS = Чёрная ракушка
+Name_IND = Cangkang Hitam
+
+Inventory_sprite_path = item seashell black

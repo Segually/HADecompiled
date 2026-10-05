@@ -1,0 +1,20 @@
+Full Name = Pollinator
+Description = Instantly regenerate natural things like Berries and Sticks.
+Detailed Description = Higher levels regenerate more advanced things. Range of GetFloat[EFFECT_POLLEN_CLOUD, "Area Effect Radius", remove "m"]m DiffFloat[EFFECT_POLLEN_CLOUD, "Area Effect Radius", remove "m", add "m"].
+Ultra Detailed Description = Lvl 1 regenerates Basic Spawners (ie. Sticks), Common Plants (ie. Berries & Green Blobs), Low-Level mobs, etc. Higher levels can regenerate High-Level Mobs, Rare Plants (ie. Giant Mushrooms), Advanced Materials (ie. Titanium), etc!
+Energy Cost = CLAMP (75% @ lvl_1 ... 40% @ lvl_15)
+Unlock Prerequisite = perk_healing_touch(lvl.2)
+On cast = [CREATE_POLLEN] on self
+Max level = 15
+-
+[CREATE_POLLEN]
+Type = Drop Effect
+Apply effect to drop = [EFFECT_POLLEN_CLOUD]
+-
+[EFFECT_POLLEN_CLOUD]
+Type = Area Effect
+Particle (Instant) = perk_pollinator_particle
+Scale Particle With Creature Size = false
+Particle Radius = CLAMP (2.5m @ lvl_1 ... 4.5m @ lvl_15)
+Area Effect Radius = CLAMP (2.5m @ lvl_1 ... 4.5m @ lvl_15)
+Regenerate Nearby Plants = true

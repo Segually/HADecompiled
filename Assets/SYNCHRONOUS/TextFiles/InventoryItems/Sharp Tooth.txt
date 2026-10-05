@@ -1,0 +1,19 @@
+Description_TAI = วัตถุดิบ สำหรับ การ สร้างไอเท็ม
+Name_TAI = ฟัน แหลม
+Description_POR = Material de fabricação
+Description_SPN = Material de artesanía
+Description_RUS = Материал для крафта
+Description_IND = Bahan kerajinan
+Name_POR = Dente Afiado
+Name_SPN = Diente Afilado
+Name_RUS = Острый зуб
+Name_IND = Gigi Tajam
+Description = Crafting material
+
+Inventory_sprite_path = item sharp tooth
+Crafting_makes = 5
+Market Cost = 9
+Max_stack = 5
+
+Vendor0 = Mob Drops
+NumSell = 1 to 3

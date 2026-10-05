@@ -1,0 +1,36 @@
+*auto_version=11*
+
+[8,2] = Poison Spikes (rot 0)
+
+[9,7] = Tent (rot 0)
+	shack_id = *long* 9069
+	quest_miniworld = *string* true
+	paint = *string* Lumberjack
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,6] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[8,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,5] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,7] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,8] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,9] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+

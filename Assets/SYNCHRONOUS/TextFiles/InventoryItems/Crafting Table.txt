@@ -1,0 +1,40 @@
+Description_TAI = ปลดล็อก สูตร อาหาร ขั้นสูง
+Name_TAI = โต๊ะ งาน ประดิษฐ์
+Description_POR = Desbloqueia receitas avançadas.
+Description_SPN = Desbloquea recetas avanzadas.
+Description_RUS = Разблокирует продвинутые рецепты.
+Description_IND = Membuka resep lanjutan.
+Name_POR = Mesa de Trabalho
+Name_SPN = Mesa de trabajo
+Name_RUS = Верстак
+Name_IND = Meja Kerajinan
+Description = Unlocks advanced recipes.
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Crafting Table
+World_geometry = 1_by_1
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-3, 1-1, 2-3, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+PaintLayout0_5cols = 0-3, 1-1, 2-2, 
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+Default Coloring = Utility Red
+
+show_model3d = true
+model3d_camDist = 4.6
+model3d_camHeight = 0.3
+model3d_yRot = 25
+model3d_fov = 21.5
+model3d_recenterY = 6
+model3d_recenterX = 1
+model3d_xRot = -90
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+PaintLayout0_Goldy = 0-2, 1-1, 2-3, 

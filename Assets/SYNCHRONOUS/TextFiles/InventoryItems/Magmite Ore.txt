@@ -1,0 +1,11 @@
+Name_TAI = แร่ แม็กไมต์
+Name_POR = Minério de Magmita
+Name_SPN = Mineral de Magmita
+Name_RUS = Магмитовая руда
+Name_IND = Bijih Magmite
+
+Inventory_sprite_path = item magmite ore
+Market Cost = 60
+
+Vendor0 = Ores
+NumSell = 2 to 4

@@ -1,0 +1,76 @@
+*auto_version=5*
+
+[7,3] = Stone Bricks (rot 0)
+
+[9,6] = Stone Bricks (rot 0)
+
+[5,2] = Stone Bricks (rot 0)
+
+[8,6] = Stone Bricks (rot 0)
+
+[6,3] = Stone Bricks (rot 0)
+
+[9,8] = Red Torch (rot 0)
+
+[2,0] = Stone Bricks (rot 0)
+
+[4,0] = Stone Bricks (rot 0)
+
+[9,5] = Stone Bricks (rot 0)
+
+[1,2] = Stone Bricks (rot 0)
+
+[0,2] = Stone Bricks (rot 0)
+
+[7,4] = Stone Bricks (rot 0)
+
+[7,8] = Stone Bricks (rot 0)
+
+[9,7] = Stone Bricks (rot 0)
+
+[7,9] = Stone Bricks (rot 0)
+
+[0,9] = Stone Bricks (rot 0)
+
+[8,4] = Stone Bricks (rot 0)
+
+[7,2] = Stone Bricks (rot 0)
+
+[6,2] = Stone Bricks (rot 0)
+
+[0,3] = Stone Bricks (rot 0)
+
+[6,9] = Stone Bricks (rot 0)
+
+[8,5] = Stone Bricks (rot 0)
+
+[8,7] = Stone Bricks (rot 0)
+
+[1,1] = Stone Bricks (rot 0)
+
+[8,8] = Stone Bricks (rot 0)
+
+[5,1] = Stone Bricks (rot 0)
+
+[4,1] = Stone Bricks (rot 0)
+
+[3,1] = Stone Bricks (rot 0)
+
+[2,1] = Stone Bricks (rot 0)
+
+[6,1] = Stone Bricks (rot 0)
+
+[8,3] = Stone Bricks (rot 0)
+
+[8,9] = Stone Bricks (rot 0)
+
+[0,1] = Stone Bricks (rot 0)
+
+[3,0] = Stone Bricks (rot 0)
+
+[9,4] = Red Torch (rot 0)
+
+[3,6] = Boss Spawner - Shindeon (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Dark and Forgotten Magic
+	associated_quest_step = *short* 4

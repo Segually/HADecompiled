@@ -1,0 +1,24 @@
+Description_TAI = เครื่องเรียก บอส ยักษ์
+Name_TAI = บอส สปอว์เนอร์ - ชินดีออน
+Description_POR = Um gerador de chefe gigante
+Description_SPN = Un generador de jefe gigante
+Description_RUS = Порождатель гигантского босса
+Description_IND = Pemanggil bos raksasa
+Name_POR = Gerador de Chefe - Shindeon
+Name_SPN = Generador de Jefe - Shindeon
+Name_RUS = Призыватель босса - Шиндеон
+Name_IND = Pemanggil Bos - Shindeon
+Description = A giant boss spawner
+
+Inventory_sprite_path = item boss spawner - shindeon
+Crafting_ingredient_A = Red Torch
+Crafting_ingredient_A_count = 5
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 10
+Type = Place_in_world
+World_obj_path = Buildables/Boss Spawner - Shindeon
+World_geometry = 5_by_5
+Craft_required_lvl = 360
+Market Cost = CALCULATE
+
+Vendor0 = Traps

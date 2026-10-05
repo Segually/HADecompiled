@@ -1,0 +1,11 @@
+Name_TAI = แผ่น เริ่ม ต้น การ ต่อสู้
+Name_POR = Almofada de Início de Batalha
+Name_SPN = Almohadilla de Inicio de Batalla
+Name_RUS = Площадка для начала битвы
+Name_IND = Pad Awal Pertempuran
+
+Type = Place_in_world
+World_geometry = 1_by_1
+
+not_obtainable = true
+

@@ -1,0 +1,17 @@
+Name_TAI = บลู บล็อบ
+Name_POR = Bola Azul
+Name_SPN = Blob Azul
+Name_RUS = Синий капля
+Name_IND = Gumpalan Biru
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Blue Blob
+World_geometry = 2_by_2
+
+not_obtainable = true
+
+
+tool_required_to_move = Drill
+
+Pollinator Regen Level = 4
+Pollinator Regen RespawnId = mob_spawn

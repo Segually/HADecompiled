@@ -1,0 +1,24 @@
+*auto_version=8*
+
+[7,0] = Fireplace (rot 3)
+	paint = *string* Pinewood
+
+[8,2] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+	paint = *string* Forest Green
+
+[9,1] = DEBUG-npc (rot 0)
+	npc_file = *string* Ranger Dotty
+	creature_A = *string* fox
+	creature_B = *string* ladybug
+	npc_icon = *string* Merchant
+	voice = *string* female
+	merchant_type = *string* Ranger
+
+[9,2] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+	paint = *string* Forest Green
+
+[8,0] = Circular Rug (rot 0)
+	paint = *string* Lumberjack
+

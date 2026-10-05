@@ -1,0 +1,83 @@
+*auto_version=23*
+
+[9,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,6] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[0,2] = Dirt Path (rot 0)
+
+[1,2] = Dirt Path (rot 0)
+
+[2,2] = Dirt Path (rot 0)
+
+[3,2] = Dirt Path (rot 0)
+
+[3,5] = Dirt Path (rot 0)
+
+[3,6] = Dirt Path (rot 0)
+
+[3,4] = Dirt Path (rot 0)
+
+[3,3] = Dirt Path (rot 0)
+
+[2,1] = Torch (rot 0)
+	paint = *string* Lumberjack
+
+[0,8] = Dirt Path (rot 0)
+
+[0,9] = Dirt Path (rot 0)
+
+[4,6] = Dirt Path (rot 0)
+
+[2,3] = Dirt Path (rot 0)
+
+[2,4] = Dirt Path (rot 0)
+
+[1,3] = Dirt Path (rot 0)
+
+[0,3] = Dirt Path (rot 0)
+
+[6,0] = Poison Spikes (rot 0)
+
+[7,6] = Tent (rot 2)
+	shack_id = *long* 9066
+	quest_miniworld = *string* true
+	paint = *string* Lumberjack
+
+[3,1] = Basket (rot 0)
+	basket_id = *long* 9043
+	paint = *string* Lumberjack
+
+[0,5] = Mob - Everthorn Bandit (rot 0)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* The Bandit King
+	associated_quest_step = *short* 3
+	overwrite_mob_name = *string* Bandit
+	overwrite_mob_level = *string* PLAYER_LEVEL*0.39
+
+[9,1] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,2] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,5] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,7] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,8] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[9,9] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+

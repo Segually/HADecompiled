@@ -1,0 +1,25 @@
+Name_POR=Saltitante
+Name_RUS=Хопсквик
+Name_IND=Hopsqueak
+Name_SPN=Saltapío
+Name_TAI=Hopsqueak
+
+----- DIALOGUE -----
+[0]
+otherspeak=Cheese...
+otherspeak_POR=Queijo...
+otherspeak_RUS=Сыр...
+otherspeak_IND=Keju...
+otherspeak_SPN=Queso...
+otherspeak_TAI=ชีส...
+goto=001
+
+[1]
+otherspeak=...or grasshoppers?
+otherspeak_POR=...ou gafanhotos?
+otherspeak_RUS=...или кузнечики?
+otherspeak_IND=...atau belalang?
+otherspeak_SPN=...¿O saltamontes?
+otherspeak_TAI=...หรือตั๊กแตนหญ้า?
+goto=-1
+

@@ -1,0 +1,37 @@
+Description_TAI = ดาบคู่ที่เต็มไปด้วยเปลวไฟ มีความสามารถในการจุดไฟใส่ศัตรู
+Name_TAI = ดาบ คู่ แม็กมา
+Description_POR = Espadas gêmeas envoltas em chamas, capazes de incendiar inimigos.
+Description_SPN = Espadas gemelas envueltas en llamas, capaces de prender fuego a los enemigos.
+Description_RUS = Пылающие двойные мечи, способные поджигать врагов.
+Description_IND = Pedang kembar yang diliputi api, mampu membakar musuh.
+Name_POR = Espada Gêmea de Magma
+Name_SPN = Espada Doble de Magma
+Name_RUS = Магмовый Двухмеч
+Name_IND = Pedang Ganda Magma
+Overwrite_name = Magma TwinSword
+Description = Twin swords engulfed in flames, capable of igniting enemies
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/DoubleSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 24
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 18
+Damage Perk = perk_ignite
+Damage Perk Odds = 0.5
+
+CopyPaintLayout = Uranium DoubleSword
+Default Coloring = Weapon - Magma
+
+dual_wield = true
+
+show_model3d = true
+Copy3dModelPosition = Uranium DoubleSword
+
+weapon_display_copy = Uranium DoubleSword

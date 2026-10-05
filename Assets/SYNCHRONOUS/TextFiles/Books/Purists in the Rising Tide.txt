@@ -1,0 +1,77 @@
+[paint]
+Lavender Bloom
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+They came to the coast with fire in their eyes, claiming they would "purge" the hybrids from the land, but we were ready for them.
+
+[page 2 - English]
+The Purists thought they could trap us with nets and harpoons, but we’re Riptide Bandits—we move with the current, and their traps were useless against us.
+
+[page 3 - English]
+It didn’t take long before they were swimming for their lives, and we left them stranded on their own shore, helpless against the rising tide.
+
+[book name - English]
+Purists in the Rising Tide
+
+[book name - Indonesian]
+Puritan di Ombak yang Meninggi
+
+[page 1 - Indonesian]
+Mereka datang ke pantai dengan api di mata mereka, mengklaim bahwa mereka akan "menyucikan" hibrida dari tanah ini, tetapi kami sudah siap untuk mereka.
+
+[page 2 - Indonesian]
+Para Puritan mengira mereka bisa menjebak kami dengan jaring dan harpun, tetapi kami adalah Bandit Ombak—kami bergerak mengikuti arus, dan jebakan mereka tidak berguna melawan kami.
+
+[page 3 - Indonesian]
+Tidak butuh waktu lama sebelum mereka berenang untuk menyelamatkan diri, dan kami meninggalkan mereka terdampar di pantai mereka sendiri, tak berdaya melawan ombak yang meninggi.
+
+[book name - Portuguese]
+Puristas na Maré Crescente
+
+[page 1 - Portuguese]
+Eles vieram para a costa com fogo nos olhos, alegando que iriam "purificar" os híbridos da terra, mas estávamos preparados para eles.
+
+[page 2 - Portuguese]
+Os Puristas achavam que poderiam nos prender com redes e arpões, mas somos os Bandidos da Correnteza—nos movemos com a correnteza, e suas armadilhas foram inúteis contra nós.
+
+[page 3 - Portuguese]
+Não demorou muito antes que eles estivessem nadando por suas vidas, e os deixamos encalhados em sua própria costa, indefesos contra a maré crescente.
+
+[book name - Russian]
+Чистильщики в поднимающейся волне
+
+[page 1 - Russian]
+Они пришли к берегу с огнем в глазах, заявляя, что "очистят" землю от гибридов, но мы были к ним готовы.
+
+[page 2 - Russian]
+Чистильщики думали, что смогут поймать нас сетями и гарпунами, но мы Бандиты Риптайда — мы движемся с течением, и их ловушки были бесполезны против нас.
+
+[page 3 - Russian]
+Прошло немного времени, прежде чем они начали плыть за свою жизнь, и мы оставили их на их собственном берегу, беспомощных против поднимающейся волны.
+
+[book name - Spanish]
+Puristas en la Marea Creciente
+
+[page 1 - Spanish]
+Llegaron a la costa con fuego en los ojos, afirmando que "purificarían" a los híbridos de la tierra, pero estábamos listos para ellos.
+
+[page 2 - Spanish]
+Los Puristas pensaron que podrían atraparnos con redes y arpones, pero somos Bandidos de la Marea—nos movemos con la corriente, y sus trampas fueron inútiles contra nosotros.
+
+[page 3 - Spanish]
+No pasó mucho tiempo antes de que estuvieran nadando por sus vidas, y los dejamos varados en su propia orilla, indefensos contra la marea creciente.
+
+[book name - Thai]
+ผู้บริ สุทธิ์ ในกระแ สขาขึ้ น
+
+[page 1 - Thai]
+พวกเขา มาถึงช ายฝั่ง ด้วยไฟ ในสายต า อ้าง ว่าพวก เขาจะ  "ชำระ"  ลูกผส มจากผื นดิน แ ต่เราพ ร้อมสำ หรับพว กเขาแล ้ว
+
+[page 2 - Thai]
+ผู้บริ สุทธิ์ คิดว่า พวกเขา สามารถ ดักจับ เราด้ว ยตาข่า ยและฉม วก แต่ เราเป็ นโจรคล ื่นซัด  เราเค ลื่อนท ี่ไปตา มกระแส  และกั บดักขอ งพวกเข าไม่มี ผลอะไร กับเรา
+
+[page 3 - Thai]
+ไม่นาน นักพวก เขาก็ว ่ายน้ำ เพื่อช ีวิตขอ งพวกเข าเอง แ ละเราท ิ้งพวก เขาไว้ บนชายฝ ั่งของ พวกเขา เอง ไร ้หนทาง ต่อกระ แสน้ำท ี่เพิ่ มขึ้น

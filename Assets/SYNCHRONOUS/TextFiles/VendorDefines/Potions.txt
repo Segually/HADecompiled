@@ -1,0 +1,11 @@
+[Sell Percent = 0.26]
+
+Potion Accessories(1-500)
+Potions(1-700)
+Potions(1-700)
+
+Potions(1-700)
+Food(1-200)
+Food(1-200)
+
+Harvested Item(1-500)

@@ -1,0 +1,14 @@
+Name_TAI = ดีบัก-1x1-เติมว่างเปล่า
+Name_POR = DEBUG-1x1-filempty
+Name_SPN = DEPURAR-1x1-llenarvacío
+Name_RUS = ОТЛАДКА-1x1-заполнитьпусто
+Name_IND = DEBUG-1x1-isi-kosong
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-1x1-fillempty
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

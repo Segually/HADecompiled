@@ -1,0 +1,50 @@
+Description_TAI = เคียว ลึกลับ ที่ เปี่ยม ไป ด้วย พลังงาน โบราณ
+Name_TAI = เคียว โบราณ
+Description_POR = Foice misteriosa imbuída com energias antigas.
+Description_SPN = Guadaña misteriosa imbuida con energías antiguas.
+Description_RUS = Таинственная коса, насыщенная древними энергиями.
+Description_IND = Sabit misterius yang dipenuhi dengan energi kuno
+Name_POR = Foice Ancestral
+Name_SPN = Guadaña Antigua
+Name_RUS = Древняя коса
+Name_IND = Sabit Kuno
+Description = Mysterious scythe imbued with ancient energies
+
+Crafting_ingredient_A = Ancient Bones
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Scythe
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 90
+Craft_required_lvl = 138
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 69
+
+weapon_display_localPosition = 0,0,-0.395
+weapon_display_localRotation = -2.823,59.203,91.682
+weapon_display_localScale = 0.76,0.76,0.76
+
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 3-1, 
+PaintLayout0_SolidColors = 0-6, 1-5, 2-3, 3-2, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-1, 3-3, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 3-2, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 3-1, 
+PaintLayout0_Nomad = 0-1, 1-5, 2-3, 3-2, 
+PaintLayout0_Goldy = 0-1, 1-4, 2-3, 3-2, 
+Default Coloring = Weapon - Ancient
+
+model3d_camHeight = 0
+show_model3d = true
+model3d_xRot = -75
+model3d_yRot = 15
+model3d_camDist = 2.3
+model3d_fov = 62.5
+model3d_recenterX = 30
+model3d_recenterY = 32
+model3d_wep_tilt = -8
+ParticleTransform0 = -0.059,1.35,0.844:0.4527467,0.02577004,-0.009030037,0.891221:1,1,1:CONE:1:0.25

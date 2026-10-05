@@ -1,0 +1,34 @@
+Name_TAI = เมฆ
+Name_POR = Nuvens
+Name_SPN = Nubes
+Name_RUS = Облака
+Name_IND = Awan
+
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = sub_flooring
+Max_stack = 10
+
+tool_required_to_move = Drill
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Clouds
+
+show_model3d = true
+model3d_camDist = 4.2
+model3d_fov = 45
+model3d_yRot = 40
+model3d_xRot = -15
+model3d_recenterX = 34
+model3d_recenterY = -6
+model3d_camHeight = -0.1
+
+Default Coloring = Debug - Clouds
+PaintLayout0_TriColor = 0-1, 
+PaintLayout0_SolidColors = 0-1, 
+PaintLayout0_Trimmed = 0-1, 
+PaintLayout0_Candycane = 0-1, 
+PaintLayout0_Pastels = 0-1, 
+PaintLayout0_Nomad = 0-1, 
+PaintLayout0_RENDERQUEUE = 1991

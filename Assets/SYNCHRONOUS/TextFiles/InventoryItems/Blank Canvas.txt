@@ -1,0 +1,29 @@
+Description_TAI = ช่วย ให้ คุณ บันทึก ภาพวาด ได้
+Name_TAI = ผืน ผ้าใบ ว่างเปล่า
+Description_POR = Permite que você salve pinturas.
+Description_SPN = Te permite guardar pinturas.
+Description_RUS = Позволяет сохранять картины.
+Description_IND = Memungkinkan Anda menyimpan lukisan.
+Name_POR = Tela em Branco
+Name_SPN = Lienzo en Blanco
+Name_RUS = Чистый холст
+Name_IND = Kanvas Kosong
+Description = Allows you to save paintings.
+
+World_obj_path = Buildables/Painting
+
+Inventory_sprite_path = item blank canvas
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Cotton
+Crafting_ingredient_B_count = 1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+CopyPaintLayout = Painting
+Default Coloring = Debug - Wood DK
+
+show_model3d = true
+Copy3dModelPosition = Painting
+
+NumSell = 5 to 8

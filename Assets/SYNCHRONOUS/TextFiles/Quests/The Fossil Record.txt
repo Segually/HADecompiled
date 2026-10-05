@@ -1,0 +1,41 @@
+﻿questname_POR = O Registro Fóssil
+questname_RUS = Ископаемые записи
+questname_IND = Catatan Fosil
+questname_SPN = El registro fósil
+questname_TAI = บันทึกฟอสซิล
+Complete_text = I found 2 identical fossils for the Fossil Collector!
+Complete_text_POR = Encontrei dois fósseis idênticos para o Coletor de Fósseis!
+Complete_text_RUS = Я нашел 2 одинаковых окаменелостей для ископаемого коллекционера!
+Complete_text_IND = Saya menemukan 2 fosil identik untuk Kolektor Fosil!
+Complete_text_SPN = ¡Encontré 2 fósiles idénticos para el Coleccionista de Fósiles!
+Complete_text_TAI = ฉันพบฟอสซิลที่เหมือนกัน 2 ชิ้นสําหรับนักสะสมซากดึกดําบรรพ์!
+Reward0_item = Spooky Well
+Reward0_count = 1
+Repeat_hours = 68
+
+[step 0]
+Hint = I should talk to 'The Fossil Collector' in the caves near Yandi
+Hint_POR = Eu deveria falar com "O Coletor de Fósseis" nas cavernas perto de Yandi
+Hint_RUS = Я должен поговорить с "Ископаемый коллекционер" в пещерах возле Янди
+Hint_IND = Aku harus berbicara dengan 'Kolektor Fosil' di gua dekat Yandi
+Hint_SPN = Debería hablar con 'El Coleccionista de Fósiles' en las cuevas cercanas a Yandi
+Hint_TAI = ฉันควรคุยกับ 'นักสะสมซากดึกดําบรรพ์' ในถ้ําใกล้กับยานดี
+
+[step 1]
+Hint = I need to find 2 of the same kind of fossil for the Fossil Collector
+Hint_POR = Preciso encontrar 2 do mesmo tipo de fóssil para o Coletor fóssil
+Hint_RUS = Мне нужно найти 2 из того же вида ископаемых для ископаемого коллекционера
+Hint_IND = Saya perlu menemukan 2 dari jenis fosil yang sama untuk Kolektor Fosil
+Hint_SPN = Necesito encontrar 2 del mismo tipo de fósil para el Colector Fósil
+Hint_TAI = ฉันต้องหาฟอสซิลชนิดเดียวกัน 2 ชนิดสําหรับนักสะสมซากดึกดําบรรพ์
+Step type = Collect Identical Items
+N_identical_collect = 2
+CollectIdenticalItem = Fossil
+
+[step 2]
+Hint = I found the fossils! I should get my reward from the Fossil Collector
+Hint_POR = Encontrei os fósseis! Eu deveria receber minha recompensa do Coletor de Fósseis
+Hint_RUS = Я нашла окаменелости! Я должен получить награду от ископаемого коллекционера
+Hint_IND = Aku menemukan fosilnya! Aku harus mendapatkan hadiah dari Kolektor Fosil
+Hint_SPN = ¡Encontré los fósiles! Debería recibir mi recompensa del Coleccionista de Fósiles
+Hint_TAI = ฉันเจอฟอสซิลแล้ว! ฉันควรได้รับรางวัลจากนักสะสมซากดึกดําบรรพ์

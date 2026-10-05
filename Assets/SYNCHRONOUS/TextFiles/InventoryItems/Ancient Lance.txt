@@ -1,0 +1,34 @@
+Description_TAI = หอก ลึกลับ ที่ แฝง ด้วย พลังงาน โบราณ
+Name_TAI = หอก โบราณ
+Description_POR = Lança misteriosa imbuída com energias antigas
+Description_SPN = Lanza misteriosa imbuida con energías antiguas.
+Description_RUS = Таинственное копье, наполненное древними энергиями.
+Description_IND = Tombak misterius yang disematkan dengan energi kuno.
+Name_POR = Lança Ancestral
+Name_SPN = Lanza Antigua
+Name_RUS = Древнее Копьё
+Name_IND = Tombak Kuno
+Description = Mysterious lance imbued with ancient energies
+
+Crafting_ingredient_A = Ancient Bones
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Lance
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 102
+Craft_required_lvl = 156
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 79
+
+CopyPaintLayout = Spirit Lance
+Default Coloring = Weapon - Ancient
+
+show_model3d = true
+Copy3dModelPosition = Spirit Lance
+
+weapon_display_copy = Spirit Lance

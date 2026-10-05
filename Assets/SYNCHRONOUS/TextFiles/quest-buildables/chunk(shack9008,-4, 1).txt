@@ -1,0 +1,5 @@
+*auto_version=1*
+*forced_floor_rot=1*
+*forced_floor_model=0*
+*is_blank=true*
+

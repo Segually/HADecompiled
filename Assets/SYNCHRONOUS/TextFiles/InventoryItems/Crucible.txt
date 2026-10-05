@@ -1,0 +1,43 @@
+Description_TAI = ปลดล็อก อาวุธ และ เกราะ ขั้นสูง
+Name_TAI = เบ้าหลอม
+Description_POR = Desbloqueia armas e armaduras avançadas
+Description_SPN = Desbloquea armas y armaduras avanzadas
+Description_RUS = Открывает доступ к продвинутому оружию и броне.
+Description_IND = Membuka kunci senjata dan baju besi tingkat lanjut
+Name_POR = Crisol
+Name_SPN = Crisol
+Name_RUS = Тигель
+Name_IND = Crucible
+Description = Unlocks advanced weapons and armor
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Crucible
+World_geometry = 1_by_1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Weapon Accessories
+Vendor2 = Armor Accessories
+
+paintable_by_player = true
+Default Coloring = Debug - Metal V DK
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 
+PaintLayout0_SolidColors = 0-3, 1-2, 2-1, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+
+show_model3d = true
+model3d_camDist = 4.2
+model3d_fov = 33
+model3d_yRot = 45
+model3d_recenterY = 7
+model3d_camHeight = 0.1
+model3d_recenterX = 0
+model3d_xRot = 270
+model3d_objRot = 6
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

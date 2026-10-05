@@ -1,0 +1,16 @@
+Name_TAI = ศัตรู - โจร ระดับ สูง
+Name_POR = Mob - Bandido de Elite
+Name_SPN = Enemigo - Bandido Élite
+Name_RUS = Моб - элитный бандит
+Name_IND = Gerombolan - Bandit Elite
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

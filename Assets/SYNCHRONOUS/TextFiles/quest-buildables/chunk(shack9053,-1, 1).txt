@@ -1,0 +1,37 @@
+*auto_version=2*
+
+[5,3] = Armor Display (rot 3)
+	password = *string* DEV_LOCKED
+	hat = *string* Amethyst Crown
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Lavender Bloom
+
+[5,5] = Armor Display (rot 3)
+	password = *string* DEV_LOCKED
+	hat = *string* White Wizard Hat
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Lavender Bloom
+
+[6,7] = Loom (rot 1)
+	paint = *string* Lavender Plum
+
+[8,7] = DEBUG-npc (rot 0)
+	npc_file = *string* Petunia
+	creature_A = *string* butterfly
+	creature_B = *string* red panda
+	npc_icon = *string* Merchant
+	voice = *string* female
+	merchant_type = *string* Clothing
+
+[5,4] = Painting (rot 0)
+	dev_painting_id = *short* 12
+	paint = *string* Basic Blue
+
+[5,6] = Chair (rot 0)
+	paint = *string* Lavender Plum
+
+[8,6] = Basic Rug (rot 0)
+	paint = *string* Lavender Bloom
+

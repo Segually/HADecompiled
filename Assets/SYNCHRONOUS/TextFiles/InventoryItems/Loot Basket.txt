@@ -1,0 +1,17 @@
+Name_TAI = ตะกร้า ใส่ ของ ล่า รางวัล
+Name_POR = Cesta de Saques
+Name_SPN = Cesta de Botín
+Name_RUS = Корзина с добычей
+Name_IND = Keranjang Jarahan
+
+Type = Place_in_world
+World_obj_path = Buildables/Loot Basket
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+CopyPaintLayout = Basket
+Default Coloring = Debug - Wood & Metal & Gold
+
+not_obtainable = true
+

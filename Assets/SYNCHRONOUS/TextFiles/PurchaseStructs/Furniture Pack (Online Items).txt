@@ -1,0 +1,6 @@
+Description = Unlocks item: Vending Machine
+IAP_KEY = recipe_online
+Type = permanent
+Gem_price = medium
+Bg_color = MUTATION_GREEN
+Model_path = shop_vending

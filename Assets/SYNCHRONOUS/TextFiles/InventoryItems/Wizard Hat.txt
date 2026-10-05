@@ -1,0 +1,36 @@
+Description_POR = ???
+Description_TAI = I'm sorry, but it seems there is missing information in your request. Could you please provide the item description you would like me to translate?
+Description_SPN = ???
+Description_RUS = I'm sorry, but it looks like there is no item description provided to translate. Could you please provide the text you want translated?
+Description_IND = Deskripsi item tidak dapat diterjemahkan karena teks aslinya tidak disediakan. Mohon berikan deskripsi yang lengkap.
+Name_POR = Chapéu de Feiticeiro
+Name_TAI = หมวก พ่อมด
+Name_SPN = Sombrero de Mago
+Name_RUS = Шляпа волшебника
+Name_IND = Topi Penyihir
+Description = ???
+
+Type = Helmet
+Helmet Style = top_of_head
+World_obj_path = Equipment/clothing-hats/new-hat-models/WizardHat
+
+Default Coloring = Storm Grey
+PaintLayout0_Pastels = 0-1, 1-3, 
+PaintLayout0_Trimmed = 0-1, 1-3, 
+PaintLayout0_SolidColors = 0-2, 1-5, 
+PaintLayout0_TriColor = 0-1, 1-2, 
+PaintLayout0_Nomad = 0-1, 1-2, 
+PaintLayout0_Goldy = 0-4, 1-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 
+
+not_obtainable = true
+
+show_model3d = true
+model3d_camDist = 1.8
+model3d_fov = 35
+model3d_xRot = -75
+model3d_camHeight = 0.4
+model3d_yRot = 10
+model3d_objRot = 3
+model3d_recenterY = -2
+model3d_recenterX = 1

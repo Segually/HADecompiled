@@ -1,0 +1,299 @@
+Mutant Market
+Pasar Mutan
+
+Your Gems:
+Permata Anda:
+
+How would you like to get
+Bagaimana Anda ingin mendapatkan ini
+
+Pay with cash
+Bayar dengan uang
+
+Use gems
+Gunakan permata
+
+THANK YOU for supporting us!
+TERIMA KASIH telah mendukung kami!
+
+Your generosity helps us improve the game!
+Kemurahan hati Anda membantu kami meningkatkan permainan!
+
+You don't have enough gems!
+Anda tidak memiliki cukup permata!
+
+NOTE: Game features unlocked using Gems cannot be restored if you get a new phone/tablet, or if your game somehow becomes corrupted
+PEMBERITAHUAN: Fitur game yang dibuka menggunakan Permata tidak dapat dipulihkan jika Anda mendapatkan ponsel/perangkat baru, atau jika game Anda entah bagaimana menjadi rusak
+
+OKAY
+BAIK
+
+-
+
+Remove Ads
+Hilangkan iklan
+
+Play without ads for 6 months! (Subscription, Auto-Renew)
+Mainkan tanpa iklan selama 6 bulan! (Berlangganan, Perbaharui-Otomatis)
+
+Ads are disabled!
+Iklan dinonaktifkan! 
+
+Subscribed
+Berlangganan
+
+Owned
+Milik
+
+or
+atau
+
+-
+
+Premium Item
+Barang Premium
+
+craft
+kerajinan
+
+buy
+membeli
+
+build
+membangun
+
+You must get the IAP expansion from the Market to VRB this.
+Anda harus mendapatkan perluasan IAP dari Pasar untuk VRB ini. 
+
+-
+
+REVIVE
+MENGHIDUPKAN KEMBALI
+
+You keep everything!
+Anda menyimpan semuanya!
+
+RESPAWN
+MENJELMA
+
+You lose the items in your inventory.
+Anda kehilangan item dalam inventaris Anda.
+
+You lose the items in your inventory, and lose 999 levels.
+Anda kehilangan item dalam inventaris Anda, dan kehilangan 999 level.
+
+RESTART
+MENGULANG KEMBALI
+
+Start a new game, with a new creature.
+Mulai permainan baru, dengan makhluk baru. 
+
+OOPS!
+UPS!
+
+You do not have enough Gems.
+Anda tidak memiliki cukup Permata.
+
+Get more gems?
+Dapatkan lebih banyak Permata?
+
+-
+
+30 Gems
+30 Permata
+
+60 Gems
+60 Permata
+
+Used to revive yourself if you die, or to unlock things in the Mutant Market
+Digunakan untuk membangkitkan jika Anda mati, atau untuk membuka kunci item di Pasar Mutan.
+
+-
+
+Free Gems
+Permata Gratis
+
+You will receive a Mystery Box after a short ad
+Anda akan menerima Kotak Misteri setelah iklan singkat
+
+Boxes might have:
+Mereka mungkin berisi:
+
+You must finish the whole video to receive the reward!
+Anda harus menyelesaikan seluruh video untuk menerima hadiah!
+
+-
+
+Mutation
+Mutasi
+
+Mix your current hybrid with ANOTHER animal! Also, gain 12 levels!
+Campurkan hibrida Anda saat ini dengan hewan LAIN! Juga, dapatkan 12 level!
+
+-
+
+Huge Inventory
+Inventaris Besar
+
+Permanently adds a second page to your inventory!
+Menambahkan halaman kedua ke inventaris Anda secara permanen!
+
+-
+
+Companion Egg
+Telur Pendamping
+
+Hatches into a friendly monster that follows you and fights with you!
+Menetas menjadi monster ramah yang mengikuti Anda dan bertarung dengan Anda!
+
+-
+
+Furniture Pack (Mixed)
+Paket Furnitur (Campuran)
+
+Unlocks items: Custom Statue, Armor Stand, Double Crate
+Membuka kunci item: Custom Statue, Armor Stand, Double Crate
+
+-
+
+Furniture Pack (Games)
+Paket Furnitur (Permainan)
+
+Unlocks items: Pool Table, Karaoke Game
+Membuka kunci item: Pool Table, Karaoke Game
+
+-
+
+Furniture Pack (Painting)
+Paket Furnitur (Lukisan)
+
+Unlocks items: Paint Shaker, Stamp Maker, Painting Easel
+Membuka kunci item: Paint Shaker, Stamp Maker, Painting Easel
+
+-
+
+Music Boxes
+Kotak Musik 
+
+Unlock the ability to buy and build your own Music Boxes
+Buka kemampuan untuk membeli dan membuat Kotak Musik Anda sendiri
+
+-
+
+Custom Teleporters
+Teleporter Kustom
+
+Unlock the ability to buy and build your own Teleporters
+Buka kemampuan untuk membeli dan membangun Teleporter Anda sendiri
+
+-
+
+Animal Pack (Dogs)
+Paket Hewan (Anjing )
+
+Adds animals: chihuahua, pug, shiba inu, great dane, corgi
+Menambahkan hewan: Chihuahua, Pug, Shiba inu, Dane besar, Corgi
+
+-
+
+Animal Pack (People)
+Paket Hewan (Orang-Orang)
+
+Adds animals: politician, ninja, influencer, angel, samurai
+Menambahkan hewan: Politikus, Ninja, Pecandu internet, Malaikat, Samurai
+
+-
+
+Animal Pack (Bugs)
+Paket Hewan (Serangga)
+
+Adds animals: butterfly, caterpillar, ladybug, mantis, cockroach
+Menambahkan hewan: Kupu, Ulat, Ladybug, Belalang sembah, Kecoa
+
+-
+
+Animal Pack (Mix 1)
+Paket Hewan (Campuran 1)
+
+Adds animals: cow, raptor, komodoDragon, skunk, panda
+Menambahkan hewan: Sapi, Raptor, Komodo Naga, Sigung, Panda
+
+-
+
+Animal Pack (Mix 2)
+Paket Hewan (Campuran 2)
+
+Adds animals: kitten, astronaut, devil, tree, plastic slide
+Menambahkan hewan: Kucing, Astronot, Setan, Pohon, Slide
+
+-
+
+Animal Pack (Mix 3)
+Paket Hewan (Campuran 3)
+
+Adds animals: dragon, flamingo, grasshopper, fly, eagle
+Menambahkan hewan: Naga, Flamingo, Belalang, Terbang, Elang
+
+-
+
+Animal Pack (Cute 1)
+Paket Hewan (Imut 1)
+
+Adds animals: alpaca, unicorn, red panda, fox, mouse
+Menambahkan hewan: Alpaka, Unicorn, Panda merah, Rubah, Tikus
+
+-
+
+Animal Pack (Vehicles)
+Paket Hewan (Kendaraan)
+
+Adds animals: bicycle, garbage truck, helicopter, airplane, car
+Menambahkan hewan: Sepeda, Truk sampah, Helikopter, Pesawat, Mobil
+
+-
+
+Animal Pack (Food 1)
+Paket Hewan (Makanan 1)
+
+Adds animals: avocado, pumpkin, corn, carrot, asparagus
+Menambahkan hewan: Alpukat, Labu, Jagung, Wortel, Asparagus
+
+-
+
+Animal Pack (Food 2)
+Paket Hewan (Makanan 2)
+
+Adds animals: banana, pineapple, cookie, cupcake, watermelon
+Menambahkan hewan: Pisang, Nanas, Kuki, Cupcake, Semangka
+
+-
+
+Animal Pack (Food 3)
+Paket Hewan (Makanan 3)
+
+Adds animals: hotdog, frenchfries, doughnut, pizza, chickenwing
+Menambahkan hewan: Hotdog, Kentang goreng, Donat, Pizza, Sayap ayam
+
+-
+
+Animal Pack (Cute 2)
+Paket Hewan (Imut 2)
+
+Adds animals: chinchilla, gecko, hedgehog, manatee, puffin
+Menambahkan hewan: Chinchilla, Tokek, Landak, Manatee, Puffin
+
+-
+
+Animal Pack (Jungle)
+Paket Hewan (Hutan)
+
+Adds animals: orangutan, baboon, chameleon, panther, macaw
+Menambahkan hewan: orangutan, babon, bunglon, harimau kumbang, macaw
+
+-
+
+Animal Pack (Birds)
+Paket Hewan (Burung)
+
+Adds animals: crow, seagull, hummingbird, vulture, peacock
+Menambahkan hewan: burung gagak, camar, burung kolibri, burung bangkai, merak

@@ -1,0 +1,18 @@
+*auto_version=3*
+
+[0,8] = Stone Bricks (rot 0)
+
+[0,7] = Stone Bricks (rot 0)
+
+[1,7] = Stone Bricks (rot 0)
+
+[1,8] = Stone Bricks (rot 0)
+
+[0,9] = Stone Bricks (rot 0)
+
+[1,9] = Stone Bricks (rot 0)
+
+[1,6] = Stone Bricks (rot 0)
+
+[0,6] = Stone Bricks (rot 0)
+

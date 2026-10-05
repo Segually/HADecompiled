@@ -1,0 +1,39 @@
+[grasslands]
+weak=Bandit
+stronger=Elite Bandit
+boss=Bandit Boss
+
+[snow]
+weak=Frostbite Bandit
+stronger=Elite Frostbite Bandit
+boss=Frostbite Bandit Boss
+
+[desert]
+weak=Dune Bandit
+stronger=Elite Dune Bandit
+boss=Dune Bandit Boss
+
+[evergreen]
+weak=Timber Bandit
+stronger=Elite Timber Bandit
+boss=Timber Bandit Boss
+
+[ocean]
+weak=Riptide Bandit
+stronger=Elite Riptide Bandit
+boss=Riptide Bandit Boss
+
+[swamp]
+weak=Blackmire Bandit
+stronger=Elite Blackmire Bandit
+boss=Blackmire Bandit Boss
+
+[woodlands]
+weak=Everthorn Bandit
+stronger=Elite Everthorn Bandit
+boss=Everthorn Bandit Boss
+
+[sakura]
+weak=Nightshade Bandit
+stronger=Elite Nightshade Bandit
+boss=Nightshade Bandit Boss

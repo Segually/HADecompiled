@@ -1,0 +1,46 @@
+Description_TAI = หมวกทองอันงดงาม ทั้งสง่างามและคม
+Name_TAI = หมวก เกราะ ปีก ทองคำ
+Description_POR = Um majestoso elmo dourado, ao mesmo tempo esplêndido e afiado.
+Description_SPN = Un majestuoso casco dorado, tanto espléndido como afilado.
+Description_RUS = Великолепный золотой шлем, как великолепный, так и острый.
+Description_IND = Sebuah helm emas megah, baik megah maupun tajam.
+Name_POR = Elmo Asa de Ouro
+Name_SPN = Yelmo de Ala Dorada
+Name_RUS = Золотой крылатый шлем
+Name_IND = Helm Sayap Emas
+Overwrite_name = Gold Wing Helm
+Description = A majestic gold helm, both splendid and sharp
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/ValkyrieHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Default Coloring = Weapon - Gold
+PaintLayout0_SolidColors = 0-2, 1-6, 2-1, 3-5, 
+model3d_camDist = 2.6
+show_model3d = true
+model3d_fov = 27.5
+model3d_xRot = -105
+model3d_objRot = 18
+model3d_yRot = 0
+model3d_recenterY = 12
+model3d_recenterX = 2
+
+Defend Amount = 6
+
+Vendor0 = Armor
+NumSell = 1 to 2
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 3-1, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Nomad = 0-1, 1-4, 2-3, 3-2, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-2, 3-3, 
+ParticleTransform0 = -0.643,1.48,-0.194:-0.8680139,-0.04276721,-0.07594141,0.4888312:1,1,1:CONE:1.2:0.2
+ParticleTransform1 = 0.643,1.48,-0.194:-0.8680139,0.04276721,0.07594141,0.4888312:1,1,1:CONE:1.2:0.2

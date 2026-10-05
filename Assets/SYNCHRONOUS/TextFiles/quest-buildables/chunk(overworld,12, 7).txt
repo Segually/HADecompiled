@@ -1,0 +1,79 @@
+*auto_version=3*
+*is_blank=true*
+*forced_biome=2*
+
+[0,0] = Dirt Path (rot 0)
+
+[1,0] = Dirt Path (rot 0)
+
+[1,1] = Dirt Path (rot 0)
+
+[0,1] = Dirt Path (rot 0)
+
+[0,2] = Dirt Path (rot 0)
+
+[1,2] = Dirt Path (rot 0)
+
+[1,3] = Dirt Path (rot 0)
+
+[0,3] = Dirt Path (rot 0)
+
+[0,4] = Dirt Path (rot 0)
+
+[1,4] = Dirt Path (rot 0)
+
+[1,5] = Dirt Path (rot 0)
+
+[0,5] = Dirt Path (rot 0)
+
+[0,6] = Dirt Path (rot 0)
+
+[1,6] = Dirt Path (rot 0)
+
+[0,7] = Dirt Path (rot 0)
+
+[1,7] = Dirt Path (rot 0)
+
+[1,8] = Dirt Path (rot 0)
+
+[1,9] = Dirt Path (rot 0)
+
+[2,9] = Dirt Path (rot 0)
+
+[2,8] = Dirt Path (rot 0)
+
+[3,9] = Dirt Path (rot 0)
+
+[4,9] = Dirt Path (rot 0)
+
+[5,9] = Dirt Path (rot 0)
+
+[6,9] = Dirt Path (rot 0)
+
+[2,7] = Dirt Path (rot 0)
+
+[3,8] = Dirt Path (rot 0)
+
+[2,6] = Dirt Path (rot 0)
+
+[3,7] = Dirt Path (rot 0)
+
+[6,6] = Teleporter (rot 0)
+
+[6,8] = Dirt Path (rot 0)
+
+[6,7] = Dirt Path (rot 0)
+
+[7,9] = Dirt Path (rot 0)
+
+[8,9] = Dirt Path (rot 0)
+
+[9,9] = Dirt Path (rot 0)
+
+[3,6] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[0,8] = Dirt Path (rot 0)
+
+[3,1] = Stone Vein (Desert) (rot 0)

@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - ราชา โจร
+Name_POR = Mob - Rei dos Bandidos
+Name_SPN = Móvil - Rey Bandido
+Name_RUS = Моб - Король Бандитов
+Name_IND = Gerombolan - Raja Bandit
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

@@ -1,0 +1,25 @@
+Description_TAI = เหมาะ สำหรับ หลักสูตร สิ่งกีดขวาง!
+Name_TAI = หมัด ยักษ์
+Description_POR = Ótimo para percursos com obstáculos!
+Description_SPN = ¡Ideal para recorridos de obstáculos!
+Description_RUS = Отлично подходит для полос препятствий!
+Description_IND = Sangat cocok untuk rintangan!
+Name_POR = Soco Gigante
+Name_SPN = Golpeador Gigante
+Name_RUS = Гигантский Кулак
+Name_IND = Pemukul Raksasa
+Description = Great for obstacle courses!
+
+Inventory_sprite_path = item giant puncher
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 8
+Crafting_ingredient_B = Cotton
+Crafting_ingredient_B_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Giant Puncher
+World_geometry = Rug_shape
+Craft_required_lvl = 84
+Market Cost = CALCULATE
+
+Vendor0 = Traps
+NumSell = 1 to 2

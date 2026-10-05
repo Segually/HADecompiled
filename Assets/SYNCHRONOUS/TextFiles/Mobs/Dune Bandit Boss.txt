@@ -1,0 +1,27 @@
+creature_A=BOSS_ANIMAL_A
+creature_B=BOSS_ANIMAL_B
+level=CAMP_DEPTH*2.5
+size=3.0
+hat=BOSS_HELMET_MODEL
+armor=BOSS_ARMOR_MODEL
+hand=BOSS_WEAPON_MODEL
+state=aggressive
+skin_mat=
+wander_dist=0
+respawn_seconds=7200
+hat_paint=Iron & Oak
+armor_paint=Iron & Oak
+hand_paint=Weapon - Gold
+overwrite_mob_name=BOSS_NAME
+
+walk_speed=DEFAULT_WALK_SPEED
+hp_regen=DEFAULT_HP_REGEN
+hp_max=DEFAULT_HP_MAX
+hp_curr=DEFAULT_HP_CURR
+ai_lockon=DEFAULT_AI_LOCKON
+icon_id=10
+spawn_offset_x=0
+spawn_offset_z=0
+
+[drops]
+BOSS_KEY

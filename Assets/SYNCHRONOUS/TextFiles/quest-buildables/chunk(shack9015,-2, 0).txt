@@ -1,0 +1,9 @@
+*auto_version=9*
+
+[3,0] = Painting (rot 0)
+	paint = *string* Royal Sage
+	dev_painting_id = *short* 4
+
+[7,1] = Crafting Table (rot 1)
+	paint = *string* Royal Sage
+

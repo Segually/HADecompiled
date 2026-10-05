@@ -1,0 +1,103 @@
+*auto_version=1*
+*forced_biome=7*
+
+[1,0] = Stone Bricks (rot 0)
+
+[2,0] = Stone Bricks (rot 0)
+
+[0,0] = Stone Bricks (rot 0)
+
+[0,1] = Stone Bricks (rot 0)
+
+[1,1] = Stone Bricks (rot 0)
+
+[2,1] = Stone Bricks (rot 0)
+
+[0,2] = Stone Bricks (rot 0)
+
+[1,2] = Stone Bricks (rot 0)
+
+[2,2] = Stone Bricks (rot 0)
+
+[0,3] = Stone Bricks (rot 0)
+
+[1,3] = Stone Bricks (rot 0)
+
+[2,3] = Stone Bricks (rot 0)
+
+[0,4] = Stone Bricks (rot 0)
+
+[1,4] = Stone Bricks (rot 0)
+
+[2,4] = Stone Bricks (rot 0)
+
+[0,5] = Stone Bricks (rot 0)
+
+[1,5] = Stone Bricks (rot 0)
+
+[2,5] = Stone Bricks (rot 0)
+
+[0,6] = Stone Bricks (rot 0)
+
+[1,6] = Stone Bricks (rot 0)
+
+[2,6] = Stone Bricks (rot 0)
+
+[0,7] = Stone Bricks (rot 0)
+
+[1,7] = Stone Bricks (rot 0)
+
+[2,7] = Stone Bricks (rot 0)
+
+[0,8] = Stone Bricks (rot 0)
+
+[1,8] = Stone Bricks (rot 0)
+
+[2,8] = Stone Bricks (rot 0)
+
+[0,9] = Stone Bricks (rot 0)
+
+[1,9] = Stone Bricks (rot 0)
+
+[2,9] = Stone Bricks (rot 0)
+
+[0,0] = Wood Rails (rot 0)
+
+[0,1] = Wood Rails (rot 0)
+
+[2,0] = Wood Rails (rot 0)
+
+[2,1] = Wood Rails (rot 0)
+
+[0,2] = Wood Rails (rot 0)
+
+[0,3] = Wood Rails (rot 0)
+
+[2,2] = Wood Rails (rot 0)
+
+[2,3] = Wood Rails (rot 0)
+
+[0,4] = Wood Rails (rot 0)
+
+[2,4] = Wood Rails (rot 0)
+
+[0,5] = Wood Rails (rot 0)
+
+[2,5] = Wood Rails (rot 0)
+
+[0,6] = Wood Rails (rot 0)
+
+[2,6] = Wood Rails (rot 0)
+
+[0,7] = Wood Rails (rot 0)
+
+[2,7] = Wood Rails (rot 0)
+
+[0,8] = Wood Rails (rot 0)
+
+[2,8] = Wood Rails (rot 0)
+
+[0,9] = Wood Rails (rot 0)
+
+[2,9] = Wood Rails (rot 0)
+

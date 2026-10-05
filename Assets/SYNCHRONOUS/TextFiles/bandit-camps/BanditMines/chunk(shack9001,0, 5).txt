@@ -1,0 +1,51 @@
+*forced_floor_rot=1*
+*forced_floor_model=3*
+
+[3,6] = RANDOM_BIOME_GEM_LARGE (rot 1)
+
+[7,0] = RANDOM_BIOME_GEM (rot 1)
+
+[5,7] = RANDOM_BIOME_GEM (rot 1)
+
+[9,1] = BIOME_SMALL_STALAGMITE (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,1] = DEBUG-1x1-fillempty (rot 0)
+
+[0,2] = DEBUG-1x1-fillempty (rot 0)
+
+[0,3] = DEBUG-1x1-fillempty (rot 0)
+
+[0,4] = DEBUG-1x1-fillempty (rot 0)
+
+[0,5] = DEBUG-1x1-fillempty (rot 0)
+
+[0,6] = DEBUG-1x1-fillempty (rot 0)
+
+[0,7] = DEBUG-1x1-fillempty (rot 0)
+
+[0,8] = DEBUG-1x1-fillempty (rot 0)
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[1,9] = DEBUG-1x1-fillempty (rot 0)
+
+[2,9] = DEBUG-1x1-fillempty (rot 0)
+
+[3,9] = DEBUG-1x1-fillempty (rot 0)
+
+[5,9] = DEBUG-1x1-fillempty (rot 0)
+
+[4,9] = DEBUG-1x1-fillempty (rot 0)
+
+[6,9] = DEBUG-1x1-fillempty (rot 0)
+
+[7,9] = DEBUG-1x1-fillempty (rot 0)
+
+[8,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+

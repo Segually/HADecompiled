@@ -1,0 +1,17 @@
+[3] Bones
+[10] Stone Ore
+[20] Metal Ore
+[35] Titanium Ore
+[40] Gold Ore
+[50] Uranium Ore
+[60] Magmite Ore
+[70] Silver
+[85] Amber
+[85] Amethyst
+[85] Emerald
+[85] Ruby
+[85] Sapphire
+[100] Fossil
+[400] Ice Shard
+[850] Dark Shard
+[1000] Ancient Bones

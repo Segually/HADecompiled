@@ -1,0 +1,35 @@
+Name_POR=Pantara
+Name_RUS=Пантара
+Name_IND=Pantara
+Name_SPN=Pantara
+Name_TAI=พันทารา
+
+----- DIALOGUE -----
+[000]
+otherspeak=Bonjour!
+goto=001
+
+[001]
+otherspeak=A true artist never blames their tools!
+otherspeak_POR=Um bom artista nunca culpa suas ferramentas!
+otherspeak_RUS=Хороший художник никогда не винит свои инструменты!
+otherspeak_IND=Seorang seniman yang baik tidak pernah menyalahkan alat mereka!
+otherspeak_SPN=¡Un buen artista nunca culpa a sus herramientas!
+otherspeak_TAI=ศิลปินที่ดีไม่เคยโทษเครื่องมือของพวกเขา!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

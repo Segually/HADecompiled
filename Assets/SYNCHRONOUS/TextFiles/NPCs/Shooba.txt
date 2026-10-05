@@ -1,0 +1,40 @@
+Name_POR=Shooba
+Name_RUS=Шуба
+Name_IND=Shooba
+Name_SPN=Shooba
+Name_TAI=ชูบา
+
+----- DIALOGUE -----
+[000]
+otherspeak=Greetings, weary traveller!
+otherspeak_POR=Saudações, viajante cansado!
+otherspeak_RUS=Привет, усталый путник!
+otherspeak_IND=Salam, wisatawan yang lelah!
+otherspeak_SPN=¡Saludos, cansado viajero!
+otherspeak_TAI=สวัสดีนักเดินทางที่เหนื่อยล้า!
+goto=001
+
+[001]
+otherspeak=Behold my many wares and trinkets
+otherspeak_POR=Veja minhas muitas mercadorias e bugigangas
+otherspeak_RUS=Взгляни на мои многочисленные товары и безделушки
+otherspeak_IND=Lihatlah banyak barang dagangan dan pernak-pernik saya
+otherspeak_SPN=He aquí mis muchas mercancías y baratijas
+otherspeak_TAI=ดูเครื่องถ้วยและเครื่องประดับมากมายของฉัน
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

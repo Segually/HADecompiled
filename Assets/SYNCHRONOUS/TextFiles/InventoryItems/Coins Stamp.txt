@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ กระเป๋าเหรียญ ลง ใน เฟอร์นิเจอร์ ของคุณ!
+Name_TAI = เหรียญ ประทับ
+Description_POR = Adicione um símbolo de Bolsa de Moedas ao seu móvel!
+Description_SPN = ¡Añade un símbolo de Monedero a tus muebles!
+Description_RUS = Добавьте символ кошелька к вашей мебели!
+Description_IND = Tambahkan simbol Dompet Koin ke furnitur Anda!
+Name_POR = Carimbo de Moedas
+Name_SPN = Sello de Monedas
+Name_RUS = Марка с монетами
+Name_IND = Stempel Koin
+Description = Add a Coin Purse symbol to your furniture!
+
+Inventory_sprite_path = item stamp coins
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

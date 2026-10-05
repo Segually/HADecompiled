@@ -1,0 +1,6 @@
+*auto_version=1*
+
+[4,7] = Pocket World Evergreen (rot 0)
+	shack_id = *long* 9010
+	quest_miniworld = *string* true
+

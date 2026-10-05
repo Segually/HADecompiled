@@ -1,0 +1,95 @@
+[paint]
+Royal Sage
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+The Timber Bandits crush all who dare enter our domain; the forest does not forgive, and neither do we.
+
+[page 2 - English]
+Grimroot commands us to strike like the falling tree—silent until it is too late to escape.
+
+[page 3 - English]
+Our enemies are no better than rotting wood, and we will splinter them into nothingness.
+
+[page 4 - English]
+The forest devours the weak, and the Timber Bandits ensure it stays hungry.
+
+[book name - English]
+Roots of Wrath
+
+[book name - Indonesian]
+Akar Kemarahan
+
+[page 1 - Indonesian]
+Para Perampok Kayu menghancurkan semua yang berani memasuki wilayah kami; hutan tidak memaafkan, dan kami pun tidak.
+
+[page 2 - Indonesian]
+Grimroot memerintahkan kami untuk menyerang seperti pohon yang tumbang—diam sampai sudah terlambat untuk melarikan diri.
+
+[page 3 - Indonesian]
+Musuh-musuh kami tidak lebih baik dari kayu busuk, dan kami akan memecah mereka menjadi kehampaan.
+
+[page 4 - Indonesian]
+Hutan memangsa yang lemah, dan Para Perampok Kayu memastikan hutan tetap lapar.
+
+[book name - Portuguese]
+Raízes da Ira
+
+[page 1 - Portuguese]
+Os Bandidos da Madeira esmagam todos que ousam entrar em nosso domínio; a floresta não perdoa, e nós também não.
+
+[page 2 - Portuguese]
+Grimroot nos comanda a atacar como a árvore que cai—silenciosa até ser tarde demais para escapar.
+
+[page 3 - Portuguese]
+Nossos inimigos não são melhores do que madeira podre, e nós os fragmentaremos até a inexistência.
+
+[page 4 - Portuguese]
+A floresta devora os fracos, e os Bandidos da Madeira garantem que ela continue faminta.
+
+[book name - Russian]
+Корни Гнева
+
+[page 1 - Russian]
+Бандиты Леса сокрушают всех, кто осмелится войти в наше владение; лес не прощает, и мы тоже.
+
+[page 2 - Russian]
+Гримрут приказывает нам нападать, как падающее дерево — тихо, пока не станет слишком поздно для побега.
+
+[page 3 - Russian]
+Наши враги не лучше гнилого дерева, и мы расщепим их в ничто.
+
+[page 4 - Russian]
+Лес пожирает слабых, и Бандиты Леса обеспечивают его постоянный голод.
+
+[book name - Spanish]
+Raíces de la Ira
+
+[page 1 - Spanish]
+Los Bandidos del Bosque aplastan a todos los que se atreven a entrar en nuestro dominio; el bosque no perdona, y nosotros tampoco.
+
+[page 2 - Spanish]
+Grimroot nos ordena atacar como el árbol que cae, silencioso hasta que es demasiado tarde para escapar.
+
+[page 3 - Spanish]
+Nuestros enemigos no son mejores que la madera podrida, y los haremos astillas hasta que no quede nada.
+
+[page 4 - Spanish]
+El bosque devora a los débiles, y los Bandidos del Bosque se aseguran de que siga teniendo hambre.
+
+[book name - Thai]
+รากแห่ งความโ กรธ
+
+[page 1 - Thai]
+พวกโจร ป่าไม้ บดขยี้ ทุกคนท ี่กล้า เข้ามา ในดินแ ดนของเ รา; ป่ าไม่ให ้อภัย  และเรา ก็เช่น กัน
+
+[page 2 - Thai]
+กริมรู ทสั่งใ ห้เราโ จมตีเห มือนต้ นไม้ที ่ล้ม—เ งียบสง บจนกว่ าจะสาย เกินจะ หนี
+
+[page 3 - Thai]
+ศัตรูข องเราไ ม่ได้ด ีไปกว่ าซากไม ้ผุ แล ะเราจะ สลายพว กเขาเป ็นความ ว่างเป ล่า
+
+[page 4 - Thai]
+ป่ากลื นกินผู ้ที่อ่ อนแอ แ ละพวกโ จรป่าไ ม้ทำให ้มั่นใ จว่ามั นจะหิว โหยอยู ่เสมอ

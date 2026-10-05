@@ -1,0 +1,13 @@
+Name_TAI = รัง สัตว์ ประหลาด
+Name_POR = Ninho de Criatura
+Name_SPN = Nido de criaturas
+Name_RUS = Гнездо существа
+Name_IND = Sarang Makhluk
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Creature Nest
+World_geometry = 1_by_1
+
+not_obtainable = true
+
+tool_required_to_move = Drill

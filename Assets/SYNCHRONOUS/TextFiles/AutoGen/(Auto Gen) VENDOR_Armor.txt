@@ -1,0 +1,29 @@
+[13] Wood Armor
+[13] Wood Helmet
+[106] Metal Helmet
+[153] Metal Armor
+[153] Metal Legion Helm
+[268] Titanium Legion Helm
+[350] Titanium Valkyrie Helm
+[400] Gold Valkyrie Helm
+[494] Gold Shogun Helm
+[584] Titanium Armor
+[617] Uranium Shogun Helm
+[659] Gold Armor
+[851] Uranium Brute Helm
+[979] Uranium Armor
+[1363] Magma Brute Helm
+[1550] Magma Armor
+[1737] Magma Menace Helm
+[3322] Speed Helm
+[9623] Ice Menace Helm
+[12431] Ice Solaris Helm
+[14079] Ice Armor
+[28406] Dark Solaris Helm
+[36362] Dark Skull Helm
+[43179] Dark Armor
+[92129] Ancient Skull Helm
+[109445] Ancient Eldritch Helm
+[127903] Spirit Eldritch Helm
+[134383] Ancient Armor
+[218063] Spirit Armor

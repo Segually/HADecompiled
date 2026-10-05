@@ -1,0 +1,40 @@
+Name_POR=Vendedor de Suco de Osso
+Name_RUS=Продавец костного сока
+Name_IND=Penjual Jus Tulang
+Name_SPN=Vendedor de Jugo de Hueso
+Name_TAI=ผู้ขายน้ําผลไม้กระดูก
+
+----- DIALOGUE -----
+[000]
+otherspeak=Hey you!
+otherspeak_POR=Ei você!
+otherspeak_RUS=Эй, ты!
+otherspeak_IND=Hei kau!
+otherspeak_SPN=¡Eh, tú!
+otherspeak_TAI=เฮ้คุณ!
+goto=001
+
+[001]
+otherspeak=...want to level up fast?
+otherspeak_POR=... quer subir de nível rápido?
+otherspeak_RUS=... хотите быстро повысить уровень?
+otherspeak_IND=... ingin naik level dengan cepat?
+otherspeak_SPN=... quieres subir de nivel rápido?
+otherspeak_TAI=... ต้องการเพิ่มระดับอย่างรวดเร็ว?
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

@@ -1,0 +1,14 @@
+*auto_version=1*
+*forced_floor_rot=3*
+*forced_floor_model=1*
+
+[2,2] = Old Torch (rot 0)
+
+[6,7] = Cave Basket (rot 0)
+	basket_id = *long* 9145
+
+[7,5] = Cave Chest (rot 2)
+	basket_id = *long* 9146
+
+[5,1] = Spawner - Fossils (rot 0)
+

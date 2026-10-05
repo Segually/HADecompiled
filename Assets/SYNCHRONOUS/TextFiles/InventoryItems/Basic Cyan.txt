@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณให้เป็นสีฟ้าแซฟไฟร์!
+Name_TAI = พื้นฐาน สีฟ้า
+Description_POR = Pinte seus móveis de ciano!
+Description_SPN = ¡Pinta tus muebles de cian!
+Description_RUS = Покрасьте вашу мебель в цвет циан!
+Description_IND = Cat furnitur Anda dengan warna Sian!
+Name_POR = Ciano Básico
+Name_SPN = Cian Básico
+Name_RUS = Базовый голубой
+Name_IND = Sian Dasar
+Description =  Paint your furniture Cyan!
+
+Inventory_sprite_path = item paint basic cyan
+Crafting_ingredient_A = Berry
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Snowball
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

@@ -1,0 +1,5 @@
+[15] Old Land Claim
+[133] Lock
+[497] 3-day Land Claim
+[2526] 8-day Land Claim
+[2539][paintable] Vending Machine

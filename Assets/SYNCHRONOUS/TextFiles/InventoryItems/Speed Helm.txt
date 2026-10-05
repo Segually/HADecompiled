@@ -1,0 +1,24 @@
+Description_TAI = ทำ ให้ คุณ วิ่ง เร็ว! ไม่ ให้ การ ป้องกัน
+Name_TAI = หมวก กัน น็อค ความเร็ว
+Description_POR = Faz você correr rápido! Não oferece proteção.
+Description_SPN = ¡Te hace correr rápido! No proporciona protección.
+Description_RUS = Позволяет вам быстро бегать! Не обеспечивает защиты.
+Description_IND = Membuatmu berlari cepat! Tidak memberikan perlindungan.
+Name_POR = Elmo de Velocidade
+Name_SPN = Casco de Velocidad
+Name_RUS = Шлем Скорости
+Name_IND = Helm Kecepatan
+Description = Makes you run fast! Provides no protection
+
+Inventory_sprite_path = item speed helm
+Crafting_ingredient_A = Feathers
+Crafting_ingredient_A_count = 10
+Crafting_ingredient_B = Gold Bar
+Crafting_ingredient_B_count = 4
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/hat_speedHelm
+Craft_required_lvl = 114
+Market Cost = CALCULATE
+
+Vendor0 = Armor

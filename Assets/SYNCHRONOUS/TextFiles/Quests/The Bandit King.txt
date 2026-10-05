@@ -1,0 +1,86 @@
+﻿questname_POR = O Rei Bandido
+questname_RUS = Король бандитов
+questname_IND = Raja Bandit
+questname_SPN = El Rey Bandido
+questname_TAI = ราชาโจร
+Complete_text = I destroyed the Bandit camp! Shindo is safe again.
+Complete_text_POR = Eu destruí o acampamento dos bandidos! Shindo está seguro de novo.
+Complete_text_RUS = Я разрушила лагерь бандитов! Шиндох снова в безопасности.
+Complete_text_IND = Aku menghancurkan kamp Bandit! Syindo aman lagi.
+Complete_text_SPN = ¡Destruí el campamento bandido! Schindo está a salvo otra vez.
+Complete_text_TAI = ฉันทําลายค่ายโจร! ชินโด้ปลอดภัยอีกครั้ง
+Reward0_item = Key
+Reward0_count = 1
+Reward0_key_name = KW_basement
+RewardChest0 = 9047
+RewardChest1 = 9048
+RewardChest2 = 9049
+RewardChest3 = 9050
+Repeat_hours = 30
+
+[step 0]
+Hint = I should talk to 'King Wing' in Shindo Castle
+Hint_POR = Eu deveria falar com 'Ala Rei' no Castelo de Shindo
+Hint_RUS = Я должен поговорить с "Крылья короля" в замке Шиндох
+Hint_IND = Aku harus bicara dengan 'Sayap Raja' di Kastil Syindo
+Hint_SPN = Debería hablar con 'Ala rey' en el castillo de Schindo
+Hint_TAI = ฉันควรไปคุยกับ 'คิงวิง' ในปราสาทชินโด
+
+[step 1]
+Hint = King Wing is having trouble with a bandit camp. I should speak to him again.
+Hint_POR = Ala Rei está tendo problemas com um acampamento de bandidos. Eu deveria falar com ele de novo.
+Hint_RUS = У короля Уинг проблемы с бандитским лагерем. Я должен поговорить с ним еще раз.
+Hint_IND = Sayap Raja mengalami masalah dengan kamp bandit. Aku harus bicara dengannya lagi.
+Hint_SPN = Ala rey está teniendo problemas con un campamento de bandidos. Debería hablar con él otra vez.
+Hint_TAI = คิงวิงกําลังมีปัญหากับค่ายโจร ฉันควรคุยกับเขาอีกครั้ง
+n_Battle_Containers = 10
+BattleContainer0 = 9037
+BattleContainer1 = 9038
+BattleContainer2 = 9039
+BattleContainer3 = 9040
+BattleContainer4 = 9041
+BattleContainer5 = 9042
+BattleContainer6 = 9043
+BattleContainer7 = 9044
+BattleContainer8 = 9045
+BattleContainer9 = 9046
+
+[step 2]
+Hint = When I am ready to fight bandits, I should talk to King Wing again
+Hint_POR = Quando eu estiver pronto para lutar contra bandidos, eu deveria falar com o Ala Rei novamente
+Hint_RUS = Когда я буду готов бороться с бандитами, я должен поговорить с королем крыла снова
+Hint_IND = Ketika saya siap untuk melawan bandit, saya harus berbicara dengan Sayap Raja lagi
+Hint_SPN = Cuando estoy listo para luchar contra bandidos, debería hablar con Ala rey de nuevo
+Hint_TAI = เมื่อฉันพร้อมที่จะต่อสู้กับโจรฉันควรพูดคุยกับคิงวิงอีกครั้ง
+
+[step 3]
+Hint = I must destroy all the bandits! ([N_MOBS] left)
+Hint_POR = Tenho que destruir todos os bandidos! ([N_MOBS] permanecem)
+Hint_RUS = Я должен уничтожить всех бандитов! ([N_MOBS] остаются)
+Hint_IND = Aku harus menghancurkan semua bandit! ([N_MOBS] tetap)
+Hint_SPN = ¡Debo destruir a todos los bandidos! (quedan [N_MOBS])
+Hint_TAI = ข้าต้องทําลายโจรทั้งหมด! (ยังเหลืออยู่ [N_MOBS] คน)
+Instantly teleport to = chunk(shack9065,99, -99) 3 5
+Step type = Kill All Mobs
+Goal kills = 9
+n_TempCompanions = 1
+TempCompanion0_name = Shindo Warrior
+TempCompanion0_levelScale = 0.05
+TempCompanion0_creatureA = shark
+TempCompanion0_creatureB = wolf
+TempCompanion0_hat = Wizard Hat
+TempCompanion0_body = Metal Armor
+TempCompanion0_hand = Titanium DoubleDagger
+TempCompanion0_hat_paint = Glacier
+TempCompanion0_armor_paint = Glacier
+On logout revert to step = 2
+Soundtrack = War 1
+
+[step 4]
+Hint = I have destroyed the bandit camp. I should speak with King Wing to get my reward.
+Hint_POR = Destruí o acampamento dos bandidos. Eu deveria falar com o Ala Rei para receber minha recompensa.
+Hint_RUS = Я уничтожила лагерь бандитов. Я должен поговорить с Королем Уингом, чтобы получить свою награду.
+Hint_IND = Aku telah menghancurkan kamp bandit. Aku harus berbicara dengan Sayap Raja untuk mendapatkan imbalanku.
+Hint_SPN = He destruido el campamento de bandidos. Debería hablar con Ala rey para obtener mi recompensa.
+Hint_TAI = ฉันทําลายค่ายโจร ข้าควรพูดกับคิงวิงเพื่อรับรางวัลจากข้า
+Instantly teleport to = chunk(shack9054,4, 3) 8 3

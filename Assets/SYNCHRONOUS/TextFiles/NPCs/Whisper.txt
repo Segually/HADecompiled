@@ -1,0 +1,25 @@
+Name_POR=Sussurro
+Name_RUS=Шепот
+Name_IND=Bisikan
+Name_SPN=Susurro
+Name_TAI=วิสเปอร์
+
+----- DIALOGUE -----
+[0]
+otherspeak=With Echo and Murmur, three sisters you see.
+otherspeak_POR=Com Eco e Murmúrio, três irmãs você vê.
+otherspeak_RUS=Вместе с Эхо и Шорохом, три сестры ты видишь.
+otherspeak_IND=Dengan Gema dan Gumaman, tiga saudari yang kau lihat.
+otherspeak_SPN=Con Eco y Murmullo, tres hermanas ves.
+otherspeak_TAI=พร้อมกับเอคโค่และเมอร์เมอร์, สามสาวที่คุณเห็น.
+goto=001
+
+[1]
+otherspeak=A puzzle in words, a riddle we be.
+otherspeak_POR=Um enigma em palavras, um mistério somos nós.
+otherspeak_RUS=Загадка в словах, мы - тайна, пойми.
+otherspeak_IND=Teka-teki dalam kata-kata, kami adalah teka-teki.
+otherspeak_SPN=Un enigma en palabras, un acertijo somos.
+otherspeak_TAI=เป็นปริศนาในคำพูด, เราคือกลอนปริศนา.
+goto=-1
+

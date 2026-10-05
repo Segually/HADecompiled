@@ -1,0 +1,25 @@
+Name_POR=Murmúrio
+Name_RUS=Шепот
+Name_IND=Gumaman
+Name_SPN=Murmullo
+Name_TAI=การสะกด
+
+----- DIALOGUE -----
+[0]
+otherspeak=As the mist dances softly, in the twilight alone
+otherspeak_POR=Enquanto a névoa dança suavemente, na penumbra sozinha
+otherspeak_RUS=Как туман тихо пляшет, в сумерках одиноко
+otherspeak_IND=Sebagai kabut yang berdansa lembut, dalam senja yang sepi
+otherspeak_SPN=Mientras la bruma danza suavemente, solo en el crepúsculo
+otherspeak_TAI=เมื่อหมอกเต้นอย่างนุ่มนวล, ในยามความคล้ำคลั่ง
+goto=001
+
+[1]
+otherspeak=Silent tales linger, unseen and unknown.
+otherspeak_POR=Contos silenciosos permanecem, invisíveis e desconhecidos.
+otherspeak_RUS=Бесшумные истории замирают, незримые и неизвестные.
+otherspeak_IND=Cerita sunyi berlanjut, tak terlihat dan tak diketahui.
+otherspeak_SPN=Relatos silenciosos permanecen, invisibles e desconocidos.
+otherspeak_TAI=เรื่องราวที่สงบเงียบยังคงค้างอยู่, ไม่มีใครเห็นหรือรู้จัก
+goto=-1
+

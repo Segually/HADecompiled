@@ -1,0 +1,30 @@
+Description_TAI = เพิ่ม สัญลักษณ์ ไข่ ไปที่ เฟอร์นิเจอร์ ของคุณ!
+Name_TAI = ตราประทับ ไข่
+Description_POR = Adicione um símbolo de Ovo ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de huevo a tus muebles!
+Description_RUS = Добавьте символ яйца к вашей мебели!
+Description_IND = Tambahkan simbol Telur ke furnitur Anda!
+Name_POR = Carimbo de Ovo
+Name_SPN = Sello de Huevo
+Name_RUS = Яичная печать
+Name_IND = Cap Telur
+Description = Add an Egg symbol to your furniture!
+
+Inventory_sprite_path = item stamp egg
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

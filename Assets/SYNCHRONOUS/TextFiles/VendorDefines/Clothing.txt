@@ -1,0 +1,13 @@
+[Sell Percent = 0.26]
+
+"Loom"
+Clothing(1-999)
+Clothing(1-999)
+
+Clothing(1-999)
+Clothing(1-999)
+Clothing(1-999)
+
+Clothing Materials(1-200)
+Clothing Materials(1-200)
+"Armor Display"

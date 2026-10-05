@@ -1,0 +1,27 @@
+Description_TAI = ดาบ พื้นฐาน ทำ จาก หิน อย่าง หยาบๆ
+Name_TAI = ดาบ หิน
+Description_POR = Uma espada básica grosseiramente feita de pedra.
+Description_SPN = Una espada básica toscamente hecha de piedra
+Description_RUS = Простой меч, грубо сделанный из камня.
+Description_IND = Pedang dasar yang terbuat kasar dari batu
+Name_POR = Espada de Pedra
+Name_SPN = Espada de piedra
+Name_RUS = Каменный меч
+Name_IND = Pedang Batu
+Description = A basic sword crudely made of stone
+
+Inventory_sprite_path = item stone sword
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stone Ore
+Crafting_ingredient_B_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/SWORD_stone
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+NumSell = 2 to 3
+
+Damage Base = 1
+
+weapon_display_copy = Metal Sword

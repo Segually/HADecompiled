@@ -1,0 +1,20 @@
+Name_TAI = สาย แร่ หิน (หิมะ)
+Name_POR = Veia de Pedra (Nevada)
+Name_SPN = Veta de Piedra (Nevada)
+Name_RUS = Каменная жила (Снежная)
+Name_IND = Urat Batu (Bersalju)
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Stone Vein (Snowy)
+World_geometry = 2_by_2
+
+tool_required_to_move = Drill
+
+show_model3d = true
+Copy3dModelPosition = Stone Vein
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 2
+Pollinator Regen RespawnId = mob_spawn

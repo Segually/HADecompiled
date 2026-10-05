@@ -1,0 +1,41 @@
+Name_POR=Salgueiro
+Name_RUS=Ива
+Name_IND=Willow
+Name_SPN=Sauce
+Name_TAI=วิลโลว์
+
+----- DIALOGUE -----
+[0]
+otherspeak=The deeper you go, the stranger the treasures you'll find...
+otherspeak_POR=Quanto mais fundo você vai, mais estranhos são os tesouros que você encontra...
+otherspeak_RUS=Чем глубже ты углубляешься, тем страннее сокровища ты найдешь...
+otherspeak_IND=Semakin dalam kamu mencari, semakin aneh harta karun yang akan kamu temukan...
+otherspeak_SPN=Cuanto más profundo vayas, más extraños tesoros encontrarás...
+otherspeak_TAI=ยิ่งคุณไปในที่ลึกๆ ยิ่งคุณจะพบของมีค่าที่แปลกตา...
+goto=001
+
+[1]
+otherspeak=Let me show you!
+otherspeak_POR=Deixe-me mostrar!
+otherspeak_RUS=Позволь мне показать тебе!
+otherspeak_IND=Biarkan aku menunjukkanmu!
+otherspeak_SPN=¡Déjame mostrarte!
+otherspeak_TAI=ให้ฉันแสดงให้คุณดู!
+goto=002
+
+[2]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ITENS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI ITEM
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+optionB=SELL ITEMS
+optionB_POR=VENDER ITENS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=JUAL ITEM
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoA=-88
+gotoB=-99
+

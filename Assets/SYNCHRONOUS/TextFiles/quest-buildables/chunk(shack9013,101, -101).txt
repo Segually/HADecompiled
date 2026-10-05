@@ -1,0 +1,26 @@
+*auto_version=9*
+
+[4,9] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[4,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[4,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[3,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[2,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[1,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[0,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[3,8] = Fancy Torch (rot 0)
+	paint = *string* Crash-Pad Blue
+

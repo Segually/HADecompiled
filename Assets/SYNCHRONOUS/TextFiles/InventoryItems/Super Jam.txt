@@ -1,0 +1,26 @@
+Description_TAI = แยม นี้ ดี มาก มัน จะ ฟื้นฟู สุขภาพ ของ คุณ ทั้งหมด!
+Name_TAI = ซุปเปอร์ แยม
+Description_POR = Esta geleia é tão boa que irá restaurar toda a sua saúde!
+Description_SPN = ¡Esta mermelada es tan buena que te curará toda la salud!
+Description_RUS = Это варенье настолько хорошее, что восстановит всё ваше здоровье!
+Description_IND = Selai ini sangat enak, akan memulihkan semua kesehatanmu!
+Name_POR = Super Geleia
+Name_SPN = Súper Mermelada
+Name_RUS = Супер Джем
+Name_IND = Super Selai
+Description = This jam is so good, it will heal all your health!
+
+Inventory_sprite_path = item super jam
+Crafting_ingredient_A = GoldBerry
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Honeycomb
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+Vendor1 = Food
+NumSell = 2 to 3

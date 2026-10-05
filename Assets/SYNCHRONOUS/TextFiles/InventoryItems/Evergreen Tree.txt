@@ -1,0 +1,31 @@
+Description_TAI = ต้นไม้ จาก ป่าลึก
+Name_TAI = ต้นไม้ ตลอด กาล
+Description_POR = Uma árvore da floresta profunda
+Description_SPN = Un árbol del bosque profundo
+Description_RUS = Дерево из глухого леса
+Description_IND = Pohon dari hutan dalam
+Name_POR = Árvore Perene
+Name_SPN = Árbol Perenne
+Name_RUS = Вечнозеленое дерево
+Name_IND = Pohon Hijau Abadi
+Description = A tree from the deep forest
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Evergreen Tree
+World_geometry = 2_by_2
+Market Cost = 30
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 2
+show_model3d = true
+model3d_camHeight = 0.6
+model3d_yRot = 15
+model3d_xRot = -125
+model3d_objRot = 4
+model3d_camDist = 4.9
+model3d_fov = 60
+model3d_recenterX = 13
+model3d_recenterY = 92
+model3d_override_glow_col = faint_white

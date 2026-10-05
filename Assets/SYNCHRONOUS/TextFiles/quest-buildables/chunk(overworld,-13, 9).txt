@@ -1,0 +1,53 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[9,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[6,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[5,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[9,5] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[9,6] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[4,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,4] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,8] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[6,2] = Willow Tree (rot 1)
+
+[5,8] = Rotting Stump (rot 2)
+
+[8,4] = Giant Purple Mushroom (rot 0)
+
+[7,6] = Dug-up Purple Mushroom (rot 0)
+
+[9,4] = Stone Bricks (rot 2)
+	paint = *string* Basic Black
+
+[8,9] = Blue Torch (rot 0)
+

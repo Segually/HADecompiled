@@ -1,0 +1,16 @@
+Name_TAI = ม็อบ - สังกัด โจร แข็งแกร่ง
+Name_POR = Mob - FACÇÃO_BANDIDO Mais Forte
+Name_SPN = Enemigo - FACCION_BANDIDO Más Fuerte
+Name_RUS = Моб – БАНДИТСКАЯ_ФРАКЦИЯ Усиленный
+Name_IND = Gerombolan - FACTION_PENCURI Lebih Kuat
+
+Type = Place_in_world
+DEBUG_World_obj_path = Buildables/DEBUG-mob-spawn
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+is_simple_mob = true
+
+not_obtainable = true
+

@@ -1,0 +1,95 @@
+[paint]
+Iron & Oak
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+Before Sandskull became the leader of the Dune Bandits, he wandered the desert as a lone scavenger, hardened by endless sandstorms.
+
+[page 2 - English]
+One fateful night, a powerful sandstorm unearthed an ancient, cursed mask that spoke to him, whispering promises of power and dominion.
+
+[page 3 - English]
+When he placed the mask over his face, it fused with his being, granting him the strength to unite the fiercest outlaws of the dunes.
+
+[page 4 - English]
+Now, under Sandskull’s command, the Dune Bandits scour the sand biome, hunting treasure and silencing those who dare oppose them.
+
+[book name - English]
+Prophecy of the Sands
+
+[book name - Indonesian]
+Ramalan Pasir
+
+[page 1 - Indonesian]
+Sebelum Sandskull menjadi pemimpin Dune Bandits, dia mengembara di padang pasir sebagai pemulung kesepian, ditempa oleh badai pasir tanpa akhir.
+
+[page 2 - Indonesian]
+Suatu malam yang menentukan, badai pasir yang kuat mengungkapkan topeng kuno yang terkutuk yang berbicara kepadanya, membisikkan janji-janji kekuasaan dan dominasi.
+
+[page 3 - Indonesian]
+Ketika dia meletakkan topeng di wajahnya, topeng itu menyatu dengan dirinya, memberinya kekuatan untuk menyatukan penjahat paling ganas di padang pasir.
+
+[page 4 - Indonesian]
+Sekarang, di bawah komando Sandskull, Dune Bandits menjelajahi bioma pasir, berburu harta karun dan membungkam mereka yang berani menentang mereka.
+
+[book name - Portuguese]
+Profecia das Areias
+
+[page 1 - Portuguese]
+Antes de Sandskull se tornar o líder dos Bandidos das Dunas, ele vagava pelo deserto como um saqueador solitário, endurecido por tempestades de areia intermináveis.
+
+[page 2 - Portuguese]
+Em uma noite fatídica, uma poderosa tempestade de areia desenterrou uma máscara antiga e amaldiçoada que falou com ele, sussurrando promessas de poder e domínio.
+
+[page 3 - Portuguese]
+Quando ele colocou a máscara sobre o rosto, ela se fundiu com seu ser, concedendo-lhe a força para unir os fora-da-lei mais ferozes das dunas.
+
+[page 4 - Portuguese]
+Agora, sob o comando de Sandskull, os Bandidos das Dunas vasculham o bioma de areia, caçando tesouros e silenciando aqueles que ousam se opor a eles.
+
+[book name - Russian]
+Пророчество Песков
+
+[page 1 - Russian]
+До того как Пескочереп стал лидером Песчаных Бандитов, он бродил по пустыне в одиночестве как одинокий падальщик, закаленный бесконечными песчаными бурями.
+
+[page 2 - Russian]
+Однажды судьбоносной ночью мощная песчаная буря обнаружила древнюю проклятую маску, которая заговорила с ним, шепча обещания силы и господства.
+
+[page 3 - Russian]
+Когда он надел маску на лицо, она слилась с его существом, даровав ему силу объединять самых свирепых преступников дюн.
+
+[page 4 - Russian]
+Теперь под командованием Пескочерепа Песчаные Бандиты прочёсывают песчаный биом, охотясь за сокровищами и заставляя замолчать тех, кто осмеливается им противостоять.
+
+[book name - Spanish]
+Profecía de las Arenas
+
+[page 1 - Spanish]
+Antes de que Cráneo de Arena se convirtiera en el líder de los Bandidos de las Dunas, vagaba por el desierto como un carroñero solitario, endurecido por tormentas de arena interminables.
+
+[page 2 - Spanish]
+Una noche fatídica, una poderosa tormenta de arena desenterró una antigua máscara maldita que le habló, susurrando promesas de poder y dominio.
+
+[page 3 - Spanish]
+Cuando colocó la máscara sobre su rostro, esta se fusionó con su ser, otorgándole la fuerza para unir a los forajidos más feroces de las dunas.
+
+[page 4 - Spanish]
+Ahora, bajo el mando de Cráneo de Arena, los Bandidos de las Dunas recorren el bioma de arena, cazando tesoros y silenciando a aquellos que se atreven a oponerse a ellos.
+
+[book name - Thai]
+คำทำนา ยแห่งผ ืนทราย
+
+[page 1 - Thai]
+ก่อนที ่แซนด์ สกัลจะ กลายเป ็นหัวห น้าของ แก๊งโจ รทะเลท ราย เข าได้ท่ องไปใน ทะเลทร ายด้วย ตัวคนเ ดียว ใ นฐานะน ักเก็บ ของที่ ชุบกระ ทะด้วย พายุทร ายที่ไ ม่มีที ่สิ้นส ุด
+
+[page 2 - Thai]
+คืนหนึ ่งอันเ ป็นชะต ากรรม  พายุทร ายที่ร ุนแรงไ ด้ขุดพ บหน้าก ากต้อง คำสาปโ บราณซึ ่งพูดก ับเขา  กระซิบ สัญญาถ ึงพลัง และการ ปกครอง
+
+[page 3 - Thai]
+เมื่อเ ขาวางห น้ากาก นั้นบน ใบหน้า  มันก็ ผสานกั บตัวเข า มอบพ ลังให้ เขาสาม ารถรวม ตัวอาช ญากรที ่ดุร้า ยที่สุ ดในทะเ ลทรายไ ด้
+
+[page 4 - Thai]
+ตอนนี้  ภายใต ้การบั ญชาของ แซนด์ส กัล แก ๊งโจรท ะเลทรา ยได้ค้ นหาทรั พย์สมบ ัติและ ทำลายล ้างผู้ ที่กล้ าต่อต้ านพวกเ ขาในชี วนิเวศ ทะเลทร าย

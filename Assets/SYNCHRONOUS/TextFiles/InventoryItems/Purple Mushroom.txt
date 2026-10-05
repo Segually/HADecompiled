@@ -1,0 +1,22 @@
+Description_TAI = เห็ด มีพิษ หายาก!
+Name_TAI = เห็ด สี ม่วง
+Description_POR = Um cogumelo raro e venenoso!
+Description_SPN = ¡Un hongo raro y venenoso!
+Description_RUS = Редкий ядовитый гриб!
+Description_IND = Jamur langka yang beracun!
+Name_POR = Cogumelo Roxo
+Name_SPN = Hongo Morado
+Name_RUS = Фиолетовый гриб
+Name_IND = Jamur Ungu
+Description = A rare, poisonous mushroom!
+
+Inventory_sprite_path = item purple mushroom
+Type = Consumable
+Crafting_makes = 5
+Market Cost = 40
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 1 to 3

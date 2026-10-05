@@ -1,0 +1,41 @@
+Description_TAI = เฟอร์นิเจอร์ ตกแต่ง
+Name_TAI = โต๊ะ ขนาด เล็ก
+Description_POR = Mobília decorativa
+Description_SPN = Mobiliario decorativo
+Description_RUS = Декоративная мебель
+Description_IND = Furnitur dekoratif
+Name_POR = Mesa Pequena
+Name_SPN = Mesa pequeña
+Name_RUS = Маленький стол
+Name_IND = Meja Kecil
+Description = Decorative furniture
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 8
+Type = Place_in_world
+World_obj_path = Buildables/Small Table
+World_geometry = 1_by_1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_SolidColors = 0-1, 1-5, 2-2, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-2, 
+Default Coloring = Debug - Wood
+model3d_camDist = 2.5
+show_model3d = true
+model3d_fov = 42.5
+model3d_yRot = 25
+model3d_xRot = -90
+model3d_objRot = 1
+model3d_camHeight = 0.1
+model3d_recenterY = 9
+model3d_recenterX = -2
+PaintLayout0_Nomad = 0-1, 1-3, 2-2, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

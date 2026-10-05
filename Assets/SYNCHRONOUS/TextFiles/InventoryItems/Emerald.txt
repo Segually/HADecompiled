@@ -1,0 +1,11 @@
+Name_TAI = มรกต
+Name_POR = Esmeralda
+Name_SPN = Esmeralda
+Name_RUS = Изумруд
+Name_IND = Zamrud
+
+Inventory_sprite_path = item emerald
+Market Cost = 85
+
+Vendor0 = Ores
+NumSell = 2 to 4

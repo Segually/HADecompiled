@@ -1,0 +1,33 @@
+*auto_version=45*
+
+[2,1] = Basket (rot 3)
+	paint = *string* Basic Black
+	password = *string* DEV_LOCKED
+
+[1,1] = Basket (rot 3)
+	paint = *string* Basic Black
+	password = *string* DEV_LOCKED
+
+[4,6] = Cauldron (rot 0)
+
+[2,2] = DEBUG-npc (rot 2)
+	npc_file = *string* Echo
+	creature_A = *string* snail
+	creature_B = *string* crow
+	npc_icon = *string* Info_giver
+	voice = *string* panther
+
+[0,4] = DEBUG-npc (rot 3)
+	npc_file = *string* Murmur
+	creature_A = *string* snail
+	creature_B = *string* crow
+	npc_icon = *string* Info_giver
+	voice = *string* panther
+
+[2,6] = DEBUG-npc (rot 0)
+	npc_file = *string* Whisper
+	creature_A = *string* snail
+	creature_B = *string* crow
+	npc_icon = *string* Info_giver
+	voice = *string* panther
+

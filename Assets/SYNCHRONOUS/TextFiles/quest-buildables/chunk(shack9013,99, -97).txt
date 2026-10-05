@@ -1,0 +1,70 @@
+*auto_version=17*
+
+[3,3] = Poison Spikes (rot 0)
+
+[5,3] = Poison Spikes (rot 0)
+
+[7,2] = Poison Spikes (rot 0)
+
+[1,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[2,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[3,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[4,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[5,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[5,7] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[5,6] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[5,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[6,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[7,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[8,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[9,5] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[0,8] = Tall Stone Wall (rot 0)
+	paint = *string* Utility Red
+
+[1,6] = Giant Puncher (rot 3)
+
+[3,0] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[9,0] = Giant Puncher (rot 3)
+
+[3,6] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[0,2] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2
+
+[4,1] = Mob - Ratroach (rot 3)
+	is_killGoal_mob = *string* true
+	associated_quest_name = *string* Critter Crush
+	associated_quest_step = *short* 2

@@ -1,0 +1,47 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=8*
+
+[9,4] = Dirt Path (rot 0)
+
+[8,4] = Dirt Path (rot 0)
+
+[7,4] = Dirt Path (rot 0)
+
+[7,5] = Dirt Path (rot 0)
+
+[6,5] = Dirt Path (rot 0)
+
+[5,5] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[3,5] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[1,5] = Dirt Path (rot 0)
+
+[0,5] = Dirt Path (rot 0)
+
+[5,6] = Lamp Post (rot 3)
+
+[0,3] = Low Stone Wall (rot 0)
+	stamp = *string* Paw Stamp
+
+[0,2] = Low Stone Wall (rot 0)
+
+[0,9] = Low Stone Wall (rot 0)
+
+[0,0] = Low Stone Wall (rot 0)
+
+[1,7] = Navpost (rot 1)
+	sign_text = *string* Heartwood
+	text_col = *string* red
+
+[0,7] = Low Stone Wall (rot 0)
+
+[0,8] = Low Stone Wall (rot 0)
+
+[0,1] = Low Stone Wall (rot 2)
+

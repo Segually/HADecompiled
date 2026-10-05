@@ -1,0 +1,41 @@
+*auto_version=21*
+
+[5,1] = Underground Room (rot 0)
+	password = *string* DEV_LOCKED
+	shack_id = *long* 9060
+	quest_key_req = *string* KW_basement
+
+[5,4] = Gold Statue (rot 0)
+
+[8,4] = Throne (rot 0)
+	paint = *string* Marble White
+
+[8,4] = DEBUG-npc (rot 0)
+	npc_file = *string* King Wing
+	creature_A = *string* eagle
+	creature_B = *string* samurai
+	npc_icon = *string* Quest
+	voice = *string* dragon
+
+[6,3] = Companion (rot 3)
+	companion_mode = *string* guard
+	creature_A = *string* yeti
+	creature_B = *string* bear
+	hat = *string* Wizard Hat
+	body = *string* Metal Armor
+	hat_paint = *string* Glacier
+	armor_paint = *string* Glacier
+	wep = *string* Titanium Cleaver
+	npc_display_name = *string* Royal Guard
+	level = *long* 400
+	guard_message1 = *string* Don't get any ideas...
+	voice = *string* male
+
+[8,3] = Basic Rug (rot 2)
+	paint = *string* Glacier
+	stamp = *string* Dragon Stamp
+
+[6,5] = Huge Coin Hoard (rot 0)
+
+[5,4] = Coin Hoard (rot 0)
+

@@ -1,0 +1,8 @@
+*auto_version=1*
+
+[8,5] = Bookshelf (rot 3)
+	paint = *string* Marble White
+
+[8,9] = Bookshelf (rot 3)
+	paint = *string* Marble White
+

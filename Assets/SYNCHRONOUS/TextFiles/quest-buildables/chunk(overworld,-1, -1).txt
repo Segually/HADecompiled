@@ -1,0 +1,24 @@
+*auto_version=9*
+*is_blank=true*
+*forced_biome=0*
+
+[5,9] = Teleporter (rot 0)
+
+[0,7] = Torch (rot 3)
+	paint = *string* Royal Red
+
+[3,5] = Berry Bush (rot 0)
+
+[4,4] = Berry Bush (rot 0)
+
+[2,3] = Berry Bush (rot 0)
+
+[5,5] = Spawner - Sticks (rot 0)
+
+[1,2] = Spawner - Sticks (rot 0)
+
+[4,3] = Stone Vein (rot 1)
+
+[6,4] = Green Blob (rot 0)
+
+

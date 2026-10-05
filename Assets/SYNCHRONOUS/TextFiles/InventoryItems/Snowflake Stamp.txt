@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ เกล็ดหิมะ ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = ตรา เกล็ด หิมะ
+Description_POR = Adicione um símbolo de floco de neve ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de copo de nieve a tus muebles!
+Description_RUS = Добавьте символ снежинки к вашей мебели!
+Description_IND = Tambahkan simbol kepingan salju ke perabotan Anda!
+Name_POR = Carimbo de Floco de Neve
+Name_SPN = Sello de Copo de Nieve
+Name_RUS = Снежинка Штамп
+Name_IND = Stempel Serpihan Salju
+Description = Add a Snowflake symbol to your furniture!
+
+Inventory_sprite_path = item stamp snowflake
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

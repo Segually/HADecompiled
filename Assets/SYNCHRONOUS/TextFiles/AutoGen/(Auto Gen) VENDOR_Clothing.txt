@@ -1,0 +1,15 @@
+[32] Sombrero
+[32] Top Hat
+[386] Blue Wizard Hat
+[386] Grey Wizard Hat
+[386] Purple Wizard Hat
+[734] White Top Hat
+[1000] Super Top Hat
+[1000] Super White Top Hat
+[2004] Black Wizard Hat
+[3000] Storm Wizard Hat
+[3575] White Wizard Hat
+[4972] Amethyst Crown
+[4972] Emerald Crown
+[4972] Ruby Crown
+[4972] Sapphire Crown

@@ -1,0 +1,77 @@
+[paint]
+Basic Blue
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+The Frostbite Bandits believe the ice doesn’t play fair—neither should we.
+
+[page 2 - English]
+The frozen wilderness holds no masters, but it favors those who take without asking.
+
+[page 3 - English]
+Snow shields the clever and swallows the careless; we hide in the frost, striking like winter itself.
+
+[book name - English]
+The Frozen Creed
+
+[book name - Indonesian]
+Ajaran Beku
+
+[page 1 - Indonesian]
+Bajak Laut Frostbite percaya bahwa es tidak bermain adil—kita juga tidak seharusnya.
+
+[page 2 - Indonesian]
+Belantara beku tidak memiliki tuan, tetapi ia lebih menyukai mereka yang mengambil tanpa bertanya.
+
+[page 3 - Indonesian]
+Salju melindungi yang cerdik dan menelan yang ceroboh; kami bersembunyi di dalam es, menyerang seperti musim dingin itu sendiri.
+
+[book name - Portuguese]
+O Credo Congelado
+
+[page 1 - Portuguese]
+Os Bandidos da Geada acreditam que o gelo não joga limpo—nem nós devemos.
+
+[page 2 - Portuguese]
+O deserto congelado não tem mestres, mas favorece aqueles que tomam sem pedir.
+
+[page 3 - Portuguese]
+A neve protege os astutos e engole os descuidados; nós nos escondemos na geada, atacando como o próprio inverno.
+
+[book name - Russian]
+Ледяной Кредо
+
+[page 1 - Russian]
+Бандиты Мороза верят, что лёд не играет честно — и мы тоже не должны.
+
+[page 2 - Russian]
+Ледяная пустыня не имеет хозяев, но благоволит тем, кто берёт без спроса.
+
+[page 3 - Russian]
+Снег укрывает умных и поглощает неосторожных; мы скрываемся в морозе, нанося удары, как сама зима.
+
+[book name - Spanish]
+El Credo Helado
+
+[page 1 - Spanish]
+Los Bandidos de la Congelación creen que el hielo no juega limpio; nosotros tampoco deberíamos.
+
+[page 2 - Spanish]
+El desierto congelado no tiene amos, pero favorece a quienes toman sin pedir.
+
+[page 3 - Spanish]
+La nieve protege a los astutos y devora a los descuidados; nos escondemos en la escarcha, atacando como el invierno mismo.
+
+[book name - Thai]
+คำสัตย ์ปฏิญา ณแห่งค วามเยื อกเย็น
+
+[page 1 - Thai]
+กลุ่มโ จรฟรอส ต์ไบท์ เชื่อว ่า น้ำ แข็งไม ่เคยยุ ติธรรม —เราก็ ไม่ควร ทำตัวเ ช่นนั้ น
+
+[page 2 - Thai]
+พื้นที ่ป่าหน าวเย็น ไม่มีน าย แต่ จะช่วย เหลือผ ู้ที่ย ึดโดยไ ม่ถาม
+
+[page 3 - Thai]
+หิมะปก ป้องผู ้ฉลาดแ ละกลืน กินคนป ระมาท  เราซ่อ นตัวใน น้ำแข็ ง โจมต ีเหมือ นฤดูหน าวเอง

@@ -1,0 +1,27 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณให้เป็นสีทอง!
+Name_TAI = ใบ ไม้ทอง
+Description_POR = Pinte seus móveis de ouro!
+Description_SPN = ¡Pinta tus muebles de oro!
+Description_RUS = Покрасьте вашу мебель в золотой цвет!
+Description_IND = Cat perabotan Anda dengan Emas!
+Name_POR = Folha de Ouro
+Name_SPN = Hoja de Oro
+Name_RUS = Золотой лист
+Name_IND = Daun Emas
+Description =  Paint your furniture Gold!
+
+Inventory_sprite_path = item paint gold leaf
+Crafting_ingredient_A = Gold Ore
+Crafting_ingredient_A_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

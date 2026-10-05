@@ -1,0 +1,20 @@
+Description_TAI = ดอกไม้ สีม่วง ที่ มีกลิ่นหอม มาก
+Name_TAI = ลา เวน เดอร์
+Description_POR = Flores roxas que cheiram muito bem.
+Description_SPN = Flores moradas que huelen genial.
+Description_RUS = Фиолетовые цветы с приятным ароматом.
+Description_IND = Bunga ungu yang berbau harum
+Name_POR = Lavanda
+Name_SPN = Lavanda
+Name_RUS = Лаванда
+Name_IND = Lavender
+Description = Purple flowers that smell great
+
+Inventory_sprite_path = item lavender
+Max_stack = 5
+Crafting_makes = 5
+
+Market Cost = 4
+
+Vendor0 = Harvested Item
+NumSell = 4 to 8

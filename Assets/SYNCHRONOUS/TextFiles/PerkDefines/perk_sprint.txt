@@ -1,0 +1,13 @@
+Full Name = Sprint
+Description = Run quickly
+Detailed Description = GetFloat[EFFECT_SPRINT, "Walk Speed", remove "%"]% walk speed DiffFloat[EFFECT_SPRINT, "Walk Speed", remove "%", add "%"] for GetInt[EFFECT_SPRINT, "Duration", remove " seconds"] seconds DiffInt[EFFECT_SPRINT, "Duration", remove " seconds", add " seconds"] on self.
+Energy Cost = CLAMP (60% @ lvl_1 ... 45% @ lvl_15)
+On cast = [EFFECT_SPRINT] on self
+Max level = 15
+-
+[EFFECT_SPRINT]
+Type = Duration Effect
+Duration = CLAMP (6 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+Particle (Duration) = perk_sprint_duration
+Scale Particle With Creature Size = true
+Walk Speed = CLAMP (200% @ lvl_1 ... 220% @ lvl_15)

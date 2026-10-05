@@ -1,0 +1,649 @@
+Name_POR=Governanta Nelly
+Name_RUS=Домработница Нелли
+Name_IND=Pengurus rumah tangga Nelly
+Name_SPN=Ama de llaves nelly
+Name_TAI=แม่บ้านเนลลี
+
+----- DIALOGUE -----
+[0]
+*test IS_MY_WORLD*
+goto_true=900
+goto_false=102
+
+[900]
+*test QUEST_READY_TO_RESTART* (Critter Crush)
+goto_true=901
+goto_false=6001
+boxPosition=-119.2708,-63.04934
+
+[6001]
+*test QUEST_PROGRESS* (Critter Crush == 5)
+goto_true=6002
+goto_false=8000
+boxPosition=46.96273,-123.0937
+
+[901]
+otherspeak=IT'S YOU!
+otherspeak_POR=É VOCÊ!
+otherspeak_RUS=ЭТО ТЫ!
+otherspeak_IND=ITU KAMU!
+otherspeak_SPN=¡ERES TU!
+otherspeak_TAI=เป็นคุณนั้นเอง!
+goto=902
+boxPosition=-478.3159,-122.3487
+
+[902]
+otherspeak=The rat-roaches.. they're back!
+otherspeak_POR=As baratas-rato ... elas estão de volta!
+otherspeak_RUS=Крысы-тараканы ... они вернулись!
+otherspeak_IND=Tikus-kecoak.. mereka kembali!
+otherspeak_SPN=Las cucarachas-rata ... ¡han vuelto!
+otherspeak_TAI=หนู-แมลงสาบ..กลับมาแล้ว!
+goto=903
+boxPosition=-481.9046,-195.8244
+
+[903]
+optionA=Why are they back?
+optionA_POR=Por que eles estão de volta?
+optionA_RUS=Почему они вернулись?
+optionA_IND=Mengapa mereka kembali?
+optionA_SPN=¿Por qué han vuelto?
+optionA_TAI=ทำไมพวกเขากลับมา?
+gotoA=904
+optionB=I WILL SQUASH THEM ALL
+optionB_POR=EU VOU ESMAGAR TODOS
+optionB_RUS=Я РАЗДВИГАЮ ИХ ВСЕХ
+optionB_IND=AKU AKAN MEMBUNUH MEREKA SEMUA
+optionB_SPN=LOS APLASTARÉ A TODOS
+optionB_TAI=ฉันจะสควอชพวกเขาทั้งหมด
+gotoB=908
+boxPosition=-474.5425,-266.1613
+
+[904]
+otherspeak=The shindo warriors are very messy eaters..
+otherspeak_POR=Os guerreiros shindo são comedores muito bagunceiros ..
+otherspeak_RUS=Воины шиндо очень грязные едоки.
+otherspeak_IND=Prajurit shindo adalah pemakan yang sangat berantakan..
+otherspeak_SPN=Los guerreros shindo son comedores muy desordenados.
+otherspeak_TAI=นักรบชินโดเป็นคนกินเลอะเทอะมาก..
+goto=905
+boxPosition=-600.7064,-348.007
+
+[905]
+otherspeak=..and they leave crumbs everywhere they go!
+otherspeak_POR=..e eles deixam migalhas em todos os lugares que vão!
+otherspeak_RUS=..и они оставляют крошки везде, куда бы они ни пошли!
+otherspeak_IND=..dan mereka meninggalkan remah-remah ke mana pun mereka pergi!
+otherspeak_SPN=..y dejan migas por todos lados!
+otherspeak_TAI=..และพวกเขาทิ้งเศษเล็กเศษน้อยทุกที่ที่ไป!
+goto=906
+boxPosition=-604.0242,-424.0571
+
+[906]
+otherspeak=I guess the bugs are back to eat the crumbs??
+otherspeak_POR=Acho que os insetos voltaram para comer as migalhas ??
+otherspeak_RUS=Я думаю, клопы вернулись, чтобы поесть крошки ??
+otherspeak_IND=Saya kira serangga kembali memakan remah-remah??
+otherspeak_SPN=Supongo que los bichos han vuelto para comerse las migas.
+otherspeak_TAI=สงสัยแมลงจะกลับมากินเศษแล้ว??
+goto=907
+boxPosition=-608.6241,-502.8697
+
+[907]
+optionA=I WILL SQUASH THEM ALL
+optionA_POR=EU VOU ESMAGAR TODOS
+optionA_RUS=Я РАЗДВИГАЮ ИХ ВСЕХ
+optionA_IND=AKU AKAN MEMBUNUH MEREKA SEMUA
+optionA_SPN=LOS APLASTARÉ A TODOS
+optionA_TAI=ฉันจะสควอชพวกเขาทั้งหมด
+gotoA=908
+boxPosition=-618.1935,-582.6931
+
+[908]
+otherspeak=YOU'RE THE BEST! THANK YOU!
+otherspeak_POR=VOCÊ É O MELHOR! OBRIGADA!
+otherspeak_RUS=ТЫ ЛУЧШИЙ! БЛАГОДАРЮ ВАС!
+otherspeak_IND=KAMU YANG TERBAIK! TERIMA KASIH!
+otherspeak_SPN=¡ERES LA MEJOR! ¡GRACIAS!
+otherspeak_TAI=คุณดีที่สุด! ขอบคุณ!
+goto=909
+boxPosition=-458.5106,-676.2812
+
+[909]
+otherspeak=Good luck, yet again!
+otherspeak_POR=Boa sorte, mais uma vez!
+otherspeak_RUS=Удачи еще раз!
+otherspeak_IND=Semoga berhasil, sekali lagi!
+otherspeak_SPN=¡Buena suerte una vez más!
+otherspeak_TAI=โชคดีอีกแล้ว!
+goto=7000
+boxPosition=-458.4586,-757.5266
+
+[6002]
+otherspeak=Thanks again for the help!
+otherspeak_POR=Obrigado novamente pela ajuda!
+otherspeak_RUS=Спасибо еще раз за помощь!
+otherspeak_IND=Terima kasih sekali lagi atas bantuannya!
+otherspeak_SPN=¡Gracias de nuevo por la ayuda!
+otherspeak_TAI=ขอขอบคุณอีกครั้งสำหรับความช่วยเหลือ!
+goto=6003
+boxPosition=-209.0683,-197.8122
+
+[6003]
+otherspeak=... will I ever walk again?! ...
+otherspeak_POR=... Será que algum dia voltarei a andar ?! ...
+otherspeak_RUS=... я когда-нибудь снова пойду ?! ...
+otherspeak_IND=... akankah aku berjalan lagi?! ...
+otherspeak_SPN=... ¡¿Volveré a caminar ?! ...
+otherspeak_TAI=...จะเดินได้อีกมั้ย?! ...
+goto=-1
+boxPosition=-209.5446,-265.0747
+
+[8000]
+*test QUEST_PROGRESS* (Critter Crush == 0)
+goto_true=100
+goto_false=2000
+boxPosition=162.4279,-192.8475
+
+[2000]
+*test QUEST_PROGRESS* (Critter Crush == 3)
+goto_true=3000
+goto_false=2001
+boxPosition=429.86,-261.3573
+swapLineCols=true
+
+[3000]
+otherspeak=You're back!
+otherspeak_POR=Você voltou!
+otherspeak_RUS=Ты вернулся!
+otherspeak_IND=Kamu kembali!
+otherspeak_SPN=¡Estás de vuelta!
+otherspeak_TAI=คุณกลับมาแล้ว!
+goto=3001
+boxPosition=672.5049,-327.921
+
+[3001]
+otherspeak=Did you squash most of the rat-roaches?
+otherspeak_POR=Você esmagou a maioria das baratas-rato?
+otherspeak_RUS=Вы раздавили большую часть тараканов?
+otherspeak_IND=Apakah Anda menghancurkan sebagian besar kecoak tikus?
+otherspeak_SPN=¿Aplastó la mayoría de las cucarachas rata?
+otherspeak_TAI=คุณสควอชหนูแมลงสาบส่วนใหญ่หรือไม่?
+goto=3002
+boxPosition=825.5001,-417.658
+
+[3002]
+optionA=No...
+optionA_POR=Não...
+optionA_RUS=Нет...
+optionA_IND=Tidak...
+optionA_SPN=No...
+optionA_TAI=เลขที่...
+gotoA=3003
+boxPosition=830.9832,-500.6865
+
+[3003]
+otherspeak=Oh dear..
+otherspeak_POR=Oh céus..
+otherspeak_RUS=О, Боже..
+otherspeak_IND=Aduh Buyung..
+otherspeak_SPN=Oh querido..
+otherspeak_TAI=โอ้ที่รัก..
+goto=3004
+boxPosition=732.0258,-584.6264
+
+[3004]
+otherspeak=There's still time left, do you want to try again?
+otherspeak_POR=Ainda falta tempo, quer tentar de novo?
+otherspeak_RUS=Еще есть время, вы хотите попробовать еще раз?
+otherspeak_IND=Masih ada waktu, mau coba lagi?
+otherspeak_SPN=Aún queda tiempo, ¿quieres volver a intentarlo?
+otherspeak_TAI=ยังมีเวลาเหลือ ลองใหม่อีกครั้งไหม
+goto=3005
+boxPosition=733.335,-665.9357
+
+[3005]
+optionA=Yes
+optionA_POR=sim
+optionA_RUS=да
+optionA_IND=Ya
+optionA_SPN=sí
+optionA_TAI=ใช่
+gotoA=5000
+optionB=Not now
+optionB_POR=Agora não
+optionB_RUS=Не сейчас
+optionB_IND=Tidak sekarang
+optionB_SPN=Ahora no
+optionB_TAI=ไม่ใช่ตอนนี้
+gotoB=3006
+boxPosition=736.0247,-745.4871
+
+[3006]
+otherspeak=King Wing will be so angry...
+otherspeak_POR=Ala Rei vai ficar tão bravo ...
+otherspeak_RUS=Крыло короля будет так зол ...
+otherspeak_IND=Sayap Raja akan sangat marah...
+otherspeak_SPN=Ala rey estará tan enojado ...
+otherspeak_TAI=คิงวิงจะโกรธมาก...
+goto=3007
+boxPosition=818.2744,-1233.673
+
+[3007]
+otherspeak=Please... help me!!!
+otherspeak_POR=Por favor me ajude!!!
+otherspeak_RUS=Помогите, пожалуйста!!!
+otherspeak_IND=Tolong bantu aku!!!
+otherspeak_SPN=¡¡¡Por favor, ayúdame!!!
+otherspeak_TAI=ได้โปรด... ช่วยฉันด้วย!!!
+goto=-1
+boxPosition=824.0255,-1297.273
+
+[4000]
+otherspeak=You're back!
+otherspeak_POR=Você voltou!
+otherspeak_RUS=Ты вернулся!
+otherspeak_IND=Kamu kembali!
+otherspeak_SPN=¡Estás de vuelta!
+otherspeak_TAI=คุณกลับมาแล้ว!
+goto=4001
+boxPosition=223.9471,-421.5092
+
+[4001]
+otherspeak=And you stomped on all the rat-roaches!!!
+otherspeak_POR=E você pisou em todas as baratas-rato !!!
+otherspeak_RUS=А ты всех крыс-тараканов топнул !!!
+otherspeak_IND=Dan Anda menginjak semua kecoak tikus!!!
+otherspeak_SPN=¡¡¡Y pisoteaste a todas las cucarachas rata !!!
+otherspeak_TAI=และคุณเหยียบย่ำหนูแมลงสาบทุกตัว!!!
+goto=4002
+boxPosition=214.4371,-506.7343
+
+[4002]
+otherspeak=Thank you so much. Please, take this...
+otherspeak_POR=Muito obrigado. Por favor, pegue isso ...
+otherspeak_RUS=Большое спасибо. Пожалуйста, возьми это ...
+otherspeak_IND=Terima kasih banyak. Tolong, ambil ini...
+otherspeak_SPN=Muchas gracias. Por favor tome esta...
+otherspeak_TAI=ขอบคุณมาก. ได้โปรด เอานี่...
+goto=4003
+boxPosition=221.4761,-580.0758
+
+[4003]
+otherspeak=...that chest is full of King Wing's old things!
+otherspeak_POR=... aquele baú está cheio de coisas velhas de Ala Rei!
+otherspeak_RUS=... этот сундук полон старых вещей Крыло короля!
+otherspeak_IND=... peti itu penuh dengan barang-barang lama Sayap Raja!
+otherspeak_SPN=... ¡ese cofre está lleno de cosas viejas de Ala rey!
+otherspeak_TAI=...หีบนั้นเต็มไปด้วยของเก่าของคิงวิง!
+goto=4004
+boxPosition=224.3568,-677.8459
+
+[4004]
+*TRY_GIVE_QUEST_REWARD* (Critter Crush) (if succeed, advance quest to 5)
+goto=-1
+boxPosition=227.6316,-754.5649
+
+[5000]
+otherspeak=Great! GREAT!!!
+otherspeak_POR=Excelente! EXCELENTE!!!
+otherspeak_RUS=Большой! БОЛЬШОЙ!!!
+otherspeak_IND=Besar! BAGUS!!!
+otherspeak_SPN=¡Excelente! ¡¡¡ESTUPENDO!!!
+otherspeak_TAI=ยอดเยี่ยม! ยอดเยี่ยม!!!
+goto=5001
+boxPosition=631.0526,-836.4886
+
+[5001]
+otherspeak=Like I said, just squash them with your feet..
+otherspeak_POR=Como eu disse, basta esmagá-los com os pés ..
+otherspeak_RUS=Как я уже сказал, просто раздавите их ногами ...
+otherspeak_IND=Seperti yang saya katakan, tekan saja mereka dengan kaki Anda..
+otherspeak_SPN=Como dije, simplemente aplástalos con los pies ...
+otherspeak_TAI=อย่างที่บอก แค่เอาเท้าทุบ..
+goto=5002
+boxPosition=624.2786,-916.5925
+
+[5002]
+otherspeak=..and get rid of as many as you can!!
+otherspeak_POR=..e se livrar de tantos quanto você puder !!
+otherspeak_RUS=..и избавься от как можно большего количества !!
+otherspeak_IND=..dan singkirkan sebanyak mungkin!!
+otherspeak_SPN=..y deshazte de tantos como puedas !!
+otherspeak_TAI=..และกำจัดให้มากที่สุด!!
+goto=5003
+boxPosition=615.5093,-992.994
+
+[5003]
+optionA=Sounds good
+optionA_POR=Soa bem
+optionA_RUS=Звучит отлично
+optionA_IND=Kedengarannya bagus
+optionA_SPN=Suena bien
+optionA_TAI=ฟังดูเข้าท่า
+gotoA=016
+optionB=Maybe another time
+optionB_POR=Talvez outra hora
+optionB_RUS=Возможно, в другой раз
+optionB_IND=Mungkin lain waktu
+optionB_SPN=Tal vez en otro momento
+optionB_TAI=อาจจะอีกครั้ง
+gotoB=3006
+boxPosition=604.2156,-1121.304
+
+[2001]
+*test QUEST_PROGRESS* (Critter Crush == 4)
+goto_true=4000
+goto_false=2002
+boxPosition=345.6036,-338.8237
+
+[100]
+otherspeak=MY LEGS!!!
+otherspeak_POR=MINHAS PERNAS!!!
+otherspeak_RUS=МОИ НОГИ!!!
+otherspeak_IND=KAKIKU!!!
+otherspeak_SPN=¡¡¡MIS PIERNAS!!!
+otherspeak_TAI=ขาของฉัน!!!
+goto=101
+boxPosition=-116.6079,-343.1481
+
+[101]
+otherspeak=I CAN'T FEEL MY LEGS!!!
+otherspeak_POR=NÃO POSSO SENTIR MINHAS PERNAS !!!
+otherspeak_RUS=НОГИ НЕ ЧУВСТВУЮ !!!
+otherspeak_IND=AKU TIDAK BISA MERASAKAN KAKIKU!!!
+otherspeak_SPN=¡¡¡NO PUEDO SENTIR MIS PIERNAS !!!
+otherspeak_TAI=รู้สึกขาไม่ขึ้น!!!
+goto=002
+boxPosition=-124.9764,-417.1211
+
+[102]
+otherspeak=MY LEGS!!!
+otherspeak_POR=MINHAS PERNAS!!!
+otherspeak_RUS=МОИ НОГИ!!!
+otherspeak_IND=KAKIKU!!!
+otherspeak_SPN=¡¡¡MIS PIERNAS!!!
+otherspeak_TAI=ขาของฉัน!!!
+goto=103
+boxPosition=301.1913,-61.26762
+
+[103]
+otherspeak=I CAN'T FEEL MY LEGS!!!
+otherspeak_POR=NÃO POSSO SENTIR MINHAS PERNAS !!!
+otherspeak_RUS=НОГИ НЕ ЧУВСТВУЮ !!!
+otherspeak_IND=AKU TIDAK BISA MERASAKAN KAKIKU!!!
+otherspeak_SPN=¡¡¡NO PUEDO SENTIR MIS PIERNAS !!!
+otherspeak_TAI=รู้สึกขาไม่ขึ้น!!!
+goto=-1
+boxPosition=301.5201,-119.6314
+
+[2]
+optionA=Why are you sleeping like that?
+optionA_POR=Por que você está dormindo assim?
+optionA_RUS=Почему ты так спишь?
+optionA_IND=Kenapa kamu tidur seperti itu?
+optionA_SPN=¿Por qué duermes así?
+optionA_TAI=ทำไมคุณนอนแบบนี้
+gotoA=007
+optionB=Are you okay?
+optionB_POR=Você está bem?
+optionB_RUS=Ты в порядке?
+optionB_IND=Apakah kamu baik-baik saja?
+optionB_SPN=¿Estás bien?
+optionB_TAI=คุณสบายดีไหม?
+gotoB=003
+boxPosition=-121.3754,-508.1547
+
+[3]
+otherspeak=NO!!!!
+otherspeak_POR=NÃO!!!!
+otherspeak_RUS=НЕТ!!!!
+otherspeak_IND=TIDAK!!!!
+otherspeak_SPN=¡¡¡¡NO!!!!
+otherspeak_TAI=ไม่!!!!
+goto=004
+boxPosition=-36.29871,-580.0381
+
+[4]
+otherspeak=I need to clean the castle for King Wing!
+otherspeak_POR=Eu preciso limpar o castelo para Ala Rei!
+otherspeak_RUS=Мне нужно очистить замок для Крыло короля!
+otherspeak_IND=Saya perlu membersihkan kastil untuk Sayap Raja!
+otherspeak_SPN=¡Necesito limpiar el castillo para Ala rey!
+otherspeak_TAI=ฉันต้องทำความสะอาดปราสาทให้ปีกกษัตริย์!
+goto=005
+boxPosition=-51.31912,-919.7742
+
+[5]
+otherspeak=But I can't get out of bed!
+otherspeak_POR=Mas não consigo sair da cama!
+otherspeak_RUS=Но я не могу встать с постели!
+otherspeak_IND=Tapi aku tidak bisa bangun dari tempat tidur!
+otherspeak_SPN=¡Pero no puedo levantarme de la cama!
+otherspeak_TAI=แต่ฉันลุกจากเตียงไม่ได้!
+goto=010
+boxPosition=-44.16882,-979.5489
+
+[7]
+otherspeak=It was so comfortable...
+otherspeak_POR=Era tão confortável ...
+otherspeak_RUS=Было так удобно ...
+otherspeak_IND=Itu sangat nyaman...
+otherspeak_SPN=Fue tan cómodo ...
+otherspeak_TAI=มันสบายมาก...
+goto=008
+boxPosition=-240.4033,-581.8297
+
+[8]
+otherspeak=but it seems to have PARALYZED ME!!
+otherspeak_POR=mas parece que ME PARALISOU !!
+otherspeak_RUS=но, кажется, это МЕНЯ ПАРАЛИЗИРУЕТСЯ !!
+otherspeak_IND=tapi sepertinya telah melumpuhkanku!!
+otherspeak_SPN=pero parece haberme PARALIZADO !!
+otherspeak_TAI=แต่เหมือนจะทำให้เป็นอัมพาต!!
+goto=009
+boxPosition=-230.6907,-672.813
+
+[9]
+optionA=Need any help?
+optionA_POR=Precisa de ajuda?
+optionA_RUS=Нужна помощь?
+optionA_IND=Membutuhkan bantuan?
+optionA_SPN=¿Necesita ayuda?
+optionA_TAI=ต้องการความช่วยเหลือหรือไม่?
+gotoA=004
+boxPosition=-218.8161,-747.2995
+
+[10]
+optionA=I can help you
+optionA_POR=Posso te ajudar
+optionA_RUS=я могу помочь вам
+optionA_IND=saya bisa bantu anda
+optionA_SPN=Puedo ayudarle
+optionA_TAI=ฉันช่วยคุณได้
+gotoA=011
+optionB=Looks pretty clean already
+optionB_POR=Já parece bem limpo
+optionB_RUS=Выглядит уже довольно чисто
+optionB_IND=Sudah terlihat cukup bersih
+optionB_SPN=Ya se ve bastante limpio
+optionB_TAI=ดูสะอาดสะอ้านอยู่แล้ว
+gotoB=018
+boxPosition=-45.72422,-1052.294
+
+[11]
+otherspeak=My goodness, THANK YOU!
+otherspeak_POR=Meu Deus, OBRIGADO!
+otherspeak_RUS=Боже мой, СПАСИБО!
+otherspeak_IND=Ya ampun, TERIMA KASIH!
+otherspeak_SPN=Dios mío, ¡GRACIAS!
+otherspeak_TAI=พระเจ้าของฉันขอขอบคุณ!
+goto=9000
+boxPosition=-280.8088,-1210.787
+
+[9000]
+*ADVANCE_QUEST* (Critter Crush => 1)
+goto=012
+boxPosition=-281.8843,-1292.988
+
+[12]
+otherspeak=There is a rat-roach infestation in the basement!
+otherspeak_POR=Há uma infestação de baratas no porão!
+otherspeak_RUS=В подвале - тараканы!
+otherspeak_IND=Ada infestasi tikus-kecoak di ruang bawah tanah!
+otherspeak_SPN=¡Hay una plaga de cucarachas en el sótano!
+otherspeak_TAI=มีแมลงสาบหนูอยู่ในห้องใต้ดิน!
+goto=013
+boxPosition=-277.6655,-1385.294
+
+[13]
+otherspeak=Get rid of as many rat-roaches as you can!
+otherspeak_POR=Livre-se do maior número de baratas que puder!
+otherspeak_RUS=Избавьтесь от как можно большего количества тараканов!
+otherspeak_IND=Singkirkan kecoak tikus sebanyak mungkin!
+otherspeak_SPN=¡Deshazte de todas las cucarachas que puedas!
+otherspeak_TAI=กำจัดหนูแมลงสาบให้ได้มากที่สุด!
+goto=014
+boxPosition=-274.4442,-1564.072
+
+[14]
+otherspeak=Just squash them with you feet... That always works!
+otherspeak_POR=Basta esmagá-los com os pés ... Isso sempre funciona!
+otherspeak_RUS=Просто раздавите их ногами ... Это всегда срабатывает!
+otherspeak_IND=Tekan saja mereka dengan kakimu... Itu selalu berhasil!
+otherspeak_SPN=Solo aplástalos con tus pies ... ¡Eso siempre funciona!
+otherspeak_TAI=แค่สควอชพวกเขาด้วยเท้าของคุณ... ได้ผลเสมอ!
+goto=015
+boxPosition=-270.5798,-1636.807
+
+[15]
+optionA=Okay I'll try!
+optionA_POR=OK eu vou tentar!
+optionA_RUS=Хорошо я попробую!
+optionA_IND=Oke saya akan mencoba!
+optionA_SPN=¡OK trataré!
+optionA_TAI=โอเค ฉันจะพยายาม!
+gotoA=016
+optionB=Maybe another time...
+optionB_POR=Talvez outra hora...
+optionB_RUS=Возможно, в другой раз...
+optionB_IND=Mungkin lain waktu...
+optionB_SPN=Tal vez en otro momento...
+optionB_TAI=อาจจะอีกครั้ง...
+gotoB=017
+boxPosition=-277.3798,-1695.761
+
+[16]
+otherspeak=Thank you, and good luck!!
+otherspeak_POR=Obrigado e boa sorte!!
+otherspeak_RUS=Спасибо, удачи!!
+otherspeak_IND=Terima kasih, dan semoga berhasil!!
+otherspeak_SPN=¡¡Gracias y buena suerte!!
+otherspeak_TAI=ขอบคุณและโชคดี!!
+goto=7000
+boxPosition=83.04705,-1986.625
+
+[7000]
+*ADVANCE_QUEST* (Critter Crush => 2)
+goto=-1
+boxPosition=-391.6773,-2381.208
+
+[17]
+otherspeak=Please, help me!!!
+otherspeak_POR=Por favor me ajude!!!
+otherspeak_RUS=Помогите, пожалуйста!!!
+otherspeak_IND=Tolong bantu aku!!!
+otherspeak_SPN=¡¡¡Por favor, ayúdame!!!
+otherspeak_TAI=ได้โปรดช่วยฉันด้วย!!!
+goto=-1
+boxPosition=-26.6958,-1797.785
+
+[18]
+otherspeak=But there is a rat-roach infestation in the basement!
+otherspeak_POR=Mas há uma infestação de baratas no porão!
+otherspeak_RUS=Но ведь в подвале - тараканы!
+otherspeak_IND=Tapi ada infestasi tikus-kecoak di ruang bawah tanah!
+otherspeak_SPN=¡Pero hay una plaga de cucarachas en el sótano!
+otherspeak_TAI=แต่มีแมลงสาบหนูอยู่ในห้องใต้ดิน!
+goto=019
+boxPosition=-0.1281402,-1146.023
+
+[19]
+optionA=Let me help you
+optionA_POR=Deixa eu te ajudar
+optionA_RUS=Давай я тебе помогу
+optionA_IND=Biarkan saya membantu Anda
+optionA_SPN=Deja que te ayude
+optionA_TAI=ให้ฉันช่วยคุณ
+gotoA=021
+optionB=Go clean it yourself
+optionB_POR=Vá limpar você mesmo
+optionB_RUS=Иди очисти это сам
+optionB_IND=Pergi membersihkannya sendiri
+optionB_SPN=Ve a limpiarlo tú mismo
+optionB_TAI=ไปล้างเอง
+gotoB=020
+boxPosition=0.1612098,-1214.629
+
+[20]
+otherspeak=WAHHHH!!!!!
+otherspeak_POR=WAHHHH !!!!!
+otherspeak_RUS=УААА !!!!!
+otherspeak_IND=WAHHH!!!!!
+otherspeak_SPN=¡¡¡¡WAHHHH !!!!!
+otherspeak_TAI=ว้าววว!!!!!
+goto=-1
+boxPosition=259.4633,-1383.755
+
+[21]
+otherspeak=My goodness, THANK YOU!
+otherspeak_POR=Meu Deus, OBRIGADO!
+otherspeak_RUS=Боже мой, СПАСИБО!
+otherspeak_IND=Ya ampun, TERIMA KASIH!
+otherspeak_SPN=Dios mío, ¡GRACIAS!
+otherspeak_TAI=พระเจ้าของฉันขอขอบคุณ!
+goto=9001
+boxPosition=-4.935411,-1388.126
+
+[9001]
+*ADVANCE_QUEST* (Critter Crush => 1)
+goto=013
+boxPosition=-20.47485,-1462.227
+
+[2002]
+otherspeak=Hello?!
+otherspeak_POR=Olá?!
+otherspeak_RUS=Привет?!
+otherspeak_IND=Halo?!
+otherspeak_SPN=¡¿Hola?!
+otherspeak_TAI=สวัสดี?!
+goto=2003
+boxPosition=500.3185,-425.8204
+
+[2003]
+otherspeak=Have you come to help me?!
+otherspeak_POR=Você veio me ajudar ?!
+otherspeak_RUS=Ты пришел мне помочь ?!
+otherspeak_IND=Apakah Anda datang untuk membantu saya ?!
+otherspeak_SPN=¡¿Has venido a ayudarme ?!
+otherspeak_TAI=มาช่วยฉันเหรอ!
+goto=2004
+boxPosition=503.1689,-503.4305
+
+[2004]
+optionA=Yes
+optionA_POR=sim
+optionA_RUS=да
+optionA_IND=Ya
+optionA_SPN=sí
+optionA_TAI=ใช่
+gotoA=021
+optionB=Nope lol
+optionB_POR=não haha
+optionB_RUS=Нет, лол
+optionB_IND=Tidak lol
+optionB_SPN=No lol
+optionB_TAI=ไม่นะ
+gotoB=020
+boxPosition=269.7089,-1212.905
+

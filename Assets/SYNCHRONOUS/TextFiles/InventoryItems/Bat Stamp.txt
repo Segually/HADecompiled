@@ -1,0 +1,27 @@
+Description_TAI = ลอง ใส่ อันนี้ บน ฟักทอง ดูสิ...
+Name_TAI = ตรา ตี ค้างคาว
+Description_POR = Tente colocar isso em uma abóbora...
+Description_SPN = Intenta poner esto en una calabaza...
+Description_RUS = Попробуйте надеть это на тыкву...
+Description_IND = Coba letakkan ini pada labu...
+Name_POR = Carimbo de Morcego
+Name_SPN = Sello de Murciélago
+Name_RUS = Печать Летучей Мыши
+Name_IND = Stempel Kelelawar
+Description = Try putting this on a pumpkin...
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

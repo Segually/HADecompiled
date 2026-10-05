@@ -1,0 +1,30 @@
+Description_TAI = แผ่นเกราะเสริมที่สมดุลกับความแข็งแกร่งและความคล่องแคล่ว
+Name_TAI = เกราะ ไทเทเนียม
+Description_POR = Placas reforçadas que equilibram força com agilidade.
+Description_SPN = Placas reforzadas que equilibran fuerza con agilidad
+Description_RUS = Усиленные пластины, которые балансируют силу и ловкость.
+Description_IND = Pelat diperkuat yang menyeimbangkan kekuatan dengan kelincahan
+Name_POR = Armadura de Titânio
+Name_SPN = Armadura de Titanio
+Name_RUS = Титановая броня
+Name_IND = Baju Zirah Titanium
+Description = Reinforced plates that balance strength with agility
+
+Crafting_ingredient_A = Titanium Bar
+Crafting_ingredient_A_count = 5
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/MetalArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+CopyPaintLayout = Metal Armor
+Default Coloring = Weapon - Titanium
+
+Vendor0 = Armor
+
+show_model3d = true
+Copy3dModelPosition = Metal Armor
+
+Defend Amount = 4

@@ -1,0 +1,20 @@
+Description_TAI = อาหาร สีสัน แปลกตา!
+Name_TAI = เนื้อ แมลง
+Description_POR = Comida de cores vibrantes!
+Description_SPN = ¡Comida de colores funky!
+Description_RUS = Еда ярких цветов!
+Description_IND = Makanan berwarna funky!
+Name_POR = Carne de Inseto
+Name_SPN = Carne de insecto
+Name_RUS = Жучье мясо
+Name_IND = Daging Serangga
+Description = Funky colored food!
+
+Inventory_sprite_path = item bug meat
+Type = Consumable
+Market Cost = 8
+Sound on Use = Crunch
+
+Vendor0 = Mob Drops
+Vendor1 = Food
+NumSell = 2 to 4

@@ -1,0 +1,40 @@
+Name_POR=Filbert
+Name_RUS=Filbert
+Name_IND=Filbert
+Name_SPN=Filbert
+Name_TAI=ฟิลเบิร์ต
+
+----- DIALOGUE -----
+[000]
+otherspeak=It's me! Filbert the Farmer
+otherspeak_POR=Wsou eu! Filbert, o Fazendeiro
+otherspeak_RUS=Это я! Фундук-фермер
+otherspeak_IND=Ini aku! Filbert si Petani
+otherspeak_SPN=¡Soy yo! Filbert el granjero
+otherspeak_TAI=ฉันเอง! ฟิลเบิร์ตชาวนา
+goto=001
+
+[001]
+otherspeak=Check out what I found the mud!
+otherspeak_POR=Veja só o que achei na lama!
+otherspeak_RUS=Посмотри, что я нашел в грязи!
+otherspeak_IND=Lihat apa yang saya temukan lumpurnya!
+otherspeak_SPN=¡Mira lo que encontré en el barro!
+otherspeak_TAI=ตรวจสอบสิ่งที่ฉันพบโคลน!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

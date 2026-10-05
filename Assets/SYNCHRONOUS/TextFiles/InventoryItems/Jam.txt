@@ -1,0 +1,25 @@
+Description_TAI = ฟื้นฟู พลังชีวิต จำนวนมาก เมื่อ ใช้
+Name_TAI = แยม
+Description_POR = Cura bastante saúde quando usado.
+Description_SPN = Cura mucha salud cuando se usa.
+Description_RUS = Восстанавливает большое количество здоровья при использовании.
+Description_IND = Menyembuhkan banyak kesehatan saat digunakan.
+Name_POR = Geleia
+Name_SPN = Mermelada
+Name_RUS = Джем
+Name_IND = Jam
+Description = Heals lots of health when used.
+
+Inventory_sprite_path = item jam
+Crafting_ingredient_A = Berry
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Honeycomb
+Crafting_ingredient_B_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+Vendor1 = Food
+NumSell = 4 to 6

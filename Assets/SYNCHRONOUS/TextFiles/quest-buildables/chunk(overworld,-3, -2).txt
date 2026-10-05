@@ -1,0 +1,3 @@
+*auto_version=1*
+*forced_biome=0*
+

@@ -1,0 +1,5 @@
+*auto_version=9*
+
+[2,9] = Chair (rot 2)
+	paint = *string* Basic Purple
+

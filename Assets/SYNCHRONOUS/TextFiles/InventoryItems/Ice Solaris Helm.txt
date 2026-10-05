@@ -1,0 +1,32 @@
+Description_TAI = หมวกเหล็กน้ำแข็ง คล้ายมงกุฎ ส่องแสง เย็นยะเยือก และ สง่างาม
+Name_TAI = หมวก น้ำแข็ง โซลาริส
+Description_POR = Elmo gelado em forma de coroa, irradiando uma luz fria e régia.
+Description_SPN = Casco helado en forma de corona, irradiando una luz fría y regia.
+Description_RUS = Ледяной шлем в форме короны, излучающий величественный холодный свет.
+Description_IND = Helm es bermahkota, memancarkan cahaya dingin yang megah
+Name_POR = Elmo Solaris de Gelo
+Name_SPN = Yelmo Solaris de Hielo
+Name_RUS = Ледяной Солярис Шлем
+Name_IND = Helm Solaris Es♦
+Description = Crown-like icy helm, radiating with regal, cold light
+
+Crafting_ingredient_A = Ice Shard
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/SolarisHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 48
+Craft_required_lvl = 72
+Market Cost = CALCULATE
+
+CopyPaintLayout = Dark Solaris Helm
+Default Coloring = Weapon - Ice
+
+Defend Amount = 15
+
+show_model3d = true
+Copy3dModelPosition = Dark Solaris Helm
+
+Vendor0 = Armor
+NumSell = 1 to 2

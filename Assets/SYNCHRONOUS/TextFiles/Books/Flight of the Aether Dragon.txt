@@ -1,0 +1,77 @@
+[paint]
+Royal Sage
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+I saw the Aether Dragon rise from the clouds, summoned by Yandeon’s druids, its wings crackling with strange, glowing energy.
+
+[page 2 - English]
+Us mighty Timber Bandits thought we would overpower them, but their magic was too strong. The Aether Dragon’s roar shook the ground beneath us.
+
+[page 3 - English]
+Grimroot told us to retreat, so we fell back into the forest, leaving the Aether Dragon to burn the clearing to the ground with its fiery breath.
+
+[book name - English]
+Flight of the Aether Dragon
+
+[book name - Indonesian]
+Penerbangan Naga Aether
+
+[page 1 - Indonesian]
+Saya melihat Naga Aether bangkit dari awan, dipanggil oleh para druid Yandeon, sayapnya berderak dengan energi bercahaya yang aneh.
+
+[page 2 - Indonesian]
+Kami, Bandit Kayu yang kuat, berpikir akan mengalahkan mereka, tetapi sihir mereka terlalu kuat. Raungan Naga Aether mengguncang tanah di bawah kami.
+
+[page 3 - Indonesian]
+Grimroot menyuruh kami mundur, jadi kami kembali ke hutan, meninggalkan Naga Aether untuk membakar tanah lapang dengan napas berapinya.
+
+[book name - Portuguese]
+Voo do Dragão do Éter
+
+[page 1 - Portuguese]
+Eu vi o Dragão do Éter subir das nuvens, convocado pelos druidas de Yandeon, suas asas crepitando com uma energia estranha e luminosa.
+
+[page 2 - Portuguese]
+Nós, poderosos Bandidos da Madeira, pensávamos que os superaríamos, mas sua magia era forte demais. O rugido do Dragão do Éter sacudiu o chão sob nós.
+
+[page 3 - Portuguese]
+Grimroot nos disse para recuar, então voltamos para a floresta, deixando o Dragão do Éter queimar a clareira até o chão com seu sopro de fogo.
+
+[book name - Russian]
+Полет Эфирного Дракона
+
+[page 1 - Russian]
+Я видел, как Эфирный Дракон поднялся из облаков, вызванный друидами Яндэона, его крылья искрились странной, светящейся энергией.
+
+[page 2 - Russian]
+Мы, могучие Лесные Бандиты, думали, что сможем их победить, но их магия была слишком сильной. Рев Эфирного Дракона потряс землю под нами.
+
+[page 3 - Russian]
+Тёмный Корень сказал нам отступать, поэтому мы вернулись в лес, оставив Эфирного Дракона сжигать поляну дотла своим огненным дыханием.
+
+[book name - Spanish]
+El Vuelo del Dragón de Éter
+
+[page 1 - Spanish]
+Vi al Dragón de Éter elevarse desde las nubes, convocado por los druidas de Yandeon, con sus alas crepitando con una extraña energía brillante.
+
+[page 2 - Spanish]
+Nosotros, los poderosos Bandidos del Bosque, pensamos que podríamos dominarlos, pero su magia era demasiado fuerte. El rugido del Dragón de Éter sacudió el suelo bajo nosotros.
+
+[page 3 - Spanish]
+Grimroot nos dijo que nos retiráramos, así que nos replegamos al bosque, dejando al Dragón de Éter quemar el claro hasta el suelo con su respiro de fuego.
+
+[book name - Thai]
+การบิน ของมัง กรอีเธ อร์
+
+[page 1 - Thai]
+ฉันเห็ นมังกร อีเธอร ์ลอยขึ ้นจากเ มฆ ถูก เรียกโ ดยพวกด รูอิดข องแยนด ีออน ป ีกของม ันเต็ม ไปด้วย พลังงา นแปลกป ระหลาด ที่เรื องแสง
+
+[page 2 - Thai]
+พวกเรา กลุ่มโ จรป่าไ ม้ที่แ ข็งแกร ่งคิดว ่าเราจ ะเอาชน ะพวกมั นได้ แ ต่เวทม นตร์ขอ งพวกมั นแข็งแ กร่งเก ินไป เ สียงคำ รามของ มังกรอ ีเธอร์ ทำให้พ ื้นสั่ นคลอนใ ต้เท้า ของเรา
+
+[page 3 - Thai]
+กริมรู ทบอกให ้เราถอ ยกลับ  ดังนั้ นเราจึ งถอยหล ังกลับ เข้าไป ในป่า  ปล่อยใ ห้มังก รอีเธอ ร์เผ่า พื้นที ่โล่งน ั้นจนถ ึงพื้น ด้วยลม หายใจอ ันร้อน แรงของ มัน

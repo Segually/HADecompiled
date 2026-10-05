@@ -1,0 +1,32 @@
+Description_TAI = หอก ที่ ชั่วร้าย พร้อม พลัง ใน การ กำจัด ศัตรู ทันที
+Name_TAI = หอก มืด
+Description_POR = Uma hasta sinistra com o poder de banir inimigos instantaneamente.
+Description_SPN = Una siniestra hasta con el poder de desterrar enemigos al instante.
+Description_RUS = Зловещая хаста с силой мгновенно изгонять врагов.
+Description_IND = Hasta yang menakutkan dengan kekuatan untuk mengusir musuh seketika.
+Name_POR = Hasta Sombria
+Name_SPN = Hasta Oscura
+Name_RUS = Темная Аста
+Name_IND = Hasta Gelap
+Description = A sinister hasta with the power to banish foes instantly
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Hasta
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 54
+Craft_required_lvl = 84
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 41
+
+CopyPaintLayout = Ice Hasta
+Default Coloring = Weapon - Dark
+
+show_model3d = true
+Copy3dModelPosition = Ice Hasta
+
+weapon_display_copy = Ice Hasta

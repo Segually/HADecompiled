@@ -1,0 +1,20 @@
+Description_TAI = ชิ้นส่วน ทองคำ ที่ มีค่า
+Name_TAI = แท่ง ทองคำ
+Description_POR = Pedaço valioso de ouro.
+Description_SPN = Trozo valioso de oro.
+Description_RUS = Ценная глыба золота.
+Description_IND = Potongan emas berharga.
+Name_POR = Barra de Ouro
+Name_SPN = Barra de Oro
+Name_RUS = Золотой слиток
+Name_IND = Batang Emas
+Description = Valuable chunk of gold.
+
+Inventory_sprite_path = item gold bar
+Crafting_ingredient_A = Gold Ore
+Crafting_ingredient_A_count = 1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Refined Materials
+NumSell = 2 to 4

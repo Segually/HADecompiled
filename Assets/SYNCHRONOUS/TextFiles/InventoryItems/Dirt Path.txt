@@ -1,0 +1,56 @@
+Description_TAI = ถนน ดิน พื้นฐาน ขุด ด้วย ไม้
+Name_TAI = เส้น ทาง ดิน
+Description_POR = Uma estrada de terra básica escavada usando um galho.
+Description_SPN = Un camino de tierra básico cavado usando un palo.
+Description_RUS = Простейшая грунтовая дорога, вырытая с помощью палки.
+Description_IND = Jalan tanah dasar yang digali menggunakan tongkat.
+Name_POR = Trilha de Terra
+Name_SPN = Camino de Tierra
+Name_RUS = Грунтовая тропинка
+Name_IND = Jalur Tanah
+Description = A basic dirt road dug using a stick
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_makes = 10
+Type = Place_in_world
+
+World_geometry = 1_by_1
+Layer = flooring
+Market Cost = CALCULATE
+Max_stack = 10
+
+Vendor0 = Furniture
+Vendor1 = Farm Accessories
+NumSell = 20 to 40
+
+is_flooring_obj = true
+flooring_model = Pathway-Models/Dirt Path
+
+paintable_by_player = true
+Default Coloring = Basic Brown
+PaintLayout0_TriColor = 0-1,
+PaintLayout0_SolidColors = 0-1,
+PaintLayout0_Trimmed = 0-1,
+PaintLayout0_Candycane = 0-1,
+PaintLayout0_Pastels = 0-1,
+PaintLayout0_Nomad = 0-1,
+PaintLayout0_RENDERQUEUE = 1993
+PaintLayout1_TriColor = 0-2, 
+PaintLayout1_SolidColors = 0-2, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout1_Candycane = 0-3, 
+PaintLayout1_Pastels = 0-2, 
+PaintLayout1_Nomad = 0-2, 
+PaintLayout1_RENDERQUEUE = 1994
+
+model3d_camDist = 4.2
+show_model3d = true
+model3d_fov = 52.5
+model3d_yRot = 40
+model3d_xRot = -15
+model3d_recenterX = 34
+model3d_recenterY = -6
+model3d_camHeight = -0.2
+PaintLayout0_Goldy = 0-1, 
+PaintLayout1_Goldy = 0-3, 

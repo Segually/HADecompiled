@@ -1,0 +1,28 @@
+Description_TAI = สี ทา เฟอร์นิเจอร์ ที่ ให้ ความ หรูหรา
+Name_TAI = เหล็ก & โอ๊ก
+Description_POR = Tinta para móveis que confere um visual refinado.
+Description_SPN = Pintura para muebles que proporciona un aspecto refinado.
+Description_RUS = Краска для мебели, придающая изысканный вид
+Description_IND = Cat furnitur yang memberikan tampilan elegan.
+Name_POR = Ferro & Carvalho
+Name_SPN = Hierro y Roble
+Name_RUS = Железо и Дуб
+Name_IND = Besi & Kayu Oak
+Description = Furniture paint that gives a refined look
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 32
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

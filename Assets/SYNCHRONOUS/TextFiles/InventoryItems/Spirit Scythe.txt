@@ -1,0 +1,34 @@
+Description_TAI = เคียว อีเธอเรียล ที่ มี พลัง ใน การ ส่ง ศัตรู ไป ยัง อีเธอร์
+Name_TAI = เคียว แห่ง วิญญาณ
+Description_POR = Foice etérea com o poder de enviar inimigos para o éter
+Description_SPN = Guadaña etérea con el poder de enviar a los enemigos al éter.
+Description_RUS = Эфирная коса с силой отправлять врагов в эфир.
+Description_IND = Sabit etereal dengan kekuatan untuk mengirim musuh ke aether
+Name_POR = Foice Espiritual
+Name_SPN = Guadaña Espiritual
+Name_RUS = Духовная Коса
+Name_IND = Sabit Roh
+Description = Ethereal scythe with the power to send foes to the aether
+
+Crafting_ingredient_A = Spirit Branch
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Ice Shard
+Crafting_ingredient_B_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Scythe
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 114
+Craft_required_lvl = 180
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 89
+
+weapon_display_copy = Ancient Scythe
+
+CopyPaintLayout = Ancient Scythe
+Default Coloring = Weapon - Spirit
+
+show_model3d = true
+Copy3dModelPosition = Ancient Scythe

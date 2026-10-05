@@ -1,0 +1,43 @@
+Description_TAI = ช่วยให้ คุณ สร้าง อาวุธ และ เกราะ
+Name_TAI = ทั่งตีเหล็ก
+Description_POR = Permite que você construa armas e armaduras
+Description_SPN = Te permite construir armas y armaduras.
+Description_RUS = Позволяет создавать оружие и броню.
+Description_IND = Memungkinkan Anda untuk membuat senjata dan baju zirah.
+Name_POR = Bigorna
+Name_SPN = Yunque
+Name_RUS = Наковальня
+Name_IND = Landasan
+Description = Allows you to build weapons and armor
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Place_in_world
+World_obj_path = Buildables/Anvil
+World_geometry = 1_by_1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+Vendor1 = Weapon Accessories
+Vendor2 = Armor Accessories
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-3, 1-1, 2-2, 
+PaintLayout0_SolidColors = 0-2, 1-1, 2-5, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+PaintLayout0_TriColor = 0-3, 1-1, 2-2, 
+Default Coloring = Debug - Metal
+
+model3d_camDist = 3.2
+show_model3d = true
+model3d_fov = 30
+model3d_yRot = 25
+model3d_xRot = -90
+model3d_recenterY = 13
+model3d_camHeight = 0.1
+model3d_recenterX = 1
+PaintLayout0_Default = 0-0, 1-0, 2-0, 
+PaintLayout0_Nomad = 0-3, 1-1, 2-2, 
+PaintLayout0_Goldy = 0-2, 1-1, 2-3, 

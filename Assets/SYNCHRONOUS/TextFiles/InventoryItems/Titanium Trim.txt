@@ -1,0 +1,29 @@
+Description_TAI = สี ทา เฟอร์นิเจอร์ ที่ เข้ากัน ได้ดี กับ สีดำ
+Name_TAI = ไทเทเนียม ตัดแต่ง
+Description_POR = Tinta para móveis que combina bem com preto
+Description_SPN = Pintura para muebles que combina bien con el negro.
+Description_RUS = Краска для мебели, которая хорошо сочетается с чёрным цветом.
+Description_IND = Cat furnitur yang cocok dengan warna hitam
+Name_POR = Aplique de Titânio
+Name_SPN = Adorno de Titanio
+Name_RUS = Титановая отделка
+Name_IND = Pinggiran Titanium
+Description =  Furniture paint that goes well with Black
+
+Inventory_sprite_path = item paint titanium trim
+Crafting_ingredient_A = Basic Black
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Titanium Ore
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

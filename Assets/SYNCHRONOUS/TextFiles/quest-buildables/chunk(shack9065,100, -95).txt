@@ -1,0 +1,58 @@
+*auto_version=18*
+
+[3,0] = Basket (rot 0)
+	basket_id = *long* 9044
+	paint = *string* Lumberjack
+
+[7,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,3] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[5,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[2,0] = Torch (rot 0)
+	paint = *string* Lumberjack
+
+[4,0] = Poison Spikes (rot 0)
+
+[0,2] = Tent (rot 1)
+	shack_id = *long* 9067
+	paint = *string* Lumberjack
+	quest_miniworld = *string* true
+
+[9,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[8,0] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,1] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,2] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[7,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[6,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[4,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[3,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[1,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+
+[0,4] = Palisade Wall (rot 0)
+	paint = *string* Debug - Wood DK
+

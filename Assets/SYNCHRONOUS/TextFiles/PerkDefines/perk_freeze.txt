@@ -1,0 +1,12 @@
+Full Name = Freeze
+Description = Freeze your enemy
+On cast = [EFFECT_FREEZE] on self
+Not_unlockable = true
+-
+[EFFECT_FREEZE]
+Type = Duration Effect
+Walk Speed = 0%
+Attack Speed = 0%
+Duration = 6 seconds
+Particle (Duration) = perk_freeze_duration
+Scale Particle With Creature Size = true

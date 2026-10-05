@@ -1,0 +1,17 @@
+Description_TAI = กิ่งไม้ จาก ต้นไม้ วิญญาณ
+Name_TAI = กิ่ง วิญญาณ
+Description_POR = Um galho de uma Árvore Espiritual
+Description_SPN = Una rama de un Árbol Espíritu
+Description_RUS = Ветка с Духовного Дерева
+Description_IND = Sebuah cabang dari Pohon Roh
+Name_POR = Galho Espiritual
+Name_SPN = Rama Espiritual
+Name_RUS = Духовная Ветвь
+Name_IND = Cabang Roh
+Description = A branch from a Spirit Tree
+
+Inventory_sprite_path = item spirit branch
+Market Cost = 1000
+
+Max_stack = 5
+Crafting_makes = 5

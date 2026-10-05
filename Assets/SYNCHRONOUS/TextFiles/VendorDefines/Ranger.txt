@@ -1,0 +1,9 @@
+[Sell Percent = 0.26]
+
+Ranger Accessories(1-400)
+Food(1-200)
+Food(1-200)
+
+Mob Drops(1-99)
+Mob Drops(1-99)
+Harvested Item(1-99)

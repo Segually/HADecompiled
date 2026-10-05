@@ -1,0 +1,15 @@
+Name_TAI = หินงอก มหาสมุทร ขนาดใหญ่
+Name_POR = Estalagmite Oceânica Grande
+Name_SPN = Estalagmita Grande del Océano
+Name_RUS = Большой океанический сталагмит
+Name_IND = Stalagmit Laut Besar
+
+Inventory_sprite_path = item bonsai tree
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Large Ocean Stalagmite
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

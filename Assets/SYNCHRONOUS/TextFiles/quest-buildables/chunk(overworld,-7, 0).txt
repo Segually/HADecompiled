@@ -1,0 +1,30 @@
+*auto_version=1*
+*forced_biome=3*
+
+[9,5] = Dirt Path (rot 0)
+
+[8,4] = Dirt Path (rot 0)
+
+[6,4] = Dirt Path (rot 0)
+
+[5,4] = Dirt Path (rot 0)
+
+[2,4] = Dirt Path (rot 0)
+
+[4,6] = Torch (rot 0)
+
+[6,8] = Evergreen Cave Entrance (rot 0)
+	shack_id = *long* 9008
+
+[8,5] = Dirt Path (rot 0)
+
+[7,4] = Dirt Path (rot 0)
+
+[4,4] = Dirt Path (rot 0)
+
+[3,4] = Dirt Path (rot 0)
+
+[1,4] = Dirt Path (rot 0)
+
+[0,4] = Dirt Path (rot 0)
+

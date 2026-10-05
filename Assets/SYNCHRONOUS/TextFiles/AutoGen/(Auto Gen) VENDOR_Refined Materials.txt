@@ -1,0 +1,7 @@
+[35] Metal Bar
+[89] Titanium Bar
+[133] Gold Bar
+[205] Uranium Bar
+[400] Ice Shard
+[850] Dark Shard
+[1000] Ancient Bones

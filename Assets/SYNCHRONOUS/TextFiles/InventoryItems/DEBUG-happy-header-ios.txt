@@ -1,0 +1,10 @@
+Name_TAI = หัว ข้อ ios ดี บั๊ก มี ความ สุข
+Name_POR = DEBUG-cabeçalho-feliz-ios
+Name_SPN = DEPURAR-feliz-encabezado-ios
+Name_RUS = ОТЛАДКА-счастливый-заголовок-ios
+Name_IND = DEBUG-happy-header-ios
+
+Inventory_sprite_path = item happy header ios
+
+not_obtainable = true
+

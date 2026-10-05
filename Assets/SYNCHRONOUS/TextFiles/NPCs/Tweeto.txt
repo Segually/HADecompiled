@@ -1,0 +1,40 @@
+Name_POR=Tweeto
+Name_RUS=твитo
+Name_IND=Menciako
+Name_SPN=Tweeto
+Name_TAI=ทวีตโต
+
+----- DIALOGUE -----
+[000]
+otherspeak=What's better than a song in the morning..?
+otherspeak_POR=O que é melhor do que uma música pela manhã ..?
+otherspeak_RUS=Что может быть лучше утренней песни ..?
+otherspeak_IND=Apa yang lebih baik dari lagu di pagi hari ..?
+otherspeak_SPN=¿Qué es mejor que una canción por la mañana ...?
+otherspeak_TAI=มีอะไรดีไปกว่าเพลงยามเช้า .. ?
+goto=001
+
+[001]
+otherspeak=Songs all day long!
+otherspeak_POR=Músicas o dia todo!
+otherspeak_RUS=Песни целый день!
+otherspeak_IND=Lagu sepanjang hari!
+otherspeak_SPN=¡Canciones todo el día!
+otherspeak_TAI=เพลงตลอดทั้งวัน!
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

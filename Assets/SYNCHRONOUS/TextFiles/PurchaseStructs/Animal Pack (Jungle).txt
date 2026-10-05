@@ -1,0 +1,12 @@
+Description = Adds animals: orangutan, baboon, chameleon, panther, macaw
+IAP_KEY = creature_pack_14
+Type = permanent
+Gem_price = medium
+Bg_color = orange
+Model_path = shop_creaturePack14
+
+animal0 = orangutan
+animal1 = baboon
+animal2 = chameleon
+animal3 = panther
+animal4 = macaw

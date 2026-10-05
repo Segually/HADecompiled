@@ -1,0 +1,6 @@
+Description = Mix your current hybrid with ANOTHER animal! Also, gain 12 levels!
+IAP_KEY = doMUTATE
+Type = consumable
+Gem_price = cheap
+Bg_color = MUTATION_GREEN
+Model_path = shop_mutate

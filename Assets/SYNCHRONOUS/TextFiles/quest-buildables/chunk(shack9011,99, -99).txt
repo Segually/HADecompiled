@@ -1,0 +1,5 @@
+*auto_version=2*
+
+[4,5] = Pocket World Basement (rot 0)
+	shack_id = *long* 9013
+	quest_miniworld = *string* true

@@ -1,0 +1,32 @@
+Description_TAI = หมวกเหล็กยูเรเนียมหนักหน่วง แข็งแกร่งและน่าเกรงขาม
+Name_TAI = เฮล์ม บรูท ยูเรเนียม
+Description_POR = Elmo pesado de urânio, robusto e intimidador
+Description_SPN = Yelmo de uranio pesado, robusto e intimidante.
+Description_RUS = Тяжёлый урановый шлем, прочный и внушающий страх
+Description_IND = Helm uranium berat, kokoh dan mengintimidasi.
+Name_POR = Elmo Bruto de Urânio
+Name_SPN = Yelmo Brutal de Uranio
+Name_RUS = Урановый Шлем Громилы
+Name_IND = Helm Kasar Uranium
+Description = Heavy uranium helm, robust and intimidating
+
+Crafting_ingredient_A = Uranium Bar
+Crafting_ingredient_A_count = 3
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/BruteHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 24
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+CopyPaintLayout = Magma Brute Helm
+Default Coloring = Weapon - Uranium
+
+show_model3d = true
+Copy3dModelPosition = Magma Brute Helm
+
+Defend Amount = 9
+
+Vendor0 = Armor
+NumSell = 1 to 2

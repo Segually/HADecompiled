@@ -1,0 +1,11 @@
+Name_TAI = มะพร้าว
+Name_POR = Coco
+Name_SPN = Coco
+Name_RUS = Кокос
+Name_IND = Kelapa
+
+Inventory_sprite_path = item coconut
+Market Cost = 20
+
+Vendor0 = Harvested Item
+NumSell = 2 to 7

@@ -1,0 +1,12 @@
+*auto_version=4*
+
+[4,9] = Music Box (rot 3)
+	npc_record_index = *short* 2
+	paint = *string* Winter Pastel
+
+[7,9] = Small Table (rot 0)
+	paint = *string* Winter Pastel
+
+[6,9] = Chair (rot 0)
+	paint = *string* Winter Pastel
+

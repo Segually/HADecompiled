@@ -1,0 +1,11 @@
+Full Name = Fireball
+Description = Shoot a fireball at your enemy
+Detailed Description = GetInt[EFFECT_ON_HIT, "Damage", remove ""] damage DiffInt[EFFECT_ON_HIT, "Damage", add ""] on target.
+Energy Cost = 35%
+On cast = [EFFECT_ON_HIT] on projectile(model=perk_fireball_projectile,target=enemies)
+-
+[EFFECT_ON_HIT]
+Type = Instant Effect
+Damage = RANGE (6%-13%-20% of own HP)
+Particle (Instant) = perk_fireball_collide
+Scale Particle With Creature Size = true

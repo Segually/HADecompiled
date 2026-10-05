@@ -1,0 +1,44 @@
+Description_TAI = ช่วย ให้ คุณ สร้าง ภาพวาด ได้!
+Name_TAI = ขาตั้ง วาด ภาพ
+Description_POR = Permite que você faça pinturas!
+Description_SPN = ¡Te permite hacer pinturas!
+Description_RUS = Позволяет создавать картины!
+Description_IND = Memungkinkan Anda untuk membuat lukisan!
+Name_POR = Cavalete de Pintura
+Name_SPN = Caballete de pintura
+Name_RUS = Мольберт для рисования
+Name_IND = Kuda-kuda Lukis
+Description = Allows you to make paintings!
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 6
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Painting Easel
+World_geometry = 1_by_1
+Craft_required_lvl = 30
+
+IAP_required = recipe_painting
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+Default Coloring = Iron & Oak
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+PaintLayout0_SolidColors = 0-1, 1-2, 2-3, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+model3d_camDist = 2.6
+show_model3d = true
+model3d_fov = 45
+model3d_recenterX = -2
+model3d_xRot = -85
+model3d_camHeight = 0.6
+model3d_objRot = 6
+model3d_yRot = 15
+model3d_recenterY = 4
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 

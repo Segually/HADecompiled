@@ -1,0 +1,6 @@
+Description = Unlocks items: Custom Statue, Armor Stand, Double Crate
+IAP_KEY = 30day_landclaim
+Type = permanent
+Gem_price = medium
+Bg_color = yellow
+Model_path = shop_30day_landclaim

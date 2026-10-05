@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: dff0ea9411ab90eca6c9b818d841c871.bundle
+  m_EditorClassIdentifier: 
+  m_GroupName: dff0ea9411ab90eca6c9b818d841c871.bundle
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 62051b57956e7c549811503c45e42989
+  m_SerializeEntries:
+  - m_GUID: 575e6543af576634798922e4b0da97e4
+    m_Address: Assets/Images
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c84b56f8897368044b3005bc3dbda837
+    m_Address: Assets/Models
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5443ec1395474bb4d8b6c0030de0b806
+    m_Address: Assets/Prefabs
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 331594db27af5624490272da2d947250
+    m_Address: Assets/Sounds
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8b15cae04af7eb94b9ba90708e0141fe
+    m_Address: Assets/SYNCHRONOUS
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a158dba0dd03e694ea1148a916c03ffb, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f43ea019efa08c044b029d8539ed07c9, type: 2}
+    - {fileID: 11400000, guid: c56d2b20ae57bba46b25aa5a200f7c3b, type: 2}

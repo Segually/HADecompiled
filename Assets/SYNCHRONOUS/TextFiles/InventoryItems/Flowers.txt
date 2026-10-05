@@ -1,0 +1,40 @@
+Description_TAI = ของตกแต่ง ที่สวยงาม!
+Name_TAI = ดอกไม้
+Description_POR = Uma bela decoração!
+Description_SPN = ¡Una bonita decoración!
+Description_RUS = Красивое украшение!
+Description_IND = Dekorasi yang indah!
+Name_POR = Flores
+Name_SPN = Flores
+Name_RUS = Цветы
+Name_IND = Bunga-bunga
+Description = A nice decoration!
+
+Type = Place_in_world
+World_obj_path = Buildables/Flowers
+World_geometry = 1_by_1
+Market Cost = 5
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 2 to 4
+
+model3d_camDist = 1.4
+show_model3d = true
+model3d_fov = 55
+model3d_yRot = 60
+model3d_xRot = -40
+model3d_objRot = 7
+
+paintable_by_player = true
+PaintLayout0_TriColor = 0-2, 1-3, 2-1, 
+PaintLayout0_SolidColors = 0-2, 1-4, 2-1, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 
+PaintLayout0_Candycane = 0-2, 1-3, 2-1, 
+PaintLayout0_Nomad = 0-2, 1-3, 2-1, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-2, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 
+Default Coloring = Basic Pink
+
+Max_stack = 5

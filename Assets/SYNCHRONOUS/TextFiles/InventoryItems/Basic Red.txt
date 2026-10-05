@@ -1,0 +1,27 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณให้เป็นสีแดง!
+Name_TAI = พื้นฐาน สีแดง
+Description_POR = Pinte seus móveis de vermelho!
+Description_SPN = ¡Pinta tus muebles de rojo!
+Description_RUS = Покрасьте вашу мебель в красный цвет!
+Description_IND = Cat perabotan Anda menjadi Merah!
+Name_POR = Vermelho Básico
+Name_SPN = Rojo Básico
+Name_RUS = Базовый красный
+Name_IND = Merah Dasar
+Description =  Paint your furniture Red!
+
+Inventory_sprite_path = item paint basic red
+Crafting_ingredient_A = Hot Pepper
+Crafting_ingredient_A_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

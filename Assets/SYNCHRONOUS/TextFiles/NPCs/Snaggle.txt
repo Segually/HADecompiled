@@ -1,0 +1,40 @@
+Name_POR=Engasgado
+Name_RUS=Сучковатый
+Name_IND=Terganjal
+Name_SPN=Enredo
+Name_TAI=ซน
+
+----- DIALOGUE -----
+[000]
+otherspeak=Curious items for curious travelers.
+otherspeak_POR=Itens curiosos para viajantes curiosos.
+otherspeak_RUS=Загадочные предметы для любознательных путешественников.
+otherspeak_IND=Barang-barang menarik untuk para pelancong yang penasaran.
+otherspeak_SPN=Artículos curiosos para viajeros curiosos.
+otherspeak_TAI=วัตถุมีความน่าสนใจสำหรับนักเดินทางที่สนใจ
+goto=001
+
+[001]
+otherspeak=Do you have the courage to barter with me?
+otherspeak_POR=Você tem coragem de negociar comigo?
+otherspeak_RUS=Есть ли у вас смелость торговаться со мной?
+otherspeak_IND=Apakah Anda memiliki keberanian untuk berdagang dengan saya?
+otherspeak_SPN=¿Tienes el valor para regatear conmigo?
+otherspeak_TAI=คุณมีความกล้าที่จะแลกเปลี่ยนสินค้ากับฉันหรือไม่?
+goto=002
+
+[002]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ARTIGOS
+optionA_RUS=КУПИТЬ ПРЕДМЕТЫ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า
+gotoA=-88
+optionB=SELL ITEMS
+optionB_POR=VENDER ARTIGOS
+optionB_RUS=ПРОДАТЬ ПРЕДМЕТЫ
+optionB_IND=MENJUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoB=-99

@@ -1,0 +1,95 @@
+[paint]
+Lumberjack
+
+[stamp]
+Crown Stamp
+
+[page 1 - English]
+Before Dusk Baron claimed the title of bandit lord, he swore an oath to the forest itself: he would not bow to the cold of King Wing, no matter how long the winter lasted.
+
+[page 2 - English]
+The Everthorn Bandits followed him through burning forests and chilling winds, believing in his promise to overthrow those who ruled with fear and frost.
+
+[page 3 - English]
+And though the bandits celebrated their small victories, Dusk Baron knew the real battle was yet to come—the battle for the winter king’s crown.
+
+[page 4 - English]
+For in the deepest corners of his mind, Dusk Baron always felt the looming presence of King Wing, a rival whose frost would eventually clash with his burning ambition.
+
+[book name - English]
+The Autumn King's Pledge
+
+[book name - Indonesian]
+Janji Raja Musim Gugur
+
+[page 1 - Indonesian]
+Sebelum Dusk Baron mengklaim gelar sebagai pemimpin bandit, dia bersumpah kepada hutan itu sendiri: dia tidak akan tunduk pada dinginnya Raja Wing, tidak peduli seberapa lama musim dingin berlangsung.
+
+[page 2 - Indonesian]
+Para Bandit Everthorn mengikutinya melalui hutan yang terbakar dan angin yang menggigil, percaya pada janjinya untuk menggulingkan mereka yang memerintah dengan ketakutan dan beku.
+
+[page 3 - Indonesian]
+Dan meskipun para bandit merayakan kemenangan kecil mereka, Dusk Baron tahu bahwa pertempuran sesungguhnya belum datang—pertempuran untuk merebut mahkota raja musim dingin.
+
+[page 4 - Indonesian]
+Karena di sudut terdalam pikirannya, Dusk Baron selalu merasakan keberadaan Raja Wing yang mendekat, saingan yang embunnya pada akhirnya akan berbenturan dengan ambisinya yang membara.
+
+[book name - Portuguese]
+A Promessa do Rei do Outono
+
+[page 1 - Portuguese]
+Antes de Barão Crepúsculo reivindicar o título de senhor dos bandidos, ele fez um juramento à própria floresta: ele não se curvaria ao frio do Rei Asa, não importasse quanto tempo o inverno durasse.
+
+[page 2 - Portuguese]
+Os Bandidos Espinheiros Eternos o seguiram através de florestas em chamas e ventos gelados, acreditando em sua promessa de derrubar aqueles que governavam com medo e geada.
+
+[page 3 - Portuguese]
+E embora os bandidos celebrassem suas pequenas vitórias, Barão Crepúsculo sabia que a verdadeira batalha ainda estava por vir—a batalha pela coroa do rei do inverno.
+
+[page 4 - Portuguese]
+Pois, nos cantos mais profundos de sua mente, Barão Crepúsculo sempre sentia a presença iminente do Rei Asa, um rival cujo gelo eventualmente chocaria com sua ambição ardente.
+
+[book name - Russian]
+Клятва Короля Осени
+
+[page 1 - Russian]
+Прежде чем Барон Сумерек получил титул предводителя разбойников, он поклялся самому лесу: он не преклонит колен перед холодом Короля Крыла, каким бы долгим ни был зимний период.
+
+[page 2 - Russian]
+Разбойники Вечернего Шипа следовали за ним через горящие леса и леденящие ветра, веря в его обещание свергнуть тех, кто правил страхом и морозом.
+
+[page 3 - Russian]
+И хотя разбойники праздновали свои небольшие победы, Барон Сумерек знал, что настоящая битва ещё впереди — битва за корону зимнего короля.
+
+[page 4 - Russian]
+Ведь в самых глубоких уголках его разума Барон Сумерек всегда ощущал нависшее присутствие Короля Крыла, соперника, чей мороз однажды столкнётся с его пламенной амбициозностью.
+
+[book name - Spanish]
+La Promesa del Rey de Otoño
+
+[page 1 - Spanish]
+Antes de que el Barón del Crepúsculo reclamara el título de señor bandido, juró un juramento al bosque mismo: no se inclinaría ante el frío del Rey Ala, sin importar cuánto durara el invierno.
+
+[page 2 - Spanish]
+Los Bandidos de Espinas Eternas lo siguieron a través de bosques ardientes y vientos helados, creyendo en su promesa de derrocar a aquellos que gobernaban con miedo y escarcha.
+
+[page 3 - Spanish]
+Y aunque los bandidos celebraban sus pequeñas victorias, el Barón del Crepúsculo sabía que la verdadera batalla aún estaba por venir: la batalla por la corona del rey del invierno.
+
+[page 4 - Spanish]
+Porque en los rincones más profundos de su mente, el Barón del Crepúsculo siempre sentía la presencia inminente del Rey Ala, un rival cuyo hielo eventualmente chocaría con su ardiente ambición.
+
+[book name - Thai]
+คำมั่น ของราช าใบไม้ ร่วง
+
+[page 1 - Thai]
+ก่อนที ่ดยุคด ัสก์จะ ได้รับ ตำแหน่ งเจ้าแ ห่งโจร  เขาได ้สาบาน ต่อป่า ด้วยว่ าตัวเข าจะไม่ ยอมก้ม หน้าให ้แก่คว ามหนาว เย็นขอ งราชาป ีก ไม่ ว่าจะต ้องเผช ิญกับฤ ดูหนาว ยาวนาน เพียงใ ด
+
+[page 2 - Thai]
+กลุ่มโ จรหนาม นิรันด ร์ติดต ามเขาผ ่านป่า ไฟไหม้ และลมห นาว เพ ราะเชื ่อในคำ มั่นขอ งเขาว่ าจะโค่ นล้มผู ้ปกครอ งด้วยค วามกลั วและคว ามหนาว เหน็บ
+
+[page 3 - Thai]
+แม้ว่า โจรจะเ ฉลิมฉล องชัยช นะเล็ก  ๆ ของ พวกเขา  ดยุคด ัสก์ก็ รู้ดีว ่าการต ่อสู้ท ี่แท้จ ริงยัง ไม่มาถ ึง—การ ต่อสู้ เพื่อม งกุฎขอ งราชาฤ ดูหนาว
+
+[page 4 - Thai]
+เพราะใ นมุมลึ กที่สุ ดของจิ ตใจ ดย ุคดัสก ์รู้สึ กถึงกา รปรากฏ ตัวที่ ใกล้จะ มาถึงข องราชา ปีก คู ่แข่งท ี่น้ำแ ข็งของ เขาจะต ้องปะท ะกับคว ามทะเย อทะยาน อันลุก โชน

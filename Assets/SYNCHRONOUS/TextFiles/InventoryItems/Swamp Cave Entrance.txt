@@ -1,0 +1,14 @@
+Name_TAI = ทาง เข้า ถ้ำ หนอง บึง
+Name_POR = Entrada da Caverna do Pântano
+Name_SPN = Entrada a la Cueva del Pantano
+Name_RUS = Вход в пещеру на болоте
+Name_IND = Pintu Masuk Gua Rawa
+
+Type = Place_in_world
+World_obj_path = Buildables/Swamp Cave Entrance
+World_geometry = 3_by_3
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

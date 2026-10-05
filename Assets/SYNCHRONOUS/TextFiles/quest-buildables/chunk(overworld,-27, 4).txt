@@ -1,0 +1,19 @@
+*auto_version=3*
+
+[9,4] = Torch (rot 0)
+	paint = *string* Forest Green
+
+[8,3] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+	paint = *string* Forest Green
+
+[9,2] = Dirt Path (rot 0)
+
+[8,2] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+	paint = *string* Forest Green
+
+[9,1] = Dirt Path (rot 0)
+
+[9,3] = Dirt Path (rot 0)
+

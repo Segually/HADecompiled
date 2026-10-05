@@ -1,0 +1,3 @@
+[6][paintable] Torch
+[35] Campfire
+[316] Poison Spikes

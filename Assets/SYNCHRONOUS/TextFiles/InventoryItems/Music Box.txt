@@ -1,0 +1,46 @@
+Description_TAI = สร้าง เพลง ของ คุณ เอง หรือ โหลด เพลง จาก แผ่นเสียง
+Name_TAI = กล่อง ดนตรี
+Description_POR = Crie suas próprias músicas ou carregue músicas de discos.
+Description_SPN = Crea tus propias canciones o carga música de discos.
+Description_RUS = Создавайте свои собственные песни или загружайте музыку с пластинок.
+Description_IND = Buat lagu Anda sendiri, atau muat musik dari rekaman.
+Name_POR = Caixa de Música
+Name_SPN = Caja de música
+Name_RUS = Музыкальная шкатулка
+Name_IND = Kotak Musik
+Description = Create your own songs, or load music from records
+
+Inventory_sprite_path = item music box
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stick
+Crafting_ingredient_B_count = 5
+Type = Place_in_world
+World_obj_path = Buildables/Music Box
+World_geometry = 1_by_1
+Craft_required_lvl = 48
+Market Cost = CALCULATE
+IAP_required = recipe_musicboxes
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+PaintLayout0_Trimmed = 0-3, 1-1, 2-1, 3-3, 4-2, 
+PaintLayout0_Candycane = 0-2, 1-1, 2-3, 3-1, 4-1, 
+PaintLayout0_SolidColors = 0-5, 1-2, 2-3, 3-4, 4-6, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-1, 3-2, 4-2, 
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 3-3, 4-1, 
+Default Coloring = Debug - Wood & Metal & Gold
+PaintLayout0_Stone & Wood = 0-4, 1-5, 2-1, 3-6, 4-3, 
+
+model3d_camDist = 2.7
+show_model3d = true
+model3d_fov = 42.5
+model3d_xRot = -100
+model3d_camHeight = 0.4
+model3d_yRot = 30
+model3d_objRot = 6
+model3d_recenterX = 2
+model3d_recenterY = 5
+PaintLayout0_Nomad = 0-5, 1-2, 2-3, 3-4, 4-6, 
+PaintLayout0_Goldy = 0-2, 1-1, 2-3, 3-5, 4-2, 

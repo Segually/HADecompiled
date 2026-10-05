@@ -1,0 +1,95 @@
+[paint]
+Iron & Oak
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+The Dune Bandits know the desert is eternal, shifting, and swallowing all who oppose it.
+
+[page 2 - English]
+Riches lie buried beneath the sands, and only the cunning may claim them.
+
+[page 3 - English]
+Follow Sandskull's lead—strike hard, move fast, leave nothing for the vultures.
+
+[page 4 - English]
+The desert shows no mercy, and neither do we.
+
+[book name - English]
+The Sandskull Creed
+
+[book name - Indonesian]
+Kredo Tengkorak Pasir
+
+[page 1 - Indonesian]
+Perampok Bukit Pasir tahu gurun itu abadi, terus berubah, dan menelan semua yang menentangnya.
+
+[page 2 - Indonesian]
+Kekayaan terkubur di bawah pasir, dan hanya yang cerdik yang dapat mengklaimnya.
+
+[page 3 - Indonesian]
+Ikuti petunjuk Tengkorak Pasir—serang dengan keras, bergerak cepat, jangan tinggalkan apa pun untuk burung nasar.
+
+[page 4 - Indonesian]
+Gurun tidak menunjukkan belas kasihan, begitu juga kami.
+
+[book name - Portuguese]
+O Credo de Crânio de Areia
+
+[page 1 - Portuguese]
+Os Bandidos das Dunas sabem que o deserto é eterno, sempre mudando e engolindo todos que o enfrentam.
+
+[page 2 - Portuguese]
+Riquezas estão enterradas sob as areias, e somente os astutos podem reivindicá-las.
+
+[page 3 - Portuguese]
+Siga o comando de Crânio de Areia—ataque com força, mova-se rápido, não deixe nada para os abutres.
+
+[page 4 - Portuguese]
+O deserto não mostra misericórdia, e nós também não.
+
+[book name - Russian]
+Кредо Песчаного Черепа
+
+[page 1 - Russian]
+Песчаные бандиты знают, что пустыня вечна, изменчива и поглощает всех, кто ей противостоит.
+
+[page 2 - Russian]
+Богатства зарыты под песками, и только хитрые могут их забрать.
+
+[page 3 - Russian]
+Следуйте за Песчаным Черепом — наносите быстрые удары, двигайтесь стремительно, не оставляйте ничего стервятникам.
+
+[page 4 - Russian]
+Пустыня не проявляет милосердия, и мы тоже.
+
+[book name - Spanish]
+El Credo de Sandskull
+
+[page 1 - Spanish]
+Los Bandidos de las Dunas saben que el desierto es eterno, cambiante y devora a todos los que se le oponen.
+
+[page 2 - Spanish]
+Riquezas yacen enterradas bajo las arenas, y solo los astutos pueden reclamarlas.
+
+[page 3 - Spanish]
+Sigue la guía de Sandskull: golpea fuerte, muévete rápido, no dejes nada para los buitres.
+
+[page 4 - Spanish]
+El desierto no muestra piedad, y nosotros tampoco.
+
+[book name - Thai]
+คำสอนแ ห่งโคร งกระดู กทราย
+
+[page 1 - Thai]
+โจรทะเ ลทรายร ู้ว่าท ะเลทรา ยเป็นน ิรันดร ์ เปลี ่ยนแปล ง และก ลืนกิน ทุกคนท ี่ต่อต ้านมัน
+
+[page 2 - Thai]
+ทรัพย์ สมบัติ ฝังอยู ่ใต้ผื นทราย  และมีเ พียงผู ้ที่มี ไหวพริ บเท่าน ั้นที่ จะครอบ ครองมั นได้
+
+[page 3 - Thai]
+ตามผู้ นำแห่ง โครงกร ะดูกทร าย—โจม ตีให้ห นัก เค ลื่อนไ หวให้เ ร็ว แล ะไม่เห ลืออะไ รให้กั บแร้ง
+
+[page 4 - Thai]
+ทะเลทร ายไม่ม ีความเ มตตา แ ละเราก ็เช่นก ัน

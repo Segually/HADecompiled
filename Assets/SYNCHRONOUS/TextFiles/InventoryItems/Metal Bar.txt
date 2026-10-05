@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ พื้นฐาน
+Name_TAI = แท่ง โลหะ
+Description_POR = Material básico.
+Description_SPN = Material básico.
+Description_RUS = Базовый материал.
+Description_IND = Material dasar.
+Name_POR = Barra de Metal
+Name_SPN = Barra de metal
+Name_RUS = Металлический слиток
+Name_IND = Batang Logam
+Description = Basic material.
+
+Inventory_sprite_path = item metal bar
+Crafting_ingredient_A = Metal Ore
+Crafting_ingredient_A_count = 1
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Refined Materials
+NumSell = 3 to 6

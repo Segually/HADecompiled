@@ -1,0 +1,32 @@
+Description_TAI = เคียว อันชั่วร้าย ที่มี พลัง ขับไล่ ศัตรู ได้ ทันที
+Name_TAI = เคียวดำ
+Description_POR = Uma foice sinistra com o poder de banir inimigos instantaneamente.
+Description_SPN = Una guadaña siniestra con el poder de desterrar enemigos al instante.
+Description_RUS = Зловещая коса с силой мгновенно изгонять врагов.
+Description_IND = Sebuah sabit jahat dengan kekuatan untuk mengusir musuh seketika.
+Name_POR = Foice Sombria
+Name_SPN = Guadaña Oscura
+Name_RUS = Тёмная коса
+Name_IND = Sabit Kegelapan
+Description = A sinister scythe with the power to banish foes instantly
+
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Scythe
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 66
+Craft_required_lvl = 108
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 53
+
+weapon_display_copy = Ancient Scythe
+
+CopyPaintLayout = Ancient Scythe
+Default Coloring = Weapon - Dark
+
+show_model3d = true
+Copy3dModelPosition = Ancient Scythe

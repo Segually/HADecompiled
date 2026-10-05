@@ -1,0 +1,14 @@
+Name_TAI = สปอว์นเนอร์ - เปลือก หอย สี ม่วง
+Name_POR = Gerador - Conchas Roxas
+Name_SPN = Generador - Conchas Moradas
+Name_RUS = Спавнер - Фиолетовые Ракушки
+Name_IND = Pemijahan - Kerang Ungu
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Purple Shells
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

@@ -1,0 +1,13 @@
+Full Name = Eagle Eye
+Description = See a lot further!
+Detailed Description = GetFloat[EFFECT_VISION, "Player Vision", remove "%"]% vision DiffFloat[EFFECT_VISION, "Player Vision", remove "%", add "%"] for GetInt[EFFECT_VISION, "Duration", remove " seconds"] seconds DiffInt[EFFECT_VISION, "Duration", remove " seconds", add " seconds"] on self.
+Energy Cost = CLAMP (65% @ lvl_1 ... 40% @ lvl_15)
+On cast = [EFFECT_VISION] on self
+Max level = 15
+-
+[EFFECT_VISION]
+Type = Duration Effect
+Player Vision = CLAMP (175% @ lvl_1 ... 200% @ lvl_15)
+Particle (Instant) = perk_eagle_eye_particle
+Scale Particle With Creature Size = false
+Duration = CLAMP (6 seconds @ lvl_1 ... 20 seconds @ lvl_15)

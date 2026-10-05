@@ -1,0 +1,8 @@
+*auto_version=1*
+
+[8,7] = Underground Room (rot 0)
+	shack_id = *long* 9071
+
+[8,6] = Sign (rot 3)
+	sign_text = *string* Vitamin Ape Quest Variants
+

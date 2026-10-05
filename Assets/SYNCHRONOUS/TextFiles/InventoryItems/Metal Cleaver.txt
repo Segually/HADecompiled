@@ -1,0 +1,46 @@
+Description_TAI = ดาบ ขนาดใหญ่ ที่ มี ใบมีด โลหะ กว้าง
+Name_TAI = มีด แยก โลหะ
+Description_POR = Uma espada maciça com uma larga lâmina de metal.
+Description_SPN = Una espada masiva con una amplia hoja de metal.
+Description_RUS = Массивный меч с широкой металлической лезвией.
+Description_IND = Pedang besar dengan bilah logam lebar
+Name_POR = Cutelo de Metal
+Name_SPN = Hacha de Metal
+Name_RUS = Металлический тесак
+Name_IND = Kapak Logam
+Description = A massive sword with a broad metal blade
+
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/BigSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 6
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+NumSell = 1 to 2
+
+Damage Base = 5
+
+Default Coloring = Weapon - Metal
+PaintLayout0_SolidColors = 0-3, 1-2, 2-6, 3-5, 4-1, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 3-3, 4-1, 
+PaintLayout0_Trimmed = 0-3, 1-1, 2-1, 3-3, 4-2, 
+PaintLayout0_TriColor = 0-2, 1-1, 2-3, 3-2, 4-1, 
+PaintLayout0_Nomad = 0-2, 1-1, 2-3, 3-4, 4-1, 
+PaintLayout0_Goldy = 0-3, 1-2, 2-4, 3-1, 4-2, 
+model3d_camDist = 2
+show_model3d = true
+model3d_fov = 47.5
+model3d_xRot = -115
+model3d_recenterX = 23
+model3d_recenterY = 31
+model3d_objRot = 7
+
+weapon_display_localPosition = 0,0,-0.63
+weapon_display_localRotation = 0.914,50.55,89.41
+weapon_display_localScale = 0.86,0.86,0.86
+ParticleTransform0 = 0,0.443,0.352:-0.4226183,0,0,0.9063079:1,1,1:CONE:1:0.2

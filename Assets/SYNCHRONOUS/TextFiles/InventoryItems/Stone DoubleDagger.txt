@@ -1,0 +1,43 @@
+Description_TAI = กริช สอง เล่ม ที่ มี ใบมีด หิน ขรุขระ
+Name_TAI = กริช คู่ หิน
+Description_POR = Duas adagas primitivas com lâminas de pedra rugosas
+Description_SPN = Dos dagas primitivas con hojas de piedra rugosa.
+Description_RUS = Два примитивных кинжала с грубыми каменными лезвиями
+Description_IND = Dua belati primitif dengan bilah batu kasar
+Name_POR = Adaga Dupla de Pedra
+Name_SPN = DagaDoble de Piedra
+Name_RUS = Каменные парные кинжалы
+Name_IND = Belati Ganda Batu
+Description = Two primitive daggers with rugged stone blades
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Stone Ore
+Crafting_ingredient_B_count = 2
+Type = Holdable
+World_obj_path = Equipment/holdables/Stone DoubleDagger
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+NumSell = 2 to 3
+
+Damage Base = 2
+
+dual_wield = true
+
+show_model3d = true
+model3d_camDist = 1.4
+model3d_fov = 42.5
+model3d_xRot = -60
+model3d_yRot = 5
+model3d_recenterX = 11
+model3d_recenterY = 8
+model3d_wep_tilt = 20
+model3d_wep_dual_wield_offset = 0,0.30,0.53
+model3d_wep_dual_wield_rotate = 0,180,180
+model3d_override_glow_col = faint_red
+
+weapon_display_localPosition = 0.105,-0.049,-0.244
+weapon_display_localRotation = -0.73,2.917,91.34
+weapon_display_localScale = 1,1,1

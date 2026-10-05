@@ -1,0 +1,26 @@
+Full Name = Toxic Plume
+Description = Leaves behind a stinky cloud of gas
+Detailed Description = Inflicts GetInt[EFFECT_BREATHE_FART, "Damage", remove ""] damage DiffInt[EFFECT_BREATHE_FART, "Damage", add ""] every second on mobs within GetFloat[EFFECT_FART_CLOUD, "Area Effect Radius", remove "m"]m DiffFloat[EFFECT_FART_CLOUD, "Area Effect Radius", remove "m", add "m"]. Lasts for GetInt[EFFECT_FART_CLOUD, "Duration", remove " seconds"] seconds DiffInt[EFFECT_FART_CLOUD, "Duration", remove " seconds", add " seconds"].
+Energy Cost = 35%
+Unlock Prerequisite = perk_poison_sting(lvl.2)
+On cast = [CREATE_FART] on self
+-
+[CREATE_FART]
+Type = Drop Effect
+Apply effect to drop = [EFFECT_FART_CLOUD]
+Drop Unit Circle Offset = 0,0,-1
+Drop Additional Offset = CLAMP (0,0,-0.8 @ lvl_1 ... 0,0,-2.4 @ lvl_15)
+-
+[EFFECT_FART_CLOUD]
+Type = Area Effect
+Area Effect to apply = [EFFECT_BREATHE_FART]
+Duration = CLAMP (5 seconds @ lvl_1 ... 15 seconds @ lvl_15)
+Particle (Duration) = perk_toxic_plume_drop
+Scale Particle With Creature Size = false
+Particle Radius = CLAMP (1.0m @ lvl_1 ... 2.5m @ lvl_15)
+Area Effect Radius = CLAMP (0.7m @ lvl_1 ... 2.3m @ lvl_15)
+-
+[EFFECT_BREATHE_FART]
+Type = Instant Effect
+Damage = RANGE (4%-8%-12% of own HP)
+Splat color = green

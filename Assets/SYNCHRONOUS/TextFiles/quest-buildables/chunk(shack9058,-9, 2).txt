@@ -1,0 +1,33 @@
+*auto_version=3*
+
+[5,1] = DEBUG-npc (rot 0)
+	npc_file = *string* Shooba
+	creature_A = *string* alpaca
+	creature_B = *string* goat
+	npc_icon = *string* Merchant
+	voice = *string* old
+	merchant_type = *string* Random
+
+[6,2] = Chest (rot 1)
+	password = *string* DEV_LOCKED
+	paint = *string* Nomad Red
+	stamp = *string* Paw Stamp
+
+[2,1] = Torch (rot 0)
+	paint = *string* Nomad Red
+
+[9,1] = Torch (rot 0)
+	paint = *string* Nomad Red
+
+[7,2] = Chest (rot 1)
+	password = *string* DEV_LOCKED
+	paint = *string* Nomad Red
+	stamp = *string* Paw Stamp
+
+[4,2] = Painting (rot 0)
+	dev_painting_id = *short* 10
+	paint = *string* Nomad Red
+
+[5,1] = Basic Rug (rot 2)
+	paint = *string* Nomad Red
+

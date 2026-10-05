@@ -1,0 +1,18 @@
+*auto_version=2*
+
+[5,9] = DEBUG-npc (rot 1)
+	npc_file = *string* Housekeeper Nelly
+	creature_A = *string* ostrich
+	creature_B = *string* eagle
+	npc_icon = *string* Quest
+
+[5,9] = Bed (rot 1)
+	paint = *string* Storm Grey
+
+[4,4] = Metal Chair (rot 3)
+
+[4,6] = Metal Chair (rot 1)
+
+[4,5] = Small Table (rot 0)
+	paint = *string* Marble White
+

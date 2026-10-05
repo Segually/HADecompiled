@@ -1,0 +1,23 @@
+Description_TAI = น่องไก่ อัน แสน อร่อย ซึ่ง รักษา พลัง ชีวิต บางส่วน
+Name_TAI = เนื้อ สุก
+Description_POR = Uma coxa de frango deliciosa que recupera um pouco de vida.
+Description_SPN = Una deliciosa pata de pollo que cura algo de salud.
+Description_RUS = Вкусная ножка, которая восстанавливает немного здоровья.
+Description_IND = Sebuah paha ayam lezat yang memulihkan sebagian kesehatan.
+Name_POR = Carne Cozida
+Name_SPN = Carne Cocida
+Name_RUS = Жареное мясо
+Name_IND = Daging Matang
+Description = A delicious drumstick which heals some health
+
+Inventory_sprite_path = item cooked meat
+Crafting_ingredient_A = Uncooked Meat
+Crafting_ingredient_A_count = 1
+Alt_crafting_ingredient_A = Bug Meat
+Alt_crafting_ingredient_A_count = 1
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 3 to 4

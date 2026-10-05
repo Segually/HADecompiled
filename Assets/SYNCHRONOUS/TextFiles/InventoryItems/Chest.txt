@@ -1,0 +1,52 @@
+Description_TAI = ที่เก็บของ ขนาดใหญ่
+Name_TAI = หีบ
+Description_POR = Grande armazenamento.
+Description_SPN = Almacenamiento grande.
+Description_RUS = Большое хранилище.
+Description_IND = Penyimpanan besar.
+Name_POR = Baú
+Name_SPN = Cofre
+Name_RUS = Сундук
+Name_IND = Peti
+Description = Large storage.
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Place_in_world
+World_obj_path = Buildables/Chest
+World_geometry = 1_by_1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 1 to 2
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-3, 2-4, 
+PaintLayout0_Pastels = 0-1, 1-3, 2-2, 
+PaintLayout0_Trimmed = 0-1, 1-3, 2-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout1_SolidColors = 0-1, 1-3, 
+PaintLayout1_Pastels = 0-1, 1-3, 
+PaintLayout1_Trimmed = 0-1, 1-3, 
+PaintLayout1_Candycane = 0-1, 1-2, 
+PaintLayout0_TriColor = 0-1, 1-2, 2-3, 
+PaintLayout1_TriColor = 0-1, 1-2, 
+Default Coloring = Debug - Wood & Metal
+PaintLayout0_Stone & Wood = 0-4, 1-6, 2-6, 
+PaintLayout1_Stone & Wood = 0-4, 1-6, 
+
+model3d_fov = 25
+show_model3d = true
+model3d_camDist = 3.2
+model3d_xRot = -85
+model3d_camHeight = 0.2
+model3d_yRot = 30
+model3d_recenterX = 4
+model3d_recenterY = 2
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 
+PaintLayout1_Nomad = 0-1, 1-2, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-3, 
+PaintLayout1_Goldy = 0-1, 1-2, 

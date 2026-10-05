@@ -1,0 +1,17 @@
+Name_TAI = บล็อบ สีเขียว
+Name_POR = Bolha Verde
+Name_SPN = Bola Verde
+Name_RUS = Зелёный сгусток
+Name_IND = Gumpalan Hijau
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Green Blob
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = mob_spawn

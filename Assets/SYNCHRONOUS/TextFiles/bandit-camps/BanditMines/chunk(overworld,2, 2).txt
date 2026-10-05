@@ -1,0 +1,39 @@
+*is_blank=true*
+
+[0,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[1,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[2,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[3,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[4,4] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,3] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,2] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,1] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[5,0] = Palisade Wall (rot 0)
+	paint = *string* BANDIT_WALL
+
+[0,2] = BIOME_CAVE_ENTRANCE (rot 0)
+	shack_id = *long* 9001
+
+[2,2] = RANDOM_BIOME_GEM (rot 3)
+
+[6,6] = BIOME_2x2 (rot 0)
+

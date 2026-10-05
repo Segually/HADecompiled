@@ -1,0 +1,23 @@
+Description_TAI = ต้นไม้ สีขาว และ สีแดง
+Name_TAI = ต้น เบิร์ช
+Description_POR = Uma árvore branca e vermelha
+Description_SPN = Un árbol blanco y rojo
+Description_RUS = Белое и красное дерево
+Description_IND = Pohon putih dan merah
+Name_POR = Árvore de Vidoeiro
+Name_SPN = Árbol de abedul
+Name_RUS = Берёза
+Name_IND = Pohon Birch
+Overwrite_name = Birch Tree
+Description = A white and red tree
+
+Inventory_sprite_path = item birch tree variant 2
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Birch Tree (Variant 2)
+World_geometry = 2_by_2
+Market Cost = 30
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 3

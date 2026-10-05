@@ -1,0 +1,90 @@
+*auto_version=5*
+*is_blank=true*
+*forced_biome=6*
+
+[4,0] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,1] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,3] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,2] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[4,4] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[4,8] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[4,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[5,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[6,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[7,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[8,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[9,9] = Palisade Wall (rot 2)
+	paint = *string* Storm Grey
+
+[6,8] = Willow Tree (rot 2)
+
+[5,3] = Stone Vein (rot 0)
+
+[9,1] = Cobblestone Path (rot 0)
+
+[8,1] = Cobblestone Path (rot 0)
+
+[9,6] = Cobblestone Path (rot 0)
+
+[8,6] = Cobblestone Path (rot 0)
+
+[7,6] = Cobblestone Path (rot 0)
+
+[6,6] = Cobblestone Path (rot 0)
+
+[5,6] = Cobblestone Path (rot 0)
+
+[4,6] = Cobblestone Path (rot 0)
+
+[3,6] = Cobblestone Path (rot 0)
+
+[2,6] = Cobblestone Path (rot 0)
+
+[1,7] = Cobblestone Path (rot 0)
+
+[1,8] = Cobblestone Path (rot 0)
+
+[0,9] = Stone Bricks (rot 0)
+
+[1,9] = Stone Bricks (rot 0)
+
+[2,9] = Stone Bricks (rot 0)
+
+[0,9] = Wood Rails (rot 0)
+
+[2,9] = Wood Rails (rot 0)
+
+[3,8] = Stone Lantern (rot 2)
+	paint = *string* Basic Black
+
+[9,8] = Stone Vein (rot 1)
+
+[6,1] = Castle (rot 0)
+	shack_id = *long* 9005
+	paint = *string* Sludge
+	password = *string* DEV_LOCKED
+
+[1,6] = Cobblestone Path (rot 0)
+

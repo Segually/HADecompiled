@@ -1,0 +1,4 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=7*
+

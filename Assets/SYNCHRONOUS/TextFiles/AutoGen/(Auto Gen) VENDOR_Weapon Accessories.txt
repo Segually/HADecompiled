@@ -1,0 +1,4 @@
+[200][paintable] Anvil
+[625][paintable] Weapon Display
+[915][paintable] Large Weapon Display
+[24139][paintable] Crucible

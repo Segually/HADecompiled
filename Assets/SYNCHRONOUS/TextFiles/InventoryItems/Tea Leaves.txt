@@ -1,0 +1,20 @@
+Description_TAI = สิ่งนี้ จะ ทำเป็น เครื่องดื่ม ที่ดี
+Name_TAI = ใบ ชา
+Description_POR = Estas fariam uma boa bebida
+Description_SPN = Estos serían una buena bebida.
+Description_RUS = Это было бы хорошим напитком.
+Description_IND = Ini akan menjadi minuman yang enak.
+Name_POR = Folhas de Chá
+Name_SPN = Hojas de té
+Name_RUS = Чайные листья
+Name_IND = Daun Teh
+Description = These would make a nice drink
+
+Inventory_sprite_path = item tea leaves
+Max_stack = 5
+Crafting_makes = 5
+
+Market Cost = 18
+
+Vendor0 = Harvested Item
+NumSell = 4 to 8

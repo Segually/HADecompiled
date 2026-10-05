@@ -1,0 +1,77 @@
+[paint]
+Lavender Bloom
+
+[stamp]
+Fist Stamp
+
+[page 1 - English]
+We, the Riptide Bandits, are born from the ocean's fury, where only the strong survive and the weak are swept away.
+
+[page 2 - English]
+To rule the seas, you must control the tides—those who fear the water will never know its true power.
+
+[page 3 - English]
+In battle, we strike fast and leave no trace, vanishing into the waves before our enemies even know what hit them.
+
+[book name - English]
+Salt of the Sea
+
+[book name - Indonesian]
+Garam Laut
+
+[page 1 - Indonesian]
+Kami, Bajak Laut Riptide, lahir dari amukan samudra, di mana hanya yang kuat yang bertahan dan yang lemah tersapu pergi.
+
+[page 2 - Indonesian]
+Untuk menguasai laut, kamu harus mengendalikan gelombang—mereka yang takut air tidak akan pernah tahu kekuatan sebenarnya.
+
+[page 3 - Indonesian]
+Dalam pertempuran, kami menyerang dengan cepat dan tidak meninggalkan jejak, menghilang ke dalam gelombang sebelum musuh kami tahu apa yang menimpa mereka.
+
+[book name - Portuguese]
+Sal do Mar
+
+[page 1 - Portuguese]
+Nós, os Bandidos da Maré, nascemos da fúria do oceano, onde apenas os fortes sobrevivem e os fracos são levados.
+
+[page 2 - Portuguese]
+Para dominar os mares, você deve controlar as marés—aqueles que temem a água nunca conhecerão seu verdadeiro poder.
+
+[page 3 - Portuguese]
+Em batalha, atacamos rapidamente e não deixamos rastros, desaparecendo nas ondas antes que nossos inimigos sequer saibam o que os atingiu.
+
+[book name - Russian]
+Соль моря
+
+[page 1 - Russian]
+Мы, Пираты Прилива, рожденные из ярости океана, где выживают только сильные, а слабые смыты водой.
+
+[page 2 - Russian]
+Чтобы править морями, ты должен контролировать приливы — те, кто боится воды, никогда не узнают её истинную силу.
+
+[page 3 - Russian]
+В битве мы наносим быстрый удар и не оставляем следов, исчезая в волнах, прежде чем наши враги поймут, что их поразило.
+
+[book name - Spanish]
+Sal de los Mares
+
+[page 1 - Spanish]
+Nosotros, los Bandidos del Torbellino, nacemos de la furia del océano, donde solo los fuertes sobreviven y los débiles son arrastrados.
+
+[page 2 - Spanish]
+Para gobernar los mares, debes controlar las mareas—aquellos que temen el agua nunca conocerán su verdadero poder.
+
+[page 3 - Spanish]
+En batalla, atacamos rápidamente y no dejamos rastro, desapareciendo entre las olas antes de que nuestros enemigos sepan qué los golpeó.
+
+[book name - Thai]
+เกลือแ ห่งท้อ งทะเล
+
+[page 1 - Thai]
+พวกเรา  ริปไท ด์ แบน ดิท เก ิดจากค วามโกร ธเกรี้ ยวของม หาสมุท ร ที่ซ ึ่งมีเ พียงผู ้แข็งแ กร่งเท ่านั้น ที่อยู ่รอดแล ะผู้อ่ อนแอถู กกวาดไ ป
+
+[page 2 - Thai]
+ในการค รองทะเ ล คุณต ้องควบ คุมกระ แสน้ำ— ผู้ที่ กลัวน้ ำจะไม่ มีวันร ู้ถึงพ ลังที่ แท้จริ งของมั น
+
+[page 3 - Thai]
+ในสนาม รบ เรา โจมตีอ ย่างรว ดเร็วแ ละไม่ท ิ้งร่อ งรอย ห ายไปใน คลื่นก ่อนที่ ศัตรูข องเราจ ะรู้ว่ าอะไรต ีพวกเข า

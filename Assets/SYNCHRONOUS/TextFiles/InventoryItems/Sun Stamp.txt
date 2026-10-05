@@ -1,0 +1,28 @@
+Description_TAI = เพิ่ม สัญลักษณ์ พระอาทิตย์ ให้ กับ เฟอร์นิเจอร์ ของ คุณ!
+Name_TAI = แสตมป์ ดวงอาทิตย์
+Description_POR = Adicione um símbolo de Sol ao seu mobiliário!
+Description_SPN = ¡Añade un símbolo de sol a tus muebles!
+Description_RUS = Добавьте символ Солнца к вашей мебели!
+Description_IND = Tambahkan simbol Matahari ke furnitur Anda!
+Name_POR = Carimbo Solar
+Name_SPN = Sello de Sol
+Name_RUS = Солнечная печать
+Name_IND = Stempel Matahari
+Description = Add a Sun symbol to your furniture!
+
+Inventory_sprite_path = item stamp sun
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 2
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 1
+Type = Tool
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+is_stamp = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Stamp
+CopyPaintLayout = Stamp
+Copy3dModelPosition = Stamp
+Default Coloring = Utility Red

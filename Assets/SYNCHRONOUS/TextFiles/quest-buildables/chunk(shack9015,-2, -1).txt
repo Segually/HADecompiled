@@ -1,0 +1,33 @@
+*auto_version=34*
+
+[6,7] = Basic Rug (rot 2)
+	paint = *string* Basic Brown
+
+[3,8] = Fireplace (rot 3)
+	paint = *string* Royal Red
+
+[6,6] = Small Table (rot 3)
+	paint = *string* Royal Sage
+
+[5,6] = Chair (rot 0)
+	paint = *string* Royal Sage
+
+[7,6] = Chair (rot 2)
+	paint = *string* Royal Sage
+
+[8,9] = Music Box (rot 2)
+	npc_record_index = *short* 1
+	paint = *string* Royal Red
+
+[8,8] = Chest (rot 2)
+	paint = *string* Royal Red
+	password = *string* DEV_LOCKED
+
+[4,8] = DEBUG-npc (rot 3)
+	npc_file = *string* Gumpy Pug
+	creature_A = *string* pug
+	creature_B = *string* snail
+	npc_icon = *string* Merchant
+	voice = *string* fart
+	merchant_type = *string* Furniture
+

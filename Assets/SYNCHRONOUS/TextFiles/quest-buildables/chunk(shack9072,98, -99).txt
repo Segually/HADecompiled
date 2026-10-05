@@ -1,0 +1,18 @@
+*auto_version=2*
+*caveart_rot=0*
+*caveart_index=2*
+*forced_floor_rot=1*
+*forced_floor_model=1*
+
+[5,5] = DEBUG-npc (rot 3)
+	npc_file = *string* Yandeon
+	creature_A = *string* chimpanzee
+	creature_B = *string* frog
+	hat = *string* White Wizard Hat
+	npc_material = *string* Blue Glow
+	npc_scale_x10 = *short* 25
+	npc_icon = *string* Quest
+	voice = *string* ghost
+
+[6,3] = Blue Torch (rot 0)
+

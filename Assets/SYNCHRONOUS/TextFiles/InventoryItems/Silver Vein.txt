@@ -1,0 +1,17 @@
+Name_TAI = สาย แร่ เงิน
+Name_POR = Veio de Prata
+Name_SPN = Veta de plata
+Name_RUS = Серебряная Жила
+Name_IND = Urat Perak
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Silver Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 12
+Pollinator Regen RespawnId = mob_spawn

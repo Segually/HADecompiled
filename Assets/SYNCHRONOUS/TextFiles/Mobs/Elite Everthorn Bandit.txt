@@ -1,0 +1,27 @@
+creature_A=skunk
+creature_B=eagle
+level=CAMP_DEPTH*1.5
+size=1.3
+hat=Wizard Hat
+armor=Metal Armor
+hand=Metal Cleaver
+state=aggressive
+skin_mat=
+wander_dist=0
+respawn_seconds=7200
+hat_paint=Lumberjack
+armor_paint=Lumberjack
+hand_paint=
+overwrite_mob_name=
+
+walk_speed=DEFAULT_WALK_SPEED
+hp_regen=DEFAULT_HP_REGEN
+hp_max=DEFAULT_HP_MAX
+hp_curr=DEFAULT_HP_CURR
+ai_lockon=DEFAULT_AI_LOCKON
+icon_id=DEFAULT_ICON_ID
+spawn_offset_x=0
+spawn_offset_z=0
+
+[drops]
+WILD_MOB_DROPS

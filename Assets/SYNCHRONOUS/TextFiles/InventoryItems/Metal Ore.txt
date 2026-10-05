@@ -1,0 +1,11 @@
+Name_TAI = แร่ โลหะ
+Name_POR = Minério de Metal
+Name_SPN = Mineral de metal
+Name_RUS = Металлическая руда
+Name_IND = Bijih Logam
+
+Inventory_sprite_path = item metal ore
+Market Cost = 20
+
+Vendor0 = Ores
+NumSell = 7 to 10

@@ -1,0 +1,34 @@
+Name_POR=Velho Finn
+Name_RUS=Старик Финн
+Name_IND=Paman Finn
+Name_SPN=Viejo Finn
+Name_TAI=ผู้ชายชราฟินน์
+
+----- DIALOGUE -----
+[0]
+otherspeak=I named every pepper.
+otherspeak_POR=Eu nomeei cada pimenta.
+otherspeak_RUS=Я дал имя каждому перцу.
+otherspeak_IND=Saya memberi nama untuk setiap cabai.
+otherspeak_SPN=Nombré a cada pimiento.
+otherspeak_TAI=ฉันตั้งชื่อทุกเม็ดพริก
+goto=001
+
+[1]
+otherspeak=This one's Bob.
+otherspeak_POR=Esta aqui é o Bob.
+otherspeak_RUS=Вот этот - Боб.
+otherspeak_IND=Ini namanya Bob.
+otherspeak_SPN=Este se llama Bob.
+otherspeak_TAI=เม็ดพริกนี้ชื่อบ็อบ
+goto=002
+
+[2]
+otherspeak=Don't tell Bob, but I think he's a carrot.
+otherspeak_POR=Não diga ao Bob, mas eu acho que ele é uma cenoura.
+otherspeak_RUS=Не говори Бобу, но я думаю, что он морковь.
+otherspeak_IND=Jangan beritahu Bob, tapi saya pikir dia adalah sebuah wortel.
+otherspeak_SPN=No le digas a Bob, pero creo que es una zanahoria.
+otherspeak_TAI=อย่าไปบอกบ็อบนะ แต่ฉันคิดว่าเขาคือแครอท
+goto=-1
+

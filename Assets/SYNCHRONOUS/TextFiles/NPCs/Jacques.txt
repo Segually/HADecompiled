@@ -1,0 +1,41 @@
+Name_POR=Jacques
+Name_RUS=Жак
+Name_IND=Jacques
+Name_SPN=Jacques
+Name_TAI=จักร์
+
+----- DIALOGUE -----
+[0]
+otherspeak=Mon dieu!
+otherspeak_POR=Mon dieu!
+otherspeak_RUS=Mon dieu!
+otherspeak_IND=Mon dieu!
+otherspeak_SPN=¡Mon dieu!
+otherspeak_TAI=Mon dieu!
+goto=001
+
+[1]
+otherspeak=Almost mistook myself for a baking ingredient today!
+otherspeak_POR=Quase me confundi com um ingrediente de cozinha hoje!
+otherspeak_RUS=Почти принял себя за ингредиент для выпечки сегодня!
+otherspeak_IND=Hampir saja aku keliru mengira diriku sebagai bahan penggilingan hari ini!
+otherspeak_SPN=¡Casi me confundo con un ingrediente para hornear hoy!
+otherspeak_TAI=วันนี้ฉันเกือบหลงเชื่อว่าตัวเองเป็นส่วนผสมในการทำเบเกอรี!
+goto=002
+
+[2]
+optionA=BUY ITEMS
+optionA_POR=COMPRAR ITENS
+optionA_RUS=КУПИТЬ ВЕЩИ
+optionA_IND=BELI BARANG
+optionA_SPN=COMPRAR ARTÍCULOS
+optionA_TAI=ซื้อสินค้า 
+optionB=SELL ITEMS
+optionB_POR=VENDER ITENS
+optionB_RUS=ПРОДАТЬ ВЕЩИ
+optionB_IND=JUAL BARANG
+optionB_SPN=VENDER ARTÍCULOS
+optionB_TAI=ขายสินค้า
+gotoA=-88
+gotoB=-99
+

@@ -1,0 +1,15 @@
+Name_TAI = เห็ด สีน้ำตาล
+Name_POR = Cogumelo Marrom
+Name_SPN = Hongo Marrón
+Name_RUS = Коричневый гриб
+Name_IND = Jamur Cokelat
+
+Inventory_sprite_path = item brown mushroom
+Type = Consumable
+Market Cost = 5
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 3 to 7

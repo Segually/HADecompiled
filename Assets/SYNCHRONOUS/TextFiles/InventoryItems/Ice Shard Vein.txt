@@ -1,0 +1,17 @@
+Name_TAI = เศษ น้ำแข็ง หลอดเลือด
+Name_POR = Veia de Fragmento de Gelo
+Name_SPN = Veta de Fragmento de Hielo
+Name_RUS = Жила ледяных осколков
+Name_IND = Urat Pecahan Es
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Ice Shard Vein
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 30
+Pollinator Regen RespawnId = mob_spawn

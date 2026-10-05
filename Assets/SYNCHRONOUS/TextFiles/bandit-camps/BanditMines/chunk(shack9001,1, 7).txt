@@ -1,0 +1,18 @@
+*forced_floor_model=5*
+
+[4,4] = Mob - BANDIT_FACTION Boss (rot 0)
+
+[0,1] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[9,1] = Torch (rot 0)
+	paint = *string* BANDIT_COMPL
+
+[0,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,9] = DEBUG-1x1-fillempty (rot 0)
+
+[9,0] = DEBUG-1x1-fillempty (rot 0)
+
+[0,0] = DEBUG-1x1-fillempty (rot 0)
+

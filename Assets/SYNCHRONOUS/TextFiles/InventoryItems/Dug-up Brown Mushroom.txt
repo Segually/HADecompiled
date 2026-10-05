@@ -1,0 +1,26 @@
+Description_TAI = ปลูก ไว้ ตรงไหน ก็ได้ แล้ว มัน จะ ผลิต เห็ด!
+Name_TAI = เห็ด ที่ ขุด ขึ้น มา
+Description_POR = Plante isto em algum lugar, e ele produzirá cogumelos!
+Description_SPN = ¡Planta esto en algún lugar y producirá hongos!
+Description_RUS = Посадите это где-нибудь, и оно будет производить грибы!
+Description_IND = Tanam ini di suatu tempat, dan itu akan menghasilkan jamur!
+Name_POR = Cogumelo Desenterrado
+Name_SPN = Hongo desenterrado
+Name_RUS = Выкопанный гриб
+Name_IND = Jamur Terbongkar
+Overwrite_name = Dug-up Mushroom
+Description = Plant this somewhere, and it will produce mushrooms!
+
+Inventory_sprite_path = item dug up brown mushroom
+Type = Place_in_world
+World_obj_path = Buildables/Dug-up Brown Mushroom
+World_geometry = 1_by_1
+Market Cost = 40
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 2 to 4
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

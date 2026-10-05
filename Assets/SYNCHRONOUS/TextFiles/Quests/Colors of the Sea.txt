@@ -1,0 +1,47 @@
+﻿questname_POR = As Cores do Mar
+questname_RUS = Цвета моря
+questname_IND = Banyak Warna Laut
+questname_SPN = Los Colores del Mar
+questname_TAI = สีของทะเล
+Complete_text = I found all the shells for Cupcake Crab!
+Complete_text_POR = Encontrei todas as conchas para o Caranguejo Cupcake!
+Complete_text_RUS = Я нашла все раковины для Кекс Краб!
+Complete_text_IND = Aku menemukan semua kerang untuk Kepiting Cupcake!
+Complete_text_SPN = ¡Encontré todas las conchas para Cangrejo Cupcake!
+Complete_text_TAI = ฉันพบเปลือกหอยทั้งหมดสําหรับปูคัพเค้ก!
+Reward0_item = Magic Bean
+Reward0_count = 1
+Repeat_hours = 68
+
+[step 0]
+Hint = I should talk to 'Cupcake Crab' in Noobia
+Hint_POR = Eu deveria falar com 'Caranguejo-cupcake' em Núbia
+Hint_RUS = Мне нужно поговорить с 'Кекс Краб' в Нубия
+Hint_IND = Saya harus berbicara dengan 'Kepiting Cupcake' di Nubia
+Hint_SPN = Debería hablar con 'Cangrejo cupcake' en Nubia
+Hint_TAI = ฉันควรคุยกับปูคัพเค้กในนูเบีย
+
+[step 1]
+Hint = I need to find [ITEMS] for Cupcake Crab
+Hint_POR = Preciso encontrar [ITEMS] para Caranguejo-cupcake
+Hint_RUS = Мне нужно найти [ITEMS] для Кекс Краб
+Hint_IND = Saya perlu menemukan [ITEMS] untuk Kepiting Cupcake
+Hint_SPN = Necesito encontrar [ITEMS] para Cangrejo cupcake
+Hint_TAI = ฉันต้องการหา [ITEMS] สำหรับ ปูคัพเค้ก
+Step type = Collect Items
+N_collect = 4
+PossibleCollect0 = White Shell
+PossibleCollect1 = Red Shell
+PossibleCollect2 = Black Shell
+PossibleCollect3 = Blue Shell
+PossibleCollect4 = Green Shell
+PossibleCollect5 = Purple Shell
+PossibleCollect6 = Gold Shell
+
+[step 2]
+Hint = I found all the shells! I should get my reward from Cupcake Crab.
+Hint_POR = Encontrei todas as conchas! Eu deveria receber minha recompensa do Caranguejo-cupcake.
+Hint_RUS = Я нашел все снаряды! Я должен получить свою награду от Кекс Краб.
+Hint_IND = Saya menemukan semua cangkangnya! Saya harus mendapatkan hadiah saya dari Kepiting Cupcake.
+Hint_SPN = ¡Encontré todas las conchas! Debería obtener mi recompensa de Cangrejo cupcake.
+Hint_TAI = เจอหอยหมด! ฉันควรจะได้รับรางวัลจากปูคัพเค้ก

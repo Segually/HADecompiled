@@ -1,0 +1,24 @@
+Description_TAI = ผู้ เรียก บอส ยักษ์
+Name_TAI = ตัว เรียก บอส - ยันเดียน
+Description_POR = Gerador de chefe gigante
+Description_SPN = Generador de jefe gigante
+Description_RUS = Призыватель гигантского босса
+Description_IND = Pemanggil bos raksasa
+Name_POR = Gerador de Chefes - Yandeon
+Name_SPN = Generador de Jefe - Yandeon
+Name_RUS = Созыватель босса - Яндэон
+Name_IND = Pemanggil Bos - Yandeon
+Description = A giant boss spawner
+
+Inventory_sprite_path = item boss spawner - yandeon
+Crafting_ingredient_A = Spirit Branch
+Crafting_ingredient_A_count = 10
+Crafting_ingredient_B = Ice Shard
+Crafting_ingredient_B_count = 10
+Type = Place_in_world
+World_obj_path = Buildables/Boss Spawner - Yandeon
+World_geometry = 5_by_5
+Craft_required_lvl = 360
+Market Cost = CALCULATE
+
+Vendor0 = Traps

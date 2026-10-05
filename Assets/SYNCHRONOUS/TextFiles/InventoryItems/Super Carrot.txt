@@ -1,0 +1,11 @@
+Name_TAI = แครอท พิเศษ
+Name_POR = Super Cenoura
+Name_SPN = Super Zanahoria
+Name_RUS = Супер Морковь
+Name_IND = Wortel Super
+
+Type = Consumable
+Sound on Use = Crunch
+
+not_obtainable = true
+

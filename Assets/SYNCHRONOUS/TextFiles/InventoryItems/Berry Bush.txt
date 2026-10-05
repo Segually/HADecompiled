@@ -1,0 +1,34 @@
+Description_TAI = พุ่มไม้ ที่ ผลิต เบอร์รี่
+Name_TAI = พุ่ม เบอร์รี่
+Description_POR = Um arbusto que produz bagas.
+Description_SPN = Un arbusto que produce bayas.
+Description_RUS = Куст, который приносит ягоды.
+Description_IND = Sebuah semak yang menghasilkan buah beri.
+Name_POR = Arbusto de Bagas
+Name_SPN = Arbusto de Bayas
+Name_RUS = Куст с ягодами
+Name_IND = Semak Beri
+Description = A bush that produces berries.
+
+Type = Place_in_world
+World_obj_path = Buildables/Berry Bush
+World_geometry = 1_by_1
+Market Cost = 80
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 2 to 4
+
+model3d_camDist = 3.5
+show_model3d = true
+model3d_fov = 25
+model3d_yRot = 55
+model3d_xRot = -20
+model3d_recenterX = 4
+model3d_camHeight = 0
+model3d_recenterY = 5
+model3d_override_glow_col = 215,215,215
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

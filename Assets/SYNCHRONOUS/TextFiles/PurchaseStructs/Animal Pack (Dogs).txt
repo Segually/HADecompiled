@@ -1,0 +1,12 @@
+Description = Adds animals: chihuahua, pug, shiba inu, great dane, corgi
+IAP_KEY = creature_pack_8
+Type = permanent
+Gem_price = medium
+Bg_color = pink
+Model_path = shop_creaturePack8
+
+animal0 = chihuahua
+animal1 = pug
+animal2 = shiba inu
+animal3 = great dane
+animal4 = corgi

@@ -1,0 +1,13 @@
+*auto_version=3*
+
+[4,4] = Upstairs Room (rot 3)
+	shack_id = *long* 9059
+	paint = *string* Glacier
+
+[5,9] = Fancy Torch (rot 0)
+	paint = *string* Marble White
+
+[4,7] = Painting (rot 0)
+	dev_painting_id = *short* 6
+	paint = *string* Glacier
+

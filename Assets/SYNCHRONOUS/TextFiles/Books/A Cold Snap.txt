@@ -1,0 +1,95 @@
+[paint]
+Black & Gold
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+I knew they were near when the temperature dropped suddenly—only Frostbite Bandits could bring this kind of chill.
+
+[page 2 - English]
+King Wing had grown obsessed with the Three Sisters, ancient beings who had once granted Lord Leech forbidden knowledge from the heart of the swamp.
+
+[page 3 - English]
+The Frostbite Bandits believed that unlocking the Sisters' secrets would give them the power to control all the lands between the mountains and the swamps.
+
+[page 4 - English]
+I could see their icy eyes scanning every corner of the swamp, but the Sisters’ magic isn’t something anyone can just take—it comes at a price.
+
+[book name - English]
+A Cold Snap
+
+[book name - Indonesian]
+Membeku Dingin
+
+[page 1 - Indonesian]
+Aku tahu mereka sudah dekat ketika suhu tiba-tiba turun—hanya Perampok Radang Beku yang bisa membawa hawa dingin seperti ini.
+
+[page 2 - Indonesian]
+Raja Wing terobsesi dengan Tiga Saudari, makhluk kuno yang pernah memberikan pengetahuan terlarang kepada Tuan Leech dari jantung rawa.
+
+[page 3 - Indonesian]
+Perampok Radang Beku percaya bahwa membuka rahasia Saudari akan memberi mereka kekuatan untuk menguasai semua tanah antara pegunungan dan rawa.
+
+[page 4 - Indonesian]
+Aku bisa melihat mata es mereka memindai setiap sudut rawa, tetapi sihir Saudari bukanlah sesuatu yang bisa diambil begitu saja—ada harganya.
+
+[book name - Portuguese]
+Uma Onda de Frio
+
+[page 1 - Portuguese]
+Eu sabia que eles estavam perto quando a temperatura caiu de repente - apenas os Bandidos da Geada poderiam trazer esse tipo de frio.
+
+[page 2 - Portuguese]
+Rei Asa estava obcecado com as Três Irmãs, seres antigos que uma vez concederam ao Lorde Sanguessuga conhecimento proibido do coração do pântano.
+
+[page 3 - Portuguese]
+Os Bandidos da Geada acreditavam que desvendar os segredos das Irmãs lhes daria o poder de controlar todas as terras entre as montanhas e os pântanos.
+
+[page 4 - Portuguese]
+Eu podia ver seus olhos gelados vasculhando cada canto do pântano, mas a magia das Irmãs não é algo que qualquer um pode simplesmente tomar - ela vem com um preço.
+
+[book name - Russian]
+Холодная волна
+
+[page 1 - Russian]
+Я знал, что они рядом, когда температура внезапно упала — только Бандиты Мороза могли принести такой холод.
+
+[page 2 - Russian]
+Король Винг стал одержим Тремя Сестрами, древними существами, которые когда-то даровали Лорду Личу запретные знания из глубин болота.
+
+[page 3 - Russian]
+Бандиты Мороза верили, что раскрытие секретов Сестер даст им силу контролировать все земли между горами и болотами.
+
+[page 4 - Russian]
+Я видел их ледяные глаза, обследующие каждый уголок болота, но магия Сестёр — это не то, что можно просто взять, она имеет свою цену.
+
+[book name - Spanish]
+Una Ola de Frío
+
+[page 1 - Spanish]
+Supe que estaban cerca cuando la temperatura bajó repentinamente—solo los Bandidos de la Escarcha podían traer este tipo de frío.
+
+[page 2 - Spanish]
+El Rey Wing se había obsesionado con las Tres Hermanas, seres antiguos que una vez habían concedido al Señor Leech conocimiento prohibido del corazón del pantano.
+
+[page 3 - Spanish]
+Los Bandidos de la Escarcha creían que desentrañando los secretos de las Hermanas obtendrían el poder para controlar todas las tierras entre las montañas y los pantanos.
+
+[page 4 - Spanish]
+Podía ver sus ojos helados escudriñando cada rincón del pantano, pero la magia de las Hermanas no es algo que cualquiera pueda simplemente tomar—viene con un precio.
+
+[book name - Thai]
+ความหน าวเย็น
+
+[page 1 - Thai]
+ฉันรู้ ว่าพวก เขาอยู ่ใกล้เ มื่ออุ ณหภูมิ ลดลงอย ่างกะท ันหัน— มีเพีย งโจรฟร อสต์ไบ ท์เท่า นั้นที ่สามาร ถนำควา มหนาวเ ย็นชนิ ดนี้มา ได้
+
+[page 2 - Thai]
+พระเจ้ าองค์ว ิงหลงใ หลในสา มพี่น้ องสิ่ง มีชีวิ ตโบราณ ที่เคย มอบควา มรู้ต้ องห้าม แก่เจ้ าแห่งแ มลงดูด เลือดจ ากใจกล างหนอง น้ำ
+
+[page 3 - Thai]
+โจรฟรอ สต์ไบท ์เชื่อ ว่าการ เปิดเผ ยความล ับของส ามพี่น ้องจะใ ห้พลัง ในการค วบคุมด ินแดนท ั้งหมด ระหว่า งภูเขา และหนอ งน้ำ
+
+[page 4 - Thai]
+ฉันสาม ารถเห็ นดวงตา น้ำแข็ งของพว กเขาสแ กนทุกม ุมของห นองน้ำ  แต่เว ทมนตร์ ของสาม พี่น้อ งไม่ใช ่สิ่งท ี่ใครจ ะเอาไป ได้ง่า ยๆ—มัน มีราคา ที่ต้อ งจ่าย

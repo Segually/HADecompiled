@@ -1,0 +1,29 @@
+Description_TAI = สี ทา เฟอร์นิเจอร์ ที่ เข้ากัน ได้ ดีกับ สี น้ำเงิน
+Name_TAI = พลัม ลาเวนเดอร์
+Description_POR = Tinta para móveis que combina bem com azul.
+Description_SPN = Pintura para muebles que combina bien con el azul.
+Description_RUS = Краска для мебели, которая хорошо сочетается с синим цветом.
+Description_IND = Cat furnitur yang cocok dengan warna biru.
+Name_POR = Ameixa Lavanda
+Name_SPN = Ciruela Lavanda
+Name_RUS = Лавандовая слива
+Name_IND = Prem Lavendel
+Description =  Furniture paint that goes well with Blue.
+
+Inventory_sprite_path = item paint lavender plum
+Crafting_ingredient_A = Lavender
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Basic Cyan
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 42
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

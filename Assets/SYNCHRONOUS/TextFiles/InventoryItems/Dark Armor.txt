@@ -1,0 +1,31 @@
+Description_TAI = เกราะ สี ดำ สนิท น่ากลัว และ ไม่ ยอม อ่อนข้อ
+Name_TAI = เกราะ แห่ง ความ มืด
+Description_POR = Armadura negra como breu, inquietante e implacável
+Description_SPN = Armadura negra como la noche, inquietante e implacable.
+Description_RUS = Доспехи чернее ночи, тревожащие и безжалостные.
+Description_IND = Baju zirah hitam pekat, mengganggu dan tak kenal ampun.
+Name_POR = Armadura Sombria
+Name_SPN = Armadura Oscura
+Name_RUS = Тёмная Броня
+Name_IND = Zirah Gelap
+Description = Pitch-black armor, unsettling and unforgiving
+
+Inventory_sprite_path = item dark armor
+Crafting_ingredient_A = Dark Shard
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/AncientArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 60
+Craft_required_lvl = 90
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ancient Armor
+Default Coloring = Weapon - Dark
+
+Vendor0 = Armor
+
+show_model3d = true
+Copy3dModelPosition = Ancient Armor
+
+Defend Amount = 22

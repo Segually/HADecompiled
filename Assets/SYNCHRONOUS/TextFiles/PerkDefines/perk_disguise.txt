@@ -1,0 +1,28 @@
+Full Name = Disguise
+Description = Disguise yourself as something else!
+Detailed Description = Invisible to mobs for GetInt[EFFECT_DISAPPEAR, "Duration", remove " seconds"] seconds DiffInt[EFFECT_DISAPPEAR, "Duration", remove " seconds", add " seconds"], if not already in combat.
+Ultra Detailed Description = Confuses any mobs targetting you for GetInt[EFFECT_UNPURSUABLE, "Duration", remove " seconds"] seconds (does not apply to Online Players). You are also instantly un-targetted in Online Mode. Walk speed reduced to GetFloat[EFFECT_DISAPPEAR, "Walk Speed", remove "%"]%.
+Energy Cost = CLAMP (80% @ lvl_1 ... 35% @ lvl_15)
+On cast = [EFFECT_DISAPPEAR,EFFECT_UNPURSUABLE,EFFECT_LOSE_TARGET] on self
+Max level = 15
+-
+[EFFECT_DISAPPEAR]
+Type = Duration Effect
+Duration = CLAMP (6 seconds @ lvl_1 ... 20 seconds @ lvl_15)
+Invisible To Mobs If Not Already Targetted = true
+Particle (Duration) = [RAND_BIOME]
+Scale Particle With Creature Size = false
+Particle Overlap Logic = Destroy Other Of The Same
+Hide Creature Model = true
+Walk Speed = 50%
+-
+[EFFECT_UNPURSUABLE]
+Type = Duration Effect
+Mobs Targetting Me Will Pause = true
+Duration = 2 seconds
+-
+[EFFECT_LOSE_TARGET]
+Type = Instant Effect
+Particle (Instant) = perk_disguise_particle
+Scale Particle With Creature Size = false
+Lose Me As Target In Online Mode = true

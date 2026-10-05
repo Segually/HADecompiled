@@ -1,0 +1,31 @@
+Description_TAI = เกราะ กัมมันตภาพรังสี ที่ เต็ม ไป ด้วย พลังงาน ที่ ทำลายล้าง
+Name_TAI = เกราะ ยูเรเนียม
+Description_POR = Armadura radioativa que pulsa com energia destrutiva.
+Description_SPN = Armadura radiactiva que pulsa con energía destructiva.
+Description_RUS = Радиоактивная броня, пульсирующая разрушительной энергией.
+Description_IND = Baju zirah radioaktif yang berdenyut dengan energi destruktif.
+Name_POR = Armadura de Urânio
+Name_SPN = Armadura de Uranio
+Name_RUS = Урановая броня
+Name_IND = Zirah Uranium
+Description = Radioactive armor that pulsates with destructive energy
+
+Crafting_ingredient_A = Uranium Bar
+Crafting_ingredient_A_count = 4
+Type = Armor
+World_obj_path = Equipment/armor-body/new-armor-models/IceArmor
+Equip_required_stat = Health
+Equip_required_stat_lvl = 18
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+CopyPaintLayout = Ice Armor
+Default Coloring = Weapon - Uranium
+
+Vendor0 = Armor
+NumSell = 1 to 2
+
+show_model3d = true
+Copy3dModelPosition = Ice Armor
+
+Defend Amount = 8

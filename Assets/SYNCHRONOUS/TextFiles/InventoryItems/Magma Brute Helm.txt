@@ -1,0 +1,44 @@
+Description_TAI = หมวกเหล็กหุ้มลาวาที่ลุกโชนและน่าเกรงขาม
+Name_TAI = หมวก ยักษ์ แม็กม่า
+Description_POR = Um elmo revestido de magma, em chamas e intimidante.
+Description_SPN = Un yelmo envuelto en magma, ardiente e intimidante.
+Description_RUS = Шлем, заключённый в магму, пылающий и внушающий страх.
+Description_IND = Sebuah helm yang terbungkus magma, menyala dan menakutkan.
+Name_POR = Elmo do Bruto de Magma
+Name_SPN = Yelmo del Bruto de Magma
+Name_RUS = Шлем Магмового Громилы
+Name_IND = Helm Brute Magma
+Description = A magma-encased helm, ablaze and intimidating
+
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 4
+Type = Helmet
+Helmet Style = encompass_head
+World_obj_path = Equipment/armor-helmet/new-helmet-models/BruteHelm
+Equip_required_stat = Health
+Equip_required_stat_lvl = 24
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Default Coloring = Weapon - Magma
+PaintLayout0_SolidColors = 0-2, 1-5, 2-6, 3-1, 
+model3d_camDist = 1.6
+show_model3d = true
+model3d_fov = 40
+model3d_xRot = -115
+model3d_objRot = 2
+model3d_yRot = -10
+model3d_recenterY = 6
+model3d_recenterX = -1
+
+Defend Amount = 10
+
+Vendor0 = Armor
+NumSell = 1 to 2
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 3-4, 
+PaintLayout0_TriColor = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Trimmed = 0-2, 1-3, 2-3, 3-1, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-2, 3-3, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-3, 3-2, 
+PaintLayout0_Goldy = 0-1, 1-3, 2-3, 3-2, 
+ParticleTransform0 = 0,1.389,-0.785:-0.2890483,0,2.980232E-08,0.9573146:1,1,1:CONE:1.2:0.2

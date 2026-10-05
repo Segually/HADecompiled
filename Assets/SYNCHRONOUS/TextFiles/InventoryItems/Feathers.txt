@@ -1,0 +1,20 @@
+Description_TAI = วัสดุ สำหรับ การ สร้าง
+Name_TAI = ขน นก
+Description_POR = Material de fabricação
+Description_SPN = Material de fabricación
+Description_RUS = Материал для создания предметов
+Description_IND = Bahan kerajinan
+Name_POR = Penas
+Name_SPN = Plumas
+Name_RUS = Перо
+Name_IND = Bulu-bulu
+Description = Crafting material
+
+Inventory_sprite_path = item feathers
+Crafting_makes = 5
+Market Cost = 5
+Max_stack = 5
+
+Vendor0 = Mob Drops
+Vendor1 = Clothing Materials
+NumSell = 5 to 10

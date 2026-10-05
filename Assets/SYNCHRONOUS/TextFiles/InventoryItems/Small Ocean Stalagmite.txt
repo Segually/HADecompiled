@@ -1,0 +1,15 @@
+Name_TAI = หินงอก มหาสมุทร ขนาดเล็ก
+Name_POR = Pequena Estalagmite Oceânica
+Name_SPN = Pequeña estalagmita oceánica
+Name_RUS = Маленький океанский сталагмит
+Name_IND = Stalagmit Laut Kecil
+
+Inventory_sprite_path = item bonsai tree
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Small Ocean Stalagmite
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+

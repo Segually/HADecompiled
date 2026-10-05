@@ -1,0 +1,20 @@
+*auto_version=3*
+
+[2,1] = Armor Display (rot 0)
+	password = *string* DEV_LOCKED
+	hat = *string* Ice Menace Helm
+	body = *string* Ice Armor
+	creature_A = *string* human
+	creature_B = *string* human
+	paint = *string* Spirit Grey
+
+[3,1] = Painting (rot 0)
+	dev_painting_id = *short* 8
+	paint = *string* Marble White
+
+[5,0] = Chest (rot 2)
+	password = *string* DEV_LOCKED
+	basket_id = *long* 9014
+	quest_key_req = *string* Nelly
+	paint = *string* Spirit Grey
+

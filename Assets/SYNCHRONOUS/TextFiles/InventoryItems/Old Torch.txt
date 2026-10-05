@@ -1,0 +1,26 @@
+Name_TAI = คบเพลิง เก่า
+Name_POR = Tocha Velha
+Name_SPN = Antorcha Vieja
+Name_RUS = Старая факел
+Name_IND = Obor Tua
+
+Inventory_sprite_path = item old torch
+Type = Place_in_world
+World_obj_path = Buildables/Old Torch
+World_geometry = 1_by_1
+Market Cost = 2
+
+Vendor0 = Furniture
+exclude_from_vendors = true
+
+paintable_by_player = true
+CopyPaintLayout = Torch
+Default Coloring = Debug - Wood
+
+model3d_camDist = 1.5
+show_model3d = true
+model3d_fov = 47.5
+model3d_yRot = 10
+model3d_camHeight = 0.4
+model3d_xRot = -105
+model3d_recenterY = 2

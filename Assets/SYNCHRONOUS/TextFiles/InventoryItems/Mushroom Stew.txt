@@ -1,0 +1,24 @@
+Description_TAI = สตูว์ รส อร่อย ที่ ฟื้นฟู สุขภาพ บางส่วน
+Name_TAI = สตูว์ เห็ด
+Description_POR = Um ensopado saboroso que cura um pouco de vida.
+Description_SPN = Un guiso sabroso que cura algo de salud.
+Description_RUS = Вкусное рагу, которое восстанавливает часть здоровья.
+Description_IND = Rebusan lezat yang memulihkan sebagian kesehatan.
+Name_POR = Ensopado de Cogumelo
+Name_SPN = Estofado de Champiñones
+Name_RUS = Грибной суп
+Name_IND = Sup Jamur
+Description = A tasty stew that heals some health
+
+Inventory_sprite_path = item mushroom stew
+Crafting_ingredient_A = Brown Mushroom
+Crafting_ingredient_A_count = 3
+Alt_crafting_ingredient_A = Red Mushroom
+Alt_crafting_ingredient_A_count = 2
+Type = Consumable
+Market Cost = CALCULATE
+Sound on Use = Slurp
+Sound on Craft = Bubbles
+
+Vendor0 = Food
+NumSell = 3 to 5

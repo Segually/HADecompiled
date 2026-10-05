@@ -1,0 +1,109 @@
+﻿questname_POR = Magia Negra e Esquecida
+questname_RUS = Темная и забытая магия
+questname_IND = Sihir Gelap dan Terlupakan
+questname_SPN = Magia Oscura y Olvidada
+questname_TAI = เวทมนตร์ที่มืดมิดและถูกลืม
+Complete_text = I destroyed the Storm Wizards! Yandi is safe again.
+Complete_text_POR = Eu destruí os Magos da Tempestade! Yandi está segura de novo.
+Complete_text_RUS = Я уничтожила Волшебников Шторма! Янди снова в безопасности.
+Complete_text_IND = Aku menghancurkan Penyihir Badai! Yandi aman lagi.
+Complete_text_SPN = ¡Destruí a los Magos de la Tormenta! Yandi está a salvo otra vez.
+Complete_text_TAI = ฉันทําลายพ่อมดพายุ! ยานดีปลอดภัยอีกครั้ง
+Reward0_item = Key
+Reward0_count = 1
+Reward0_key_name = VA_chest
+RewardSuperChest0 = 9036
+Repeat_hours = 40
+
+[step 0]
+Hint = I should talk to 'Vitamin Ape' in Yandi
+Hint_POR = Eu deveria falar com 'Macaco de Vitamina' em Yandi
+Hint_RUS = Я должен поговорить с "Витамин обезьяна" в Янди
+Hint_IND = Saya harus berbicara dengan 'Vitamin Kera' di Yandi
+Hint_SPN = Debería hablar con 'Mono de vitamina' en Yandi
+Hint_TAI = ฉันควรคุยกับ 'วิตามินเอเป้' ในยานดี
+
+[step 1]
+Hint = Vitamin ape is taking me to Yandeon's spirit. I should speak to Yandeon when I find him.
+Hint_POR = Macaco de vitamina está me levando ao espírito de Yandeon. Eu deveria falar com Yandeon quando eu encontrá-lo.
+Hint_RUS = Витамин обезьяна принимает меня к духу Yandeon в. Я должен поговорить с Яндеоном, когда найду его.
+Hint_IND = Kera vitamin membawaku ke semangat Yandeon. Aku harus bicara dengan Yandeon saat aku menemukannya.
+Hint_SPN = El mono de vitamina me está llevando al espíritu de Yandeon. Debería hablar con Yandeon cuando lo encuentre.
+Hint_TAI = วิตามินเอเป้กําลังพาฉันไปหาวิญญาณของยานเดียน ฉันควรคุยกับยานเดียน
+Instantly teleport to = chunk(shack9072,99, -99) 9 4
+n_TempCompanions = 1
+TempCompanion0_name = Vitamin Ape
+TempCompanion0_levelScale = 0.3
+TempCompanion0_creatureA = gorilla
+TempCompanion0_creatureB = carrot
+TempCompanion0_hat = 
+TempCompanion0_body = Dark Armor
+TempCompanion0_hand = Dark Hasta
+n_Battle_Containers = 3
+BattleContainer0 = 9074
+BattleContainer1 = 9075
+BattleContainer2 = 9076
+On logout revert to step = 0
+
+[step 2]
+Hint = When I am ready to fight the Storm Wizards, I should talk to Vitamin Ape
+Hint_POR = Quando eu estiver pronto para lutar contra os Magos da Tempestade, eu deveria falar com vitamina Macaco
+Hint_RUS = Когда я буду готов бороться с Storm Wizards, я должен поговорить с витамином обезьяны
+Hint_IND = Ketika saya siap untuk melawan Penyihir Badai, saya harus berbicara dengan Vitamin Kera
+Hint_SPN = Cuando esté listo para luchar contra los Magos de la Tormenta, debo hablar con Vitamin Ape
+Hint_TAI = เมื่อฉันพร้อมที่จะต่อสู้กับพ่อมดพายุฉันควรพูดคุยกับวิตามินเอเป้
+Instantly teleport to = chunk(shack9070,-10, 2) 3 5
+
+[step 3]
+Hint = I must destroy the Storm Wizards! ([N_MOBS] left)
+Hint_POR = Tenho que destruir os Magos da Tempestade! ([N_MOBS] permanecem)
+Hint_RUS = Я должен уничтожить Волшебников Шторма! ([N_MOBS] остаются)
+Hint_IND = Aku harus menghancurkan Storm Wizards! ([N_MOBS] tetap)
+Hint_SPN = ¡Debo destruir a los Magos de la Tormenta! (quedan [N_MOBS])
+Hint_TAI = ข้าต้องทําลายพ่อมดพายุ! (ยังเหลืออยู่ [N_MOBS] คน)
+Instantly teleport to = chunk(shack9073,99, -100) 8 8
+n_TempCompanions = 1
+TempCompanion0_name = Vitamin Ape
+TempCompanion0_levelScale = 0.3
+TempCompanion0_creatureA = gorilla
+TempCompanion0_creatureB = carrot
+TempCompanion0_hat = 
+TempCompanion0_body = Dark Armor
+TempCompanion0_hand = Dark Hasta
+Step type = Kill All Mobs
+Goal kills = 5
+On logout revert to step = 2
+Soundtrack = War 2
+
+[step 4]
+Hint = Shindeon emerged from the portal! I must destroy him
+Hint_POR = Shindeon emergiu do portal! Tenho que destruí-lo.
+Hint_RUS = Шиндеон вышел из портала! Я должен уничтожить его
+Hint_IND = Shindeon muncul dari portal! Aku harus menghancurkannya
+Hint_SPN = ¡Shindeon salió del portal! Debo destruirlo.
+Hint_TAI = ชินเดียนโผล่ออกมาจากประตูมิติ! ข้าต้องทําลายเขา
+Override_notif_text = Boss Appeared!
+keep_TempCompanions = true
+Step type = Kill All Mobs
+Goal kills = 1
+On logout revert to step = 2
+continue_soundtrack = true
+
+[step 5]
+Hint = I have destroyed the Storm Wizards. I should talk to Yandeon for my reward.
+Hint_POR = Destruí os Magos da Tempestade. Eu deveria falar com Yandeon pela minha recompensa.
+Hint_RUS = Я уничтожила Волшебников Шторма. Я должен поговорить с Яндеоном за мою награду.
+Hint_IND = Aku telah menghancurkan Storm Wizards. Aku harus bicara dengan Yandeon untuk hadiahku.
+Hint_SPN = He destruido a los Magos de la Tormenta. Debería hablar con Yandeon para mi recompensa.
+Hint_TAI = ข้าทําลายพ่อมดพายุ ฉันควรคุยกับยานเดียนเพื่อรับรางวัล
+Instantly teleport to = chunk(shack9072,99, -99) 0 5
+keep_TempCompanions = true
+On logout revert to step = 6
+
+[step 6]
+Hint = I have destroyed the Storm Wizards. I should talk to Vitamin Ape for my reward.
+Hint_POR = Destruí os Magos da Tempestade. Eu deveria falar com vitamina Ape pela minha recompensa.
+Hint_RUS = Я уничтожила Волшебников Шторма. Я должен поговорить с витамином Обезьяна за мою награду.
+Hint_IND = Aku telah menghancurkan Storm Wizards. Aku harus bicara dengan Vitamin Ape untuk hadiahku.
+Hint_SPN = He destruido a los Magos de la Tormenta. Debería hablar con El Mono de Vitamina por mi recompensa.
+Hint_TAI = ข้าทําลายพ่อมดพายุ ฉันควรคุยกับวิตามินเอเป้เพื่อรับรางวัล

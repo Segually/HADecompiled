@@ -1,0 +1,17 @@
+Name_TAI = ตัวสร้าง - ก้อน หิมะ
+Name_POR = Gerador - Bolas de Neve
+Name_SPN = Generador - Bolas de nieve
+Name_RUS = Спавнер - Снежки
+Name_IND = Pemuncul - Bola Salju
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Spawner - Snowballs
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+not_obtainable = true
+
+
+Pollinator Regen Level = 1
+Pollinator Regen RespawnId = collect_spawn

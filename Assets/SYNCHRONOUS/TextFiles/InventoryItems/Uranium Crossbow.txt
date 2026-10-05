@@ -1,0 +1,13 @@
+Name_POR = Besta de Urânio
+Name_TAI = หน้าไม้ ยูเรเนียม
+Name_SPN = Ballesta de uranio
+Name_RUS = Урановый арбалет
+Name_IND = Busur Silang Uranium
+Type = Holdable
+
+Default Coloring = Weapon - Uranium
+
+not_obtainable = true
+
+PaintLayout0_SolidColors = 0-5, 1-1, 2-2, 
+PaintLayout1_SolidColors = 0-6, 1-4,

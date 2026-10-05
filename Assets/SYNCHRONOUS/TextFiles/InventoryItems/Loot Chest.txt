@@ -1,0 +1,17 @@
+Name_TAI = หีบ สมบัติ
+Name_POR = Baú de Saque
+Name_SPN = Cofre de Botín
+Name_RUS = Сундук с добычей
+Name_IND = Dada Harta Karun
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Titanium Chest
+World_geometry = 1_by_1
+
+tool_required_to_move = Drill
+
+CopyPaintLayout = Chest
+Default Coloring = Titanium Trim
+
+not_obtainable = true
+

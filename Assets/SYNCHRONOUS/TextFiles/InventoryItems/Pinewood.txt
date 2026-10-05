@@ -1,0 +1,28 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณเป็นสีน้ำตาลอ่อน!
+Name_TAI = ไม้ สน
+Description_POR = Pinte seus móveis de Marrom Claro!
+Description_SPN = ¡Pinta tus muebles de Marrón Claro!
+Description_RUS = Покрасьте вашу мебель в светло-коричневый цвет!
+Description_IND = Warnai furnitur Anda dengan Cokelat Muda!
+Name_POR = Madeira de Pinheiro
+Name_SPN = Madera de pino
+Name_RUS = Сосновая древесина
+Name_IND = Kayu Pinus
+Description = Paint your furniture a Light Brown!
+
+Crafting_ingredient_A = Basic White
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Toasted Nuts
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

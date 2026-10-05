@@ -1,0 +1,46 @@
+Description_TAI = ชั้น วาง เต็ม ไป ด้วย หนังสือ
+Name_TAI = ชั้น วาง หนังสือ
+Description_POR = Prateleiras cheias de livros
+Description_SPN = Estantes llenos de libros
+Description_RUS = Полки, полные книг
+Description_IND = Rak penuh buku
+Name_POR = Estante de livros
+Name_SPN = Estantería
+Name_RUS = Книжный шкаф
+Name_IND = Rak Buku
+Description = Shelves full of books
+
+Inventory_sprite_path = item bookshelf
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 6
+Crafting_ingredient_B = Metal Bar
+Crafting_ingredient_B_count = 2
+Type = Place_in_world
+World_obj_path = Buildables/Bookshelf
+World_geometry = x_plus_1
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+NumSell = 2 to 2
+
+paintable_by_player = true
+PaintLayout0_SolidColors = 0-1, 1-2, 2-3, 3-5, 4-4, 
+PaintLayout0_Candycane = 0-1, 1-3, 2-2, 3-2, 4-2, 
+PaintLayout0_Pastels = 0-1, 1-2, 2-3, 3-3, 4-3, 
+PaintLayout0_Trimmed = 0-1, 1-2, 2-3, 3-3, 4-3, 
+PaintLayout0_TriColor = 0-1, 1-1, 2-2, 3-3, 4-2, 
+Default Coloring = Debug - Bad Bookshelf
+PaintLayout0_Stone & Wood = 0-2, 1-1, 2-4, 3-5, 4-6, 
+
+model3d_camDist = 3.4
+show_model3d = true
+model3d_fov = 47.5
+model3d_xRot = -85
+model3d_yRot = 15
+model3d_objRot = 6
+model3d_recenterX = 31
+model3d_camHeight = 0.6
+model3d_recenterY = 9
+PaintLayout0_Nomad = 0-1, 1-2, 2-3, 3-5, 4-4, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-2, 3-3, 4-1, 

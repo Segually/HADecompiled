@@ -1,0 +1,28 @@
+Description_TAI = ทำให้ เฟอร์นิเจอร์ ของคุณ ดูเหมือน โคลน
+Name_TAI = โคลน ตะกอน
+Description_POR = Faz com que seus móveis pareçam lama.
+Description_SPN = Hace que tus muebles parezcan lodo.
+Description_RUS = Заставляет вашу мебель выглядеть как грязь.
+Description_IND = Membuat furnitur Anda terlihat seperti lumpur.
+Name_POR = Lodo
+Name_SPN = Lodo
+Name_RUS = Шлам
+Name_IND = Lumpur
+Description = Makes your furniture look like muck
+
+Crafting_ingredient_A = Purple Mushroom
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Brown Mushroom
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 26
+Market Cost = CALCULATE
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Dual
+CopyPaintLayout = Paintbrush Dual
+Copy3dModelPosition = Paintbrush Dual

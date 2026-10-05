@@ -1,0 +1,15 @@
+*auto_version=5*
+
+[4,7] = Wood Rails (rot 0)
+
+[4,6] = Wood Rails (rot 0)
+
+[4,5] = Wood Rails (rot 0)
+
+[4,3] = Wood Rails (rot 0)
+
+[4,2] = Wood Rails (rot 0)
+
+[2,7] = Upstairs Room (rot 2)
+	password = *string* DEV_LOCKED
+

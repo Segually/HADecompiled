@@ -1,0 +1,49 @@
+*auto_version=7*
+*is_blank=true*
+*forced_biome=3*
+
+[9,7] = Navpost (rot 1)
+	sign_text = *string* Yandi
+	text_col = *string* green
+
+[3,8] = Stone Bricks (rot 0)
+
+[2,9] = Stone Bricks (rot 0)
+
+[2,8] = Stone Bricks (rot 0)
+
+[1,3] = Tent (rot 3)
+	shack_id = *long* 9057
+	paint = *string* Basic Green
+
+[4,8] = Stone Bricks (rot 0)
+
+[1,7] = Stone Bricks (rot 0)
+
+[0,8] = Stone Bricks (rot 0)
+
+[2,7] = Stone Bricks (rot 0)
+
+[1,9] = Stone Bricks (rot 0)
+
+[4,9] = Stone Bricks (rot 0)
+
+[3,9] = Stone Bricks (rot 0)
+
+[1,8] = Stone Bricks (rot 0)
+
+[1,6] = Stone Bricks (rot 0)
+
+[0,9] = Stone Bricks (rot 0)
+
+[6,5] = Evergreen Tree (rot 0)
+
+[5,2] = Evergreen Tree (rot 0)
+
+[3,3] = Dug-up Brown Mushroom (rot 0)
+
+[4,4] = Dug-up Brown Mushroom (rot 0)
+
+[9,2] = Tar Pit (rot 0)
+
+

@@ -1,0 +1,7 @@
+Name_TAI = เปลือก หอย สี เขียว
+Name_POR = Casco Verde
+Name_SPN = Concha Verde
+Name_RUS = Зелёная ракушка
+Name_IND = Cangkang Hijau
+
+Inventory_sprite_path = item seashell green

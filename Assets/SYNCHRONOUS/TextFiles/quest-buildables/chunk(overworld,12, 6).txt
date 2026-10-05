@@ -1,0 +1,18 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=2*
+
+[0,7] = Dirt Path (rot 0)
+
+[0,8] = Dirt Path (rot 0)
+
+[0,9] = Dirt Path (rot 0)
+
+[0,6] = Dirt Path (rot 0)
+
+[0,5] = Dirt Path (rot 0)
+
+[1,9] = Dirt Path (rot 2)
+
+[1,8] = Dirt Path (rot 2)
+

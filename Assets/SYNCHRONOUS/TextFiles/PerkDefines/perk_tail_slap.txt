@@ -1,0 +1,22 @@
+Full Name = Tail Slap
+Description = Quickly slap your enemy with your tail!
+Detailed Description = GetInt[EFFECT_HURT, "Damage", remove ""] damage DiffInt[EFFECT_HURT, "Damage", add ""] and GetInt[EFFECT_HURT, "Blastback", remove "%"]% blast-back DiffInt[EFFECT_HURT, "Blastback", remove "%", add "%"] on target.
+Energy Cost = 35%
+Unlock Prerequisite = perk_sprint(lvl.1)
+On cast = [ANM_WHIP,PAUSE_TARGET_PURSUIT] on self
+-
+[ANM_WHIP]
+Type = Instant Effect
+Animation prefab = perk_tail_slap_animation
+-
+[EFFECT_HURT]
+Type = Instant Effect
+Particle (Instant) = perk_fireball_collide
+Scale Particle With Creature Size = true
+Damage = RANGE (7%-13%-19% of own HP)
+Blastback = CLAMP (35% @ lvl_1 ... 100% @ lvl_15)
+-
+[PAUSE_TARGET_PURSUIT]
+Type = Duration Effect
+Let My Target Come To Me = true
+Duration = 2 seconds

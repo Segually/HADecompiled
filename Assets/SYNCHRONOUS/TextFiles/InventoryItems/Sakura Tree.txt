@@ -1,0 +1,26 @@
+Description_TAI = ต้นไม้ ที่ เต็ม ไป ด้วย ดอกไม้ สีชมพู
+Name_TAI = ต้น ซากุระ
+Description_POR = Uma árvore cheia de flores cor-de-rosa
+Description_SPN = Un árbol lleno de flores rosadas
+Description_RUS = Дерево, полное розовых цветов.
+Description_IND = Sebuah pohon penuh dengan bunga merah muda
+Name_POR = Árvore de Sakura
+Name_SPN = Árbol de Sakura
+Name_RUS = Сакура
+Name_IND = Pohon Sakura
+Overwrite_name = Sakura Tree
+Description = A tree full of pink blossoms
+
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Sakura Tree
+World_geometry = 2_by_2
+Market Cost = 30
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 3
+
+show_model3d = true
+Copy3dModelPosition = Birch Tree (Variant 1)
+model3d_override_glow_col = faint_white

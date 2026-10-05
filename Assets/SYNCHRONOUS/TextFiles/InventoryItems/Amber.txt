@@ -1,0 +1,11 @@
+Name_TAI = อำพัน
+Name_POR = Âmbar
+Name_SPN = Ámbar
+Name_RUS = Янтарь
+Name_IND = Amber
+
+Inventory_sprite_path = item amber
+Market Cost = 85
+
+Vendor0 = Ores
+NumSell = 2 to 4

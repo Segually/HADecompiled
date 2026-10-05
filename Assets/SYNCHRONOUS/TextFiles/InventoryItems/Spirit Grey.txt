@@ -1,0 +1,31 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ ของคุณ เป็น สีเทาอ่อน!
+Name_TAI = วิญญาณ สีเทา
+Description_POR = Pinte seus móveis de cinza claro!
+Description_SPN = ¡Pinta tus muebles de gris claro!
+Description_RUS = Покрасьте вашу мебель в светло-серый цвет!
+Description_IND = Cat furnitur Anda dengan warna Abu-Abu Muda!
+Name_POR = Cinza Espiritual
+Name_SPN = Espíritu Gris
+Name_RUS = Дух Серый
+Name_IND = Jiwa Abu-abu
+Description =  Paint your furniture Light Grey!
+
+Inventory_sprite_path = item paint spirit grey
+Crafting_ingredient_A = Basic White
+Crafting_ingredient_A_count = 1
+Crafting_ingredient_B = Stone Ore
+Crafting_ingredient_B_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 30
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

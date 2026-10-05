@@ -1,0 +1,65 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=6*
+
+[9,0] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,1] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,2] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,3] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,4] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,5] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,6] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,7] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,9] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[9,8] = Wood Rails (rot 1)
+	paint = *string* Storm Grey
+
+[2,8] = Willow Tree (rot 0)
+
+[7,9] = Stone Lantern (rot 0)
+	paint = *string* Basic Black
+
+[0,0] = Merchant Sign (rot 2)
+	paint = *string* Basic Black
+	sign_header = *string* Muckwood Treasures & Tools
+	sign_text = *string* The Best of the Bog!
+
+[7,5] = Giant Brown Mushroom (rot 0)
+
+[8,4] = Dug-up Brown Mushroom (rot 0)
+
+[1,9] = Rotting Stump (rot 2)
+
+[1,5] = Dug-up Purple Mushroom (rot 0)
+
+[1,2] = Giant Purple Mushroom (rot 0)
+
+[2,2] = Willow Tree (rot 1)
+
+[4,0] = Cobblestone Path (rot 2)
+
+[3,0] = Cobblestone Path (rot 2)
+
+[6,0] = Igloo (rot 2)
+	shack_id = *long* 9003
+	paint = *string* Sludge
+	password = *string* DEV_LOCKED
+

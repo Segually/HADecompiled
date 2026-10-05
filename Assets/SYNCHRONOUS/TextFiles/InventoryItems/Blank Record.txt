@@ -1,0 +1,16 @@
+Description_TAI = ช่วย ให้ คุณ บันทึก สำเนา ของ เพลง ที่ คุณ สร้าง ขึ้น เอง
+Name_TAI = แผ่น บันทึก ว่าง
+Description_POR = Permite que você salve cópias das suas músicas personalizadas.
+Description_SPN = Te permite guardar copias de tus canciones personalizadas.
+Description_RUS = Позволяет сохранять копии ваших пользовательских песен.
+Description_IND = Memungkinkan Anda menyimpan salinan lagu kustom Anda.
+Name_POR = Registro em Branco
+Name_SPN = Registro en Blanco
+Name_RUS = Пустая пластинка
+Name_IND = Rekaman Kosong
+Description = Allows you to save copies of your custom songs.
+
+Inventory_sprite_path = item record
+Market Cost = 25
+
+NumSell = 5 to 10

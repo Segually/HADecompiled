@@ -1,0 +1,39 @@
+*auto_version=42*
+*is_blank=true*
+*forced_biome=8*
+
+[9,7] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[5,8] = Low Stone Wall (rot 0)
+
+[8,1] = Low Stone Wall (rot 0)
+
+[7,1] = Low Stone Wall (rot 0)
+
+[6,1] = Low Stone Wall (rot 0)
+
+[5,1] = Low Stone Wall (rot 0)
+
+[5,2] = Low Stone Wall (rot 0)
+
+[5,3] = Low Stone Wall (rot 0)
+
+[5,4] = Low Stone Wall (rot 0)
+
+[5,5] = Low Stone Wall (rot 0)
+
+[5,7] = Low Stone Wall (rot 0)
+
+[5,6] = Low Stone Wall (rot 0)
+
+[9,9] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[9,8] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[9,1] = Low Stone Wall (rot 0)
+
+[3,6] = Birch Tree (Variant 1) (rot 1)
+

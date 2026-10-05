@@ -1,0 +1,4 @@
+*auto_version=1*
+
+[9,5] = Teleporter (rot 0)
+

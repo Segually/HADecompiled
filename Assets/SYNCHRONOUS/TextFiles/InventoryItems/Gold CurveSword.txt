@@ -1,0 +1,32 @@
+Description_TAI = ดาบ โค้ง งดงาม ที่ มี ใบมีด สีทอง
+Name_TAI = ดาบ โค้ง ทองคำ
+Description_POR = Uma elegante espada curva com uma lâmina dourada.
+Description_SPN = Una elegante espada curva con una hoja dorada
+Description_RUS = Элегантный изогнутый меч с золотым клинком.
+Description_IND = Pedang melengkung yang elegan dengan bilah emas.
+Name_POR = Espada Curva de Ouro
+Name_SPN = EspadaCurbadaDeOro
+Name_RUS = Золотой изогнутый меч
+Name_IND = PedangLengkung Emas
+Description = An elegant curved sword with a golden blade
+
+Crafting_ingredient_A = Gold Bar
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/CurveSword
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 12
+Craft_required_lvl = 24
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 10
+
+CopyPaintLayout = Titanium CurveSword
+Default Coloring = Weapon - Gold
+
+show_model3d = true
+Copy3dModelPosition = Titanium CurveSword
+
+weapon_display_copy = Titanium CurveSword

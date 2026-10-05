@@ -1,0 +1,13 @@
+*auto_version=1*
+*forced_biome=0*
+
+[0,2] = Shack (rot 1)
+	shack_id = *long* 9053
+	paint = *string* Basic Blue
+
+[2,1] = Flowers (rot 0)
+	paint = *string* Lavender Plum
+
+[2,2] = Flowers (rot 0)
+	paint = *string* Lavender Plum
+

@@ -1,0 +1,20 @@
+Description_TAI = วัตถุดิบ
+Name_TAI = พริก ร้อน
+Description_POR = Ingrediente.
+Description_SPN = Ingrediente.
+Description_RUS = Ингредиент.
+Description_IND = Bahan.
+Name_POR = Pimenta Picante
+Name_SPN = Pimiento Picante
+Name_RUS = Острый перец
+Name_IND = Cabai Pedas
+Description = Ingredient.
+
+Inventory_sprite_path = item hot pepper
+Type = Consumable
+Sound on Use = Crunch
+Market Cost = 20
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 4 to 8

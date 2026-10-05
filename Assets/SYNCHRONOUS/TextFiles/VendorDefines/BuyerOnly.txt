@@ -1,0 +1,1 @@
+[Sell Percent = 0.03]

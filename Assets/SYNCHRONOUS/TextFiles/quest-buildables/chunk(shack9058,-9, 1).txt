@@ -1,0 +1,21 @@
+*auto_version=5*
+
+[2,7] = Music Box (rot 0)
+	npc_record_index = *short* 6
+	paint = *string* Nomad Red
+
+[2,9] = Crafting Table (rot 0)
+	paint = *string* Nomad Red
+
+[9,7] = DEBUG-npc (rot 1)
+	npc_file = *string* FREE FOLLOWER - shooba shack
+	npc_is_free_follower = *string* true
+	npc_icon = *string* Happy_face
+	paint = *string* Nomad Red
+
+[9,9] = Loom (rot 2)
+	paint = *string* Nomad Red
+
+[9,7] = Chair (rot 2)
+	paint = *string* Basic Red
+

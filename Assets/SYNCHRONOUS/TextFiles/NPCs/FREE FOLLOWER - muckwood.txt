@@ -1,0 +1,106 @@
+Name_POR=SEGUIDOR GRATUITO - pantanal
+Name_RUS=БЕСПЛАТНЫЙ СПУТНИК - Болотное Дерево
+Name_IND=PENGANUT GRATIS - muckwood
+Name_SPN=SEGUIDOR GRATIS - Muckwood
+Name_TAI=ผู้ติดตามฟรี - มัควูด
+
+----- DIALOGUE -----
+[0]
+otherspeak=Been fishin' in these swamps for years. Ain't catching nothin' no more.
+otherspeak_POR=Pesco nestes pântanos há anos. Não estou pegando mais nada.
+otherspeak_RUS=Уже годы я рыбачу в этих болотах. Ничего больше не ловится.
+otherspeak_IND=Sudah bertahun-tahun mancing di rawa-rawa ini. Sekarang tidak menangkap apa-apa lagi.
+otherspeak_SPN=He estado pescando en estos pantanos durante años. Ya no atrapo nada.
+otherspeak_TAI=ผมตกปลาในหนองน้ำนี้มาหลายปีละ ดูเหมือนว่าจะไม่ได้ปลาอะไรเลยต่อไป
+goto=001
+
+[1]
+otherspeak=Muckwood's waters ain't the same.
+otherspeak_POR=As águas do pantanal não são mais as mesmas.
+otherspeak_RUS=Вода в Болотном Дереве уже не та.
+otherspeak_IND=Air di Muckwood sudah tidak sama lagi.
+otherspeak_SPN=Las aguas de Muckwood ya no son las mismas.
+otherspeak_TAI=น้ำของมัควูดไม่เหมือนเดิม
+goto=002
+
+[2]
+optionA=Why not come with me? I could use your skills
+optionA_POR=Por que não vem comigo? Eu poderia usar suas habilidades
+optionA_RUS=Почему бы тебе не пойти со мной? Мне бы пригодились твои навыки.
+optionA_IND=Bagaimana kalau kamu ikut denganku? Aku bisa memanfaatkan kemampuanmu
+optionA_SPN=¿Por qué no vienes conmigo? Podría usar tus habilidades.
+optionA_TAI=ทำไมไม่มาตามผม? ผมอาจใช้ความสามารถของคุณ
+gotoA=003
+
+[3]
+otherspeak=Mmm, I don't know, stranger. These here swamps are all I've ever known...
+otherspeak_POR=Hmm, não sei, estranho. Esses pântanos aqui são tudo que eu conheço...
+otherspeak_RUS=Мм, не знаю, незнакомец. Эти болота - все, что я знаю...
+otherspeak_IND=Hmm, saya tidak tahu, pengelana. Rawa-rawa ini adalah satu-satunya tempat yang pernah saya kenal...
+otherspeak_SPN=Mmm, no lo sé, extraño. Estos pantanos son todo lo que he conocido...
+otherspeak_TAI=อืม, ผมไม่รู้นะ คนแปลกหน้า หนองน้ำที่นี่เป็นทุกอย่างที่ผมรู้จัก...
+goto=004
+boxPosition=-97.39135,-194.3044
+
+[4]
+optionA=There's a whole world out there to fish! You in?
+optionA_POR=Há um mundo inteiro lá fora para pescar! Bora?
+optionA_RUS=В мире столько мест, где можно поймать рыбу! Ты с нами?
+optionA_IND=Ada dunia luas di luar sana untuk mancing! Kamu mau ikut?
+optionA_SPN=¡Hay todo un mundo allá afuera para pescar! ¿Vienes?
+optionA_TAI=มีโลกทั้งใบที่คุณสามารถไปตกปลา! คุณจะมากับเรามั้ย?
+optionB=No need to rush
+optionB_POR=Não precisa se apressar
+optionB_RUS=Не надо торопиться.
+optionB_IND=Tidak perlu terburu-buru
+optionB_SPN=No hay necesidad de apresurarse.
+optionB_TAI=ไม่ต้องรีบร้อน
+gotoA=005
+gotoB=009
+boxPosition=-97.39141,-257.9131
+
+[9]
+otherspeak=Much obliged, stranger.
+otherspeak_POR=Muito obrigado, estranho.
+otherspeak_RUS=Спасибо, незнакомец.
+otherspeak_IND=Saya berterima kasih, pengelana.
+otherspeak_SPN=Muy agradecido, extraño.
+otherspeak_TAI=ขอบคุณมาก, คนแปลกหน้า
+goto=-1
+
+[5]
+*test LESS_THAN_2_COMPANIONS*
+goto_true=006
+goto_false=007
+boxPosition=-206.6086,-326.0002
+
+[6]
+otherspeak=Well, when you put it like that... Alright, I'm in.
+otherspeak_POR=Bem, quando você coloca dessa forma... Tá bom, eu vou.
+otherspeak_RUS=Ну, когда ты так говоришь... Ладно, я с вами.
+otherspeak_IND=Nah, saat kamu menjelaskannya seperti itu... Baiklah, saya ikut.
+otherspeak_SPN=Bueno, cuando lo pones de esa manera... Está bien, me uno.
+otherspeak_TAI=เอาล่ะ, เมื่อคุณกล่าวเช่นนั้น... ตกลงแล้ว, ผมจะตามคุณ
+goto=-55
+boxPosition=-308.1739,-395.1739
+
+[7]
+otherspeak=Hmm.. you have too many followers
+otherspeak_POR=Hmm.. você tem seguidores demais.
+otherspeak_RUS=Хмм... у тебя слишком много спутников.
+otherspeak_IND=Hmm.. kamu memiliki terlalu banyak pengikut
+otherspeak_SPN=Hmm.. tienes demasiados seguidores.
+otherspeak_TAI=หืม.. คุณมีผู้ติดตามเยอะเกินไป
+goto=008
+boxPosition=-75.13046,-398.2607
+
+[8]
+*EXIT_WITH_POPUP*
+popuptext=You can only have 2 followers at a time!
+popuptext_POR=Você só pode ter 2 seguidores por vez!
+popuptext_RUS=У вас может быть только 2 подписчика одновременно!
+popuptext_IND=Anda hanya dapat memiliki 2 pengikut dalam satu waktu!
+popuptext_SPN=¡Solo puedes tener 2 seguidores a la vez!
+popuptext_TAI=คุณสามารถมีผู้ติดตามได้ครั้งละ 2 คนเท่านั้น!
+boxPosition=-73.04349,-475.087
+

@@ -1,0 +1,69 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=8*
+
+[5,0] = Dirt Path (rot 0)
+
+[5,1] = Dirt Path (rot 0)
+
+[0,1] = Dirt Path (rot 0)
+
+[2,2] = Dug-up Wheat (rot 0)
+
+[3,0] = Dirt Path (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[2,1] = Dirt Path (rot 0)
+
+[3,1] = Dirt Path (rot 0)
+
+[2,0] = Dirt Path (rot 0)
+
+[4,0] = Dirt Path (rot 0)
+
+[1,1] = Dirt Path (rot 0)
+
+[1,0] = Dirt Path (rot 0)
+
+[0,0] = Dirt Path (rot 0)
+
+[3,2] = Dug-up Wheat (rot 1)
+
+[3,3] = Dug-up Wheat (rot 2)
+
+[2,3] = Dug-up Wheat (rot 0)
+
+[0,2] = Dug-up Wheat (rot 0)
+
+[0,3] = Dug-up Wheat (rot 1)
+
+[1,3] = Dug-up Wheat (rot 2)
+
+[1,2] = Dug-up Wheat (rot 3)
+
+[0,4] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[1,4] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[2,4] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[3,4] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[4,4] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[4,3] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[4,2] = Wood Rails (rot 0)
+	paint = *string* Spirit Grey
+
+[9,6] = Birch Tree (Variant 1) (rot 2)
+
+[2,8] = Birch Tree (Variant 2) (rot 3)
+

@@ -1,0 +1,12 @@
+Description = Adds animals: avocado, pumpkin, corn, carrot, asparagus
+IAP_KEY = creature_pack_4
+Type = permanent
+Gem_price = medium
+Bg_color = light_orange
+Model_path = shop_creaturePack4
+
+animal0 = avocado
+animal1 = pumpkin
+animal2 = corn
+animal3 = carrot
+animal4 = asparagus

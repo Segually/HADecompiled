@@ -1,0 +1,245 @@
+[0][max_stack=10] Dirt Path
+[1][max_stack=10] Muffin
+[1][max_stack=10] Rushers
+[1][max_stack=5] Toasted Nuts
+[4] Snowman
+[4][max_stack=10] Wood Rails
+[5][max_stack=5] Basic Brown
+[5][max_stack=10] Cobblestone Path
+[6] Stump Chair
+[6] Torch
+[7][max_stack=10] Paint Thinner
+[8][max_stack=10] Palisade Wall
+[9] Bread Loaf
+[10] Crafting Table
+[10][max_stack=10] Stone Bricks
+[10] Wood Pick
+[13] Basket
+[13] Wood Armor
+[13] Wood Helmet
+[14][max_stack=5] Glacier
+[16][max_stack=5] Basic White
+[16] Cooked Meat
+[16] Jam
+[16] Mushroom Stew
+[16] Sign
+[20][max_stack=5] Basic Cyan
+[21] Salmonberry Scone
+[23][max_stack=10] Low Stone Wall
+[23] Shack
+[24][max_stack=5] Pinewood
+[25][max_stack=5] Basic Yellow
+[25] Shovel
+[26][max_stack=5] Basic Blue
+[26] Chair
+[26] Igloo
+[30] Bone Juice
+[30] Charm Bomb
+[32] Pumpkin Pie
+[32] Sombrero
+[32] Top Hat
+[33] Moonberry Juice
+[34][max_stack=10] Tall Stone Wall
+[35][max_stack=5] Basic Green
+[35][max_stack=5] Basic Red
+[35] Campfire
+[35] Metal Bar
+[37] Stone Sword
+[46] Food Stamp
+[46] Loom
+[46] Paw Stamp
+[46] Stone DoubleDagger
+[48] Stone Pick
+[53][max_stack=5] Basic Pink
+[61] Small Table
+[64][max_stack=5] Lavender Bloom
+[64][max_stack=5] Lavender Plum
+[64] Matcha
+[66] Coins Stamp
+[66] Fashion Stamp
+[66] Feather Stamp
+[68][max_stack=5] Olive Green
+[68][max_stack=5] Spirit Grey
+[69] Basic Rug
+[71] Coco Loco
+[73] Blank Canvas
+[74] Bed
+[74] Chest
+[74] Sky Chest
+[83][max_stack=5] Basic Orange
+[85] Navpost
+[86] Flower Stamp
+[86] Potion Stamp
+[86] Sun Stamp
+[89] Red Curry
+[89] Titanium Bar
+[96] Merchant Sign
+[100] Big Table
+[102] Metal DoubleDagger
+[106] Metal Helmet
+[106] Metal Sword
+[107] Egg Stamp
+[107] Swords Stamp
+[109][max_stack=5] Hotdog Time
+[111] Circular Rug
+[118][max_stack=5] Iron & Oak
+[123][max_stack=5] Basic Black
+[123][max_stack=5] Basic Purple
+[124][max_stack=5] Banana Bruise
+[127] Crown Stamp
+[127] Furniture Stamp
+[127] Skull Stamp
+[133] Gold Bar
+[133] Lock
+[138] Expando Bread
+[138] Sofa Chair
+[142][max_stack=5] Winter Pastel
+[147][max_stack=5] Banana Dessert
+[147] Bat Stamp
+[147] Ghost Stamp
+[147] Ghoul Stamp
+[147] Metal Pick
+[153] Metal Armor
+[153] Metal Cleaver
+[153] Metal Legion Helm
+[153][max_stack=5] Pumpkin Orange
+[155][max_stack=10] Bouncy Floor
+[156][max_stack=5] Storm Grey
+[164] Metal Chair
+[167] Dragon Stamp
+[167] Fist Stamp
+[167] Snowflake Stamp
+[169] Fried Egg
+[170][max_stack=5] Royal Red
+[173][max_stack=5] Candycane
+[173] Paint Mixer
+[175][max_stack=5] Utility Red
+[179] Titanium DoubleDagger
+[188][max_stack=5] Nomad Red
+[197][max_stack=5] Sludge
+[198][max_stack=5] Royal Sage
+[200] Anvil
+[205] Uranium Bar
+[214] Lamp Post
+[227][max_stack=5] Gold Leaf
+[232][max_stack=5] Crash-Pad Blue
+[232][max_stack=5] Mystic Dusk
+[238] Bookshelf
+[240] Tent
+[247] Big Stone Head
+[253][max_stack=5] Forest Green
+[254] Park Bench
+[258][max_stack=5] Industrial Hazard
+[258][max_stack=5] Mystic Dawn
+[258] Stone Lantern
+[268] Titanium Legion Helm
+[272][max_stack=5] Marble White
+[283] Fancy Torch
+[284] Painting Easel
+[293] Cauldron
+[316] Poison Spikes
+[340] Drill
+[350] Titanium Cleaver
+[350] Titanium Valkyrie Helm
+[355] Grandfather Clock
+[361][max_stack=5] Lumberjack
+[361][max_stack=5] Scottish Green
+[372] Hunter Rug
+[374] Armor Display
+[386] Blue Wizard Hat
+[386] Grey Wizard Hat
+[386] Purple Wizard Hat
+[387][max_stack=5] King of Spades
+[397][max_stack=5] Black & Gold
+[398] Music Box
+[400] Gold Cleaver
+[400] Gold Valkyrie Helm
+[401] Hunter Rug White
+[417] Titanium Shovel
+[419][max_stack=5] Titanium Trim
+[441][max_stack=5] Flaming Orange
+[454] Gravestone
+[467] Titanium CurveSword
+[489] Oven
+[494] Gold Shogun Helm
+[497] 3-day Land Claim
+[511] Fireplace
+[516] Metal Lamp Post
+[527] Crate
+[570] Titanium Pick
+[584] Titanium Armor
+[596] Super Jam
+[617] Uranium Shogun Helm
+[625] Weapon Display
+[633] String Lights
+[659] Gold Armor
+[659] Gold CurveSword
+[709] Pool Table
+[734] White Top Hat
+[823] Gold DoubleSword
+[823] Uranium CurveSword
+[851] Uranium Brute Helm
+[879] Teleporter
+[915] Large Weapon Display
+[979] Uranium Armor
+[996] Stamp Maker
+[1040] Mansion
+[1135] Uranium Hasta
+[1158] Egg Fuser
+[1213] Double Crate
+[1224] Uranium DoubleSword
+[1231] Custom Statue
+[1363] Magma Brute Helm
+[1363] Magma DoubleSword
+[1430] Pop-up Saw
+[1550] Magma Armor
+[1550] Magma Hasta
+[1737] Magma Menace Helm
+[1737] Magma SwirlSword
+[1844] Karaoke
+[1916] Windmill
+[2004] Black Wizard Hat
+[2227] Paint Shaker
+[2443] Giant Puncher
+[2526] 8-day Land Claim
+[2539] Vending Machine
+[3322] Speed Helm
+[3341] Throne
+[3422] Warehouse
+[3575] White Wizard Hat
+[4598] Blue String Lights
+[4598] Red String Lights
+[4972] Amethyst Crown
+[4972] Emerald Crown
+[4972] Ruby Crown
+[4972] Sapphire Crown
+[4996] Underground Room
+[4996] Upstairs Room
+[5146] Castle
+[7457] Magma Shovel
+[9623] Ice DoubleSword
+[9623] Ice Menace Helm
+[11495] Ice Hasta
+[12431] Ice Solaris Helm
+[12431] Ice SwirlSword
+[14079] Ice Armor
+[24139] Crucible
+[27999] Personal Mine
+[28406] Dark Solaris Helm
+[30395] Dark Hasta
+[34373] Dark SwirlSword
+[36362] Dark Skull Helm
+[38351] Dark Scythe
+[43179] Dark Armor
+[92129] Ancient Skull Helm
+[96458] Ancient SwirlSword
+[102479] Spirit Scythe
+[105116] Ancient Scythe
+[109445] Ancient Eldritch Helm
+[115583] Spirit Lance
+[118103] Ancient Lance
+[127903] Spirit Eldritch Helm
+[134383] Ancient Armor
+[218063] Spirit Armor
+[454099] Boss Spawner - Shindeon
+[669199] Boss Spawner - Yandeon

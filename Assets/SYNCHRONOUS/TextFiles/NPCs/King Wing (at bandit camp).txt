@@ -1,0 +1,25 @@
+﻿Overwrite_name=King Wing
+Name_POR=Ala Rei
+Name_RUS=Крыло короля
+Name_IND=Sayap Raja
+Name_SPN=Ala rey
+Name_TAI=ปีกกษัตริย์
+
+----- DIALOGUE -----
+[000]
+otherspeak=The enemy is down that road..
+otherspeak_POR=O inimigo está seguindo esse caminho ..
+otherspeak_RUS=Враг идет по этой дороге ..
+otherspeak_IND=Musuh ada di jalan itu ..
+otherspeak_SPN=El enemigo está por ese camino ...
+otherspeak_TAI=ข้าศึกลงที่ถนนนั้น ..
+goto=001
+
+[001]
+otherspeak=.. CRUSH THEM ALL!!!
+otherspeak_POR=.. ESMAGUE TODOS ELES !!!
+otherspeak_RUS=.. РАЗБИЛИ ИХ ВСЕХ !!!
+otherspeak_IND=.. HANCURKAN SEMUA MEREKA !!!
+otherspeak_SPN=.. APLASTARLOS A TODOS !!!
+otherspeak_TAI=.. ขยี้ให้หมด !!!
+goto=-1

@@ -1,0 +1,22 @@
+*auto_version=3*
+*forced_biome=2*
+
+[2,1] = Stone Vein (Desert) (rot 1)
+
+[6,0] = Dirt Path (rot 0)
+
+[6,1] = Dirt Path (rot 0)
+
+[6,2] = Dirt Path (rot 0)
+
+[6,3] = Dirt Path (rot 0)
+
+[6,4] = Dirt Path (rot 0)
+
+[6,5] = Dirt Path (rot 0)
+
+[7,5] = Dirt Path (rot 0)
+
+[8,5] = Dirt Path (rot 0)
+
+[9,5] = Dirt Path (rot 0)

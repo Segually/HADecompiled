@@ -1,0 +1,27 @@
+*auto_version=10*
+*is_blank=true*
+*forced_biome=0*
+
+[8,6] = Shack (rot 3)
+	shack_id = *long* 9015
+	paint = *string* Royal Red
+
+[8,9] = Cobblestone Path (rot 0)
+
+[3,8] = Berry Bush (rot 0)
+
+[5,9] = Spawner - Sticks (rot 0)
+
+[1,6] = Spawner - Sticks (rot 0)
+
+[3,5] = Mossy Tree (rot 3)
+
+[2,9] = Berry Bush (rot 0)
+
+[7,3] = Large Stone Vein (rot 0)
+
+[2,4] = Green Blob (rot 0)
+
+[5,1] = Green Blob (rot 0)
+
+

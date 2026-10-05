@@ -1,0 +1,12 @@
+Description = Adds animals: bicycle, garbage truck, helicopter, airplane, car
+IAP_KEY = creature_pack_5
+Type = permanent
+Gem_price = medium
+Bg_color = red
+Model_path = shop_creaturePack5
+
+animal0 = bicycle
+animal1 = garbagetruck
+animal2 = helicopter
+animal3 = airplane
+animal4 = car

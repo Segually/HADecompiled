@@ -1,0 +1,21 @@
+Description_TAI = ไฟ สี สวย สดใส เพื่อ เติม ความ สดใส ให้ กับ ฤดูกาล ของ คุณ!
+Name_TAI = ไฟ ประดับ เทศกาล
+Description_POR = Luzes coloridas para iluminar sua temporada!
+Description_SPN = ¡Luces coloridas para alegrar tu temporada!
+Description_RUS = Яркие огни, чтобы сделать ваш сезон ярче!
+Description_IND = Lampu warna-warni untuk mencerahkan musim Anda!
+Name_POR = Luzes de Natal
+Name_SPN = Luces Navideñas
+Name_RUS = Праздничные огни
+Name_IND = Lampu Liburan
+Description = Colorful lights to brighten your season!
+
+Inventory_sprite_path = item holiday lights
+Type = Place_in_world
+World_obj_path = Buildables/Holiday Lights
+World_geometry = 1_by_1
+Craft_required_lvl = 42
+Market Cost = 400
+
+Vendor0 = Furniture
+NumSell = 5 to 10

@@ -1,0 +1,63 @@
+*auto_version=31*
+*is_blank=true*
+*forced_biome=6*
+
+[1,0] = Dirt Path (rot 0)
+
+[1,1] = Dirt Path (rot 0)
+
+[0,1] = Dirt Path (rot 0)
+
+[1,6] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[2,6] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[3,6] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[2,3] = Willow Tree (rot 2)
+
+[2,0] = Dirt Path (rot 0)
+
+[3,0] = Dirt Path (rot 0)
+
+[4,0] = Dirt Path (rot 0)
+
+[4,3] = Teleporter (rot 0)
+
+[4,1] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[4,6] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[4,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[5,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[6,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[7,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,7] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,8] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[8,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[9,9] = Palisade Wall (rot 0)
+	paint = *string* Storm Grey
+
+[6,9] = Metal Vein (rot 3)
+
+[6,4] = Stone Vein (rot 3)

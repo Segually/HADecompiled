@@ -1,0 +1,95 @@
+[paint]
+Basic Blue
+
+[stamp]
+Swords Stamp
+
+[page 1 - English]
+There was a time when the Frostbite Bandits and Shindeon fought side by side, spreading chaos and fear.
+
+[page 2 - English]
+That time ended when Shindeon betrayed us, striking our warriors down in the name of "true chaos."
+
+[page 3 - English]
+King Wing declared his fortress, Shindo Castle, would become his tomb.
+
+[page 4 - English]
+We gathered our strength, took his castle by storm, and buried his followers under the ice.
+
+[book name - English]
+The Seige of Shindo Castle
+
+[book name - Indonesian]
+Pengepungan Kastil Shindo
+
+[page 1 - Indonesian]
+Ada suatu masa ketika Bandit Frostbite dan Shindeon bertarung berdampingan, menyebarkan kekacauan dan ketakutan.
+
+[page 2 - Indonesian]
+Waktu itu berakhir ketika Shindeon mengkhianati kami, memukul jatuh para pejuang kami atas nama "kekacauan sejati."
+
+[page 3 - Indonesian]
+Raja Wing menyatakan bahwa bentengnya, Kastil Shindo, akan menjadi makamnya.
+
+[page 4 - Indonesian]
+Kami mengumpulkan kekuatan kami, merebut kastilnya dengan badai, dan mengubur para pengikutnya di bawah es.
+
+[book name - Portuguese]
+O Cerco do Castelo de Shindo
+
+[page 1 - Portuguese]
+Houve um tempo em que os Bandoleiros da Geada e Shindeon lutaram lado a lado, espalhando caos e medo.
+
+[page 2 - Portuguese]
+Esse tempo acabou quando Shindeon nos traiu, derrubando nossos guerreiros em nome do "verdadeiro caos."
+
+[page 3 - Portuguese]
+O Rei Wing declarou que sua fortaleza, o Castelo de Shindo, se tornaria seu túmulo.
+
+[page 4 - Portuguese]
+Reunimos nossas forças, tomamos seu castelo de assalto e enterramos seus seguidores sob o gelo.
+
+[book name - Russian]
+Осада замка Шиндо
+
+[page 1 - Russian]
+Было время, когда Бандиты Мороза и Шиндеон сражались бок о бок, сея хаос и страх.
+
+[page 2 - Russian]
+Это время закончилось, когда Шиндеон предал нас, напав на наших воинов во имя "истинного хаоса."
+
+[page 3 - Russian]
+Король Уинг объявил, что его крепость, замок Шиндо, станет его гробницей.
+
+[page 4 - Russian]
+Мы собрали наши силы, взяли его замок штурмом и похоронили его последователей под льдом.
+
+[book name - Spanish]
+El Asedio del Castillo de Shindo
+
+[page 1 - Spanish]
+Hubo un tiempo cuando los Bandidos de la Congelación y Shindeon lucharon lado a lado, esparciendo caos y miedo.
+
+[page 2 - Spanish]
+Ese tiempo terminó cuando Shindeon nos traicionó, derribando a nuestros guerreros en nombre del "verdadero caos".
+
+[page 3 - Spanish]
+El Rey Ala declaró que su fortaleza, el Castillo de Shindo, se convertiría en su tumba.
+
+[page 4 - Spanish]
+Reunimos nuestras fuerzas, tomamos su castillo por asalto, y enterramos a sus seguidores bajo el hielo.
+
+[book name - Thai]
+การล้อ มปราสา ทชินโด
+
+[page 1 - Thai]
+ครั้งห นึ่ง ม ีตอนที ่กลุ่ม โจรหน้ าหนาวแ ละชินเ ดียนต่ อสู้เค ียงบ่า เคียงไ หล่ สร ้างควา มวุ่นว ายและค วามกลั วไปทั่ ว
+
+[page 2 - Thai]
+ช่วงเว ลานั้น สิ้นสุ ดลงเมื ่อชินเ ดียนทร ยศเรา  สังหาร นักรบข องเราใ นนามขอ ง "ควา มวุ่นว ายที่แ ท้จริง "
+
+[page 3 - Thai]
+กษัตริ ย์วิงป ระกาศว ่าปราส าทชินโ ดของเข าจะกลา ยเป็นส ุสานขอ งเขา
+
+[page 4 - Thai]
+เรารวบ รวมพลั งของเร า เข้า ยึดปรา สาทของ เขาและ ฝังผู้ ติดตาม ของเขา ใต้กอง น้ำแข็ ง

@@ -1,0 +1,29 @@
+Description_TAI = ทาสีเฟอร์นิเจอร์ของคุณเป็นสีส้ม!
+Name_TAI = พื้นฐาน สีส้ม
+Description_POR = Pinte seus móveis de laranja!
+Description_SPN = ¡Pinta tus muebles de naranja!
+Description_RUS = Покрасьте вашу мебель в оранжевый!
+Description_IND = Catlah furniture Anda dengan warna Oranye!
+Name_POR = Laranja Básica
+Name_SPN = Naranja Básica
+Name_RUS = Базовый Оранжевый
+Name_IND = Jeruk Dasar
+Description =  Paint your furniture Orange!
+
+Inventory_sprite_path = item paint basic orange
+Crafting_ingredient_A = Pumpkin
+Crafting_ingredient_A_count = 1
+Type = Tool
+Max_stack = 5
+Crafting_makes = 1
+Craft_required_lvl = 18
+Market Cost = CALCULATE
+
+
+
+is_paintbrush = true
+
+show_model3d = true
+World_obj_path = 3D Item Graphics/Paintbrush Single
+CopyPaintLayout = Paintbrush Single
+Copy3dModelPosition = Paintbrush Single

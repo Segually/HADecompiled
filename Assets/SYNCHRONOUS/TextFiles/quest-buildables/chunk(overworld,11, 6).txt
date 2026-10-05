@@ -1,0 +1,51 @@
+*auto_version=1*
+*is_blank=true*
+*forced_biome=2*
+
+[0,2] = Dirt Path (rot 0)
+
+[9,4] = Dirt Path (rot 0)
+
+[7,2] = Dirt Path (rot 0)
+
+[6,2] = Dirt Path (rot 0)
+
+[5,2] = Dirt Path (rot 0)
+
+[4,2] = Dirt Path (rot 0)
+
+[3,2] = Dirt Path (rot 0)
+
+[1,2] = Dirt Path (rot 0)
+
+[2,2] = Dirt Path (rot 0)
+
+[8,3] = Dirt Path (rot 0)
+
+[8,2] = Dirt Path (rot 0)
+
+[9,5] = Dirt Path (rot 0)
+
+[9,3] = Dirt Path (rot 0)
+
+[6,4] = Navpost (rot 1)
+	sign_text = *string* Dustville
+	text_col = *string* yellow
+
+[8,7] = String Lights (rot 0)
+	model1_chunkX = *short* 12
+	model1_chunkZ = *short* 6
+	model1_innerX = *short* 2
+	model1_innerZ = *short* 7
+
+[5,9] = Tent (rot 0)
+	password = *string* DEV_LOCKED
+
+[7,9] = Dirt Path (rot 2)
+
+[8,9] = Dirt Path (rot 2)
+
+[9,9] = Dirt Path (rot 2)
+
+[9,8] = Dirt Path (rot 2)
+

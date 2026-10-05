@@ -1,0 +1,28 @@
+Description_TAI = ดาบ ที่ แข็งแรง ทำจาก โลหะ
+Name_TAI = ดาบ โลหะ
+Description_POR = Uma espada robusta feita de metal
+Description_SPN = Una espada robusta hecha de metal
+Description_RUS = Прочный меч из металла
+Description_IND = Pedang kokoh yang terbuat dari logam
+Name_POR = Espada de Metal
+Name_SPN = Espada de Metal
+Name_RUS = Металлический меч
+Name_IND = Pedang Logam
+Description = A sturdy sword made of metal
+
+Inventory_sprite_path = item metal sword
+Crafting_ingredient_A = Metal Bar
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/SWORD_metal
+Craft_required_lvl = 6
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+NumSell = 1 to 2
+
+Damage Base = 3
+
+weapon_display_localPosition = -0.051,-0.015,-0.439
+weapon_display_localRotation = 0.14,45.787,66.4
+weapon_display_localScale = 1,1,1

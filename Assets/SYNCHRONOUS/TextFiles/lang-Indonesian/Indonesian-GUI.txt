@@ -1,0 +1,244 @@
+Pick a Dad
+Pilih Ayah
+
+Pick a Mom
+Pilih Ibu
+
+ACCEPT
+TERUS
+
+TRY AGAIN
+COBA LAGI
+
+Enjoying Hybrid Animals?
+Apakah Anda menikmati permainan kami?
+
+Please rate our game.. it really helps us out!
+Silakan menilai permainan kami .. itu sangat membantu kami!
+
+We hope you are enjoying Hybrid Animals
+Kami harap Anda menikmati Hewan Hibrida
+
+Would you like to rate the game?
+Apakah Anda ingin menilai permainan ini?
+
+-
+
+MARKET
+PASAR
+
+INVENTORY
+PERSEDIAAN
+
+FRIENDS
+TEMAN
+
+MENU
+KEMBALI
+
+TELEPORT
+TELEPOR
+
+QUESTS
+PERTANYAAN
+
+MANAGE POWERS
+KEKUATAN SUPER
+
+-
+
+FRIEND LIST
+DAFTAR TEMAN
+
+ADD FRIEND
+MENAMBAH TEMAN
+
+Add your friends to play with them online!
+Tambahkan teman Anda untuk bermain dengan mereka secara online!
+
+-
+
+You have not discovered this teleporter yet.
+Anda belum menemukan teleporter ini.
+
+Your save file is too old to teleport here.
+File simpanan Anda terlalu tua untuk diteleportasi ke sini.
+
+Go to the Main Menu and upgrade your save file, if you wish to have this town
+Buka Menu Utama dan tingkatkan file penyimpanan Anda, jika Anda ingin memiliki kota ini
+
+-
+
+Quest Completed!
+Misi Selesai!
+
+You can do this quest again for a new reward!
+Anda dapat melakukan misi ini lagi untuk mendapatkan hadiah baru!
+
+You can do this quest again for a new reward in:
+Anda dapat melakukan misi ini lagi untuk mendapatkan hadiah baru di:
+
+Not Started
+Belum Mulai
+
+In Progress
+Sedang berlangsung
+
+COMPLETED
+LENGKAP
+
+-
+
+Crafting
+Kerajinan
+
+Buy Items
+Beli Barang
+
+Sell Items
+Menjual barang
+
+Take Item
+Ambil Barang
+
+Eat
+Makan
+
+Equip
+Melengkapi
+
+Use Tool
+Gunakan Alat
+
+Place Object
+Tempat Obyek
+
+Store Item
+Barang Toko
+
+Give Item
+Berikan Barang
+
+Sell
+Menjual
+
+Select
+Pilih
+
+Insert Item
+Sisipkan Barang
+
+Unequip
+Tidak Melengkapi
+
+Split Stack
+Pisahkan Tumpukan
+
+Different items in
+Item yang berbeda setelah
+
+Loot respawns in
+Harta karun kembali setelah
+
+-
+
+Not enough coins!
+Tidak cukup koin!
+
+To build this, you need
+Untuk membangun ini, Anda membutuhkan
+
+Not enough inventory space
+Tidak cukup ruang inventaris
+
+Your crafting skill is too low to build this!
+Keterampilan kerajinan Anda terlalu rendah untuk membangun ini!
+
+Inventory Full!
+Persediaan Penuh!
+
+Buy how many?
+Beli berapa?
+
+Sell how many?
+Jual berapa?
+
+Can't sell item - you don't have enough space in your inventory for all the coins you will recieve!
+Tidak dapat menjual barang... Anda tidak memiliki cukup ruang di inventaris untuk semua koin yang akan Anda terima!
+
+Sell your XYZ?
+Jual XYZ Anda?
+
+Buy XYZ?
+Beli XYZ?
+
+Build a XYZ?
+Membangun XYZ?
+
+Received XYZ!
+Terima XYZ!
+
+Out of stock. Come back tomorrow!
+Kehabisan persediaan. Kembalilah besok!
+
+-
+
+Attack
+Menyerang
+
+Walk
+Berjalan
+
+Use Items
+Gunakan objek
+
+Wait
+Tunggu
+
+Ride
+Mengendarai
+
+NEXT >
+LANJUT >
+
+< BACK
+< KEMBALI
+
+Rename
+Ganti Nama
+
+Advanced
+Pengaturan
+
+Powers
+Kekuatan super
+
+Merchant
+Pedagang
+
+Guard
+Penjaga
+
+Quest Giver
+Pemberi Pertanyaan
+
+Tasks
+Tugas
+
+Cannot modify object. First you must find and destroy their flag!
+Tidak dapat mengubah objek. Pertama, kamu harus menemukan dan menghancurkan bendera mereka!
+
+Reminder: If you destroy their flag, you'll be allowed to move nearby objects, but Loot and Enemies will not respawn!
+Pengingat: Jika kamu menghancurkan bendera mereka, kamu akan diizinkan untuk memindahkan objek di sekitarnya, tetapi Loot dan Musuh tidak akan muncul kembali!
+
+That isn't a furniture object. You need a TOOL_NAME to modify that!
+Itu bukan objek furnitur. Kamu membutuhkan TOOL_NAME untuk mengubahnya!
+
+Cannot modify object - it's owned by the NPCs nearby! Try again on objects further in the wild
+Tidak dapat mengubah objek - itu dimiliki oleh NPC di dekat sini! Coba lagi pada objek yang lebih jauh di alam liar.
+
+You can't build here. First you must find and destroy their flag!
+Kamu tidak bisa membangun di sini. Pertama, kamu harus menemukan dan menghancurkan bendera mereka!
+
+You can't build here. This area is owned by an NPC!
+Kamu tidak bisa membangun di sini. Area ini dimiliki oleh seorang NPC!

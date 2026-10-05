@@ -1,0 +1,32 @@
+Description_TAI = หอกที่เต็มไปด้วยพลังซึ่งสามารถโจมตีด้วยการแทงที่ทรงพลัง
+Name_TAI = ยูเรเนียม ฮัสต้า
+Description_POR = Hasta energizada que proporciona perfurações devastadoras.
+Description_SPN = Hasta energizada que realiza perforaciones devastadoras
+Description_RUS = Заряженная копьё, наносящее разрушительные уколы.
+Description_IND = Hasta bertenaga yang menghasilkan tusukan dahsyat
+Name_POR = Hasta de Urânio
+Name_SPN = Uranio Hasta
+Name_RUS = Урановая Гаста
+Name_IND = Uranium Hasta
+Description = Energized hasta that delivers devastating pierces
+
+Crafting_ingredient_A = Uranium Bar
+Crafting_ingredient_A_count = 4
+Type = Holdable
+World_obj_path = Equipment/holdables/new-weapon-models/Hasta
+Equip_required_stat = Attack
+Equip_required_stat_lvl = 24
+Craft_required_lvl = 36
+Market Cost = CALCULATE
+
+Vendor0 = Weapons
+
+Damage Base = 16
+
+CopyPaintLayout = Ice Hasta
+Default Coloring = Weapon - Uranium
+
+show_model3d = true
+Copy3dModelPosition = Ice Hasta
+
+weapon_display_copy = Ice Hasta

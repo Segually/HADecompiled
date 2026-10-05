@@ -1,0 +1,47 @@
+Description_TAI = ช่วย ให้ คุณ สร้าง ไอเท็ม ที่ ทำจาก ผ้า
+Name_TAI = กี่ ทอ ผ้า
+Description_POR = Permite que você construa itens à base de tecido.
+Description_SPN = Te permite construir objetos de tela.
+Description_RUS = Позволяет создавать предметы из ткани.
+Description_IND = Memungkinkan Anda membuat item berbahan kain
+Name_POR = Tear
+Name_SPN = Telar
+Name_RUS = Ткацкий станок
+Name_IND = Alat Tenun
+Description = Allows you to build cloth-based items
+
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 6
+Type = Place_in_world
+World_obj_path = Buildables/Loom
+World_geometry = 1_by_1
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+
+Vendor0 = Furniture
+
+paintable_by_player = true
+Default Coloring = Utility Red
+
+model3d_camDist = 2.4
+show_model3d = true
+model3d_fov = 42.5
+model3d_xRot = -95
+model3d_camHeight = 0.2
+model3d_yRot = 20
+model3d_recenterY = 9
+model3d_recenterX = 1
+PaintLayout0_TriColor = 0-3, 1-1, 2-2, 
+PaintLayout1_TriColor = 0-2, 
+PaintLayout0_SolidColors = 0-5, 1-2, 2-3, 
+PaintLayout1_SolidColors = 0-4, 
+PaintLayout0_Trimmed = 0-2, 1-1, 2-3, 
+PaintLayout1_Trimmed = 0-3, 
+PaintLayout0_Candycane = 0-1, 1-2, 2-3, 
+PaintLayout1_Candycane = 0-1, 
+PaintLayout0_Pastels = 0-3, 1-1, 2-2, 
+PaintLayout1_Pastels = 0-2, 
+PaintLayout0_Nomad = 0-2, 1-1, 2-2, 
+PaintLayout1_Nomad = 0-3, 
+PaintLayout0_Goldy = 0-1, 1-2, 2-1, 
+PaintLayout1_Goldy = 0-3, 

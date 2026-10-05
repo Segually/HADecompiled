@@ -1,0 +1,33 @@
+Full Name = Summon Big Momma
+Description = Call out to your mom!
+Detailed Description = Summon one level-GetInt[EFFECT_SUMMON, "Summoned Creature Level", remove ""] DiffInt[EFFECT_SUMMON, "Summoned Creature Level", remove "", add " levels"] "big-momma" for GetInt[EFFECT_SUMMON, "Duration", remove " seconds"] seconds DiffInt[EFFECT_SUMMON, "Duration", remove " seconds", add " seconds"].
+Ultra Detailed Description = Your mom is very big (GetFloat[EFFECT_SUMMON, "Summoned Creature Size", remove "%"]% size) and moves slowly. Due to her size, she will crush any nearby animals, inflicting GetInt[EFFECT_CRUSH_ONE, "Damage", remove ""] damage every second
+Energy Cost = 90%
+Unlock Prerequisite = perk_summon_pack(lvl.1)
+On cast = [EFFECT_SUMMON] on self
+-
+[EFFECT_SUMMON]
+Type = Duration Effect
+Num Creatures To Summon = 1
+Duration = CLAMP (20 seconds @ lvl_1 ... 40 seconds @ lvl_15)
+Summoned Creature Level = RANGE (35%-55%-65% of own level)
+Summoned Creature Size = 270%
+Summoned Creature Follow Distance = 2.0
+Summoned Creature Name = Big-Momma [PLAYER_NAME]
+Summoned Creature Combo = [PLAYER_COMBO]
+Summoned Creature Walk Speed = 0.036
+Summoned Creature Apply Effect = [EFFECT_CRUSH_ALL]
+Particle (Instant) = perk_summon_big_momma_particle
+Scale Particle With Creature Size = false
+-
+[EFFECT_CRUSH_ALL]
+Type = Area Effect
+Area Effect to apply = [EFFECT_CRUSH_ONE]
+Area Effect Radius = 1.6m
+Reset Caster ID to self = true
+Duration = 999 seconds
+Apply every = 1 seconds
+-
+[EFFECT_CRUSH_ONE]
+Type = Instant Effect
+Damage = 1

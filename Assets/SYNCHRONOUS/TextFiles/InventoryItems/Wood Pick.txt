@@ -1,0 +1,27 @@
+Description_TAI = ช่วย ให้ คุณ ขุด หิน ได้ เมื่อ สวมใส่
+Name_TAI = ชิ้น ไม้
+Description_POR = Permite que você extraia rocha quando equipado.
+Description_SPN = Te permite extraer roca cuando está equipado.
+Description_RUS = Позволяет добывать камень при экипировке.
+Description_IND = Memungkinkan Anda untuk menambang batu saat diperlengkapi
+Name_POR = Picareta de Madeira
+Name_SPN = Pico de Madera
+Name_RUS = Деревянная кирка
+Name_IND = Kapak Kayu
+Description = Allows you to mine rock when equipped
+
+Inventory_sprite_path = item wood pick
+Crafting_ingredient_A = Stick
+Crafting_ingredient_A_count = 3
+Type = Holdable
+World_obj_path = Equipment/holdables/PICK_wood
+
+Vendor0 = Farm Tools
+Vendor1 = Mining Tools
+NumSell = 2 to 3
+
+Market Cost = CALCULATE
+
+weapon_display_localPosition = -0.08,0.041,-0.463
+weapon_display_localRotation = -0.531,40.717,67.829
+weapon_display_localScale = 1,1,1

@@ -1,0 +1,36 @@
+*auto_version=32*
+
+[6,5] = Dirt Path (rot 0)
+
+[5,5] = Dirt Path (rot 0)
+
+[4,5] = Dirt Path (rot 0)
+
+[3,5] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[1,5] = Dirt Path (rot 0)
+
+[0,5] = Dirt Path (rot 0)
+
+[7,5] = Torch (rot 0)
+
+[0,7] = Trading Table (rot 0)
+	password = *string* DEV_LOCKED
+
+[2,7] = Basket (rot 0)
+	password = *string* DEV_LOCKED
+
+[6,6] = Dirt Path (rot 0)
+
+[7,6] = Dirt Path (rot 0)
+
+[8,6] = Dirt Path (rot 0)
+
+[8,7] = Dirt Path (rot 0)
+
+[8,8] = Dirt Path (rot 0)
+
+[8,9] = Dirt Path (rot 0)
+

@@ -1,0 +1,22 @@
+Description_TAI = กลิ่นหอมแรงเย้ายวนสิ่งมีชีวิตใกล้เคียง
+Name_TAI = ระเบิด เสน่ห์
+Description_POR = A fragrância forte encanta quaisquer criaturas próximas.
+Description_SPN = La fragancia intensa encanta a cualquier criatura cercana.
+Description_RUS = Сильный аромат очаровывает всех находящихся поблизости существ.
+Description_IND = Aroma yang kuat memikat makhluk-makhluk di sekitarnya.
+Name_POR = Bomba de Encanto
+Name_SPN = Bomba de Encanto
+Name_RUS = Очаровательная Бомба
+Name_IND = Bom Pesona
+Description = The strong fragrance charms any nearby creatures
+
+Inventory_sprite_path = item charm bomb
+Crafting_ingredient_A = Lavender
+Crafting_ingredient_A_count = 3
+Type = Consumable
+Craft_required_lvl = 12
+Market Cost = CALCULATE
+Sound on Craft = Bubbles
+
+Vendor0 = Potions
+NumSell = 1 to 4

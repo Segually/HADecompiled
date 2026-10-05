@@ -1,0 +1,15 @@
+Name_TAI = เบ อ ร์ รี่
+Name_POR = Baga
+Name_SPN = Baya
+Name_RUS = Ягода
+Name_IND = Buah Beri
+
+Inventory_sprite_path = item berry
+Type = Consumable
+Market Cost = 5
+Sound on Use = Crunch
+Max_stack = 5
+
+Vendor0 = Harvested Item
+Vendor1 = Food
+NumSell = 5 to 10

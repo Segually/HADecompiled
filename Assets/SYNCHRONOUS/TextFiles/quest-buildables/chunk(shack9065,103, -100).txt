@@ -1,0 +1,34 @@
+*auto_version=1*
+
+[2,3] = Tall Stone Wall (rot 0)
+
+[5,3] = Tall Stone Wall (rot 0)
+
+[8,3] = Tall Stone Wall (rot 0)
+
+[8,7] = Tall Stone Wall (rot 0)
+
+[8,9] = Tall Stone Wall (rot 0)
+
+[8,8] = Tall Stone Wall (rot 0)
+
+[8,6] = Tall Stone Wall (rot 0)
+
+[8,5] = Tall Stone Wall (rot 0)
+
+[8,4] = Tall Stone Wall (rot 0)
+
+[7,3] = Tall Stone Wall (rot 0)
+
+[6,3] = Tall Stone Wall (rot 0)
+
+[4,3] = Tall Stone Wall (rot 0)
+
+[3,3] = Tall Stone Wall (rot 0)
+
+[2,2] = Tall Stone Wall (rot 0)
+
+[2,1] = Tall Stone Wall (rot 0)
+
+[2,0] = Tall Stone Wall (rot 0)
+

@@ -1,0 +1,12 @@
+Description = Adds animals: butterfly, caterpillar, ladybug, mantis, cockroach
+IAP_KEY = creature_pack_10
+Type = permanent
+Gem_price = medium
+Bg_color = cyan
+Model_path = shop_creaturePack10
+
+animal0 = butterfly
+animal1 = caterpillar
+animal2 = ladybug
+animal3 = mantis
+animal4 = cockroach

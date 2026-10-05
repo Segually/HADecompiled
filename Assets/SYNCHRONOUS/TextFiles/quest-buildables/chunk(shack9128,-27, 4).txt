@@ -1,0 +1,5 @@
+*auto_version=1*
+
+[7,8] = Bed (rot 3)
+	paint = *string* Lumberjack
+

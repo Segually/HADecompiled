@@ -1,0 +1,25 @@
+Description_TAI = รัง ผึ้ง ที่ ผลิต รวง น้ำผึ้ง
+Name_TAI = รัง ผึ้ง
+Description_POR = Uma colmeia que produz favos de mel.
+Description_SPN = Un panal que produce panelas de miel.
+Description_RUS = Улей, производящий соты.
+Description_IND = Sarang lebah yang menghasilkan sisir madu.
+Name_POR = Colmeia
+Name_SPN = Colmena
+Name_RUS = Улей
+Name_IND = Sarang Lebah
+Description = A beehive that produces honeycombs.
+
+Inventory_sprite_path = item beehive
+Type = Place_in_world
+World_obj_path = Buildables/Beehive
+World_geometry = 1_by_1
+Market Cost = 275
+
+tool_required_to_move = Shovel
+
+Vendor0 = Farmable
+NumSell = 1 to 2
+
+Pollinator Regen Level = 3
+Pollinator Regen RespawnId = collect_spawn

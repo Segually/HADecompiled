@@ -1,0 +1,23 @@
+Description_TAI = ช่วย ให้ คุณ เคลื่อนย้าย ลาวา
+Name_TAI = พลั่ว แม็กม่า
+Description_POR = Permite mover lava
+Description_SPN = Te permite mover lava
+Description_RUS = Позволяет перемещать лаву
+Description_IND = Memungkinkan Anda untuk memindahkan lava
+Name_POR = Pá de Magma
+Name_SPN = Pala de Magma
+Name_RUS = Магмовая лопата
+Name_IND = Sekop Magma
+Description = Allows you to move lava
+
+Inventory_sprite_path = item magma shovel
+Crafting_ingredient_A = Magmite Ore
+Crafting_ingredient_A_count = 3
+Crafting_ingredient_B = Dark Shard
+Crafting_ingredient_B_count = 1
+Type = Tool
+Market Cost = CALCULATE
+Craft_required_lvl = 48
+
+Vendor0 = Mining Tools
+Vendor1 = Farm Tools

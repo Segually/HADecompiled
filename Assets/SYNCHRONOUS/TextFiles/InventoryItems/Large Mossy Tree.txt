@@ -1,0 +1,22 @@
+Description_TAI = ต้นไม้ ขนาดใหญ่ ปกคลุม ด้วย มอส!
+Name_TAI = ต้นไม้ ขนาดใหญ่ ปกคลุม ด้วย มอส
+Description_POR = Uma enorme árvore coberta de musgo!
+Description_SPN = ¡Un árbol enorme cubierto de musgo!
+Description_RUS = Огромное дерево, покрытое мхом!
+Description_IND = Pohon besar yang ditutupi lumut!
+Name_POR = Árvore Grande com Musgo
+Name_SPN = Árbol Grande Musgoso
+Name_RUS = Большое Мшистое Дерево
+Name_IND = Pohon Berlumut Besar
+Description = A huge tree covered in moss!
+
+Inventory_sprite_path = item large mossy tree
+Type = Place_in_world
+World_obj_path = Buildables/BiomeBuildables/Large Mossy Tree
+World_geometry = 2_by_2
+Market Cost = 30
+
+tool_required_to_move = Titanium Shovel
+
+Vendor0 = Uprooted Trees
+NumSell = 1 to 2

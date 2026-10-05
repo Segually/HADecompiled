@@ -1,0 +1,17 @@
+*auto_version=1*
+*forced_biome=2*
+
+[0,5] = Dirt Path (rot 0)
+
+[1,5] = Dirt Path (rot 0)
+
+[2,5] = Dirt Path (rot 0)
+
+[3,5] = Dirt Path (rot 0)
+
+[4,5] = Sign (rot 1)
+	paint = *string* Industrial Hazard
+	sign_text = *string* 'Jade Springs' coming soon!
+
+[4,5] = Dirt Path (rot 0)
+
