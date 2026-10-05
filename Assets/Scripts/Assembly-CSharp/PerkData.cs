@@ -70,11 +70,19 @@ public class PerkData
 
 	public string GetString(string key, string effect_name, int perk_level)
 	{
-		return null;
+		if (all_effects.ContainsKey(effect_name) && all_effects[effect_name].data.ContainsKey(key))
+		{
+			return all_effects[effect_name].data[key];
+		}
+		return "";
 	}
 
 	public bool GetBool(string key, string effect_name, int perk_level)
 	{
+		if (all_effects.ContainsKey(effect_name) && all_effects[effect_name].data.ContainsKey(key))
+		{
+			return all_effects[effect_name].data[key] == "true";
+		}
 		return false;
 	}
 
@@ -194,21 +202,109 @@ public class PerkData
 
 	public Vector3 GetVector3(string key, string effect_name, int perk_level, string remove_suffix = "")
 	{
-		return default(Vector3);
+		if (all_effects.ContainsKey(effect_name) && all_effects[effect_name].data.ContainsKey(key))
+		{
+			string text = all_effects[effect_name].data[key];
+			if (text.Contains("CLAMP"))
+			{
+				string text2 = text.Replace("CLAMP (", "");
+				int num = text2.IndexOf('@');
+				string text3 = text2.Substring(0, num - 1);
+				if (remove_suffix != "")
+				{
+					text3 = text3.Replace(remove_suffix, "");
+				}
+				Vector3 vector = ExtractVector(text3);
+				string text4 = text.Replace("CLAMP (", "");
+				num += 12;
+				string text5 = text4.Substring(num, text4.Length - num);
+				int num2 = text5.IndexOf('@');
+				string text6 = text5.Substring(0, num2 - 1);
+				if (remove_suffix != "")
+				{
+					text6 = text6.Replace(remove_suffix, "");
+				}
+				Vector3 vector2 = ExtractVector(text6);
+				string text7 = text.Replace("CLAMP (", "");
+				string text8 = text7.Substring(num, text7.Length - num);
+				float num3 = float.Parse(text8.Substring(num2 + 6, text8.Length - num2 - 7), Startup.parse_culture);
+				float num4 = 0f;
+				if (num3 != 1f)
+				{
+					num4 = Mathf.Clamp01(((float)perk_level - 1f) / (num3 - 1f));
+				}
+				return vector + (vector2 - vector) * num4;
+			}
+			return ExtractVector(text);
+		}
+		return Vector3.zero;
 	}
 
 	private Vector3 ExtractVector(string vector_str)
 	{
-		return default(Vector3);
+		int num = vector_str.IndexOf(',');
+		string s = vector_str.Substring(0, num);
+		string text = vector_str.Substring(num + 1, vector_str.Length - (num + 1));
+		int num2 = text.IndexOf(',');
+		string s2 = text.Substring(0, num2);
+		string s3 = text.Substring(num2 + 1, text.Length - (num2 + 1));
+		return new Vector3(float.Parse(s, Startup.parse_culture), float.Parse(s2, Startup.parse_culture), float.Parse(s3, Startup.parse_culture));
 	}
 
 	public List<string> GetCreatureList(string key, string effect_name, int perk_level)
 	{
-		return null;
+		if (all_effects.ContainsKey(effect_name) && all_effects[effect_name].data.ContainsKey(key))
+		{
+			string text = all_effects[effect_name].data[key];
+			if (text == "[PLAYER_COMBO]")
+			{
+				List<string> list = new List<string>();
+				if (GameController.Instance.player != null)
+				{
+					foreach (string item in GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel.original.creatures_that_made_me)
+					{
+						list.Add(item);
+					}
+					return list;
+				}
+				list.Add("crab");
+				list.Add("crab");
+				return list;
+			}
+			if (text == "[RANDOM]")
+			{
+				return new List<string>
+				{
+					CreatureMorpher.Instance.GetRandomCreature(),
+					CreatureMorpher.Instance.GetRandomCreature()
+				};
+			}
+			return new List<string>(text.Split('+'));
+		}
+		return new List<string> { "crab", "crab" };
 	}
 
 	public float GetSummonedCreatureWalkSpeed(string effect_name, float perk_level)
 	{
-		return 0f;
+		if (!all_effects.ContainsKey(effect_name))
+		{
+			return -1f;
+		}
+		Dictionary<string, string> data = all_effects[effect_name].data;
+		if (!data.ContainsKey("Summoned Creature Walk Speed"))
+		{
+			return CreatureStruct.DEFAULT_WALK_SPEED;
+		}
+		string text = data["Summoned Creature Walk Speed"];
+		if (text == "[PLAYER_SPEED]")
+		{
+			float result = CreatureStruct.DEFAULT_WALK_SPEED;
+			if (GameController.Instance.player != null)
+			{
+				result = GameController.Instance.player.GetComponent<SharedCreature>().walk_speed;
+			}
+			return result;
+		}
+		return float.Parse(text, Startup.parse_culture);
 	}
 }

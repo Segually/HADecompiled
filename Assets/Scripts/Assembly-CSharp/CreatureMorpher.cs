@@ -405,10 +405,6 @@ public class CreatureMorpher : MonoBehaviour, OrderedStart
 		gameObject.name = "FULL-MODEL (" + animal_ENGLISH + ")";
 		file_exists = false;
 		List<string> lines = ResourceControl.Instance.GetTextFileLines("creatures/" + animal_ENGLISH, ref file_exists);
-		if (!file_exists)
-		{
-			return null;
-		}
 		int curr_line = 0;
 		int.Parse(ReadLine(ref lines, ref curr_line), Startup.parse_culture);
 		component.height = float.Parse(ReadLine(ref lines, ref curr_line), Startup.parse_culture);

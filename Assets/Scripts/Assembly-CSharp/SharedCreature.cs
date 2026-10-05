@@ -481,10 +481,54 @@ public class SharedCreature : MonoBehaviour
 
 	public void ReCalcAttackSpeed()
 	{
+		float num = -1f;
+		foreach (DurationEffect duration_effect in GetComponent<PerkReceiver>().duration_effects)
+		{
+			if (duration_effect.time_remaining > 0f)
+			{
+				float @float = duration_effect.GetFloat("Attack Speed", "%");
+				if (@float != -1f)
+				{
+					if (@float == 0f)
+					{
+						num = 0f;
+					}
+					else if (num < @float)
+					{
+						num = @float;
+					}
+				}
+			}
+		}
+		perk_attack_speed_mod = ((num == -1f) ? 1f : ((num != 0f) ? (1f / num * 100f) : 100f));
+		if (is_local_mob)
+		{
+			GetComponent<CreatureBrain>().attack_cooldown = 0;
+		}
 	}
 
 	public void ReCalcWalkSpeedMod()
 	{
+		float num = -1f;
+		foreach (DurationEffect duration_effect in GetComponent<PerkReceiver>().duration_effects)
+		{
+			if (duration_effect.time_remaining > 0f)
+			{
+				float @float = duration_effect.GetFloat("Walk Speed", "%");
+				if (@float != -1f)
+				{
+					if (@float == 0f)
+					{
+						num = 0f;
+					}
+					else if (num < @float)
+					{
+						num = @float;
+					}
+				}
+			}
+		}
+		perk_speed_mod = ((num != -1f) ? (num * 0.01f) : (-1f));
 	}
 
 	public void SetMoveTo(Vector3 position)

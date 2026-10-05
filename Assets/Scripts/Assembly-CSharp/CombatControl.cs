@@ -454,7 +454,15 @@ public class CombatControl : MonoBehaviour, OrderedStart
 
 	public static Combatant.hit_col StringToHitCol(string str)
 	{
-		return default(Combatant.hit_col);
+		if (str == "green")
+		{
+			return Combatant.hit_col.color_green;
+		}
+		if (str == "purple")
+		{
+			return Combatant.hit_col.color_purple;
+		}
+		return Combatant.hit_col.color_red;
 	}
 
 	public static int GetHpMaxPlayer(int player_level, float health_combat_slider)

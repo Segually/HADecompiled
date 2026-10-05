@@ -1229,6 +1229,29 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void ReCalcVisionMod()
 	{
+		float num = 1f;
+		if (player != null)
+		{
+			float num2 = -1f;
+			foreach (DurationEffect duration_effect in player.GetComponent<PerkReceiver>().duration_effects)
+			{
+				if (duration_effect.time_remaining > 0f)
+				{
+					float @float = duration_effect.GetFloat("Player Vision", "%");
+					if (@float > num2 && @float != -1f)
+					{
+						num2 = @float;
+					}
+				}
+			}
+			num = ((num2 != -1f) ? (num2 * 0.01f) : 1f);
+		}
+		eagle_view_mod = num;
+		if (prev_eagle_view_mod != eagle_view_mod && GraphicsControl.Instance.GraphicsLevel() == 4)
+		{
+			ChunkControl.Instance.UpdateTerrain(false);
+		}
+		prev_eagle_view_mod = eagle_view_mod;
 	}
 
 	public int LevelsToLose()

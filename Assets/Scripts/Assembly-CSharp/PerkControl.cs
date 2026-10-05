@@ -119,12 +119,192 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public PerkData ClonePerkForCasting(string perk_key, GameObject caster)
 	{
-		return null;
+		if (perk_key == "")
+		{
+			return null_perk;
+		}
+		if (!loaded_perks.ContainsKey(perk_key))
+		{
+			LoadPerkFromDisk(perk_key);
+		}
+		PerkData perkData = loaded_perks[perk_key];
+		PerkData perkData2 = new PerkData();
+		perkData2.original_key = perkData.original_key;
+		perkData2.full_name = perkData.full_name;
+		perkData2.description = perkData.description;
+		perkData2.detailed_description = perkData.detailed_description;
+		perkData2.large_upgrade_description_box = perkData.large_upgrade_description_box;
+		perkData2.ultra_detailed_description = perkData.ultra_detailed_description;
+		perkData2.mana_cost_str = perkData.mana_cost_str;
+		perkData2.max_level = perkData.max_level;
+		perkData2.unlock_prerequisite_perk_level = perkData.unlock_prerequisite_perk_level;
+		perkData2.unlock_prerequisite_perk_key = perkData.unlock_prerequisite_perk_key;
+		foreach (InitialCastCommand item in perkData.on_initial_cast)
+		{
+			InitialCastCommand initialCastCommand = new InitialCastCommand();
+			foreach (string effect_name in item.effect_names)
+			{
+				initialCastCommand.effect_names.Add(effect_name);
+			}
+			initialCastCommand.projectile_model = item.projectile_model;
+			initialCastCommand.type = item.type;
+			initialCastCommand.projectile_target_type = item.projectile_target_type;
+			perkData2.on_initial_cast.Add(initialCastCommand);
+		}
+		foreach (KeyValuePair<string, SinglePerkEffect> all_effect in perkData.all_effects)
+		{
+			Dictionary<string, string> dictionary = new Dictionary<string, string>();
+			foreach (KeyValuePair<string, string> datum in all_effect.Value.data)
+			{
+				string value = datum.Value;
+				if (datum.Key == "Particle (Duration)" && value == "[RAND_BIOME]")
+				{
+					value = GetRandomBiomeParticle(caster);
+				}
+				dictionary.Add(datum.Key, value);
+			}
+			perkData2.all_effects.Add(all_effect.Key, new SinglePerkEffect(dictionary));
+		}
+		return perkData2;
 	}
 
 	private string GetRandomBiomeParticle(GameObject caller)
 	{
-		return null;
+		string text;
+		if (ChunkControl.Instance.player_zone == "overworld")
+		{
+			int overworldBiomeBelow = ChunkControl.Instance.GetOverworldBiomeBelow(caller, true);
+			text = ChunkControl.Instance.biomes[overworldBiomeBelow].biome_scenic[UnityEngine.Random.Range(0, ChunkControl.Instance.biomes[overworldBiomeBelow].biome_scenic.Length)].item_name;
+		}
+		else if (InventoryUtils.IsCaveObject(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+		{
+			ChunkControl.cave_define correspondingCave = ChunkControl.Instance.GetCorrespondingCave(ZoneDataControl.Instance.curr_zonedata.house_item.item_name);
+			List<string> list = new List<string>();
+			ChunkControl.cave_mineral_pairs[] possible_mineral_pairs = correspondingCave.possible_mineral_pairs;
+			for (int i = 0; i < possible_mineral_pairs.Length; i++)
+			{
+				ChunkControl.cave_mineral_pairs cave_mineral_pairs = possible_mineral_pairs[i];
+				if (cave_mineral_pairs.small_mineral != "")
+				{
+					list.Add(cave_mineral_pairs.small_mineral);
+				}
+				if (cave_mineral_pairs.large_mineral != "")
+				{
+					list.Add(cave_mineral_pairs.large_mineral);
+				}
+			}
+			possible_mineral_pairs = correspondingCave.possible_SUPER_RARE_minerals;
+			for (int i = 0; i < possible_mineral_pairs.Length; i++)
+			{
+				ChunkControl.cave_mineral_pairs cave_mineral_pairs2 = possible_mineral_pairs[i];
+				if (cave_mineral_pairs2.small_mineral != "")
+				{
+					list.Add(cave_mineral_pairs2.small_mineral);
+				}
+				if (cave_mineral_pairs2.large_mineral != "")
+				{
+					list.Add(cave_mineral_pairs2.large_mineral);
+				}
+			}
+			possible_mineral_pairs = correspondingCave.possible_gem_pairs;
+			for (int i = 0; i < possible_mineral_pairs.Length; i++)
+			{
+				ChunkControl.cave_mineral_pairs cave_mineral_pairs3 = possible_mineral_pairs[i];
+				if (cave_mineral_pairs3.small_mineral != "")
+				{
+					list.Add(cave_mineral_pairs3.small_mineral);
+				}
+				if (cave_mineral_pairs3.large_mineral != "")
+				{
+					list.Add(cave_mineral_pairs3.large_mineral);
+				}
+			}
+			if (correspondingCave.shroom_obj_name != "")
+			{
+				list.Add(correspondingCave.shroom_obj_name);
+			}
+			if (correspondingCave.giant_shroom_obj_name != "")
+			{
+				list.Add(correspondingCave.giant_shroom_obj_name);
+			}
+			if (correspondingCave.stalagmite_name != "")
+			{
+				list.Add(correspondingCave.stalagmite_name);
+			}
+			if (correspondingCave.small_stalagmite_name != "")
+			{
+				list.Add(correspondingCave.small_stalagmite_name);
+			}
+			list.Add("Cave Basket");
+			list.Add("Cave Chest");
+			list.Add("Old Torch");
+			list.Add("Spawner - Bones");
+			list.Add("Spawner - Ancient Bones");
+			list.Add("Spawner - Fossils");
+			text = list[UnityEngine.Random.Range(0, list.Count)];
+		}
+		else if (InventoryUtils.IsHeavenDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+		{
+			List<string> list2 = new List<string>();
+			list2.Add("Sky Chest");
+			list2.Add("Stone Vein (White)");
+			text = list2[UnityEngine.Random.Range(0, list2.Count)];
+		}
+		else if (InventoryUtils.IsPureDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+		{
+			int num = ((ZoneDataControl.Instance.curr_zonedata.house_item.item_name == "Pocket World Snow") ? 1 : ((ZoneDataControl.Instance.curr_zonedata.house_item.item_name == "Pocket World Evergreen") ? 3 : 0));
+			text = ChunkControl.Instance.biomes[num].biome_scenic[UnityEngine.Random.Range(0, ChunkControl.Instance.biomes[num].biome_scenic.Length)].item_name;
+		}
+		else
+		{
+			bool num2 = InventoryUtils.IsHellDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name);
+			List<string> list3 = new List<string>();
+			if (num2)
+			{
+				list3.Add("Small Black Stalagmite");
+				list3.Add("Large Black Stalagmite");
+				list3.Add("Old Torch");
+				list3.Add("Magmite Vein");
+			}
+			else
+			{
+				list3.Add("Anvil");
+				list3.Add("Basket");
+				list3.Add("Big Stone Head");
+				list3.Add("Big Table");
+				list3.Add("Bonsai Tree");
+				list3.Add("Chair");
+				list3.Add("Chest");
+				list3.Add("Circular Rug");
+				list3.Add("Crafting Table");
+				list3.Add("Crate");
+				list3.Add("Egg Fuser");
+				list3.Add("Fireplace");
+				list3.Add("Hunter Rug");
+				list3.Add("Karaoke");
+				list3.Add("Large Weapon Display");
+				list3.Add("Loom");
+				list3.Add("Metal Chair");
+				list3.Add("Metal Lamp Post");
+				list3.Add("Music Box");
+				list3.Add("Oven");
+				list3.Add("Paint Mixer");
+				list3.Add("Paint Shaker");
+				list3.Add("Pool Table");
+				list3.Add("Sign");
+				list3.Add("Small Table");
+				list3.Add("Sofa Chair");
+				list3.Add("Stamp Maker");
+				list3.Add("Throne");
+				list3.Add("Torch");
+				list3.Add("Underground Room");
+				list3.Add("Upstairs Room");
+				list3.Add("Vending Machine");
+				list3.Add("Weapon Display");
+			}
+			text = list3[UnityEngine.Random.Range(0, list3.Count)];
+		}
+		return "[item]" + text;
 	}
 
 	public static void GeneratePollinatorSummary()
@@ -365,6 +545,14 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void ApplyInitialCastOnto(PerkData perk_data, int perkLevel, string casted_from, int caster_level, GameObject cast_onto)
 	{
+		PerkReceiver component = cast_onto.GetComponent<PerkReceiver>();
+		foreach (InitialCastCommand item in perk_data.on_initial_cast)
+		{
+			foreach (string effect_name in item.effect_names)
+			{
+				component.ApplyPerkEffect(false, effect_name, perk_data, perkLevel, casted_from, caster_level, true);
+			}
+		}
 	}
 
 	private void DeselectCurrentPerk()
@@ -393,7 +581,11 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public bool ShouldApplyEffectRightNow(string caster_id)
 	{
-		return false;
+		if (!GameServerConnector.Instance.FullyInGame() || caster_id == "LOCAL")
+		{
+			return true;
+		}
+		return MobControl.Instance.my_claimed_creatures.Contains(caster_id);
 	}
 
 	public void PlayerCastPerkAtTarget(PerkData perk_data, int perk_level, GameObject target, Vector3 custom_location)

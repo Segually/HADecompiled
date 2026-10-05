@@ -1187,7 +1187,16 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public cave_define GetCorrespondingCave(string zone_obj)
 	{
-		return default(cave_define);
+		cave_define[] array = cave_defines;
+		for (int i = 0; i < array.Length; i++)
+		{
+			cave_define result = array[i];
+			if (result.name == zone_obj)
+			{
+				return result;
+			}
+		}
+		return cave_defines[0];
 	}
 
 	public bool IsChunkFullyLoaded(string chunkStr)
@@ -1831,7 +1840,24 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public int GetOverworldBiomeBelow(GameObject obj, bool log = false)
 	{
-		return 0;
+		if (obj == null)
+		{
+			return 0;
+		}
+		string chunkString = Instance.GetChunkString(obj.transform.position);
+		if (!Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			if (log)
+			{
+				Debug.Log("Chunk not fully loaded [" + chunkString + "]");
+			}
+			return 0;
+		}
+		if (log)
+		{
+			Debug.Log("Chunk loaded [" + chunkString + "]");
+		}
+		return Instance.GetChunk(chunkString).chunk_data.biome;
 	}
 
 	public pathway_type GetPathwayTypeBeneathMe(Vector3 V)
