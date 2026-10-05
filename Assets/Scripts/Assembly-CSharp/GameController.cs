@@ -747,6 +747,8 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_levelButton()
 	{
+		sfx.PlayOneShot(sfx_levelButton, AudioControl.Instance.general_sfx_volume);
+		AudioControl.Instance.PlayGenericClick();
 	}
 
 	public void sound_relax()
@@ -755,15 +757,62 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void level_up_meter_pressed(int index)
 	{
+		string random_fn_validator = "";
+		if (!perk_get_animation_playing && skillPointsSpendable >= 1)
+		{
+			skillPointsSpendable--;
+			SaveSkillPointsSpendableToDisk();
+			GameplayGUIControl.Instance.RedrawSkillPointsSpendableText();
+			sound_levelButton();
+			stat_meters[index].GetComponent<Animation>().Play();
+			int num = ++player_stats[index];
+			SaveAllStatsToDisk();
+			GameplayGUIControl.Instance.CreateStatNib(index);
+			GameplayGUIControl.Instance.RedrawStatName(index, num);
+			Instance.player.GetComponent<SharedCreature>().ReCalcHpMaxAndHpRegen();
+			GameServerSender.Instance.SendUpdateCreatureStats("LOCAL", random_fn_validator);
+			if (num != 0 && num % 6 == 0)
+			{
+				perk_get_animation_playing = true;
+				StartCoroutine(perk_get_display(index));
+			}
+		}
 	}
 
 	private void show_get_perk(int index)
 	{
+		StartCoroutine(perk_get_display(index));
 	}
 
 	private IEnumerator perk_get_display(int index)
 	{
-		return null;
+		PerkControl.Instance.SoundMaxout();
+		for (int j = 0; j < 2; j++)
+		{
+			for (int i = 0; i < 6; i++)
+			{
+				GameplayGUIControl.Instance.instantiated_stat_nibs[index][i].GetComponent<Animation>().Stop();
+				GameplayGUIControl.Instance.instantiated_stat_nibs[index][i].GetComponent<Animation>().Play();
+				yield return new WaitForSeconds(0.03f);
+			}
+			yield return new WaitForSeconds(0.05f);
+		}
+		Color gem_col = GameplayGUIControl.Instance.instantiated_stat_nibs[index][0].GetComponent<UnityEngine.UI.Image>().color;
+		for (float i2 = 0f; i2 < 10f; i2 += 1f)
+		{
+			foreach (GameObject item in GameplayGUIControl.Instance.instantiated_stat_nibs[index])
+			{
+				item.transform.localPosition = Vector3.Lerp(item.transform.localPosition, Vector2.zero, i2 * 0.125f);
+			}
+			yield return new WaitForEndOfFrame();
+		}
+		foreach (GameObject item2 in GameplayGUIControl.Instance.instantiated_stat_nibs[index])
+		{
+			Object.Destroy(item2);
+		}
+		GameplayGUIControl.Instance.instantiated_stat_nibs[index].Clear();
+		stat_meters[index].GetComponent<Animation>().Play();
+		GetComponent<PerkControl>().ShowPerkGet(gem_col);
 	}
 
 	public void PressViewAchievements()
@@ -772,18 +821,56 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void AttemptAdOnLevelup()
 	{
+		levelups_since_ad++;
+		if (levelups_since_ad > 3)
+		{
+			levelups_since_ad = 0;
+			AdvertControl.Instance.TryShowInterstitialAd(AdvertControl.ad_context.after_few_levelups);
+		}
 	}
 
 	public void level_up_screen_close()
 	{
+		if (!perk_get_animation_playing && !(player == null))
+		{
+			PopupControl.Instance.SetButtonWasPressed();
+			TryLevelAchieves();
+			HideLevelScreen();
+			pause = false;
+			AudioControl.Instance.PlayGenericClick();
+		}
 	}
 
 	public void TryLevelAchieves()
 	{
+		int num = playerLevel;
+		if (num >= 3)
+		{
+			AchievesControl.Instance.UnlockAchievement("Better, Faster, Stronger");
+			if (num >= 15)
+			{
+				AchievesControl.Instance.UnlockAchievement("Mighty Creature");
+			}
+			if (num >= 25)
+			{
+				AchievesControl.Instance.UnlockAchievement("Survival of the Fittest");
+			}
+			if (num >= 50)
+			{
+				AchievesControl.Instance.UnlockAchievement("King of the Wild");
+			}
+			if (num >= 100)
+			{
+				AchievesControl.Instance.UnlockAchievement("Ultimate Species");
+			}
+		}
 	}
 
 	public void HideLevelScreen()
 	{
+		WindowControl.Instance.GetComponent<Animation>().Stop();
+		WindowControl.Instance.GetComponent<Animation>().Play("levelup hide");
+		level_up_animation_playing = false;
 	}
 
 	public void edit_navpost()
@@ -1159,10 +1246,13 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void animation_set_levelup_text()
 	{
+		GameplayGUIControl.Instance.text_playerLevel.text = "Level Up";
+		sfx.PlayOneShot(sfx_got_level_b, AudioControl.Instance.general_sfx_volume);
 	}
 
 	public void animation_sound_levelScreenAppear()
 	{
+		sfx.PlayOneShot(sfx_got_level, AudioControl.Instance.general_sfx_volume);
 	}
 
 	public void sound_gameStart(float intensity)
@@ -1185,6 +1275,8 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void animation_unlock_levelup_text()
 	{
+		GameplayGUIControl.Instance.text_playerLevel.text = "Level " + playerLevel;
+		lock_levelup_text = false;
 	}
 
 	private void ManuallySelectTarget(bool on_cast_projectile_at_enemies, bool on_cast_projectile_at_allies, bool on_pick_companion_target)

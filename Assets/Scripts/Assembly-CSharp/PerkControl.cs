@@ -561,6 +561,8 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void PressSpendPerkLater()
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("NewPerkGet - center");
+		WindowPrefabsControl.Instance.DestroyScreen("NewPerkGet - bottom");
 	}
 
 	public void PressSpendPerkNow()
@@ -688,10 +690,15 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void SoundMaxout()
 	{
+		sfx_source.volume = AudioControl.Instance.general_sfx_volume;
+		sfx_source.PlayOneShot(maxout);
 	}
 
 	public void ShowPerkGet(Color gem_col)
 	{
+		WindowPrefabsControl.Instance.CreateScreen("NewPerkGet - center", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowPrefabsControl.Instance.GetScreen("NewPerkGet - center").GetComponent<AnimationFunctionsNewPerkScreen>().Initialize(gem_col);
+		WindowPrefabsControl.Instance.GetScreen("NewPerkGet - center").GetComponent<Animation>().Play();
 	}
 
 	public string GetPerkEnergyCostString(PerkData perk_data, int perk_level, bool show_differences)
@@ -706,6 +713,7 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void SaveGenomes()
 	{
+		PlayerData.Instance.SetSlotShort("genomes", genomes, PlayerData.filename_t.perks);
 	}
 
 	public void LoadPerkScreenPositioningFromDisk()

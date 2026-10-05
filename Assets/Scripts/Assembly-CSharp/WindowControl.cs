@@ -209,5 +209,6 @@ public class WindowControl : MonoBehaviour, OrderedStart
 
 	public void TryShowAdOnLevelupScreenAppear()
 	{
+		GameController.Instance.AttemptAdOnLevelup();
 	}
 }
