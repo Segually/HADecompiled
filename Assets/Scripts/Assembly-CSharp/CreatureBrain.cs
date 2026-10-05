@@ -80,10 +80,23 @@ public class CreatureBrain : MonoBehaviour
 
 	public void SetPerkBrain(CreatureBrainInterface perk_brain)
 	{
+		this.perk_brain = perk_brain;
 	}
 
 	public void RemovePerkBrain()
 	{
+		CreatureBrainChaoticMovement component = GetComponent<CreatureBrainChaoticMovement>();
+		if (component != null)
+		{
+			Object.Destroy(component);
+		}
+		CreatureBrainCharmedMovement component2 = GetComponent<CreatureBrainCharmedMovement>();
+		if (component2 != null)
+		{
+			Object.Destroy(component2);
+		}
+		perk_brain = null;
+		RestartThinking();
 	}
 
 	public void RestartThinking()
@@ -98,6 +111,12 @@ public class CreatureBrain : MonoBehaviour
 
 	public void ReEnable()
 	{
+		if (think_coroutine != null)
+		{
+			StopCoroutine(think_coroutine);
+		}
+		think_coroutine = custom_brain.Think();
+		StartCoroutine(think_coroutine);
 	}
 
 	private void FixedUpdate()

@@ -965,7 +965,13 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public static string GenerateCacheKey()
 	{
-		return null;
+		string text = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
+		string text2 = "";
+		for (int i = 0; i < 8; i++)
+		{
+			text2 += text[UnityEngine.Random.Range(0, text.Length)];
+		}
+		return text2;
 	}
 
 	public void PlayerRemoveAt(ChunkElement remove_element, string zone, int chunkX, int chunkZ, int innerX, int innerZ, remove_context remove_context_t, string mp_cache_key)
@@ -995,6 +1001,54 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void PlayerReplaceAt(InventoryItem new_item, InventoryItem old_element_item, int old_element_rot, string zone, int chunkX, int chunkZ, int innerX, int innerZ, bool send, string mp_cache_key)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (InventoryUtils.UsesShackId(old_element_item.item_name))
+		{
+			string text = "shack" + old_element_item.GetLong("shack_id");
+			if (GameServerConnector.Instance.ShouldSaveLocally())
+			{
+				text += "-zonedata";
+				string zoneDataFilename = ChunkControl.GetZoneDataFilename(text);
+				new_item.SaveToDisk(zoneDataFilename, "zone_item", text);
+			}
+		}
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkString);
+		if (chunkData == null && GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData = ChunkControl.Instance.HostGetChunk(zone, chunkX, chunkZ);
+		}
+		if (chunkData != null)
+		{
+			chunkData.ReplaceElementItem(innerX, innerZ, new_item, old_element_item, old_element_rot);
+			chunkData.mp_cache_key = mp_cache_key;
+		}
+		if (GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData.SaveWholeChunkToDisk(chunkString);
+		}
+		if (ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			ChunkControl.Instance.GetChunk(chunkString);
+			ChunkControl.Instance.GetChunkObj(chunkString).ReplaceElementItemInstance(chunkData.X, chunkData.Z, innerX, innerZ, new_item, old_element_item, old_element_rot, chunkData);
+			bool itemBool = inventory_ctr.Instance.GetItemBool(old_element_item.item_name, "is_wall_obj");
+			bool itemBool2 = inventory_ctr.Instance.GetItemBool(old_element_item.item_name, "is_flooring_obj");
+			if (itemBool)
+			{
+				ModularObjectControl.Instance.ModularChangedAt(innerX, innerZ, ModularObjectControl.type.WALLS, zone, chunkX, chunkZ);
+			}
+			else if (itemBool2)
+			{
+				ModularObjectControl.Instance.ModularChangedAt(innerX, innerZ, ModularObjectControl.type.PATHWAYS, zone, chunkX, chunkZ);
+			}
+		}
+		if (send)
+		{
+			GameServerSender.Instance.SendReplaceBuildable(new_item, old_element_item, old_element_rot, zone, chunkX, chunkZ, innerX, innerZ, mp_cache_key, "");
+		}
+		if (GameController.Instance.interacting_element_item == old_element_item && GameController.Instance.interacting_element_rot == old_element_rot && GameController.Instance.interacting_element_chunkX == chunkX && GameController.Instance.interacting_element_chunkZ == chunkZ && GameController.Instance.interacting_element_innerX == innerX && GameController.Instance.interacting_element_innerZ == innerZ && ChunkControl.Instance.player_zone == zone)
+		{
+			GameController.Instance.interacting_element_item = new_item;
+		}
 	}
 
 	public void AsyncCreateBuildableInstance(InventoryItem item, int innerX, int innerZ, int rot, build_context_t build_context, Chunk chunk, ChunkData chunk_data, ChunkObj chunkObj, Action<GameObject> on_complete = null)
@@ -1131,28 +1185,175 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void DecorateWeaponDisplay(InventoryItem display_item, GameObject parent, Action on_weapon_added = null)
 	{
+		InventoryItem item_weapon = display_item.LoadSubItem("wep");
+		if (item_weapon.item_name == "")
+		{
+			string text = display_item.GetString("wep");
+			if (text != "")
+			{
+				item_weapon = new InventoryItem(text);
+			}
+		}
+		if (item_weapon.item_name != "" && inventory_ctr.Instance.GetItemType(item_weapon) == inventory_ctr.inv_type_t.holdable)
+		{
+			GameObject check_not_null = parent.gameObject;
+			ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(item_weapon.item_name), delegate(GameObject weapon_instance)
+			{
+				if (check_not_null == null)
+				{
+					UnityEngine.Object.Destroy(weapon_instance);
+				}
+				else
+				{
+					weapon_instance.transform.SetParent(parent.transform.Find("holder0").transform);
+					PaintDisplayWeapon(weapon_instance, item_weapon);
+					PositionDisplayWeapon(item_weapon.item_name, weapon_instance, flip: false);
+					on_weapon_added?.Invoke();
+				}
+			});
+		}
+		else
+		{
+			on_weapon_added?.Invoke();
+		}
 	}
 
 	private Vector3 ParseVector3(string str, Vector3 default_)
 	{
-		return default(Vector3);
+		if (string.IsNullOrWhiteSpace(str))
+		{
+			return default_;
+		}
+		string[] array = str.Split(',');
+		if (array.Length != 3)
+		{
+			return default_;
+		}
+		return new Vector3(float.Parse(array[0].Trim(), Startup.parse_culture), float.Parse(array[1].Trim(), Startup.parse_culture), float.Parse(array[2].Trim(), Startup.parse_culture));
 	}
 
 	private Quaternion ParseQuaternion(string str)
 	{
-		return default(Quaternion);
+		if (string.IsNullOrWhiteSpace(str))
+		{
+			return Quaternion.identity;
+		}
+		string[] array = str.Split(',');
+		if (array.Length != 3)
+		{
+			return Quaternion.identity;
+		}
+		return Quaternion.Euler(float.Parse(array[0].Trim(), Startup.parse_culture), float.Parse(array[1].Trim(), Startup.parse_culture), float.Parse(array[2].Trim(), Startup.parse_culture));
 	}
 
 	public void PaintDisplayWeapon(GameObject weapon_instance, InventoryItem item_weapon)
 	{
+		if (weapon_instance.GetComponent<PaintableObject>() != null)
+		{
+			string paintFromItemOrUseDefault = inventory_ctr.Instance.GetPaintFromItemOrUseDefault(item_weapon);
+			string stampFromItem = inventory_ctr.Instance.GetStampFromItem(item_weapon);
+			weapon_instance.GetComponent<PaintableObject>().Colorize(paintFromItemOrUseDefault, stampFromItem, inventory_ctr.Instance.GetLayoutItemFromItem(item_weapon.item_name), item_weapon.item_name, process_particles: true);
+		}
 	}
 
 	public void PositionDisplayWeapon(string input_wep, GameObject obj, bool flip)
 	{
+		string stringFromItemFile = ResourceControl.Instance.GetStringFromItemFile(input_wep, "weapon_display_copy");
+		string item_name = (string.IsNullOrWhiteSpace(stringFromItemFile) ? input_wep : stringFromItemFile);
+		string stringFromItemFile2 = ResourceControl.Instance.GetStringFromItemFile(item_name, "weapon_display_localPosition");
+		string stringFromItemFile3 = ResourceControl.Instance.GetStringFromItemFile(item_name, "weapon_display_localRotation");
+		string stringFromItemFile4 = ResourceControl.Instance.GetStringFromItemFile(item_name, "weapon_display_localScale");
+		obj.transform.localPosition = ParseVector3(stringFromItemFile2, Vector3.zero);
+		obj.transform.localRotation = ParseQuaternion(stringFromItemFile3);
+		obj.transform.localScale = ParseVector3(stringFromItemFile4, Vector3.one);
+		if (ResourceControl.Instance.GetStringFromItemFile(input_wep, "dual_wield") == "true")
+		{
+			GameObject gameObject = UnityEngine.Object.Instantiate(obj.transform.parent.gameObject);
+			gameObject.transform.position = obj.transform.parent.position;
+			gameObject.transform.rotation = obj.transform.parent.rotation;
+			gameObject.transform.localScale = obj.transform.parent.localScale;
+			gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, gameObject.transform.localScale.y, 0f - gameObject.transform.localScale.z);
+			gameObject.transform.SetParent(obj.transform.parent);
+		}
 	}
 
 	public void DecorateLargeWeaponDisplay(InventoryItem display_item, GameObject parent, Action on_weapons_added = null)
 	{
+		InventoryItem item_weapon1 = display_item.LoadSubItem("wep");
+		if (item_weapon1.item_name == "")
+		{
+			string text = display_item.GetString("wep");
+			if (text != "")
+			{
+				item_weapon1 = new InventoryItem(text);
+			}
+		}
+		InventoryItem item_weapon2 = display_item.LoadSubItem("wep2");
+		if (item_weapon2.item_name == "")
+		{
+			string text2 = display_item.GetString("wep2");
+			if (text2 != "")
+			{
+				item_weapon2 = new InventoryItem(text2);
+			}
+		}
+		bool wep1_complete = false;
+		bool wep2_complete = false;
+		Action on_complete = delegate
+		{
+			if (wep1_complete && wep2_complete)
+			{
+				on_weapons_added?.Invoke();
+			}
+		};
+		if (item_weapon1.item_name != "" && inventory_ctr.Instance.GetItemType(item_weapon1) == inventory_ctr.inv_type_t.holdable)
+		{
+			GameObject check_not_null = parent.gameObject;
+			ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(item_weapon1.item_name), delegate(GameObject weapon1_instance)
+			{
+				if (check_not_null == null)
+				{
+					UnityEngine.Object.Destroy(weapon1_instance);
+				}
+				else
+				{
+					weapon1_instance.transform.SetParent(parent.transform.Find("holder0").transform);
+					PaintDisplayWeapon(weapon1_instance, item_weapon1);
+					PositionDisplayWeapon(item_weapon1.item_name, weapon1_instance, flip: true);
+					wep1_complete = true;
+					on_complete();
+				}
+			});
+		}
+		else
+		{
+			wep1_complete = true;
+			on_complete();
+		}
+		if (item_weapon2.item_name != "" && inventory_ctr.Instance.GetItemType(item_weapon2) == inventory_ctr.inv_type_t.holdable)
+		{
+			GameObject check_not_null2 = parent.gameObject;
+			ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(item_weapon2.item_name), delegate(GameObject weapon2_instance)
+			{
+				if (check_not_null2 == null)
+				{
+					UnityEngine.Object.Destroy(weapon2_instance);
+				}
+				else
+				{
+					weapon2_instance.transform.SetParent(parent.transform.Find("holder1").transform);
+					PaintDisplayWeapon(weapon2_instance, item_weapon2);
+					PositionDisplayWeapon(item_weapon2.item_name, weapon2_instance, flip: true);
+					wep2_complete = true;
+					on_complete();
+				}
+			});
+		}
+		else
+		{
+			wep2_complete = true;
+			on_complete();
+		}
 	}
 
 	public List<OccupiedSpace> GetObjectWorldGeometry(InventoryItem item, Vector3 origin, int rot)
@@ -1361,6 +1562,220 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void CreateMannequin(Transform parent_obj, InventoryItem mannequin_item, Action on_mannequin_created = null)
 	{
+		string item_name = mannequin_item.item_name;
+		string @string = mannequin_item.GetString("creature_A");
+		string string2 = mannequin_item.GetString("creature_B");
+		List<InventoryItem> list = new List<InventoryItem>();
+		InventoryItem inventoryItem = new InventoryItem("");
+		InventoryItem inventoryItem2 = new InventoryItem("");
+		InventoryItem inventoryItem3 = new InventoryItem("");
+		if (mannequin_item.GetString("tag") == "dev_obj")
+		{
+			ExtraInventoryData extraInventoryData = new ExtraInventoryData();
+			extraInventoryData.SetString("paint", mannequin_item.GetString("hat_paint"));
+			inventoryItem = new InventoryItem(mannequin_item.GetString("hat"), extraInventoryData);
+			ExtraInventoryData extraInventoryData2 = new ExtraInventoryData();
+			extraInventoryData2.SetString("paint", mannequin_item.GetString("armor_paint"));
+			inventoryItem2 = new InventoryItem(mannequin_item.GetString("body"), extraInventoryData2);
+			ExtraInventoryData extraInventoryData3 = new ExtraInventoryData();
+			extraInventoryData3.SetString("paint", mannequin_item.GetString("hand_paint"));
+			inventoryItem3 = new InventoryItem(mannequin_item.GetString("wep"), extraInventoryData3);
+		}
+		else if (mannequin_item.item_name == "Armor Display" || mannequin_item.item_name == "Custom Statue")
+		{
+			inventoryItem = mannequin_item.LoadSubItem("hat");
+			inventoryItem2 = mannequin_item.LoadSubItem("body");
+			inventoryItem3 = mannequin_item.LoadSubItem("wep");
+		}
+		else if (mannequin_item.item_name == "Companion")
+		{
+			ItemCountPair[] itemListFromItem = ChunkControl.Instance.GetItemListFromItem("pockets", mannequin_item);
+			inventoryItem = itemListFromItem[3].item;
+			inventoryItem2 = itemListFromItem[8].item;
+			inventoryItem3 = itemListFromItem[13].item;
+		}
+		if (inventoryItem.item_name != "")
+		{
+			list.Add(inventoryItem);
+		}
+		if (inventoryItem2.item_name != "")
+		{
+			list.Add(inventoryItem2);
+		}
+		if (inventoryItem3.item_name != "")
+		{
+			list.Add(inventoryItem3);
+		}
+		bool hat_ready = false;
+		bool armor_ready = false;
+		bool weapon_ready = false;
+		bool scale_applied = false;
+		bool hybrid_model_ready = false;
+		Action on_any_part_ready = delegate
+		{
+			if (hat_ready && armor_ready && weapon_ready && scale_applied && hybrid_model_ready)
+			{
+				on_mannequin_created?.Invoke();
+			}
+		};
+		GameObject hybridLite = CreatureMorpher.Instance.GetHybridLite(new List<string> { @string, string2 }, delegate
+		{
+			hybrid_model_ready = true;
+			on_any_part_ready();
+		});
+		hybridLite.transform.SetParent(parent_obj);
+		hybridLite.transform.localPosition = Vector3.zero;
+		hybridLite.transform.localRotation = Quaternion.Euler(0f, 180f, 0f);
+		hybridLite.GetComponent<LiteModel>().StopAnimation();
+		InventoryItem inventoryItem4 = new InventoryItem("");
+		InventoryItem inventoryItem5 = new InventoryItem("");
+		InventoryItem inventoryItem6 = new InventoryItem("");
+		foreach (InventoryItem item in list)
+		{
+			if (!(item.item_name != ""))
+			{
+				continue;
+			}
+			switch (inventory_ctr.Instance.GetItemType(item))
+			{
+			case inventory_ctr.inv_type_t.holdable:
+				if ((item_name == "Custom Statue" || item_name == "Companion" || item_name == "DEBUG-npc") && inventoryItem6.item_name == "")
+				{
+					inventoryItem6 = item;
+				}
+				break;
+			case inventory_ctr.inv_type_t.armor:
+				if (inventoryItem5.item_name == "")
+				{
+					inventoryItem5 = item;
+				}
+				break;
+			case inventory_ctr.inv_type_t.helmet:
+				if (inventoryItem4.item_name == "")
+				{
+					inventoryItem4 = item;
+				}
+				break;
+			}
+		}
+		string text = "";
+		if (item_name == "Armor Display" || item_name == "Companion")
+		{
+			text = InventoryUtils.GetEquipmentSkinMat(inventoryItem4.item_name, inventoryItem5.item_name);
+		}
+		Material material;
+		Material material2;
+		if (text != "")
+		{
+			material = MobControl.Instance.GetSkinMaterialByName(text);
+			material2 = material;
+		}
+		else if (item_name == "DEBUG-npc")
+		{
+			material = MobControl.Instance.GetSkinMaterialByName(mannequin_item.GetString("npc_material"));
+			material2 = material;
+		}
+		else if (item_name == "Armor Display")
+		{
+			material = parent_obj.parent.GetComponent<PaintableObject>().target_meshes[1].renderer.material;
+			material2 = null;
+		}
+		else if (item_name == "Custom Statue")
+		{
+			material = parent_obj.parent.GetComponent<PaintableObject>().target_meshes[1].renderer.material;
+			material2 = parent_obj.parent.GetComponent<PaintableObject>().target_meshes[1].renderer.material;
+		}
+		else
+		{
+			material = null;
+			material2 = null;
+		}
+		if (material != null)
+		{
+			hybridLite.GetComponent<LiteModel>().ApplySpecialMaterial(material);
+		}
+		foreach (InventoryItem item2 in list)
+		{
+			if (!(item2.item_name != ""))
+			{
+				continue;
+			}
+			switch (inventory_ctr.Instance.GetItemType(item2))
+			{
+			case inventory_ctr.inv_type_t.armor:
+				if (inventoryItem5.item_name != "")
+				{
+					hybridLite.GetComponent<LiteModel>().ApplyArmor(item2, material2, delegate
+					{
+						armor_ready = true;
+						on_any_part_ready();
+					});
+				}
+				break;
+			case inventory_ctr.inv_type_t.helmet:
+				if (inventoryItem4.item_name != "")
+				{
+					hybridLite.GetComponent<LiteModel>().ApplyHat(item2, material2, delegate
+					{
+						hat_ready = true;
+						on_any_part_ready();
+					});
+				}
+				break;
+			case inventory_ctr.inv_type_t.holdable:
+				if ((item_name == "Custom Statue" || item_name == "Companion" || item_name == "DEBUG-npc") && inventoryItem6.item_name != "")
+				{
+					hybridLite.GetComponent<LiteModel>().ApplyWeapon(item2, material2, delegate
+					{
+						weapon_ready = true;
+						on_any_part_ready();
+					});
+				}
+				break;
+			}
+		}
+		if (inventoryItem4.item_name == "")
+		{
+			hat_ready = true;
+		}
+		if (inventoryItem5.item_name == "")
+		{
+			armor_ready = true;
+		}
+		if (inventoryItem6.item_name == "")
+		{
+			weapon_ready = true;
+		}
+		float num = 1f;
+		if (item_name == "DEBUG-npc")
+		{
+			if (mannequin_item.GetShort("npc_scale_x10") != 0)
+			{
+				num = (float)mannequin_item.GetShort("npc_scale_x10") / 10f;
+			}
+		}
+		else if (!(item_name == "Armor Display"))
+		{
+			if (item_name == "Custom Statue")
+			{
+				num = 0.75f;
+			}
+			else if (item_name == "Companion")
+			{
+				num = InventoryUtils.GetEquipmentScale(inventoryItem4.item_name, inventoryItem5.item_name);
+			}
+		}
+		hybridLite.transform.localScale = num * Vector3.one;
+		if (item_name == "Companion" || item_name == "DEBUG-npc")
+		{
+			hybridLite.GetComponent<LiteModel>().StartAnimation(0);
+			Interactable component = parent_obj.transform.parent.GetComponent<Interactable>();
+			component.overhead_model_snap = hybridLite.GetComponent<LiteModel>();
+			component.interaction_distance = num;
+			component.circle_size = num - 1f - 0.1f + 1f;
+		}
+		scale_applied = true;
+		on_any_part_ready();
 	}
 
 	private Vector3 SnapMousePositionToObjectOrigins(Vector3 original_position, InventoryItem item_placing)
@@ -1370,7 +1785,72 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public bool TryMakeCompanionSitOnChair(ChunkObj chunkObj, ChunkData chunk_data, int x, int z, InventoryItem companion_item, GameObject override_companionObj = null, GameObject override_chairObj = null)
 	{
-		return false;
+		if (chunkObj == null)
+		{
+			return false;
+		}
+		if (override_companionObj == null)
+		{
+			override_companionObj = chunkObj.GetBuildableInstanceByItem(x, z, companion_item);
+		}
+		if (override_companionObj == null)
+		{
+			return false;
+		}
+		GameObject gameObject = override_companionObj.transform.Find("creature-go-here").gameObject;
+		InventoryItem inventoryItem = null;
+		InventoryItem inventoryItem2 = null;
+		foreach (ChunkElement item in chunk_data.GetElementsAt(x, z))
+		{
+			string item_name = item.item.item_name;
+			if (InventoryUtils.IsChairObject(item_name))
+			{
+				inventoryItem = item.item;
+				break;
+			}
+			if (InventoryUtils.IsBedObject(item_name))
+			{
+				inventoryItem2 = item.item;
+				break;
+			}
+		}
+		if (inventoryItem == null && inventoryItem2 == null)
+		{
+			gameObject.transform.localPosition = Vector3.zero;
+			gameObject.transform.localRotation = Quaternion.identity;
+			return false;
+		}
+		if (override_chairObj == null)
+		{
+			if (inventoryItem != null)
+			{
+				override_chairObj = chunkObj.GetBuildableInstanceByItem(x, z, inventoryItem);
+			}
+			else if (inventoryItem2 != null)
+			{
+				override_chairObj = chunkObj.GetBuildableInstanceByItem(x, z, inventoryItem2);
+			}
+		}
+		if (override_chairObj == null)
+		{
+			return false;
+		}
+		GameObject gameObject2 = override_companionObj.transform.Find("creature-go-here").gameObject;
+		gameObject2.transform.SetParent(null);
+		Transform transform = override_chairObj.transform.Find("target");
+		gameObject2.transform.position = transform.position;
+		gameObject2.transform.rotation = transform.rotation;
+		gameObject2.transform.Rotate(Vector3.up, 180f);
+		if (inventoryItem != null)
+		{
+			gameObject2.transform.GetChild(0).GetComponent<LiteModel>().StartAnimation(4);
+		}
+		else if (inventoryItem2 != null)
+		{
+			gameObject2.transform.GetChild(0).GetComponent<LiteModel>().StartAnimation(5);
+		}
+		gameObject2.transform.SetParent(override_companionObj.transform);
+		return true;
 	}
 
 	public void PlayerReplaceInteracting(InventoryItem new_item, bool send)

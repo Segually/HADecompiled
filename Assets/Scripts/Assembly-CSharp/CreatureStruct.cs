@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class CreatureStruct
 {
-	public string combat_name;
+	public string combat_name = "";
 
-	public List<string> creatures;
+	public List<string> creatures = new List<string>();
 
 	public int critterLevel;
 
@@ -24,17 +25,17 @@ public class CreatureStruct
 
 	public float wander_dist;
 
-	public InventoryItem hat_;
+	public InventoryItem hat_ = new InventoryItem("");
 
-	public InventoryItem body_;
+	public InventoryItem body_ = new InventoryItem("");
 
-	public InventoryItem hand_;
+	public InventoryItem hand_ = new InventoryItem("");
 
-	public string creature_name;
+	public string creature_name = "";
 
 	public int respawn_seconds;
 
-	public string skin_mat;
+	public string skin_mat = "";
 
 	public InventoryItem original_element_item;
 
@@ -42,7 +43,7 @@ public class CreatureStruct
 
 	public int icon_id;
 
-	public string original_element_zone;
+	public string original_element_zone = "";
 
 	public int original_element_chunkX;
 
@@ -56,32 +57,114 @@ public class CreatureStruct
 
 	public int spawn_offset_z;
 
-	public static int DEFAULT_CRITTER_SIZE;
+	public static int DEFAULT_CRITTER_SIZE = -1;
 
-	public static SharedCreature.brain_type_t DEFAULT_BRAIN_TYPE;
+	public static SharedCreature.brain_type_t DEFAULT_BRAIN_TYPE = SharedCreature.brain_type_t.auto_set;
 
-	public static float DEFAULT_WALK_SPEED;
+	public static float DEFAULT_WALK_SPEED = -1f;
 
-	public static int DEFAULT_HP_REGEN;
+	public static int DEFAULT_HP_REGEN = -1;
 
-	public static int DEFAULT_HP_MAX;
+	public static int DEFAULT_HP_MAX = -1;
 
-	public static int DEFAULT_HP_CURR;
+	public static int DEFAULT_HP_CURR = -1;
 
-	public static float DEFAULT_AI_LOCKON;
+	public static float DEFAULT_AI_LOCKON = 3.8f;
 
-	public static float DEFAULT_WANDER_DIST;
+	public static float DEFAULT_WANDER_DIST = 5f;
 
-	public static int DEFAULT_RESPAWN_SECONDS;
+	public static int DEFAULT_RESPAWN_SECONDS = 60;
 
-	public static int DEFAULT_ICON_ID;
+	public static int DEFAULT_ICON_ID = -1;
 
 	public CreatureStruct(string combat_name, List<string> creatures, int critterLevel_, float critterSize_, SharedCreature.brain_type_t brain_type, float walk_speed_, int hp_regen_, int hp_max_, int hp_curr_, float ai_lockon_range_, float wander_dist_, InventoryItem hat_, InventoryItem body_, InventoryItem hand_, string creature_name_, int respawn_seconds_, string skin_mat_, InventoryItem original_element_item_, int original_element_rot_, int icon_id_, string original_element_zone, int original_element_chunkX, int original_element_chunkZ, int original_element_innerX, int original_element_innerZ, int spawn_offset_x, int spawn_offset_z)
 	{
+		this.combat_name = combat_name;
+		this.creatures = creatures;
+		critterSize = critterSize_;
+		walk_speed = walk_speed_;
+		critterLevel = critterLevel_;
+		this.brain_type = brain_type;
+		hp_regen = hp_regen_;
+		hp_max = hp_max_;
+		ai_lockon_range = ai_lockon_range_;
+		wander_dist = wander_dist_;
+		hp_curr = hp_curr_;
+		this.hat_ = hat_;
+		this.body_ = body_;
+		this.hand_ = hand_;
+		creature_name = creature_name_;
+		respawn_seconds = respawn_seconds_;
+		skin_mat = skin_mat_;
+		original_element_item = original_element_item_;
+		original_element_rot = original_element_rot_;
+		icon_id = icon_id_;
+		this.original_element_zone = original_element_zone;
+		this.original_element_chunkX = original_element_chunkX;
+		this.original_element_chunkZ = original_element_chunkZ;
+		this.original_element_innerX = original_element_innerX;
+		this.original_element_innerZ = original_element_innerZ;
+		this.spawn_offset_x = spawn_offset_x;
+		this.spawn_offset_z = spawn_offset_z;
+		float curr_depth = GameController.Instance.DepthAt(new Vector3((float)(original_element_chunkX * 10) + (float)original_element_innerX + (float)spawn_offset_x + 0.5f, 1.5f, (float)(original_element_chunkZ * 10) + (float)original_element_innerZ + (float)spawn_offset_z + 0.5f));
+		ProcessDefaults(curr_depth);
 	}
 
 	private void ProcessDefaults(float curr_depth)
 	{
+		if (critterSize == (float)DEFAULT_CRITTER_SIZE)
+		{
+			critterSize = MobControl.Instance.GetCritterSize(critterLevel, curr_depth);
+		}
+		if (brain_type == DEFAULT_BRAIN_TYPE)
+		{
+			brain_type = MobControl.Instance.DetermineCreatureBrain(critterLevel, curr_depth);
+		}
+		if (walk_speed == DEFAULT_WALK_SPEED)
+		{
+			int num = critterLevel - GameController.Instance.playerLevel;
+			if (num < 1)
+			{
+				walk_speed = 0.046f;
+			}
+			else
+			{
+				walk_speed = Mathf.Lerp(0.046f, 0.0485f, (float)num / 15f);
+			}
+		}
+		if (hp_max == DEFAULT_HP_MAX)
+		{
+			hp_max = CombatControl.GetHpMaxMob(critterLevel);
+		}
+		if (hp_regen == DEFAULT_HP_REGEN)
+		{
+			hp_regen = CombatControl.GetHpRegenMob(hp_max);
+		}
+		if (hp_curr == DEFAULT_HP_CURR)
+		{
+			hp_curr = hp_max;
+		}
+		if (icon_id == DEFAULT_ICON_ID)
+		{
+			switch (brain_type)
+			{
+			case SharedCreature.brain_type_t.aggressive:
+				icon_id = 7;
+				break;
+			case SharedCreature.brain_type_t.neutral:
+				icon_id = 5;
+				break;
+			case SharedCreature.brain_type_t.fearful:
+				icon_id = 6;
+				break;
+			case SharedCreature.brain_type_t.guard:
+				icon_id = 8;
+				break;
+			case SharedCreature.brain_type_t.ghost:
+				icon_id = 9;
+				break;
+			}
+		}
 	}
 
 	public void Pack(Packet outgoing)
@@ -95,26 +178,102 @@ public class CreatureStruct
 
 	public static CreatureStruct GenerateNewWildMob(ChunkData chunk_data, int innerX, int innerZ, float size, float level_mod, InventoryItem item, int rot)
 	{
-		return null;
+		List<string> list = new List<string>();
+		list.Add(chunk_data.biome_mobA);
+		list.Add(chunk_data.biome_mobB);
+		string text = chunk_data.zone + "," + chunk_data.X + "," + chunk_data.Z + "," + innerX + "," + innerZ;
+		float curr_depth = GameController.Instance.DepthAt(new Vector3((float)(chunk_data.X * 10) + (float)innerX + 0.5f, 1.5f, (float)(chunk_data.Z * 10) + (float)innerZ + 0.5f));
+		int wildCreatureLevel = MobControl.Instance.GetWildCreatureLevel(level_mod, curr_depth);
+		return new CreatureStruct(text, list, wildCreatureLevel, size, DEFAULT_BRAIN_TYPE, DEFAULT_WALK_SPEED, DEFAULT_HP_REGEN, DEFAULT_HP_MAX, DEFAULT_HP_CURR, DEFAULT_AI_LOCKON, DEFAULT_WANDER_DIST, new InventoryItem(""), new InventoryItem(""), new InventoryItem(""), "[TRANSLATE]", DEFAULT_RESPAWN_SECONDS, "", item, rot, DEFAULT_ICON_ID, chunk_data.zone, chunk_data.X, chunk_data.Z, innerX, innerZ, 0, 0);
 	}
 
 	public static CreatureStruct GenerateNestMob(ChunkData chunk_data, int innerX, int innerZ, InventoryItem item, int rot)
 	{
-		return null;
+		string biome_mobA = chunk_data.biome_mobA;
+		List<string> list = new List<string>();
+		list.Add(biome_mobA);
+		list.Add(biome_mobA);
+		string text = chunk_data.zone + "," + chunk_data.X + "," + chunk_data.Z + "," + innerX + "," + innerZ;
+		float curr_depth = GameController.Instance.DepthAt(new Vector3((float)(chunk_data.X * 10) + (float)innerX + 0.5f, 1.5f, (float)(chunk_data.Z * 10) + (float)innerZ + 0.5f));
+		int wildCreatureLevel = MobControl.Instance.GetWildCreatureLevel(2f, curr_depth);
+		return new CreatureStruct(text, list, wildCreatureLevel, 2f, SharedCreature.brain_type_t.neutral, 0.04f, DEFAULT_HP_REGEN, DEFAULT_HP_MAX, DEFAULT_HP_CURR, 0.5f, 0f, new InventoryItem(""), new InventoryItem(""), new InventoryItem(""), "Big-Momma " + biome_mobA, 7200, "", item, rot, DEFAULT_ICON_ID, chunk_data.zone, chunk_data.X, chunk_data.Z, innerX, innerZ, 0, 0);
 	}
 
 	public static CreatureStruct GenerateCompanionGhost(InventoryItem companion_item, InventoryItem original_item, ChunkData chunk_data, int rot, int innerX, int innerZ, int spawn_offset_x, int spawn_offset_z)
 	{
-		return null;
+		List<string> list = new List<string>();
+		list.Add(companion_item.GetString("creature_A"));
+		list.Add(companion_item.GetString("creature_B"));
+		ItemCountPair[] itemListFromItem = ChunkControl.Instance.GetItemListFromItem("pockets", companion_item);
+		int num = chunk_data.X;
+		int num2 = chunk_data.Z;
+		int num3 = spawn_offset_x + innerX;
+		int num4 = spawn_offset_z + innerZ;
+		if (num3 >= 10)
+		{
+			num3 -= 10;
+			num++;
+		}
+		else if (num3 < 0)
+		{
+			num3 += 10;
+			num--;
+		}
+		if (num4 >= 10)
+		{
+			num4 -= 10;
+			num2++;
+		}
+		else if (num4 < 0)
+		{
+			num4 += 10;
+			num2--;
+		}
+		string text = chunk_data.zone + "," + num + "," + num2 + "," + num3 + "," + num4;
+		return new CreatureStruct(text, list, companion_item.GetLong("level"), 1f, SharedCreature.brain_type_t.ghost, DEFAULT_WALK_SPEED, DEFAULT_HP_REGEN, DEFAULT_HP_MAX, DEFAULT_HP_CURR, DEFAULT_AI_LOCKON, 0f, itemListFromItem[3].item, itemListFromItem[8].item, itemListFromItem[13].item, companion_item.GetString("npc_display_name"), DEFAULT_RESPAWN_SECONDS, "Blue Glow", original_item, rot, DEFAULT_ICON_ID, chunk_data.zone, chunk_data.X, chunk_data.Z, innerX, innerZ, spawn_offset_x, spawn_offset_z);
 	}
 
 	public static CreatureStruct GenerateHiveMob(ChunkData chunk_data, int innerX, int innerZ, string minicreature, InventoryItem item, int rot, int spawn_offset_x, int spawn_offset_z)
 	{
-		return null;
+		List<string> list = new List<string>();
+		list.Add(minicreature);
+		list.Add(minicreature);
+		int num = chunk_data.X;
+		int num2 = chunk_data.Z;
+		int num3 = spawn_offset_x + innerX;
+		int num4 = spawn_offset_z + innerZ;
+		if (num3 >= 10)
+		{
+			num3 -= 10;
+			num++;
+		}
+		else if (num3 < 0)
+		{
+			num3 += 10;
+			num--;
+		}
+		if (num4 >= 10)
+		{
+			num4 -= 10;
+			num2++;
+		}
+		else if (num4 < 0)
+		{
+			num4 += 10;
+			num2--;
+		}
+		string text = chunk_data.zone + "," + num + "," + num2 + "," + num3 + "," + num4;
+		float curr_depth = GameController.Instance.DepthAt(new Vector3((float)innerX + (float)(chunk_data.X * 10) + 0.5f, 1.5f, (float)innerZ + (float)(chunk_data.Z * 10) + 0.5f));
+		int wildCreatureLevel = MobControl.Instance.GetWildCreatureLevel(0.7f, curr_depth);
+		return new CreatureStruct(text, list, wildCreatureLevel, 0.5f, SharedCreature.brain_type_t.aggressive, 0.049f, DEFAULT_HP_REGEN, DEFAULT_HP_MAX, DEFAULT_HP_CURR, 2f, 1f, new InventoryItem(""), new InventoryItem(""), new InventoryItem(""), "[TRANSLATE]", 180, "", item, rot, DEFAULT_ICON_ID, chunk_data.zone, chunk_data.X, chunk_data.Z, innerX, innerZ, spawn_offset_x, spawn_offset_z);
 	}
 
 	public static CreatureStruct GenerateGuardMob(ChunkData chunk_data, int innerX, int innerZ, string creatureA, string creatureB, InventoryItem hat, InventoryItem body, InventoryItem hand, string companion_name, int level, InventoryItem item, int rot)
 	{
-		return null;
+		List<string> list = new List<string>();
+		list.Add(creatureA);
+		list.Add(creatureB);
+		string text = chunk_data.zone + "," + chunk_data.X + "," + chunk_data.Z + "," + innerX + "," + innerZ;
+		return new CreatureStruct(text, list, level, 1f, SharedCreature.brain_type_t.guard, DEFAULT_WALK_SPEED, DEFAULT_HP_REGEN, DEFAULT_HP_MAX, DEFAULT_HP_CURR, 5f, 0f, hat, body, hand, companion_name, DEFAULT_RESPAWN_SECONDS, "", item, rot, DEFAULT_ICON_ID, chunk_data.zone, chunk_data.X, chunk_data.Z, innerX, innerZ, 0, 0);
 	}
 }

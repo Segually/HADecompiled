@@ -121,7 +121,7 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public GameObject prefab_item_shield_indicator;
 
-	public static float crafting_bonus_multiplier;
+	public static float crafting_bonus_multiplier = 0.13f;
 
 	public Material mobile_diffuse;
 
@@ -135,19 +135,19 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public ItemCountPair trying_to_craft;
 
-	public static int p2_begin_;
+	public static int p2_begin_ = 20;
 
-	public static int n_slots_per_page_;
+	public static int n_slots_per_page_ = 15;
 
 	private BasketContents curr_container;
 
 	public Text text_loot_respawn_in;
 
-	public static int hand_index;
+	public static int hand_index = 15;
 
-	public static int hat_index;
+	public static int hat_index = 16;
 
-	public static int body_index;
+	public static int body_index = 17;
 
 	private int trash_index;
 
@@ -382,6 +382,10 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void Start_1()
 	{
+		standard_slots_position = slot_parent.transform.localPosition;
+		ClearInventory(false);
+		create_buttons_and_slots();
+		RedrawPageSwitchers(1);
 	}
 
 	public void Reorder(List<GameObject> objects, Transform T)
@@ -403,7 +407,45 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public inv_type_t GetItemType(InventoryItem item)
 	{
-		return default(inv_type_t);
+		if (item.GetString("custom_type") != "")
+		{
+			string text = item.GetString("custom_type");
+			if (text == "hat")
+			{
+				return inv_type_t.helmet;
+			}
+			if (text == "furniture")
+			{
+				return inv_type_t.place_in_world;
+			}
+			return inv_type_t.none;
+		}
+		string stringFromItemFile = ResourceControl.Instance.GetStringFromItemFile(item.item_name, "Type");
+		if (stringFromItemFile == "Armor")
+		{
+			return inv_type_t.armor;
+		}
+		if (stringFromItemFile == "Consumable")
+		{
+			return inv_type_t.consumable;
+		}
+		if (stringFromItemFile == "Helmet")
+		{
+			return inv_type_t.helmet;
+		}
+		if (stringFromItemFile == "Holdable")
+		{
+			return inv_type_t.holdable;
+		}
+		if (stringFromItemFile == "Place_in_world")
+		{
+			return inv_type_t.place_in_world;
+		}
+		if (stringFromItemFile == "Tool")
+		{
+			return inv_type_t.tool;
+		}
+		return inv_type_t.none;
 	}
 
 	public string GetItemToolRequiredToMove(string item_name)
@@ -501,7 +543,12 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public int GetItemMaxStack(string item_name)
 	{
-		return 0;
+		int intFromItemFile = ResourceControl.Instance.GetIntFromItemFile(item_name, "Max_stack");
+		if (intFromItemFile == 0)
+		{
+			return 1;
+		}
+		return intFromItemFile;
 	}
 
 	public string GetItemDescription(string item_name)
@@ -521,11 +568,120 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public GameObject GenerateCustomModel(InventoryItem item)
 	{
-		return null;
+		GameObject gameObject = new GameObject("CUSTOM MODEL");
+		gameObject.AddComponent<MeshFilter>();
+		gameObject.AddComponent<MeshRenderer>();
+		List<Vector3> list = new List<Vector3>();
+		List<int> list2 = new List<int>();
+		List<Vector3> list3 = new List<Vector3>();
+		List<Vector2> list4 = new List<Vector2>();
+		int @long = item.GetLong("n_mesh_verts");
+		for (int i = 0; i < @long; i++)
+		{
+			list.Add(new Vector3((float)item.GetLong("mesh_vX" + i) / 100f, (float)item.GetLong("mesh_vY" + i) / 100f, (float)item.GetLong("mesh_vZ" + i) / 100f));
+		}
+		int long2 = item.GetLong("n_mesh_tris");
+		for (int j = 0; j < long2; j++)
+		{
+			list2.Add(item.GetLong("mesh_tri" + j));
+		}
+		int long3 = item.GetLong("n_mesh_normals");
+		for (int k = 0; k < long3; k++)
+		{
+			list3.Add(new Vector3((float)item.GetLong("mesh_nX" + k) / 100f, (float)item.GetLong("mesh_nY" + k) / 100f, (float)item.GetLong("mesh_nZ" + k) / 100f));
+		}
+		int long4 = item.GetLong("n_mesh_uvs");
+		for (int l = 0; l < long4; l++)
+		{
+			list4.Add(new Vector2((float)item.GetLong("mesh_uX" + l) / 100f, (float)item.GetLong("mesh_uY" + l) / 100f));
+		}
+		Mesh mesh = new Mesh();
+		mesh.vertices = list.ToArray();
+		mesh.triangles = list2.ToArray();
+		mesh.normals = list3.ToArray();
+		mesh.uv = list4.ToArray();
+		gameObject.GetComponent<MeshFilter>().mesh = mesh;
+		gameObject.GetComponent<MeshRenderer>().material = new Material(mobile_diffuse);
+		int long5 = item.GetLong("n_tex_bts");
+		byte[] array = new byte[long5];
+		byte[] array2 = null;
+		int num = 0;
+		int num2 = 0;
+		for (int m = 0; m < long5; m++)
+		{
+			if (array2 == null)
+			{
+				array2 = BitConverter.GetBytes(item.GetLong("Tb" + num2));
+			}
+			array[m] = array2[num];
+			num++;
+			if (num == 4)
+			{
+				num = 0;
+				array2 = null;
+				num2++;
+			}
+		}
+		Texture2D texture2D = new Texture2D(64, 64);
+		texture2D.LoadImage(array);
+		gameObject.GetComponent<MeshRenderer>().material.mainTexture = texture2D;
+		if (item.GetShort("has_particles") != 1)
+		{
+			return gameObject;
+		}
+		GameObject gameObject2 = new GameObject("CUSTOM PARTICLES");
+		gameObject2.transform.SetParent(gameObject.transform);
+		gameObject2.transform.localPosition = Vector3.zero;
+		gameObject2.transform.localScale = Vector3.one;
+		gameObject2.transform.localRotation = Quaternion.identity;
+		ParticleSystem particleSystem = gameObject2.AddComponent<ParticleSystem>();
+		ParticleSystem.MainModule main = particleSystem.main;
+		main.startSpeed = (float)item.GetShort("particle_speed") / 10f;
+		main.startLifetime = (float)item.GetShort("particle_lifetime") / 10f;
+		main.startSize = (float)item.GetShort("particle_size") / 10f;
+		if (item.GetString("particle_space") == "world")
+		{
+			main.simulationSpace = ParticleSystemSimulationSpace.World;
+		}
+		Color color = new Color((float)item.GetShort("particle_color1_r") / 255f, (float)item.GetShort("particle_color1_g") / 255f, (float)item.GetShort("particle_color1_b") / 255f);
+		Color color2 = new Color((float)item.GetShort("particle_color2_r") / 255f, (float)item.GetShort("particle_color2_g") / 255f, (float)item.GetShort("particle_color2_b") / 255f);
+		if (color != Color.black || color2 != Color.black)
+		{
+			if (color2 != Color.black)
+			{
+				main.startColor = new ParticleSystem.MinMaxGradient(color, color2);
+			}
+			else
+			{
+				main.startColor = color;
+			}
+		}
+		ParticleSystem.ShapeModule shape = particleSystem.shape;
+		if (item.GetString("particle_shape_type") == "sphere")
+		{
+			shape.shapeType = ParticleSystemShapeType.Sphere;
+		}
+		shape.radius = (float)item.GetShort("particle_shape_radius") / 10f;
+		particleSystem.GetComponent<ParticleSystemRenderer>().material = default_particles;
+		return gameObject;
 	}
 
 	public void NestedApplyMaterial(GameObject G, Material mat)
 	{
+		MeshRenderer component = G.GetComponent<MeshRenderer>();
+		if (component != null)
+		{
+			Material[] materials = component.materials;
+			for (int i = 0; i < materials.Length; i++)
+			{
+				materials[i] = mat;
+			}
+			component.materials = materials;
+		}
+		for (int j = 0; j < G.transform.childCount; j++)
+		{
+			NestedApplyMaterial(G.transform.GetChild(j).gameObject, mat);
+		}
 	}
 
 	public bool is_locked_by_player(InventoryItem item)
@@ -552,6 +708,11 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void ClearInventory(bool save)
 	{
+		player_inventory = new BasketContents();
+		if (save)
+		{
+			player_inventory.SaveAllAsInventory();
+		}
 	}
 
 	public void crafting_inc_page(int dir)
@@ -560,6 +721,12 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void LoadInventory()
 	{
+		player_inventory = new BasketContents();
+		player_inventory.LoadFromDiskAsInventory();
+		GameController.Instance.player.GetComponent<SharedCreature>().hand_ = player_inventory[hand_index].item;
+		GameController.Instance.player.GetComponent<SharedCreature>().hat_ = player_inventory[hat_index].item;
+		GameController.Instance.player.GetComponent<SharedCreature>().body_ = player_inventory[body_index].item;
+		GameController.Instance.player.GetComponent<SharedCreature>().OnEquipmentChanged();
 	}
 
 	public void BeginCraftAnimation()

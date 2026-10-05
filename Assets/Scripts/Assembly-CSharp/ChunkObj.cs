@@ -100,10 +100,33 @@ public class ChunkObj
 
 	public void DestroyBuildableInstance(int chunkX, int chunkZ, int x, int z, InventoryItem old_element_item, int old_element_rot)
 	{
+		TryEraseBuildableGeometry(old_element_item, new Vector3((float)(x + chunkX * 10) + 0.5f, 0f, (float)(z + chunkZ * 10) + 0.5f), old_element_rot);
+		TryEraseRespawnWatcher(x, z, old_element_item);
+		bool flag = InventoryUtils.ShouldReplaceOrDeleteExactItem(old_element_item.item_name);
+		if (!buildable_instances.ContainsKey(x + "," + z))
+		{
+			return;
+		}
+		for (int i = 0; i < buildable_instances[x + "," + z].Count; i++)
+		{
+			BuildableInstance buildableInstance = buildable_instances[x + "," + z][i];
+			if (flag ? (buildableInstance.item == old_element_item) : (buildableInstance.item.item_name == old_element_item.item_name))
+			{
+				if (buildableInstance.obj != null)
+				{
+					DeleteOne(buildableInstance.obj.transform);
+					UnityEngine.Object.Destroy(buildableInstance.obj);
+				}
+				buildable_instances[x + "," + z].RemoveAt(i);
+				break;
+			}
+		}
 	}
 
 	public void ReplaceElementItemInstance(int chunkX, int chunkZ, int x, int z, InventoryItem new_item, InventoryItem old_element_item, int old_element_rot, ChunkData chunk_data, Action<GameObject> on_complete = null)
 	{
+		DestroyBuildableInstance(chunkX, chunkZ, x, z, old_element_item, old_element_rot);
+		ConstructionControl.Instance.AsyncCreateBuildableInstance(new_item, x, z, old_element_rot, ConstructionControl.build_context_t.on_regular_load, null, chunk_data, this, on_complete);
 	}
 
 	public void TemporarilyDisableChunkObjs(Vector3 origin, float range, List<GameObject> new_temporarily_disabled)

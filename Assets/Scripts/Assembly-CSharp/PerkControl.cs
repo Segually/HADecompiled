@@ -229,9 +229,16 @@ public class PerkControl : MonoBehaviour, OrderedStart
 		return 0f;
 	}
 
-	private int GetNumInfinitelyLevelablePerks()
+	public int GetNumInfinitelyLevelablePerks()
 	{
-		return 0;
+		int result = n_infinitely_levelable_perks;
+		if (n_infinitely_levelable_perks == -1)
+		{
+			bool file_exists = false;
+			List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("AutoGen/(Auto Gen) Perks N Infinitely Levelable", ref file_exists);
+			result = ((!file_exists) ? 1 : int.Parse(textFileLines[0], Startup.parse_culture));
+		}
+		return result;
 	}
 
 	public bool PerkExists(string perk_key)

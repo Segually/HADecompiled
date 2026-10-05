@@ -80,12 +80,116 @@ public class PerkData
 
 	public int GetInt(string key, string effect_name, int perk_level, int player_level, string remove_suffix = "")
 	{
-		return 0;
+		return (int)GetFloat(key, effect_name, perk_level, player_level, remove_suffix);
 	}
 
 	public float GetFloat(string key, string effect_name, int perk_level, int player_level, string remove_suffix = "")
 	{
-		return 0f;
+		if (!all_effects.ContainsKey(effect_name))
+		{
+			return -1f;
+		}
+		Dictionary<string, string> data = all_effects[effect_name].data;
+		if (!data.ContainsKey(key))
+		{
+			return -1f;
+		}
+		string text = data[key];
+		if (text.Contains("CLAMP"))
+		{
+			string text2 = text.Replace("CLAMP (", "");
+			int num = text2.IndexOf('@');
+			string text3 = text2.Substring(0, num - 1);
+			if (remove_suffix != "")
+			{
+				text3 = text3.Replace(remove_suffix, "");
+			}
+			float num2 = float.Parse(text3, Startup.parse_culture);
+			string text4 = text.Replace("CLAMP (", "");
+			num += 12;
+			string text5 = text4.Substring(num, text4.Length - num);
+			int num3 = text5.IndexOf('@');
+			string text6 = text5.Substring(0, num3 - 1);
+			if (remove_suffix != "")
+			{
+				text6 = text6.Replace(remove_suffix, "");
+			}
+			float num4 = float.Parse(text6, Startup.parse_culture);
+			string text7 = text.Replace("CLAMP (", "");
+			string text8 = text7.Substring(num, text7.Length - num);
+			float num5 = float.Parse(text8.Substring(num3 + 6, text8.Length - num3 - 7), Startup.parse_culture);
+			float num6 = 0f;
+			if (num5 != 1f)
+			{
+				num6 = Mathf.Clamp01(((float)perk_level - 1f) / (num5 - 1f));
+			}
+			return num2 + (num4 - num2) * num6;
+		}
+		if (!text.Contains("RANGE"))
+		{
+			if (remove_suffix != "")
+			{
+				text = text.Replace(remove_suffix, "");
+			}
+			return float.Parse(text, Startup.parse_culture);
+		}
+		string text9 = data[key].Replace("RANGE (", "");
+		int num7;
+		if (text.Contains(" of own HP"))
+		{
+			text9 = text9.Replace(" of own HP)", "");
+			num7 = 1;
+		}
+		else if (text.Contains(" of own level"))
+		{
+			text9 = text9.Replace(" of own level)", "");
+			num7 = 2;
+		}
+		else
+		{
+			num7 = 0;
+		}
+		string text10 = text9.Substring(0, text9.IndexOf("%"));
+		text9 = text9.Replace(text10 + "%-", "");
+		string text11 = text9.Substring(0, text9.IndexOf("%"));
+		text9 = text9.Replace(text11 + "%-", "");
+		string s = text9.Substring(0, text9.Length - 1);
+		float num8 = float.Parse(text10, Startup.parse_culture);
+		float num9 = float.Parse(text11, Startup.parse_culture);
+		float num10 = float.Parse(s, Startup.parse_culture);
+		int numInfinitelyLevelablePerks = PerkControl.Instance.GetNumInfinitelyLevelablePerks();
+		float num11 = (float)player_level;
+		float num12 = num11 / 6f / (float)numInfinitelyLevelablePerks;
+		float num13;
+		if ((float)perk_level <= num12)
+		{
+			float t = 0f;
+			if (num12 != 0f)
+			{
+				t = Mathf.Clamp01((float)perk_level / num12);
+			}
+			num13 = Mathf.Lerp(num8, num9, t);
+		}
+		else
+		{
+			num13 = Mathf.Lerp(num9, num10, 1f - 1f / (((float)perk_level - num12) * 0.5f + 1f));
+		}
+		switch (num7)
+		{
+		case 1:
+			num11 = CombatControl.GetHpMaxPlayer(player_level, 0.5f);
+			break;
+		default:
+			return 9999f;
+		case 2:
+			break;
+		}
+		int num14 = (int)(num13 * num11 * 0.01f);
+		if (num14 == 0)
+		{
+			num14 = 1;
+		}
+		return num14;
 	}
 
 	public Vector3 GetVector3(string key, string effect_name, int perk_level, string remove_suffix = "")

@@ -127,7 +127,11 @@ public class InventoryUtils
 
 	public static string GetEquipmentSkinMat(string hat_item_name, string body_item_name)
 	{
-		return null;
+		if (hat_item_name == "Spirit Eldritch Helm" || body_item_name == "Spirit Armor")
+		{
+			return "Blue Glow";
+		}
+		return "";
 	}
 
 	public static bool IsPaintbrush(string item_name)
@@ -349,6 +353,22 @@ public class InventoryUtils
 
 	public static int GetPickTier(string hand_obj)
 	{
+		if (hand_obj == "Wood Pick")
+		{
+			return 1;
+		}
+		if (hand_obj == "Stone Pick")
+		{
+			return 2;
+		}
+		if (hand_obj == "Metal Pick")
+		{
+			return 3;
+		}
+		if (hand_obj == "Titanium Pick")
+		{
+			return 4;
+		}
 		return 0;
 	}
 

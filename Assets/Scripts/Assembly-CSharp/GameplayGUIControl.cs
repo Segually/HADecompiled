@@ -198,6 +198,24 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	public void HideGameplayGui()
 	{
+		top_left_buttons.SetActive(false);
+		top_right_buttons.SetActive(false);
+		bottom_left_buttons.SetActive(false);
+		levelbar.SetActive(false);
+		perkbuttons.SetActive(false);
+		end_sit_button.SetActive(false);
+		WindowPrefabsControl.Instance.DestroyScreen("dev - top left");
+		WindowPrefabsControl.Instance.DestroyScreen("dev - bottom center");
+		if (QuestControl.Instance.doing_time_trial)
+		{
+			WindowPrefabsControl.Instance.GetScreen("QUEST COUNTDOWN").GetComponent<QuestCountdown>().game_elements.alpha = 0f;
+			if (WindowPrefabsControl.Instance.GetScreen("QUEST KILL COUNT") != null)
+			{
+				WindowPrefabsControl.Instance.GetScreen("QUEST KILL COUNT").SetActive(false);
+			}
+		}
+		levelbar.GetComponent<Animation>().Stop();
+		GameController.Instance.level_up_animation_playing = false;
 	}
 
 	public void RedrawSkillPointsSpendableText()
@@ -341,10 +359,57 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	private void SetNotifGraphic(int i, InventoryItem item)
 	{
+		switch (i)
+		{
+		case 1:
+			notif_1_BG.SetActive(false);
+			notif_1_overlay.gameObject.SetActive(false);
+			notif_1_item.gameObject.SetActive(true);
+			notif_1_item.RedrawBasicIgnorePremium(item, 1);
+			break;
+		case 2:
+			notif_2_BG.gameObject.SetActive(false);
+			notif_2_overlay.gameObject.SetActive(false);
+			notif_2_item.gameObject.SetActive(true);
+			notif_2_item.RedrawBasicIgnorePremium(item, 1);
+			item_2 = item;
+			break;
+		}
 	}
 
 	private void SetNotifGraphic(int i, Sprite sprite)
 	{
+		switch (i)
+		{
+		case 1:
+			if (sprite != null)
+			{
+				notif_1_BG.SetActive(true);
+				notif_1_overlay.gameObject.SetActive(true);
+				notif_1_overlay.sprite = sprite;
+			}
+			else
+			{
+				notif_1_BG.SetActive(false);
+				notif_1_overlay.gameObject.SetActive(false);
+			}
+			notif_1_item.gameObject.SetActive(false);
+			break;
+		case 2:
+			if (sprite != null)
+			{
+				notif_2_BG.SetActive(true);
+				notif_2_overlay.gameObject.SetActive(true);
+				notif_2_overlay.sprite = sprite;
+			}
+			else
+			{
+				notif_2_BG.SetActive(false);
+				notif_2_overlay.gameObject.SetActive(false);
+			}
+			notif_2_item.gameObject.SetActive(false);
+			break;
+		}
 	}
 
 	public void HideAllNotifs()
@@ -353,18 +418,102 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	private void BumpNotif()
 	{
+		bool activeInHierarchy = notif_2_item.gameObject.activeInHierarchy;
+		GameObject gameObject = notif_1_item.gameObject;
+		if (activeInHierarchy)
+		{
+			gameObject.SetActive(true);
+			notif_1_item.RedrawBasicIgnorePremium(item_2, 1);
+		}
+		else
+		{
+			gameObject.SetActive(false);
+		}
+		notif_1_BG.gameObject.SetActive(notif_2_BG.gameObject.activeInHierarchy);
+		bool activeInHierarchy2 = notif_2_overlay.gameObject.activeInHierarchy;
+		GameObject gameObject2 = notif_1_overlay.gameObject;
+		if (activeInHierarchy2)
+		{
+			gameObject2.SetActive(true);
+			notif_1_overlay.sprite = notif_2_overlay.sprite;
+		}
+		else
+		{
+			gameObject2.SetActive(false);
+		}
+		notif_1_text.text = notif_2_text.text;
+		notif_1_obj.rectTransform.sizeDelta = notif_2_obj.rectTransform.sizeDelta;
+		notif_1_obj.gameObject.GetComponent<Animation>().Stop();
+		notif_1_obj.transform.localScale = Vector3.one;
+		notif_1_obj.GetComponent<CanvasGroup>().alpha = 1f;
+		notif_2_obj.GetComponent<Animation>().Stop();
+		notif_2_obj.gameObject.SetActive(false);
+		notif_1_life = notif_2_life;
+		on_A_click = on_B_click;
 	}
 
 	public void ShowNotif(string text, OnNotifClick on_click)
 	{
+		ShowNotif(text, (Sprite)null, on_click);
 	}
 
 	public void ShowNotif(string str, InventoryItem item, int count, OnNotifClick on_click)
 	{
+		float num = notif_1_life;
+		ShowNotif(str, (Sprite)null, on_click);
+		SetNotifGraphic((num == 0f) ? 1 : 2, item);
 	}
 
 	public void ShowNotif(string str, Sprite notif_img, OnNotifClick on_click)
 	{
+		if (notif_1_life == 0f)
+		{
+			notif_1_obj.gameObject.SetActive(true);
+			notif_1_obj.GetComponent<Animation>().Stop();
+			notif_1_obj.GetComponent<Animation>().Play("show-notif");
+			notif_1_text.text = str;
+			float preferredWidth = notif_1_text.preferredWidth;
+			RectTransform rectTransform = notif_1_obj.rectTransform;
+			float x = Mathf.Clamp(preferredWidth + pad, 180f, 400f);
+			rectTransform.sizeDelta = new Vector2(x, notif_1_obj.rectTransform.sizeDelta.y);
+			if (notif_img != null)
+			{
+				SetNotifGraphic(1, notif_img);
+			}
+			else
+			{
+				notif_1_BG.gameObject.SetActive(false);
+				notif_1_overlay.gameObject.SetActive(false);
+				notif_1_item.gameObject.SetActive(false);
+			}
+			notif_1_life = 420f;
+			on_A_click = on_click;
+			return;
+		}
+		if (notif_2_life != 0f)
+		{
+			BumpNotif();
+		}
+		notif_2_obj.gameObject.SetActive(true);
+		notif_2_obj.GetComponent<Animation>().Stop();
+		notif_2_obj.GetComponent<Animation>().Play("show-notif");
+		notif_2_text.text = str;
+		float preferredWidth2 = notif_2_text.preferredWidth;
+		RectTransform rectTransform2 = notif_2_obj.rectTransform;
+		float x2 = Mathf.Clamp(preferredWidth2 + pad, 180f, 400f);
+		rectTransform2.sizeDelta = new Vector2(x2, notif_2_obj.rectTransform.sizeDelta.y);
+		if (notif_img != null)
+		{
+			SetNotifGraphic(2, notif_img);
+		}
+		else
+		{
+			notif_2_BG.gameObject.SetActive(false);
+			notif_2_overlay.gameObject.SetActive(false);
+			notif_2_item.gameObject.SetActive(false);
+		}
+		notif_2_life = 420f;
+		on_B_click = on_click;
 	}
 
 	private notif_index GetEmptyNotifSlot()
@@ -374,5 +523,41 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	private void FixedUpdate()
 	{
+		if (notif_1_life > 0f)
+		{
+			notif_1_life -= 1f;
+			if (notif_1_life == 30f)
+			{
+				notif_1_obj.GetComponent<Animation>().Stop();
+				notif_1_obj.GetComponent<Animation>().Play("hide-notif");
+			}
+			else if (notif_1_life == 1f)
+			{
+				if (notif_2_life == 0f)
+				{
+					notif_1_obj.GetComponent<Animation>().Stop();
+					notif_1_obj.gameObject.SetActive(false);
+				}
+				else
+				{
+					BumpNotif();
+					notif_2_life = 0f;
+				}
+			}
+		}
+		if (notif_2_life > 0f)
+		{
+			notif_2_life -= 1f;
+			if (notif_2_life == 30f)
+			{
+				notif_2_obj.GetComponent<Animation>().Stop();
+				notif_2_obj.GetComponent<Animation>().Play("hide-notif");
+			}
+			else if (notif_2_life == 1f)
+			{
+				notif_2_obj.GetComponent<Animation>().Stop();
+				notif_2_obj.gameObject.SetActive(false);
+			}
+		}
 	}
 }

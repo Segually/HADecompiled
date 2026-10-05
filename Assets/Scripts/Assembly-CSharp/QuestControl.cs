@@ -77,6 +77,20 @@ public class QuestControl : MonoBehaviour, OrderedStart
 
 	public void RevertQuestIfNecessary()
 	{
+		string slotString = PlayerData.Instance.GetSlotString("revert_quest_name", PlayerData.filename_t.global_quest_data);
+		short slotShort = PlayerData.Instance.GetSlotShort("revert_quest_to_step", PlayerData.filename_t.global_quest_data);
+		if (slotString != "")
+		{
+			if (doing_time_trial)
+			{
+				WindowPrefabsControl.Instance.DestroyScreen("QUEST COUNTDOWN");
+				WindowPrefabsControl.Instance.DestroyScreen("QUEST KILL COUNT");
+				doing_time_trial = false;
+			}
+			SetQuestProgress(slotString, slotShort);
+			PlayerData.Instance.SetSlotString("revert_quest_name", "", PlayerData.filename_t.global_quest_data);
+			PlayerData.Instance.SetSlotShort("revert_quest_to_step", 0, PlayerData.filename_t.global_quest_data);
+		}
 	}
 
 	public void OpenQuestWindow()
@@ -101,7 +115,7 @@ public class QuestControl : MonoBehaviour, OrderedStart
 
 	public int GetQuestProgress(string quest_name)
 	{
-		return 0;
+		return PlayerData.Instance.GetSlotShort(quest_name + "_progress", PlayerData.filename_t.global_quest_data);
 	}
 
 	private void TryDestroyTempCompanions(Dictionary<string, string> step)

@@ -454,14 +454,40 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void PressOptionRevive()
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("You Died");
+		WindowPrefabsControl.Instance.DestroyScreen("You Died - bottom left");
+		short globalShort = PlayerData.Instance.GetGlobalShort("GEMS");
+		if (globalShort > 1)
+		{
+			PlayerData.Instance.SetGlobalShort("GEMS", globalShort - 2);
+			ReviveAccepted();
+			return;
+		}
+		AudioControl.Instance.PlayGenericClick();
+		GameplayGUIControl.Instance.HideGameplayGui();
+		Instance.DestroyAllOverheads();
+		string text = TranslationControl.Instance.TranslateGeneral("OOPS!", "Market");
+		string text2 = TranslationControl.Instance.TranslateGeneral("You do not have enough Gems.", "Market");
+		string text3 = TranslationControl.Instance.TranslateGeneral("Get more gems?", "Market");
+		ShopControl.Instance.ShowShopPopup("YES", ShopControl.button_color_t.yes_green, "CANCEL", ShopControl.button_color_t.no_red, false, "<color=#00aaff>" + text + "</color> " + text2 + "\n" + text3, new Color(1f, 1f, 1f, 1f), ShopControl.Instance.purchase_sad, new Color(1f, 1f, 1f, 1f), null, new Color(1f, 1f, 1f, 1f), new Color(0.29803923f, 0.50980395f, 0.5294118f, 1f), ShopControl.popup_context.revive_get_gems_yes_no);
 	}
 
 	public void PressOptionRespawn()
 	{
+		PopupControl.Instance.on_yes_pressed = delegate
+		{
+			Instance.Respawn_Accepted();
+		};
+		PopupControl.Instance.ShowYesNo("Are you sure?", "Yes", "No", (PopupControl.context)13);
 	}
 
 	public void PressOptionRestart()
 	{
+		PopupControl.Instance.on_yes_pressed = delegate
+		{
+			Instance.RestartAccepted();
+		};
+		PopupControl.Instance.ShowYesNo("Are you sure?\n<color=#ff2222>You will start over from Level 1 and lose anything you built.</color>\n\n(Note: you'll keep all your Gems and Purchases, but not companions)", "Yes", "No", (PopupControl.context)13);
 	}
 
 	public void revive_gems_accept()
@@ -474,27 +500,105 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void ReviveAccepted()
 	{
+		string player_zone = ChunkControl.Instance.player_zone;
+		Vector3 start_position = Instance.prev_player_pos;
+		ResetGame(false);
+		BreedControl.Instance.gameObject.SetActive(true);
+		BreedControl.Instance.SkipBreedScreen(false, player_zone, start_position, null, true);
+		SnapCam(0f);
+		pause = false;
+		GameplayGUIControl.Instance.ShowGameplayGui();
+		if (QuestControl.Instance.quest_perk_reapply_key != "")
+		{
+			PerkData perk_data = PerkControl.Instance.ClonePerkForCasting(QuestControl.Instance.quest_perk_reapply_key, Instance.player);
+			PerkControl.Instance.ApplyInitialCastOnto(perk_data, 1, "LOCAL", 1, Instance.player);
+		}
+		PlayerData.Instance.SetSlotShort("PLAYER_ALIVE", 1, PlayerData.filename_t.general);
 	}
 
 	public void Respawn_Accepted()
 	{
+		ResetGame(true);
+		BreedControl.Instance.gameObject.SetActive(true);
+		int num = (int)((float)playerLevel * 0.13f);
+		int num2 = playerLevel - num;
+		if (num2 < 2)
+		{
+			num2 = 1;
+		}
+		OverwritePlayerLevel(num2, "");
+		SavePlayerLevelToDisk();
+		currentEXP = 0;
+		SaveCurrentExpToDisk();
+		int num3 = skillPointsSpendable;
+		visualEXP = 0f;
+		animate_exp_bar = true;
+		if (num3 < num)
+		{
+			skillPointsSpendable = 0;
+			SaveSkillPointsSpendableToDisk();
+			for (int i = 0; i < num - num3; i++)
+			{
+				int num4 = Random.Range(0, n_stats);
+				player_stats[num4] = Mathf.Max(player_stats[num4] - 1, 0);
+			}
+			SaveAllStatsToDisk();
+			GameplayGUIControl.Instance.RedrawAllStatNibs();
+		}
+		else
+		{
+			skillPointsSpendable = num3 - num;
+			SaveSkillPointsSpendableToDisk();
+		}
+		inventory_ctr.Instance.ClearInventory(true);
+		BreedControl instance = BreedControl.Instance;
+		instance.SkipBreedScreen(false, "overworld", instance.campos_result.position, null, true);
+		SnapCam(0f);
+		pause = false;
+		GameplayGUIControl.Instance.ShowGameplayGui();
+		PlayerData.Instance.SetSlotShort("PLAYER_ALIVE", 1, PlayerData.filename_t.general);
 	}
 
 	public void RestartAccepted()
 	{
+		PopupControl.Instance.ShowConnecting("Deleting (0%)", (PopupControl.context)14);
+		StartCoroutine(AsyncRestartGame());
 	}
 
 	private IEnumerator AsyncRestartGame()
 	{
-		return null;
+		yield return new WaitForSeconds(0.1f);
+		PlayerData.Instance.DeleteSlot(PlayerData.Instance.SLOT, RestartComplete);
 	}
 
 	private void RestartComplete()
 	{
+		if (GameServerConnector.Instance.FullyInGame())
+		{
+			GameServerConnector.Instance.dont_goto_menu_on_connect = true;
+			GameServerConnector.Instance.Disconnect();
+		}
+		SceneManager.LoadScene("Game");
 	}
 
 	public void ResetGame(bool end_curr_quest)
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("You Died");
+		WindowPrefabsControl.Instance.DestroyScreen("You Died - bottom left");
+		AudioControl.Instance.PlayGenericClick();
+		level_up_animation_playing = false;
+		levelups_since_ad = 0;
+		CompanionController.Instance.ClearTrailNodes();
+		if (end_curr_quest)
+		{
+			CompanionController.Instance.DestroyTempCompanions();
+			QuestControl.Instance.RevertQuestIfNecessary();
+			AudioControl.Instance.EndBattleMusic();
+		}
+		DestroyAllOverheads();
+		ChunkControl.Instance.DestroyAllTerrain();
+		MobControl.Instance.ClearAllCreatures(false, true, true);
+		Instance.GiveAllOverheads();
 	}
 
 	public void EnableElevator(bool true_or_false)
@@ -505,6 +609,28 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void showOverheadNotif(string str, Vector3 position, bool sound, bool delete_on_many)
 	{
+		if (sound)
+		{
+			sfx.PlayOneShot(sfx_exp_get, AudioControl.Instance.general_sfx_volume * 0.7f);
+		}
+		GameObject gameObject = Object.Instantiate(type_expParticle);
+		gameObject.transform.SetParent(MobControl.Instance.gameObject.transform);
+		gameObject.transform.SetAsFirstSibling();
+		gameObject.transform.localRotation = Quaternion.identity;
+		gameObject.transform.localScale = Vector3.one * 0.61f;
+		gameObject.transform.localPosition = Vector2.zero;
+		gameObject.GetComponent<ExpGainParticle>().Init(position, Camera.main, str);
+		possible_destroy.Add(gameObject);
+		gameObject.GetComponent<Animation>().Stop();
+		gameObject.GetComponent<Animation>().PlayQueued("expText");
+		if (delete_on_many)
+		{
+			if (curr_pickup_overhead != null)
+			{
+				Object.Destroy(curr_pickup_overhead);
+			}
+			curr_pickup_overhead = gameObject;
+		}
 	}
 
 	public void CreatePlayer(GameObject creatureObj, Vector3 startPosition, bool on_breeder)
@@ -530,10 +656,51 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void PlayerDied()
 	{
+		PlayerData.Instance.SetSlotShort("PLAYER_ALIVE", 2, PlayerData.filename_t.general);
+		if (track_distance != null)
+		{
+			StopCoroutine(track_distance);
+		}
+		PerkReceiver component = player.GetComponent<PerkReceiver>();
+		foreach (DurationEffect duration_effect in component.duration_effects)
+		{
+			component.OnDurationEffectRemoved(duration_effect);
+		}
+		player = null;
+		HideTargetCircle();
+		if (ConstructionControl.Instance.done_button_context != ConstructionControl.button_state.none)
+		{
+			ConstructionControl.Instance.DonePlacing(true, true);
+		}
+		GameplayGUIControl.Instance.HideGameplayGui();
+		ShowDeathScreen("new death anm");
 	}
 
 	public void ShowDeathScreen(string animation_name)
 	{
+		WindowPrefabsControl.Instance.CreateScreen("You Died", WindowPrefabsControl.build_into_t.GAME_CTR);
+		UnityEngine.UI.Text textLegacy = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_revive_title");
+		UnityEngine.UI.Text textLegacy2 = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_revive_desc");
+		UnityEngine.UI.Text textLegacy3 = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_respawn_title");
+		UnityEngine.UI.Text textLegacy4 = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_respawn_desc");
+		UnityEngine.UI.Text textLegacy5 = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_restart_title");
+		UnityEngine.UI.Text textLegacy6 = WindowPrefabsControl.Instance.GetTextLegacy("You Died", "text_restart_desc");
+		textLegacy.text = TranslationControl.Instance.TranslateGeneral("REVIVE", "Market");
+		textLegacy2.text = TranslationControl.Instance.TranslateGeneral("You keep everything!", "Market");
+		textLegacy3.text = TranslationControl.Instance.TranslateGeneral("RESPAWN", "Market");
+		if ((int)((float)playerLevel * 0.13f) != 0)
+		{
+			textLegacy4.text = TranslationControl.Instance.TranslateGeneral("You lose the items in your inventory, and lose 999 levels.", "Market").Replace("999", ((int)((float)playerLevel * 0.13f)).ToString() ?? "");
+		}
+		else
+		{
+			textLegacy4.text = TranslationControl.Instance.TranslateGeneral("You lose the items in your inventory.", "Market");
+		}
+		textLegacy5.text = TranslationControl.Instance.TranslateGeneral("RESTART", "Market");
+		textLegacy6.text = TranslationControl.Instance.TranslateGeneral("Start a new game, with a new creature.", "Market");
+		Animation component = WindowPrefabsControl.Instance.GetScreen("You Died").GetComponent<Animation>();
+		component.Stop();
+		component.Play(animation_name);
 	}
 
 	public float DepthAt(Vector3 position)
@@ -921,6 +1088,21 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void DestroyAllOverheads()
 	{
+		foreach (GameObject item in possible_destroy)
+		{
+			if (item != null)
+			{
+				Object.Destroy(item);
+			}
+		}
+		possible_destroy.Clear();
+		foreach (KeyValuePair<string, OnlinePlayer> nearby_player in GameServerInterface.Instance.nearby_players)
+		{
+			if (nearby_player.Value.obj != null)
+			{
+				nearby_player.Value.obj.GetComponent<SharedCreature>().MP_display = null;
+			}
+		}
 	}
 
 	public void GiveAllOverheads()
@@ -989,10 +1171,16 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_creature_hit(float intensity, float pitch)
 	{
+		int num = sound_creature_hit_iterator;
+		sound_creature_hit_iterator = num + 1;
+		AudioControl.Instance.PlayPitch(sfx_creatures[num % 3], pitch, intensity);
 	}
 
 	public void sound_player_hit(float intensity, float pitch)
 	{
+		int num = sound_player_hit_iterator;
+		sound_player_hit_iterator = num + 1;
+		AudioControl.Instance.PlayPitch(sfx_player[num % 2], pitch, intensity);
 	}
 
 	public void animation_unlock_levelup_text()
@@ -1115,6 +1303,10 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void SaveAllStatsToDisk()
 	{
+		for (int i = 0; i < n_stats; i++)
+		{
+			PlayerData.Instance.SetSlotShort("stat" + i, player_stats[i], PlayerData.filename_t.general);
+		}
 	}
 
 	public void LoadParentCreaturesFromDisk()
@@ -1408,5 +1600,19 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void AssignHealthbar(GameObject obj)
 	{
+		if (obj.GetComponent<Combatant>().healthbar == null)
+		{
+			SharedCreature component = obj.GetComponent<SharedCreature>();
+			if (component != null && component.levelDisplay != null)
+			{
+				possible_destroy.Remove(component.levelDisplay);
+				Object.Destroy(component.levelDisplay);
+			}
+			obj.GetComponent<Combatant>().ReceiveHealthbar(Object.Instantiate(type_healthbar), Camera.main);
+		}
+		else
+		{
+			obj.GetComponent<Combatant>().RefreshHealthbarDisappearTimer(5f);
+		}
 	}
 }

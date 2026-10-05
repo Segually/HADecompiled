@@ -416,12 +416,16 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public static string GetBasketFilename(string basket_clump)
 	{
-		return null;
+		return "ClumpedBaskets(" + IntToChars((int)((float)int.Parse(basket_clump.Replace("basket", ""), Startup.parse_culture) / 50f)) + ")";
 	}
 
 	public static string GetZoneDataFilename(string zonedata_clump)
 	{
-		return null;
+		if (!zonedata_clump.Contains("shack"))
+		{
+			return "ClumpedZoneDatas(error)";
+		}
+		return "ClumpedZoneDatas(" + IntToChars((int)((float)int.Parse(zonedata_clump.Replace("shack", "").Replace("-zonedata", ""), Startup.parse_culture) / 50f)) + ")";
 	}
 
 	public static string IntToChars(int input_int)
@@ -845,6 +849,12 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void DestroyAllTerrain()
 	{
+		curr_chunk_loading = "";
+		foreach (KeyValuePair<string, Chunk> chunk in Chunks)
+		{
+			DeleteChunk(chunk.Key);
+		}
+		Chunks.Clear();
 	}
 
 	public void SaveAllLandClaimChunkTimersWithoutDestroying()

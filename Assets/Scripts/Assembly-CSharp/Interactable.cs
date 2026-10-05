@@ -54,6 +54,17 @@ public class Interactable : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		if (overhead_icon != null)
+		{
+			if (overhead_model_snap == null)
+			{
+				MobControl.Instance.SnapOverhead((RectTransform)overhead_icon.transform, base.transform.position);
+			}
+			else
+			{
+				MobControl.Instance.SnapOverhead((RectTransform)overhead_icon.transform, overhead_model_snap.GetLimbWorldPosition(0) + Vector3.up * 0.75f);
+			}
+		}
 	}
 
 	public void AssignOverheadIcon(Sprite set_icon = null, Sprite set_icon_2 = null)

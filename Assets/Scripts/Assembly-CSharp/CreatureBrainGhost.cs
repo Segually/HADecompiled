@@ -10,7 +10,7 @@ public class CreatureBrainGhost : MonoBehaviour, CreatureBrainInterface
 
 	private state curr_state;
 
-	private float dist_return_to_spawn;
+	private float dist_return_to_spawn = 23f;
 
 	public static string CorruptString(string input)
 	{
@@ -23,7 +23,14 @@ public class CreatureBrainGhost : MonoBehaviour, CreatureBrainInterface
 
 	public IEnumerator Think()
 	{
-		return null;
+		while (true)
+		{
+			if (!GameController.Instance.is_paused())
+			{
+				_ = curr_state;
+			}
+			yield return new WaitForSeconds(CreatureBrain.think_clock_speed);
+		}
 	}
 
 	public void TriggerOnReachDesiredMoveAt()
@@ -36,6 +43,17 @@ public class CreatureBrainGhost : MonoBehaviour, CreatureBrainInterface
 
 	public void OnFallOffWorld()
 	{
+		bool flag = InventoryUtils.IsHeavenDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name);
+		SharedCreature component = GetComponent<SharedCreature>();
+		if (flag)
+		{
+			component.Deload(true);
+			Object.Destroy(base.gameObject);
+		}
+		else
+		{
+			component.ResetHeight();
+		}
 	}
 
 	public void ReactOnHit(GameObject hit_by)

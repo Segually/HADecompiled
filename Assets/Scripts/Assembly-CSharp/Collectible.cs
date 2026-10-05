@@ -77,6 +77,12 @@ public class Collectible : MonoBehaviour
 
 	public void InitAsDrop(string active_obj_str)
 	{
+		this.active_obj_str = active_obj_str;
+		collectible_type = collectibe_type_t.drop_item;
+		if (!ChunkControl.Instance.active_interactibles.ContainsKey(active_obj_str))
+		{
+			ChunkControl.Instance.active_interactibles.Add(active_obj_str, base.gameObject);
+		}
 	}
 
 	public void OnCollectLocal()

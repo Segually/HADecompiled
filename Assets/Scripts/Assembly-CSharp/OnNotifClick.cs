@@ -13,12 +13,13 @@ public class OnNotifClick
 		new_gift = 6
 	}
 
-	public Dictionary<string, string> data;
+	public Dictionary<string, string> data = new Dictionary<string, string>();
 
 	public type on_click_type;
 
 	public OnNotifClick(type on_click_type)
 	{
+		this.on_click_type = on_click_type;
 	}
 
 	public void OnClick()

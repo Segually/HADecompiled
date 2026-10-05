@@ -122,6 +122,15 @@ public class SharedCreature : MonoBehaviour
 
 	public void ReplaceCreatureModel(List<string> new_parents)
 	{
+		LiteModel liteModel = myCreatureModel;
+		GameObject hybridLite = CreatureMorpher.Instance.GetHybridLite(new_parents);
+		hybridLite.GetComponent<LiteModel>().animation_choppiness = GraphicsControl.Instance.SpecialAnimationChoppiness();
+		hybridLite.transform.SetParent(liteModel.transform.parent);
+		hybridLite.transform.localPosition = Vector3.zero;
+		hybridLite.transform.localRotation = liteModel.transform.localRotation;
+		hybridLite.transform.localScale = liteModel.transform.localScale;
+		myCreatureModel = hybridLite.GetComponent<LiteModel>();
+		Object.Destroy(liteModel.gameObject);
 	}
 
 	public void ReCalcHpMaxAndHpRegen()
@@ -228,14 +237,38 @@ public class SharedCreature : MonoBehaviour
 
 	public void RedrawEquipment()
 	{
+		string currSkin = GetCurrSkin();
+		Material mat = null;
+		if (!Startup.StringNullOrEmpty(currSkin))
+		{
+			mat = MobControl.Instance.GetSkinMaterialByName(currSkin);
+		}
+		myCreatureModel.ApplyHat((hat_.item_name != "" && inventory_ctr.Instance.GetItemType(hat_) == inventory_ctr.inv_type_t.helmet) ? hat_ : new InventoryItem(""), mat);
+		myCreatureModel.ApplyArmor((body_.item_name != "" && inventory_ctr.Instance.GetItemType(body_) == inventory_ctr.inv_type_t.armor) ? body_ : new InventoryItem(""), mat);
+		myCreatureModel.ApplyWeapon((hand_.item_name != "" && inventory_ctr.Instance.GetItemType(hand_) == inventory_ctr.inv_type_t.holdable) ? hand_ : new InventoryItem(""), mat);
 	}
 
 	public void OnEquipmentChanged()
 	{
+		if (base.gameObject == GameController.Instance.player)
+		{
+			inventory_ctr.Instance.UpdateManaMods(hat_.item_name);
+		}
+		UpdateSize();
+		UpdateSkinMaterial();
+		RedrawEquipment();
 	}
 
 	public void VisuallyAttack()
 	{
+		if (!attack_anm_playing)
+		{
+			attack_anm_playing = true;
+			if (myCreatureModel != null)
+			{
+				myCreatureModel.StartAnimation(3);
+			}
+		}
 	}
 
 	public void CreateMultiplayerDisplay(string username_punctuated, int level)
@@ -405,11 +438,45 @@ public class SharedCreature : MonoBehaviour
 
 	public string GetCurrSkin()
 	{
-		return null;
+		string text = "";
+		foreach (DurationEffect duration_effect in GetComponent<PerkReceiver>().duration_effects)
+		{
+			if (duration_effect.time_remaining > 0f)
+			{
+				string @string = duration_effect.GetString("Change skin mat");
+				if (@string != "")
+				{
+					text = @string;
+				}
+			}
+		}
+		if (text != "")
+		{
+			return text;
+		}
+		string equipmentSkinMat = InventoryUtils.GetEquipmentSkinMat(hat_.item_name, body_.item_name);
+		if (equipmentSkinMat != "")
+		{
+			return equipmentSkinMat;
+		}
+		return base_skin_material;
 	}
 
 	public void UpdateSkinMaterial()
 	{
+		string currSkin = GetCurrSkin();
+		if (currSkin != prev_applied_skin)
+		{
+			if (currSkin != "")
+			{
+				myCreatureModel.ApplySpecialMaterial(MobControl.Instance.GetSkinMaterialByName(currSkin));
+			}
+			else
+			{
+				ReplaceCreatureModel(GetComponent<SharedCreature>().myCreatureModel.GetComponent<LiteModel>().original.creatures_that_made_me);
+			}
+			prev_applied_skin = currSkin;
+		}
 	}
 
 	public void ReCalcAttackSpeed()
@@ -501,22 +568,61 @@ public class SharedCreature : MonoBehaviour
 
 	public void RedrawLevelDisplay()
 	{
+		if (WindowControl.Instance.ShouldRecreateOverheads())
+		{
+			levelDisplay = Object.Instantiate(GameController.Instance.type_creatureLevelDisplay);
+			levelDisplay.transform.SetParent(MobControl.Instance.gameObject.transform);
+			levelDisplay.transform.SetAsFirstSibling();
+			levelDisplay.transform.localPosition = Vector3.zero;
+			levelDisplay.transform.localScale = Vector3.one * 0.75f;
+			levelDisplay.transform.localRotation = Quaternion.identity;
+			Transform transform = levelDisplay.transform;
+			Vector2 vector = Vector2.one * 10f;
+			((RectTransform)levelDisplay.transform).anchorMax = vector;
+			((RectTransform)transform).anchorMin = vector;
+			GameController.Instance.possible_destroy.Add(levelDisplay);
+			RedrawLevelText();
+			RedrawCreatureText();
+			RedrawIcon(icon_id);
+		}
 	}
 
 	public void AssignOverheadName(string creature_name, Color creature_name_col)
 	{
+		this.creature_name = creature_name;
+		creature_type_col = creature_name_col;
 	}
 
 	public void RedrawIcon(int draw_icon)
 	{
+		if (!(levelDisplay != null))
+		{
+			return;
+		}
+		Sprite sprite = null;
+		if (draw_icon >= 0 && draw_icon < DevBuildControl.Instance.overhead_logos.Length)
+		{
+			sprite = DevBuildControl.Instance.overhead_logos[draw_icon];
+		}
+		levelDisplay.transform.Find("StateDisplay").GetComponent<UnityEngine.UI.Image>().sprite = sprite;
 	}
 
 	public void RedrawCreatureText()
 	{
+		if (levelDisplay != null)
+		{
+			UnityEngine.UI.Text component = levelDisplay.transform.Find("creature-type").GetComponent<UnityEngine.UI.Text>();
+			component.text = creature_name;
+			component.color = creature_type_col;
+		}
 	}
 
 	public void RedrawLevelText()
 	{
+		if (!(levelDisplay == null))
+		{
+			levelDisplay.transform.Find("level").GetComponent<UnityEngine.UI.Text>().text = "LVL " + level;
+		}
 	}
 
 	public void ReEnable()

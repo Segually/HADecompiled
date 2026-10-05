@@ -71,6 +71,20 @@ public class ChunkData
 
 	public void ReplaceElementItem(int x, int z, InventoryItem new_item, InventoryItem old_element_item, int old_element_rot)
 	{
+		if (!chunk_elements.ContainsKey(x + "," + z))
+		{
+			return;
+		}
+		bool flag = InventoryUtils.ShouldReplaceOrDeleteExactItem(old_element_item.item_name);
+		for (int i = 0; i < chunk_elements[x + "," + z].Count; i++)
+		{
+			InventoryItem item = chunk_elements[x + "," + z][i].item;
+			if (flag ? (item == old_element_item && chunk_elements[x + "," + z][i].rot == old_element_rot) : (item.item_name == old_element_item.item_name))
+			{
+				chunk_elements[x + "," + z][i].item = new_item;
+				break;
+			}
+		}
 	}
 
 	public void RemoveElement(int x, int z, ChunkElement delete_element)

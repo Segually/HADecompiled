@@ -59,26 +59,193 @@ public class LiteModel : MonoBehaviour
 
 	public void ApplyWeapon(InventoryItem weapon_item, Material mat, Action on_weapon_applied = null)
 	{
+		if (holding_obj_ != null)
+		{
+			UnityEngine.Object.Destroy(holding_obj_);
+		}
+		if (holding_obj2 != null)
+		{
+			UnityEngine.Object.Destroy(holding_obj2);
+		}
+		if (weapon_item.item_name == "")
+		{
+			return;
+		}
+		GameObject check_not_null = base.gameObject;
+		ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(weapon_item.item_name), delegate(GameObject weapon_instance)
+		{
+			if (check_not_null == null)
+			{
+				UnityEngine.Object.Destroy(weapon_instance);
+			}
+			else
+			{
+				OnWeaponReady(weapon_instance, mat, weapon_item);
+				on_weapon_applied?.Invoke();
+			}
+		});
 	}
 
 	private void OnWeaponReady(GameObject weapon_instance, Material mat, InventoryItem weapon_item)
 	{
+		weapon_instance.transform.SetParent(base.transform);
+		weapon_instance.transform.localScale = new Vector3(1f, 1f, 1f);
+		holding_obj_ = weapon_instance;
+		PaintableObject component = weapon_instance.GetComponent<PaintableObject>();
+		if (component != null)
+		{
+			component.Colorize(inventory_ctr.Instance.GetPaintFromItemOrUseDefault(weapon_item), inventory_ctr.Instance.GetStampFromItem(weapon_item), inventory_ctr.Instance.GetLayoutItemFromItem(weapon_item.item_name), weapon_item.item_name, process_particles: true);
+		}
+		if (mat != null)
+		{
+			inventory_ctr.Instance.NestedApplyMaterial(weapon_instance, mat);
+		}
+		AnimateEquipment();
+		if (ResourceControl.Instance.GetStringFromItemFile(weapon_item.item_name, "dual_wield") == "true" || weapon_item.GetShort("dual_wield") == 1)
+		{
+			GameObject gameObject = UnityEngine.Object.Instantiate(weapon_instance);
+			gameObject.transform.SetParent(base.transform);
+			gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+			holding_obj2 = gameObject;
+		}
 	}
 
 	public void ApplyHat(InventoryItem hat_item, Material mat, Action on_hat_applied = null)
 	{
+		if (hat != null)
+		{
+			UnityEngine.Object.Destroy(hat);
+			SetEarsActive(state: true);
+		}
+		if (hat_item.item_name == "")
+		{
+			return;
+		}
+		string stringFromItemFile = ResourceControl.Instance.GetStringFromItemFile(hat_item.item_name, "Helmet Style");
+		if (stringFromItemFile == "encompass_head")
+		{
+			hat_style = hat_style_t.encompass_head;
+		}
+		else if (stringFromItemFile == "top_of_head")
+		{
+			hat_style = hat_style_t.top_of_head;
+		}
+		else
+		{
+			hat_style = hat_style_t.unknown;
+		}
+		if (hat_item.GetShort("custom_mesh_version") != 0)
+		{
+			OnHatReady(inventory_ctr.Instance.GenerateCustomModel(hat_item), mat, hat_item);
+			return;
+		}
+		GameObject check_not_null = base.gameObject;
+		ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(hat_item.item_name), delegate(GameObject hat_instance)
+		{
+			if (check_not_null == null)
+			{
+				UnityEngine.Object.Destroy(hat_instance);
+			}
+			else
+			{
+				OnHatReady(hat_instance, mat, hat_item);
+				on_hat_applied?.Invoke();
+			}
+		});
 	}
 
 	private void OnHatReady(GameObject hat_instance, Material mat, InventoryItem hat_item)
 	{
+		SetEarsActive(state: false);
+		Vector3 visual_transform_localScale = limbs_[head_limb_index].visual_transform_localScale;
+		float num = Mathf.Min(Mathf.Max(Mathf.Max(Mathf.Max(visual_transform_localScale.x, 0f), visual_transform_localScale.y), visual_transform_localScale.z), 0.215f);
+		hat_offset = (num - visual_transform_localScale.y) * -0.5f * 2f;
+		hat_instance.transform.SetParent(base.transform);
+		hat_instance.transform.localScale = Vector3.one * num * 2f;
+		hat = hat_instance;
+		PaintableObject component = hat_instance.GetComponent<PaintableObject>();
+		if (component != null)
+		{
+			component.Colorize(inventory_ctr.Instance.GetPaintFromItemOrUseDefault(hat_item), inventory_ctr.Instance.GetStampFromItem(hat_item), inventory_ctr.Instance.GetLayoutItemFromItem(hat_item.item_name), hat_item.item_name, 3f, process_particles: true);
+		}
+		if (mat != null)
+		{
+			inventory_ctr.Instance.NestedApplyMaterial(hat_instance, mat);
+		}
+		AnimateEquipment();
 	}
 
 	public void ApplyArmor(InventoryItem armor_item, Material mat, Action on_armor_applied = null)
 	{
+		if (armor_body != null)
+		{
+			UnityEngine.Object.Destroy(armor_body);
+		}
+		if (armor_item.item_name == "")
+		{
+			return;
+		}
+		GameObject check_not_null = base.gameObject;
+		ResourceControl.Instance.AsyncInstantiateEquipment(inventory_ctr.Instance.GetItemWorldObjPath(armor_item.item_name), delegate(GameObject armor_instance)
+		{
+			if (check_not_null == null)
+			{
+				UnityEngine.Object.Destroy(armor_instance);
+				return;
+			}
+			armor_instance.transform.SetParent(base.transform);
+			PaintableObject component = armor_instance.GetComponent<PaintableObject>();
+			if (component != null)
+			{
+				component.Colorize(inventory_ctr.Instance.GetPaintFromItemOrUseDefault(armor_item), inventory_ctr.Instance.GetStampFromItem(armor_item), inventory_ctr.Instance.GetLayoutItemFromItem(armor_item.item_name), armor_item.item_name, 3f, process_particles: true);
+			}
+			if (mat != null)
+			{
+				inventory_ctr.Instance.NestedApplyMaterial(armor_instance, mat);
+			}
+			ResizeArmor(armor_instance);
+			armor_body = armor_instance;
+			AnimateEquipment();
+			on_armor_applied?.Invoke();
+		});
 	}
 
 	private void ResizeArmor(GameObject armor_instance)
 	{
+		Transform transform = armor_instance.transform.Find("model");
+		Transform transform2 = armor_instance.transform.Find("debug-torso");
+		if (transform == null || transform2 == null)
+		{
+			armor_instance.transform.localScale = limbs_[0].visual_transform_localScale;
+			return;
+		}
+		int childCount = armor_instance.transform.childCount;
+		List<Transform> list = new List<Transform>();
+		for (int i = 0; i < childCount; i++)
+		{
+			list.Add(armor_instance.transform.GetChild(i));
+		}
+		GameObject gameObject = new GameObject("temp_rotator");
+		gameObject.transform.SetParent(armor_instance.transform);
+		gameObject.transform.localPosition = Vector3.zero;
+		gameObject.transform.localRotation = Quaternion.identity;
+		gameObject.transform.localScale = Vector3.one;
+		foreach (Transform item in list)
+		{
+			item.SetParent(gameObject.transform);
+		}
+		gameObject.transform.localRotation = Quaternion.Euler(90f, 0f, 0f);
+		foreach (Transform item2 in list)
+		{
+			item2.SetParent(armor_instance.transform);
+		}
+		UnityEngine.Object.Destroy(gameObject);
+		Vector3 vector = transform2.localRotation * transform2.localScale;
+		transform2.localRotation = Quaternion.identity;
+		transform2.localScale = new Vector3(Mathf.Abs(vector.x), Mathf.Abs(vector.y), Mathf.Abs(vector.z));
+		Vector3 visual_transform_localScale = limbs_[0].visual_transform_localScale;
+		Vector3 localScale = transform2.transform.localScale;
+		armor_instance.transform.localScale = new Vector3(visual_transform_localScale.x * 2f / localScale.x, visual_transform_localScale.y * 2f / localScale.y, visual_transform_localScale.z * 2f / localScale.z);
 	}
 
 	public Vector3 GetLimbLocalPosition(int limb_index)
@@ -108,7 +275,11 @@ public class LiteModel : MonoBehaviour
 
 	public Vector3 GetLimbWorldPosition(int limb_index)
 	{
-		return default(Vector3);
+		LimbLite limbLite = limbs_[limb_index];
+		Matrix4x4 matrix4x = Matrix4x4.TRS(base.transform.position, base.transform.rotation, base.transform.lossyScale);
+		Matrix4x4 matrix4x2 = Matrix4x4.TRS(limbLite.transform_position, limbLite.transform_rotation, Vector3.one);
+		Matrix4x4 matrix4x3 = Matrix4x4.TRS(limbLite.visual_transform_localPosition, Quaternion.identity, limbLite.visual_transform_localScale);
+		return (matrix4x * matrix4x2 * matrix4x3).MultiplyPoint(Vector3.zero);
 	}
 
 	public void TryAssignEyeTexture()
@@ -168,6 +339,21 @@ public class LiteModel : MonoBehaviour
 
 	public void ApplySpecialMaterial(Material mat)
 	{
+		foreach (KeyValuePair<string, CreatureSubModel> sub_model in sub_models)
+		{
+			if (sub_model.Key != "eyes_mesh" && sub_model.Key != "mouth_mesh")
+			{
+				sub_model.Value.obj.GetComponent<MeshRenderer>().material = mat;
+			}
+		}
+		if (sub_models.ContainsKey("eyes_mesh"))
+		{
+			sub_models["eyes_mesh"].obj.GetComponent<MeshRenderer>().enabled = false;
+		}
+		if (sub_models.ContainsKey("mouth_mesh"))
+		{
+			sub_models["mouth_mesh"].obj.GetComponent<MeshRenderer>().enabled = false;
+		}
 	}
 
 	public void CreateMeshClones()
@@ -200,6 +386,13 @@ public class LiteModel : MonoBehaviour
 
 	public void SetEarsActive(bool state)
 	{
+		foreach (KeyValuePair<string, CreatureSubModel> sub_model in sub_models)
+		{
+			if (sub_model.Key.Contains("(DO_HIDE)"))
+			{
+				sub_model.Value.obj.SetActive(state);
+			}
+		}
 	}
 
 	public void StartBlinking()

@@ -36,6 +36,33 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 
 	public void UnlockAchievement(string achivement_key)
 	{
+		if (achivement_key == "test")
+		{
+			UnlockAchievement(all_achivements[UnityEngine.Random.Range(0, all_achivements.Length)].name);
+			return;
+		}
+		int num = 0;
+		int num2 = 0;
+		for (int i = 0; i < all_achivements.Length; i++)
+		{
+			if (all_achivements[i].name == achivement_key)
+			{
+				if (PlayerData.Instance.GetGlobalShort("achieve_" + achivement_key) == 0)
+				{
+					PlayerData.Instance.SetGlobalShort("achieve_" + achivement_key, 1);
+					OnNotifClick onNotifClick = new OnNotifClick(OnNotifClick.type.achieves);
+					onNotifClick.data.Add("achievement_page", num.ToString() ?? "");
+					GameplayGUIControl.Instance.ShowNotif("Achievement unlocked! <color=#fff36e>" + achivement_key + "</color>    ", trophy_spr, onNotifClick);
+				}
+				break;
+			}
+			num2++;
+			if (num2 == 3)
+			{
+				num2 = 0;
+				num++;
+			}
+		}
 	}
 
 	public void OpenAchievesWindow(int skip_to_page)

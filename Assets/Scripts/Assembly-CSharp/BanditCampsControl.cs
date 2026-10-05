@@ -62,7 +62,26 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public BanditCampInstance GetBanditCampInstanceByName(string instance_name)
 	{
-		return null;
+		if (DevBuildControl.Instance.debug_bandit_camp_data != null)
+		{
+			return DevBuildControl.Instance.debug_bandit_camp_data;
+		}
+		if (loaded_bandit_camp_instances.ContainsKey(instance_name))
+		{
+			return loaded_bandit_camp_instances[instance_name];
+		}
+		if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+		{
+			return null;
+		}
+		string filename = "bandit-camp-instance(" + instance_name + ")";
+		BanditCampInstance banditCampInstance = null;
+		if (PlayerData.Instance.GetSlotShort("exists", filename) == 1)
+		{
+			banditCampInstance = BanditCampInstance.LoadFromDisk(instance_name);
+			loaded_bandit_camp_instances.Add(instance_name, banditCampInstance);
+		}
+		return banditCampInstance;
 	}
 
 	public BanditCampInstance GetBanditCampInstanceByCoordinates(string zone, int chunkX, int chunkZ)
@@ -154,12 +173,62 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public string GetMobFromFaction(string suffix, int biome_id)
 	{
-		return null;
+		string key = "BANDIT_FACTION";
+		string key2 = "";
+		if (suffix.Contains("Weak"))
+		{
+			key2 = "weak";
+		}
+		else if (suffix.Contains("Stronger"))
+		{
+			key2 = "stronger";
+		}
+		else if (suffix.Contains("Boss"))
+		{
+			key2 = "boss";
+		}
+		if (!faction_mobs_files.ContainsKey(key))
+		{
+			faction_mobs_files.Add(key, LoadBanditMobList(key));
+		}
+		return faction_mobs_files[key].entries[DevBuildControl.BiomeIdToBiomeString(biome_id)][key2];
 	}
 
 	private FactionMobsFile LoadBanditMobList(string faction)
 	{
-		return null;
+		bool file_exists = false;
+		Dictionary<string, Dictionary<string, string>> dictionary = new Dictionary<string, Dictionary<string, string>>();
+		file_exists = false;
+		List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("FactionData/" + faction + "/" + faction + "_mobs_", ref file_exists);
+		if (file_exists)
+		{
+			string text = null;
+			foreach (string item in textFileLines)
+			{
+				if (item.StartsWith("[") && item.EndsWith("]"))
+				{
+					text = item.Trim('[', ']');
+					if (!dictionary.ContainsKey(text))
+					{
+						dictionary[text] = new Dictionary<string, string>();
+					}
+				}
+				else if (text != null && !string.IsNullOrWhiteSpace(item))
+				{
+					string[] array = item.Split('=');
+					if (array.Length == 2)
+					{
+						string key = array[0].Trim();
+						string value = array[1].Trim();
+						dictionary[text][key] = value;
+					}
+				}
+			}
+		}
+		return new FactionMobsFile
+		{
+			entries = dictionary
+		};
 	}
 
 	public string GetRandomLoreFromFaction(int biome_id)
@@ -174,11 +243,43 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public string GetRandomBossNameFromFaction(int biome_id)
 	{
-		return null;
+		string key = "BANDIT_FACTION";
+		if (!faction_boss_possible_names.ContainsKey(key))
+		{
+			faction_boss_possible_names.Add(key, LoadBanditBossNameList(key));
+		}
+		List<string> list = faction_boss_possible_names[key].entries[DevBuildControl.BiomeIdToBiomeString(biome_id)];
+		return list[Random.Range(0, list.Count)];
 	}
 
 	private FactionBossNameFile LoadBanditBossNameList(string faction)
 	{
-		return null;
+		bool file_exists = false;
+		Dictionary<string, List<string>> dictionary = new Dictionary<string, List<string>>();
+		file_exists = false;
+		List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("FactionData/" + faction + "/" + faction + "_boss_names", ref file_exists);
+		if (file_exists)
+		{
+			string text = null;
+			foreach (string item in textFileLines)
+			{
+				if (item.StartsWith("[") && item.EndsWith("]"))
+				{
+					text = item.Trim('[', ']');
+					if (!dictionary.ContainsKey(text))
+					{
+						dictionary[text] = new List<string>();
+					}
+				}
+				else if (text != null && !string.IsNullOrWhiteSpace(item))
+				{
+					dictionary[text].Add(item);
+				}
+			}
+		}
+		return new FactionBossNameFile
+		{
+			entries = dictionary
+		};
 	}
 }

@@ -39,6 +39,13 @@ public class PerkReceiver : MonoBehaviour
 
 	public bool HasPerkRemaining(string perk_key)
 	{
+		foreach (DurationEffect duration_effect in duration_effects)
+		{
+			if (duration_effect.perk_data.original_key == perk_key && duration_effect.time_remaining > 0f)
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 

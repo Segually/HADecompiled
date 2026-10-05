@@ -127,7 +127,29 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public static string BiomeIdToBiomeString(int biome_id)
 	{
-		return null;
+		switch (biome_id)
+		{
+		case 0:
+			return "grasslands";
+		case 1:
+			return "snow";
+		case 2:
+			return "desert";
+		case 3:
+			return "evergreen";
+		case 4:
+		case 5:
+			return "ocean";
+		case 6:
+		case 7:
+			return "swamp";
+		case 8:
+			return "woodlands";
+		case 9:
+			return "sakura";
+		default:
+			return "";
+		}
 	}
 
 	public bool IsDevPlacedShackZone(string zone)

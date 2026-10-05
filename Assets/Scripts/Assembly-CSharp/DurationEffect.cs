@@ -29,17 +29,17 @@ public class DurationEffect
 
 	public float GetFloat(string key, string remove_suffix = "")
 	{
-		return 0f;
+		return perk_data.GetFloat(key, effect_name, perk_level, original_caster_level, remove_suffix);
 	}
 
 	public int GetInt(string key, string remove_suffix = "")
 	{
-		return 0;
+		return perk_data.GetInt(key, effect_name, perk_level, original_caster_level, remove_suffix);
 	}
 
 	public string GetString(string key)
 	{
-		return null;
+		return perk_data.GetString(key, effect_name, perk_level);
 	}
 
 	public bool GetBool(string key)

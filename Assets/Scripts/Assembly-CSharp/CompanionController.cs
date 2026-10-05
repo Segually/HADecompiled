@@ -95,7 +95,15 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public Color GetTextColorFromIcon(int icon_id)
 	{
-		return default(Color);
+		switch (icon_id)
+		{
+		case 3:
+			return col_info_icon_text;
+		case 2:
+			return col_happy_icon_text;
+		default:
+			return default(Color);
+		}
 	}
 
 	public void PressGuard()
@@ -341,6 +349,24 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void DestroyTempCompanions()
 	{
+		int num = 0;
+		foreach (ActiveCompanion active_companion in active_companions)
+		{
+			num += (active_companion.is_temp_companion ? 1 : 0);
+		}
+		for (int i = 0; i < num; i++)
+		{
+			int j;
+			for (j = 0; !active_companions[j].is_temp_companion; j++)
+			{
+			}
+			ActiveCompanion activeCompanion = active_companions[j];
+			RemoveActiveCompanionAt(activeCompanion.hatch_index);
+			if (activeCompanion.obj != null)
+			{
+				Object.Destroy(activeCompanion.obj);
+			}
+		}
 	}
 
 	public void AcceptFreeCompanion()
@@ -396,5 +422,11 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	private void RemoveActiveCompanionAt(int X)
 	{
+		for (int i = X + 1; i < active_companions.Count; i++)
+		{
+			active_companions[i].hatch_index--;
+		}
+		active_companions.RemoveAt(X);
+		SaveActiveCompanions();
 	}
 }
