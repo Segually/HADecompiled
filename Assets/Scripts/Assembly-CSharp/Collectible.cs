@@ -103,5 +103,13 @@ public class Collectible : MonoBehaviour
 
 	public void OnDestroy()
 	{
+		if (!deleted)
+		{
+			if (ChunkControl.Instance.active_interactibles.ContainsKey(active_obj_str))
+			{
+				ChunkControl.Instance.active_interactibles.Remove(active_obj_str);
+			}
+			deleted = true;
+		}
 	}
 }

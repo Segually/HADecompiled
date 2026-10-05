@@ -840,6 +840,34 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void UpdateManaMods(string hat_item)
 	{
+		float mana_modifier;
+		switch (hat_item)
+		{
+		case "Blue Wizard Hat":
+		case "Purple Wizard Hat":
+		case "Grey Wizard Hat":
+			mana_modifier = 1.25f;
+			break;
+		case "Black Wizard Hat":
+		case "Storm Wizard Hat":
+			mana_modifier = 1.5f;
+			break;
+		case "White Wizard Hat":
+			mana_modifier = 2f;
+			break;
+		default:
+			mana_modifier = 1f;
+			break;
+		}
+		float mana_available = PerkControl.Instance.mana_available;
+		PerkControl.Instance.mana_modifier = mana_modifier;
+		float num = PerkControl.Instance.MaxManaWithModifiers();
+		if (mana_available > num)
+		{
+			PerkControl.Instance.mana_available = num;
+		}
+		PerkControl.Instance.UpdateManaVisual();
+		PerkControl.Instance.UpdateMainSlotsColor();
 	}
 
 	public void EquipIfPossible(int slot_index)
@@ -852,6 +880,7 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void click_DONE_placing()
 	{
+		ConstructionControl.Instance.DonePlacing(true, true);
 	}
 
 	public string GetPaintFromItemOrUseDefault(InventoryItem item)

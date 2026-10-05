@@ -97,6 +97,9 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void Start_1()
 	{
+		mana_mask_start_pos = mana_mask.transform.localPosition;
+		mana_overlay_start_pos = mana_foreground.transform.localPosition;
+		StartCoroutine(RegenerateMana());
 	}
 
 	public static float GetManaMaxPlayer(int stat_6_lvl)
@@ -406,7 +409,7 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public float GetAveragePerkLevel(int player_level)
 	{
-		return 0f;
+		return (float)player_level / 6f / (float)GetNumInfinitelyLevelablePerks();
 	}
 
 	public int GetNumInfinitelyLevelablePerks()
@@ -423,6 +426,19 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public bool PerkExists(string perk_key)
 	{
+		bool file_exists = false;
+		List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("AutoGen/(Auto Gen) Perks List", ref file_exists);
+		if (!file_exists)
+		{
+			return false;
+		}
+		foreach (string item in textFileLines)
+		{
+			if (!Startup.StringNullOrWhitespace(item) && item == perk_key)
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -541,6 +557,101 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void PressPerkCastButton(int index)
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		if (GameController.Instance.level_up_animation_playing)
+		{
+			return;
+		}
+		string text = ((index == 0) ? perk_slot_A : perk_slot_B);
+		int perkLevel = GetPerkLevel(text);
+		PerkData perkData = ClonePerkForCasting(text, GameController.Instance.player);
+		if (GameServerConnector.Instance.FullyInGame() && GameServerReceiver.Instance.disabled_perks.Contains(text))
+		{
+			PopupControl.Instance.ShowMessage(perkData.full_name + " is not allowed on this server right now.\n\nIt will be enabled in the future =)", PopupControl.context.message);
+			return;
+		}
+		if (text == "perk_giant" && ZoneDataControl.Instance.curr_zonedata.house_item.GetString("quest_miniworld") == "true")
+		{
+			PopupControl.Instance.ShowMessage("Giant perk is not allowed during this quest.", PopupControl.context.message);
+			return;
+		}
+		int manaCost = perkData.GetManaCost(perkLevel);
+		if (mana_available - (float)manaCost < 0f)
+		{
+			return;
+		}
+		bool flag = false;
+		bool flag2 = false;
+		bool flag3 = false;
+		foreach (InitialCastCommand item in perkData.on_initial_cast)
+		{
+			switch (item.type)
+			{
+			case InitialCastCommand.initial_cast_type.on_projectile:
+				if (item.projectile_target_type == InitialCastCommand.projectile_target.enemies)
+				{
+					flag2 = true;
+				}
+				else if (item.projectile_target_type == InitialCastCommand.projectile_target.allies)
+				{
+					flag3 = true;
+				}
+				break;
+			case InitialCastCommand.initial_cast_type.on_quick_tag:
+				flag2 = true;
+				break;
+			case InitialCastCommand.initial_cast_type.on_click_location:
+				flag = true;
+				break;
+			}
+		}
+		if (!flag && !flag2 && !flag3)
+		{
+			ApplyInitialCastOnto(perkData, perkLevel, "LOCAL", GameController.Instance.playerLevel, GameController.Instance.player);
+			SpendMana(manaCost);
+			return;
+		}
+		if (flag2)
+		{
+			GameController.Instance.casting_projectile_at_enemy = true;
+		}
+		else if (flag3)
+		{
+			GameController.Instance.casting_projectile_at_ally = true;
+		}
+		else if (flag)
+		{
+			GameController.Instance.picking_cast_custom_location = true;
+		}
+		GameController.Instance.PAUSE_GAME();
+		GameplayGUIControl.Instance.HideGameplayGui();
+		if (flag2)
+		{
+			ConstructionControl.Instance.ShowDoneButton("CANCEL", ConstructionControl.button_state.CAST_PROJECTILE_AT_ENEMY);
+		}
+		else if (flag3)
+		{
+			ConstructionControl.Instance.ShowDoneButton("CANCEL", ConstructionControl.button_state.CAST_PROJECTILE_AT_ALLY);
+		}
+		else if (flag)
+		{
+			ConstructionControl.Instance.ShowDoneButton("CANCEL", ConstructionControl.button_state.PICKING_CAST_CUSTOM_LOCATION);
+		}
+		ConstructionControl.Instance.click_to_place.SetActive(true);
+		if (flag2)
+		{
+			ConstructionControl.Instance.click_to_place_txt.text = "Click on an enemy!";
+		}
+		else if (flag3)
+		{
+			ConstructionControl.Instance.click_to_place_txt.text = "Click on a friend!";
+		}
+		else if (flag)
+		{
+			ConstructionControl.Instance.click_to_place_txt.text = "Click on a location!";
+		}
+		about_to_cast_data = perkData;
+		about_to_cast_lvl = perkLevel;
 	}
 
 	public void ApplyInitialCastOnto(PerkData perk_data, int perkLevel, string casted_from, int caster_level, GameObject cast_onto)
@@ -557,6 +668,12 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	private void DeselectCurrentPerk()
 	{
+		if (!(curr_sel_perk == null))
+		{
+			curr_sel_perk.GetComponent<Animation>().Stop();
+			curr_sel_perk.GetComponent<Image>().raycastTarget = true;
+			curr_sel_perk.transform.localScale = Vector3.one;
+		}
 	}
 
 	public void PressSpendPerkLater()
@@ -567,18 +684,46 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void PressSpendPerkNow()
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("NewPerkGet - center");
+		WindowPrefabsControl.Instance.DestroyScreen("NewPerkGet - bottom");
+		GameController.Instance.HideLevelScreen();
+		ActuallyOpenPerkManage();
+		PerkScreen.Instance.came_from_levelup_screen = true;
+		PerkScreen.Instance.stop_spend_mode_after_one_unlock = true;
+		PerkScreen.Instance.PressSpendPoints();
+		PerkScreen.Instance.cancel_button.SetActive(false);
 	}
 
 	public void OpenPerkManageScreen()
 	{
+		if (WindowControl.Instance.CanOpenGenericWindow())
+		{
+			WindowControl.Instance.DoOpenGenericWindow();
+			ActuallyOpenPerkManage();
+		}
 	}
 
 	private void ActuallyOpenPerkManage()
 	{
+		GameObject gameObject = WindowPrefabsControl.Instance.CreateScreen("NewPerkScreen", WindowPrefabsControl.build_into_t.GAME_CTR);
+		PerkScreen.Instance = gameObject.GetComponent<PerkScreen>();
+		PerkScreenDev.Instance = gameObject.GetComponent<PerkScreenDev>();
+		PerkScreen.Instance.Init();
+		WindowControl.Instance.OpenWindow(WindowControl.window_type_t.perkmanage);
 	}
 
 	public void CreateDrop(Vector3 position, string effect_name, PerkData perk_data, int perk_level, string caster_id, int caster_level, bool notify_others_of_drop)
 	{
+		GameObject gameObject = new GameObject("drop_effect");
+		PerkReceiver perkReceiver = gameObject.AddComponent<PerkReceiver>();
+		perkReceiver.delete_once_all_effects_gone = true;
+		gameObject.transform.position = position;
+		string effect_name2 = perk_data.GetString("Apply effect to drop", effect_name, perk_level).Replace("[", "").Replace("]", "");
+		perkReceiver.ApplyPerkEffect(false, effect_name2, perk_data, perk_level, caster_id, caster_level, notify_others_of_drop);
+		if (notify_others_of_drop)
+		{
+			GameServerSender.Instance.SendCreatePerkDrop(position, effect_name, perk_data, perk_level, caster_id, caster_level, "");
+		}
 	}
 
 	public bool ShouldApplyEffectRightNow(string caster_id)
@@ -592,14 +737,79 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void PlayerCastPerkAtTarget(PerkData perk_data, int perk_level, GameObject target, Vector3 custom_location)
 	{
+		int playerLevel = GameController.Instance.playerLevel;
+		foreach (InitialCastCommand item in perk_data.on_initial_cast)
+		{
+			switch (item.type)
+			{
+			case InitialCastCommand.initial_cast_type.on_self:
+				foreach (string effect_name in item.effect_names)
+				{
+					GameController.Instance.player.GetComponent<PerkReceiver>().ApplyPerkEffect(false, effect_name, perk_data, perk_level, "LOCAL", playerLevel, true);
+				}
+				break;
+			case InitialCastCommand.initial_cast_type.on_projectile:
+			{
+				string combat_name = target.GetComponent<Combatant>().combat_name;
+				LaunchProjectile(perk_data, perk_level, combat_name, "LOCAL", playerLevel, target.transform.position, GameController.Instance.player.transform.position);
+				GameServerSender.Instance.SendLaunchProjectilePerk(perk_data, perk_level, combat_name, "LOCAL", playerLevel, target.transform.position, GameController.Instance.player.transform.position, "");
+				break;
+			}
+			case InitialCastCommand.initial_cast_type.on_quick_tag:
+				GameController.Instance.player.GetComponent<CreatureBrainLocalPlayer>().SelectTarget(target);
+				GameController.Instance.player.GetComponent<SharedCreature>().isQuickTagging = true;
+				GameController.Instance.player.GetComponent<SharedCreature>().quickTagEffects = item.effect_names;
+				GameController.Instance.player.GetComponent<SharedCreature>().quickTagPerkData = perk_data;
+				GameController.Instance.player.GetComponent<SharedCreature>().quickTagPerkLevel = perk_level;
+				GameServerSender.Instance.SendQuickTag(1, "");
+				break;
+			case InitialCastCommand.initial_cast_type.on_click_location:
+				foreach (string effect_name2 in item.effect_names)
+				{
+					if (perk_data.GetBool("Set MoveAt To Drop Location", effect_name2, perk_level))
+					{
+						GameController.Instance.player.GetComponent<CreatureBrainLocalPlayer>().SelectMovePosition(custom_location);
+						break;
+					}
+				}
+				CreateDrop(custom_location, item.effect_names[0], perk_data, perk_level, "LOCAL", playerLevel, true);
+				break;
+			}
+		}
 	}
 
 	public void LaunchProjectile(PerkData perk_data, int perk_level, string preferred_target, string shot_from, int shot_from_level, Vector3 end_pos, Vector3 start_pos)
 	{
+		foreach (InitialCastCommand initial_cast in perk_data.on_initial_cast)
+		{
+			if (initial_cast.type != InitialCastCommand.initial_cast_type.on_projectile)
+			{
+				continue;
+			}
+			ResourceControl.Instance.AsyncInstantiatePerkObj(initial_cast.projectile_model, delegate(GameObject projectile_instance)
+			{
+				projectile_instance.transform.position = new Vector3(start_pos.x, 0.6f, start_pos.z);
+				GameObject target_obj = (MobControl.Instance.active_combatants.ContainsKey(preferred_target) ? MobControl.Instance.active_combatants[preferred_target] : null);
+				projectile_instance.GetComponent<PerkProjectile>().SHOOT_AT_(initial_cast.effect_names, perk_data, perk_level, 0.22f, end_pos, target_obj, shot_from, shot_from_level);
+				AudioSource component = projectile_instance.GetComponent<AudioSource>();
+				if (component != null)
+				{
+					component.volume = AudioControl.Instance.general_sfx_volume;
+					component.Play();
+				}
+			});
+			break;
+		}
 	}
 
 	public void SpendMana(float cast_cost)
 	{
+		if (cast_cost > 0f)
+		{
+			mana_available -= cast_cost;
+			UpdateManaVisual();
+			UpdateMainSlotsColor();
+		}
 	}
 
 	public void UpdateMainSlotsColor()
@@ -615,6 +825,20 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void ClosePerkManageScreen()
 	{
+		if (PerkScreen.Instance.unlocked_at_least_one_perk)
+		{
+			Instance.TryAchievements();
+		}
+		if (PerkScreen.Instance.came_from_levelup_screen)
+		{
+			GameController.Instance.TryLevelAchieves();
+		}
+		AudioControl.Instance.PlayGenericClick();
+		perk_screen_x = (int)PerkScreen.Instance.scrollwheel_parent.transform.localPosition.x;
+		perk_screen_y = (int)PerkScreen.Instance.scrollwheel_parent.transform.localPosition.y;
+		SavePerkScreenPositioningToDisk();
+		WindowPrefabsControl.Instance.DestroyScreen("NewPerkScreen");
+		GameController.Instance.level_up_animation_playing = false;
 	}
 
 	public void RedrawEquippedPerkSlots()
@@ -668,24 +892,83 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public float MaxManaWithModifiers()
 	{
-		return 0f;
+		return mana_modifier * 100f;
 	}
 
 	public void EquipPerk(int index, string perk_key_equip)
 	{
+		switch (index)
+		{
+		case 0:
+			perk_slot_A = perk_key_equip;
+			break;
+		case 1:
+			perk_slot_B = perk_key_equip;
+			break;
+		}
+		SaveEquippedPerksToDisk();
+		RedrawEquippedPerkSlots();
 	}
 
 	public void UpdateManaVisual()
 	{
+		float num = mana_available;
+		mana_text.text = (int)num + "%";
+		float num2 = num / MaxManaWithModifiers();
+		mana_mask.rectTransform.sizeDelta = new Vector2(100f, num2 * 100f);
+		float num3 = 1f - num2;
+		mana_mask.transform.localPosition = mana_mask_start_pos + Vector2.down * num3 * 50f;
+		mana_foreground.transform.localPosition = mana_overlay_start_pos + num3 * Vector2.up * 50f;
 	}
 
 	public void RegenerateSurroundingPlants(Vector3 origin, float radius, int perk_level)
 	{
+		string player_zone = ChunkControl.Instance.player_zone;
+		foreach (string allChunkKey in ChunkControl.Instance.GetAllChunkKeys())
+		{
+			ChunkData chunkData = ChunkControl.Instance.GetChunkData(allChunkKey);
+			if (chunkData == null)
+			{
+				continue;
+			}
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; j < 10; j++)
+				{
+					if (!(Vector3.Distance(origin, new Vector3(i + chunkData.X * 10, 0f, j + chunkData.Z * 10)) < radius))
+					{
+						continue;
+					}
+					foreach (ChunkElement item in chunkData.GetElementsAt(i, j))
+					{
+						int intFromItemFile = ResourceControl.Instance.GetIntFromItemFile(item.item.item_name, "Pollinator Regen Level");
+						if (intFromItemFile != 0 && intFromItemFile <= perk_level)
+						{
+							string stringFromItemFile = ResourceControl.Instance.GetStringFromItemFile(item.item.item_name, "Pollinator Regen RespawnId");
+							if (item.item.HasActiveRespawn(stringFromItemFile))
+							{
+								ExtraInventoryData extraDataCopy = item.item.GetExtraDataCopy();
+								extraDataCopy.SetString("has_respawn_" + stringFromItemFile, "");
+								InventoryItem new_item = new InventoryItem(item.item.item_name, extraDataCopy);
+								ConstructionControl.Instance.PlayerReplaceAt(new_item, item.item, item.rot, player_zone, chunkData.X, chunkData.Z, i, j, true, ConstructionControl.GenerateCacheKey());
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	private IEnumerator RegenerateMana()
 	{
-		return null;
+		while (true)
+		{
+			yield return new WaitForSeconds(0.2f);
+			float t = CombatControl.Instance.CalcCombatSlider(CombatControl.slider_type.mana_recharge);
+			mana_available = Mathf.Min(mana_available + Mathf.Lerp(0.6f, 1.1f, t), MaxManaWithModifiers());
+			UpdateManaVisual();
+			UpdateMainSlotsColor();
+		}
 	}
 
 	public void SoundMaxout()
@@ -703,7 +986,7 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public string GetPerkEnergyCostString(PerkData perk_data, int perk_level, bool show_differences)
 	{
-		return null;
+		return "<color=#00aaff>uses " + perk_data.GetManaCost(perk_level) + "% of energy</color>\n";
 	}
 
 	public void LoadGenomesFromDisk()
@@ -724,6 +1007,8 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public void SavePerkScreenPositioningToDisk()
 	{
+		PlayerData.Instance.SetSlotShort("perk_screen_x", perk_screen_x, PlayerData.filename_t.perks);
+		PlayerData.Instance.SetSlotShort("perk_screen_y", perk_screen_y, PlayerData.filename_t.perks);
 	}
 
 	public void LoadEquippedPerksFromDisk()
@@ -806,45 +1091,289 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public bool CanUnlockNextLevel(PerkData perk_data)
 	{
+		int perkLevel = GetPerkLevel(perk_data.original_key);
+		if ((perk_data.max_level == -1 || perkLevel != perk_data.max_level) && GenomesForNextLevel(perkLevel, perk_data) <= genomes)
+		{
+			return HasPrerequisiteForNextLevel(perk_data);
+		}
 		return false;
 	}
 
 	public bool HasEnoughGenomesForNextLevel(int perk_level, PerkData perk_Data)
 	{
-		return false;
+		return GenomesForNextLevel(perk_level, perk_Data) <= genomes;
 	}
 
 	public bool HasPrerequisiteForNextLevel(PerkData perk_data)
 	{
-		return false;
+		if (perk_data.unlock_prerequisite_perk_level != 0)
+		{
+			int perkLevel = Instance.GetPerkLevel(perk_data.unlock_prerequisite_perk_key);
+			if (perkLevel == 0)
+			{
+				return false;
+			}
+			if (perkLevel < perk_data.unlock_prerequisite_perk_level)
+			{
+				return false;
+			}
+		}
+		return true;
 	}
 
 	public int GenomesForNextLevel(int curr_perk_level, PerkData perk_data)
 	{
-		return 0;
+		if (curr_perk_level == 0)
+		{
+			return 1;
+		}
+		if (perk_data.max_level == -1)
+		{
+			float num = (float)GameController.Instance.playerLevel / 6f / (float)GetNumInfinitelyLevelablePerks();
+			if ((float)curr_perk_level >= num)
+			{
+				return (int)(((float)curr_perk_level - num + 1.6666666f) * 0.6f);
+			}
+		}
+		else if (perk_data.max_level != 0)
+		{
+			float num2 = Mathf.Clamp01((float)curr_perk_level / (float)perk_data.max_level);
+			if (num2 >= 0.8f)
+			{
+				return 3;
+			}
+			if (num2 >= 0.5f)
+			{
+				return 2;
+			}
+		}
+		return 1;
 	}
 
 	public string GetPerkUnlockCostString(PerkData perk_data, int perk_level)
 	{
-		return null;
+		string text = "<color=#fa3956>";
+		string text2 = "<color=#66fa88>";
+		string text3 = "";
+		text3 += ((GenomesForNextLevel(perk_level, perk_data) <= genomes) ? text2 : text);
+		int num = GenomesForNextLevel(perk_level, perk_data);
+		text3 = text3 + "\n" + num + " genome" + ((num < 2) ? "" : "s") + "</color>";
+		if (perk_data.unlock_prerequisite_perk_level != 0)
+		{
+			text3 += "\n";
+			text3 += (HasPrerequisiteForNextLevel(perk_data) ? text2 : text);
+			if (GetPerkLevel(perk_data.unlock_prerequisite_perk_key) != 0)
+			{
+				PerkData perkDataForInfoDisplay = GetPerkDataForInfoDisplay(perk_data.unlock_prerequisite_perk_key);
+				return text3 + "Level " + perk_data.unlock_prerequisite_perk_level + " \"" + perkDataForInfoDisplay.full_name + "\"</color>";
+			}
+			return text3 + "Level " + perk_data.unlock_prerequisite_perk_level + " \"???\"</color>";
+		}
+		return text3;
 	}
 
 	public string GetPerkDetailedDescription(PerkData perk_data, int perk_level_now, int player_level, bool show_diffs)
 	{
-		return null;
+		string text = ParseDescription(perk_data, perk_data.detailed_description, perk_level_now, player_level, show_diffs);
+		if (show_diffs && perk_data.mana_cost_str.Contains("CLAMP"))
+		{
+			int manaCost = perk_data.GetManaCost(perk_level_now);
+			int manaCost2 = perk_data.GetManaCost(perk_level_now - 1);
+			if (manaCost != manaCost2)
+			{
+				char c = text[text.Length - 1];
+				if (c != '!' && c != '.')
+				{
+					text += ".";
+				}
+				return text + " Uses " + manaCost + "% of energy <color=#00ff00>(" + (manaCost - manaCost2) + "%)</color>";
+			}
+		}
+		return text;
 	}
 
 	public string ParseDescription(PerkData perk_data, string description_str, int curr_perk_level, int player_level, bool show_diffs)
 	{
-		return null;
+		int num = 0;
+		while (description_str.Contains("GetFloat["))
+		{
+			int num2 = description_str.IndexOf("GetFloat[") + 9;
+			for (int i = 0; num2 + i < description_str.Length; i++)
+			{
+				if (description_str[num2 + i] == ']')
+				{
+					string text = description_str.Substring(num2, i);
+					string text2 = text.Substring(0, text.IndexOf(','));
+					string text3 = text.Replace(text2 + ", \"", "");
+					string text4 = text3.Substring(0, text3.IndexOf(',') - 1);
+					text3 = text3.Replace(text4 + "\", remove \"", "");
+					string remove_suffix = text3.Substring(0, text3.Length - 1);
+					float @float = perk_data.GetFloat(text4, text2, curr_perk_level, player_level, remove_suffix);
+					description_str = description_str.Replace("GetFloat[" + text + "]", @float.ToString("0.##") ?? "");
+					break;
+				}
+			}
+			num++;
+			if (num == 31)
+			{
+				return "ERROR";
+			}
+		}
+		num = 0;
+		while (description_str.Contains("DiffFloat["))
+		{
+			int num3 = description_str.IndexOf("DiffFloat[") + 10;
+			for (int j = 0; num3 + j < description_str.Length; j++)
+			{
+				if (description_str[num3 + j] == ']')
+				{
+					string text5 = description_str.Substring(num3, j);
+					string text6 = text5.Substring(0, text5.IndexOf(','));
+					string text7 = text5.Replace(text6 + ", \"", "");
+					string text8 = text7.Substring(0, text7.IndexOf(',') - 1);
+					text7 = text7.Replace(text8 + "\", remove \"", "");
+					string text9 = text7.Substring(0, text7.IndexOf(',') - 1);
+					text7 = text7.Replace(text9 + "\", add \"", "");
+					text7 = text7.Substring(0, text7.Length - 1);
+					float num4 = perk_data.GetFloat(text8, text6, curr_perk_level, player_level, text9) - perk_data.GetFloat(text8, text6, curr_perk_level - 1, player_level, text9);
+					string oldValue = "DiffFloat[" + text5 + "]";
+					string newValue = "";
+					if (num4 != 0f && show_diffs)
+					{
+						newValue = "<color=#00ff00>(" + ((num4 >= 0f) ? "+" : "") + num4.ToString("0.##") + text7 + ")</color>";
+					}
+					description_str = description_str.Replace(oldValue, newValue);
+					break;
+				}
+			}
+			num++;
+			if (num == 31)
+			{
+				return "ERROR";
+			}
+		}
+		num = 0;
+		while (description_str.Contains("GetInt["))
+		{
+			int num5 = description_str.IndexOf("GetInt[") + 7;
+			for (int k = 0; num5 + k < description_str.Length; k++)
+			{
+				if (description_str[num5 + k] == ']')
+				{
+					string text10 = description_str.Substring(num5, k);
+					string text11 = text10.Substring(0, text10.IndexOf(','));
+					string text12 = text10.Replace(text11 + ", \"", "");
+					string text13 = text12.Substring(0, text12.IndexOf(',') - 1);
+					text12 = text12.Replace(text13 + "\", remove \"", "");
+					string remove_suffix2 = text12.Substring(0, text12.Length - 1);
+					int num6 = (int)perk_data.GetFloat(text13, text11, curr_perk_level, player_level, remove_suffix2);
+					description_str = description_str.Replace("GetInt[" + text10 + "]", num6.ToString() ?? "");
+					break;
+				}
+			}
+			num++;
+			if (num == 31)
+			{
+				return "ERROR";
+			}
+		}
+		num = 0;
+		while (description_str.Contains("DiffInt["))
+		{
+			int num7 = description_str.IndexOf("DiffInt[") + 8;
+			for (int l = 0; num7 + l < description_str.Length; l++)
+			{
+				if (description_str[num7 + l] == ']')
+				{
+					string text14 = description_str.Substring(num7, l);
+					string text15 = text14.Substring(0, text14.IndexOf(','));
+					string text16 = text14.Replace(text15 + ", \"", "");
+					string text17 = text16.Substring(0, text16.IndexOf(',') - 1);
+					text16 = text16.Replace(text17 + "\", remove \"", "");
+					string text18 = text16.Substring(0, text16.IndexOf(',') - 1);
+					text16 = text16.Replace(text18 + "\", add \"", "");
+					text16 = text16.Substring(0, text16.Length - 1);
+					int num8 = (int)perk_data.GetFloat(text17, text15, curr_perk_level, player_level, text18) - (int)perk_data.GetFloat(text17, text15, curr_perk_level - 1, player_level, text18);
+					string oldValue2 = "DiffInt[" + text14 + "]";
+					if (num8 == 0 || !show_diffs)
+					{
+						description_str = description_str.Replace(oldValue2, "");
+					}
+					else
+					{
+						description_str = description_str.Replace(oldValue2, "<color=#00ff00>(" + ((num8 < 0) ? "" : "+") + num8 + text16 + ")</color>");
+					}
+					break;
+				}
+			}
+			num++;
+			if (num == 31)
+			{
+				return "ERROR";
+			}
+		}
+		num = 31;
+		while (description_str.Contains("  "))
+		{
+			description_str = description_str.Replace("  ", " ");
+			num--;
+			if (num == 0)
+			{
+				return "ERROR";
+			}
+		}
+		num = 31;
+		while (description_str.Contains(" ."))
+		{
+			description_str = description_str.Replace(" .", ".");
+			num--;
+			if (num == 0)
+			{
+				return "ERROR";
+			}
+		}
+		num = 31;
+		while (description_str.Contains(" ,"))
+		{
+			description_str = description_str.Replace(" ,", ",");
+			num--;
+			if (num == 0)
+			{
+				return "ERROR";
+			}
+		}
+		return description_str;
 	}
 
 	public int GetStandardPlayerLevel(float perk_level, bool exact)
 	{
-		return 0;
+		return 1;
 	}
 
 	public void TryAchievements()
 	{
+		AchievesControl.Instance.UnlockAchievement("You're A Wizard!");
+		bool file_exists = false;
+		List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("AutoGen/(Auto Gen) Perks List", ref file_exists);
+		if (!file_exists)
+		{
+			return;
+		}
+		int num = 0;
+		foreach (string item in textFileLines)
+		{
+			if (!Startup.StringNullOrWhitespace(item) && GetPerkLevel(item) > 0)
+			{
+				num++;
+			}
+		}
+		if (num >= 5)
+		{
+			AchievesControl.Instance.UnlockAchievement("Skillmaster");
+			if (num >= 10)
+			{
+				AchievesControl.Instance.UnlockAchievement("Jack of All Trades");
+			}
+		}
 	}
 }

@@ -844,7 +844,7 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public List<string> GetAllChunkKeys()
 	{
-		return null;
+		return new List<string>(Chunks.Keys);
 	}
 
 	public void DestroyAllTerrain()

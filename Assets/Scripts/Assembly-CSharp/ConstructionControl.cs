@@ -260,6 +260,85 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void DonePlacing(bool manual_press, bool unpause_game)
 	{
+		if (done_button_context == button_state.none)
+		{
+			return;
+		}
+		PopupControl.Instance.SetButtonWasPressed();
+		DONE_placing_button.SetActive(false);
+		if (unpause_game)
+		{
+			GameController.Instance.GiveAllOverheads();
+			GameplayGUIControl.Instance.ShowGameplayGui();
+			GameController.Instance.UNPAUSE_GAME();
+		}
+		switch (done_button_context)
+		{
+		case button_state.DONE_USING_TOOL:
+			click_to_place.SetActive(false);
+			inventory_ctr.Instance.PLACING_OBJECT_OR_USING_TOOL = false;
+			if (manual_press)
+			{
+				if (InventoryUtils.IsPaintbrush(inventory_ctr.Instance.ITEM_USING.item_name) || InventoryUtils.IsStamp(inventory_ctr.Instance.ITEM_USING.item_name))
+				{
+					inventory_ctr.Instance.GiveItem(inventory_ctr.Instance.ITEM_USING, 1, "", false);
+				}
+				else if (inventory_ctr.Instance.ITEM_USING.item_name == "Paint Thinner")
+				{
+					inventory_ctr.Instance.GiveItem("Paint Thinner", 1, "", false);
+				}
+				else if (inventory_ctr.Instance.ITEM_USING.item_name == "Lock")
+				{
+					inventory_ctr.Instance.GiveItem("Lock", 1, "", false);
+				}
+			}
+			break;
+		case button_state.BUILD_NEW_OBJ:
+		case button_state.MODIFY_OBJECT:
+			if (mouse_obj != null)
+			{
+				UnityEngine.Object.Destroy(mouse_obj);
+			}
+			if (button_rotate_furniture != null)
+			{
+				UnityEngine.Object.Destroy(button_rotate_furniture);
+			}
+			click_to_place.SetActive(false);
+			inventory_ctr.Instance.PLACING_OBJECT_OR_USING_TOOL = false;
+			if (manual_press && !(inventory_ctr.Instance.ITEM_USING.item_name == "Companion"))
+			{
+				if (InventoryUtils.IsStringItem(inventory_ctr.Instance.ITEM_USING.item_name))
+				{
+					inventory_ctr.Instance.GiveItem(inventory_ctr.Instance.ITEM_USING.item_name, 1, "", false);
+				}
+				else
+				{
+					inventory_ctr.Instance.GiveItem(inventory_ctr.Instance.ITEM_USING, 1, "", false);
+				}
+			}
+			break;
+		case button_state.CAST_PROJECTILE_AT_ENEMY:
+			click_to_place.SetActive(false);
+			GameController.Instance.casting_projectile_at_enemy = false;
+			break;
+		case button_state.CAST_PROJECTILE_AT_ALLY:
+			click_to_place.SetActive(false);
+			GameController.Instance.casting_projectile_at_ally = false;
+			break;
+		case button_state.PICKING_CAST_CUSTOM_LOCATION:
+			click_to_place.SetActive(false);
+			GameController.Instance.picking_cast_custom_location = false;
+			break;
+		case button_state.COMPANION_ATTACK:
+			click_to_place.SetActive(false);
+			GameController.Instance.is_picking_companion_target = false;
+			break;
+		case button_state.COMPANION_MOVE:
+			click_to_place.SetActive(false);
+			GameController.Instance.is_picking_companion_walk_location = false;
+			break;
+		}
+		done_button_context = button_state.none;
 	}
 
 	public void EndDelete()
@@ -281,6 +360,9 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void ShowDoneButton(string str, button_state context)
 	{
+		DONE_placing_button.SetActive(context != button_state.MODIFY_OBJECT);
+		click_to_place_BUTTON_text.text = str;
+		done_button_context = context;
 	}
 
 	public void DeleteMouseObject()

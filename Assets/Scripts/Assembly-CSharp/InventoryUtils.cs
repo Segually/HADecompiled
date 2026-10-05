@@ -136,12 +136,16 @@ public class InventoryUtils
 
 	public static bool IsPaintbrush(string item_name)
 	{
-		return false;
+		if (item_name == "Debug Paint" || item_name == "Default")
+		{
+			return true;
+		}
+		return ResourceControl.Instance.GetStringFromItemFile(item_name, "is_paintbrush") == "true";
 	}
 
 	public static bool IsStamp(string item_name)
 	{
-		return false;
+		return ResourceControl.Instance.GetStringFromItemFile(item_name, "is_stamp") == "true";
 	}
 
 	public static float GetBonsaiScale(int unique_id)

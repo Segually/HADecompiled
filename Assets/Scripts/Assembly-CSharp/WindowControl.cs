@@ -188,23 +188,100 @@ public class WindowControl : MonoBehaviour, OrderedStart
 
 	public void OpenWindow(window_type_t window_type)
 	{
+		ConstructionControl.Instance.DONE_placing_button.SetActive(false);
+		curr_window = window_type;
+		close_button.SetActive(true);
+		close_button.transform.SetAsLastSibling();
 	}
 
 	public bool CanOpenGenericWindow()
 	{
-		return false;
+		if (GameController.Instance.level_up_animation_playing || GameController.Instance.player == null)
+		{
+			return false;
+		}
+		return ConstructionControl.Instance.done_button_context == ConstructionControl.button_state.none;
 	}
 
 	public void DoOpenGenericWindow()
 	{
+		GameController.Instance.PAUSE_GAME();
+		if (GameController.Instance.player != null)
+		{
+			GameController.Instance.player.GetComponent<CreatureBrainLocalPlayer>().StopEverything();
+		}
+		GameController.Instance.HideTargetCircle();
+		GameController.Instance.DestroyAllOverheads();
+		GameplayGUIControl.Instance.HideGameplayGui();
+		MusicBoxControl.Instance.HideAllNotes();
 	}
 
 	public void PressClose()
 	{
+		OnClose();
 	}
 
 	private void OnClose()
 	{
+		if (PopupControl.Instance.popup_open)
+		{
+			return;
+		}
+		bool flag;
+		switch (curr_window)
+		{
+		case window_type_t.none:
+			return;
+		case window_type_t.dialogue:
+			DialogueControl.Instance.ExitDialogue(true);
+			flag = true;
+			break;
+		case window_type_t.perkmanage:
+			PerkControl.Instance.ClosePerkManageScreen();
+			flag = true;
+			break;
+		case window_type_t.mutant_market:
+			AudioControl.Instance.PlayGenericClick();
+			ShopControl.Instance.HideMarketScreen();
+			flag = true;
+			break;
+		case window_type_t.buy_gems_revive:
+			ShopControl.Instance.CloseGemsWindow(false);
+			flag = false;
+			break;
+		case window_type_t.pool_game:
+			GameServerSender.Instance.SendExitMinigame();
+			if (PoolGameControl.Instance != null && PoolGameControl.Instance.show_ad_on_close)
+			{
+				AdvertControl.Instance.TryShowInterstitialAd(AdvertControl.ad_context.FORCED);
+			}
+			GameServerSender.Instance.SendReleaseInteractingObject();
+			GameController.Instance.DestroyPoolScreen();
+			flag = true;
+			break;
+		case window_type_t.karaoke_game:
+			if (KaraokeControl.Instance != null && KaraokeControl.Instance.show_ad_on_close)
+			{
+				AdvertControl.Instance.TryShowInterstitialAd(AdvertControl.ad_context.FORCED);
+			}
+			GameServerSender.Instance.SendReleaseInteractingObject();
+			GameController.Instance.DestroyKaraokeScreens();
+			flag = true;
+			break;
+		default:
+			flag = false;
+			break;
+		}
+		close_button.SetActive(false);
+		PopupControl.Instance.SetButtonWasPressed();
+		curr_window = window_type_t.none;
+		if (flag)
+		{
+			GameController.Instance.GiveAllOverheads();
+			GameplayGUIControl.Instance.ShowGameplayGui();
+			GameController.Instance.UNPAUSE_GAME();
+			GameController.Instance.ForgetInteractingElement();
+		}
 	}
 
 	public void TryShowAdOnLevelupScreenAppear()

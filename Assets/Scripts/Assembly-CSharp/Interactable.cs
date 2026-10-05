@@ -232,5 +232,22 @@ public class Interactable : MonoBehaviour
 
 	private void OnDestroy()
 	{
+		if (!deleted)
+		{
+			if (ChunkControl.Instance.active_interactibles.ContainsKey(active_obj_str))
+			{
+				ChunkControl.Instance.active_interactibles.Remove(active_obj_str);
+			}
+			if (overhead_icon != null)
+			{
+				GameController.Instance.possible_destroy.Remove(overhead_icon);
+				Object.Destroy(overhead_icon);
+			}
+			if (item_name == "Music Box")
+			{
+				MusicBoxControl.Instance.box_deloaded(active_obj_str);
+			}
+			deleted = true;
+		}
 	}
 }
