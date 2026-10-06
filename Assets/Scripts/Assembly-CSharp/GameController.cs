@@ -1881,6 +1881,14 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	private void OpenPaintingScreen()
 	{
+		if (WindowControl.Instance.CanOpenGenericWindow())
+		{
+			WindowControl.Instance.DoOpenGenericWindow();
+			WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.painting);
+			WindowPrefabsControl.Instance.CreateScreen("PAINTING", WindowPrefabsControl.build_into_t.mini_window);
+			PaintingControl.Instance = WindowPrefabsControl.Instance.GetScreen("PAINTING").GetComponent<PaintingControl>();
+			PaintingControl.Instance.OnOpen();
+		}
 	}
 
 	public void OpenKaraoke()
