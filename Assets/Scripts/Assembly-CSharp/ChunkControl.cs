@@ -1299,6 +1299,13 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void TemporarilyDisableChunkObjects(Vector3 origin, float range, List<GameObject> new_temporarily_disabled)
 	{
+		foreach (Chunk chunk in Chunks.Values)
+		{
+			if (((int)chunk.status & -4) == 4)
+			{
+				chunk.chunk_obj.TemporarilyDisableChunkObjs(origin, range, new_temporarily_disabled);
+			}
+		}
 	}
 
 	public Chunk GetChunk(string chunkStr)

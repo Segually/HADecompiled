@@ -10,5 +10,8 @@ public class CompanionEgg : MonoBehaviour
 
 	public void VisuallyCrackEgg()
 	{
+		shell.SetActive(false);
+		shell_shatter_A.Emit(12);
+		shell_shatter_B.Emit(5);
 	}
 }

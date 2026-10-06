@@ -636,7 +636,20 @@ public class MobControl : MonoBehaviour, OrderedStart
 
 	public GameObject SpawnCompanion(Vector3 pos, ActiveCompanion companion)
 	{
-		return null;
+		List<string> creatures = new List<string>();
+		creatures.Add(companion.creature_A);
+		creatures.Add(companion.creature_B);
+		int icon = CompanionController.WaitIconIdToStateIconId(companion.wait_icon);
+		GameObject morph = CreatureMorpher.Instance.GetHybridLite(creatures, null);
+		morph.GetComponent<LiteModel>().animation_choppiness = GraphicsControl.Instance.SpecialAnimationChoppiness();
+		GameObject obj = CreateGenericCreature(creature_type_t.local_companion, morph, pos, companion.combat_name, companion.level, 1f, 0.053549998f, 1, 1, 0, SharedCreature.brain_type_t.companion, "", 0, 0, 0, 0, 3.8f, 0f, companion.companion_name, companion.hat_, companion.body_, companion.hand_, 0, "", new InventoryItem(""), 0, icon, true, 0, 0);
+		obj.GetComponent<SharedCreature>().ReCalcHpMaxAndHpRegen();
+		int hp = obj.GetComponent<Combatant>().HP_max;
+		obj.GetComponent<Combatant>().hp = hp;
+		obj.name = "Companion-Obj";
+		companion.obj = obj;
+		obj.GetComponent<CreatureBrainCompanion>().companion_struct = companion;
+		return obj;
 	}
 
 	public void SpawnOtherPlayer(OnlinePlayer player, OnlinePlayerData playerdata)

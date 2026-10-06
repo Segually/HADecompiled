@@ -96,10 +96,38 @@ public class QuestControl : MonoBehaviour, OrderedStart
 
 	public void OpenQuestWindow()
 	{
+		WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.quests_and_achieves);
+		WindowControl.Instance.VisuallySelectLeftMiniwindowTab();
+		OnLeftMiniwindowTabPressed();
 	}
 
 	public void OnLeftMiniwindowTabPressed()
 	{
+		inventory_ctr.Instance.HideCraftingTab();
+		WindowPrefabsControl.Instance.CreateScreen("QUESTS", WindowPrefabsControl.build_into_t.mini_window);
+		for (int i = 0; i < quest_names.Count; i++)
+		{
+			string quest_name = quest_names[i];
+			GetQuestProgress(quest_name);
+			string cached_status = PlayerData.Instance.GetSlotString(quest_name + "_cached_status", PlayerData.filename_t.global_quest_data);
+			string cached_translation = PlayerData.Instance.GetSlotString(quest_name + "_cached_translation", PlayerData.filename_t.global_quest_data);
+			quest_status status;
+			if (cached_status == "complete")
+			{
+				status = quest_status.complete;
+			}
+			else if (cached_status == "not started")
+			{
+				status = quest_status.not_started;
+			}
+			else
+			{
+				status = quest_status.in_progress;
+			}
+			CreateQuestNib(quest_name, cached_translation, status, i);
+		}
+		Scrollable scrollable = WindowPrefabsControl.Instance.GetScreen("QUESTS").GetComponent<Scrollable>();
+		scrollable.SetScrollAreaMaxY(instantiated_quest_nibs.Count < 4 ? 70f : instantiated_quest_nibs.Count * 114 - 342);
 	}
 
 	private void TryRecacheQuests()
@@ -112,6 +140,8 @@ public class QuestControl : MonoBehaviour, OrderedStart
 
 	public void CloseQuestScreen()
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("QUESTS");
+		instantiated_quest_nibs.Clear();
 	}
 
 	public int GetQuestProgress(string quest_name)

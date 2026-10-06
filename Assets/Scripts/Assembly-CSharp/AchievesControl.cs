@@ -33,7 +33,9 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 
 	public void DrawAchievementSlot(int slot_id, int index)
 	{
-		inventory_ctr.Instance.instantiated_crafting_slots[slot_id].LayOutCraftingSlot(all_achivements[index].name, all_achivements[index].description, 1f, true, false, false, false, false, CraftingSlot.req_placement.disable, CraftingSlot.text_area_layout.full, CraftingSlot.slots_positioning.full_size, false);
+		string title = all_achivements[index].name;
+		string description = all_achivements[index].description;
+		inventory_ctr.Instance.instantiated_crafting_slots[slot_id].LayOutCraftingSlot(title, description, 1f, true, false, false, false, false, CraftingSlot.req_placement.disable, CraftingSlot.text_area_layout.full, CraftingSlot.slots_positioning.full_size, false);
 		Image graphic = inventory_ctr.Instance.instantiated_crafting_slots[slot_id].graphic;
 		if (PlayerData.Instance.GetGlobalShort("achieve_" + all_achivements[index].name) == 0)
 		{
@@ -52,8 +54,8 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 			UnlockAchievement(all_achivements[UnityEngine.Random.Range(0, all_achivements.Length)].name);
 			return;
 		}
-		int num = 0;
-		int num2 = 0;
+		int page = 0;
+		int slot = 0;
 		for (int i = 0; i < all_achivements.Length; i++)
 		{
 			if (all_achivements[i].name == achivement_key)
@@ -62,16 +64,16 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 				{
 					PlayerData.Instance.SetGlobalShort("achieve_" + achivement_key, 1);
 					OnNotifClick onNotifClick = new OnNotifClick(OnNotifClick.type.achieves);
-					onNotifClick.data.Add("achievement_page", num.ToString() ?? "");
+					onNotifClick.data.Add("achievement_page", page.ToString() ?? "");
 					GameplayGUIControl.Instance.ShowNotif("Achievement unlocked! <color=#fff36e>" + achivement_key + "</color>    ", trophy_spr, onNotifClick);
 				}
 				break;
 			}
-			num2++;
-			if (num2 == 3)
+			slot++;
+			if (slot == 3)
 			{
-				num2 = 0;
-				num++;
+				slot = 0;
+				page++;
 			}
 		}
 	}

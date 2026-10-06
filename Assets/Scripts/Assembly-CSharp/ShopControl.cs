@@ -246,6 +246,13 @@ public class ShopControl : MonoBehaviour, OrderedStart
 
 	void OrderedStart.Start_1()
 	{
+		InAppPurchaseControl.Instance.SignalToGame();
+		foreach (Text text in market_texts_to_translate)
+		{
+			text.text = TranslationControl.Instance.TranslateGeneral(text.text, "Market");
+		}
+		shop_your_gems_icon.transform.localPosition = new Vector3(shop_your_gems_text.transform.localPosition.x + shop_your_gems_text.rectTransform.sizeDelta.x * 0.5f - shop_your_gems_text.preferredWidth - 55f, shop_your_gems_icon.transform.localPosition.y, 0f);
+		popup_slider.SetActive(false);
 	}
 
 	public static string RandomString()
@@ -261,123 +268,399 @@ public class ShopControl : MonoBehaviour, OrderedStart
 
 	public void NextPage()
 	{
+		if (PopupControl.Instance.popup_open)
+		{
+			return;
+		}
+		shopPage++;
+		RedrawAll();
 	}
 
 	public void PrevPage()
 	{
+		if (PopupControl.Instance.popup_open)
+		{
+			return;
+		}
+		shopPage--;
+		RedrawAll();
 	}
 
 	public void RedrawAll()
 	{
+		DestroyShopModels();
+		RedrawShopButtons();
+		CreateButtonModels();
+		RedrawPageButtons();
 	}
 
 	public void RedrawPageButtons()
 	{
+		button_prevpage.SetActive(shopPage != 0);
+		button_nextpage.SetActive(shopPage * 3 + 3 < purchase_structs_ordering.Length);
 	}
 
 	public void DisableNearbyObjects(Vector3 origin, float range, bool keep_player_active)
 	{
+		List<GameObject> disabled = new List<GameObject>();
+		if (Vector3.Distance(origin, breeder_base.transform.position) < range)
+		{
+			if (!all_temporarily_disabled.Contains(breeder_base)) disabled.Add(breeder_base);
+			if (!all_temporarily_disabled.Contains(GameController.Instance.scenic_elevator)) disabled.Add(GameController.Instance.scenic_elevator);
+		}
+		foreach (KeyValuePair<string, GameObject> combatant in MobControl.Instance.active_combatants)
+		{
+			GameObject obj = combatant.Value;
+			if (obj != null && obj.GetComponent<SharedCreature>() != null)
+			{
+				if (keep_player_active && obj == GameController.Instance.player) continue;
+				if (!all_temporarily_disabled.Contains(obj)) disabled.Add(obj);
+			}
+		}
+		ChunkControl.Instance.TemporarilyDisableChunkObjects(origin, range, disabled);
+		foreach (GameObject obj in disabled)
+		{
+			obj.SetActive(false);
+			all_temporarily_disabled.Add(obj);
+		}
 	}
 
 	public void ReEnableNearbyObjects()
 	{
+		foreach (GameObject obj in all_temporarily_disabled)
+		{
+			if (obj == null) continue;
+			obj.SetActive(true);
+			SharedCreature creature = obj.GetComponent<SharedCreature>();
+			if (creature != null && creature.is_local_mob)
+			{
+				if (GameController.Instance.player != null && obj == GameController.Instance.player) continue;
+				obj.GetComponent<SharedCreature>().ReEnable();
+				obj.GetComponent<CreatureBrain>().ReEnable();
+			}
+		}
+		all_temporarily_disabled.Clear();
 	}
 
 	public void CreateButtonModels()
 	{
+		for (int i = 0; i < 3; i++)
+		{
+			int index = i + shopPage * 3;
+			if (index < purchase_structs_ordering.Length)
+			{
+				string name = purchase_structs_ordering[index];
+				string key = GetPurchaseableKey(name);
+				string path = GetPurchaseableModelPath(name);
+				if (key == "no_ads_subscr" && !AdvertControl.Instance.AdsActive())
+				{
+					GameObject holder = CreateButtonModelHolder(i);
+					OnShopModelLoaded(UnityEngine.Object.Instantiate(model_ads_removed), holder);
+				}
+				else
+				{
+					GameObject holder = CreateButtonModelHolder(i);
+					if (!Startup.StringNullOrWhitespace(path))
+					{
+						GameObject check_not_null = holder;
+						ResourceControl.Instance.AsyncInstantiateShopModel(path, delegate(GameObject new_model)
+						{
+							if (check_not_null == null)
+							{
+								UnityEngine.Object.Destroy(new_model);
+								return;
+							}
+							OnShopModelLoaded(new_model, holder);
+						});
+					}
+					else
+					{
+						OnShopModelLoaded(new GameObject("Error"), holder);
+					}
+				}
+			}
+		}
+		foreach (GameObject sparkle in sparkles)
+		{
+			sparkle.SetActive(true);
+		}
 	}
 
 	private GameObject CreateButtonModelHolder(int i)
 	{
-		return null;
+		GameObject holder = new GameObject("model holder");
+		holder.transform.SetParent(WindowControl.Instance.gui_canvas.transform);
+		holder.transform.position = button_model_positions[i].position;
+		holder.transform.localPosition += Vector3.back * 56f;
+		holder.transform.localPosition += Vector3.up * 3f;
+		holder.transform.localScale = Vector3.one * 10.5f;
+		models_for_buttons.Add(holder);
+		return holder;
 	}
 
 	private GameObject CreatePopupModelHolder()
 	{
-		return null;
+		GameObject holder = new GameObject("model holder");
+		holder.transform.SetParent(WindowControl.Instance.gui_canvas.transform);
+		holder.transform.position = popup_header_bg.transform.position;
+		holder.transform.localPosition += Vector3.back * 123f;
+		holder.transform.localScale = Vector3.one * 10.5f;
+		model_on_popup = holder;
+		return holder;
 	}
 
 	private void OnShopModelLoaded(GameObject new_model, GameObject model_holder)
 	{
+		new_model.transform.SetParent(model_holder.transform);
+		new_model.transform.localPosition = Vector3.zero;
+		new_model.transform.localScale = Vector3.one;
+		new_model.transform.localRotation = Quaternion.identity;
 	}
 
 	public Color GetColor(string bg_color)
 	{
-		return default(Color);
+		for (int i = 0; i < purchase_color_defines.Length; i++)
+		{
+			if (purchase_color_defines[i].name == bg_color)
+			{
+				return purchase_color_defines[i].col;
+			}
+		}
+		return purchase_color_defines[0].col;
 	}
 
 	public string GetPurchaseableKey(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("IAP_KEY") ? loaded_purchaseable_structs[iap_name]["IAP_KEY"] : "";
 	}
 
 	public string GetPurchaseableModelPath(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Model_path") ? loaded_purchaseable_structs[iap_name]["Model_path"] : "";
 	}
 
 	public string GetPurchaseableAltKey(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Alt_IAP_KEY") ? loaded_purchaseable_structs[iap_name]["Alt_IAP_KEY"] : "";
 	}
 
 	public string GetPurchaseableGemPrice(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Gem_price") ? loaded_purchaseable_structs[iap_name]["Gem_price"] : "";
 	}
 
 	public string GetPurchaseableDescription(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Description") ? loaded_purchaseable_structs[iap_name]["Description"] : "";
 	}
 
 	public string GetPurchaseableBgColor(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Bg_color") ? loaded_purchaseable_structs[iap_name]["Bg_color"] : "";
 	}
 
 	public string GetPurchaseableType(string iap_name)
 	{
-		return null;
+		if (!loaded_purchaseable_structs.ContainsKey(iap_name))
+		{
+			LoadIapStruct(iap_name);
+		}
+		return loaded_purchaseable_structs[iap_name].ContainsKey("Type") ? loaded_purchaseable_structs[iap_name]["Type"] : "";
 	}
 
 	private void LoadIapStruct(string iap_name)
 	{
+		Dictionary<string, string> values = new Dictionary<string, string>();
+		bool file_exists = false;
+		List<string> lines = ResourceControl.Instance.GetTextFileLines("PurchaseStructs/" + iap_name, ref file_exists);
+		if (file_exists)
+		{
+			foreach (string line in lines)
+			{
+				if (!Startup.StringNullOrWhitespace(line))
+				{
+					int index = line.IndexOf('=');
+					if (index != -1)
+					{
+						values.Add(line.Substring(0, index - 1), line.Substring(index + 2, line.Length - (index + 2)));
+					}
+				}
+			}
+		}
+		loaded_purchaseable_structs.Add(iap_name, values);
 	}
 
 	public string GetCashCost(string iap_name)
 	{
-		return null;
+		string key = GetPurchaseableKey(iap_name);
+		string alt_key = GetPurchaseableAltKey(iap_name);
+		if (InAppPurchaseControl.Instance.price_infos.ContainsKey(key))
+		{
+			return InAppPurchaseControl.Instance.price_infos[key];
+		}
+		if (!Startup.StringNullOrWhitespace(alt_key) && InAppPurchaseControl.Instance.price_infos.ContainsKey(alt_key))
+		{
+			return InAppPurchaseControl.Instance.price_infos[alt_key];
+		}
+		return "";
 	}
 
 	public int GetGemCost(string gem_price)
 	{
+		if (gem_price == "cheap")
+		{
+			return 7;
+		}
+		if (gem_price == "medium")
+		{
+			return 15;
+		}
 		return 0;
 	}
 
 	public void ClickPurchaseableItem(int buttonIndex)
 	{
+		if (PopupControl.Instance.popup_open) return;
+		int index = shopPage * 3 + buttonIndex;
+		string name = purchase_structs_ordering[index];
+		string key = GetPurchaseableKey(name);
+		string alt = GetPurchaseableAltKey(name);
+		string type = GetPurchaseableType(name);
+		int gems = GetGemCost(GetPurchaseableGemPrice(name));
+		string cash = GetCashCost(name);
+		Color color = GetColor(GetPurchaseableBgColor(name));
+		string path = GetPurchaseableModelPath(name);
+		if (!InAppPurchaseControl.Instance.IsPurchased(key, alt))
+		{
+			if (gems == 0 && cash == "") return;
+			AudioControl.Instance.PlayGenericClick();
+			if (key == "doCOMPANION")
+			{
+				if (GameServerConnector.Instance.FullyInGame())
+				{
+					if (GameServerReceiver.Instance.max_companions == 0)
+					{
+						PopupControl.Instance.ShowMessage("Companions are not allowed on this server.", PopupControl.context.message);
+						return;
+					}
+					if (GameServerReceiver.Instance.max_companions < CompanionController.Instance.active_companions.Count + 1)
+					{
+						PopupControl.Instance.ShowMessage("You may only have " + GameServerReceiver.Instance.max_companions + " companions on this server.", PopupControl.context.message);
+						return;
+					}
+				}
+				if (CompanionController.Instance.active_companions.Count >= 2)
+				{
+					PopupControl.Instance.ShowMessage("You can only have 2 followers at a time!", PopupControl.context.message);
+					return;
+				}
+			}
+			if (gems == 0 && cash != "")
+			{
+				BuyItem(key);
+				return;
+			}
+			if (gems != 0 && cash == "")
+			{
+				attempt_buy_name = purchase_structs_ordering[index];
+				if (HasEnoughGems()) BuyUsingGems();
+				else ShowNotEnoughGemsPopup();
+				return;
+			}
+			if (gems == 0 || cash == "") return;
+			GameObject holder = CreatePopupModelHolder();
+			if (!Startup.StringNullOrWhitespace(path))
+			{
+				GameObject check_not_null = holder;
+				ResourceControl.Instance.AsyncInstantiateShopModel(path, delegate(GameObject new_model)
+				{
+					if (check_not_null == null)
+					{
+						UnityEngine.Object.Destroy(new_model);
+						return;
+					}
+					OnShopModelLoaded(new_model, holder);
+				});
+			}
+			else OnShopModelLoaded(new GameObject("Error"), holder);
+			attempt_buy_name = purchase_structs_ordering[index];
+			ShowShopPopup(TranslationControl.Instance.TranslateGeneral("Pay with cash", "Market"), button_color_t.price_white, TranslationControl.Instance.TranslateGeneral("Use gems", "Market"), button_color_t.gems_cyan, true, "<color=#eeeeee>" + TranslationControl.Instance.TranslateGeneral("How would you like to get", "Market") + "</color>\n" + TranslationControl.Instance.TranslateGeneral(name, "Market"), color, button_BG_generic, Color.white, ring_sprite, new Color(1f, 1f, 1f, 0.6f), color, popup_context.payment_options);
+			DestroyShopModels();
+		}
+		else if (type == "subscription")
+		{
+			if (Application.platform == RuntimePlatform.Android || Application.platform == RuntimePlatform.WindowsEditor)
+				PopupControl.Instance.on_yes_pressed = delegate { Application.OpenURL("https://support.google.com/googleplay/answer/7018481"); };
+			else if (Application.platform == RuntimePlatform.IPhonePlayer)
+				PopupControl.Instance.on_yes_pressed = delegate { Application.OpenURL("https://support.apple.com/en-ca/HT202039"); };
+			PopupControl.Instance.ShowYesNo("If you would like to remove a subscription,\nyou can do so by pressing 'Manage' below.", "MANAGE", "Cancel", PopupControl.context.yesno_ACTION);
+		}
 	}
 
 	private void BuyWithCash(string iap_key)
 	{
+		PopupControl.Instance.ShowConnecting("Processing Transaction", PopupControl.context.loading_NO_TIMEOUT);
+		on_pressed_buy = true;
+		AdvertControl.Instance.DONT_DISCONNECT = true;
+		InAppPurchaseControl.Instance.BuyProductID(iap_key);
 	}
 
 	private bool HasEnoughGems()
 	{
-		return false;
+		int cost = GetGemCost(GetPurchaseableGemPrice(attempt_buy_name));
+		return cost <= PlayerData.Instance.GetGlobalShort("GEMS");
 	}
 
 	private void ShowNotEnoughGemsPopup()
 	{
+		PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("You don't have enough gems!", "Market"), PopupControl.context.message);
 	}
 
 	public void DestroyShopModels()
 	{
+		foreach (GameObject model in models_for_buttons)
+		{
+			UnityEngine.Object.Destroy(model);
+		}
+		models_for_buttons.Clear();
+		foreach (GameObject sparkle in sparkles)
+		{
+			sparkle.SetActive(false);
+		}
 	}
 
 	public void PressShopButton()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		if (WindowControl.Instance.CanOpenGenericWindow())
+		{
+			WindowControl.Instance.DoOpenGenericWindow();
+			TryOpenShop();
+		}
 	}
 
 	public void ShowShopPopup(string YES_str, button_color_t YES_col, string NO_str, button_color_t NO_col, bool show_close, string TEXT, Color textColor, InventoryItem item, int count, Color outlineColor, popup_context context, int slider_max_buy = -1, InventoryItem req_1_item = null, int req_1_count = -1, InventoryItem req_2_item = null, int req_2_count = -1, req_context_t req_context = req_context_t.none)
@@ -697,66 +980,212 @@ public class ShopControl : MonoBehaviour, OrderedStart
 
 	public void PressFreeGemsButton()
 	{
+		if (PopupControl.Instance.popup_open)
+		{
+			return;
+		}
+		AudioControl.Instance.PlayGenericClick();
+		PopupControl.Instance.ShowRewardAskPopup(AdvertControl.reward_ad_type.on_free_gems_button);
 	}
 
 	public void ShopFailedLoading()
 	{
+		SHOP_STATE = shop_state.load_FAILED;
+		if (is_shop_window_open)
+		{
+			PopupControl.Instance.ShowYesNo("Could not connect to Market.\nTry again?", "Yes", "No", PopupControl.context.failed_init_market);
+		}
 	}
 
 	public void CloseLoadingMarketScreen()
 	{
+		GameplayGUIControl.Instance.ShowGameplayGui();
+		GameController.Instance.UNPAUSE_GAME();
+		is_shop_window_open = false;
 	}
 
 	public void ShopFinishedLoading()
 	{
+		SHOP_STATE = shop_state.load_GOOD;
+		if (is_shop_window_open)
+		{
+			ShowMarketScreen();
+			PopupControl.Instance.HideAll();
+		}
 	}
 
 	public void PressRetryLoadMarket()
 	{
+		InAppPurchaseControl.Instance.InitializePurchasing();
+		SHOP_STATE = shop_state.LOADING;
+		PopupControl.Instance.ShowConnecting("Loading Mutant Market", PopupControl.context.loading_market);
 	}
 
 	public void CloseGemsWindow(bool redraw_models)
 	{
+		AudioControl.Instance.PlayGenericClick();
+		WindowPrefabsControl.Instance.DestroyScreen("Shop-getgems");
+		GameController.Instance.revive_cancel();
 	}
 
 	public void ShowMarketScreen()
 	{
+		Shop_screen.SetActive(true);
+		free_gems_button.SetActive(true);
+		restore_purchase_button.SetActive(true);
+		text_GEM_count.text = PlayerData.Instance.GetGlobalShort("GEMS").ToString() ?? "";
+		RedrawShopButtons();
+		CreateButtonModels();
+		WindowControl.Instance.OpenWindow(WindowControl.window_type_t.mutant_market);
 	}
 
 	public void HideMarketScreen()
 	{
+		is_shop_window_open = false;
+		DestroyShopModels();
+		Shop_screen.SetActive(false);
+		free_gems_button.SetActive(false);
+		restore_purchase_button.SetActive(false);
 	}
 
 	public void BuyGemsFromRevive(int amount)
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("Shop-getgems");
+		WindowControl.Instance.close_button.SetActive(false);
+		WindowControl.Instance.curr_window = WindowControl.window_type_t.none;
+		if (amount == 30)
+		{
+			BuyItem("30gems");
+		}
+		else if (amount == 60)
+		{
+			BuyItem("60gems");
+		}
 	}
 
 	public void BuyItem(string product_id)
 	{
+		PopupControl.Instance.ShowConnecting("Processing Transaction", PopupControl.context.loading_NO_TIMEOUT);
+		on_pressed_buy = true;
+		AdvertControl.Instance.DONT_DISCONNECT = true;
+		InAppPurchaseControl.Instance.BuyProductID(product_id);
 	}
 
 	private void FixedUpdate()
 	{
+		if (is_shop_window_open)
+		{
+			text_GEM_count.color = Color.Lerp(text_GEM_count.color, Color.white, Time.fixedDeltaTime * 0.5f);
+			text_GEM_count.transform.localScale = Vector3.Lerp(text_GEM_count.transform.localScale, Vector3.one * 1.2f, Time.fixedDeltaTime);
+		}
 	}
 
 	public void OnTransactionSucceed(string definition_id)
 	{
+		PopupControl.Instance.HideAll();
+		if (definition_id.Equals("30gems", StringComparison.Ordinal))
+		{
+			PlayerData.Instance.SetGlobalShort("GEMS", (short)(PlayerData.Instance.GetGlobalShort("GEMS") + 30));
+			blobble_gem_text_on_press_OKAY = true;
+		}
+		else if (definition_id.Equals("60gems", StringComparison.Ordinal))
+		{
+			PlayerData.Instance.SetGlobalShort("GEMS", (short)(PlayerData.Instance.GetGlobalShort("GEMS") + 60));
+			blobble_gem_text_on_press_OKAY = true;
+		}
+		else if (definition_id.Equals("no_ads_subscr", StringComparison.Ordinal))
+			AdvertControl.Instance.subscribed_to_remove_ads = true;
+		else if (definition_id == "doCOMPANION")
+		{
+			WindowControl.Instance.close_button.SetActive(false);
+			WindowControl.Instance.curr_window = WindowControl.window_type_t.none;
+			HideMarketScreen();
+			CompanionController.Instance.CreateAnimatedEgg(4, true, "", "");
+			if (ChunkControl.Instance.player_zone == "overworld") DisableNearbyObjects(CompanionController.Instance.EGG.transform.position, 7f, false);
+			return;
+		}
+		else if (definition_id == "doMUTATE")
+		{
+			WindowControl.Instance.close_button.SetActive(false);
+			WindowControl.Instance.curr_window = WindowControl.window_type_t.none;
+			HideMarketScreen();
+			BreedControl.Instance.gameObject.SetActive(true);
+			BreedControl.Instance.TransitionBackToBreeder(BreedControl.breeder_transition.on_mutation);
+			mutation_scroll_white.SetActive(true);
+			mutation_scroll_white.GetComponent<CanvasGroup>().alpha = 1f;
+			if (ChunkControl.Instance.player_zone == "overworld") DisableNearbyObjects(BreedControl.Instance.spawn_mutant.position, 7f, true);
+			return;
+		}
+		else
+		{
+			bool found = false;
+			foreach (string name in purchase_structs_ordering)
+			{
+				string key = GetPurchaseableKey(name);
+				string alt = GetPurchaseableAltKey(name);
+				string type = GetPurchaseableType(name);
+				if ((definition_id.Equals(key, StringComparison.Ordinal) || (!Startup.StringNullOrWhitespace(alt) && definition_id.Equals(alt, StringComparison.Ordinal))) && type == "permanent")
+				{
+					PlayerData.Instance.SetGlobalShort(key, 1);
+					found = true;
+					break;
+				}
+			}
+			if (!found)
+			{
+				OnTransactionFailed();
+				return;
+			}
+		}
+		if (!on_pressed_buy) return;
+		on_pressed_buy = false;
+		popup_context context = is_shop_window_open ? popup_context.store_purchase_succeed : popup_context.revive_purchase_succeed;
+		ShowShopPopup("OKAY", button_color_t.okay_blue, "", button_color_t.none, false, TranslationControl.Instance.TranslateGeneral("THANK YOU for supporting us!", "Market") + "\n<color=#eeeeee>" + TranslationControl.Instance.TranslateGeneral("Your generosity helps us improve the game!", "Market") + "</color>", new Color(0.8666667f, 0.9411765f, 0.16078432f, 1f), purchase_happy, Color.white, null, Color.white, new Color(0.5294118f, 0.50980395f, 0.29803923f, 1f), context);
+		if (is_shop_window_open) DestroyShopModels();
+		GameController.Instance.sound_levelButton();
 	}
 
 	public void OnTransactionFailed()
 	{
+		if (!is_shop_window_open) return;
+		PopupControl.Instance.HideAll();
+		popup_context context = is_shop_window_open ? popup_context.store_purchase_fail : popup_context.revive_purchase_fail;
+		ShowShopPopup("OKAY", button_color_t.okay_blue, "", button_color_t.none, false, "<color=#00aaff>OOPS!</color> Something went wrong.\nThe transaction did not complete.", Color.white, purchase_sad, Color.white, null, Color.white, new Color(0.29803923f, 0.50980395f, 0.5294118f, 1f), context);
+		if (is_shop_window_open) DestroyShopModels();
 	}
 
 	public void PressRestorePurchases()
 	{
+		InAppPurchaseControl.Instance.RestoreSubscription();
 	}
 
 	public void TryOpenShop()
 	{
+		AudioControl.Instance.PlayGenericClick();
+		is_shop_window_open = true;
+		switch (SHOP_STATE)
+		{
+		case shop_state.LOADING:
+			PopupControl.Instance.ShowConnecting("Loading Mutant Market", PopupControl.context.loading_market);
+			break;
+		case shop_state.load_GOOD:
+			ShowMarketScreen();
+			break;
+		case shop_state.load_FAILED:
+			PopupControl.Instance.ShowYesNo("Could not connect to Market.\nTry again?", "Yes", "No", PopupControl.context.failed_init_market);
+			break;
+		}
 	}
 
 	private void FromPopupToStore(popup_context prev_context)
 	{
+		if (model_on_popup != null)
+		{
+			UnityEngine.Object.Destroy(model_on_popup);
+		}
+		RedrawShopButtons();
+		CreateButtonModels();
+		WindowControl.Instance.close_button.SetActive(true);
 	}
 
 	public void PopupYesPressed()
@@ -860,6 +1289,11 @@ public class ShopControl : MonoBehaviour, OrderedStart
 
 	private void BuyUsingGems()
 	{
+		string key = GetPurchaseableKey(attempt_buy_name);
+		int cost = GetGemCost(GetPurchaseableGemPrice(attempt_buy_name));
+		PlayerData.Instance.SetGlobalShort("GEMS", PlayerData.Instance.GetGlobalShort("GEMS") - cost);
+		text_GEM_count.text = PlayerData.Instance.GetGlobalShort("GEMS").ToString() ?? "";
+		StartCoroutine(DelayedBuyWithGems(key));
 	}
 
 	public void PressPopupClose()
@@ -877,18 +1311,122 @@ public class ShopControl : MonoBehaviour, OrderedStart
 
 	public void BlobbleGemText()
 	{
+		text_GEM_count.text = ((int)PlayerData.Instance.GetGlobalShort("GEMS")).ToString() ?? "";
+		text_GEM_count.color = Color.green;
+		text_GEM_count.transform.localScale = Vector3.one * 4.5f;
 	}
 
 	private IEnumerator DelayedBuyWithGems(string iap_key)
 	{
-		return null;
+		PopupControl.Instance.ShowConnecting("Unlocking using gems", PopupControl.context.loading_NO_TIMEOUT);
+		on_pressed_buy = true;
+		yield return new WaitForSeconds(0.3f);
+		OnTransactionSucceed(iap_key);
 	}
 
 	private void ResizeCostText(Text cost_text, bool show_gem, GameObject gem_icon)
 	{
+		float icon_width = show_gem ? 50f : 0f;
+		for (int size = 59; size > 10; size -= 2)
+		{
+			cost_text.fontSize = size;
+			if (icon_width + cost_text.preferredWidth <= 250f)
+			{
+				break;
+			}
+		}
+		if (show_gem)
+		{
+			cost_text.transform.localPosition = new Vector3(cost_text.preferredWidth * 0.5f - (icon_width + cost_text.preferredWidth) * 0.5f, cost_text.transform.localPosition.y, 0f);
+			gem_icon.transform.localPosition = new Vector3((icon_width + cost_text.preferredWidth) * 0.5f - 20f, gem_icon.transform.localPosition.y, 0f);
+			gem_icon.SetActive(true);
+		}
+		else
+		{
+			cost_text.transform.localPosition = new Vector3(0f, cost_text.transform.localPosition.y, 0f);
+			gem_icon.SetActive(false);
+		}
 	}
 
 	private void RedrawShopButtons()
 	{
+		for (int i = 0; i < 3; i++)
+		{
+			int index = i + shopPage * 3;
+			if (index >= purchase_structs_ordering.Length)
+			{
+				if (i == 0)
+				{
+					shopPage--;
+					RedrawShopButtons();
+					return;
+				}
+				shop_buttons[i].SetActive(false);
+				continue;
+			}
+			shop_buttons[i].SetActive(true);
+			string name = purchase_structs_ordering[index];
+			string key = GetPurchaseableKey(name);
+			string alt_key = GetPurchaseableAltKey(name);
+			string description = GetPurchaseableDescription(name);
+			Color color = GetColor(GetPurchaseableBgColor(name));
+			int gem_cost = GetGemCost(GetPurchaseableGemPrice(name));
+			string cash_cost = GetCashCost(name);
+			string type = GetPurchaseableType(name);
+			if (InAppPurchaseControl.Instance.IsPurchased(key, alt_key))
+			{
+				button_rects[i].color = col_rect_ads_removed;
+				button_backdrops[i].color = col_button_ads_removed;
+				string status = type == "subscription" && PlayerData.Instance.GetGlobalShort("no_ads") != 1 ? "Subscribed" : "Owned";
+				shop_costs[i].text = "<color=#00ff00>" + TranslationControl.Instance.TranslateGeneral(status, "Market") + "</color>";
+				ResizeCostText(shop_costs[i], false, button_gem_icons[i]);
+				shop_descriptions[i].text = TranslationControl.Instance.TranslateGeneral(description, "Market");
+				shop_descriptions[i].color = col_description_ads_removed;
+				shop_titles[i].text = TranslationControl.Instance.TranslateGeneral(name, "Market");
+				shop_titles[i].color = col_title_ads_removed;
+			}
+			else
+			{
+				button_rects[i].color = col_rect_normal;
+				button_backdrops[i].color = color;
+				bool show_gem;
+				if (gem_cost != 0 && cash_cost == "")
+				{
+					shop_costs[i].text = "<color=#2DFFF6>" + gem_cost + "</color>";
+					show_gem = true;
+				}
+				else if (gem_cost == 0 && cash_cost != "")
+				{
+					shop_costs[i].text = cash_cost;
+					show_gem = false;
+				}
+				else if (gem_cost != 0 && cash_cost != "")
+				{
+					shop_costs[i].text = cash_cost + "<color=#aaaaaa> " + TranslationControl.Instance.TranslateGeneral("or", "Market") + " </color><color=#2DFFF6>" + gem_cost + "</color>";
+					show_gem = true;
+				}
+				else
+				{
+					shop_costs[i].text = "";
+					show_gem = false;
+				}
+				if (gem_cost == 0 && cash_cost == "")
+				{
+					button_gem_icons[i].SetActive(false);
+				}
+				else
+				{
+					ResizeCostText(shop_costs[i], show_gem, button_gem_icons[i]);
+				}
+				shop_descriptions[i].text = TranslationControl.Instance.TranslateGeneral(description, "Market");
+				shop_descriptions[i].color = Color.white;
+				shop_titles[i].text = TranslationControl.Instance.TranslateGeneral(name, "Market");
+				shop_titles[i].color = color;
+			}
+		}
+		if (PlayerData.Instance.GetGlobalShort("GEMS") != 0)
+		{
+			text_GEM_count.text = PlayerData.Instance.GetGlobalShort("GEMS").ToString() ?? "";
+		}
 	}
 }
