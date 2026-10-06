@@ -273,6 +273,23 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void AppearQuestMobs(string quest_name, int progress)
 	{
+		foreach (KeyValuePair<string, Chunk> entry in Chunks)
+		{
+			Chunk chunk = entry.Value;
+			if (chunk.status != Chunk.status_t.complete) continue;
+			ChunkData data = chunk.chunk_data;
+			for (int x = 0; x < 10; x++)
+			{
+				for (int z = 0; z < 10; z++)
+				{
+					foreach (ChunkElement element in data.GetElementsAt(x, z))
+					{
+						if (element.item.GetString("is_killGoal_mob") == "true" && element.item.GetString("associated_quest_name") == quest_name && element.item.GetShort("associated_quest_step") == progress)
+							RedrawAtSquare(GetChunkString(player_zone, chunk.X, chunk.Z), x, z);
+					}
+				}
+			}
+		}
 	}
 
 	public InventoryItem EncodeRespawnIntoItem(string respawn_prefix, InventoryItem old_item, DateTime UTC_when)

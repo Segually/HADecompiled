@@ -409,6 +409,14 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void AddTempCompanion(string creatureA, string creatureB, int start_lvl, string companion_name, InventoryItem hat_, InventoryItem body_, InventoryItem hand_)
 	{
+		ActiveCompanion companion = new ActiveCompanion();
+		int next_exp = GameController.Instance.NextLevelExp(start_lvl);
+		string combat_name = ShopControl.RandomString();
+		companion.companion_item = ActiveCompanion.CreateNewItem(creatureA, creatureB, start_lvl, 0, next_exp, combat_name, companion_name, 0, "", "", "", "", "", "", 0, false, hand_, hat_, body_, "", "");
+		companion.hatch_index = active_companions.Count;
+		companion.is_temp_companion = true;
+		active_companions.Add(companion);
+		CreateSingleCompanion(companion);
 	}
 
 	public void DestroyTempCompanions()

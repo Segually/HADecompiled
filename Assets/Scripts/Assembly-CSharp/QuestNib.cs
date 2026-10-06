@@ -6,5 +6,6 @@ public class QuestNib : MonoBehaviour
 
 	public void Click()
 	{
+		WindowPrefabsControl.Instance.GetScreen("QUESTS").GetComponent<Scrollable>().TryClickNib(index, QuestControl.Instance.SucceedClickQuestNib);
 	}
 }

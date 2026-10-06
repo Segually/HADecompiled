@@ -328,10 +328,40 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public QuestBuildableFile LoadQuestBuildableFile(string path)
 	{
-		return null;
+		QuestBuildableFile file = new QuestBuildableFile();
+		if (!System.IO.File.Exists(path)) return file;
+		QuestBuildableEntry entry = null;
+		foreach (string line in System.IO.File.ReadAllLines(path))
+		{
+			if (string.IsNullOrWhiteSpace(line)) continue;
+			if (line[0] == '*')
+			{
+				if (line.Contains("*auto_version=")) file.auto_version_entry = line;
+				else file.header_entries.Add(line);
+			}
+			else if (line[0] == '[')
+			{
+				if (entry != null) file.buildable_entries.Add(entry);
+				entry = new QuestBuildableEntry(line);
+			}
+			else entry.extra_data.Add(line);
+		}
+		if (entry != null) file.buildable_entries.Add(entry);
+		return file;
 	}
 
 	public void SaveQuestBuildableFile(QuestBuildableFile file, string save_path)
 	{
+		List<string> lines = new List<string>();
+		if (file.auto_version_entry != "") lines.Add(file.auto_version_entry);
+		foreach (string header in file.header_entries) lines.Add(header);
+		lines.Add("");
+		foreach (QuestBuildableEntry entry in file.buildable_entries)
+		{
+			lines.Add(entry.main_str);
+			foreach (string data in entry.extra_data) lines.Add(data);
+			lines.Add("");
+		}
+		System.IO.File.WriteAllLines(save_path, lines.ToArray());
 	}
 }
