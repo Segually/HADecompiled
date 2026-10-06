@@ -177,7 +177,7 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public string GetRandomFreeFollowerName()
 	{
-		return null;
+		return random_freeFollower_names[UnityEngine.Random.Range(0, random_freeFollower_names.Length)];
 	}
 
 	public void PressBuildButton()

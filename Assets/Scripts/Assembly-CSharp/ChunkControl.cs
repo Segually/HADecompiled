@@ -890,7 +890,11 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public bool QuestChunkExists(int chunkX, int chunkZ)
 	{
-		return false;
+		string chunkString = GetChunkString("overworld", chunkX, chunkZ);
+		string file_name = DevBuildControl.quest_scenics_folder_ + "/" + chunkString;
+		bool file_exists = false;
+		ResourceControl.Instance.GetTextFileLines(file_name, ref file_exists);
+		return file_exists;
 	}
 
 	public List<string> GetAllChunkKeys()
@@ -1266,6 +1270,10 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public bool IsChunkFullyLoaded(string chunkStr)
 	{
+		if (Chunks.ContainsKey(chunkStr) && Chunks[chunkStr].status == Chunk.status_t.complete)
+		{
+			return Chunks[chunkStr].chunk_obj != null;
+		}
 		return false;
 	}
 
@@ -1346,6 +1354,18 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void RemoveAllChunksWithTag(Chunk.status_t remove_status)
 	{
+		List<string> list = new List<string>();
+		foreach (KeyValuePair<string, Chunk> chunk in Chunks)
+		{
+			if (chunk.Value.status == remove_status)
+			{
+				list.Add(chunk.Key);
+			}
+		}
+		foreach (string item in list)
+		{
+			Chunks.Remove(item);
+		}
 	}
 
 	public void CreateAllEdgePieces()

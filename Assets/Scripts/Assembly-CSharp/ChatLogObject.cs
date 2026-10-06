@@ -6,5 +6,6 @@ public class ChatLogObject : MonoBehaviour
 
 	public void ClickButton()
 	{
+		FriendServerInterface.Instance.PressChatLogButton(corresponding_chat_log);
 	}
 }
