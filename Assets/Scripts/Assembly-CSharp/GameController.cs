@@ -1723,6 +1723,101 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	private void OnInteractWithCompanion(string zone, int chunkX, int chunkZ, int innerX, int innerZ)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return;
+		}
+		GameObject buildableInstanceByName = ChunkControl.Instance.GetChunkObj(chunkString).GetBuildableInstanceByName(innerX, innerZ, "Companion");
+		if (buildableInstanceByName == null)
+		{
+			return;
+		}
+		Interactable component = buildableInstanceByName.GetComponent<Interactable>();
+		if (!WindowControl.Instance.CanOpenGenericWindow())
+		{
+			return;
+		}
+		WindowControl.Instance.DoOpenGenericWindow();
+		Dictionary<int, Dictionary<string, object>> dictionary = new Dictionary<int, Dictionary<string, object>>();
+		List<string> list = new List<string>();
+		string text = component.corresponding_item.GetString("companion_mode");
+		if (text == "wait")
+		{
+			string text2 = component.corresponding_item.GetString("wait_message1");
+			string text3 = component.corresponding_item.GetString("wait_message2");
+			string text4 = component.corresponding_item.GetString("wait_message3");
+			string text5 = component.corresponding_item.GetString("wait_message4");
+			if (!Startup.StringNullOrWhitespace(text2))
+			{
+				list.Add(text2);
+			}
+			if (!Startup.StringNullOrWhitespace(text3))
+			{
+				list.Add(text3);
+			}
+			if (!Startup.StringNullOrWhitespace(text4))
+			{
+				list.Add(text4);
+			}
+			if (!Startup.StringNullOrWhitespace(text5))
+			{
+				list.Add(text5);
+			}
+		}
+		else if (text == "merchant")
+		{
+			string text6 = component.corresponding_item.GetString("merchant_message1");
+			string text7 = component.corresponding_item.GetString("merchant_message2");
+			if (!Startup.StringNullOrWhitespace(text6))
+			{
+				list.Add(text6);
+			}
+			if (!Startup.StringNullOrWhitespace(text7))
+			{
+				list.Add(text7);
+			}
+		}
+		int num = 0;
+		foreach (string item in list)
+		{
+			Dictionary<string, object> dictionary2 = new Dictionary<string, object>();
+			dictionary2.Add("type", "NPC_speak");
+			dictionary2.Add("text", item);
+			dictionary2.Add("go_to", num + 1);
+			dictionary.Add(num, dictionary2);
+			num++;
+		}
+		if (text == "wait")
+		{
+			Dictionary<string, object> dictionary3 = new Dictionary<string, object>();
+			dictionary3.Add("type", "MY_options");
+			dictionary3.Add("optionA", TranslationControl.Instance.TranslateGeneral("FOLLOW ME", "CompanionsEtc"));
+			dictionary3.Add("optionA_goto", -66);
+			dictionary.Add(num, dictionary3);
+		}
+		else if (text == "merchant")
+		{
+			Dictionary<string, object> dictionary4 = new Dictionary<string, object>();
+			dictionary4.Add("type", "MY_options");
+			dictionary4.Add("optionA", TranslationControl.Instance.TranslateGeneral("BUY/SELL ITEMS", "Merchants"));
+			dictionary4.Add("optionB", TranslationControl.Instance.TranslateGeneral("FOLLOW ME", "CompanionsEtc"));
+			dictionary4.Add("optionA_goto", -88);
+			dictionary4.Add("optionB_goto", -66);
+			dictionary.Add(num, dictionary4);
+		}
+		string curr_NPC_display_name = component.corresponding_item.GetString("npc_display_name").ToUpper();
+		string text8 = component.transform.Find("creature-go-here").GetChild(0).GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[0];
+		string text9 = component.transform.Find("creature-go-here").GetChild(0).GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[1];
+		string curr_NPC_combo_text = "(" + text8 + " + " + text9 + ")";
+		interacting_element_chunkX = chunkX;
+		interacting_element_item = component.corresponding_item;
+		interacting_element_chunkZ = chunkZ;
+		interacting_element_innerX = innerX;
+		interacting_element_innerZ = innerZ;
+		interacting_element_rot = component.temp_rot;
+		DialogueControl.Instance.SetFocusNpc(component.gameObject, curr_NPC_display_name, curr_NPC_combo_text, DialogueControl.focus_type_t.stationary_npc);
+		DialogueControl.Instance.EnterDialogue(dictionary, 0, "");
 	}
 
 	private void OnInteractWithNPC(string zone, int chunkX, int chunkZ, int innerX, int innerZ)

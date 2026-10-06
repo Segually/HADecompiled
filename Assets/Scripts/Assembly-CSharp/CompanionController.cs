@@ -116,15 +116,42 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void PressGuard()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowControl.Instance.CloseMiniwindow(false);
+			PopupControl.Instance.SetButtonWasPressed();
+			ExtraInventoryData extraDataCopy = currSelectedCompanion.companion_item.GetExtraDataCopy();
+			extraDataCopy.SetString("companion_mode", "guard");
+			InventoryItem item = new InventoryItem(currSelectedCompanion.companion_item.item_name, extraDataCopy);
+			ConstructionControl.Instance.EnterBuildMode(item, Vector3.zero, 0, false);
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot guard");
+		}
 	}
 
 	public bool WasMyGuard(string owner_name)
 	{
-		return false;
+		if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+		{
+			return owner_name == PlayerData.Instance.GetGlobalString("username_lower");
+		}
+		if (!(owner_name == "ME"))
+		{
+			return owner_name == PlayerData.Instance.GetGlobalString("username_lower");
+		}
+		return true;
 	}
 
 	public void OnGuardDie(string mob_name, string owner_name)
 	{
+		if (WasMyGuard(owner_name))
+		{
+			GameplayGUIControl.Instance.ShowNotif("<color=#aaaaaa>" + mob_name + " died</color>", companion_died_ico, new OnNotifClick(OnNotifClick.type.none));
+		}
 	}
 
 	public void AddDeadCompanion(InventoryItem companion_item)
@@ -196,6 +223,87 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void PressCompanionButton(int index)
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		if (index < 0)
+		{
+			return;
+		}
+		if (index == 1)
+		{
+			if (active_companions.Count < 2)
+			{
+				return;
+			}
+		}
+		else if (index == 0)
+		{
+			if (active_companions.Count < 1)
+			{
+				return;
+			}
+		}
+		else if (active_companions.Count < 3)
+		{
+			return;
+		}
+		selected_companion_name = active_companions[index].companion_name;
+		WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.companion_commands);
+		WindowPrefabsControl.Instance.CreateScreen("COMPANION-commands", WindowPrefabsControl.build_into_t.mini_window);
+		curr_companion_page = 0;
+		RedrawPage(0);
+		ActiveCompanion activeCompanion = active_companions[index];
+		WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-commands", "creature-name-header").text = activeCompanion.companion_name.ToUpper();
+		WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-commands", "creature-level").text = "Level " + activeCompanion.level;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button0").GetComponent<CanvasGroup>().alpha = 1f;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button1").GetComponent<CanvasGroup>().alpha = 1f;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button4").GetComponent<CanvasGroup>().alpha = 0.4f;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button5").GetComponent<CanvasGroup>().alpha = 0.4f;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button8").GetComponent<CanvasGroup>().alpha = 0.4f;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button11").GetComponent<CanvasGroup>().alpha = 0.4f;
+		float alpha = (activeCompanion.is_temp_companion ? 0.4f : 1f);
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button2").GetComponent<CanvasGroup>().alpha = alpha;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button3").GetComponent<CanvasGroup>().alpha = alpha;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button7").GetComponent<CanvasGroup>().alpha = alpha;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button9").GetComponent<CanvasGroup>().alpha = alpha;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button10").GetComponent<CanvasGroup>().alpha = alpha;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button6").GetComponent<CanvasGroup>().alpha = alpha;
+		for (int i = 0; i < 12; i++)
+		{
+			string text = WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button" + i).transform.Find("Text").GetComponent<Text>().text;
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "button" + i).transform.Find("Text").GetComponent<Text>().text = TranslationControl.Instance.TranslateGeneral(text, "GUI");
+		}
+		string text2 = WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonL").transform.Find("Text").GetComponent<Text>().text;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonL").transform.Find("Text").GetComponent<Text>().text = TranslationControl.Instance.TranslateGeneral(text2, "GUI");
+		string text3 = WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonR").transform.Find("Text").GetComponent<Text>().text;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonR").transform.Find("Text").GetComponent<Text>().text = TranslationControl.Instance.TranslateGeneral(text3, "GUI");
+		List<string> list = new List<string>();
+		list.Add(activeCompanion.creature_A);
+		list.Add(activeCompanion.creature_B);
+		GameObject hybridLite = CreatureMorpher.Instance.GetHybridLite(list);
+		hybridLite.GetComponent<LiteModel>().animation_choppiness = GraphicsControl.Instance.SpecialAnimationChoppiness();
+		hybridLite.transform.SetParent(WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "model-go-here").transform);
+		hybridLite.transform.localRotation = Quaternion.Euler(0f, 220f, 0f);
+		hybridLite.transform.localPosition = Vector3.zero;
+		if (activeCompanion.hat_.item_name != "" && inventory_ctr.Instance.GetItemType(activeCompanion.hat_) == inventory_ctr.inv_type_t.helmet)
+		{
+			hybridLite.GetComponent<LiteModel>().ApplyHat(activeCompanion.hat_, null);
+		}
+		if (activeCompanion.body_.item_name != "" && inventory_ctr.Instance.GetItemType(activeCompanion.body_) == inventory_ctr.inv_type_t.armor)
+		{
+			hybridLite.GetComponent<LiteModel>().ApplyArmor(activeCompanion.body_, null);
+		}
+		if (activeCompanion.hand_.item_name != "" && inventory_ctr.Instance.GetItemType(activeCompanion.hand_) == inventory_ctr.inv_type_t.holdable)
+		{
+			hybridLite.GetComponent<LiteModel>().ApplyWeapon(activeCompanion.hand_, null);
+		}
+		hybridLite.transform.localScale = Vector3.one * 170f;
+		hybridLite.GetComponent<LiteModel>().StartAnimation(0);
+		ItemSprite.RecursiveApplyLayer(hybridLite.transform, LayerMask.NameToLayer("GUI-lighting"), false);
+		WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-commands", "creature-constituents").text = hybridLite.GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[0] + "+" + hybridLite.GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[1];
+		Image image = WindowPrefabsControl.Instance.GetImage("COMPANION-commands", "exp-fg");
+		float num = WindowPrefabsControl.Instance.GetImage("COMPANION-commands", "exp-bg").rectTransform.sizeDelta.x * ((float)activeCompanion.curr_exp / (float)activeCompanion.next_exp);
+		image.rectTransform.sizeDelta = new Vector2(num, image.rectTransform.sizeDelta.y);
+		image.rectTransform.anchoredPosition = new Vector2(num * 0.5f, 0f);
 	}
 
 	public void RedrawCompanionNibs()
@@ -248,82 +356,294 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void PrevPage()
 	{
+		if (curr_companion_page != 0)
+		{
+			RedrawPage(-1);
+		}
 	}
 
 	public void NextPage()
 	{
+		if (curr_companion_page != 1)
+		{
+			RedrawPage(1);
+		}
 	}
 
 	private void RedrawPage(int dir)
 	{
+		switch (curr_companion_page)
+		{
+		case 0:
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "page1").SetActive(false);
+			break;
+		case 1:
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "page2").SetActive(false);
+			break;
+		case 2:
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "page3").SetActive(false);
+			break;
+		}
+		curr_companion_page += dir;
+		if (curr_companion_page == 1)
+		{
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "page2").SetActive(true);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonL").GetComponent<CanvasGroup>().alpha = 1f;
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonR").GetComponent<CanvasGroup>().alpha = 0.4f;
+		}
+		else if (curr_companion_page == 0)
+		{
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "page1").SetActive(true);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonL").GetComponent<CanvasGroup>().alpha = 0.4f;
+			WindowPrefabsControl.Instance.GetObject("COMPANION-commands", "pageButtonR").GetComponent<CanvasGroup>().alpha = 1f;
+		}
 	}
 
 	public void PressCommandAttack()
 	{
+		WindowControl.Instance.CloseMiniwindow(false);
+		PopupControl.Instance.SetButtonWasPressed();
+		GameController.Instance.is_picking_companion_target = true;
+		ConstructionControl.Instance.click_to_place.SetActive(true);
+		ConstructionControl.Instance.click_to_place_txt.text = "Pick a target";
+		ConstructionControl.Instance.ShowDoneButton("CANCEL", ConstructionControl.button_state.COMPANION_ATTACK);
 	}
 
 	public void PressCommandWalk()
 	{
+		WindowControl.Instance.CloseMiniwindow(false);
+		PopupControl.Instance.SetButtonWasPressed();
+		GameController.Instance.is_picking_companion_walk_location = true;
+		ConstructionControl.Instance.click_to_place.SetActive(true);
+		ConstructionControl.Instance.click_to_place_txt.text = "Pick a location";
+		ConstructionControl.Instance.ShowDoneButton("CANCEL", ConstructionControl.button_state.COMPANION_MOVE);
 	}
 
 	public void PressCommandItems()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowPrefabsControl.Instance.DestroyScreen("COMPANION-commands");
+			inventory_ctr.Instance.SucceedOpenCompanionPockets(currSelectedCompanion);
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot hold items");
+		}
 	}
 
 	public void PressCommandWait()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowControl.Instance.CloseMiniwindow(false);
+			PopupControl.Instance.SetButtonWasPressed();
+			ExtraInventoryData extraDataCopy = currSelectedCompanion.companion_item.GetExtraDataCopy();
+			extraDataCopy.SetString("companion_mode", "wait");
+			InventoryItem item = new InventoryItem(currSelectedCompanion.companion_item.item_name, extraDataCopy);
+			ConstructionControl.Instance.EnterBuildMode(item, Vector3.zero, 0, false);
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot wait");
+		}
 	}
 
 	public void PressCommandRename()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowPrefabsControl.Instance.GetScreen("COMPANION-commands").gameObject.SetActive(false);
+			WindowPrefabsControl.Instance.CreateScreen("COMPANION-rename", WindowPrefabsControl.build_into_t.mini_window);
+			WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-rename", "desc-text").text = "Type a new name for '" + selected_companion_name + "'";
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot be renamed");
+		}
 	}
 
 	public void PressCommandAdvanced()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowPrefabsControl.Instance.GetScreen("COMPANION-commands").gameObject.SetActive(false);
+			WindowPrefabsControl.Instance.CreateScreen("COMPANION-advanced", WindowPrefabsControl.build_into_t.mini_window);
+			for (int i = 0; i < 11; i++)
+			{
+				string text = WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-advanced", "translate" + i).GetComponent<Text>().text;
+				WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-advanced", "translate" + i).GetComponent<Text>().text = TranslationControl.Instance.TranslateGeneral(text, "CompanionsEtc");
+			}
+			behaviour_tab_selected = 0;
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_1").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.wait_message1);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_2").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.wait_message2);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_3").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.wait_message3);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_4").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.wait_message4);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "guard_message_1").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.guard_message1);
+			WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "guard_message_2").GetComponent<InputField>().SetTextWithoutNotify(currSelectedCompanion.guard_message2);
+			curr_wait_icon_selected = currSelectedCompanion.wait_icon;
+			RedrawWaitLogo();
+			attack_XP_orbs_selected = currSelectedCompanion.attack_xp_orbs;
+			RedrawAttackExpOrbSwitcher();
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot change behaviour");
+		}
 	}
 
 	public void PressOptionAttackExpOrb()
 	{
+		attack_XP_orbs_selected = !attack_XP_orbs_selected;
+		RedrawAttackExpOrbSwitcher();
 	}
 
 	private void RedrawAttackExpOrbSwitcher()
 	{
+		if (attack_XP_orbs_selected)
+		{
+			WindowPrefabsControl.Instance.GetImage("COMPANION-advanced", "option_xp_orb_button").color = col_switcher_YES;
+			WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-advanced", "option_xp_orb_text").text = "YES";
+		}
+		else
+		{
+			WindowPrefabsControl.Instance.GetImage("COMPANION-advanced", "option_xp_orb_button").color = col_switcher_NO;
+			WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-advanced", "option_xp_orb_text").text = "NO";
+		}
 	}
 
 	public void PressAdvancedTab(int index)
 	{
+		WindowPrefabsControl.Instance.GetImage("COMPANION-advanced", "button" + behaviour_tab_selected).color = col_behaviour_tab_deselected;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "tab" + behaviour_tab_selected).SetActive(false);
+		behaviour_tab_selected = index;
+		WindowPrefabsControl.Instance.GetImage("COMPANION-advanced", "button" + behaviour_tab_selected).color = col_behaviour_tab_selected;
+		WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "tab" + behaviour_tab_selected).SetActive(true);
 	}
 
 	public void PressChangeCompanionWaitIcon(int dir)
 	{
+		curr_wait_icon_selected += dir;
+		if (curr_wait_icon_selected < 0)
+		{
+			curr_wait_icon_selected = 1;
+		}
+		else if (curr_wait_icon_selected >= 2)
+		{
+			curr_wait_icon_selected = 0;
+		}
+		RedrawWaitLogo();
 	}
 
 	private void RedrawWaitLogo()
 	{
+		int num = ((curr_wait_icon_selected != 0) ? ((curr_wait_icon_selected == 1) ? 3 : 2) : 2);
+		WindowPrefabsControl.Instance.GetImage("COMPANION-advanced", "wait_icon").sprite = DevBuildControl.Instance.overhead_logos[num];
 	}
 
 	public void PressBackOnAdvanced(bool save)
 	{
+		if (save)
+		{
+			string text = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_1").GetComponent<InputField>().text;
+			string text2 = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_2").GetComponent<InputField>().text;
+			string text3 = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_3").GetComponent<InputField>().text;
+			string text4 = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "wait_message_4").GetComponent<InputField>().text;
+			string text5 = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "guard_message_1").GetComponent<InputField>().text;
+			string text6 = WindowPrefabsControl.Instance.GetObject("COMPANION-advanced", "guard_message_2").GetComponent<InputField>().text;
+			ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+			ExtraInventoryData extraDataCopy = currSelectedCompanion.companion_item.GetExtraDataCopy();
+			extraDataCopy.SetString("wait_message1", text);
+			extraDataCopy.SetString("wait_message2", text2);
+			extraDataCopy.SetString("wait_message3", text3);
+			extraDataCopy.SetString("wait_message4", text4);
+			extraDataCopy.SetString("guard_message1", text5);
+			extraDataCopy.SetString("guard_message2", text6);
+			extraDataCopy.SetShort("npc_icon", curr_wait_icon_selected);
+			extraDataCopy.SetShort("attack_xp_orbs", attack_XP_orbs_selected ? 1 : 0);
+			currSelectedCompanion.companion_item = new InventoryItem(currSelectedCompanion.companion_item.item_name, extraDataCopy);
+			SaveActiveCompanions();
+			int wait_icon = currSelectedCompanion.wait_icon;
+			int num = ((wait_icon != 0) ? ((wait_icon == 1) ? 3 : 2) : 2);
+			currSelectedCompanion.obj.GetComponent<SharedCreature>().icon_id = num;
+			currSelectedCompanion.obj.GetComponent<SharedCreature>().creature_type_col = ((num == 3) ? col_info_icon_text : col_happy_icon_text);
+			currSelectedCompanion.obj.GetComponent<SharedCreature>().RedrawCreatureText();
+			currSelectedCompanion.obj.GetComponent<SharedCreature>().RedrawIcon(num);
+			RedrawCompanionNibs();
+		}
+		WindowPrefabsControl.Instance.GetScreen("COMPANION-commands").gameObject.SetActive(true);
+		WindowPrefabsControl.Instance.DestroyScreen("COMPANION-advanced");
 	}
 
 	public void PressCommandComingSoon()
 	{
+		PopupControl.Instance.ShowMessage("Coming soon!");
 	}
 
 	public void PressCommandMerchant()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (!currSelectedCompanion.is_temp_companion)
+		{
+			WindowPrefabsControl.Instance.GetScreen("COMPANION-commands").gameObject.SetActive(false);
+			WindowPrefabsControl.Instance.CreateScreen("COMPANION-merchant", WindowPrefabsControl.build_into_t.mini_window);
+		}
+		else
+		{
+			PopupControl.Instance.ShowMessage(currSelectedCompanion.companion_name + " cannot become a Merchant");
+		}
 	}
 
 	public void PressBackOnRename()
 	{
+		WindowPrefabsControl.Instance.GetScreen("COMPANION-commands").gameObject.SetActive(true);
+		WindowPrefabsControl.Instance.DestroyScreen("COMPANION-rename");
 	}
 
 	public void PressAcceptOnRename()
 	{
+		string input_text = WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-rename", "new-name-text").text;
+		if (Startup.StringNullOrWhitespace(input_text))
+		{
+			return;
+		}
+		if (PlayerData.Instance.GetGlobalShort("GEMS") < 2)
+		{
+			PopupControl.Instance.ShowMessage("Cannot rename companion\n<color=#ff3b29>You don't have enough gems!</color>");
+			return;
+		}
+		PopupControl.Instance.on_yes_pressed = delegate
+		{
+			RenameCompanionManually(input_text);
+			PressBackOnRename();
+		};
+		PopupControl.Instance.ShowYesNo("Spend <color=#38b9ff>2 gems</color> to rename\n" + selected_companion_name + " to <color=#ffdb38>" + input_text + "</color>?", "Yes", "No", PopupControl.context.yesno_ACTION);
 	}
 
 	public void RenameCompanionManually(string rename_to)
 	{
+		WindowPrefabsControl.Instance.GetTextLegacy("COMPANION-commands", "creature-name-header").text = rename_to.ToUpper();
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		ExtraInventoryData extraDataCopy = currSelectedCompanion.companion_item.GetExtraDataCopy();
+		extraDataCopy.SetString("npc_display_name", rename_to);
+		currSelectedCompanion.companion_item = new InventoryItem(currSelectedCompanion.companion_item.item_name, extraDataCopy);
+		selected_companion_name = rename_to;
+		Color overheadNameColor = MobControl.Instance.GetOverheadNameColor(currSelectedCompanion.creature_A + currSelectedCompanion.creature_B);
+		currSelectedCompanion.obj.GetComponent<SharedCreature>().AssignOverheadName(rename_to, overheadNameColor);
+		SaveActiveCompanions();
+		RedrawCompanionNibs();
+		GameServerSender.Instance.SendRenameCompanion(currSelectedCompanion.combat_name, rename_to);
+		short globalShort = PlayerData.Instance.GetGlobalShort("GEMS");
+		PlayerData.Instance.SetGlobalShort("GEMS", globalShort - 2);
 	}
 
 	public void CreateSingleCompanion(ActiveCompanion companion)
@@ -344,6 +664,23 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void CompanionPocketsClosed(BasketContents companion_pockets)
 	{
+		ActiveCompanion currSelectedCompanion = GetCurrSelectedCompanion();
+		if (currSelectedCompanion == null)
+		{
+			return;
+		}
+		ItemCountPair[] array = new ItemCountPair[inventory_ctr.n_slots_per_page_];
+		for (int i = 0; i < array.Length; i++)
+		{
+			array[i] = companion_pockets[i];
+		}
+		currSelectedCompanion.companion_item = ChunkControl.Instance.EncodeItemListIntoItem("pockets", array, currSelectedCompanion.companion_item);
+		SaveActiveCompanions();
+		currSelectedCompanion.obj.GetComponent<SharedCreature>().hat_ = currSelectedCompanion.hat_;
+		currSelectedCompanion.obj.GetComponent<SharedCreature>().body_ = currSelectedCompanion.body_;
+		currSelectedCompanion.obj.GetComponent<SharedCreature>().hand_ = currSelectedCompanion.hand_;
+		currSelectedCompanion.obj.GetComponent<SharedCreature>().OnEquipmentChanged();
+		GameServerSender.Instance.SendCompanionChangeEquip(currSelectedCompanion.combat_name, currSelectedCompanion.hat_, currSelectedCompanion.body_, currSelectedCompanion.hand_);
 	}
 
 	public void DeleteAllActiveCompanions()
@@ -405,6 +742,24 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void AcceptCompanionFollow()
 	{
+		int interacting_element_chunkX = GameController.Instance.interacting_element_chunkX;
+		int interacting_element_chunkZ = GameController.Instance.interacting_element_chunkZ;
+		int interacting_element_innerX = GameController.Instance.interacting_element_innerX;
+		int interacting_element_innerZ = GameController.Instance.interacting_element_innerZ;
+		string chunkString = ChunkControl.Instance.GetChunkString(ChunkControl.Instance.player_zone, interacting_element_chunkX, interacting_element_chunkZ);
+		if (ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			InventoryItem interacting_element_item = GameController.Instance.interacting_element_item;
+			ChunkElement remove_element = new ChunkElement(interacting_element_item, GameController.Instance.interacting_element_rot);
+			ConstructionControl.Instance.PlayerRemoveAt(remove_element, ChunkControl.Instance.player_zone, interacting_element_chunkX, interacting_element_chunkZ, interacting_element_innerX, interacting_element_innerZ, ConstructionControl.remove_context.self_remove, ConstructionControl.GenerateCacheKey());
+			ActiveCompanion activeCompanion = new ActiveCompanion();
+			activeCompanion.companion_item = interacting_element_item;
+			activeCompanion.hatch_index = active_companions.Count;
+			active_companions.Add(activeCompanion);
+			SaveActiveCompanions();
+			CreateSingleCompanion(activeCompanion, new Vector3((float)(interacting_element_innerX + interacting_element_chunkX * 10) + 0.5f, SharedCreature.H, (float)(interacting_element_innerZ + interacting_element_chunkZ * 10) + 0.5f));
+			GameServerSender.Instance.SendCreatedLocalMob(activeCompanion.combat_name);
+		}
 	}
 
 	public void AddTempCompanion(string creatureA, string creatureB, int start_lvl, string companion_name, InventoryItem hat_, InventoryItem body_, InventoryItem hand_)
@@ -443,6 +798,35 @@ public class CompanionController : MonoBehaviour, OrderedStart
 
 	public void AcceptFreeCompanion()
 	{
+		int interacting_element_chunkX = GameController.Instance.interacting_element_chunkX;
+		int interacting_element_chunkZ = GameController.Instance.interacting_element_chunkZ;
+		int interacting_element_innerX = GameController.Instance.interacting_element_innerX;
+		int interacting_element_innerZ = GameController.Instance.interacting_element_innerZ;
+		string creatureA = GameController.Instance.interacting_element_item.GetString("creature_A");
+		string creatureB = GameController.Instance.interacting_element_item.GetString("creature_B");
+		string companion_name = GameController.Instance.interacting_element_item.GetString("npc_display_name");
+		string combat_name = ShopControl.RandomString();
+		int newUniqueId = ConstructionControl.Instance.GetNewUniqueId(true);
+		string item_name = GameController.Instance.interacting_element_item.GetString("hat");
+		string value = GameController.Instance.interacting_element_item.GetString("hat_paint");
+		string item_name2 = GameController.Instance.interacting_element_item.GetString("body");
+		string value2 = GameController.Instance.interacting_element_item.GetString("armor_paint");
+		ExtraInventoryData extraInventoryData = new ExtraInventoryData();
+		extraInventoryData.SetString("paint", value);
+		InventoryItem start_hat = new InventoryItem(item_name, extraInventoryData);
+		ExtraInventoryData extraInventoryData2 = new ExtraInventoryData();
+		extraInventoryData2.SetString("paint", value2);
+		InventoryItem start_armor = new InventoryItem(item_name2, extraInventoryData2);
+		ActiveCompanion activeCompanion = new ActiveCompanion();
+		activeCompanion.companion_item = ActiveCompanion.CreateNewItem(creatureA, creatureB, 10, 0, GameController.Instance.NextLevelExp(10), combat_name, companion_name, newUniqueId, TranslationControl.Instance.TranslateGeneral(default_wait_message1, "CompanionsEtc"), TranslationControl.Instance.TranslateGeneral(default_wait_message2, "CompanionsEtc"), "", "", TranslationControl.Instance.TranslateGeneral(default_guard_message1, "CompanionsEtc"), TranslationControl.Instance.TranslateGeneral(default_guard_message2, "CompanionsEtc"), 0, false, new InventoryItem(""), start_hat, start_armor, TranslationControl.Instance.TranslateGeneral(default_merchant_message1, "Merchants"), TranslationControl.Instance.TranslateGeneral(default_merchant_message2, "Merchants"));
+		activeCompanion.hatch_index = active_companions.Count;
+		active_companions.Add(activeCompanion);
+		SaveActiveCompanions();
+		CreateSingleCompanion(activeCompanion, new Vector3(interacting_element_innerX + interacting_element_chunkX * 10, SharedCreature.H, interacting_element_innerZ + interacting_element_chunkZ * 10));
+		ChunkControl.Instance.GetChunkString(ChunkControl.Instance.player_zone, interacting_element_chunkX, interacting_element_chunkZ);
+		ChunkElement remove_element = new ChunkElement(GameController.Instance.interacting_element_item, GameController.Instance.interacting_element_rot);
+		ConstructionControl.Instance.PlayerRemoveAt(remove_element, ChunkControl.Instance.player_zone, interacting_element_chunkX, interacting_element_chunkZ, interacting_element_innerX, interacting_element_innerZ, ConstructionControl.remove_context.self_remove, ConstructionControl.GenerateCacheKey());
+		GameServerSender.Instance.SendCreatedLocalMob(activeCompanion.combat_name);
 	}
 
 	private void SaveCompanionList(List<InventoryItem> companion_item_list, PlayerData.filename_t filename_t)
