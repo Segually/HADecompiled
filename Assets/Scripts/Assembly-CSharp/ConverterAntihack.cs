@@ -7,6 +7,9 @@ public class ConverterAntihack : MonoBehaviour
 
 	public IEnumerator BeginConverting()
 	{
-		return null;
+		GrandConverter.Instance.DrawProgressBar(0.01f);
+		GrandConverter.Instance.filename_text.text = "";
+		yield return new WaitForEndOfFrame();
+		complete = true;
 	}
 }
