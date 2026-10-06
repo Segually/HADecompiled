@@ -154,6 +154,15 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public bool IsDevPlacedShackZone(string zone)
 	{
+		if (zone == "overworld")
+		{
+			return false;
+		}
+		int num = int.Parse(zone.Replace("shack", ""), Startup.parse_culture);
+		if (num >= ChunkControl.dedicated_quest_range_start && num < ChunkControl.dedicated_quest_range_start + 1000)
+		{
+			return true;
+		}
 		return false;
 	}
 

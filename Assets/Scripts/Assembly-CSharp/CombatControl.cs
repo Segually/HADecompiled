@@ -473,7 +473,7 @@ public class CombatControl : MonoBehaviour, OrderedStart
 
 	public static int GetHpMaxPlayerInverse(int player_HP)
 	{
-		return 0;
+		return (int)((float)player_HP * 0.5f);
 	}
 
 	public static int GetHpMaxMob(int mob_level)

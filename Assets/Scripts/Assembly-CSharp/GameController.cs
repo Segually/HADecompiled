@@ -303,7 +303,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	private float calculate_cam_offset(float ratio)
 	{
-		return 0f;
+		return Mathf.Lerp(0.59f, 0.44f, Mathf.InverseLerp(1.33f, 2f, ratio));
 	}
 
 	public void SetLightAngleToOverworld()
@@ -353,6 +353,11 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void stop_daynight_cycle()
 	{
+		if (daynight_cycle_t != null)
+		{
+			StopCoroutine(daynight_cycle_t);
+		}
+		EvalDaynight();
 	}
 
 	private IEnumerator daynight_cycle()
@@ -530,10 +535,16 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void revive_gems_accept()
 	{
+		AudioControl.Instance.PlayGenericClick();
+		WindowPrefabsControl.Instance.CreateScreen("Shop-getgems", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowControl.Instance.OpenWindow(WindowControl.window_type_t.buy_gems_revive);
 	}
 
 	public void revive_cancel()
 	{
+		WindowPrefabsControl.Instance.CreateScreen("You Died", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowPrefabsControl.Instance.GetScreen("You Died").GetComponent<Animation>().Play("new death anm 2");
+		WindowPrefabsControl.Instance.CreateScreen("You Died - bottom left", WindowPrefabsControl.build_into_t.GAME_CTR);
 	}
 
 	public void ReviveAccepted()
@@ -690,6 +701,8 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void giant_shake_screen()
 	{
+		mainCamera.GetComponent<Animation>().Stop();
+		mainCamera.GetComponent<Animation>().Play();
 	}
 
 	public void PlayerDied()
@@ -761,14 +774,17 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_crackshell()
 	{
+		sfx.PlayOneShot(sfx_crackShell, AudioControl.Instance.general_sfx_volume * 0.4f);
 	}
 
 	public void sound_mixmutants()
 	{
+		sfx.PlayOneShot(sfx_mixMutants, AudioControl.Instance.general_sfx_volume);
 	}
 
 	public void sound_death()
 	{
+		sfx.PlayOneShot(sfx_death, AudioControl.Instance.general_sfx_volume);
 	}
 
 	public void sound_ding()
@@ -783,6 +799,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_buy()
 	{
+		sfx.PlayOneShot(sfx_buy, AudioControl.Instance.general_sfx_volume * 0.75f);
 	}
 
 	public void sound_levelButton()
@@ -858,6 +875,8 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void PressViewAchievements()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		QuestControl.Instance.OpenQuestWindow();
 	}
 
 	public void AttemptAdOnLevelup()
@@ -916,10 +935,18 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void edit_navpost()
 	{
+		WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.edit_navpost);
+		WindowControl.Instance.HideMiniwindowHeaders();
+		WindowPrefabsControl.Instance.CreateScreen("NAV POST", WindowPrefabsControl.build_into_t.mini_window);
+		WindowPrefabsControl.Instance.GetObject("NAV POST", "item_spr").GetComponent<ItemSprite>().RedrawBasic(new InventoryItem("Navpost"), 1);
 	}
 
 	public void edit_merchantSign()
 	{
+		WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.edit_merchant_sign);
+		WindowControl.Instance.HideMiniwindowHeaders();
+		MerchantSignEditor.Instance = WindowPrefabsControl.Instance.CreateScreen("MERCHANT SIGN", WindowPrefabsControl.build_into_t.mini_window).GetComponent<MerchantSignEditor>();
+		MerchantSignEditor.Instance.item_spr.RedrawBasic(new InventoryItem("Merchant Sign"), 1);
 	}
 
 	public void NoteInteractingElement(int chunkX, int chunkZ, int innerX, int innerZ, InventoryItem item, int rot)
@@ -938,6 +965,10 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void PressEndSitInChair()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		GameplayGUIControl.Instance.end_sit_button.SetActive(false);
+		GameServerSender.Instance.SendFinishedSittingInChair();
+		player.GetComponent<SharedCreature>().EndSittingInChair();
 	}
 
 	public void player_interact(GameObject interaction_target)
@@ -1639,6 +1670,55 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	private void OnInteractWithStatue(string zone, int chunkX, int chunkZ, int innerX, int innerZ)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return;
+		}
+		GameObject buildableInstanceByName = ChunkControl.Instance.GetChunkObj(chunkString).GetBuildableInstanceByName(innerX, innerZ, "Custom Statue");
+		if (buildableInstanceByName == null)
+		{
+			return;
+		}
+		Interactable component = buildableInstanceByName.GetComponent<Interactable>();
+		if (WindowControl.Instance.CanOpenGenericWindow())
+		{
+			WindowControl.Instance.DoOpenGenericWindow();
+			string text = component.corresponding_item.GetString("statue_message1");
+			string text2 = component.corresponding_item.GetString("statue_message2");
+			if (Startup.StringNullOrWhitespace(text) && Startup.StringNullOrWhitespace(text2))
+			{
+				text = TranslationControl.Instance.TranslateGeneral(CompanionController.default_statue_message1, "CompanionsEtc");
+				text2 = TranslationControl.Instance.TranslateGeneral(CompanionController.default_statue_message2, "CompanionsEtc");
+			}
+			Dictionary<int, Dictionary<string, object>> dictionary = new Dictionary<int, Dictionary<string, object>>();
+			dictionary.Add(0, new Dictionary<string, object>
+			{
+				{ "type", "NPC_speak" },
+				{ "text", text },
+				{ "go_to", 1 }
+			});
+			dictionary.Add(1, new Dictionary<string, object>
+			{
+				{ "type", "NPC_speak" },
+				{ "text", text2 },
+				{ "go_to", 2 }
+			});
+			dictionary.Add(2, new Dictionary<string, object>
+			{
+				{ "type", "MY_options" },
+				{ "optionA", "EDIT STATUE" },
+				{ "optionA_goto", -77 }
+			});
+			interacting_element_innerX = innerX;
+			interacting_element_chunkX = chunkX;
+			interacting_element_chunkZ = chunkZ;
+			interacting_element_innerZ = innerZ;
+			interacting_element_item = component.corresponding_item;
+			interacting_element_rot = (byte)component.temp_rot;
+			DialogueControl.Instance.SetFocusNpc(component.gameObject, "Custom Statue", "", DialogueControl.focus_type_t.stationary_npc);
+			DialogueControl.Instance.EnterDialogue(dictionary, 0, "");
+		}
 	}
 
 	private void OnInteractWithCompanion(string zone, int chunkX, int chunkZ, int innerX, int innerZ)
@@ -1965,6 +2045,18 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public GameObject find_in_children(string t_name, Transform start)
 	{
+		if (start.gameObject.name == t_name)
+		{
+			return start.gameObject;
+		}
+		for (int i = 0; i < start.transform.childCount; i++)
+		{
+			GameObject gameObject = find_in_children(t_name, start.transform.GetChild(i));
+			if (gameObject != null)
+			{
+				return gameObject;
+			}
+		}
 		return null;
 	}
 
@@ -2052,6 +2144,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_gameStart(float intensity)
 	{
+		sfx.PlayOneShot(sfx_gamestart, AudioControl.Instance.general_sfx_volume);
 	}
 
 	public void sound_creature_hit(float intensity, float pitch)
@@ -2143,7 +2236,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public int LevelsToLose()
 	{
-		return 0;
+		return (int)((float)playerLevel * 0.13f);
 	}
 
 	public void LoadPlayerLevelFromDisk()
@@ -2177,6 +2270,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void OverwriteSkillPointsSpendable(int new_value, string random_fn_validator)
 	{
+		skillPointsSpendable = new_value;
 	}
 
 	public void SaveSkillPointsSpendableToDisk()
@@ -2191,6 +2285,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void OverwriteCurrentExp(int new_value, string random_fn_validator)
 	{
+		currentEXP = new_value;
 	}
 
 	public void SaveCurrentExpToDisk()
@@ -2209,6 +2304,11 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void ClearPlayerStats()
 	{
+		player_stats = new int[n_stats];
+		for (int i = 0; i < n_stats; i++)
+		{
+			player_stats[i] = 0;
+		}
 	}
 
 	public void SaveAllStatsToDisk()
@@ -2486,7 +2586,12 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public string GetSavedPlayerZoneOnServer(string server_name)
 	{
-		return null;
+		string globalString = PlayerData.Instance.GetGlobalString(server_name + "player_zone");
+		if (!(globalString == ""))
+		{
+			return globalString;
+		}
+		return "overworld";
 	}
 
 	public Vector3 GetSavedPlayerPositionOnSlot()
@@ -2500,12 +2605,28 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public Vector3 GetSavedPlayerPositionOnServer(string server_name)
 	{
-		return default(Vector3);
+		short globalShort = PlayerData.Instance.GetGlobalShort(server_name + "player_chunk_x");
+		short globalShort2 = PlayerData.Instance.GetGlobalShort(server_name + "player_chunk_z");
+		short globalShort3 = PlayerData.Instance.GetGlobalShort(server_name + "player_inner_x");
+		short globalShort4 = PlayerData.Instance.GetGlobalShort(server_name + "player_inner_z");
+		if (globalShort2 == 0 && globalShort == 0 && globalShort3 == 0 && globalShort4 == 0)
+		{
+			return BreedControl.Instance.campos_result.transform.position;
+		}
+		return new Vector3((float)(globalShort3 + globalShort * 10) + 0.5f, 0.5f, (float)(globalShort4 + globalShort2 * 10) + 0.5f);
 	}
 
 	public int NextLevelExp(int curr_level)
 	{
-		return 0;
+		if (curr_level - 1 == 0)
+		{
+			return 4;
+		}
+		if (curr_level < 27)
+		{
+			return (int)((float)(curr_level - 1) * 1.7f + 9f);
+		}
+		return 50;
 	}
 
 	public void AssignHealthbar(GameObject obj)

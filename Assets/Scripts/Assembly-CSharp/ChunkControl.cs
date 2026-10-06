@@ -353,6 +353,18 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public ChunkElement GetElementAt(string object_name, string zone, int chunkX, int chunkZ, int innerX, int innerZ)
 	{
+		string chunkString = GetChunkString(zone, chunkX, chunkZ);
+		if (!Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return null;
+		}
+		foreach (ChunkElement item in Instance.GetChunk(chunkString).chunk_data.GetElementsAt(innerX, innerZ))
+		{
+			if (item.item.item_name == object_name)
+			{
+				return item;
+			}
+		}
 		return null;
 	}
 
@@ -1920,17 +1932,62 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public pathway_type GetPathwayTypeBeneathMe(Vector3 V)
 	{
-		return default(pathway_type);
+		string chunkString = GetChunkString(V);
+		if (!IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return pathway_type.none;
+		}
+		ChunkData chunkData = GetChunk(chunkString)?.chunk_data;
+		Vector3 inner = GetInner(V);
+		pathway_type result = pathway_type.none;
+		foreach (ChunkElement item in chunkData.GetElementsAt((int)inner.x, (int)inner.z))
+		{
+			string item_name = item.item.item_name;
+			if (item_name == "Dirt Path")
+			{
+				return pathway_type.gravel;
+			}
+			if (item_name == "Cobblestone Path" || item_name == "Stone Bricks")
+			{
+				return pathway_type.stone;
+			}
+			if (item_name == "Bouncy Floor")
+			{
+				result = pathway_type.bouncy;
+			}
+			else if (item_name == "Clouds")
+			{
+				result = pathway_type.sand;
+			}
+			else if (item_name == "Lava")
+			{
+				result = pathway_type.lava;
+			}
+		}
+		return result;
 	}
 
 	public bool IsMansionWoodFloorBeneathMe(Vector3 V)
 	{
-		return false;
+		ZoneData curr_zonedata = ZoneDataControl.Instance.curr_zonedata;
+		int interior_model_chunkZ = curr_zonedata.interior_model_chunkZ;
+		int interior_model_innerZ = curr_zonedata.interior_model_innerZ;
+		return (float)(int)GameController.Instance.player.transform.position.z - ((float)(interior_model_innerZ + interior_model_chunkZ * 10) + 0.5f) >= 7.5f;
 	}
 
 	public bool IsWindmillWoodFloorBeneathMe(Vector3 V)
 	{
-		return false;
+		ZoneData curr_zonedata = ZoneDataControl.Instance.curr_zonedata;
+		int interior_model_chunkX = curr_zonedata.interior_model_chunkX;
+		int interior_model_chunkZ = curr_zonedata.interior_model_chunkZ;
+		int interior_model_innerX = curr_zonedata.interior_model_innerX;
+		int interior_model_innerZ = curr_zonedata.interior_model_innerZ;
+		float x = GameController.Instance.player.transform.position.x;
+		if ((float)(int)GameController.Instance.player.transform.position.z - ((float)(interior_model_innerZ + interior_model_chunkZ * 10) + 0.5f) >= 7.5f)
+		{
+			return true;
+		}
+		return (float)(int)x - ((float)(interior_model_innerX + interior_model_chunkX * 10) + 0.5f) <= -6.5f;
 	}
 
 	public int GetCaveFloorModelBelow(GameObject obj)

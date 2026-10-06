@@ -104,7 +104,7 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public static float GetManaMaxPlayer(int stat_6_lvl)
 	{
-		return 0f;
+		return (float)stat_6_lvl * 0.5f + 8f;
 	}
 
 	public PerkData GetPerkDataForInfoDisplay(string perk_key)

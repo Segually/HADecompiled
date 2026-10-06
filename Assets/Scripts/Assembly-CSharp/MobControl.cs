@@ -480,6 +480,11 @@ public class MobControl : MonoBehaviour, OrderedStart
 
 	private void FixedUpdate()
 	{
+		if (GameServerConnector.Instance.FullyInGame() && creatures_to_request_next_step.Count != 0)
+		{
+			GameServerSender.Instance.SendTryClaimMobs(creatures_to_request_next_step);
+			creatures_to_request_next_step.Clear();
+		}
 	}
 
 	public void TrySpawnDrop(ItemCountPair drop_pair, Vector3 drop_pos)

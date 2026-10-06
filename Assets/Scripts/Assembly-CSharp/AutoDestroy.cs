@@ -7,10 +7,12 @@ public class AutoDestroy : MonoBehaviour
 
 	private void Start()
 	{
+		StartCoroutine(DelayedDestroy());
 	}
 
 	private IEnumerator DelayedDestroy()
 	{
-		return null;
+		yield return new WaitForSeconds(delay);
+		UnityEngine.Object.Destroy(base.gameObject);
 	}
 }

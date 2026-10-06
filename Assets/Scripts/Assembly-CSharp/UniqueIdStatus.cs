@@ -13,5 +13,7 @@ public class UniqueIdStatus
 
 	public UniqueIdStatus(int id, status_ status)
 	{
+		this.id = id;
+		this.status = status;
 	}
 }

@@ -10,5 +10,9 @@ public class CaveDeadEndObject
 
 	public CaveDeadEndObject(string buildable_id, int x, int z, int rot)
 	{
+		this.x = x;
+		this.z = z;
+		this.rot = rot;
+		element = new ChunkElement(buildable_id, rot);
 	}
 }

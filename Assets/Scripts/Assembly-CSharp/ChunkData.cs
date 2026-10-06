@@ -546,6 +546,79 @@ public class ChunkData
 
 	public void TryAutoBuildAt(string item_name, int modX, int modZ, int rot, int origin_chunkX, int origin_chunkZ, int origin_innerX, int origin_innerZ, string zone, Dictionary<string, ZoneData> auto_built_zones)
 	{
+		for (int i = 0; i < Mathf.Abs(modX); i++)
+		{
+			if (modX < 0)
+			{
+				origin_innerX--;
+				if (origin_innerX < 0)
+				{
+					origin_innerX = 9;
+					origin_chunkX--;
+				}
+			}
+			else if (origin_innerX + 1 < 10)
+			{
+				origin_innerX++;
+			}
+			else
+			{
+				origin_innerX = 0;
+				origin_chunkX++;
+			}
+		}
+		for (int j = 0; j < Mathf.Abs(modZ); j++)
+		{
+			if (modZ < 0)
+			{
+				origin_innerZ--;
+				if (origin_innerZ < 0)
+				{
+					origin_innerZ = 9;
+					origin_chunkZ--;
+				}
+			}
+			else if (origin_innerZ + 1 < 10)
+			{
+				origin_innerZ++;
+			}
+			else
+			{
+				origin_innerZ = 0;
+				origin_chunkZ++;
+			}
+		}
+		if (origin_chunkX != X || origin_chunkZ != Z)
+		{
+			return;
+		}
+		InventoryItem inventoryItem;
+		if (InventoryUtils.UsesShackId(item_name))
+		{
+			int newUniqueId = ConstructionControl.Instance.GetNewUniqueId();
+			ExtraInventoryData extraInventoryData = new ExtraInventoryData();
+			extraInventoryData.SetLong("shack_id", newUniqueId);
+			extraInventoryData.SetString("tag", "auto_built_immovable");
+			extraInventoryData.SetShort("outer_item_chunkX", origin_chunkX);
+			extraInventoryData.SetShort("outer_item_chunkZ", origin_chunkZ);
+			extraInventoryData.SetShort("outer_item_innerX", origin_innerX);
+			extraInventoryData.SetShort("outer_item_innerZ", origin_innerZ);
+			extraInventoryData.SetShort("depth", 0);
+			inventoryItem = new InventoryItem(item_name, extraInventoryData);
+			ZoneData value = new ZoneData("shack" + newUniqueId, inventoryItem, rot, zone, origin_chunkX, origin_chunkZ, origin_innerX, origin_innerZ);
+			auto_built_zones.Add("shack" + newUniqueId, value);
+		}
+		else if (InventoryUtils.UsesBasketId(new InventoryItem(item_name)))
+		{
+			ExtraInventoryData extraInventoryData2 = new ExtraInventoryData();
+			extraInventoryData2.SetLong("basket_id", ConstructionControl.Instance.GetNewUniqueId());
+			inventoryItem = new InventoryItem(item_name, extraInventoryData2);
+		}
+		else
+		{
+			inventoryItem = new InventoryItem(item_name);
+		}
+		AddElement(origin_innerX, origin_innerZ, new ChunkElement(inventoryItem, rot));
 	}
 
 	public void RemoveAllElementsWithTag(string remove_tag)

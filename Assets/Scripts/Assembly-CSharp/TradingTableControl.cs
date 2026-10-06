@@ -17,6 +17,11 @@ public class TradingTableControl : MonoBehaviour
 
 	public void OnOtherPlayerJoinedMe(string other_username)
 	{
+		alpha_accept_button.alpha = 1f;
+		alpha_other_bg.alpha = 1f;
+		header_other.GetComponent<CanvasGroup>().alpha = 1f;
+		waiting_overlay.SetActive(false);
+		header_other.text = other_username + "'s <color=#ffffff>offer</color>";
 	}
 
 	public void OnIJoinedOtherPlayer()

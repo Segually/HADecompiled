@@ -131,6 +131,16 @@ public class ChunkObj
 
 	public void TemporarilyDisableChunkObjs(Vector3 origin, float range, List<GameObject> new_temporarily_disabled)
 	{
+		foreach (List<BuildableInstance> value in buildable_instances.Values)
+		{
+			foreach (BuildableInstance item in value)
+			{
+				if (item.obj != null && Vector3.Distance(origin, new Vector3(item.obj.transform.position.x, 0f, item.obj.transform.position.z)) < range && !ShopControl.Instance.all_temporarily_disabled.Contains(item.obj))
+				{
+					new_temporarily_disabled.Add(item.obj);
+				}
+			}
+		}
 	}
 
 	public void TryCreateEdgePieces(ChunkData chunk_data)
@@ -292,6 +302,33 @@ public class ChunkObj
 
 	public void TryEraseBuildableGeometry(InventoryItem item, Vector3 origin, int rot)
 	{
+		bool flag = InventoryUtils.ShouldReplaceOrDeleteExactItem(item.item_name);
+		List<OccupiedSpace> objectWorldGeometry = ConstructionControl.Instance.GetObjectWorldGeometry(item, origin, rot);
+		List<OccupiedSpace> list = new List<OccupiedSpace>();
+		foreach (OccupiedSpace item2 in objectWorldGeometry)
+		{
+			foreach (OccupiedSpace item3 in occupied_spaces_to_deload_later)
+			{
+				if (flag)
+				{
+					if (item2.element.item == item3.element.item && Vector3.Distance(item2.pos, item3.pos) < 0.1f)
+					{
+						list.Add(item3);
+						break;
+					}
+				}
+				else if (item2.element.item.item_name == item3.element.item.item_name && Vector3.Distance(item2.pos, item3.pos) < 0.1f)
+				{
+					list.Add(item3);
+					break;
+				}
+			}
+		}
+		foreach (OccupiedSpace item4 in list)
+		{
+			occupied_spaces_to_deload_later.Remove(item4);
+			ChunkControl.Instance.global_spaces_occupied_by_buildables.Remove(item4);
+		}
 	}
 
 	public void FillBuildableGeometry(InventoryItem item, Vector3 origin, int rot)
@@ -310,6 +347,18 @@ public class ChunkObj
 
 	public void TryEraseRespawnWatcher(int x, int z, InventoryItem item)
 	{
+		for (int i = 0; i < respawn_watchers.Count; i++)
+		{
+			RespawnWatcher respawnWatcher = respawn_watchers[i];
+			if (respawnWatcher.x == x && respawnWatcher.z == z && respawnWatcher.element_item == item)
+			{
+				if (i != -1)
+				{
+					respawn_watchers.RemoveAt(i);
+				}
+				break;
+			}
+		}
 	}
 
 	public void TickRespawnWatchers(int X, int Z, string zone)

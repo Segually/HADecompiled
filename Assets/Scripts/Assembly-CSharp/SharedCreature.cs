@@ -154,10 +154,47 @@ public class SharedCreature : MonoBehaviour
 
 	public void Delete()
 	{
+		if (deleted)
+		{
+			return;
+		}
+		deleted = true;
+		if (MP_display != null)
+		{
+			UnityEngine.Object.Destroy(MP_display);
+		}
+		if (levelDisplay != null)
+		{
+			GameController.Instance.possible_destroy.Remove(levelDisplay);
+			UnityEngine.Object.Destroy(levelDisplay);
+		}
+		if (teleport_particle != null)
+		{
+			UnityEngine.Object.Destroy(teleport_particle.gameObject);
+		}
+		if (is_local_mob)
+		{
+			string combat_name = GetComponent<Combatant>().combat_name;
+			if (MobControl.Instance.my_claimed_creatures.Contains(combat_name))
+			{
+				MobControl.Instance.my_claimed_creatures.Remove(combat_name);
+			}
+		}
 	}
 
 	public void EndSittingInChair()
 	{
+		snapped_to_chair_obj = false;
+		SetMoveTo(base.transform.position);
+		base.transform.position += Vector3.up * 0.75f;
+		if (GetComponent<SphereCollider>() != null)
+		{
+			GetComponent<SphereCollider>().enabled = true;
+		}
+		if (GetComponent<Rigidbody>() != null)
+		{
+			GetComponent<Rigidbody>().isKinematic = false;
+		}
 	}
 
 	public Vector3 DestinationWithSpacing(Vector3 curr_pos, Vector3 destination, float spacing)
@@ -281,11 +318,80 @@ public class SharedCreature : MonoBehaviour
 
 	private string GetLevelColor(int my_level, int their_level)
 	{
-		return null;
+		int num = their_level - my_level;
+		if (num > 100)
+		{
+			return "#ff2631";
+		}
+		if (num > 50)
+		{
+			return "#ff5c26";
+		}
+		if (num > 20)
+		{
+			return "#ff9130";
+		}
+		if (num >= -9)
+		{
+			return "#ffeb8a";
+		}
+		if (num > -40)
+		{
+			return "#d4ff8a";
+		}
+		return "#a3ff8a";
 	}
 
 	public void TrySitInChairObj(string chair_interactable_id)
 	{
+		if (!ChunkControl.Instance.active_interactibles.ContainsKey(chair_interactable_id))
+		{
+			return;
+		}
+		GameObject gameObject = ChunkControl.Instance.active_interactibles[chair_interactable_id];
+		Transform transform = gameObject.transform.Find("target");
+		if (transform == null)
+		{
+			transform = gameObject.transform.parent.Find("target");
+		}
+		if (transform == null)
+		{
+			return;
+		}
+		Interactable component = transform.transform.parent.GetComponent<Interactable>();
+		if (component == null)
+		{
+			component = transform.transform.parent.Find("Interactable").GetComponent<Interactable>();
+		}
+		if (component == null)
+		{
+			return;
+		}
+		if (GetComponent<SphereCollider>() != null)
+		{
+			GetComponent<SphereCollider>().enabled = false;
+		}
+		if (GetComponent<Rigidbody>() != null)
+		{
+			GetComponent<Rigidbody>().isKinematic = true;
+		}
+		if (movement_smoother != null)
+		{
+			UnityEngine.Object.Destroy(movement_smoother);
+		}
+		SetMoveTo(base.transform.position);
+		base.transform.position = transform.position + Vector3.up * H;
+		spotter.rotation = transform.transform.rotation;
+		string item_name = component.item_name;
+		if (InventoryUtils.IsChairObject(item_name))
+		{
+			myCreatureModel.StartAnimation(4);
+		}
+		else if (InventoryUtils.IsBedObject(item_name))
+		{
+			myCreatureModel.StartAnimation(5);
+		}
+		snapped_to_chair_obj = true;
 	}
 
 	private void FixedUpdate()
@@ -374,6 +480,242 @@ public class SharedCreature : MonoBehaviour
 
 	private void TryStepSound()
 	{
+		if (!(GetComponent<Rigidbody>() == null) && Mathf.Abs(GetComponent<Rigidbody>().velocity.y) > 0.1f)
+		{
+			return;
+		}
+		switch (last_footstep_sound)
+		{
+		case 2:
+			last_footstep_sound = ((UnityEngine.Random.value >= 0.5f) ? 1 : 0);
+			break;
+		case 1:
+			last_footstep_sound = ((UnityEngine.Random.value >= 0.5f) ? 2 : 0);
+			break;
+		case 0:
+			last_footstep_sound = ((UnityEngine.Random.value < 0.5f) ? 1 : 2);
+			break;
+		}
+		bool flag;
+		if (ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.lava)
+		{
+			flag = true;
+		}
+		else if (ChunkControl.Instance.player_zone != "overworld")
+		{
+			flag = false;
+			if (InventoryUtils.IsCaveObject(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+				if (base.gameObject == GameController.Instance.player)
+				{
+					CustomTeleporterControl.Instance.TryReEnableTeleporterButtonIfOutOfBounds();
+				}
+				if (ZoneDataControl.Instance.curr_zonedata.house_item.item_name == "Ocean Cave Entrance")
+				{
+					flag = ChunkControl.Instance.GetCaveFloorModelBelow(base.gameObject) != 1;
+				}
+			}
+		}
+		else
+		{
+			int overworldBiomeBelow = ChunkControl.Instance.GetOverworldBiomeBelow(base.gameObject);
+			flag = (overworldBiomeBelow == 7 || overworldBiomeBelow == 4) && ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.none;
+		}
+		float num = 1f;
+		if (IsBig())
+		{
+			GameController.Instance.giant_shake_screen();
+			num = Mathf.InverseLerp(10f, 5f, Vector3.Distance(base.transform.position, GameController.Instance.prev_player_pos));
+		}
+		if (flag)
+		{
+			if (!model_down_in_water)
+			{
+				base.transform.Find("model goes here").localPosition = Vector3.down * 0.7f;
+				model_down_in_water = true;
+			}
+			if (ShouldPlayStepSfx())
+			{
+				bool flag2 = !IsBig();
+				AudioControl.Instance.PlayFootstepSound(base.gameObject, flag2 ? "water" : "giant", last_footstep_sound, flag2 ? 1f : 0.5f, num * (flag2 ? 0.23f : 0.4f));
+			}
+			if (ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.lava && is_local_mob)
+			{
+				string combat_name = GetComponent<Combatant>().combat_name;
+				int num2 = (int)((float)GetComponent<Combatant>().HP_max * 0.15f);
+				if (num2 == 0)
+				{
+					num2 = 1;
+				}
+				PerkData perkData = PerkControl.Instance.ClonePerkForCasting("perk_ignite", base.gameObject);
+				perkData.all_effects["EFFECT_BURN"].data["Damage"] = num2.ToString() ?? "";
+				PerkControl.Instance.ApplyInitialCastOnto(perkData, 1, combat_name, 1, base.gameObject);
+			}
+			if (GraphicsControl.Instance.ShowNonPlayerSplashes() || !(base.gameObject != GameController.Instance.player))
+			{
+				GameObject gameObject = UnityEngine.Object.Instantiate((ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.lava) ? GameController.Instance.splash_lava_prefab : GameController.Instance.splash_prefab);
+				gameObject.transform.position = new Vector3(base.transform.position.x, 0f, base.transform.position.z);
+				float x = base.transform.localScale.x;
+				ParticleSystem component = gameObject.GetComponent<ParticleSystem>();
+				ParticleSystem.MainModule main = component.main;
+				main.startSize = x * 0.368421f + 0.231578f;
+				ParticleSystem.ShapeModule shape = component.shape;
+				shape.radius = x * 0.710826f + -0.410526f;
+				component.Emit((int)(x * 2.631578f + 2.368421f));
+				ParticleSystem component2 = gameObject.transform.Find("ring").GetComponent<ParticleSystem>();
+				ParticleSystem.MainModule main2 = component2.main;
+				main2.startSize = x * 3.947368f + 1.052631f;
+				component2.Emit(1);
+			}
+			return;
+		}
+		if (model_down_in_water)
+		{
+			base.transform.Find("model goes here").localPosition = Vector3.down * 0.3f;
+			model_down_in_water = false;
+		}
+		if (InventoryUtils.IsHeavenDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name) && ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.none && ChunkControl.Instance.IsChunkFullyLoadedOrMidload(ChunkControl.Instance.GetChunkString(base.transform.position)))
+		{
+			base.gameObject.layer = 8;
+		}
+		if (ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position) == ChunkControl.pathway_type.bouncy && is_local_mob)
+		{
+			float value = UnityEngine.Random.value;
+			Rigidbody component3 = GetComponent<Rigidbody>();
+			int num3 = ((value < 0.02f) ? UnityEngine.Random.Range(25, 35) : UnityEngine.Random.Range(8, 15));
+			component3.velocity = Vector3.up * num3;
+		}
+		if (!ShouldPlayStepSfx())
+		{
+			return;
+		}
+		if (IsBig())
+		{
+			AudioControl.Instance.PlayFootstepSound(base.gameObject, "giant", last_footstep_sound, 0.7f, num * 0.4f);
+			return;
+		}
+		string sfx_name;
+		float num4;
+		float pitch = 1f;
+		switch (ChunkControl.Instance.GetPathwayTypeBeneathMe(base.transform.position))
+		{
+		case ChunkControl.pathway_type.none:
+			if (ChunkControl.Instance.player_zone == "overworld" || InventoryUtils.IsPureDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+				switch (ChunkControl.Instance.GetOverworldBiomeBelow(base.gameObject))
+				{
+				case 2:
+				case 5:
+					sfx_name = "sand";
+					num4 = 0.85f;
+					break;
+				case 1:
+					sfx_name = "snow";
+					num4 = 0.43f;
+					break;
+				default:
+					sfx_name = "grass";
+					num4 = 0.55f;
+					break;
+				}
+				break;
+			}
+			if (InventoryUtils.IsCaveObject(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+				string item_name = ZoneDataControl.Instance.curr_zonedata.house_item.item_name;
+				if (item_name == "Snow Cave Entrance" || item_name == "Ocean Cave Entrance")
+				{
+					sfx_name = "sand";
+					num4 = 0.85f;
+				}
+				else if (item_name == "Desert Cave Entrance")
+				{
+					sfx_name = "gravel";
+					num4 = 0.43f;
+				}
+				else
+				{
+					sfx_name = "grass";
+					num4 = 0.55f;
+				}
+				break;
+			}
+			if (InventoryUtils.IsHellDimension(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+				sfx_name = "stone";
+				num4 = 0.82f;
+				break;
+			}
+			switch (InventoryUtils.GetBuildingType(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+			case InventoryUtils.building_type.shack:
+			case InventoryUtils.building_type.upstairs_room:
+				sfx_name = "wood";
+				num4 = 0.5f;
+				break;
+			case InventoryUtils.building_type.mansion:
+			case InventoryUtils.building_type.castle:
+				if (ChunkControl.Instance.IsMansionWoodFloorBeneathMe(base.transform.position))
+				{
+					sfx_name = "wood";
+					num4 = 0.5f;
+				}
+				else
+				{
+					sfx_name = "stone";
+					num4 = 0.82f;
+				}
+				break;
+			case InventoryUtils.building_type.underground_room:
+			case InventoryUtils.building_type.warehouse:
+				sfx_name = "stone";
+				num4 = 0.82f;
+				break;
+			case InventoryUtils.building_type.tent:
+				sfx_name = "sand";
+				num4 = 0.85f;
+				break;
+			case InventoryUtils.building_type.igloo:
+				sfx_name = "snow";
+				num4 = 0.85f;
+				break;
+			case InventoryUtils.building_type.windmill:
+				if (ChunkControl.Instance.IsWindmillWoodFloorBeneathMe(base.transform.position))
+				{
+					sfx_name = "wood";
+					num4 = 0.5f;
+				}
+				else
+				{
+					sfx_name = "stone";
+					num4 = 0.82f;
+				}
+				break;
+			default:
+				return;
+			}
+			break;
+		case ChunkControl.pathway_type.gravel:
+			sfx_name = "gravel";
+			num4 = 0.43f;
+			break;
+		case ChunkControl.pathway_type.stone:
+			sfx_name = "stone";
+			num4 = 0.82f;
+			break;
+		case ChunkControl.pathway_type.sand:
+			sfx_name = "sand";
+			num4 = 0.85f;
+			break;
+		case ChunkControl.pathway_type.bouncy:
+			pitch = UnityEngine.Random.Range(0.8f, 1.2f);
+			sfx_name = "bounce";
+			num4 = 0.82f;
+			break;
+		default:
+			return;
+		}
+		AudioControl.Instance.PlayFootstepSound(base.gameObject, sfx_name, last_footstep_sound, pitch, num * num4);
 	}
 
 	public bool IsTargettingPlayerOrMyCompanions(bool check_player, bool check_my_companions)
@@ -631,7 +973,24 @@ public class SharedCreature : MonoBehaviour
 
 	private bool ShouldPlayStepSfx()
 	{
-		return false;
+		if (base.gameObject == GameController.Instance.player)
+		{
+			return true;
+		}
+		if (!IsBig())
+		{
+			return false;
+		}
+		if (base.gameObject == GameController.Instance.nearest_giant)
+		{
+			return true;
+		}
+		if (GameController.Instance.nearest_giant != null && Vector3.Distance(GameController.Instance.nearest_giant.transform.position, GameController.Instance.prev_player_pos) <= Vector3.Distance(base.transform.position, GameController.Instance.prev_player_pos))
+		{
+			return false;
+		}
+		GameController.Instance.nearest_giant = base.gameObject;
+		return true;
 	}
 
 	public void SpotterLookAt(Vector3 look_at)
@@ -710,6 +1069,13 @@ public class SharedCreature : MonoBehaviour
 
 	public void ReEnable()
 	{
+		if (regen_health_t != null)
+		{
+			StopCoroutine(regen_health_t);
+			regen_health_t = null;
+		}
+		regen_health_t = RegenHealth();
+		StartCoroutine(regen_health_t);
 	}
 
 	public void StartRegenHealth()

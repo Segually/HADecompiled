@@ -13,5 +13,13 @@ public class QualityDestroyer : MonoBehaviour
 
 	private void Start()
 	{
+		if (GraphicsControl.Instance.ShouldDestroyParticle(only_show_at_level))
+		{
+			UnityEngine.Object.Destroy(base.gameObject);
+		}
+		else
+		{
+			UnityEngine.Object.Destroy(this);
+		}
 	}
 }

@@ -250,26 +250,38 @@ public class CreatureMorpher : MonoBehaviour, OrderedStart
 
 	public string GetRandomPremiumCreature()
 	{
-		return null;
+		List<string> list = new List<string>(premium_creature_names.Keys);
+		List<string> list2 = premium_creature_names[list[UnityEngine.Random.Range(0, premium_creature_names.Count)]];
+		return list2[UnityEngine.Random.Range(0, list2.Count)];
 	}
 
 	public int GetCreatureIndex_(string name)
 	{
-		return 0;
+		int num = all_creature_names.IndexOf(name);
+		if (num != -1)
+		{
+			return num;
+		}
+		return all_creature_names.IndexOf("crab");
 	}
 
 	public string GetCreatureName_(int index)
 	{
-		return null;
+		if (index >= 0 && index < all_creature_names.Count)
+		{
+			return all_creature_names[index];
+		}
+		return "crab";
 	}
 
 	public int GetNumCreatures()
 	{
-		return 0;
+		return all_creature_names.Count;
 	}
 
 	public void RecycleCreature(GameObject creature)
 	{
+		UnityEngine.Object.Destroy(creature);
 	}
 
 	public GameObject CreatePlayerCreatureModel(int slot)

@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AchievesControl : MonoBehaviour, OrderedStart
 {
@@ -32,6 +33,16 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 
 	public void DrawAchievementSlot(int slot_id, int index)
 	{
+		inventory_ctr.Instance.instantiated_crafting_slots[slot_id].LayOutCraftingSlot(all_achivements[index].name, all_achivements[index].description, 1f, true, false, false, false, false, CraftingSlot.req_placement.disable, CraftingSlot.text_area_layout.full, CraftingSlot.slots_positioning.full_size, false);
+		Image graphic = inventory_ctr.Instance.instantiated_crafting_slots[slot_id].graphic;
+		if (PlayerData.Instance.GetGlobalShort("achieve_" + all_achivements[index].name) == 0)
+		{
+			graphic.sprite = all_achivements[index].locked;
+		}
+		else
+		{
+			graphic.sprite = all_achivements[index].unlocked;
+		}
 	}
 
 	public void UnlockAchievement(string achivement_key)
@@ -67,9 +78,15 @@ public class AchievesControl : MonoBehaviour, OrderedStart
 
 	public void OpenAchievesWindow(int skip_to_page)
 	{
+		WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.quests_and_achieves);
+		WindowControl.Instance.VisuallySelectRightMiniwindowTab();
+		OnRightMiniwindowTabPressed(skip_to_page);
 	}
 
 	public void OnRightMiniwindowTabPressed(int skip_to_page)
 	{
+		QuestControl.Instance.CloseQuestScreen();
+		inventory_ctr.Instance.curr_crafting_list = null;
+		inventory_ctr.Instance.goto_crafting_tab(skip_to_page);
 	}
 }

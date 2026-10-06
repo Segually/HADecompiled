@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -14,7 +15,19 @@ public class CreatureBrainGhost : MonoBehaviour, CreatureBrainInterface
 
 	public static string CorruptString(string input)
 	{
-		return null;
+		System.Random random = new System.Random();
+		System.Text.StringBuilder stringBuilder = new System.Text.StringBuilder();
+		int[] array = new int[18]
+		{
+			768, 769, 770, 771, 772, 774, 775, 776, 778, 779,
+			780, 807, 808, 817, 818, 822, 834, 837
+		};
+		for (int i = 0; i < input.Length; i++)
+		{
+			stringBuilder.Append(input[i]);
+			stringBuilder.Append(Convert.ToChar(array[random.Next(array.Length)]));
+		}
+		return stringBuilder.ToString().Normalize(System.Text.NormalizationForm.FormC);
 	}
 
 	public void Init()
@@ -48,7 +61,7 @@ public class CreatureBrainGhost : MonoBehaviour, CreatureBrainInterface
 		if (flag)
 		{
 			component.Deload(true);
-			Object.Destroy(base.gameObject);
+			UnityEngine.Object.Destroy(base.gameObject);
 		}
 		else
 		{
