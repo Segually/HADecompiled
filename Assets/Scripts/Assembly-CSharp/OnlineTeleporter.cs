@@ -1,12 +1,12 @@
 public class OnlineTeleporter
 {
-	public string title;
+	public string title = "";
 
-	public string description;
+	public string description = "";
 
-	public string tele_str;
+	public string tele_str = "";
 
-	public string to_zone;
+	public string to_zone = "";
 
 	public int to_chunkX;
 
@@ -16,5 +16,5 @@ public class OnlineTeleporter
 
 	public int to_innerZ;
 
-	public string built_by;
+	public string built_by = "";
 }
