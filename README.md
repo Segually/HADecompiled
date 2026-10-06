@@ -17,6 +17,12 @@ Game versions above v185 were compiled with IL2CPP, which leaves the C# scripts 
 1. Add the project to your Unity Editor.
 2. Build to your platform of choice.
 
+### Asset bundles for mods
+
+Asset GUIDs were fixed to make this project run properly in Unity. Loading this project to build asset bundles for a mod will likely produce bundles that do not work with the original game, especially for UI assets, because the GUIDs may no longer match the original references.
+
+The project is still a great source for shaders and code.
+
 ## License
 
 This project has no license. The code is shared solely for interoperability purposes with the [HAModLoader](https://github.com/eris-webserv/HAModHelper) project.
