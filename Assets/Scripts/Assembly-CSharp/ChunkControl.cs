@@ -837,7 +837,7 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public Vector3 GetRoundedClick(Vector3 clickedAt)
 	{
-		return default(Vector3);
+		return new Vector3(Mathf.Floor(clickedAt.x), 0f, Mathf.Floor(clickedAt.z));
 	}
 
 	public string GetChunkString(Vector3 V)
@@ -1022,6 +1022,20 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void RedrawAtSquare(string chunkStr, int innerX, int innerZ, bool log = false)
 	{
+		if (!IsChunkFullyLoadedOrMidload(chunkStr))
+		{
+			return;
+		}
+		Chunk chunk = GetChunk(chunkStr);
+		List<ChunkElement> elementsAt = chunk.chunk_data.GetElementsAt(innerX, innerZ);
+		foreach (ChunkElement item in elementsAt)
+		{
+			chunk.chunk_obj.DestroyBuildableInstance(chunk.chunk_data.X, chunk.chunk_data.Z, innerX, innerZ, item.item, item.rot);
+		}
+		foreach (ChunkElement item2 in elementsAt)
+		{
+			ConstructionControl.Instance.AsyncCreateBuildableInstance(item2.item, innerX, innerZ, item2.rot, ConstructionControl.build_context_t.on_regular_load, null, chunk.chunk_data, chunk.chunk_obj);
+		}
 	}
 
 	public void LoadBiomeMapFromDisk(string biome_map_str)
@@ -1246,7 +1260,29 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public int GetNumItemsInSurroundingArea(string item_name)
 	{
-		return 0;
+		int num = 0;
+		foreach (KeyValuePair<string, Chunk> chunk in Chunks)
+		{
+			ChunkData chunk_data = chunk.Value.chunk_data;
+			if (chunk_data == null)
+			{
+				continue;
+			}
+			for (int i = 0; i < 10; i++)
+			{
+				for (int j = 0; j < 10; j++)
+				{
+					foreach (ChunkElement item in chunk_data.GetElementsAt(i, j))
+					{
+						if (item.item.item_name == item_name)
+						{
+							num++;
+						}
+					}
+				}
+			}
+		}
+		return num;
 	}
 
 	public void TemporarilyDisableChunkObjects(Vector3 origin, float range, List<GameObject> new_temporarily_disabled)

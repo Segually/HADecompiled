@@ -1513,7 +1513,64 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public InventoryItem AdjustMouseItemData(InventoryItem item)
 	{
-		return null;
+		if (item.item_name == "Armor Display" || item.item_name == "Custom Statue")
+		{
+			if (item.GetString("creature_A") != "")
+			{
+				return item;
+			}
+			string value = "human";
+			string value2 = "human";
+			if (GameController.Instance.player != null)
+			{
+				LiteModel myCreatureModel = GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel;
+				value = myCreatureModel.original.creatures_that_made_me[0];
+				value2 = myCreatureModel.original.creatures_that_made_me[1];
+			}
+			ExtraInventoryData extraDataCopy = item.GetExtraDataCopy();
+			extraDataCopy.SetString("creature_A", value);
+			extraDataCopy.SetString("creature_B", value2);
+			return new InventoryItem(item.item_name, extraDataCopy);
+		}
+		if (item.item_name == "Companion")
+		{
+			if (CompanionController.Instance.GetCurrSelectedCompanion() == null)
+			{
+				return item;
+			}
+			string value3 = ((PlayerData.Instance.GetGlobalString("username_lower") != "") ? PlayerData.Instance.GetGlobalString("username_lower") : "ME");
+			ExtraInventoryData extraDataCopy2 = item.GetExtraDataCopy();
+			extraDataCopy2.SetString("companion_owner", value3);
+			return new InventoryItem(item.item_name, extraDataCopy2);
+		}
+		if (item.item_name == "3-day Land Claim")
+		{
+			DateTime uTC_when = DateTime.UtcNow;
+			uTC_when = uTC_when.AddSeconds(LandClaimControl.three_day_land_claim_add_seconds);
+			uTC_when = uTC_when.AddDays(LandClaimControl.three_day_land_claim_add_days);
+			return ChunkControl.Instance.EncodeRespawnIntoItem("landclaim_spawn", item, uTC_when);
+		}
+		if (item.item_name == "8-day Land Claim")
+		{
+			DateTime uTC_when2 = DateTime.UtcNow;
+			uTC_when2 = uTC_when2.AddSeconds(LandClaimControl.eight_day_land_claim_add_seconds);
+			uTC_when2 = uTC_when2.AddDays(LandClaimControl.eight_day_land_claim_add_days);
+			return ChunkControl.Instance.EncodeRespawnIntoItem("landclaim_spawn", item, uTC_when2);
+		}
+		if (item.item_name == "Admin Land Claim")
+		{
+			DateTime uTC_when3 = DateTime.UtcNow;
+			uTC_when3 = uTC_when3.AddSeconds(LandClaimControl.admin_land_claim_add_seconds);
+			uTC_when3 = uTC_when3.AddDays(LandClaimControl.admin_land_claim_add_days);
+			return ChunkControl.Instance.EncodeRespawnIntoItem("landclaim_spawn", item, uTC_when3);
+		}
+		if (item.item_name == "Boss Spawner - Shindeon" || item.item_name == "Boss Spawner - Yandeon")
+		{
+			DateTime uTC_when4 = DateTime.UtcNow;
+			uTC_when4 = uTC_when4.AddSeconds(60.0);
+			return ChunkControl.Instance.EncodeRespawnIntoItem("mob_spawn", item, uTC_when4);
+		}
+		return item;
 	}
 
 	public void DragOntoSlot(int drag_onto_index, GameObject drag_onto_obj)

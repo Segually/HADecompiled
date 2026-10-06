@@ -41,18 +41,60 @@ public class TransitionControl : MonoBehaviour, OrderedStart
 
 	public void BeginExitHouseTransition()
 	{
+		if (ZoneDataControl.Instance.curr_zonedata.outer_item_zone != "overworld")
+		{
+			zone_entering = ZoneDataControl.Instance.curr_zonedata.outer_item_zone;
+		}
+		GameplayGUIControl.Instance.HideGameplayGui();
+		GameController.Instance.PAUSE_GAME();
+		transition_type_t = transition_type.on_exit_house;
+		ShowSplash(false);
+		GetComponent<Animation>().Play("fade_out");
+		is_transition_playing = true;
 	}
 
 	public void BeginEnterHouseTransition(string zone_entering)
 	{
+		this.zone_entering = zone_entering;
+		AudioControl.Instance.Play(AudioControl.Instance.sfx_opendoor);
+		GameplayGUIControl.Instance.HideGameplayGui();
+		GameController.Instance.PAUSE_GAME();
+		transition_type_t = transition_type.on_enter_house;
+		ShowSplash(false);
+		GetComponent<Animation>().Play("fade_out");
+		is_transition_playing = true;
 	}
 
 	public void BeginTeleportTransition()
 	{
+		transition_type_t = transition_type.on_teleport;
+		ShowSplash(false);
+		GetComponent<Animation>().Play("fade_out");
+		is_transition_playing = true;
 	}
 
 	public void BeginQuestProgressionTransition(string quest_transition_name, int quest_transition_step)
 	{
+		this.quest_transition_name = quest_transition_name;
+		this.quest_transition_step = quest_transition_step;
+		if (WindowControl.Instance.curr_window == WindowControl.window_type_t.dialogue)
+		{
+			DialogueControl.Instance.CloseWithIntentionOfMiniwindow(true);
+		}
+		else
+		{
+			WindowControl.Instance.CloseMiniwindow(false);
+			GameplayGUIControl.Instance.HideGameplayGui();
+			GameController.Instance.PAUSE_GAME();
+		}
+		if (GameController.Instance.player != null)
+		{
+			GameController.Instance.player.GetComponent<CreatureBrainLocalPlayer>().StopEverything();
+		}
+		transition_type_t = transition_type.on_quest_progression;
+		ShowSplash(false);
+		GetComponent<Animation>().Play("fade_out");
+		is_transition_playing = true;
 	}
 
 	public void ShowSplash(bool whoosh_on_complete)
@@ -70,10 +112,91 @@ public class TransitionControl : MonoBehaviour, OrderedStart
 
 	public void FadeToBlackComplete()
 	{
+		switch (transition_type_t)
+		{
+		case transition_type.on_teleport:
+		{
+			CompanionController.Instance.RecreateAllCompanions();
+			ZoneData new_zone_data3;
+			if (CustomTeleporterControl.Instance.click_teleport_zone_to == "overworld")
+			{
+				new_zone_data3 = ZoneDataControl.Instance.LoadOverworld();
+			}
+			else
+			{
+				if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+				{
+					GameServerSender.Instance.RequestZoneData(CustomTeleporterControl.Instance.click_teleport_zone_to, ZoneDataControl.change_zone_type.custom_position, CustomTeleporterControl.Instance.ClickedTeleposToVec3());
+					break;
+				}
+				new_zone_data3 = ZoneDataControl.Instance.LoadZoneDataFromDisk(CustomTeleporterControl.Instance.click_teleport_zone_to);
+			}
+			ZoneDataControl.Instance.ChangeZone(new_zone_data3, ZoneDataControl.change_zone_type.custom_position, CustomTeleporterControl.Instance.ClickedTeleposToVec3(), StartFadeBackInSilent, true, false);
+			break;
+		}
+		case transition_type.on_exit_house:
+		{
+			ZoneData new_zone_data;
+			if (ZoneDataControl.Instance.curr_zonedata.outer_item_zone == "overworld")
+			{
+				new_zone_data = ZoneDataControl.Instance.LoadOverworld();
+			}
+			else
+			{
+				if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+				{
+					GameServerSender.Instance.RequestZoneData(ZoneDataControl.Instance.curr_zonedata.outer_item_zone, ZoneDataControl.change_zone_type.place_at_exit);
+					break;
+				}
+				new_zone_data = ZoneDataControl.Instance.LoadZoneDataFromDisk(ZoneDataControl.Instance.curr_zonedata.outer_item_zone);
+			}
+			ZoneDataControl.Instance.ChangeZone(new_zone_data, ZoneDataControl.change_zone_type.place_at_exit, StartFadeBackInWithDoorSound, true, false);
+			break;
+		}
+		case transition_type.on_enter_house:
+			if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+			{
+				GameServerSender.Instance.RequestZoneData(zone_entering, ZoneDataControl.change_zone_type.place_at_entrance);
+			}
+			else
+			{
+				ZoneDataControl.Instance.ChangeZone(ZoneDataControl.Instance.LoadZoneDataFromDisk(zone_entering), ZoneDataControl.change_zone_type.place_at_entrance, StartFadeBackInSilent, true, false);
+			}
+			break;
+		case transition_type.on_quest_progression:
+		{
+			QuestControl.Instance.SetQuestProgress(quest_transition_name, quest_transition_step, false, true);
+			CompanionController.Instance.RecreateAllCompanions();
+			QuestControl.parsed_position parsed_position = QuestControl.Instance.ParseQuestPositions(quest_transition_name, quest_transition_step, "Instantly teleport to")[0];
+			Vector3 vector = new Vector3((float)(parsed_position.chunkX * 10) + (float)parsed_position.innerX + 0.5f, 0f, (float)(parsed_position.chunkZ * 10) + (float)parsed_position.innerZ + 0.5f);
+			if (parsed_position.zone == "overworld")
+			{
+				ZoneDataControl.Instance.ChangeZone(ZoneDataControl.Instance.LoadOverworld(), ZoneDataControl.change_zone_type.custom_position, vector, StartFadeBackInSilent, true, false);
+			}
+			else if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+			{
+				GameServerSender.Instance.RequestZoneData(parsed_position.zone, ZoneDataControl.change_zone_type.custom_position, vector);
+			}
+			else
+			{
+				ZoneDataControl.Instance.ChangeZone(ZoneDataControl.Instance.LoadZoneDataFromDisk(parsed_position.zone), ZoneDataControl.change_zone_type.custom_position, vector, StartFadeBackInSilent, true, false);
+			}
+			quest_transition_name = "";
+			quest_transition_step = -1;
+			break;
+		}
+		}
+		transition_type_t = transition_type.none;
 	}
 
 	public void StartFadeBackInWithDoorSound()
 	{
+		if (fade_back_in_coroutine != null)
+		{
+			StopCoroutine(fade_back_in_coroutine);
+		}
+		fade_back_in_coroutine = FadeBackInCoroutine(true);
+		StartCoroutine(fade_back_in_coroutine);
 	}
 
 	public void StartFadeBackInSilent()
@@ -144,5 +267,8 @@ public class TransitionControl : MonoBehaviour, OrderedStart
 
 	public void TransitionComplete()
 	{
+		GetComponent<Animation>().Stop();
+		HideSplash();
+		is_transition_playing = false;
 	}
 }

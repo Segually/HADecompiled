@@ -50,11 +50,56 @@ public class ZoneDataControl : MonoBehaviour, OrderedStart
 
 	public static void GenerateNPCShackData()
 	{
+		List<string> list = new List<string>();
+		string[] files = System.IO.Directory.GetFiles(Application.dataPath + "/SYNCHRONOUS/TextFiles/" + DevBuildControl.quest_scenics_folder_);
+		foreach (string path in files)
+		{
+			string fileNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(path);
+			string text = "";
+			string[] array = System.IO.File.ReadAllLines(path);
+			foreach (string text2 in array)
+			{
+				if (Startup.StringNullOrWhitespace(text2))
+				{
+					continue;
+				}
+				if (text == "")
+				{
+					if (text2[0] == '[')
+					{
+						int num = text2.IndexOf("=");
+						int num2 = text2.IndexOf("(");
+						if (InventoryUtils.UsesShackId(text2.Substring(num + 2, num2 - num - 3)))
+						{
+							text = fileNameWithoutExtension + " " + text2;
+						}
+					}
+				}
+				else if (text2.Contains("shack_id = *long* "))
+				{
+					int num3 = text2.IndexOf("shack_id = *long* ") + "shack_id = *long* ".Length;
+					list.Add(text2.Substring(num3, text2.Length - num3) + " = " + text);
+				}
+			}
+		}
+		Startup.WriteOnlyIfChanged(System.IO.Path.Combine(Application.dataPath + "/SYNCHRONOUS/TextFiles/" + DevBuildControl.quest_scenics_folder_, "(Auto Gen) npc_home_data.txt"), list.ToArray());
 	}
 
 	public List<string> GetZoneTrail(string start_zone_name)
 	{
-		return null;
+		List<string> list = new List<string>();
+		ZoneData zoneData = LoadZoneDataFromDisk(start_zone_name);
+		for (int i = -15; zoneData.outer_item_zone != "overworld"; i++)
+		{
+			string outer_item_zone = zoneData.outer_item_zone;
+			list.Add(outer_item_zone);
+			zoneData = LoadZoneDataFromDisk(outer_item_zone);
+			if (i == -1)
+			{
+				break;
+			}
+		}
+		return list;
 	}
 
 	public ZoneData LoadOverworld()
@@ -110,45 +155,223 @@ public class ZoneDataControl : MonoBehaviour, OrderedStart
 
 	public void ModifyPlayerZone(string zone_name, int new_rot, InventoryItem new_item)
 	{
+		string text = zone_name + "-zonedata";
+		string zoneDataFilename = ChunkControl.GetZoneDataFilename(text);
+		PlayerData.Instance.SetSlotShort("outer_item_rot", new_rot, zoneDataFilename, text);
+		new_item.SaveToDisk(zoneDataFilename, "zone_item", text);
 	}
 
 	public void InitialAdjustCave(string zone_name, InventoryItem zone_house_item)
 	{
+		string text = zone_name + "-zonedata";
+		string zoneDataFilename = ChunkControl.GetZoneDataFilename(text);
+		switch (PlayerData.Instance.GetSlotShort("interior_model_innerX", zoneDataFilename, text))
+		{
+		case 9:
+			PlayerData.Instance.SetSlotShort("interior_model_innerX", 8, zoneDataFilename, text);
+			break;
+		case 0:
+			PlayerData.Instance.SetSlotShort("interior_model_innerX", 1, zoneDataFilename, text);
+			break;
+		}
+		switch (PlayerData.Instance.GetSlotShort("interior_model_innerZ", zoneDataFilename, text))
+		{
+		case 9:
+			PlayerData.Instance.SetSlotShort("interior_model_innerZ", 8, zoneDataFilename, text);
+			break;
+		case 0:
+			PlayerData.Instance.SetSlotShort("interior_model_innerZ", 1, zoneDataFilename, text);
+			break;
+		}
+		short slotShort = PlayerData.Instance.GetSlotShort("interior_model_chunkX", zoneDataFilename, text);
+		short slotShort2 = PlayerData.Instance.GetSlotShort("interior_model_chunkZ", zoneDataFilename, text);
+		ChunkGeneratorCaves.GenerateNewCaveSystem(zone_name, slotShort, slotShort2, zone_house_item).SaveToDisk(zone_name);
 	}
 
 	public bool PlayerZoneExists(string zone_name)
 	{
-		return false;
+		string text = zone_name + "-zonedata";
+		return InventoryItem.LoadFromDisk("zone_item", ChunkControl.GetZoneDataFilename(text), text).item_name != "";
 	}
 
 	public void CreatePlayerZone(string new_zone_name, InventoryItem house_item, int interior_model_chunkX, int interior_model_chunkZ, int interior_model_innerX, int interior_model_innerZ, string outer_item_zone, int outer_item_rot)
 	{
+		new ZoneData(new_zone_name, house_item, outer_item_rot, outer_item_zone, interior_model_chunkX, interior_model_chunkZ, interior_model_innerX, interior_model_innerZ).SaveToDisk(new_zone_name);
 	}
 
 	public void SetInteriorRotation(int rot)
 	{
+		GameObject gameObject;
+		switch (rot)
+		{
+		case 0:
+			gameObject = curr_interior.GetComponent<HouseInteriorModel>().rotation0_doorpos;
+			break;
+		case 1:
+			gameObject = curr_interior.GetComponent<HouseInteriorModel>().rotation1_doorpos;
+			break;
+		case 2:
+			gameObject = curr_interior.GetComponent<HouseInteriorModel>().rotation2_doorpos;
+			break;
+		case 3:
+			gameObject = curr_interior.GetComponent<HouseInteriorModel>().rotation3_doorpos;
+			break;
+		default:
+			gameObject = null;
+			break;
+		}
+		GameObject door_model = curr_interior.GetComponent<HouseInteriorModel>().door_model;
+		door_model.transform.position = gameObject.transform.position;
+		door_model.transform.rotation = gameObject.transform.rotation;
 	}
 
 	public void CreateInteriorModel(ZoneData zone_data, Action on_interior_model_complete)
 	{
+		float num = (float)zone_data.interior_model_chunkX * 10f + (float)zone_data.interior_model_innerX + 0.5f;
+		float num2 = (float)zone_data.interior_model_chunkZ * 10f + (float)zone_data.interior_model_innerZ + 0.5f;
+		Vector3 model_origin_pos = new Vector3(num - 1.8f, 0f, num2 + 1.6f);
+		if (InventoryUtils.IsHouseObject(zone_data.house_item.item_name))
+		{
+			string text;
+			switch (InventoryUtils.GetBuildingType(zone_data.house_item.item_name))
+			{
+			case InventoryUtils.building_type.shack:
+				text = "SHACK_INTERIOR";
+				break;
+			case InventoryUtils.building_type.mansion:
+				text = "MANSION_INTERIOR";
+				break;
+			case InventoryUtils.building_type.castle:
+				text = "CASTLE_INTERIOR";
+				break;
+			case InventoryUtils.building_type.underground_room:
+				text = "UNDERGROUND_INTERIOR";
+				break;
+			case InventoryUtils.building_type.upstairs_room:
+				text = "UPSTAIRS_INTERIOR";
+				break;
+			case InventoryUtils.building_type.tent:
+				text = "TENT_INTERIOR";
+				break;
+			case InventoryUtils.building_type.igloo:
+				text = "IGLOO_INTERIOR";
+				break;
+			case InventoryUtils.building_type.windmill:
+				text = "WINDMILL_INTERIOR";
+				break;
+			case InventoryUtils.building_type.warehouse:
+				text = "WAREHOUSE_INTERIOR";
+				break;
+			default:
+				text = "";
+				break;
+			}
+			MakePlaneBlack();
+			if (text != "")
+			{
+				ResourceControl.Instance.AsyncInstantiateHouseInterior(text, delegate(GameObject new_interior)
+				{
+					curr_interior = new_interior;
+					if (curr_interior != null)
+					{
+						curr_interior.GetComponent<HouseInteriorModel>().exit_interactable.GetComponent<Interactable>().InitExit();
+						curr_interior.transform.position = model_origin_pos;
+						SetInteriorRotation(zone_data.outer_item_rot);
+						ColorizerControl.Instance.ColorizeCurrentShackInterior();
+					}
+					on_interior_model_complete?.Invoke();
+				});
+				return;
+			}
+		}
+		else if (InventoryUtils.IsCaveObject(zone_data.house_item.item_name))
+		{
+			if (zone_data.house_item.GetString("quest_miniworld") != "true")
+			{
+				curr_cave_exit = UnityEngine.Object.Instantiate(generic_cave_exit);
+				curr_cave_exit.transform.position = new Vector3(num, 0f, num2);
+				curr_cave_exit.GetComponent<Interactable>().InitExit();
+			}
+			MakePlaneBlack();
+		}
+		else if (InventoryUtils.IsHeavenDimension(zone_data.house_item.item_name))
+		{
+			curr_cave_exit = UnityEngine.Object.Instantiate(clouds_exit);
+			curr_cave_exit.transform.position = new Vector3(num, 0f, num2);
+			curr_cave_exit.GetComponent<Interactable>().InitExit();
+		}
+		else if (!InventoryUtils.IsPureDimension(zone_data.house_item.item_name) && !(zone_data.house_item.item_name == "Pocket World Basement") && InventoryUtils.IsHellDimension(zone_data.house_item.item_name))
+		{
+			curr_cave_exit = UnityEngine.Object.Instantiate(generic_cave_exit);
+			curr_cave_exit.transform.position = new Vector3(num, 0f, num2);
+			curr_cave_exit.GetComponent<Interactable>().InitExit();
+		}
+		on_interior_model_complete?.Invoke();
 	}
 
 	private void MakePlaneBlack()
 	{
+		GameController.Instance.breeder_floor_plane.SetActive(true);
+		GameController.Instance.breeder_floor_plane.transform.position = new Vector3(GameController.Instance.prev_player_pos.x, 0f, GameController.Instance.prev_player_pos.z);
+		Texture2D texture2D = new Texture2D(2, 2);
+		Color[] array = new Color[4];
+		for (int i = 0; i < 4; i++)
+		{
+			array[i] = new Color(0.09f, 0.09f, 0.09f, 1f);
+		}
+		texture2D.SetPixels(0, 0, 2, 2, array);
+		texture2D.Apply();
+		GameController.Instance.breeder_floor_plane.GetComponent<Renderer>().material.mainTexture = texture2D;
 	}
 
 	private Vector3 GetCurrDoorwayPosition(ZoneData zone_data)
 	{
-		return default(Vector3);
+		if (InventoryUtils.IsHouseObject(zone_data.house_item.item_name))
+		{
+			if (curr_interior != null && curr_interior.GetComponent<HouseInteriorModel>() != null && curr_interior.GetComponent<HouseInteriorModel>().exit_interactable != null)
+			{
+				return curr_interior.GetComponent<HouseInteriorModel>().exit_interactable.transform.position;
+			}
+		}
+		else if (InventoryUtils.IsCaveObject(zone_data.house_item.item_name) || InventoryUtils.IsHellDimension(zone_data.house_item.item_name))
+		{
+			if (curr_cave_exit != null)
+			{
+				return curr_cave_exit.transform.position;
+			}
+		}
+		else if (InventoryUtils.IsHeavenDimension(zone_data.house_item.item_name) && curr_cave_exit != null)
+		{
+			return curr_cave_exit.transform.position + Vector3.right * 1.5f;
+		}
+		return Vector3.zero;
 	}
 
 	public Vector3 GetCurrExitPosition(ZoneData zone_data)
 	{
-		return default(Vector3);
+		int entrance_chunkX = zone_data.house_item.GetShort("outer_item_chunkX");
+		int entrance_chunkZ = zone_data.house_item.GetShort("outer_item_chunkZ");
+		int entrance_innerX = zone_data.house_item.GetShort("outer_item_innerX");
+		int entrance_innerZ = zone_data.house_item.GetShort("outer_item_innerZ");
+		if (entrance_chunkZ == 0 && entrance_chunkX == 0 && entrance_innerZ == 0 && entrance_innerX == 0)
+		{
+			Debug.Log("EXIT DOES NOT EXIST");
+			entrance_innerX = 0;
+		}
+		else
+		{
+			DetermineExtrancePosition(zone_data.house_item.item_name, zone_data.outer_item_rot, ref entrance_chunkX, ref entrance_chunkZ, ref entrance_innerX, ref entrance_innerZ);
+		}
+		return new Vector3((float)(entrance_innerX + entrance_chunkX * 10) + 0.5f, 0f, (float)(entrance_innerZ + entrance_chunkZ * 10) + 0.5f);
 	}
 
 	public void UpdateZoneItemOnChangedOutside()
 	{
+		if (InventoryUtils.IsHouseObject(Instance.curr_zonedata.house_item.item_name) && curr_interior != null)
+		{
+			SetInteriorRotation(Instance.curr_zonedata.outer_item_rot);
+			ColorizerControl.Instance.ColorizeCurrentShackInterior();
+		}
 	}
 
 	public void ChangeZone(ZoneData new_zone_data, change_zone_type type, Action on_zone_change_complete, bool send, bool on_map_change, bool clear_mobs = true)
@@ -293,5 +516,104 @@ public class ZoneDataControl : MonoBehaviour, OrderedStart
 
 	private void DetermineExtrancePosition(string item_name, int item_rot, ref int entrance_chunkX, ref int entrance_chunkZ, ref int entrance_innerX, ref int entrance_innerZ)
 	{
+		if (item_name == "Upstairs Room")
+		{
+			switch (item_rot)
+			{
+			case 0:
+				entrance_innerX--;
+				if (entrance_innerX < 0)
+				{
+					entrance_innerX += 10;
+					entrance_chunkX--;
+				}
+				break;
+			case 1:
+				entrance_innerZ++;
+				if (entrance_innerZ >= 10)
+				{
+					entrance_innerZ -= 10;
+					entrance_chunkZ++;
+				}
+				break;
+			case 2:
+				entrance_innerX++;
+				if (entrance_innerX >= 10)
+				{
+					entrance_innerX -= 10;
+					entrance_chunkX++;
+				}
+				break;
+			case 3:
+				entrance_innerZ--;
+				if (entrance_innerZ < 0)
+				{
+					entrance_innerZ += 10;
+					entrance_chunkZ--;
+				}
+				break;
+			}
+			return;
+		}
+		if (InventoryUtils.IsHeavenDimension(item_name) && !InventoryUtils.IsCaveObject(item_name))
+		{
+			entrance_innerX++;
+			if (entrance_innerX >= 10)
+			{
+				entrance_innerX -= 10;
+				entrance_chunkX++;
+			}
+			return;
+		}
+		if (!InventoryUtils.IsCaveObject(item_name))
+		{
+			if (item_name == "Underground Room")
+			{
+				return;
+			}
+			item_rot = item_rot switch
+			{
+				0 => 3,
+				1 => 0,
+				2 => 1,
+				3 => 2,
+				_ => -1,
+			};
+		}
+		switch (item_rot)
+		{
+		case 0:
+			entrance_innerZ -= 2;
+			if (entrance_innerZ < 0)
+			{
+				entrance_innerZ += 10;
+				entrance_chunkZ--;
+			}
+			break;
+		case 1:
+			entrance_innerX -= 2;
+			if (entrance_innerX < 0)
+			{
+				entrance_innerX += 10;
+				entrance_chunkX--;
+			}
+			break;
+		case 2:
+			entrance_innerZ += 2;
+			if (entrance_innerZ >= 10)
+			{
+				entrance_innerZ -= 10;
+				entrance_chunkZ++;
+			}
+			break;
+		case 3:
+			entrance_innerX += 2;
+			if (entrance_innerX >= 10)
+			{
+				entrance_innerX -= 10;
+				entrance_chunkX++;
+			}
+			break;
+		}
 	}
 }

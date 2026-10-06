@@ -38,7 +38,7 @@ public class InventoryUtils
 
 	public static bool IsSimpleMob(string item_name)
 	{
-		return false;
+		return ResourceControl.Instance.GetStringFromItemFile(item_name, "is_simple_mob") == "true";
 	}
 
 	public static bool ShouldReplaceOrDeleteExactItem(string item_name)
@@ -224,152 +224,479 @@ public class InventoryUtils
 
 	public static List<Vector3> GetShackBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -5; i <= 0; i++)
+		{
+			for (int j = 1; j < 5; j++)
+			{
+				list.Add(new Vector3(i, 0f, j));
+			}
+		}
+		for (int k = -4; k <= -1; k++)
+		{
+			list.Add(new Vector3(k, 0f, 0f));
+			list.Add(new Vector3(k, 0f, 5f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetShackLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 1; i <= 4; i++)
+		{
+			list.Add(new Vector3(-5f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetShackRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 4; i >= 1; i--)
+		{
+			list.Add(new Vector3(0f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetShackForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -4; i <= -1; i++)
+		{
+			list.Add(new Vector3(i, 0f, 5f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetShackBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -1; i >= -4; i--)
+		{
+			list.Add(new Vector3(i, 0f, 0f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetMansionBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -4; i <= -1; i++)
+		{
+			list.Add(new Vector3(i, 0f, 8f));
+			list.Add(new Vector3(i, 0f, 9f));
+			list.Add(new Vector3(i, 0f, 13f));
+		}
+		for (int j = -5; j <= 0; j++)
+		{
+			list.Add(new Vector3(j, 0f, 0f));
+			list.Add(new Vector3(j, 0f, 7f));
+		}
+		for (int k = -6; k < 2; k++)
+		{
+			for (int l = 1; l < 7; l++)
+			{
+				list.Add(new Vector3(k, 0f, l));
+			}
+		}
+		for (int m = -5; m <= 0; m++)
+		{
+			for (int n = 10; n < 13; n++)
+			{
+				list.Add(new Vector3(m, 0f, n));
+			}
+		}
+		list.Add(new Vector3(-5f, 0f, 9f));
+		list.Add(new Vector3(0f, 0f, 9f));
+		list.Add(new Vector3(-5f, 0f, 8f));
+		list.Add(new Vector3(0f, 0f, 8f));
+		return list;
 	}
 
 	public static List<Vector3> GetMansionLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 1; i <= 6; i++)
+		{
+			list.Add(new Vector3(-6f, 0f, i));
+		}
+		list.Add(new Vector3(-5f, 0f, 8f));
+		for (int j = 9; j <= 12; j++)
+		{
+			list.Add(new Vector3(-5f, 0f, j));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetMansionRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 12; i >= 9; i--)
+		{
+			list.Add(new Vector3(0f, 0f, i));
+		}
+		list.Add(new Vector3(0f, 0f, 8f));
+		for (int j = 6; j >= 1; j--)
+		{
+			list.Add(new Vector3(1f, 0f, j));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetMansionForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -4; i <= -1; i++)
+		{
+			list.Add(new Vector3(i, 0f, 13f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetMansionBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 0; i >= -5; i--)
+		{
+			list.Add(new Vector3(i, 0f, 0f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWarehouseBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -6; i < 14; i++)
+		{
+			for (int j = -8; j < 12; j++)
+			{
+				list.Add(new Vector3(i, 0f, j));
+			}
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWarehouseLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -8; i <= 11; i++)
+		{
+			list.Add(new Vector3(-6f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWarehouseRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -8; i <= 11; i++)
+		{
+			list.Add(new Vector3(13f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWarehouseForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -7; i <= 12; i++)
+		{
+			list.Add(new Vector3(i, 0f, 11f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWarehouseBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -7; i <= 12; i++)
+		{
+			list.Add(new Vector3(i, 0f, -8f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWindmillBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -4; i <= -1; i++)
+		{
+			list.Add(new Vector3(i, 0f, 8f));
+			list.Add(new Vector3(i, 0f, 9f));
+			list.Add(new Vector3(i, 0f, 13f));
+		}
+		for (int j = -5; j <= 0; j++)
+		{
+			list.Add(new Vector3(j, 0f, 0f));
+			list.Add(new Vector3(j, 0f, 7f));
+		}
+		for (int k = -6; k < 2; k++)
+		{
+			for (int l = 1; l < 7; l++)
+			{
+				list.Add(new Vector3(k, 0f, l));
+			}
+		}
+		for (int m = -5; m <= 0; m++)
+		{
+			for (int n = 10; n < 13; n++)
+			{
+				list.Add(new Vector3(m, 0f, n));
+			}
+		}
+		list.Add(new Vector3(-5f, 0f, 9f));
+		list.Add(new Vector3(0f, 0f, 9f));
+		list.Add(new Vector3(-5f, 0f, 8f));
+		list.Add(new Vector3(0f, 0f, 8f));
+		for (int num = -11; num < -6; num++)
+		{
+			for (int num2 = 1; num2 < 7; num2++)
+			{
+				list.Add(new Vector3(num, 0f, num2));
+			}
+		}
+		for (int num3 = 2; num3 < 6; num3++)
+		{
+			list.Add(new Vector3(-12f, 0f, num3));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWindmillLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		list.Add(new Vector3(-5f, 0f, 8f));
+		for (int i = 9; i <= 12; i++)
+		{
+			list.Add(new Vector3(-5f, 0f, i));
+		}
+		for (int j = 2; j <= 5; j++)
+		{
+			list.Add(new Vector3(-12f, 0f, j));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWindmillRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 12; i >= 9; i--)
+		{
+			list.Add(new Vector3(0f, 0f, i));
+		}
+		list.Add(new Vector3(0f, 0f, 8f));
+		for (int j = 6; j >= 1; j--)
+		{
+			list.Add(new Vector3(1f, 0f, j));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWindmillForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -4; i <= -1; i++)
+		{
+			list.Add(new Vector3(i, 0f, 13f));
+		}
+		for (int j = -11; j <= -7; j++)
+		{
+			list.Add(new Vector3(j, 0f, 6f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetWindmillBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -11; i <= -7; i++)
+		{
+			list.Add(new Vector3(i, 0f, 1f));
+		}
+		for (int j = 0; j >= -5; j--)
+		{
+			list.Add(new Vector3(j, 0f, 0f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetCastleBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -14; i < 2; i++)
+		{
+			for (int j = 1; j < 7; j++)
+			{
+				list.Add(new Vector3(i, 0f, j));
+			}
+		}
+		for (int k = -13; k < -7; k++)
+		{
+			list.Add(new Vector3(k, 0f, 0f));
+			list.Add(new Vector3(k, 0f, 7f));
+		}
+		for (int l = -5; l <= 0; l++)
+		{
+			list.Add(new Vector3(l, 0f, 0f));
+			list.Add(new Vector3(l, 0f, 7f));
+		}
+		for (int m = 9; m < 13; m++)
+		{
+			list.Add(new Vector3(-13f, 0f, m));
+			list.Add(new Vector3(-8f, 0f, m));
+			list.Add(new Vector3(-5f, 0f, m));
+			list.Add(new Vector3(0f, 0f, m));
+		}
+		for (int n = -12; n < -8; n++)
+		{
+			for (int num = 8; num < 14; num++)
+			{
+				list.Add(new Vector3(n, 0f, num));
+			}
+		}
+		for (int num2 = -4; num2 <= -1; num2++)
+		{
+			for (int num3 = 8; num3 < 14; num3++)
+			{
+				list.Add(new Vector3(num2, 0f, num3));
+			}
+		}
+		list.Add(new Vector3(0f, 0f, 8f));
+		list.Add(new Vector3(-5f, 0f, 8f));
+		list.Add(new Vector3(-8f, 0f, 8f));
+		list.Add(new Vector3(-13f, 0f, 8f));
+		return list;
 	}
 
 	public static List<Vector3> GetCastleLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 12; i >= 9; i--)
+		{
+			list.Add(new Vector3(-13f, 0f, i));
+		}
+		for (int j = 12; j >= 9; j--)
+		{
+			list.Add(new Vector3(-5f, 0f, j));
+		}
+		for (int k = 6; k >= 1; k--)
+		{
+			list.Add(new Vector3(-14f, 0f, k));
+		}
+		list.Add(new Vector3(-5f, 0f, 8f));
+		list.Add(new Vector3(-13f, 0f, 8f));
+		return list;
 	}
 
 	public static List<Vector3> GetCastleRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 12; i >= 9; i--)
+		{
+			list.Add(new Vector3(0f, 0f, i));
+		}
+		for (int j = 12; j >= 9; j--)
+		{
+			list.Add(new Vector3(-8f, 0f, j));
+		}
+		for (int k = 6; k >= 1; k--)
+		{
+			list.Add(new Vector3(1f, 0f, k));
+		}
+		list.Add(new Vector3(0f, 0f, 8f));
+		list.Add(new Vector3(-8f, 0f, 8f));
+		return list;
 	}
 
 	public static List<Vector3> GetCastleForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -1; i >= -4; i--)
+		{
+			list.Add(new Vector3(i, 0f, 13f));
+		}
+		for (int j = -9; j >= -12; j--)
+		{
+			list.Add(new Vector3(j, 0f, 13f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetCastleBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 0; i >= -5; i--)
+		{
+			list.Add(new Vector3(i, 0f, 0f));
+		}
+		for (int j = -8; j >= -13; j--)
+		{
+			list.Add(new Vector3(j, 0f, 0f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetUndergroundBuildArea()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -6; i < 2; i++)
+		{
+			for (int j = 1; j < 7; j++)
+			{
+				list.Add(new Vector3(i, 0f, j));
+			}
+		}
+		for (int k = -5; k <= 0; k++)
+		{
+			list.Add(new Vector3(k, 0f, 0f));
+		}
+		for (int l = -5; l <= 0; l++)
+		{
+			list.Add(new Vector3(l, 0f, 7f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetUndergroundLeftWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 1; i <= 6; i++)
+		{
+			list.Add(new Vector3(-6f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetUndergroundRightWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 6; i >= 1; i--)
+		{
+			list.Add(new Vector3(1f, 0f, i));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetUndergroundForwardWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = -5; i <= 0; i++)
+		{
+			list.Add(new Vector3(i, 0f, 7f));
+		}
+		return list;
 	}
 
 	public static List<Vector3> GetUndergroundBackWalls()
 	{
-		return null;
+		List<Vector3> list = new List<Vector3>();
+		for (int i = 0; i >= -5; i--)
+		{
+			list.Add(new Vector3(i, 0f, 0f));
+		}
+		return list;
 	}
 
 	public static string GetCoinSprite(int count)

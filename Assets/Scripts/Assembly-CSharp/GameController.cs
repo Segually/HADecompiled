@@ -315,6 +315,9 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void SetLightAngleToIndoors()
 	{
+		curr_light_angle = Quaternion.Euler(90f, 0f, 0f);
+		directional_light.intensity = 0.8f;
+		directional_light.shadowStrength = 0.4f;
 	}
 
 	public void SetLightAngleToDadAnimal()

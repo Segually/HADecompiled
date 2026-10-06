@@ -18,5 +18,7 @@ internal class ToolUseResult
 
 	public ToolUseResult(status status_, string extra_data = "")
 	{
+		this.status_ = status_;
+		this.extra_data = extra_data;
 	}
 }

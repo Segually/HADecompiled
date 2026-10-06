@@ -674,15 +674,41 @@ public class ChunkData
 
 	public static LandClaimChunkTimer CloneLandClaimChunkTimer(LandClaimChunkTimer original)
 	{
-		return null;
+		return new LandClaimChunkTimer
+		{
+			land_claim_str = original.land_claim_str,
+			land_claim_user0 = original.land_claim_user0,
+			land_claim_user1 = original.land_claim_user1,
+			land_claim_user2 = original.land_claim_user2,
+			when_to_expire = original.when_to_expire
+		};
 	}
 
 	public void ModifyLandClaimTimer(string land_claim_str, int user_index, string new_username)
 	{
+		if (land_claim_chunk_timers_.ContainsKey(land_claim_str))
+		{
+			LandClaimChunkTimer landClaimChunkTimer = land_claim_chunk_timers_[land_claim_str];
+			switch (user_index)
+			{
+			case 1:
+				landClaimChunkTimer.land_claim_user1 = new_username;
+				break;
+			case 2:
+				landClaimChunkTimer.land_claim_user2 = new_username;
+				break;
+			}
+			land_claim_chunk_timers_changed = true;
+		}
 	}
 
 	public void RemoveLandClaimChunkTimers(string land_claim_str)
 	{
+		if (land_claim_chunk_timers_.ContainsKey(land_claim_str))
+		{
+			land_claim_chunk_timers_.Remove(land_claim_str);
+			land_claim_chunk_timers_changed = true;
+		}
 	}
 
 	public void PackForWeb(Packet outgoing)
@@ -696,7 +722,12 @@ public class ChunkData
 
 	public Dictionary<string, LandClaimChunkTimer> GetAllLandClaimTimers()
 	{
-		return null;
+		Dictionary<string, LandClaimChunkTimer> dictionary = new Dictionary<string, LandClaimChunkTimer>();
+		foreach (KeyValuePair<string, LandClaimChunkTimer> item in land_claim_chunk_timers_)
+		{
+			dictionary.Add(item.Key, CloneLandClaimChunkTimer(item.Value));
+		}
+		return dictionary;
 	}
 
 	public void UnpackFromWeb(Packet incoming)

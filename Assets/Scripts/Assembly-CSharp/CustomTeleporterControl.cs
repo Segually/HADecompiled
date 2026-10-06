@@ -278,6 +278,12 @@ public class CustomTeleporterControl : MonoBehaviour, OrderedStart
 
 	public void EndTeleportAnimation(GameObject other_player)
 	{
+		if (!(other_player.GetComponent<SharedCreature>().teleport_particle == null))
+		{
+			other_player.transform.SetParent(null);
+			other_player.GetComponent<SharedCreature>().UpdateSize();
+			UnityEngine.Object.Destroy(other_player.GetComponent<SharedCreature>().teleport_particle);
+		}
 	}
 
 	public void InteractWithTeleporter(GameObject obj, string chunkStr, string zone, int chunkX, int chunkZ, int innerX, int innerZ)

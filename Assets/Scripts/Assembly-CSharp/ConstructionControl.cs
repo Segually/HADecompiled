@@ -102,14 +102,143 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void ClickAcceptBuild()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		TryAcceptBuild();
 	}
 
 	private void TryAcceptBuild()
 	{
+		if (mouse_obj == null)
+		{
+			return;
+		}
+		Vector3 position = mouse_obj.transform.position;
+		if (!AllowedToPlace(position, inventory_ctr.Instance.ITEM_USING))
+		{
+			if (inventory_ctr.Instance.ITEM_USING.item_name == "Companion")
+			{
+				PopupControl.Instance.ShowMessage("Your companion cannot stand there.");
+			}
+			else
+			{
+				PopupControl.Instance.ShowMessage("You cannot build that there.");
+			}
+			return;
+		}
+		string player_zone = ChunkControl.Instance.player_zone;
+		string chunkString = ChunkControl.Instance.GetChunkString(position);
+		Vector3 chunkCoords = ChunkControl.Instance.GetChunkCoords(position);
+		int num = (int)chunkCoords.x;
+		int num2 = (int)chunkCoords.z;
+		Vector3 inner = ChunkControl.Instance.GetInner(position);
+		int num3 = (int)inner.x;
+		int num4 = (int)inner.z;
+		Chunk chunk = ChunkControl.Instance.GetChunk(chunkString);
+		if (chunk == null)
+		{
+			return;
+		}
+		ChunkData chunk_data = chunk.chunk_data;
+		if (chunk_data == null || !LandClaimControl.Instance.AllowedToBuild(player_zone, num, num2))
+		{
+			return;
+		}
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Companion")
+		{
+			if (ChunkControl.Instance.GetNumItemsInSurroundingArea("Companion") > 9)
+			{
+				PopupControl.Instance.ShowMessage("There are too many companions in this area!\n<color=#999999>(The game will start lagging if you add more)</color>\n\nPlease try putting it further away...");
+				return;
+			}
+		}
+		else if (inventory_ctr.Instance.ITEM_USING.item_name == "Painting")
+		{
+			if (ChunkControl.Instance.GetNumItemsInSurroundingArea("Painting") > 6)
+			{
+				PopupControl.Instance.ShowMessage("There are too many paintings in this area!\n<color=#999999>(The game will start lagging if you add more)</color>\n\nPlease try putting it further away...");
+				return;
+			}
+		}
+		else if (InventoryUtils.IsStringItem(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			short num5 = inventory_ctr.Instance.ITEM_USING.GetShort("model1_innerX");
+			short num6 = inventory_ctr.Instance.ITEM_USING.GetShort("model1_innerZ");
+			short num7 = inventory_ctr.Instance.ITEM_USING.GetShort("model1_chunkX");
+			short num8 = inventory_ctr.Instance.ITEM_USING.GetShort("model1_chunkZ");
+			if (num6 == 0 && num5 == 0 && num7 == 0 && num8 == 0)
+			{
+				ExtraInventoryData extraDataCopy = inventory_ctr.Instance.ITEM_USING.GetExtraDataCopy();
+				extraDataCopy.SetShort("model1_innerX", num3);
+				extraDataCopy.SetShort("model1_innerZ", num4);
+				extraDataCopy.SetShort("model1_chunkX", num);
+				extraDataCopy.SetShort("model1_chunkZ", num2);
+				inventory_ctr.Instance.ITEM_USING = new InventoryItem(inventory_ctr.Instance.ITEM_USING.item_name, extraDataCopy);
+				MouseObjPositionChanged(mouse_obj.transform.position, false);
+				return;
+			}
+		}
+		else if (inventory_ctr.Instance.ITEM_USING.item_name == "3-day Land Claim" || inventory_ctr.Instance.ITEM_USING.item_name == "8-day Land Claim" || inventory_ctr.Instance.ITEM_USING.item_name == "Admin Land Claim")
+		{
+			if (player_zone != "overworld")
+			{
+				PopupControl.Instance.ShowMessage("You can only build this outdoors");
+				return;
+			}
+			if (!LandClaimControl.Instance.IsFarEnoughAwayFromEnemyLandClaims(player_zone, num, num2, PlayerData.Instance.GetGlobalString("username_lower")))
+			{
+				PopupControl.Instance.ShowMessage("This is too close to other Land Claims\n(the edges would overlap!)\n<color=#f5b042>Try building further away.</color>");
+				return;
+			}
+		}
+		inventory_ctr.Instance.ITEM_USING = inventory_ctr.Instance.FinalizeItemBeforePutDown(inventory_ctr.Instance.ITEM_USING, chunk_data, num3, num4);
+		PlayerBuildAt(inventory_ctr.Instance.ITEM_USING, ChunkControl.Instance.player_zone, num, num2, num3, num4, mouse_rot, build_context_t.on_self_build_new, "ME", GenerateCacheKey());
+		if (InventoryUtils.IsHouseObject(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			switch (InventoryUtils.GetBuildingType(inventory_ctr.Instance.ITEM_USING.item_name))
+			{
+			case InventoryUtils.building_type.castle:
+				AchievesControl.Instance.UnlockAchievement("Your Royal Highness");
+				break;
+			case InventoryUtils.building_type.mansion:
+				AchievesControl.Instance.UnlockAchievement("Living With Style!");
+				break;
+			case InventoryUtils.building_type.shack:
+				AchievesControl.Instance.UnlockAchievement("Home Sweet Home");
+				break;
+			}
+		}
+		else if (inventory_ctr.Instance.ITEM_USING.item_name == "Companion")
+		{
+			CompanionController.Instance.DestroyActiveCompanion(CompanionController.Instance.GetCurrSelectedCompanion());
+		}
+		if (done_button_context == button_state.MODIFY_OBJECT)
+		{
+			DonePlacing(false, false);
+			EnterToolMode(new InventoryItem("Builder Tools"));
+		}
+		else if (done_button_context == button_state.BUILD_NEW_OBJ)
+		{
+			if ((inventory_ctr.Instance.GetItemBool(inventory_ctr.Instance.ITEM_USING.item_name, "is_flooring_obj") || inventory_ctr.Instance.GetItemBool(inventory_ctr.Instance.ITEM_USING.item_name, "is_wall_obj")) && inventory_ctr.Instance.HasItem(inventory_ctr.Instance.ITEM_USING))
+			{
+				inventory_ctr.Instance.GrabNext(inventory_ctr.Instance.ITEM_USING);
+				MouseObjPositionChanged(SnapMousePositionToObjectOrigins(mouse_obj.transform.position, inventory_ctr.Instance.ITEM_USING), false);
+				click_to_place_BUTTON_text.text = "DONE";
+			}
+			else
+			{
+				DonePlacing(false, true);
+			}
+		}
 	}
 
 	public void RecycleUniqueIds(List<int> unique_ids)
 	{
+		foreach (int unique_id in unique_ids)
+		{
+			int num = PlayerData.Instance.GetSlotShort("n_recycled_unique_ids", PlayerData.filename_t.general);
+			PlayerData.Instance.SetSlotLong("recycled_unique_id_" + num, unique_id, PlayerData.filename_t.general);
+			PlayerData.Instance.SetSlotShort("n_recycled_unique_ids", num + 1, PlayerData.filename_t.general);
+		}
 	}
 
 	public int GetNewUniqueId(bool only_use_local_unique_ids = false)
@@ -150,11 +279,64 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public bool AutoReplaceAt(InventoryItem new_item, InventoryItem old_element_item, int old_element_rot, string zone, int chunkX, int chunkZ, int innerX, int innerZ, Action<GameObject> on_complete = null)
 	{
-		return false;
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		ChunkObj chunkObj = ChunkControl.Instance.GetChunkObj(chunkString);
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkString);
+		if (chunkObj == null || chunkData == null)
+		{
+			return false;
+		}
+		chunkObj.ReplaceElementItemInstance(chunkData.X, chunkData.Z, innerX, innerZ, new_item, old_element_item, old_element_rot, chunkData, on_complete);
+		chunkData.ReplaceElementItem(innerX, innerZ, new_item, old_element_item, old_element_rot);
+		if (GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData.SaveWholeChunkToDisk(chunkString);
+		}
+		return true;
 	}
 
 	private void MouseObjPositionChanged(Vector3 rounded_clickedAt, bool on_enter_build_mode)
 	{
+		bool flag = AllowedToPlace(rounded_clickedAt, inventory_ctr.Instance.ITEM_USING);
+		Image component = button_rotate_furniture.transform.Find("accept").Find("bg").GetComponent<Image>();
+		if (flag)
+		{
+			component.color = col_checkmark_allowed;
+			button_rotate_furniture.transform.Find("accept").Find("bg").GetComponent<CanvasGroup>().alpha = 1f;
+		}
+		else
+		{
+			component.color = col_checkmark_not_allowed;
+			button_rotate_furniture.transform.Find("accept").Find("bg").GetComponent<CanvasGroup>().alpha = 0.4f;
+		}
+		ConvertToGlow(mouse_obj.transform, flag);
+		if (!on_enter_build_mode && button_rotate_furniture != null)
+		{
+			button_rotate_furniture.transform.Find("accept").gameObject.SetActive(true);
+		}
+		string chunkString = ChunkControl.Instance.GetChunkString(rounded_clickedAt);
+		Vector3 chunkCoords = ChunkControl.Instance.GetChunkCoords(rounded_clickedAt);
+		int chunkX = (int)chunkCoords.x;
+		int chunkZ = (int)chunkCoords.z;
+		Vector3 inner = ChunkControl.Instance.GetInner(rounded_clickedAt);
+		int num = (int)inner.x;
+		int num2 = (int)inner.z;
+		mouse_obj.transform.rotation = Quaternion.Euler(0f, mouse_rot * 90, 0f);
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Companion")
+		{
+			if (inventory_ctr.Instance.ITEM_USING.GetString("companion_mode") != "guard" && (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString) || !TryMakeCompanionSitOnChair(ChunkControl.Instance.GetChunkObj(chunkString), ChunkControl.Instance.GetChunkData(chunkString), num, num2, inventory_ctr.Instance.ITEM_USING, mouse_obj)))
+			{
+				mouse_obj.transform.Find("creature-go-here").GetChild(0).GetComponent<LiteModel>().StartAnimation(0);
+			}
+		}
+		else if (inventory_ctr.Instance.ITEM_USING.item_name == "Painting")
+		{
+			SnapPainting(mouse_obj, chunkX, chunkZ, num, num2);
+		}
+		else if (InventoryUtils.IsStringItem(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			RedrawStringLights(mouse_obj, inventory_ctr.Instance.ITEM_USING);
+		}
 	}
 
 	public void RedrawStringLights(GameObject instance, InventoryItem item)
@@ -227,35 +409,370 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	private bool AllowedToPlace(Vector3 rounded_clickedAt, InventoryItem item)
 	{
-		return false;
+		string item_name = item.item_name;
+		string chunkString = ChunkControl.Instance.GetChunkString(rounded_clickedAt);
+		ChunkControl.Instance.GetChunkCoords(rounded_clickedAt);
+		ChunkControl.Instance.GetInner(rounded_clickedAt);
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkString);
+		string itemLayer = GetItemLayer(item_name);
+		foreach (OccupiedSpace item2 in ChunkControl.Instance.GetBuildablesThatOverlapThisSpace(rounded_clickedAt))
+		{
+			if (item_name == "Companion")
+			{
+				if (InventoryUtils.IsChairObject(item2.element.item.item_name) || InventoryUtils.IsBedObject(item2.element.item.item_name))
+				{
+					continue;
+				}
+			}
+			else if (InventoryUtils.IsStringItem(item_name) && InventoryUtils.IsStringItem(item2.element.item.item_name))
+			{
+				continue;
+			}
+			if (!InventoryUtils.IsSimpleMob(item2.element.item.item_name) && ((itemLayer == "sub_flooring" && item2.layer == "sub_flooring") || (itemLayer == "flooring" && item2.layer == "flooring") || (itemLayer == "normal" && item2.layer == "normal")))
+			{
+				return false;
+			}
+		}
+		bool flag = InventoryUtils.IsStringItem(item_name);
+		if (flag)
+		{
+			short num = item.GetShort("model1_chunkX");
+			short num2 = item.GetShort("model1_chunkZ");
+			short num3 = item.GetShort("model1_innerX");
+			short num4 = item.GetShort("model1_innerZ");
+			if (rounded_clickedAt == new Vector3((float)(num * 10 + num3) + 0.5f, 0f, (float)(num2 * 10 + num4) + 0.5f))
+			{
+				return false;
+			}
+		}
+		if (InventoryUtils.IsCaveObject(ZoneDataControl.Instance.curr_zonedata.house_item.item_name) && ZoneDataControl.Instance.curr_cave_exit != null && Vector3.Distance(ZoneDataControl.Instance.curr_cave_exit.transform.position, rounded_clickedAt) < ChunkControl.dist_empty_around_cave_ladder)
+		{
+			return false;
+		}
+		if (ChunkControl.Instance.player_zone != "overworld")
+		{
+			if (InventoryUtils.IsHouseObject(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+			{
+				List<Vector3> list;
+				switch (InventoryUtils.GetBuildingType(ZoneDataControl.Instance.curr_zonedata.house_item.item_name))
+				{
+				case InventoryUtils.building_type.shack:
+				case InventoryUtils.building_type.igloo:
+					list = InventoryUtils.GetShackBuildArea();
+					break;
+				case InventoryUtils.building_type.mansion:
+					list = InventoryUtils.GetMansionBuildArea();
+					break;
+				case InventoryUtils.building_type.castle:
+					list = InventoryUtils.GetCastleBuildArea();
+					break;
+				case InventoryUtils.building_type.underground_room:
+				case InventoryUtils.building_type.upstairs_room:
+				case InventoryUtils.building_type.tent:
+					list = InventoryUtils.GetUndergroundBuildArea();
+					break;
+				case InventoryUtils.building_type.windmill:
+					list = InventoryUtils.GetWindmillBuildArea();
+					break;
+				case InventoryUtils.building_type.warehouse:
+					list = InventoryUtils.GetWarehouseBuildArea();
+					break;
+				default:
+					list = null;
+					break;
+				}
+				ZoneData curr_zonedata = ZoneDataControl.Instance.curr_zonedata;
+				if (!list.Contains(rounded_clickedAt - new Vector3((float)(curr_zonedata.interior_model_chunkX * 10 + curr_zonedata.interior_model_innerX) + 0.5f, 0f, (float)(curr_zonedata.interior_model_chunkZ * 10 + curr_zonedata.interior_model_innerZ) + 0.5f)))
+				{
+					return false;
+				}
+			}
+			else if (flag && chunkData.floor_model_id == 0)
+			{
+				return false;
+			}
+		}
+		return Vector3.Distance(GameController.Instance.player.transform.position, rounded_clickedAt) > 1f;
 	}
 
 	private void Update()
 	{
+		if (!inventory_ctr.Instance.PLACING_OBJECT_OR_USING_TOOL)
+		{
+			return;
+		}
+		if (inventory_ctr.Instance.GetItemType(inventory_ctr.Instance.ITEM_USING) == inventory_ctr.inv_type_t.tool)
+		{
+			if (GamepadInput.Instance.GetMouseButtonDown() && !PopupControl.Instance.GetButtonWasPressed())
+			{
+				Ray ray = Camera.main.ScreenPointToRay(GamepadInput.Instance.GetMousePosition());
+				if (GameController.Instance.plane.Raycast(ray, out var enter))
+				{
+					UseToolClick(ChunkControl.Instance.GetRoundedClick(ray.GetPoint(enter)) + new Vector3(0.5f, 0f, 0.5f));
+				}
+			}
+		}
+		else if (inventory_ctr.Instance.GetItemType(inventory_ctr.Instance.ITEM_USING) == inventory_ctr.inv_type_t.place_in_world && GamepadInput.Instance.GetMouseButton() && !PopupControl.Instance.GetButtonWasPressed())
+		{
+			Ray ray2 = Camera.main.ScreenPointToRay(GamepadInput.Instance.GetMousePosition());
+			if (!GameController.Instance.plane.Raycast(ray2, out var enter2))
+			{
+				return;
+			}
+			Vector3 vector = SnapMousePositionToObjectOrigins(ChunkControl.Instance.GetRoundedClick(ray2.GetPoint(enter2)) + new Vector3(0.5f, 0f, 0.5f), inventory_ctr.Instance.ITEM_USING);
+			if (mouse_obj != null)
+			{
+				Vector3 position = mouse_obj.transform.position;
+				mouse_obj.transform.position = vector;
+				if (position != mouse_obj.transform.position)
+				{
+					MouseObjPositionChanged(vector, false);
+				}
+			}
+			else
+			{
+				CreateMouseObj(false, (byte)mouse_rot, vector);
+			}
+		}
 	}
 
 	private void ConvertToGlow(Transform T, bool allowed)
 	{
+		Component[] components = T.GetComponents<Component>();
+		foreach (Component component in components)
+		{
+			if (!(component.GetType() == typeof(MeshRenderer)))
+			{
+				continue;
+			}
+			MeshRenderer meshRenderer = (MeshRenderer)component;
+			Material material = new Material((T.tag == "MouseObjCutout") ? (allowed ? mat_build_allowed_CUTOUT : mat_build_not_allowed_CUTOUT) : (allowed ? mat_build_allowed : mat_build_not_allowed));
+			material.mainTexture = meshRenderer.material.mainTexture;
+			Material[] array = new Material[meshRenderer.materials.Length];
+			for (int j = 0; j < array.Length; j++)
+			{
+				array[j] = material;
+			}
+			meshRenderer.materials = array;
+		}
+		foreach (Transform item in T)
+		{
+			ConvertToGlow(item, allowed);
+		}
 	}
 
 	private void CreateMouseObj(bool on_modify_position, byte start_rot, Vector3 start_pos)
 	{
+		if (creating_mouse_obj)
+		{
+			return;
+		}
+		creating_mouse_obj = true;
+		mouse_rot = start_rot;
+		mouse_obj_geometry = GetItemGeometry(inventory_ctr.Instance.ITEM_USING.item_name);
+		Action<GameObject> on_mouse_obj_ready = delegate(GameObject new_obj)
+		{
+			mouse_obj = new_obj;
+			mouse_obj.name = "Mouse Obj";
+			DeleteUnnecessaryComponents(inventory_ctr.Instance.ITEM_USING, new_obj);
+			AdjustBuildableInstance(new_obj, inventory_ctr.Instance.ITEM_USING, usage_context_t.on_mouseObj_or_storeModel);
+			new_obj.transform.Rotate(Vector3.up, mouse_rot * 90);
+			new_obj.transform.position = start_pos;
+			MouseObjPositionChanged(start_pos, true);
+			creating_mouse_obj = false;
+		};
+		bool itemBool = inventory_ctr.Instance.GetItemBool(inventory_ctr.Instance.ITEM_USING.item_name, "is_wall_obj");
+		bool itemBool2 = inventory_ctr.Instance.GetItemBool(inventory_ctr.Instance.ITEM_USING.item_name, "is_flooring_obj");
+		if (!itemBool2 && !itemBool && !ResourceControl.ValidWorldModel(inventory_ctr.Instance.ITEM_USING))
+		{
+			on_mouse_obj_ready(new GameObject("Empty prefab"));
+		}
+		else if (itemBool)
+		{
+			GameObject parent = new GameObject();
+			parent.transform.localScale = Vector3.one;
+			parent.transform.localRotation = Quaternion.identity;
+			parent.transform.localPosition = Vector3.zero;
+			ModularObjectControl.Instance.AsyncLoadModularModel("Wall-Models/" + inventory_ctr.Instance.ITEM_USING.item_name + "/0_prefab", delegate(GameObject new_mesh)
+			{
+				GameObject gameObject = UnityEngine.Object.Instantiate(new_mesh);
+				gameObject.transform.SetParent(parent.transform);
+				gameObject.transform.localPosition = Vector3.zero;
+				gameObject.transform.localRotation = Quaternion.Euler(-90f, 0f, 0f);
+				gameObject.transform.localScale = Vector3.one * 0.5f;
+				gameObject.SetActive(true);
+				on_mouse_obj_ready(parent);
+			});
+		}
+		else if (itemBool2)
+		{
+			GameObject prefab = null;
+			GameObject parent2 = new GameObject();
+			parent2.transform.localScale = Vector3.one;
+			parent2.transform.localRotation = Quaternion.identity;
+			parent2.transform.localPosition = Vector3.zero;
+			GameObject mesh1 = null;
+			int load_ops = 2;
+			Action all_loaded = delegate
+			{
+				GameObject gameObject2 = UnityEngine.Object.Instantiate(prefab);
+				gameObject2.SetActive(true);
+				gameObject2.transform.SetParent(parent2.transform);
+				gameObject2.transform.localScale = Vector3.one;
+				gameObject2.transform.localRotation = Quaternion.identity;
+				gameObject2.transform.localPosition = new Vector3(-0.5f, 0f, -0.5f);
+				PartiallyGeneratedModularModel new_model = new PartiallyGeneratedModularModel(inventory_ctr.Instance.ITEM_USING, ModularObjectControl.segment.undefined, "", "", -1, -1, -1);
+				ModularObjectControl.Instance.AddVertices(mesh1, 0, 0, 0, 1, 0, new_model);
+				ModularObjectControl.Instance.CreateMesh(gameObject2, new_model, false);
+				on_mouse_obj_ready(parent2);
+			};
+			ModularObjectControl.Instance.AsyncLoadModularModel("Pathway-Prefabs/" + inventory_ctr.Instance.ITEM_USING.item_name, delegate(GameObject loaded_prefab)
+			{
+				prefab = loaded_prefab;
+				load_ops--;
+				if (load_ops == 0)
+				{
+					all_loaded();
+				}
+			});
+			ModularObjectControl.Instance.AsyncLoadModularModel(ResourceControl.Instance.GetStringFromItemFile(inventory_ctr.Instance.ITEM_USING.item_name, "flooring_model") + "/1_prefab", delegate(GameObject new_mesh)
+			{
+				mesh1 = new_mesh;
+				load_ops--;
+				if (load_ops == 0)
+				{
+					all_loaded();
+				}
+			});
+		}
+		else
+		{
+			ResourceControl.Instance.AsyncInstantiateWorldObjectPrefab(inventory_ctr.Instance.ITEM_USING, null, on_mouse_obj_ready);
+		}
 	}
 
 	public void EnterBuildMode(InventoryItem item, Vector3 mouse_obj_start_pos, byte start_rot, bool on_modify_position)
 	{
+		if (mouse_obj_start_pos == Vector3.zero)
+		{
+			mouse_obj_start_pos = SnapMousePositionToObjectOrigins(new Vector3((float)((int)GameController.Instance.prev_player_pos.x - 4) + 0.5f, 0f, (float)((int)GameController.Instance.prev_player_pos.z - 1) + 0.5f), item);
+		}
+		inventory_ctr.Instance.ITEM_USING = inventory_ctr.Instance.AdjustMouseItemData(item);
+		inventory_ctr.Instance.PLACING_OBJECT_OR_USING_TOOL = true;
+		click_to_place.SetActive(true);
+		if (on_modify_position)
+		{
+			ShowDoneButton("CANCEL", button_state.MODIFY_OBJECT);
+		}
+		else
+		{
+			if (item.item_name == "Companion")
+			{
+				click_to_place_txt.text = "Pick a spot for " + CompanionController.Instance.GetCurrSelectedCompanion().companion_name.ToUpper() + " to stand";
+			}
+			else
+			{
+				click_to_place_txt.text = "Pick a spot to put your " + item.item_name;
+			}
+			ShowDoneButton("CANCEL", button_state.BUILD_NEW_OBJ);
+		}
+		button_rotate_furniture = UnityEngine.Object.Instantiate(prefab_rotate_button);
+		button_rotate_furniture.transform.SetParent(MobControl.Instance.gameObject.transform);
+		button_rotate_furniture.transform.SetAsFirstSibling();
+		button_rotate_furniture.transform.localPosition = Vector3.zero;
+		button_rotate_furniture.transform.localScale = Vector3.one;
+		button_rotate_furniture.transform.localRotation = Quaternion.identity;
+		Transform transform = button_rotate_furniture.transform;
+		((RectTransform)button_rotate_furniture.transform).anchorMax = Vector2.one * 10f;
+		((RectTransform)transform).anchorMin = Vector2.one * 10f;
+		button_rotate_furniture.transform.Find("delete").gameObject.SetActive(done_button_context == button_state.MODIFY_OBJECT);
+		GameObject gameObject = button_rotate_furniture.transform.Find("accept").gameObject;
+		if (on_modify_position)
+		{
+			gameObject.SetActive(false);
+			Vector3 localPosition = button_rotate_furniture.transform.Find("accept").localPosition;
+			button_rotate_furniture.transform.Find("accept").localPosition = button_rotate_furniture.transform.Find("delete").localPosition;
+			button_rotate_furniture.transform.Find("delete").localPosition = localPosition;
+		}
+		else
+		{
+			gameObject.SetActive(true);
+		}
+		if (mouse_obj != null)
+		{
+			UnityEngine.Object.Destroy(mouse_obj);
+		}
+		CreateMouseObj(false, start_rot, mouse_obj_start_pos);
 	}
 
 	public void RotateMouseObj()
 	{
+		if (InventoryUtils.IsStringItem(inventory_ctr.Instance.ITEM_USING.item_name) || inventory_ctr.Instance.ITEM_USING.item_name == "Painting")
+		{
+			return;
+		}
+		if (mouse_obj != null)
+		{
+			mouse_obj.transform.Rotate(Vector3.up, 90f);
+		}
+		mouse_rot = ((mouse_rot + 1 < 4) ? (mouse_rot + 1) : 0);
 	}
 
 	private void FixedUpdate()
 	{
+		if (button_rotate_furniture != null && mouse_obj != null)
+		{
+			float num;
+			switch (mouse_obj_geometry)
+			{
+			case object_geometry.undefined:
+			case object_geometry._1_by_1:
+				num = 0.9f;
+				break;
+			case object_geometry._xplus1:
+			case object_geometry.rugshape:
+				num = 1.05f;
+				break;
+			default:
+				num = 1.8f;
+				break;
+			}
+			MobControl.Instance.SnapOverhead((RectTransform)button_rotate_furniture.transform, mouse_obj.transform.position + new Vector3(num, 0f, num) * ChunkControl.Instance.view_zoom);
+		}
 	}
 
 	public void GrabFurniture(ChunkElement element, string zone, int item_chunkX, int item_chunkZ, int item_innerX, int item_innerZ, int mouse_chunkX, int mouse_chunkZ, int mouse_innerX, int mouse_innerZ)
 	{
+		DonePlacing(true, false);
+		InventoryItem inventoryItem = element.item;
+		PlayerRemoveAt(element, zone, item_chunkX, item_chunkZ, item_innerX, item_innerZ, remove_context.self_remove, GenerateCacheKey());
+		if (inventoryItem.item_name == "3-day Land Claim" || inventoryItem.item_name == "8-day Land Claim")
+		{
+			inventoryItem = new InventoryItem("Old Land Claim", new ExtraInventoryData());
+		}
+		else if (InventoryUtils.IsStringItem(inventoryItem.item_name))
+		{
+			if (item_chunkX != mouse_chunkX || item_chunkZ != mouse_chunkZ || mouse_innerX != item_innerX || mouse_innerZ != item_innerZ)
+			{
+				ExtraInventoryData extraInventoryData = new ExtraInventoryData();
+				extraInventoryData.SetShort("model1_innerX", item_innerX);
+				extraInventoryData.SetShort("model1_innerZ", item_innerZ);
+				extraInventoryData.SetShort("model1_chunkX", item_chunkX);
+				extraInventoryData.SetShort("model1_chunkZ", item_chunkZ);
+				item_chunkX = inventoryItem.GetShort("model1_chunkX");
+				item_chunkZ = inventoryItem.GetShort("model1_chunkZ");
+				item_innerX = inventoryItem.GetShort("model1_innerX");
+				item_innerZ = inventoryItem.GetShort("model1_innerZ");
+				inventoryItem = new InventoryItem(inventoryItem.item_name, extraInventoryData);
+			}
+		}
+		else if (inventoryItem.item_name == "Teleporter")
+		{
+			ExtraInventoryData extraDataCopy = inventoryItem.GetExtraDataCopy();
+			extraDataCopy.SetShort("set_up", 0);
+			inventoryItem = new InventoryItem(inventoryItem.item_name, extraDataCopy);
+		}
+		EnterBuildMode(inventoryItem, new Vector3((float)(item_innerX + item_chunkX * 10) + 0.5f, 0f, (float)(item_innerZ + item_chunkZ * 10) + 0.5f), (byte)element.rot, true);
 	}
 
 	public void DonePlacing(bool manual_press, bool unpause_game)
@@ -343,18 +860,75 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void EndDelete()
 	{
+		inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+		DonePlacing(false, false);
+		EnterToolMode(new InventoryItem("Builder Tools"));
 	}
 
 	public void EnterToolMode(InventoryItem tool)
 	{
+		inventory_ctr.Instance.ITEM_USING = tool;
+		inventory_ctr.Instance.PLACING_OBJECT_OR_USING_TOOL = true;
+		click_to_place.SetActive(true);
+		ShowDoneButton("DONE", button_state.DONE_USING_TOOL);
 	}
 
 	public void UseToolClick(Vector3 clickedAt)
 	{
+		Vector3 roundedClick = ChunkControl.Instance.GetRoundedClick(clickedAt);
+		string player_zone = ChunkControl.Instance.player_zone;
+		List<ToolUseResult> list = new List<ToolUseResult>();
+		foreach (OccupiedSpace item in ChunkControl.Instance.GetBuildablesThatOverlapThisSpace(roundedClick + new Vector3(0.5f, 0f, 0.5f)))
+		{
+			string chunkString = ChunkControl.Instance.GetChunkString(item.origin);
+			Vector3 inner = ChunkControl.Instance.GetInner(item.origin);
+			int innerX = (int)inner.x;
+			int innerZ = (int)inner.z;
+			Vector3 chunkCoords = ChunkControl.Instance.GetChunkCoords(item.origin);
+			ToolUseResult toolUseResult = ProcessToolClick(chunkString, player_zone, (int)chunkCoords.x, (int)chunkCoords.z, innerX, innerZ, item.element, clickedAt);
+			if (toolUseResult.status_ == ToolUseResult.status.success)
+			{
+				return;
+			}
+			list.Add(toolUseResult);
+		}
+		ToolUseResult print = null;
+		if (HasToolUseResultByStatus(ToolUseResult.status.error_land_claimed, list, ref print))
+		{
+			PopupControl.Instance.ShowMessage("Cannot modify object\nThis land claim is owned by <color=#17d8ff>" + print.extra_data + "</color>");
+		}
+		else if (HasToolUseResultByStatus(ToolUseResult.status.error_someone_using, list, ref print))
+		{
+			PopupControl.Instance.ShowMessage("Cannot modify object\nSomeone is using that!");
+		}
+		else if (HasToolUseResultByStatus(ToolUseResult.status.error_dev_obj, list, ref print))
+		{
+			PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("Cannot modify object - it's owned by the NPCs nearby! Try again on objects further in the wild", "GUI"));
+		}
+		else if (HasToolUseResultByStatus(ToolUseResult.status.error_bandit_camp, list, ref print))
+		{
+			PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("Cannot modify object. First you must find and destroy their flag!", "GUI"), PopupControl.context.message, new InventoryItem("Flagpole"));
+		}
+		else if (HasToolUseResultByStatus(ToolUseResult.status.error_need_tool, list, ref print))
+		{
+			PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("That isn't a furniture object. You need a TOOL_NAME to modify that!", "GUI").Replace("TOOL_NAME", print.extra_data), PopupControl.context.message, new InventoryItem(print.extra_data));
+		}
+		else
+		{
+			HasToolUseResultByStatus(ToolUseResult.status.error_not_editable_at_all, list, ref print);
+		}
 	}
 
 	private bool HasToolUseResultByStatus(ToolUseResult.status looking_for, List<ToolUseResult> error_codes, ref ToolUseResult print)
 	{
+		foreach (ToolUseResult error_code in error_codes)
+		{
+			if (error_code.status_ == looking_for)
+			{
+				print = error_code;
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -367,6 +941,67 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void DeleteMouseObject()
 	{
+		if (!inventory_ctr.Instance.CanReceiveItem(inventory_ctr.Instance.ITEM_USING, 1))
+		{
+			PopupControl.Instance.ShowMessage("Can't take item - your inventory is full!");
+		}
+		else if (InventoryUtils.IsHouseObject(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			if (inventory_ctr.Instance.ITEM_USING.item_name == "Underground Room" || inventory_ctr.Instance.ITEM_USING.item_name == "Upstairs Room")
+			{
+				PopupControl.Instance.on_yes_pressed = delegate
+				{
+					inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+					DonePlacing(false, false);
+					EnterToolMode(new InventoryItem("Builder Tools"));
+				};
+				PopupControl.Instance.ShowYesNo("Are you sure you want to pick up this room?\n<color=#ff392b>EVERYTHING INSIDE WILL DISAPPEAR!</color>", "Yes", "No", PopupControl.context.yesno_ACTION);
+			}
+			else
+			{
+				PopupControl.Instance.on_yes_pressed = delegate
+				{
+					inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+					DonePlacing(false, false);
+					EnterToolMode(new InventoryItem("Builder Tools"));
+				};
+				PopupControl.Instance.ShowYesNo("Are you sure you want to pick up this house?\n<color=#ff392b>EVERYTHING INSIDE WILL DISAPPEAR!</color>", "Yes", "No", PopupControl.context.yesno_ACTION);
+			}
+		}
+		else if (InventoryUtils.IsHellDimension(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			PopupControl.Instance.on_yes_pressed = delegate
+			{
+				inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+				DonePlacing(false, false);
+				EnterToolMode(new InventoryItem("Builder Tools"));
+			};
+			PopupControl.Instance.ShowYesNo("Are you sure you want to pick up this?\n<color=#ff392b>EVERYTHING INSIDE WILL DISAPPEAR!</color>", "Yes", "No", PopupControl.context.yesno_ACTION);
+		}
+		else if (InventoryUtils.UsesBasketId(inventory_ctr.Instance.ITEM_USING))
+		{
+			PopupControl.Instance.on_yes_pressed = delegate
+			{
+				inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+				DonePlacing(false, false);
+				EnterToolMode(new InventoryItem("Builder Tools"));
+			};
+			PopupControl.Instance.ShowYesNo("Are you sure you want to pick up this " + inventory_ctr.Instance.ITEM_USING.item_name + "?\n<color=#ff392b>EVERYTHING INSIDE WILL DISAPPEAR!</color>", "Yes", "No", PopupControl.context.yesno_ACTION);
+		}
+		else if (inventory_ctr.Instance.ITEM_USING.item_name == "Vending Machine")
+		{
+			PopupControl.Instance.on_yes_pressed = delegate
+			{
+				inventory_ctr.Instance.DropExtraItemDataOnPickup(inventory_ctr.Instance.ITEM_USING);
+				DonePlacing(false, false);
+				EnterToolMode(new InventoryItem("Builder Tools"));
+			};
+			PopupControl.Instance.ShowYesNo("Are you sure you want to pick up this Vending Machine?\n<color=#ff392b>EVERYTHING INSIDE WILL DISAPPEAR!</color>", "Yes", "No", PopupControl.context.yesno_ACTION);
+		}
+		else
+		{
+			EndDelete();
+		}
 	}
 
 	public void SnapPainting(GameObject instance, int chunkX, int chunkZ, int innerX, int innerZ)
@@ -527,6 +1162,40 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	private bool CheckForCustomBuiltHangableWall(int chunkX, int chunkZ, int innerX, int innerZ, int modX, int modZ)
 	{
+		int num = innerX + modX;
+		int num2 = innerZ + modZ;
+		if (num >= 10)
+		{
+			num -= 10;
+			chunkX++;
+		}
+		else if (num < 0)
+		{
+			num += 10;
+			chunkX--;
+		}
+		if (num2 >= 10)
+		{
+			num2 -= 10;
+			chunkZ++;
+		}
+		else if (num2 < 0)
+		{
+			num2 += 10;
+			chunkZ--;
+		}
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(ChunkControl.Instance.GetChunkString(ChunkControl.Instance.player_zone, chunkX, chunkZ));
+		if (chunkData == null)
+		{
+			return false;
+		}
+		foreach (ChunkElement item in chunkData.GetElementsAt(num, num2))
+		{
+			if (item.item.item_name == "Palisade Wall" || item.item.item_name == "Tall Stone Wall")
+			{
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -1043,6 +1712,62 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void PlayerBuildAt(InventoryItem build_item, string zone, int chunkX, int chunkZ, int innerX, int innerZ, int build_rot, build_context_t build_context, string builder_player, string mp_cache_key)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (build_context == build_context_t.on_self_build_new && builder_player == "ME" && GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+		{
+			builder_player = PlayerData.Instance.GetGlobalString("username_punctuated");
+		}
+		if (build_item.item_name == "3-day Land Claim" || build_item.item_name == "8-day Land Claim" || build_item.item_name == "Admin Land Claim")
+		{
+			LandClaimControl.Instance.AddLandClaimsToNearbyChunks(zone, chunkX, chunkZ, innerX, innerZ, build_item, builder_player);
+		}
+		else if (build_item.item_name == "Teleporter")
+		{
+			string title = build_item.GetString("teleporter_name");
+			if (GameServerConnector.Instance.ShouldSaveLocally())
+			{
+				CustomTeleporterControl.Instance.CreateNewTeleporter(zone, chunkX, chunkZ, innerX, innerZ, title);
+			}
+			if (build_context == build_context_t.on_self_build_new)
+			{
+				CustomTeleporterControl.Instance.TakeScreenshot(chunkX, chunkZ, innerX, innerZ, true);
+			}
+		}
+		else if (InventoryUtils.UsesShackId(build_item.item_name) && GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			int @long = build_item.GetLong("shack_id");
+			if (ZoneDataControl.Instance.PlayerZoneExists("shack" + @long))
+			{
+				ZoneDataControl.Instance.ModifyPlayerZone("shack" + @long, build_rot, build_item);
+			}
+			else
+			{
+				ZoneDataControl.Instance.CreatePlayerZone("shack" + @long, build_item, chunkX, chunkZ, innerX, innerZ, zone, (byte)build_rot);
+			}
+		}
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkString);
+		if (chunkData == null && GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData = ChunkControl.Instance.HostGetChunk(zone, chunkX, chunkZ);
+		}
+		if (chunkData != null)
+		{
+			chunkData.AddElement(innerX, innerZ, new ChunkElement(build_item, build_rot));
+			chunkData.mp_cache_key = mp_cache_key;
+		}
+		if (GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData.SaveWholeChunkToDisk(chunkString);
+		}
+		if (ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			Chunk chunk = ChunkControl.Instance.GetChunk(chunkString);
+			AsyncCreateBuildableInstance(build_item, innerX, innerZ, build_rot, build_context, chunk, chunk.chunk_data, chunk.chunk_obj);
+		}
+		if (build_context == build_context_t.on_self_build_new)
+		{
+			GameServerSender.Instance.SendBuildFurniture(build_item, (byte)build_rot, ChunkControl.Instance.player_zone, chunkX, chunkZ, innerX, innerZ, mp_cache_key, "");
+		}
 	}
 
 	public static string GenerateCacheKey()
@@ -1058,6 +1783,67 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void PlayerRemoveAt(ChunkElement remove_element, string zone, int chunkX, int chunkZ, int innerX, int innerZ, remove_context remove_context_t, string mp_cache_key)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		string item_name = remove_element.item.item_name;
+		if (item_name == "3-day Land Claim" || item_name == "8-day Land Claim" || item_name == "Admin Land Claim")
+		{
+			LandClaimControl.Instance.RemoveLandClaimsFromNearbyChunks(zone, chunkX, chunkZ, innerX, innerZ);
+			if (remove_context_t == remove_context.self_remove)
+			{
+				GameplayGUIControl.Instance.ShowNotif("<color=#aaaaaa>Land unclaimed</color>", new InventoryItem("Old Land Claim"), 1, new OnNotifClick(OnNotifClick.type.none));
+			}
+		}
+		if (item_name == "Companion" && remove_element.item.GetString("companion_mode") == "guard")
+		{
+			string key = ChunkControl.Instance.player_zone + "," + chunkX + "," + chunkZ + "," + innerX + "," + innerZ;
+			if (MobControl.Instance.active_combatants.ContainsKey(key) && !MobControl.Instance.active_combatants[key].GetComponent<Combatant>().is_dead)
+			{
+				UnityEngine.Object.Destroy(MobControl.Instance.active_combatants[key]);
+				MobControl.Instance.active_combatants.Remove(key);
+			}
+		}
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkString);
+		if (chunkData == null && GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			chunkData = ChunkControl.Instance.HostGetChunk(zone, chunkX, chunkZ);
+		}
+		if (chunkData != null)
+		{
+			chunkData.RemoveElement(innerX, innerZ, remove_element);
+			chunkData.mp_cache_key = mp_cache_key;
+		}
+		if (GameServerConnector.Instance.ShouldSaveLocally())
+		{
+			if (item_name == "Teleporter")
+			{
+				CustomTeleporterControl.Instance.DeleteTeleporter(zone, chunkX, chunkZ, innerX, innerZ);
+			}
+			chunkData.SaveWholeChunkToDisk(chunkString);
+		}
+		if (ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			ChunkControl.Instance.GetChunkObj(chunkString).DestroyBuildableInstance(chunkX, chunkZ, innerX, innerZ, remove_element.item, remove_element.rot);
+			if (item_name == "Music Box")
+			{
+				MusicBoxControl.Instance.remove_song(zone + "," + chunkX + "," + chunkZ + "," + innerX + "," + innerZ);
+			}
+			else if (inventory_ctr.Instance.GetItemBool(item_name, "is_flooring_obj"))
+			{
+				ModularObjectControl.Instance.ModularChangedAt(innerX, innerZ, ModularObjectControl.type.PATHWAYS, zone, chunkX, chunkZ);
+			}
+			else if (inventory_ctr.Instance.GetItemBool(item_name, "is_wall_obj"))
+			{
+				ModularObjectControl.Instance.ModularChangedAt(innerX, innerZ, ModularObjectControl.type.WALLS, zone, chunkX, chunkZ);
+			}
+			else if ((item_name == "Companion") ? (remove_element.item.GetString("companion_mode") != "guard") : (item_name == "DEBUG-npc" || InventoryUtils.IsChairObject(item_name) || InventoryUtils.IsBedObject(item_name)))
+			{
+				ChunkControl.Instance.RedrawAtSquare(chunkString, innerX, innerZ);
+			}
+		}
+		if (remove_context_t == remove_context.self_remove)
+		{
+			GameServerSender.Instance.SendRemoveObject(zone, chunkX, chunkZ, innerX, innerZ, remove_element, mp_cache_key, "");
+		}
 	}
 
 	private int GetIconId(string icon_name)
@@ -1627,11 +2413,287 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	private void ChainReplace(InventoryItem old_item_no_stamp, InventoryItem new_item_no_stamp, string zone, int chunkX, int chunkZ, int innerX, int innerZ, int modX, int modZ, List<string> explored)
 	{
+		int num = innerX + modX;
+		int num2 = innerZ + modZ;
+		if (num >= 10)
+		{
+			num -= 10;
+			chunkX++;
+		}
+		else if (num < 0)
+		{
+			chunkX--;
+			num += 10;
+		}
+		if (num2 >= 10)
+		{
+			num2 -= 10;
+			chunkZ++;
+		}
+		else if (num2 < 0)
+		{
+			chunkZ--;
+			num2 += 10;
+		}
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return;
+		}
+		string item = chunkString + "," + num + "," + num2;
+		if (explored.Contains(item))
+		{
+			return;
+		}
+		explored.Add(item);
+		foreach (ChunkElement item2 in ChunkControl.Instance.GetChunkData(chunkString).GetElementsAt(num, num2))
+		{
+			if (item2.item.item_name == old_item_no_stamp.item_name)
+			{
+				ExtraInventoryData extraDataCopy = item2.item.GetExtraDataCopy();
+				extraDataCopy.SetString("stamp", "");
+				if (new InventoryItem(item2.item.item_name, extraDataCopy) == old_item_no_stamp)
+				{
+					string @string = item2.item.GetString("stamp");
+					ExtraInventoryData extraDataCopy2 = new_item_no_stamp.GetExtraDataCopy();
+					extraDataCopy2.SetString("stamp", @string);
+					PlayerReplaceAt(new InventoryItem(new_item_no_stamp.item_name, extraDataCopy2), item2.item, item2.rot, zone, chunkX, chunkZ, num, num2, true, GenerateCacheKey());
+					ChainReplace(old_item_no_stamp, new_item_no_stamp, zone, chunkX, chunkZ, num, num2, 0, 1, explored);
+					ChainReplace(old_item_no_stamp, new_item_no_stamp, zone, chunkX, chunkZ, num, num2, 1, 0, explored);
+					ChainReplace(old_item_no_stamp, new_item_no_stamp, zone, chunkX, chunkZ, num, num2, 0, -1, explored);
+					ChainReplace(old_item_no_stamp, new_item_no_stamp, zone, chunkX, chunkZ, num, num2, -1, 0, explored);
+					break;
+				}
+			}
+		}
 	}
 
 	private ToolUseResult ProcessToolClick(string chunkStr, string zone, int chunkX, int chunkZ, int innerX, int innerZ, ChunkElement element, Vector3 clickedAt)
 	{
-		return null;
+		if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkStr))
+		{
+			return new ToolUseResult(ToolUseResult.status.error_unknown);
+		}
+		ChunkData chunkData = ChunkControl.Instance.GetChunkData(chunkStr);
+		ChunkControl.Instance.GetChunkObj(chunkStr);
+		if (!LandClaimControl.Instance.AllowedToBuild(zone, chunkX, chunkZ))
+		{
+			return new ToolUseResult(ToolUseResult.status.error_unknown);
+		}
+		if (element.item.GetString("bandit_camp_instance") != "" && !BanditCampsControl.Instance.GetBanditCampInstanceByName(element.item.GetString("bandit_camp_instance")).flag_destroyed)
+		{
+			return new ToolUseResult(ToolUseResult.status.error_bandit_camp);
+		}
+		if (element.item.GetString("tag") == "dev_obj")
+		{
+			return new ToolUseResult(ToolUseResult.status.error_dev_obj);
+		}
+		if (element.item.GetString("tag") == "auto_built_immovable")
+		{
+			return new ToolUseResult(ToolUseResult.status.error_not_editable_at_all);
+		}
+		string item_name = element.item.item_name;
+		if (InventoryUtils.IsPaintbrush(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			if (!inventory_ctr.Instance.IsItemPaintable(element.item.item_name))
+			{
+				return new ToolUseResult(ToolUseResult.status.error_unknown);
+			}
+			if (!inventory_ctr.Instance.GetItemBool(element.item.item_name, "is_wall_obj") && !inventory_ctr.Instance.GetItemBool(element.item.item_name, "is_flooring_obj"))
+			{
+				ExtraInventoryData extraDataCopy = element.item.GetExtraDataCopy();
+				extraDataCopy.SetString("paint", inventory_ctr.Instance.ITEM_USING.item_name);
+				PlayerReplaceAt(new InventoryItem(element.item.item_name, extraDataCopy), element.item, element.rot, zone, chunkX, chunkZ, innerX, innerZ, true, GenerateCacheKey());
+			}
+			else
+			{
+				List<string> explored = new List<string>();
+				ExtraInventoryData extraDataCopy2 = element.item.GetExtraDataCopy();
+				extraDataCopy2.SetString("paint", inventory_ctr.Instance.ITEM_USING.item_name);
+				extraDataCopy2.SetString("stamp", "");
+				InventoryItem new_item_no_stamp = new InventoryItem(element.item.item_name, extraDataCopy2);
+				ExtraInventoryData extraDataCopy3 = element.item.GetExtraDataCopy();
+				extraDataCopy3.SetString("stamp", "");
+				ChainReplace(new InventoryItem(element.item.item_name, extraDataCopy3), new_item_no_stamp, zone, chunkX, chunkZ, innerX, innerZ, 0, 0, explored);
+			}
+			DonePlacing(false, true);
+			return new ToolUseResult(ToolUseResult.status.success);
+		}
+		if (InventoryUtils.IsStamp(inventory_ctr.Instance.ITEM_USING.item_name))
+		{
+			if (!inventory_ctr.Instance.IsItemPaintable(element.item.item_name))
+			{
+				return new ToolUseResult(ToolUseResult.status.error_unknown);
+			}
+			ExtraInventoryData extraDataCopy4 = element.item.GetExtraDataCopy();
+			extraDataCopy4.SetString("stamp", inventory_ctr.Instance.ITEM_USING.item_name);
+			PlayerReplaceAt(new InventoryItem(element.item.item_name, extraDataCopy4), element.item, element.rot, zone, chunkX, chunkZ, innerX, innerZ, true, GenerateCacheKey());
+			DonePlacing(false, true);
+			return new ToolUseResult(ToolUseResult.status.success);
+		}
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Paint Thinner")
+		{
+			if (inventory_ctr.Instance.IsItemPaintable(element.item.item_name))
+			{
+				string @string = element.item.GetString("paint");
+				string string2 = element.item.GetString("stamp");
+				if (!Startup.StringNullOrWhitespace(@string) || !Startup.StringNullOrWhitespace(string2))
+				{
+					ExtraInventoryData extraDataCopy5 = element.item.GetExtraDataCopy();
+					extraDataCopy5.SetString("paint", "");
+					extraDataCopy5.SetString("stamp", "");
+					InventoryItem inventoryItem = new InventoryItem(element.item.item_name, extraDataCopy5);
+					if (!inventory_ctr.Instance.GetItemBool(element.item.item_name, "is_wall_obj") && !inventory_ctr.Instance.GetItemBool(element.item.item_name, "is_flooring_obj"))
+					{
+						if (!Startup.StringNullOrWhitespace(@string))
+						{
+							inventory_ctr.Instance.GiveItem(@string, 1, "");
+						}
+						if (!Startup.StringNullOrWhitespace(string2))
+						{
+							inventory_ctr.Instance.GiveItem(string2, 1, "");
+						}
+						PlayerReplaceAt(inventoryItem, element.item, element.rot, zone, chunkX, chunkZ, innerX, innerZ, true, GenerateCacheKey());
+					}
+					else
+					{
+						List<string> explored2 = new List<string>();
+						ExtraInventoryData extraDataCopy6 = element.item.GetExtraDataCopy();
+						extraDataCopy6.SetString("stamp", "");
+						ChainReplace(new InventoryItem(element.item.item_name, extraDataCopy6), inventoryItem, zone, chunkX, chunkZ, innerX, innerZ, 0, 0, explored2);
+					}
+					DonePlacing(false, true);
+					return new ToolUseResult(ToolUseResult.status.success);
+				}
+			}
+			return new ToolUseResult(ToolUseResult.status.error_unknown);
+		}
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Lock")
+		{
+			bool flag;
+			if (InventoryUtils.IsHouseObject(item_name))
+			{
+				flag = false;
+			}
+			else
+			{
+				if (InventoryUtils.UsesBasketId(element.item))
+				{
+					if (item_name == "Crate" || item_name == "Double Crate" || item_name == "Trading Table")
+					{
+						PopupControl.Instance.ShowMessage(item_name + "s cannot be locked.");
+						return new ToolUseResult(ToolUseResult.status.success);
+					}
+				}
+				else if (item_name != "Music Box")
+				{
+					return new ToolUseResult(ToolUseResult.status.error_unknown);
+				}
+				flag = true;
+			}
+			if (element.item.GetString("password") != "")
+			{
+				PopupControl.Instance.ShowMessage("This " + item_name + " is already locked!");
+			}
+			else
+			{
+				GameController.Instance.NoteInteractingElement(chunkX, chunkZ, innerX, innerZ, element.item, element.rot);
+				DonePlacing(false, false);
+				LockControl.Instance.OpenLockScreen("Create a password for your " + item_name, LockControl.lock_context.create_password);
+				if (flag)
+				{
+					GameServerSender.Instance.SendClaimObject(zone + "," + chunkX + "," + chunkZ + "," + innerX + "," + innerZ);
+				}
+			}
+			return new ToolUseResult(ToolUseResult.status.success);
+		}
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Builder Tools")
+		{
+			if (!Startup.StringNullOrWhitespace(inventory_ctr.Instance.GetItemToolRequiredToMove(item_name)) && !GameServerConnector.Instance.is_moderator)
+			{
+				return new ToolUseResult(ToolUseResult.status.error_need_tool, inventory_ctr.Instance.GetItemToolRequiredToMove(item_name));
+			}
+			if (GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_moderator)
+			{
+				if (GameServerInterface.Instance.AnyoneUsing(zone + "," + chunkX + "," + chunkZ + "," + innerX + "," + innerZ))
+				{
+					return new ToolUseResult(ToolUseResult.status.error_someone_using);
+				}
+				if ((element.item.item_name == "3-day Land Claim" || element.item.item_name == "8-day Land Claim" || element.item.item_name == "Admin Land Claim") && !GameServerConnector.Instance.is_host)
+				{
+					string text = "";
+					string key = zone + "," + chunkX + "," + chunkZ + "," + innerX + "," + innerZ;
+					if (chunkData.land_claim_chunk_timers_.ContainsKey(key))
+					{
+						text = chunkData.land_claim_chunk_timers_[key].land_claim_user0;
+					}
+					if (PlayerData.Instance.GetGlobalString("username_lower") != text.ToLower())
+					{
+						return new ToolUseResult(ToolUseResult.status.error_land_claimed, text);
+					}
+				}
+			}
+			Vector3 inner = ChunkControl.Instance.GetInner(clickedAt);
+			Vector3 chunkCoords = ChunkControl.Instance.GetChunkCoords(clickedAt);
+			GrabFurniture(element, zone, chunkX, chunkZ, innerX, innerZ, (int)chunkCoords.x, (int)chunkCoords.z, (int)inner.x, (int)inner.z);
+			return new ToolUseResult(ToolUseResult.status.success);
+		}
+		if (inventory_ctr.Instance.ITEM_USING.item_name == "Drill")
+		{
+			string string3 = element.item.GetString("tag");
+			if (string3 == "dev_obj" || string3 == "auto_built_immovable")
+			{
+				return new ToolUseResult(ToolUseResult.status.error_unknown);
+			}
+			PopupControl.Instance.on_yes_pressed = delegate
+			{
+				PlayerRemoveAt(element, zone, chunkX, chunkZ, innerX, innerZ, remove_context.self_remove, GenerateCacheKey());
+			};
+			PopupControl.Instance.ShowYesNo("Are you sure you want to destroy this <color=#00bbff>" + element.item.item_name + "</color>?", "Yes", "No", PopupControl.context.yesno_ACTION);
+			return new ToolUseResult(ToolUseResult.status.success);
+		}
+		if (!(inventory_ctr.Instance.ITEM_USING.item_name == "Shovel") && !(inventory_ctr.Instance.ITEM_USING.item_name == "Magma Shovel") && !(inventory_ctr.Instance.ITEM_USING.item_name == "Titanium Shovel"))
+		{
+			return new ToolUseResult(ToolUseResult.status.error_unknown);
+		}
+		InventoryItem inventoryItem2 = null;
+		switch (inventory_ctr.Instance.GetItemToolRequiredToMove(item_name))
+		{
+		case "Shovel":
+			if (inventory_ctr.Instance.ITEM_USING.item_name == "Shovel")
+			{
+				inventoryItem2 = element.item;
+				break;
+			}
+			goto case "Titanium Shovel";
+		case "Titanium Shovel":
+			if (inventory_ctr.Instance.ITEM_USING.item_name == "Titanium Shovel")
+			{
+				inventoryItem2 = element.item;
+				break;
+			}
+			goto case "Magma Shovel";
+		case "Magma Shovel":
+			if (inventory_ctr.Instance.ITEM_USING.item_name == "Magma Shovel")
+			{
+				inventoryItem2 = element.item;
+			}
+			break;
+		}
+		if (inventoryItem2 == null)
+		{
+			return new ToolUseResult(ToolUseResult.status.error_unknown);
+		}
+		if (!inventory_ctr.Instance.CanReceiveItem(inventoryItem2, 1))
+		{
+			GameController.Instance.showOverheadNotif(TranslationControl.Instance.TranslateGeneral("Inventory Full!", "GUI"), GameController.Instance.player.transform.position, false, true);
+		}
+		else
+		{
+			inventory_ctr.Instance.DropExtraItemDataOnPickup(new InventoryItem(inventoryItem2.item_name, inventoryItem2.GetExtraDataCopy()));
+			PlayerRemoveAt(element, zone, chunkX, chunkZ, innerX, innerZ, remove_context.self_remove, GenerateCacheKey());
+		}
+		return new ToolUseResult(ToolUseResult.status.success);
 	}
 
 	public void DeleteUnnecessaryComponents(InventoryItem item, GameObject new_obj)
@@ -1918,7 +2980,26 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	private Vector3 SnapMousePositionToObjectOrigins(Vector3 original_position, InventoryItem item_placing)
 	{
-		return default(Vector3);
+		if (item_placing.item_name == "Companion" && item_placing.GetString("companion_mode") != "guard")
+		{
+			foreach (OccupiedSpace item in ChunkControl.Instance.GetBuildablesThatOverlapThisSpace(original_position))
+			{
+				string chunkString = ChunkControl.Instance.GetChunkString(item.origin);
+				if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+				{
+					continue;
+				}
+				Vector3 inner = ChunkControl.Instance.GetInner(item.origin);
+				foreach (ChunkElement item2 in ChunkControl.Instance.GetChunkData(chunkString).GetElementsAt((int)inner.x, (int)inner.z))
+				{
+					if (InventoryUtils.IsChairObject(item2.item.item_name) || InventoryUtils.IsBedObject(item2.item.item_name))
+					{
+						return item.origin;
+					}
+				}
+			}
+		}
+		return original_position;
 	}
 
 	public bool TryMakeCompanionSitOnChair(ChunkObj chunkObj, ChunkData chunk_data, int x, int z, InventoryItem companion_item, GameObject override_companionObj = null, GameObject override_chairObj = null)
@@ -1998,35 +3079,170 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void ClickStatuePropertiesChangeAnimal1(int dir)
 	{
+		InventoryItem interacting_element_item = GameController.Instance.interacting_element_item;
+		int num = CreatureMorpher.Instance.GetCreatureIndex_(interacting_element_item.GetString("creature_A")) + dir;
+		int numCreatures = CreatureMorpher.Instance.GetNumCreatures();
+		int index = num;
+		if (num >= numCreatures)
+		{
+			index = 0;
+		}
+		if (num < 0)
+		{
+			index = numCreatures - 1;
+		}
+		ExtraInventoryData extraDataCopy = interacting_element_item.GetExtraDataCopy();
+		extraDataCopy.SetString("creature_A", CreatureMorpher.Instance.GetCreatureName_(index));
+		PlayerReplaceInteracting(new InventoryItem(interacting_element_item.item_name, extraDataCopy), true);
+		RefreshAdvancedPropertiesCreatures();
 	}
 
 	public void ClickStatuePropertiesChangeAnimal2(int dir)
 	{
+		InventoryItem interacting_element_item = GameController.Instance.interacting_element_item;
+		int num = CreatureMorpher.Instance.GetCreatureIndex_(interacting_element_item.GetString("creature_B")) + dir;
+		int numCreatures = CreatureMorpher.Instance.GetNumCreatures();
+		int index = num;
+		if (num >= numCreatures)
+		{
+			index = 0;
+		}
+		if (num < 0)
+		{
+			index = numCreatures - 1;
+		}
+		ExtraInventoryData extraDataCopy = interacting_element_item.GetExtraDataCopy();
+		extraDataCopy.SetString("creature_B", CreatureMorpher.Instance.GetCreatureName_(index));
+		PlayerReplaceInteracting(new InventoryItem(interacting_element_item.item_name, extraDataCopy), true);
+		RefreshAdvancedPropertiesCreatures();
 	}
 
 	public void ClickStatuePropertiesAccept()
 	{
+		inventory_ctr.Instance.ShowInventoryTab(true);
+		if (!(GameController.Instance.interacting_element_item.item_name == "Armor Display") && GameController.Instance.interacting_element_item.item_name == "Custom Statue")
+		{
+			InventoryItem interacting_element_item = GameController.Instance.interacting_element_item;
+			string text = WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "message_input_1").transform.Find("Text").GetComponent<Text>().text;
+			string text2 = WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "message_input_2").transform.Find("Text").GetComponent<Text>().text;
+			ExtraInventoryData extraDataCopy = interacting_element_item.GetExtraDataCopy();
+			extraDataCopy.SetString("statue_message1", text);
+			extraDataCopy.SetString("statue_message2", text2);
+			PlayerReplaceInteracting(new InventoryItem(interacting_element_item.item_name, extraDataCopy), true);
+		}
+		WindowPrefabsControl.Instance.DestroyScreen("INVENTORY-statue advanced");
 	}
 
 	public void ClickStatueAdvancedProperties()
 	{
+		inventory_ctr.Instance.HideInventoryTab(true);
+		WindowPrefabsControl.Instance.CreateScreen("INVENTORY-statue advanced", WindowPrefabsControl.build_into_t.mini_window);
+		string text = GameController.Instance.interacting_element_item.GetString("statue_message1");
+		string text2 = GameController.Instance.interacting_element_item.GetString("statue_message2");
+		if (Startup.StringNullOrWhitespace(text) && Startup.StringNullOrWhitespace(text2))
+		{
+			text = TranslationControl.Instance.TranslateGeneral(CompanionController.default_statue_message1, "CompanionsEtc");
+			text2 = TranslationControl.Instance.TranslateGeneral(CompanionController.default_statue_message2, "CompanionsEtc");
+		}
+		WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "message_input_1").GetComponent<InputField>().SetTextWithoutNotify(text);
+		WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "message_input_2").GetComponent<InputField>().SetTextWithoutNotify(text2);
+		if (GameController.Instance.interacting_element_item.item_name == "Armor Display")
+		{
+			WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "message_strip").SetActive(false);
+			GameObject @object = WindowPrefabsControl.Instance.GetObject("INVENTORY-statue advanced", "creature_strip");
+			Vector3 localPosition = @object.transform.localPosition;
+			@object.transform.localPosition = new Vector3(0f, localPosition.y, 0f);
+		}
+		RefreshAdvancedPropertiesCreatures();
 	}
 
 	private void RefreshAdvancedPropertiesCreatures()
 	{
+		string @string = GameController.Instance.interacting_element_item.GetString("creature_A");
+		string string2 = GameController.Instance.interacting_element_item.GetString("creature_B");
+		WindowPrefabsControl.Instance.GetTextLegacy("INVENTORY-statue advanced", "creature1_name").text = @string;
+		WindowPrefabsControl.Instance.GetTextLegacy("INVENTORY-statue advanced", "creature2_name").text = string2;
+		ResourceControl.Instance.AssignCreatureSprite(@string, WindowPrefabsControl.Instance.GetImage("INVENTORY-statue advanced", "creature1_img"));
+		ResourceControl.Instance.AssignCreatureSprite(string2, WindowPrefabsControl.Instance.GetImage("INVENTORY-statue advanced", "creature2_img"));
 	}
 
 	public void PressNavpostColor(int index)
 	{
+		GameObject @object = WindowPrefabsControl.Instance.GetObject("NAV POST", "col" + index);
+		switch (index)
+		{
+		case 0:
+			edit_navpost_col = "white";
+			break;
+		case 1:
+			edit_navpost_col = "red";
+			break;
+		case 2:
+			edit_navpost_col = "orange";
+			break;
+		case 3:
+			edit_navpost_col = "yellow";
+			break;
+		case 4:
+			edit_navpost_col = "green";
+			break;
+		case 5:
+			edit_navpost_col = "cyan";
+			break;
+		case 6:
+			edit_navpost_col = "blue";
+			break;
+		case 7:
+			edit_navpost_col = "purple";
+			break;
+		case 8:
+			edit_navpost_col = "pink";
+			break;
+		}
+		WindowPrefabsControl.Instance.GetObject("NAV POST", "col_selector").transform.localPosition = @object.transform.localPosition;
 	}
 
 	public void PressNavpostAccept()
 	{
+		string text = WindowPrefabsControl.Instance.GetTextLegacy("NAV POST", "navpost_input").text;
+		if (Startup.StringNullOrEmpty(text))
+		{
+			PopupControl.Instance.ShowMessage("Enter a town name!");
+			return;
+		}
+		ExtraInventoryData extraDataCopy = GameController.Instance.interacting_element_item.GetExtraDataCopy();
+		extraDataCopy.SetString("sign_text", text);
+		extraDataCopy.SetString("text_col", edit_navpost_col);
+		PlayerReplaceInteracting(new InventoryItem(GameController.Instance.interacting_element_item.item_name, extraDataCopy), true);
+		GameplayGUIControl.Instance.ShowNotif(FormatNavpostString(text, edit_navpost_col), new InventoryItem("Navpost"), 1, new OnNotifClick(OnNotifClick.type.none));
+		WindowControl.Instance.CloseMiniwindow(true);
 	}
 
 	public string FormatNavpostString(string text, string col)
 	{
-		return null;
+		switch (col)
+		{
+		case "green":
+			return "Town of <color=#74ff4d>" + text + "</color>";
+		case "yellow":
+			return "Town of <color=#fff64d>" + text + "</color>";
+		case "pink":
+			return "Town of <color=#ef5eff>" + text + "</color>";
+		case "red":
+			return "Town of <color=#FF6666>" + text + "</color>";
+		case "orange":
+			return "Town of <color=#ffc354>" + text + "</color>";
+		case "cyan":
+			return "Town of <color=#4dffff>" + text + "</color>";
+		case "blue":
+			return "Town of <color=#4da3ff>" + text + "</color>";
+		case "purple":
+			return "Town of <color=#a270ff>" + text + "</color>";
+		case "white":
+			return "Town of <color=#ffffff>" + text + "</color>";
+		default:
+			return text;
+		}
 	}
 
 	public object_geometry GetItemGeometry(string item_name)
