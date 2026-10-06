@@ -18,9 +18,9 @@ public class UngeneratedCaveChunk
 
 	public bool add_spikes;
 
-	public string small_ore;
+	public string small_ore = "";
 
-	public string large_ore;
+	public string large_ore = "";
 
 	public int small_budget;
 

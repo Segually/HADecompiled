@@ -2016,12 +2016,15 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public int GetCaveFloorModelBelow(GameObject obj)
 	{
-		return 0;
+		string chunkString = GetChunkString(obj.transform.position);
+		return IsChunkFullyLoadedOrMidload(chunkString) ? GetChunk(chunkString).chunk_data.floor_model_id : 0;
 	}
 
 	public int GetCaveExitFloorModel()
 	{
-		return 0;
+		if (ZoneDataControl.Instance.curr_cave_exit == null) return -1;
+		string chunkString = GetChunkString(ZoneDataControl.Instance.curr_cave_exit.transform.position);
+		return IsChunkFullyLoadedOrMidload(chunkString) ? GetChunk(chunkString).chunk_data.floor_model_id : -1;
 	}
 
 	private void Rotate(GameObject G, Vector3 local_origin, float degrees)
