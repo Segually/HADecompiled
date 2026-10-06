@@ -974,6 +974,48 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void crafting_inc_page(int dir)
 	{
+		AudioControl.Instance.PlayGenericClick();
+		do_cascade_craft_buttons(dir);
+		switch (dir)
+		{
+		case -1:
+			crafting_page_left.GetComponent<Animation>().Stop();
+			crafting_page_left.GetComponent<Animation>().Play();
+			break;
+		case 1:
+			crafting_page_right.GetComponent<Animation>().Stop();
+			crafting_page_right.GetComponent<Animation>().Play();
+			break;
+		}
+		if (GameServerConnector.Instance.FullyInGame() && WindowControl.Instance.curr_miniwindow == WindowControl.miniwindow_type_t.teleport && WindowControl.Instance.curr_miniwindow_tab_selected == WindowControl.tab.right && !GameServerConnector.Instance.is_host)
+		{
+			PopupControl.Instance.ShowConnecting("Loading teleporters");
+			if (!CustomTeleporterControl.Instance.in_search_screen)
+			{
+				GameServerSender.Instance.RequestPageOfTeleportersByPageNumber(craft_PAGE + dir, false);
+			}
+			else
+			{
+				GameServerSender.Instance.RequestPageOfTeleportersByPageNumber(CustomTeleporterControl.Instance.search_page + dir, true);
+			}
+			return;
+		}
+		if (page_exists(dir))
+		{
+			craft_PAGE += dir;
+			GameServerConnector.Instance.FullyInGame();
+			if (curr_crafting_list != null)
+			{
+				curr_crafting_list.saved_page += dir;
+			}
+			else if (WindowControl.Instance.curr_miniwindow == WindowControl.miniwindow_type_t.teleport && WindowControl.Instance.curr_miniwindow_tab_selected == WindowControl.tab.left)
+			{
+				CustomTeleporterControl.Instance.curr_hardcoded_teleporters_page += dir;
+			}
+			RedrawCraftingSlotButtons();
+		}
+		crafting_page_left.SetActive(page_exists(-1));
+		crafting_page_right.SetActive(page_exists(1));
 	}
 
 	public void LoadInventory()
@@ -988,28 +1030,149 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void BeginCraftAnimation()
 	{
+		WindowControl.Instance.VisuallySelectLeftMiniwindowTab();
+		OnLeftMiniwindowTabClicked();
+		StartCoroutine(mix_items());
 	}
 
 	public void AcceptBuy()
 	{
+		int buyPrice = MerchantControl.Instance.GetBuyPrice(trying_to_craft.item);
+		DeductCoins(trying_to_craft.count * buyPrice);
+		GiveItem(trying_to_craft.item, trying_to_craft.count, "");
+		curr_crafting_list.items[buy_index] = new ItemCountPair(curr_crafting_list.items[buy_index].item, Mathf.Max(curr_crafting_list.items[buy_index].count - trying_to_craft.count, 0));
+		InventoryItem interacting_element_item = GameController.Instance.interacting_element_item;
+		InventoryItem new_item = ChunkControl.Instance.EncodeItemListIntoItem("sell_list_" + interacting_element_item.GetString("merchant_type"), curr_crafting_list.items, interacting_element_item);
+		ConstructionControl.Instance.PlayerReplaceInteracting(new_item, true);
+		MerchantControl.Instance.DrawMerchantSlot(buy_index - craft_PAGE * 3, buy_index);
+		StartCoroutine(DelayedBuySuccessNotif(trying_to_craft));
 	}
 
 	public void ShowDelayedBuySuccessNotif(ItemCountPair received)
 	{
+		StartCoroutine(DelayedBuySuccessNotif(received));
 	}
 
 	private IEnumerator DelayedBuySuccessNotif(ItemCountPair received)
 	{
-		return null;
+		yield return new WaitForSeconds(0.13f);
+		string text = ((received.item.item_name == "Saved Record") ? DevBuildControl.Instance.NPC_musicboxes[received.item.GetShort("npc_record_index")].sale_name : ((!(received.item.item_name == "Painting")) ? GetFullItemName(received.item) : DevBuildControl.Instance.NPC_paintings[received.item.GetShort("dev_painting_id")].name));
+		string text2 = TranslationControl.Instance.TranslateGeneral("Received XYZ!", "GUI");
+		string newValue = ((received.count != 1) ? ("x" + received.count + " " + text) : text);
+		string tEXT = "<color=#eeee55>" + text + "</color>\n" + text2.Replace("XYZ", newValue);
+		ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, tEXT, new Color(0.45f, 0.92f, 1f, 1f), received.item, received.count, new Color(0.26f, 0.6f, 0.79f, 1f), ShopControl.popup_context.craft_message);
+		GameController.Instance.sound_buy();
 	}
 
 	public void DeductCoins(int amount)
 	{
+		player_inventory.RemoveItemByName("Coins", amount);
 	}
 
 	private IEnumerator mix_items()
 	{
-		return null;
+		angular_animation_playing = true;
+		yield return new WaitForSeconds(0.1f);
+		int index = crafting_mixer_slots[0].index;
+		int slot_instance_index = -1;
+		if ((uint)(index - 15) < 5u)
+		{
+			slot_instance_index = index;
+		}
+		else if (index >= 0 && index < n_slots_per_page_)
+		{
+			if (page_inventory != 1)
+			{
+				inv_page_switch(1);
+			}
+			slot_instance_index = index;
+		}
+		else if (index >= p2_begin_ && index < n_slots_per_page_ + p2_begin_)
+		{
+			if (page_inventory != 2)
+			{
+				inv_page_switch(2);
+			}
+			slot_instance_index = index - p2_begin_;
+		}
+		List<GameObject> floating_mix_icons = new List<GameObject>();
+		for (int i = 0; i < crafting_mixer_slots.Count; i++)
+		{
+			if (crafting_mixer_slots[i].index != index || crafting_mixer_slots[i].deduct_amount != 0)
+			{
+				GameObject gameObject = UnityEngine.Object.Instantiate(type_particle_mixer);
+				gameObject.transform.SetParent(slot_parent);
+				gameObject.transform.localRotation = Quaternion.identity;
+				if (page_inventory == 2)
+				{
+					if (crafting_mixer_slots[i].index > n_slots_per_page_)
+					{
+						gameObject.transform.localPosition = instantiated_inv_slots[crafting_mixer_slots[i].index - p2_begin_].transform.localPosition;
+					}
+					else
+					{
+						gameObject.transform.localPosition = invPAGE1.transform.localPosition;
+					}
+				}
+				else if (page_inventory == 1)
+				{
+					if (crafting_mixer_slots[i].index < p2_begin_)
+					{
+						gameObject.transform.localPosition = instantiated_inv_slots[crafting_mixer_slots[i].index].transform.localPosition;
+					}
+					else
+					{
+						gameObject.transform.localPosition = invPAGE2.transform.localPosition;
+					}
+				}
+				gameObject.transform.localScale = Vector3.one;
+				floating_mix_icons.Add(gameObject);
+				gameObject.transform.GetChild(0).GetComponent<ItemSprite>().RedrawBasic(player_inventory[crafting_mixer_slots[i].index].item, player_inventory[crafting_mixer_slots[i].index].count);
+			}
+			int index2 = crafting_mixer_slots[i].index;
+			player_inventory[index2] = new ItemCountPair(player_inventory[index2].item, player_inventory[index2].count - crafting_mixer_slots[i].deduct_amount);
+			if (player_inventory[crafting_mixer_slots[i].index].count >= 1)
+			{
+				continue;
+			}
+			player_inventory[crafting_mixer_slots[i].index] = new ItemCountPair("", 0);
+			if (page_inventory == 2)
+			{
+				if (crafting_mixer_slots[i].index >= p2_begin_)
+				{
+					int num = crafting_mixer_slots[i].index - p2_begin_;
+					instantiated_inv_slots[num].GetComponent<InventorySlotObject>().item_sprite.RedrawAsInventoryNormal("", 0, num);
+				}
+			}
+			else if (page_inventory == 1 && crafting_mixer_slots[i].index <= n_slots_per_page_)
+			{
+				int index3 = crafting_mixer_slots[i].index;
+				instantiated_inv_slots[index3].GetComponent<InventorySlotObject>().item_sprite.RedrawAsInventoryNormal("", 0, index3);
+			}
+		}
+		Vector3 target_position = instantiated_inv_slots[slot_instance_index].transform.localPosition;
+		for (float i2 = 0f; i2 < 10f; i2 += 1f)
+		{
+			foreach (GameObject item in floating_mix_icons)
+			{
+				item.transform.localPosition = Vector3.Lerp(item.transform.localPosition, target_position, i2 * 0.125f);
+			}
+			yield return new WaitForEndOfFrame();
+		}
+		foreach (GameObject item2 in floating_mix_icons)
+		{
+			UnityEngine.Object.Destroy(item2);
+		}
+		GiveItem(trying_to_craft.item, trying_to_craft.count, "", false);
+		instantiated_inv_slots[slot_instance_index].GetComponent<InventorySlotObject>().animated_segment.Play("inventory_craft_oncomplete");
+		RedrawInventorySlots();
+		show_angular(target_position, default_angular_col);
+		if (GetItemSoundOnCraft(trying_to_craft.item.item_name) == sound_on_craft.bubbles)
+		{
+			AudioControl.Instance.Play(AudioControl.Instance.sfx_bubbles_crafting);
+		}
+		yield return new WaitForSeconds(0.5f);
+		angular_animation_playing = false;
 	}
 
 	private BasketContents ClonePlayerInventory()
@@ -1024,6 +1187,55 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	private int TestCanCraftItem(string item_name, int count, string reqA_item, int reqA_n_remaining, string reqB_item = "", int reqB_n_remaining = 0)
 	{
+		BasketContents basketContents = ClonePlayerInventory();
+		List<craft_mixer_slot> list = new List<craft_mixer_slot>();
+		foreach (int item in basketContents.FilledSlots())
+		{
+			if (reqA_n_remaining != 0 && basketContents[item].item.item_name == reqA_item)
+			{
+				int num = ((basketContents[item].count <= reqA_n_remaining) ? basketContents[item].count : reqA_n_remaining);
+				basketContents[item] = new ItemCountPair(basketContents[item].item, basketContents[item].count - num);
+				list.Add(new craft_mixer_slot
+				{
+					index = item,
+					deduct_amount = num
+				});
+				reqA_n_remaining = Mathf.Max(reqA_n_remaining - num, 0);
+			}
+			else if (reqB_item != "" && reqB_n_remaining != 0 && basketContents[item].item.item_name == reqB_item)
+			{
+				int num2 = ((basketContents[item].count <= reqB_n_remaining) ? basketContents[item].count : reqB_n_remaining);
+				basketContents[item] = new ItemCountPair(basketContents[item].item, basketContents[item].count - num2);
+				list.Add(new craft_mixer_slot
+				{
+					index = item,
+					deduct_amount = num2
+				});
+				reqB_n_remaining = Mathf.Max(reqB_n_remaining - num2, 0);
+			}
+			if (reqB_item == "")
+			{
+				if (reqA_n_remaining == 0)
+				{
+					goto IL_done;
+				}
+			}
+			else if (reqA_n_remaining == 0 && reqB_n_remaining == 0)
+			{
+				goto IL_done;
+			}
+		}
+		return 1;
+		IL_done:
+		crafting_mixer_slots.Clear();
+		if (!CanReceiveItem(item_name, count, false, basketContents, true))
+		{
+			return 2;
+		}
+		foreach (craft_mixer_slot item2 in list)
+		{
+			crafting_mixer_slots.Add(item2);
+		}
 		return 0;
 	}
 
@@ -1185,15 +1397,118 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	private int GetMaxBuy(InventoryItem item, int og_max)
 	{
-		return 0;
+		int num = HowManyCanReceive(item.item_name);
+		int num2 = HowManyCanAfford(item);
+		if (num2 <= num)
+		{
+			num = num2;
+		}
+		if (og_max <= num)
+		{
+			num = og_max;
+		}
+		return num;
 	}
 
 	public void PressBuyItem(int button_index)
 	{
+		InventoryItem item = curr_crafting_list.items[craft_PAGE * 3 + button_index].item;
+		int num = curr_crafting_list.items[craft_PAGE * 3 + button_index].count;
+		string text = GetFullItemName(item);
+		if (!iap_allowed(item))
+		{
+			iap_deny_popup(item, "buy");
+			return;
+		}
+		if (num < 1)
+		{
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + text + "</color>\n" + TranslationControl.Instance.TranslateGeneral("Out of stock. Come back tomorrow!", "GUI"), new Color(0.74509805f, 0.74509805f, 0.74509805f, 1f), item, 1, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			return;
+		}
+		int playerItemCount = GetPlayerItemCount("Coins");
+		if (item.item_name == "Saved Record")
+		{
+			text = DevBuildControl.Instance.NPC_musicboxes[item.GetShort("npc_record_index")].sale_name;
+		}
+		else if (item.item_name == "Painting")
+		{
+			text = DevBuildControl.Instance.NPC_paintings[item.GetShort("dev_painting_id")].name;
+		}
+		int buyPrice = MerchantControl.Instance.GetBuyPrice(item);
+		if (playerItemCount == -1 || buyPrice == -1)
+		{
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "ERROR", new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, 1, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			return;
+		}
+		if (!CanReceiveItem(item, 1))
+		{
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + text + "</color>\n" + TranslationControl.Instance.TranslateGeneral("Inventory Full!", "GUI"), new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, 1, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			return;
+		}
+		if (buyPrice > playerItemCount)
+		{
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + text + "</color>\n" + TranslationControl.Instance.TranslateGeneral("Not enough coins!", "GUI"), new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, 1, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			return;
+		}
+		int maxBuy = GetMaxBuy(item, num);
+		buy_index = craft_PAGE * 3 + button_index;
+		trying_to_craft = new ItemCountPair(item, 1);
+		if (maxBuy != 1)
+		{
+			ShopControl.Instance.ShowShopPopup("ACCEPT", ShopControl.button_color_t.yes_green, "CANCEL", ShopControl.button_color_t.no_red, false, TranslationControl.Instance.TranslateGeneral("Buy how many?", "GUI"), new Color(1f, 1f, 1f, 1f), item, 1, new Color(0.2980392f, 0.50980395f, 0.5294118f, 1f), ShopControl.popup_context.vendor_buy_yes_no, maxBuy);
+			return;
+		}
+		string tEXT = TranslationControl.Instance.TranslateGeneral("Buy XYZ?", "GUI").Replace("XYZ", "<color=#eeee55>" + text + "</color>");
+		ShopControl.Instance.ShowShopPopup("YES", ShopControl.button_color_t.yes_green, "CANCEL", ShopControl.button_color_t.no_red, false, tEXT, new Color(1f, 1f, 1f, 1f), item, 1, new Color(0.29803923f, 0.50980395f, 0.5294118f, 1f), ShopControl.popup_context.vendor_buy_yes_no);
 	}
 
 	public void PressCraftItem(int button_index)
 	{
+		InventoryItem item = curr_crafting_list.items[craft_PAGE * 3 + button_index].item;
+		int count = curr_crafting_list.items[craft_PAGE * 3 + button_index].count;
+		string fullItemName = GetFullItemName(item);
+		if (!iap_allowed(item))
+		{
+			iap_deny_popup(item, "craft");
+			return;
+		}
+		if (GameController.Instance.player_stats[5] < GetItemCraftingLevelRequired(item.item_name))
+		{
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + fullItemName + "</color>\n" + TranslationControl.Instance.TranslateGeneral("Your crafting skill is too low to build this!", "GUI"), new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, count, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			return;
+		}
+		string item_name = curr_crafting_list.items[craft_PAGE * 3 + button_index].item.item_name;
+		int count2 = curr_crafting_list.items[craft_PAGE * 3 + button_index].count;
+		string itemCraftingIngredientA = GetItemCraftingIngredientA(item_name);
+		int itemCraftingIngredientA_count = GetItemCraftingIngredientA_count(item_name);
+		string itemCraftingIngredientB = GetItemCraftingIngredientB(item_name);
+		int itemCraftingIngredientB_count = GetItemCraftingIngredientB_count(item_name);
+		int num = TestCanCraftItem(item_name, count2, itemCraftingIngredientA, itemCraftingIngredientA_count, itemCraftingIngredientB, itemCraftingIngredientB_count);
+		if (num == 1)
+		{
+			string craftingAltIngredientA = GetCraftingAltIngredientA(item_name);
+			int itemCraftingAltIngredientA_count = GetItemCraftingAltIngredientA_count(item_name);
+			if (!Startup.StringNullOrWhitespace(craftingAltIngredientA))
+			{
+				num = TestCanCraftItem(item_name, count2, craftingAltIngredientA, itemCraftingAltIngredientA_count);
+			}
+		}
+		switch (num)
+		{
+		case 2:
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + fullItemName + "</color>\n" + TranslationControl.Instance.TranslateGeneral("Not enough inventory space", "GUI"), new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, count, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message);
+			break;
+		case 1:
+			ShopControl.Instance.ShowShopPopup("OKAY", ShopControl.button_color_t.okay_blue, "", ShopControl.button_color_t.none, false, "<color=#eeee55>" + TranslationControl.Instance.TranslateGeneral("To build this, you need", "GUI") + "</color>", new Color(0.9411765f, 0.3019608f, 0.3019608f, 1f), item, count, new Color(0.39215687f, 0.39215687f, 0.39215687f, 1f), ShopControl.popup_context.craft_message, -1, new InventoryItem(itemCraftingIngredientA), itemCraftingIngredientA_count, new InventoryItem(itemCraftingIngredientB), itemCraftingIngredientB_count, ShopControl.req_context_t.insufficient);
+			break;
+		case 0:
+		{
+			trying_to_craft = new ItemCountPair(item, count);
+			string tEXT = TranslationControl.Instance.TranslateGeneral("Build a XYZ?", "GUI").Replace("XYZ", "<color=#eeee55>" + fullItemName + "</color>");
+			ShopControl.Instance.ShowShopPopup("YES", ShopControl.button_color_t.yes_green, "CANCEL", ShopControl.button_color_t.no_red, false, tEXT, new Color(1f, 1f, 1f, 1f), item, count, new Color(0.29803923f, 0.50980395f, 0.5294118f, 1f), ShopControl.popup_context.craft_yes_no);
+			break;
+		}
+		}
 	}
 
 	public InventoryItem AdjustMouseItemData(InventoryItem item)
@@ -2247,6 +2562,24 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void OpenInventoryAndMerchant(WindowControl.tab initial_tab, new_craft_list list)
 	{
+		if (!WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.inventory_and_merchant))
+		{
+			return;
+		}
+		curr_crafting_list = list;
+		WindowControl.Instance.miniwindow_header_L.text = TranslationControl.Instance.TranslateGeneral("Sell Items", "GUI").ToUpper();
+		WindowControl.Instance.miniwindow_header_R.text = TranslationControl.Instance.TranslateGeneral("Buy Items", "GUI").ToUpper();
+		switch (initial_tab)
+		{
+		case WindowControl.tab.right:
+			WindowControl.Instance.VisuallySelectRightMiniwindowTab();
+			OnRightMiniwindowTabClicked();
+			break;
+		case WindowControl.tab.left:
+			WindowControl.Instance.VisuallySelectLeftMiniwindowTab();
+			OnLeftMiniwindowTabClicked();
+			break;
+		}
 	}
 
 	public void OnLeftMiniwindowTabClicked()
@@ -2281,14 +2614,19 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void open_buy()
 	{
+		open_merchant_window(WindowControl.tab.right);
 	}
 
 	public void open_sell()
 	{
+		open_merchant_window(WindowControl.tab.left);
 	}
 
 	private void open_merchant_window(WindowControl.tab tab)
 	{
+		new_craft_list sellList = MerchantControl.Instance.GetSellList();
+		curr_buyback_list = MerchantControl.Instance.GetAllBuybackItems();
+		OpenInventoryAndMerchant(tab, sellList);
 	}
 
 	public void press_inv_button()
@@ -3086,14 +3424,130 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void RedrawCraftingSlotButtons()
 	{
+		for (int i = 0; i < 3; i++)
+		{
+			int num = i + craft_PAGE * 3;
+			switch (WindowControl.Instance.curr_miniwindow)
+			{
+			case WindowControl.miniwindow_type_t.inventory_and_crafting:
+				if (num < curr_crafting_list.items.Length)
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(true);
+					DrawCraftingSlotPart1(i, num);
+				}
+				else
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(false);
+				}
+				break;
+			case WindowControl.miniwindow_type_t.quests_and_achieves:
+				if (num < AchievesControl.Instance.all_achivements.Length)
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(true);
+					AchievesControl.Instance.DrawAchievementSlot(i, num);
+				}
+				else
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(false);
+				}
+				break;
+			case WindowControl.miniwindow_type_t.teleport:
+				if (WindowControl.Instance.curr_miniwindow_tab_selected == WindowControl.tab.left)
+				{
+					if (num < CustomTeleporterControl.Instance.hardcoded_teleports.Length)
+					{
+						instantiated_crafting_slots[i].gameObject.SetActive(true);
+						CustomTeleporterControl.Instance.DrawHardcodedTeleporterSlot(i, num);
+					}
+					else
+					{
+						instantiated_crafting_slots[i].gameObject.SetActive(false);
+					}
+				}
+				else if (num < CustomTeleporterControl.Instance.GetNumberOfActiveTeleporters())
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(true);
+					CustomTeleporterControl.Instance.DrawCustomTeleporterSlot(i, num);
+				}
+				else
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(false);
+				}
+				break;
+			case WindowControl.miniwindow_type_t.inventory_and_merchant:
+				if (num < curr_crafting_list.items.Length)
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(true);
+					MerchantControl.Instance.DrawMerchantSlot(i, num);
+				}
+				else
+				{
+					instantiated_crafting_slots[i].gameObject.SetActive(false);
+				}
+				break;
+			}
+		}
+		for (int j = 0; j < 3; j++)
+		{
+			if (WindowControl.Instance.curr_miniwindow == WindowControl.miniwindow_type_t.inventory_and_crafting && j + craft_PAGE * 3 < curr_crafting_list.items.Length)
+			{
+				DrawCraftingSlotPart2(j, j + craft_PAGE * 3);
+			}
+		}
 	}
 
 	private void DrawCraftingSlotPart1(int slot_id, int index)
 	{
+		InventoryItem item = curr_crafting_list.items[index].item;
+		int count = curr_crafting_list.items[index].count;
+		string fullItemName = GetFullItemName(item);
+		string itemDescription = GetItemDescription(item.item_name);
+		GetItemCraftingIngredientA(item.item_name);
+		string itemCraftingIngredientB = GetItemCraftingIngredientB(item.item_name);
+		int itemCraftingIngredientA_count = GetItemCraftingIngredientA_count(item.item_name);
+		int itemCraftingIngredientB_count = GetItemCraftingIngredientB_count(item.item_name);
+		string craftingAltIngredientA = GetCraftingAltIngredientA(item.item_name);
+		int itemCraftingAltIngredientA_count = GetItemCraftingAltIngredientA_count(item.item_name);
+		bool flag = itemCraftingIngredientB == "" && craftingAltIngredientA != "";
+		CraftingSlot.req_placement req_place = (flag ? CraftingSlot.req_placement.enable_OR : CraftingSlot.req_placement.enable_normal);
+		instantiated_crafting_slots[slot_id].LayOutCraftingSlot(fullItemName, itemDescription, 1f, false, false, false, true, flag, req_place, CraftingSlot.text_area_layout.condensed_crafting, CraftingSlot.slots_positioning.full_size, false);
+		CraftingSlot craftingSlot = instantiated_crafting_slots[slot_id];
+		craftingSlot.result_sprite.RedrawAsCrafting(item, count);
+		craftingSlot.costA_txt.text = "x" + itemCraftingIngredientA_count;
+		if (itemCraftingIngredientB != "")
+		{
+			craftingSlot.costB_txt.text = "x" + itemCraftingIngredientB_count;
+		}
+		else if (craftingAltIngredientA != "")
+		{
+			craftingSlot.costB_txt.text = "x" + itemCraftingAltIngredientA_count;
+		}
+		else
+		{
+			craftingSlot.reqB_sprite.gameObject.SetActive(false);
+			craftingSlot.costB_txt.text = "";
+		}
 	}
 
 	private void DrawCraftingSlotPart2(int slot_id, int index)
 	{
+		InventoryItem item = curr_crafting_list.items[index].item;
+		string itemCraftingIngredientA = GetItemCraftingIngredientA(item.item_name);
+		string itemCraftingIngredientB = GetItemCraftingIngredientB(item.item_name);
+		int itemCraftingIngredientA_count = GetItemCraftingIngredientA_count(item.item_name);
+		int itemCraftingIngredientB_count = GetItemCraftingIngredientB_count(item.item_name);
+		string craftingAltIngredientA = GetCraftingAltIngredientA(item.item_name);
+		int itemCraftingAltIngredientA_count = GetItemCraftingAltIngredientA_count(item.item_name);
+		CraftingSlot craftingSlot = instantiated_crafting_slots[slot_id];
+		craftingSlot.reqA_sprite.RedrawBasicHideCount(itemCraftingIngredientA, itemCraftingIngredientA_count);
+		if (itemCraftingIngredientB != "")
+		{
+			craftingSlot.reqB_sprite.RedrawBasicHideCount(itemCraftingIngredientB, itemCraftingIngredientB_count);
+		}
+		else if (craftingAltIngredientA != "")
+		{
+			craftingSlot.reqB_sprite.RedrawBasicHideCount(craftingAltIngredientA, itemCraftingAltIngredientA_count);
+		}
 	}
 
 	public void hide_selector()
@@ -3797,6 +4251,47 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	public void CompleteSell()
 	{
+		int sellPrice = MerchantControl.Instance.GetSellPrice(trying_to_craft.item);
+		int num = trying_to_craft.count * sellPrice;
+		BasketContents basketContents = ClonePlayerInventory();
+		basketContents.RemoveItemExact(trying_to_craft.item, trying_to_craft.count, sell_index);
+		if (!CanReceiveItem("Coins", num, false, basketContents))
+		{
+			PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("Can't sell item - you don't have enough space in your inventory for all the coins you will recieve!", "GUI"), PopupControl.context.message);
+			RedrawInventorySlots();
+			return;
+		}
+		player_inventory.RemoveItemExact(trying_to_craft.item, trying_to_craft.count, sell_index);
+		GiveItem("Coins", num, "", false);
+		PopupControl.Instance.HideAll();
+		mouse_down_slot.GetComponent<InventorySlotObject>().animated_segment.Play("inventory_craft_oncomplete");
+		show_angular(mouse_down_slot.transform.localPosition, default_angular_col, angular_sound_t.sell);
+		RedrawInventorySlots();
+		if (!(GameController.Instance.interacting_element_item.GetString("npc_file") == "Cupcake Crab"))
+		{
+			return;
+		}
+		switch (trying_to_craft.item.item_name)
+		{
+		case "Black Shell":
+		case "Blue Shell":
+		case "Green Shell":
+		case "White Shell":
+		case "Gold Shell":
+		case "Red Shell":
+		case "Purple Shell":
+			switch (QuestControl.Instance.TrySellQuestItemToNPC("Colors of the Sea", 1, 2, trying_to_craft.item))
+			{
+			case QuestControl.sell_quest_item_result.all_collected:
+				enter_dialogue_on_close = 800;
+				WindowControl.Instance.CloseMiniwindow(false);
+				break;
+			case QuestControl.sell_quest_item_result.new_collected:
+				enter_dialogue_on_close = 800;
+				break;
+			}
+			break;
+		}
 	}
 
 	private int GetTotalNumberOfItemInInventory(InventoryItem item)
@@ -4211,10 +4706,23 @@ public class inventory_ctr : MonoBehaviour, OrderedStart
 
 	private void do_cascade_craft_buttons(int dir)
 	{
+		if (CASCADE_CRAFT_BUTS != null)
+		{
+			StopCoroutine(CASCADE_CRAFT_BUTS);
+		}
+		CASCADE_CRAFT_BUTS = cascade_craft_buts(dir);
+		StartCoroutine(CASCADE_CRAFT_BUTS);
 	}
 
 	private IEnumerator cascade_craft_buts(int dir)
 	{
-		return null;
+		for (int i = 0; i < 3; i++)
+		{
+			int index = ((dir == -1) ? i : (2 - i));
+			instantiated_crafting_slots[index].GetComponent<Animation>().Stop();
+			instantiated_crafting_slots[index].GetComponent<Animation>().Play();
+			yield return new WaitForSeconds(0.01f);
+		}
+		CASCADE_CRAFT_BUTS = null;
 	}
 }

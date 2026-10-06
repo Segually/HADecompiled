@@ -374,6 +374,8 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void SetBackground_NPC()
 	{
+		background_type = background_type_t.NPC_background;
+		EvalDaynight();
 	}
 
 	public void SetBackground_Explore()
@@ -1642,6 +1644,61 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	private void OnInteractWithNPC(string zone, int chunkX, int chunkZ, int innerX, int innerZ)
 	{
+		string chunkString = ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ);
+		if (!ChunkControl.Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return;
+		}
+		GameObject buildableInstanceByName = ChunkControl.Instance.GetChunkObj(chunkString).GetBuildableInstanceByName(innerX, innerZ, "DEBUG-npc");
+		if (buildableInstanceByName == null)
+		{
+			return;
+		}
+		Interactable component = buildableInstanceByName.GetComponent<Interactable>();
+		if (!WindowControl.Instance.CanOpenGenericWindow())
+		{
+			return;
+		}
+		WindowControl.Instance.DoOpenGenericWindow();
+		FullNPC fullNPC = DialogueControl.Instance.GetFullNPC(component.corresponding_item);
+		string curr_NPC_display_name = "???";
+		if (fullNPC != null)
+		{
+			curr_NPC_display_name = ((!(fullNPC.translated_display_name == "")) ? fullNPC.translated_display_name : component.corresponding_item.GetString("npc_display_name"));
+		}
+		string @string = component.corresponding_item.GetString("voice");
+		Dictionary<int, Dictionary<string, object>> dictionary = null;
+		if (component.corresponding_item.GetString("npc_is_free_follower") == "true" && GameServerConnector.Instance.FullyInGame() && !GameServerConnector.Instance.is_host)
+		{
+			dictionary = new Dictionary<int, Dictionary<string, object>>();
+			string text = GameServerConnector.Instance.server_name.Replace("(private)", "");
+			Dictionary<string, object> dictionary2 = new Dictionary<string, object>();
+			dictionary2.Add("type", "NPC_speak");
+			dictionary2.Add("text", "I will only speak to " + text + "...");
+			dictionary2.Add("highlight", text);
+			dictionary2.Add("go_to", 1);
+			dictionary.Add(0, dictionary2);
+			Dictionary<string, object> dictionary3 = new Dictionary<string, object>();
+			dictionary3.Add("type", "NPC_speak");
+			dictionary3.Add("text", "......");
+			dictionary3.Add("go_to", -1);
+			dictionary.Add(1, dictionary3);
+		}
+		if (dictionary == null && fullNPC != null)
+		{
+			dictionary = fullNPC.dialogue_data;
+		}
+		string text2 = component.transform.Find("creature-go-here").GetChild(0).GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[0];
+		string text3 = component.transform.Find("creature-go-here").GetChild(0).GetComponent<LiteModel>().original.creatures_that_made_me_TRANSLATED[1];
+		string curr_NPC_combo_text = "(" + text2 + " + " + text3 + ")";
+		interacting_element_chunkX = chunkX;
+		interacting_element_chunkZ = chunkZ;
+		interacting_element_innerX = innerX;
+		interacting_element_innerZ = innerZ;
+		interacting_element_item = component.corresponding_item;
+		interacting_element_rot = component.temp_rot;
+		DialogueControl.Instance.SetFocusNpc(buildableInstanceByName, curr_NPC_display_name, curr_NPC_combo_text, DialogueControl.focus_type_t.stationary_npc);
+		DialogueControl.Instance.EnterDialogue(dictionary, 0, @string);
 	}
 
 	private void OpenPaintingScreen()

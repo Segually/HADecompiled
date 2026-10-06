@@ -159,7 +159,11 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public bool IsLockedByDev(InventoryItem item)
 	{
-		return false;
+		if (all_doors_unlocked)
+		{
+			return false;
+		}
+		return item.GetString("password") == "DEV_LOCKED";
 	}
 
 	public string GetRandomFreeFollowerName()

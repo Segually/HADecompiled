@@ -328,7 +328,14 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public InventoryItem EncodeItemListIntoItem(string list_name, ItemCountPair[] items, InventoryItem old_item)
 	{
-		return null;
+		ExtraInventoryData extraDataCopy = old_item.GetExtraDataCopy();
+		extraDataCopy.SetShort(list_name + "_n_encoded_items", items.Length);
+		for (int i = 0; i < items.Length; i++)
+		{
+			extraDataCopy.SaveSubItem(items[i].item, list_name + "_item_" + i);
+			extraDataCopy.SetShort(list_name + "_count_" + i, items[i].count);
+		}
+		return new InventoryItem(old_item.item_name, extraDataCopy);
 	}
 
 	public ItemCountPair[] GetItemListFromItem(string list_name, InventoryItem item)
@@ -351,7 +358,22 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public GameObject GetObjectAt(string object_name, string zone, int chunkX, int chunkZ, int innerX, int innerZ)
 	{
-		return null;
+		string chunkString = GetChunkString(zone, chunkX, chunkZ);
+		if (!Instance.IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			return null;
+		}
+		ChunkObj chunkObj = Instance.GetChunk(chunkString)?.chunk_obj;
+		InventoryItem item = null;
+		foreach (ChunkElement item2 in Instance.GetChunk(chunkString).chunk_data.GetElementsAt(innerX, innerZ))
+		{
+			if (item2.item.item_name == object_name)
+			{
+				item = item2.item;
+				break;
+			}
+		}
+		return chunkObj.GetBuildableInstanceByItem(innerX, innerZ, item);
 	}
 
 	public static string GetZoneFromChunkStr(string chunkStr)

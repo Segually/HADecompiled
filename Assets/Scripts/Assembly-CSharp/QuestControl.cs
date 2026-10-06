@@ -35,25 +35,25 @@ public class QuestControl : MonoBehaviour, OrderedStart
 	public static string quest_cache_path = System.IO.Directory.CreateDirectory("Hybrid Animals Stuff/quest_scenics_CACHE").FullName; // Changed so it works on any computer: relative to the project folder, created if missing.
 	// public static string quest_cache_path = "C:\\Hybrid Animals Stuff\\quest_scenics_CACHE";
 
-	public Dictionary<string, Quest> loaded_quests;
+	public Dictionary<string, Quest> loaded_quests = new Dictionary<string, Quest>();
 
 	public GameObject quest_nib_prefab;
 
-	private List<GameObject> instantiated_quest_nibs;
+	private List<GameObject> instantiated_quest_nibs = new List<GameObject>();
 
-	public string show_quest_complete_popup_after;
+	public string show_quest_complete_popup_after = "";
 
-	private List<string> quest_names;
+	private List<string> quest_names = new List<string>();
 
-	public string quest_notif_on_exit_dialogue;
+	public string quest_notif_on_exit_dialogue = "";
 
 	public bool doing_time_trial;
 
 	public bool redraw_companions_on_scene_change;
 
-	public List<string> killGoal_mobs_killed;
+	public List<string> killGoal_mobs_killed = new List<string>();
 
-	public string quest_perk_reapply_key;
+	public string quest_perk_reapply_key = "";
 
 	public void Start_0()
 	{

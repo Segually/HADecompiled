@@ -53,7 +53,7 @@ public class InventoryUtils
 	public static bool UsesShackId(string item_name)
 	{
 		int buildingType = (int)GetBuildingType(item_name);
-		if (buildingType - 1 > 8 && !IsCaveObject(item_name) && !IsHeavenDimension(item_name) && !IsPureDimension(item_name) && !(item_name == "Pocket World Basement"))
+		if ((uint)(buildingType - 1) > 8u && !IsCaveObject(item_name) && !IsHeavenDimension(item_name) && !IsPureDimension(item_name) && !(item_name == "Pocket World Basement"))
 		{
 			return IsHellDimension(item_name);
 		}
