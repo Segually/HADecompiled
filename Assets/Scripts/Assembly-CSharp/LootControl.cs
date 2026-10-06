@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -74,24 +75,262 @@ public class LootControl : MonoBehaviour, OrderedStart
 
 	public static void GenerateLootData()
 	{
+		List<string> list = new List<string>();
+		List<string> list2 = new List<string>();
+		List<string> list3 = new List<string>();
+		List<string> list4 = new List<string>();
+		List<string> list5 = new List<string>();
+		List<string> list6 = new List<string>();
+		List<string> list7 = new List<string>();
+		List<string> list8 = new List<string>();
+		List<string> list9 = new List<string>();
+		List<item_price_pair> list10 = new List<item_price_pair>();
+		List<item_price_pair> list11 = new List<item_price_pair>();
+		List<item_price_pair> list12 = new List<item_price_pair>();
+		List<item_price_pair> list13 = new List<item_price_pair>();
+		List<item_price_pair> list14 = new List<item_price_pair>();
+		List<item_price_pair> list15 = new List<item_price_pair>();
+		Dictionary<string, List<item_price_pair>> dictionary = new Dictionary<string, List<item_price_pair>>();
+		string[] files = Directory.GetFiles(Application.dataPath + "/SYNCHRONOUS/TextFiles/InventoryItems");
+		foreach (string path in files)
+		{
+			if (Path.GetExtension(path) == ".meta")
+			{
+				continue;
+			}
+			string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(path);
+			Dictionary<string, string> item_entries = DebugParseItemEntries(File.ReadAllLines(path));
+			price_type_t price_type = price_type_t.UNKNOWN;
+			List<string> list16 = new List<string>();
+			bool paintable = false;
+			bool dont_paint_on_sell = false;
+			int max_stack = 1;
+			int price = DebugGetPrice(fileNameWithoutExtension, true, ref price_type, list16, ref paintable, ref dont_paint_on_sell, ref max_stack, item_entries);
+			switch (price_type)
+			{
+			case price_type_t.no_price_mentioned:
+				list3.Add(fileNameWithoutExtension);
+				continue;
+			case price_type_t.ERROR_no_ingredients:
+				list4.Add(fileNameWithoutExtension);
+				continue;
+			case price_type_t.calculated:
+				InsertPair(fileNameWithoutExtension, price, false, max_stack, ref list10);
+				break;
+			case price_type_t.hardcoded:
+				InsertPair(fileNameWithoutExtension, price, false, max_stack, ref list11);
+				break;
+			}
+			if (list16.Contains("Paintbrushes"))
+			{
+				InsertPair(fileNameWithoutExtension, price, false, max_stack, ref list13);
+			}
+			else if (list16.Contains("Stamps"))
+			{
+				InsertPair(fileNameWithoutExtension, price, false, max_stack, ref list14);
+			}
+			else if (list16.Contains("Weapons") || list16.Contains("Armor"))
+			{
+				InsertPair(fileNameWithoutExtension, price, false, max_stack, ref list15);
+			}
+			else if (!item_entries.ContainsKey("not_obtainable") && fileNameWithoutExtension != "Coins" && fileNameWithoutExtension != "Painting" && fileNameWithoutExtension != "Saved Record" && fileNameWithoutExtension != "Egg" && fileNameWithoutExtension != "Fossil" && fileNameWithoutExtension != "Bonsai Tree" && fileNameWithoutExtension != "Book")
+			{
+				InsertPair(fileNameWithoutExtension, price, paintable, max_stack, ref list12);
+			}
+			if (list16.Count == 0)
+			{
+				list9.Add(fileNameWithoutExtension);
+				continue;
+			}
+			foreach (string item in list16)
+			{
+				if (!dictionary.ContainsKey(item))
+				{
+					dictionary.Add(item, new List<item_price_pair>());
+				}
+				List<item_price_pair> list17 = dictionary[item];
+				InsertPair(fileNameWithoutExtension, price, !dont_paint_on_sell && paintable, max_stack, ref list17);
+			}
+		}
+		FormatPrices(list, list10);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_prices_Calculated.txt", list.ToArray());
+		FormatPrices(list2, list11);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_prices_Hardcoded.txt", list2.ToArray());
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_prices_NoPriceMentioned.txt", list3.ToArray());
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_prices_ErrorNoIngredients.txt", list4.ToArray());
+		FormatPrices(list5, list12);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) LOOT_normal_all.txt", list5.ToArray());
+		FormatPrices(list6, list13);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) LOOT_paintbrushes.txt", list6.ToArray());
+		FormatPrices(list7, list14);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) LOOT_stamps.txt", list7.ToArray());
+		FormatPrices(list8, list15);
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) LOOT_weapons_and_armor.txt", list8.ToArray());
+		foreach (KeyValuePair<string, List<item_price_pair>> item2 in dictionary)
+		{
+			List<string> list18 = new List<string>();
+			FormatPrices(list18, item2.Value);
+			Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) VENDOR_" + item2.Key + ".txt", list18.ToArray());
+		}
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_vendor_ErrorNoVendor.txt", list9.ToArray());
 	}
 
 	private static void FormatPrices(List<string> output, List<item_price_pair> input)
 	{
+		for (int i = 0; i < input.Count; i++)
+		{
+			output.Add("[" + input[i].base_price + "]" + (input[i].paintable ? "[paintable]" : "") + ((input[i].max_stack > 1) ? ("[max_stack=" + input[i].max_stack + "]") : "") + " " + input[i].item_name);
+		}
 	}
 
 	private static void InsertPair(string item, int price, bool paintable, int max_stack, ref List<item_price_pair> list)
 	{
+		item_price_pair item2 = new item_price_pair
+		{
+			item_name = item,
+			base_price = price,
+			paintable = paintable,
+			max_stack = max_stack
+		};
+		for (int i = 0; i < list.Count; i++)
+		{
+			if (price < list[i].base_price)
+			{
+				list.Insert(i, item2);
+				return;
+			}
+		}
+		list.Add(item2);
 	}
 
 	private static Dictionary<string, string> DebugParseItemEntries(string[] lines)
 	{
-		return null;
+		Dictionary<string, string> dictionary = new Dictionary<string, string>();
+		foreach (string text in lines)
+		{
+			if (!string.IsNullOrWhiteSpace(text))
+			{
+				string key = text;
+				string value = "";
+				if (text.Contains("="))
+				{
+					int num = text.IndexOf("=");
+					key = text.Substring(0, num).Trim();
+					value = text.Substring(num + 1, text.Length - (num + 1)).Trim();
+				}
+				dictionary.Add(key, value);
+			}
+		}
+		return dictionary;
 	}
 
 	private static int DebugGetPrice(string item_name, bool apply_craft_bonus, ref price_type_t price_type, List<string> lists, ref bool paintable, ref bool dont_paint_on_sell, ref int max_stack, Dictionary<string, string> item_entries)
 	{
-		return 0;
+		int num = -1;
+		if (item_entries.ContainsKey("Market Cost"))
+		{
+			string text = item_entries["Market Cost"];
+			if (text == "CALCULATE")
+			{
+				price_type = price_type_t.calculated;
+			}
+			else
+			{
+				price_type = price_type_t.hardcoded;
+				num = int.Parse(text);
+			}
+		}
+		int num2 = (item_entries.ContainsKey("Crafting_ingredient_A_count") ? int.Parse(item_entries["Crafting_ingredient_A_count"]) : (-1));
+		int num3 = (item_entries.ContainsKey("Crafting_ingredient_B_count") ? int.Parse(item_entries["Crafting_ingredient_B_count"]) : (-1));
+		string text2 = "";
+		if (item_entries.ContainsKey("Crafting_ingredient_A"))
+		{
+			text2 = item_entries["Crafting_ingredient_A"];
+		}
+		string text3 = "";
+		if (item_entries.ContainsKey("Crafting_ingredient_B"))
+		{
+			text3 = item_entries["Crafting_ingredient_B"];
+		}
+		float num4 = (item_entries.ContainsKey("Craft_required_lvl") ? ((float)int.Parse(item_entries["Craft_required_lvl"])) : 1f);
+		if (item_entries.ContainsKey("is_paintbrush") && item_entries["is_paintbrush"] == "true")
+		{
+			lists.Add("Paintbrushes");
+		}
+		if (item_entries.ContainsKey("is_stamp") && item_entries["is_stamp"] == "true")
+		{
+			lists.Add("Stamps");
+		}
+		if (item_entries.ContainsKey("paintable_by_player") && item_entries["paintable_by_player"] == "true")
+		{
+			paintable = true;
+		}
+		if (item_entries.ContainsKey("dont_sell_painted") && item_entries["dont_sell_painted"] == "true")
+		{
+			dont_paint_on_sell = true;
+		}
+		if (item_entries.ContainsKey("Max_stack"))
+		{
+			max_stack = int.Parse(item_entries["Max_stack"]);
+		}
+		float num5 = (item_entries.ContainsKey("Crafting_makes") ? float.Parse(item_entries["Crafting_makes"]) : 1f);
+		if (item_entries.ContainsKey("Vendor0"))
+		{
+			lists.Add(item_entries["Vendor0"]);
+		}
+		if (item_entries.ContainsKey("Vendor1"))
+		{
+			lists.Add(item_entries["Vendor1"]);
+		}
+		if (item_entries.ContainsKey("Vendor2"))
+		{
+			lists.Add(item_entries["Vendor2"]);
+		}
+		if (item_entries.ContainsKey("Vendor3"))
+		{
+			lists.Add(item_entries["Vendor3"]);
+		}
+		if (item_entries.ContainsKey("Vendor4"))
+		{
+			lists.Add(item_entries["Vendor4"]);
+		}
+		if (price_type != price_type_t.hardcoded)
+		{
+			if (price_type == price_type_t.calculated)
+			{
+				if (num2 != -1 && text2 != "")
+				{
+					price_type_t price_type2 = price_type_t.UNKNOWN;
+					List<string> lists2 = new List<string>();
+					bool paintable2 = false;
+					bool dont_paint_on_sell2 = false;
+					int max_stack2 = 0;
+					bool flag = text3 != "";
+					Dictionary<string, string> item_entries2 = DebugParseItemEntries(File.ReadAllLines(Application.dataPath + "/SYNCHRONOUS/TextFiles/InventoryItems/" + text2 + ".txt"));
+					if (num3 == -1 || !flag)
+					{
+						num = DebugGetPrice(text2, false, ref price_type2, lists2, ref paintable2, ref dont_paint_on_sell2, ref max_stack2, item_entries2) * num2;
+					}
+					else
+					{
+						Dictionary<string, string> item_entries3 = DebugParseItemEntries(File.ReadAllLines(Application.dataPath + "/SYNCHRONOUS/TextFiles/InventoryItems/" + text3 + ".txt"));
+						num = DebugGetPrice(text2, false, ref price_type2, lists2, ref paintable2, ref dont_paint_on_sell2, ref max_stack2, item_entries2) * num2 + DebugGetPrice(text3, false, ref price_type2, lists2, ref paintable2, ref dont_paint_on_sell2, ref max_stack2, item_entries3) * num3;
+					}
+					float num6 = num;
+					if (apply_craft_bonus)
+					{
+						return (int)((num4 * num6 * inventory_ctr.crafting_bonus_multiplier + num6) / num5);
+					}
+					return (int)(num6 / num5);
+				}
+				price_type = price_type_t.ERROR_no_ingredients;
+			}
+			else
+			{
+				price_type = price_type_t.no_price_mentioned;
+			}
+		}
+		return num;
 	}
 
 	public void ResolveLootExtraData(string item_name, ExtraInventoryData data, InventoryItem original_chest_item = null)
