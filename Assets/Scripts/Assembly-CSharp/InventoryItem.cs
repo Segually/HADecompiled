@@ -412,6 +412,60 @@ public class InventoryItem
 
 	public static InventoryItem SetDisplayDefaults(InventoryItem item)
 	{
-		return null;
+		switch (item.item_name)
+		{
+		case "Armor Display":
+		{
+			ExtraInventoryData extraDataCopy = item.GetExtraDataCopy();
+			if (item.GetString("creature_A") == "")
+			{
+				extraDataCopy.SetString("creature_A", "human");
+			}
+			if (item.GetString("creature_A") == "")
+			{
+				extraDataCopy.SetString("creature_B", "human");
+			}
+			extraDataCopy.SetString("body", "Metal Armor");
+			extraDataCopy.SetString("tag", "dev_obj");
+			return new InventoryItem("Armor Display", extraDataCopy);
+		}
+		case "Custom Statue":
+		{
+			ExtraInventoryData extraDataCopy2 = item.GetExtraDataCopy();
+			if (item.GetString("creature_A") == "")
+			{
+				extraDataCopy2.SetString("creature_A", "eagle");
+			}
+			if (item.GetString("creature_A") == "")
+			{
+				extraDataCopy2.SetString("creature_B", "samurai");
+			}
+			return new InventoryItem("Custom Statue", extraDataCopy2);
+		}
+		case "Weapon Display":
+		{
+			ExtraInventoryData extraDataCopy3 = item.GetExtraDataCopy();
+			if (item.GetString("wep") == "")
+			{
+				extraDataCopy3.SetString("wep", "Metal Sword");
+			}
+			return new InventoryItem("Weapon Display", extraDataCopy3);
+		}
+		case "Large Weapon Display":
+		{
+			ExtraInventoryData extraDataCopy4 = item.GetExtraDataCopy();
+			if (item.GetString("wep") == "")
+			{
+				extraDataCopy4.SetString("wep", "Metal Sword");
+			}
+			if (item.GetString("wep2") == "")
+			{
+				extraDataCopy4.SetString("wep2", "Metal Sword");
+			}
+			return new InventoryItem("Large Weapon Display", extraDataCopy4);
+		}
+		default:
+			return item;
+		}
 	}
 }

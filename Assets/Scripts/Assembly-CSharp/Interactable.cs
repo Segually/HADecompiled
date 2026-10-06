@@ -6,9 +6,9 @@ public class Interactable : MonoBehaviour
 {
 	public InventoryItem corresponding_item;
 
-	public float interaction_distance;
+	public float interaction_distance = 1f;
 
-	public float circle_size;
+	public float circle_size = 1f;
 
 	public int temp_rot;
 
@@ -28,9 +28,9 @@ public class Interactable : MonoBehaviour
 
 	public string item_name;
 
-	public string active_obj_str;
+	public string active_obj_str = "";
 
-	public string origin_zone;
+	public string origin_zone = "";
 
 	public int origin_chunkX;
 
@@ -44,6 +44,8 @@ public class Interactable : MonoBehaviour
 
 	public void InitExit()
 	{
+		active_obj_str = "exit" + ShopControl.RandomString();
+		ChunkControl.Instance.active_interactibles.Add(active_obj_str, base.gameObject);
 	}
 
 	public void InitRedirect()

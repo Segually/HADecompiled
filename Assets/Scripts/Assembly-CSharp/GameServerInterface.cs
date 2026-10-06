@@ -73,6 +73,16 @@ public class GameServerInterface : MonoBehaviour, OrderedStart
 
 	public bool AnyoneUsing(string obj_str)
 	{
+		if (GameServerConnector.Instance.game_server_connection != null && GameServerConnector.Instance.game_server_connection.GetStatus() == Connection.connection_status.connected && GameServerConnector.Instance.completely_logged_in)
+		{
+			foreach (KeyValuePair<string, OnlinePlayer> nearby_player in nearby_players)
+			{
+				if (nearby_player.Value.currently_using == obj_str)
+				{
+					return true;
+				}
+			}
+		}
 		return false;
 	}
 

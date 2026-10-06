@@ -378,6 +378,45 @@ public class SharedCreature : MonoBehaviour
 
 	public bool IsTargettingPlayerOrMyCompanions(bool check_player, bool check_my_companions)
 	{
+		if (is_local_mob)
+		{
+			foreach (GameObject target in GetComponent<CreatureBrain>().GetTargetList())
+			{
+				if (check_player && GameController.Instance.player != null && target == GameController.Instance.player)
+				{
+					return true;
+				}
+				if (check_my_companions && target.GetComponent<Combatant>().mob_type == Combatant.TYPE_T.creature)
+				{
+					SharedCreature component = target.GetComponent<SharedCreature>();
+					if (component.is_local_mob && component.brain_type == brain_type_t.companion)
+					{
+						return true;
+					}
+				}
+			}
+			return false;
+		}
+		string globalString = PlayerData.Instance.GetGlobalString("username_lower");
+		foreach (string synced_target_id in synced_target_ids)
+		{
+			if (check_player && GameController.Instance.player != null && synced_target_id == globalString)
+			{
+				return true;
+			}
+			if (check_my_companions && MobControl.Instance.active_combatants.ContainsKey(synced_target_id))
+			{
+				GameObject gameObject = MobControl.Instance.active_combatants[synced_target_id];
+				if (gameObject.GetComponent<Combatant>().mob_type == Combatant.TYPE_T.creature)
+				{
+					SharedCreature component2 = gameObject.GetComponent<SharedCreature>();
+					if (component2.is_local_mob && component2.brain_type == brain_type_t.companion)
+					{
+						return true;
+					}
+				}
+			}
+		}
 		return false;
 	}
 

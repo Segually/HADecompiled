@@ -313,6 +313,9 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	public void DisableTeleporterButton()
 	{
+		CustomTeleporterControl.Instance.disable_teleport_button = true;
+		teleport_button.GetComponent<CanvasGroup>().alpha = 0.2f;
+		teleporter_icon.material = mat_teleport_icon_inactive;
 	}
 
 	public void EnableTeleporterButton()
@@ -351,10 +354,20 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	public void ClickNotifA()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		if (on_A_click != null)
+		{
+			on_A_click.OnClick();
+		}
 	}
 
 	public void ClickNotifB()
 	{
+		PopupControl.Instance.SetButtonWasPressed();
+		if (on_B_click != null)
+		{
+			on_B_click.OnClick();
+		}
 	}
 
 	private void SetNotifGraphic(int i, InventoryItem item)
@@ -414,6 +427,12 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	public void HideAllNotifs()
 	{
+		notif_1_life = 0f;
+		notif_1_obj.GetComponent<Animation>().Stop();
+		notif_1_obj.gameObject.SetActive(false);
+		notif_2_life = 0f;
+		notif_2_obj.GetComponent<Animation>().Stop();
+		notif_2_obj.gameObject.SetActive(false);
 	}
 
 	private void BumpNotif()
@@ -518,7 +537,15 @@ public class GameplayGUIControl : MonoBehaviour, OrderedStart
 
 	private notif_index GetEmptyNotifSlot()
 	{
-		return default(notif_index);
+		if (notif_1_life == 0f)
+		{
+			return notif_index.neither_in_use;
+		}
+		if (notif_2_life == 0f)
+		{
+			return notif_index.notif1_in_use;
+		}
+		return notif_index.both_in_use;
 	}
 
 	private void FixedUpdate()

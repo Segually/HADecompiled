@@ -89,7 +89,7 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	private object_geometry mouse_obj_geometry;
 
-	private string edit_navpost_col;
+	private string edit_navpost_col = "white";
 
 	public void Start_0()
 	{
@@ -1636,10 +1636,66 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void DeleteUnnecessaryComponents(InventoryItem item, GameObject new_obj)
 	{
+		string item_name = item.item_name;
+		if (item_name == "Armor Display" || item_name == "Custom Statue")
+		{
+			new_obj.GetComponent<Interactable>().deleted = true;
+			UnityEngine.Object.Destroy(new_obj.GetComponent<Interactable>());
+			new_obj.transform.Find("collider").gameObject.SetActive(false);
+		}
+		else if (item_name == "Companion" || item_name == "Bonsai Tree")
+		{
+			new_obj.GetComponent<Interactable>().deleted = true;
+			UnityEngine.Object.Destroy(new_obj.GetComponent<Interactable>());
+		}
+		else if (item_name == "3-day Land Claim" || item_name == "8-day Land Claim" || item_name == "Admin Land Claim")
+		{
+			new_obj.GetComponent<Interactable>().deleted = true;
+			UnityEngine.Object.Destroy(new_obj.GetComponent<Interactable>());
+			UnityEngine.Object.Destroy(new_obj.transform.Find("Quad").gameObject);
+		}
+		else if (item_name == "Painting")
+		{
+			new_obj.transform.Find("Interactable").GetComponent<Interactable>().deleted = true;
+			UnityEngine.Object.Destroy(new_obj.transform.Find("Interactable").GetComponent<Interactable>());
+		}
+		else if (!InventoryUtils.IsStringItem(item_name))
+		{
+			DeleteUnnecessaryComponentsRecursive(new_obj.transform);
+		}
 	}
 
 	private void DeleteUnnecessaryComponentsRecursive(Transform T)
 	{
+		Component[] components = T.GetComponents<Component>();
+		for (int i = 0; i < components.Length; i++)
+		{
+			Component component = components[i];
+			if (!(component.GetType() == typeof(Transform)) && !(component.GetType() == typeof(MeshFilter)) && !(component.GetType() == typeof(ParticleSystem)) && !(component.GetType() == typeof(ParticleSystemRenderer)) && !(component.GetType() == typeof(MeshRenderer)) && !(component.GetType() == typeof(UnityEngine.Rendering.SortingGroup)) && !(component.GetType() == typeof(Spin)))
+			{
+				if (component.GetType() == typeof(Collectible))
+				{
+					((Collectible)component).deleted = true;
+				}
+				else if (component.GetType() == typeof(Interactable))
+				{
+					((Interactable)component).deleted = true;
+				}
+				else if (component.GetType() == typeof(Collectible))
+				{
+					((Collectible)component).deleted = true;
+				}
+				else if (component.GetType() == typeof(Combatant))
+				{
+					((Combatant)component).is_dead = true;
+				}
+				UnityEngine.Object.Destroy(components[i]);
+			}
+		}
+		foreach (Transform item in T)
+		{
+			DeleteUnnecessaryComponentsRecursive(item);
+		}
 	}
 
 	public void CreateMannequin(Transform parent_obj, InventoryItem mannequin_item, Action on_mannequin_created = null)
@@ -1937,6 +1993,7 @@ public class ConstructionControl : MonoBehaviour, OrderedStart
 
 	public void PlayerReplaceInteracting(InventoryItem new_item, bool send)
 	{
+		PlayerReplaceAt(new_item, GameController.Instance.interacting_element_item, GameController.Instance.interacting_element_rot, ChunkControl.Instance.player_zone, GameController.Instance.interacting_element_chunkX, GameController.Instance.interacting_element_chunkZ, GameController.Instance.interacting_element_innerX, GameController.Instance.interacting_element_innerZ, send, GenerateCacheKey());
 	}
 
 	public void ClickStatuePropertiesChangeAnimal1(int dir)

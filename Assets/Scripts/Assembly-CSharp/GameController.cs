@@ -242,10 +242,43 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void MakeAlliesSwarm(GameObject to_attack, bool companions, bool wolf_pack, bool companions_overwrite_target)
 	{
+		if (to_attack == null)
+		{
+			return;
+		}
+		foreach (KeyValuePair<string, GameObject> active_combatant in MobControl.Instance.active_combatants)
+		{
+			GameObject value = active_combatant.Value;
+			if (value.GetComponent<Combatant>().mob_type != Combatant.TYPE_T.creature)
+			{
+				continue;
+			}
+			SharedCreature component = value.GetComponent<SharedCreature>();
+			if (!component.is_local_mob)
+			{
+				continue;
+			}
+			if (component.brain_type == SharedCreature.brain_type_t.companion && companions)
+			{
+				if (companions_overwrite_target)
+				{
+					value.GetComponent<CreatureBrainCompanion>().Swarm(to_attack);
+				}
+				else if (value.GetComponent<CreatureBrain>().main_target == null)
+				{
+					value.GetComponent<CreatureBrainCompanion>().Swarm(to_attack);
+				}
+			}
+			else if (component.brain_type == SharedCreature.brain_type_t.wolf_pack && wolf_pack)
+			{
+				value.GetComponent<CreatureBrainWolfPack>().Swarm(to_attack);
+			}
+		}
 	}
 
 	public void PlaySignSound()
 	{
+		sfx.PlayOneShot(sfx_sign, AudioControl.Instance.general_sfx_volume * 0.75f);
 	}
 
 	public bool is_paused()
@@ -735,10 +768,12 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_ding()
 	{
+		sfx.PlayOneShot(sfx_craft, AudioControl.Instance.general_sfx_volume * 0.5f);
 	}
 
 	public void sound_sell()
 	{
+		sfx.PlayOneShot(sfx_sell, AudioControl.Instance.general_sfx_volume * 0.6f);
 	}
 
 	public void sound_buy()
@@ -753,6 +788,7 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void sound_relax()
 	{
+		sfx.PlayOneShot(sfx_relax, AudioControl.Instance.general_sfx_volume * 0.31f);
 	}
 
 	public void level_up_meter_pressed(int index)
@@ -883,6 +919,12 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void NoteInteractingElement(int chunkX, int chunkZ, int innerX, int innerZ, InventoryItem item, int rot)
 	{
+		interacting_element_chunkX = chunkX;
+		interacting_element_chunkZ = chunkZ;
+		interacting_element_innerX = innerX;
+		interacting_element_innerZ = innerZ;
+		interacting_element_item = item;
+		interacting_element_rot = rot;
 	}
 
 	public void ForgetInteractingElement()
@@ -895,6 +937,699 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void player_interact(GameObject interaction_target)
 	{
+		if (interaction_target == null)
+		{
+			return;
+		}
+		if (interaction_target.GetComponent<Collectible>() != null)
+		{
+			interaction_target.GetComponent<Collectible>().OnCollectLocal();
+		}
+		else if (interaction_target.GetComponent<Interactable>() != null)
+		{
+			if (!WindowControl.Instance.CanOpenGenericWindow())
+			{
+				return;
+			}
+			Interactable component = interaction_target.GetComponent<Interactable>();
+			if (component.replace_for != null)
+			{
+				interaction_target = component.replace_for;
+				component = interaction_target.GetComponent<Interactable>();
+			}
+			Transform transform = component.transform;
+			if (interaction_target.name == "Interactable")
+			{
+				transform = transform.parent;
+			}
+			Vector3 position = transform.position;
+			string player_zone = ChunkControl.Instance.player_zone;
+			Vector3 inner = ChunkControl.Instance.GetInner(position);
+			int num = (int)inner.x;
+			int num2 = (int)inner.z;
+			Vector3 chunkCoords = ChunkControl.Instance.GetChunkCoords(position);
+			int num3 = (int)chunkCoords.x;
+			int num4 = (int)chunkCoords.z;
+			string chunkString = ChunkControl.Instance.GetChunkString(position);
+			bool flag = false;
+			bool flag2 = false;
+			if (component.corresponding_item != null)
+			{
+				flag = DevBuildControl.Instance.IsLockedByDev(component.corresponding_item);
+				flag2 = inventory_ctr.Instance.is_locked_by_player(component.corresponding_item);
+			}
+			if (component.is_house_exit)
+			{
+				TransitionControl.Instance.BeginExitHouseTransition();
+			}
+			else
+			{
+				string item_name = component.corresponding_item.item_name;
+				if (InventoryUtils.UsesShackId(item_name))
+				{
+					int @long = component.corresponding_item.GetLong("shack_id");
+					if (flag)
+					{
+						string @string = component.corresponding_item.GetString("quest_key_req");
+						if (Startup.StringNullOrWhitespace(@string))
+						{
+							if (component.item_name == "Underground Room" || component.item_name == "Upstairs Room")
+							{
+								GameplayGUIControl.Instance.ShowNotif("Room locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							}
+							else if (component.item_name == "Magic Bean" || InventoryUtils.IsCaveObject(component.item_name))
+							{
+								GameplayGUIControl.Instance.ShowNotif("Area locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							}
+							else
+							{
+								GameplayGUIControl.Instance.ShowNotif("House locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							}
+							goto IL_end;
+						}
+						ExtraInventoryData extraInventoryData = new ExtraInventoryData();
+						extraInventoryData.SetString("key_name", @string);
+						InventoryItem inventoryItem = new InventoryItem("Key", extraInventoryData);
+						if (!inventory_ctr.Instance.HasItem(inventoryItem))
+						{
+							PopupControl.Instance.ShowMessage("To open this, you'll need\n<color=#ff0000>" + inventory_ctr.Instance.GetFullItemName(inventoryItem) + "</color>", PopupControl.context.message, inventoryItem);
+							goto IL_end;
+						}
+						inventory_ctr.Instance.player_inventory.RemoveItemExact(inventoryItem, 1);
+						PopupControl.Instance.ShowMessage("Opened with\n<color=#69caff>" + inventory_ctr.Instance.GetFullItemName(inventoryItem) + "</color>", PopupControl.context.message, inventoryItem);
+					}
+					if (flag2)
+					{
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						LockControl.Instance.OpenLockScreen("Enter password to unlock", LockControl.lock_context.unlock_house);
+					}
+					else
+					{
+						TransitionControl.Instance.BeginEnterHouseTransition("shack" + @long);
+					}
+				}
+				else
+				{
+					string text = "";
+					switch (item_name)
+					{
+					case "Trophy":
+					{
+						string string2 = component.corresponding_item.GetString("trophy_name");
+						string string3 = component.corresponding_item.GetString("trophy_reason");
+						string string4 = component.corresponding_item.GetString("trophy_from");
+						string string5 = component.corresponding_item.GetString("trophy_for");
+						string string6 = component.corresponding_item.GetString("trophy_date");
+						string string7 = component.corresponding_item.GetString("trophy_VALIDATOR");
+						if (string7 != FriendServerInterface.Instance.GetTrophyValidatorString(string2, string3, component.corresponding_item.GetString("paint"), string4, string5, string6))
+						{
+							GameplayGUIControl.Instance.ShowNotif("Hacked Trophy", new OnNotifClick(OnNotifClick.type.none));
+							return;
+						}
+						if (!WindowControl.Instance.CanOpenGenericWindow())
+						{
+							return;
+						}
+						WindowControl.Instance.DoOpenGenericWindow();
+						Dictionary<int, Dictionary<string, object>> dictionary = new Dictionary<int, Dictionary<string, object>>();
+						int num5 = 0;
+						if (!Startup.StringNullOrWhitespace(string2))
+						{
+							Dictionary<string, object> dictionary2 = new Dictionary<string, object>();
+							DialogueControl.Instance.AddImportant("It's a " + string2 + "!", string2 + "!", dictionary2);
+							dictionary2.Add("go_to", num5 + 1);
+							dictionary.Add(num5, dictionary2);
+							num5++;
+						}
+						if (!Startup.StringNullOrWhitespace(string3))
+						{
+							Dictionary<string, object> dictionary3 = new Dictionary<string, object>();
+							dictionary3.Add("type", "NPC_speak");
+							dictionary3.Add("text", "\"" + string3 + "\"");
+							dictionary3.Add("go_to", num5 + 1);
+							dictionary.Add(num5, dictionary3);
+							num5++;
+						}
+						if (!Startup.StringNullOrWhitespace(string5))
+						{
+							Dictionary<string, object> dictionary4 = new Dictionary<string, object>();
+							dictionary4.Add("type", "NPC_speak");
+							dictionary4.Add("text", "For: " + string5);
+							dictionary4.Add("go_to", num5 + 1);
+							dictionary.Add(num5, dictionary4);
+							num5++;
+						}
+						if (!Startup.StringNullOrWhitespace(string4))
+						{
+							Dictionary<string, object> dictionary5 = new Dictionary<string, object>();
+							dictionary5.Add("type", "NPC_speak");
+							dictionary5.Add("text", "From: " + string4);
+							dictionary5.Add("go_to", num5 + 1);
+							dictionary.Add(num5, dictionary5);
+							num5++;
+						}
+						if (!Startup.StringNullOrWhitespace(string6))
+						{
+							Dictionary<string, object> dictionary6 = new Dictionary<string, object>();
+							dictionary6.Add("type", "NPC_speak");
+							dictionary6.Add("text", "Awarded on: " + string6);
+							dictionary6.Add("go_to", num5 + 1);
+							dictionary.Add(num5, dictionary6);
+							num5++;
+						}
+						Dictionary<string, object> dictionary7 = new Dictionary<string, object>();
+						dictionary7.Add("type", "MY_options");
+						dictionary7.Add("optionA", "DONE");
+						dictionary7.Add("optionA_goto", -1);
+						dictionary.Add(num5, dictionary7);
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						DialogueControl.Instance.SetFocusNpc(interaction_target, string2, "", DialogueControl.focus_type_t.trophy);
+						DialogueControl.Instance.EnterDialogue(dictionary, 0, "");
+						break;
+					}
+					case "Painting":
+					{
+						if (!WindowControl.Instance.CanOpenGenericWindow())
+						{
+							return;
+						}
+						WindowControl.Instance.DoOpenGenericWindow();
+						Dictionary<int, Dictionary<string, object>> dictionary8 = new Dictionary<int, Dictionary<string, object>>();
+						string text2 = "";
+						short @short = component.corresponding_item.GetShort("dev_painting_id");
+						string text3;
+						string text4;
+						string text5;
+						if (@short == 0)
+						{
+							text3 = component.corresponding_item.GetString("painting_name");
+							text4 = component.corresponding_item.GetString("painting_desc");
+							text5 = component.corresponding_item.GetString("painting_creator");
+							text2 = component.corresponding_item.GetString("painting_date");
+						}
+						else
+						{
+							text3 = DevBuildControl.Instance.NPC_paintings[@short].name;
+							text5 = DevBuildControl.Instance.NPC_paintings[@short].creator;
+							text4 = DevBuildControl.Instance.NPC_paintings[@short].desc;
+						}
+						int num6 = 0;
+						if (text3 != "")
+						{
+							Dictionary<string, object> dictionary9 = new Dictionary<string, object>();
+							DialogueControl.Instance.AddImportant(text3, text3, dictionary9);
+							dictionary9.Add("go_to", num6 + 1);
+							dictionary8.Add(num6, dictionary9);
+							num6++;
+						}
+						if (text4 != "")
+						{
+							Dictionary<string, object> dictionary10 = new Dictionary<string, object>();
+							dictionary10.Add("type", "NPC_speak");
+							dictionary10.Add("text", "\"" + text4 + "\"");
+							dictionary10.Add("go_to", num6 + 1);
+							dictionary8.Add(num6, dictionary10);
+							num6++;
+						}
+						if (!Startup.StringNullOrWhitespace(text5))
+						{
+							Dictionary<string, object> dictionary11 = new Dictionary<string, object>();
+							dictionary11.Add("type", "NPC_speak");
+							dictionary11.Add("text", "Created by: " + text5);
+							dictionary11.Add("go_to", num6 + 1);
+							dictionary8.Add(num6, dictionary11);
+							num6++;
+						}
+						if (text2 != "")
+						{
+							Dictionary<string, object> dictionary12 = new Dictionary<string, object>();
+							dictionary12.Add("type", "NPC_speak");
+							dictionary12.Add("text", "Created on: " + text2);
+							dictionary12.Add("go_to", num6 + 1);
+							dictionary8.Add(num6, dictionary12);
+							num6++;
+						}
+						Dictionary<string, object> dictionary13 = new Dictionary<string, object>();
+						dictionary13.Add("type", "MY_options");
+						dictionary13.Add("optionA", "DONE");
+						dictionary13.Add("optionA_goto", -1);
+						dictionary8.Add(num6, dictionary13);
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						DialogueControl.Instance.SetFocusNpc(interaction_target, "Painting", "", DialogueControl.focus_type_t.painting);
+						DialogueControl.Instance.EnterDialogue(dictionary8, 0, "");
+						if (GameServerConnector.Instance.FullyInGame())
+						{
+							GameServerReceiver.Instance.ShowReportObjectButton("Report Painting", GameServerReceiver.Instance.EncodeObjectIntoReportData(player_zone, num3, num4, num, num2, component.corresponding_item));
+						}
+						break;
+					}
+					case "Chair":
+					case "Bed":
+					case "Sofa Chair":
+					case "Metal Chair":
+					case "Stump Chair":
+					case "Throne":
+					case "Park Bench":
+						if (!player.GetComponent<SharedCreature>().snapped_to_chair_obj)
+						{
+							if (item_name == "Bed" || item_name == "Sofa Chair" || item_name == "Throne")
+							{
+								sound_relax();
+							}
+							player.GetComponent<SharedCreature>().TrySitInChairObj(component.active_obj_str);
+							GameplayGUIControl.Instance.end_sit_button.SetActive(true);
+							GameServerSender.Instance.SendSitInChair(component.active_obj_str);
+						}
+						break;
+					case "Navpost":
+					{
+						string string8 = component.corresponding_item.GetString("sign_text");
+						if (Startup.StringNullOrWhitespace(string8))
+						{
+							interacting_element_chunkX = num3;
+							interacting_element_chunkZ = num4;
+							interacting_element_innerX = num;
+							interacting_element_innerZ = num2;
+							interacting_element_item = component.corresponding_item;
+							interacting_element_rot = component.temp_rot;
+							edit_navpost();
+						}
+						else
+						{
+							string string9 = component.corresponding_item.GetString("text_col");
+							GameplayGUIControl.Instance.ShowNotif(ConstructionControl.Instance.FormatNavpostString(string8, string9), new InventoryItem("Navpost"), 1, new OnNotifClick(OnNotifClick.type.none));
+						}
+						break;
+					}
+					case "Merchant Sign":
+					{
+						string string10 = component.corresponding_item.GetString("sign_header");
+						string string11 = component.corresponding_item.GetString("sign_text");
+						if (string11 == "" && string10 == "")
+						{
+							interacting_element_chunkX = num3;
+							interacting_element_chunkZ = num4;
+							interacting_element_innerX = num;
+							interacting_element_innerZ = num2;
+							interacting_element_item = component.corresponding_item;
+							interacting_element_rot = component.temp_rot;
+							edit_merchantSign();
+							break;
+						}
+						PopupControl.Instance.ShowMessage(string10 + "\n<size=17><color=#aaaaaa>\"" + string11 + "\"</color></size>", PopupControl.context.sign_etc);
+						PlaySignSound();
+						if (GameServerConnector.Instance.FullyInGame())
+						{
+							GameServerReceiver.Instance.ShowReportObjectButton("Report Sign", GameServerReceiver.Instance.EncodeObjectIntoReportData(player_zone, num3, num4, num, num2, component.corresponding_item));
+						}
+						break;
+					}
+					case "Sign":
+					case "Gravestone":
+					{
+						string string12 = component.corresponding_item.GetString("sign_text");
+						if (!Startup.StringNullOrWhitespace(string12))
+						{
+							PopupControl.Instance.ShowMessage("<size=17><color=#bbbbbb>The sign says:</color></size>\n" + string12, PopupControl.context.sign_etc);
+							PlaySignSound();
+							if (GameServerConnector.Instance.FullyInGame())
+							{
+								GameServerReceiver.Instance.ShowReportObjectButton("Report Sign", GameServerReceiver.Instance.EncodeObjectIntoReportData(player_zone, num3, num4, num, num2, component.corresponding_item));
+							}
+						}
+						else
+						{
+							interacting_element_chunkX = num3;
+							interacting_element_chunkZ = num4;
+							interacting_element_innerX = num;
+							interacting_element_innerZ = num2;
+							interacting_element_item = component.corresponding_item;
+							interacting_element_rot = component.temp_rot;
+							PopupControl.Instance.ShowMessage("<color=#a5a5a5>[Click to add text]</color>", PopupControl.context.message);
+						}
+						break;
+					}
+					case "Bonsai Tree":
+					{
+						int num7 = component.corresponding_item.GetShort("bonsai_age");
+						PopupControl.Instance.ShowMessage("This Bonsai Tree is <color=#ffe747>" + num7 + "</color> years old!", PopupControl.context.message, component.corresponding_item);
+						break;
+					}
+					case "Painting Easel":
+						OpenPaintingScreen();
+						break;
+					case "Crafting Table":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Crafting Table"), component.corresponding_item);
+						break;
+					case "Anvil":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Anvil"), component.corresponding_item);
+						break;
+					case "Cauldron":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Cauldron"), component.corresponding_item);
+						break;
+					case "Loom":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Loom"), component.corresponding_item);
+						break;
+					case "Stamp Maker":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Stamp Maker"), component.corresponding_item);
+						break;
+					case "Paint Mixer":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Paint Mixer"), component.corresponding_item);
+						break;
+					case "Paint Shaker":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Paint Shaker"), component.corresponding_item);
+						break;
+					case "Oven":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Oven"), component.corresponding_item);
+						break;
+					case "Campfire":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Campfire"), component.corresponding_item);
+						break;
+					case "Crucible":
+						inventory_ctr.Instance.OpenInventoryAndCrafting(inventory_ctr.Instance.GetCraftList("Crafting - Crucible"), component.corresponding_item);
+						break;
+					case "Teleporter":
+						Instance.interacting_element_chunkX = num3;
+						Instance.interacting_element_chunkZ = num4;
+						Instance.interacting_element_innerX = num;
+						Instance.interacting_element_innerZ = num2;
+						Instance.interacting_element_item = component.corresponding_item;
+						Instance.interacting_element_rot = component.temp_rot;
+						CustomTeleporterControl.Instance.InteractWithTeleporter(interaction_target, chunkString, player_zone, num3, num4, num, num2);
+						break;
+					case "Companion":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't talk with NPC\nSomeone else is talking with them right now!", PopupControl.context.message);
+							break;
+						}
+						OnInteractWithCompanion(player_zone, num3, num4, num, num2);
+						GameServerSender.Instance.SendClaimObject(text);
+						if (GameServerConnector.Instance.FullyInGame())
+						{
+							GameServerReceiver.Instance.ShowReportObjectButton("Report Companion", GameServerReceiver.Instance.EncodeObjectIntoReportData(player_zone, num3, num4, num, num2, component.corresponding_item));
+						}
+						break;
+					case "DEBUG-npc":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't talk with NPC\nSomeone else is talking with them right now!", PopupControl.context.message);
+							break;
+						}
+						OnInteractWithNPC(player_zone, num3, num4, num, num2);
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Custom Statue":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't use Statue\nSomeone else is using that right now!", PopupControl.context.message);
+							break;
+						}
+						OnInteractWithStatue(player_zone, num3, num4, num, num2);
+						GameServerSender.Instance.SendClaimObject(text);
+						if (GameServerConnector.Instance.FullyInGame())
+						{
+							GameServerReceiver.Instance.ShowReportObjectButton("Report Statue", GameServerReceiver.Instance.EncodeObjectIntoReportData(player_zone, num3, num4, num, num2, component.corresponding_item));
+						}
+						break;
+					case "Karaoke":
+						KaraokeControl.is_tweeto_version = false;
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							string text6 = "";
+							foreach (KeyValuePair<string, OnlinePlayer> nearby_player in GameServerInterface.Instance.nearby_players)
+							{
+								if (nearby_player.Value.currently_using == text)
+								{
+									text6 = nearby_player.Value.username_lower;
+									break;
+								}
+							}
+							if (text6 != "")
+							{
+								PopupControl.Instance.ShowConnecting("Entering minigame");
+								GameServerSender.Instance.TryChallengeMinigameOwner(text6, 1);
+							}
+							else
+							{
+								PopupControl.Instance.ShowMessage("Can't use Karaoke\nSomeone else is using that!", PopupControl.context.message);
+							}
+							break;
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						OpenKaraoke();
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Pool Table":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							string text7 = "";
+							foreach (KeyValuePair<string, OnlinePlayer> nearby_player2 in GameServerInterface.Instance.nearby_players)
+							{
+								if (nearby_player2.Value.currently_using == text)
+								{
+									text7 = nearby_player2.Value.username_lower;
+									break;
+								}
+							}
+							if (text7 != "")
+							{
+								PopupControl.Instance.ShowConnecting("Entering minigame");
+								GameServerSender.Instance.TryChallengeMinigameOwner(text7, 0);
+							}
+							else
+							{
+								PopupControl.Instance.ShowMessage("Can't use Pool Table\nSomeone else is using that!", PopupControl.context.message);
+							}
+							break;
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						OpenPoolTable("", PoolGameControl.GetRandomBallLayout());
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Trading Table":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							string text8 = "";
+							foreach (KeyValuePair<string, OnlinePlayer> nearby_player3 in GameServerInterface.Instance.nearby_players)
+							{
+								if (nearby_player3.Value.currently_using == text)
+								{
+									text8 = nearby_player3.Value.username_lower;
+									break;
+								}
+							}
+							if (text8 != "")
+							{
+								PopupControl.Instance.ShowConnecting("Entering Trading Table");
+								GameServerSender.Instance.TryChallengeMinigameOwner(text8, 2);
+							}
+							else
+							{
+								PopupControl.Instance.ShowMessage("Can't use Trading Table\nSomeone else is using that!", PopupControl.context.message);
+							}
+							break;
+						}
+						if (flag)
+						{
+							GameplayGUIControl.Instance.ShowNotif(component.item_name + " locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							break;
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						inventory_ctr.Instance.SucceedOpenTradingTable();
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Admin Land Claim":
+					case "Old Land Claim":
+					case "3-day Land Claim":
+					case "8-day Land Claim":
+						if (flag)
+						{
+							GameplayGUIControl.Instance.ShowNotif("Land Claim locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							break;
+						}
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't use Land Claim\nSomeone else is using that!", PopupControl.context.message);
+							break;
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						LandClaimControl.Instance.OpenLandClaimScreen(component.item_name, player_zone, num3, num4, num, num2);
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Vending Machine":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (flag)
+						{
+							GameplayGUIControl.Instance.ShowNotif("Vending Machine locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							break;
+						}
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't use Vending Machine\nSomeone else is using that!", PopupControl.context.message);
+							break;
+						}
+						WindowControl.Instance.OpenMiniwindow(WindowControl.miniwindow_type_t.vending_machine);
+						WindowControl.Instance.HideMiniwindowHeaders();
+						VendingMachineControl.Instance = WindowPrefabsControl.Instance.CreateScreen("VENDING MACHINE", WindowPrefabsControl.build_into_t.mini_window).GetComponent<VendingMachineControl>();
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						VendingMachineControl.Instance.OnOpen();
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Music Box":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (flag)
+						{
+							GameplayGUIControl.Instance.ShowNotif("Music Box locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+							break;
+						}
+						if (flag2)
+						{
+							interacting_element_chunkX = num3;
+							interacting_element_chunkZ = num4;
+							interacting_element_innerX = num;
+							interacting_element_innerZ = num2;
+							interacting_element_item = component.corresponding_item;
+							interacting_element_rot = component.temp_rot;
+							LockControl.Instance.OpenLockScreen("Enter password to unlock", LockControl.lock_context.unlock_musicbox);
+							GameServerSender.Instance.SendClaimObject(text);
+							break;
+						}
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't use Music Box\nSomeone else is using that!", PopupControl.context.message);
+							break;
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						MusicBoxControl.Instance.OpenMusicBox(component.corresponding_item, position);
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					case "Gold Chest":
+					case "Basket":
+					case "Loot Chest":
+					case "Sky Chest":
+					case "Chest":
+					case "Loot Basket":
+					case "Titanium Chest":
+					case "Cave Chest":
+					case "Crate":
+					case "Cave Basket":
+					case "Armor Display":
+					case "Boss Chest":
+					case "Wisdom Chest":
+					case "Large Weapon Display":
+					case "Egg Fuser":
+					case "Weapon Display":
+					case "Double Crate":
+						text = player_zone + "," + num3 + "," + num4 + "," + num + "," + num2;
+						if (GameServerInterface.Instance.AnyoneUsing(text))
+						{
+							PopupControl.Instance.ShowMessage("Can't open\nSomeone else is using that!", PopupControl.context.message);
+							break;
+						}
+						if (item_name == "Basket" || item_name == "Loot Basket" || item_name == "Boss Chest" || item_name == "Chest" || item_name == "Egg Fuser" || item_name == "Weapon Display" || item_name == "Large Weapon Display" || item_name == "Armor Display" || (item_name == "Crate" && component.corresponding_item.GetString("tag") == "dev_obj") || (item_name == "Double Crate" && component.corresponding_item.GetString("tag") == "dev_obj") || item_name == "Trading Table")
+						{
+							if (flag)
+							{
+								string string13 = component.corresponding_item.GetString((item_name == "Boss Chest") ? "bandit_camp_instance" : "quest_key_req");
+								if (Startup.StringNullOrWhitespace(string13))
+								{
+									GameplayGUIControl.Instance.ShowNotif(component.item_name + " locked.", DevBuildControl.Instance.lockedhome_notif, new OnNotifClick(OnNotifClick.type.none));
+									break;
+								}
+								ExtraInventoryData extraInventoryData2 = new ExtraInventoryData();
+								extraInventoryData2.SetString("key_name", string13);
+								InventoryItem inventoryItem2 = new InventoryItem("Key", extraInventoryData2);
+								string fullItemName = inventory_ctr.Instance.GetFullItemName(inventoryItem2);
+								if (!inventory_ctr.Instance.HasItem(inventoryItem2))
+								{
+									PopupControl.Instance.ShowMessage("To open this, you'll need\n<color=#ff0000>" + fullItemName + "</color>", PopupControl.context.message, inventoryItem2);
+									break;
+								}
+								inventory_ctr.Instance.player_inventory.RemoveItemExact(inventoryItem2, 1);
+								PopupControl.Instance.ShowMessage("Opened with\n<color=#69caff>" + fullItemName + "</color>", PopupControl.context.message, inventoryItem2);
+							}
+							else if (flag2)
+							{
+								interacting_element_chunkX = num3;
+								interacting_element_chunkZ = num4;
+								interacting_element_innerX = num;
+								interacting_element_innerZ = num2;
+								interacting_element_item = component.corresponding_item;
+								interacting_element_rot = component.temp_rot;
+								LockControl.Instance.OpenLockScreen("Enter password to unlock", LockControl.lock_context.unlock_container);
+								GameServerSender.Instance.SendClaimObject(text);
+								break;
+							}
+						}
+						interacting_element_chunkX = num3;
+						interacting_element_chunkZ = num4;
+						interacting_element_innerX = num;
+						interacting_element_innerZ = num2;
+						interacting_element_item = component.corresponding_item;
+						interacting_element_rot = component.temp_rot;
+						inventory_ctr.Instance.TryOpenWorldContainer(component.corresponding_item, component.temp_rot, num, num2, num3, num4);
+						GameServerSender.Instance.SendClaimObject(text);
+						break;
+					}
+				}
+			}
+		}
+		IL_end:
+		HideTargetCircle();
+		resume_input_on_next_click = true;
 	}
 
 	private void OnInteractWithStatue(string zone, int chunkX, int chunkZ, int innerX, int innerZ)

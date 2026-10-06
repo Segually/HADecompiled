@@ -21,11 +21,11 @@ public class TransitionControl : MonoBehaviour, OrderedStart
 
 	public bool is_transition_playing;
 
-	public string zone_entering;
+	public string zone_entering = "";
 
-	public string quest_transition_name;
+	public string quest_transition_name = "";
 
-	public int quest_transition_step;
+	public int quest_transition_step = -1;
 
 	private IEnumerator fade_back_in_coroutine;
 

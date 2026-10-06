@@ -77,19 +77,19 @@ public class DevBuildControl : MonoBehaviour, OrderedStart
 
 	public BanditCampInstance debug_bandit_camp_data;
 
-	public string debug_bandit_camp_template;
+	public string debug_bandit_camp_template = "";
 
-	public int debug_bandit_camp_W;
+	public int debug_bandit_camp_W = -1;
 
-	public int debug_bandit_camp_H;
+	public int debug_bandit_camp_H = -1;
 
 	private int view_rot;
 
-	private List<string> recently_used;
+	private List<string> recently_used = new List<string>();
 
 	public bool view_dev_objects;
 
-	private string curr_selected_tool;
+	private string curr_selected_tool = "";
 
 	private enter_shortcut_function curr_shortcut_function;
 

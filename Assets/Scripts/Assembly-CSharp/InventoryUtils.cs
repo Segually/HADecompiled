@@ -165,7 +165,29 @@ public class InventoryUtils
 
 	public static int GenerateBonsaiAge()
 	{
-		return 0;
+		float value = Random.value;
+		float value2 = Random.value;
+		if (value < 0.94f)
+		{
+			if (value2 < 0.8f)
+			{
+				return Random.Range(10, 130);
+			}
+			if (value2 < 0.95f)
+			{
+				return Random.Range(50, 230);
+			}
+			return Random.Range(70, 400);
+		}
+		if (value2 < 0.8f)
+		{
+			return Random.Range(130, 421);
+		}
+		if (value2 < 0.95f)
+		{
+			return Random.Range(230, 1000);
+		}
+		return Random.Range(400, 3010);
 	}
 
 	public static building_type GetBuildingType(string item_name)
@@ -352,7 +374,27 @@ public class InventoryUtils
 
 	public static string GetCoinSprite(int count)
 	{
-		return null;
+		if (count == 1)
+		{
+			return "item coins 1";
+		}
+		if (count < 13)
+		{
+			return "item coins 2";
+		}
+		if (count < 160)
+		{
+			return "item coins 3";
+		}
+		if (count < 1000)
+		{
+			return "item coins 4";
+		}
+		if (count > 9999)
+		{
+			return "item coins 6";
+		}
+		return "item coins 5";
 	}
 
 	public static int GetPickTier(string hand_obj)

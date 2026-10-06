@@ -160,7 +160,7 @@ public class WindowPrefabsControl : MonoBehaviour, OrderedStart
 
 	public Image GetImage(string parent_name, string obj_name)
 	{
-		return null;
+		return GetObject(parent_name, obj_name).GetComponent<Image>();
 	}
 
 	public Text GetTextLegacy(string parent_name, string obj_name)
@@ -170,11 +170,42 @@ public class WindowPrefabsControl : MonoBehaviour, OrderedStart
 
 	public TextMeshProUGUI GetTextMeshPro(string parent_name, string obj_name)
 	{
-		return null;
+		return GetObject(parent_name, obj_name).GetComponent<TextMeshProUGUI>();
 	}
 
 	private GameObject InstantiateScreenIfNecessary(string parent_name, build_into_t build_into, set_transform_t set_transform)
 	{
-		return null;
+		if (prefab_screens_instantiated.ContainsKey(parent_name))
+		{
+			return prefab_screens_instantiated[parent_name];
+		}
+		GameObject gameObject = UnityEngine.Object.Instantiate(ResourceControl.Instance.GetWindowPrefab(parent_name));
+		switch (build_into)
+		{
+		case build_into_t.mini_window:
+			gameObject.transform.SetParent(WindowControl.Instance.miniwindow.transform);
+			break;
+		case build_into_t.GAME_CTR:
+			gameObject.transform.SetParent(GameplayGUIControl.Instance.transform);
+			break;
+		case build_into_t.gameplay_top_right:
+			gameObject.transform.SetParent(GameplayGUIControl.Instance.top_right_buttons.transform);
+			break;
+		case build_into_t.persistent_global_screen:
+			gameObject.transform.SetParent(PopupControl.Instance.transform);
+			break;
+		}
+		if (set_transform == set_transform_t.beneath)
+		{
+			gameObject.transform.SetAsFirstSibling();
+		}
+		gameObject.transform.localPosition = Vector3.zero;
+		((RectTransform)gameObject.transform).anchoredPosition = Vector2.zero;
+		((RectTransform)gameObject.transform).offsetMin = Vector2.zero;
+		((RectTransform)gameObject.transform).offsetMax = Vector2.zero;
+		gameObject.transform.localScale = Vector3.one;
+		gameObject.transform.localRotation = Quaternion.identity;
+		prefab_screens_instantiated.Add(parent_name, gameObject);
+		return gameObject;
 	}
 }

@@ -245,7 +245,7 @@ public class CreatureMorpher : MonoBehaviour, OrderedStart
 
 	public string GetRandomCreature()
 	{
-		return null;
+		return all_creature_names[UnityEngine.Random.Range(0, all_creature_names.Count)];
 	}
 
 	public string GetRandomPremiumCreature()

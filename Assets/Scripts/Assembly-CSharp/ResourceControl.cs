@@ -234,7 +234,8 @@ public class ResourceControl : MonoBehaviour, OrderedStart
 		img.enabled = false;
 		if (file_name != "")
 		{
-			LoadAndAssignSprite("Assets/Images/InventorySprites/" + file_name + ".psd", img, delegate
+			LoadAndAssignSprite("Assets/Images/InventorySprites/" + file_name + ".png", img, delegate // Keyed by .png to make it work in the editor (exported sprites are .png)
+			// LoadAndAssignSprite("Assets/Images/InventorySprites/" + file_name + ".psd", img, delegate
 			{
 				img.enabled = true;
 				if (on_load_complete != null)

@@ -11,5 +11,6 @@ public class InventorySlotObject : MonoBehaviour, IPointerDownHandler, IEventSys
 
 	public void OnPointerDown(PointerEventData eventData)
 	{
+		inventory_ctr.Instance.slot_mouse_down(index, base.gameObject);
 	}
 }
