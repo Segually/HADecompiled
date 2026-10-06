@@ -30,6 +30,7 @@ public class BanditCampInstance
 
 	public void ClearBanditCampData()
 	{
+		bandit_camp_data.Clear();
 	}
 
 	public BanditCampInstance(string instance_name, int biome_id, string template, int instance_rot, float instance_depth, bool flag_destroyed, bool is_debug_data)
@@ -89,12 +90,20 @@ public class BanditCampInstance
 
 	public string GetRandomizedGem()
 	{
-		return null;
+		if (!bandit_camp_data.ContainsKey("RANDOM_BIOME_GEM"))
+		{
+			GenerateRandomizedGems();
+		}
+		return bandit_camp_data["RANDOM_BIOME_GEM"];
 	}
 
 	public string GetRandomizedGemLarge()
 	{
-		return null;
+		if (!bandit_camp_data.ContainsKey("RANDOM_BIOME_GEM_LARGE"))
+		{
+			GenerateRandomizedGems();
+		}
+		return bandit_camp_data["RANDOM_BIOME_GEM_LARGE"];
 	}
 
 	public string GetRandomizedBossEntry(string entry)
@@ -108,6 +117,19 @@ public class BanditCampInstance
 
 	private void GenerateRandomizedGems()
 	{
+		ChunkControl.cave_define correspondingCave = ChunkControl.Instance.GetCorrespondingCave(inventory_ctr.BiomeIdToCaveEntrance(biome_id));
+		ChunkControl.cave_mineral_pairs cave_mineral_pairs = correspondingCave.possible_gem_pairs[Random.Range(0, correspondingCave.possible_gem_pairs.Length)];
+		string value = cave_mineral_pairs.small_mineral;
+		string value2 = cave_mineral_pairs.large_mineral;
+		if (Random.value < 0.05f && correspondingCave.possible_SUPER_RARE_minerals.Length != 0)
+		{
+			ChunkControl.cave_mineral_pairs cave_mineral_pairs2 = correspondingCave.possible_SUPER_RARE_minerals[Random.Range(0, correspondingCave.possible_SUPER_RARE_minerals.Length)];
+			value = cave_mineral_pairs2.small_mineral;
+			value2 = cave_mineral_pairs2.large_mineral;
+		}
+		bandit_camp_data.TryAdd("RANDOM_BIOME_GEM", value);
+		bandit_camp_data.TryAdd("RANDOM_BIOME_GEM_LARGE", value2);
+		SaveToDisk();
 	}
 
 	private void GenerateRandomizedBoss()

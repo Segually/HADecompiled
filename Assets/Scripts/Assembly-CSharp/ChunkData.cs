@@ -790,7 +790,25 @@ public class ChunkData
 
 	public List<string> DetermineBanditCampsWithinChunk(InventoryItem zone_item)
 	{
-		return null;
+		List<string> list = new List<string>();
+		for (int i = 0; i < 10; i++)
+		{
+			for (int j = 0; j < 10; j++)
+			{
+				foreach (ChunkElement item in GetElementsAt(i, j))
+				{
+					if (item.item.GetString("bandit_camp_instance") != "" && !list.Contains(item.item.GetString("bandit_camp_instance")))
+					{
+						list.Add(item.item.GetString("bandit_camp_instance"));
+					}
+				}
+			}
+		}
+		if (zone_item.GetString("bandit_camp_instance") != "")
+		{
+			list.Add(zone_item.GetString("bandit_camp_instance"));
+		}
+		return list;
 	}
 
 	public Dictionary<string, LandClaimChunkTimer> GetAllLandClaimTimers()

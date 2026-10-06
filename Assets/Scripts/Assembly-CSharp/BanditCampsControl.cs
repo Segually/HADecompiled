@@ -1,3 +1,4 @@
+using System.IO;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,20 +45,68 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public string GetUniqueBanditCampInstanceName()
 	{
-		return null;
+		int slotLong = PlayerData.Instance.GetSlotLong("bandit_camp_id_iterator", PlayerData.filename_t.general);
+		PlayerData.Instance.SetSlotLong("bandit_camp_id_iterator", slotLong + 1, PlayerData.filename_t.general);
+		return "BanditCampInstance" + slotLong;
 	}
 
 	public BanditCampMap.bandit_camp_instance_info_request_response GetSimpleBanditCampInfo(int chunkX, int chunkZ)
 	{
-		return default(BanditCampMap.bandit_camp_instance_info_request_response);
+		string biomeString = ChunkControl.Instance.GetBiomeString(chunkX, chunkZ);
+		int biomeInnerX = ChunkControl.Instance.GetBiomeInnerX(chunkX);
+		int biomeInnerZ = ChunkControl.Instance.GetBiomeInnerZ(chunkZ);
+		if (!loaded_bandit_camp_maps.ContainsKey(biomeString))
+		{
+			BanditCampMap value;
+			if (PlayerData.Instance.GetSlotShort("exists", "bandit-camp-map(" + biomeString + ")") == 1)
+			{
+				value = BanditCampMap.LoadFromDisk(biomeString);
+			}
+			else
+			{
+				int biome_X = 0;
+				int biome_Z = 0;
+				ChunkControl.Instance.GetBiomeMapCoordinates(chunkX, chunkZ, ref biome_X, ref biome_Z);
+				value = BanditCampMap.GenerateNewBanditCampMap(26, biome_X, biome_Z);
+				value.SaveToDisk(biomeString);
+			}
+			loaded_bandit_camp_maps.Add(biomeString, value);
+		}
+		return loaded_bandit_camp_maps[biomeString].GetInstanceInfoAt(biomeInnerX, biomeInnerZ);
 	}
 
 	public void PopulateOverworldChunk(ChunkData chunk_data, int X, int Z, string zone, Dictionary<string, ZoneData> auto_built_zones, BanditCampMap.bandit_camp_instance_info_request_response info)
 	{
+		BanditCampInstance banditCampInstance = GetBanditCampInstanceByCoordinates(zone, X, Z);
+		if (banditCampInstance == null)
+		{
+			float instance_depth = GameController.Instance.DepthAt(new Vector3((float)X * 10f + 5f, 0f, (float)Z * 10f + 5f));
+			banditCampInstance = CreateBanditCampInstance(zone, X, Z, info.instance_name, info.instance_template, info.instance_rot, instance_depth);
+		}
+		int biome_id = banditCampInstance.biome_id;
+		string[] floor_texture_paths = ChunkControl.Instance.biomes[biome_id].floor_texture_paths;
+		chunk_data.biome = biome_id;
+		ChunkControl.Instance.AssignRandomBiomeMobs(biome_id, ref chunk_data.biome_mobA, ref chunk_data.biome_mobB);
+		chunk_data.floor_rotation = Random.Range(0, 4);
+		chunk_data.floor_texture_index = Random.Range(0, floor_texture_paths.Length);
+		chunk_data.InjectDevPlacedBuildables("bandit-camps/" + banditCampInstance.template + "/" + info.instance_template_specific_file, "", banditCampInstance.instance_rot, true, auto_built_zones, banditCampInstance.instance_name);
 	}
 
 	public void PopulateIndoorsChunk(ChunkData chunk_data, int X, int Z, string zone, Dictionary<string, ZoneData> auto_built_zones, string bandit_camp_instance_name, int bandit_camp_original_shack_id, int curr_shack_originChunkX, int curr_shack_originChunkZ)
 	{
+		BanditCampInstance banditCampInstanceByName = GetBanditCampInstanceByName(bandit_camp_instance_name);
+		InventoryItem house_item = new InventoryItem("");
+		int interior_model_chunkX = 0;
+		int interior_model_chunkZ = 0;
+		int interior_model_innerX = 0;
+		int interior_model_innerZ = 0;
+		int outer_item_rot = 0;
+		string outer_item_zone = "";
+		ZoneData.GetNpcHomeData(Path.Combine("bandit-camps/" + banditCampInstanceByName.template, "(Auto Gen) npc_home_data"), "shack" + bandit_camp_original_shack_id, ref house_item, ref interior_model_chunkX, ref interior_model_chunkZ, ref interior_model_innerX, ref interior_model_innerZ, ref outer_item_rot, ref outer_item_zone);
+		int num = X - curr_shack_originChunkX + interior_model_chunkX;
+		int num2 = Z - curr_shack_originChunkZ + interior_model_chunkZ;
+		string text = "chunk(shack" + bandit_camp_original_shack_id + "," + num + ", " + num2 + ")";
+		chunk_data.InjectDevPlacedBuildables("bandit-camps/" + banditCampInstanceByName.template + "/" + text, "", banditCampInstanceByName.instance_rot, true, auto_built_zones, bandit_camp_instance_name);
 	}
 
 	public BanditCampInstance GetBanditCampInstanceByName(string instance_name)
@@ -86,12 +135,27 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public BanditCampInstance GetBanditCampInstanceByCoordinates(string zone, int chunkX, int chunkZ)
 	{
-		return null;
+		BanditCampMap.bandit_camp_instance_info_request_response simpleBanditCampInfo = GetSimpleBanditCampInfo(chunkX, chunkZ);
+		if (string.IsNullOrEmpty(simpleBanditCampInfo.instance_name))
+		{
+			return null;
+		}
+		return GetBanditCampInstanceByName(simpleBanditCampInfo.instance_name);
 	}
 
 	public BanditCampInstance CreateBanditCampInstance(string zone, int chunkX, int chunkZ, string instance_name, string instance_template, int instance_rot, float instance_depth)
 	{
-		return null;
+		ForcedChunkData forcedChunkData = ChunkControl.Instance.TryLoadForcedChunkData_(ChunkControl.Instance.GetForcedChunkDataFilePath(ChunkControl.Instance.GetChunkString(zone, chunkX, chunkZ)));
+		int num = forcedChunkData.forced_biome;
+		if (num == -1)
+		{
+			num = ChunkControl.Instance.GetBiomeIdAt(chunkX, chunkZ);
+		}
+		BanditCampInstance banditCampInstance = new BanditCampInstance(instance_name, num, instance_template, instance_rot, instance_depth, flag_destroyed: false, is_debug_data: false);
+		PlayerData.Instance.SetSlotShort("exists", 1, "bandit-camp-instance(" + instance_name + ")");
+		banditCampInstance.SaveToDisk();
+		loaded_bandit_camp_instances.Add(instance_name, banditCampInstance);
+		return banditCampInstance;
 	}
 
 	public void ModifyIfBanditPaint(ref string final_paint, string item_name, string bandit_camp_instance_name)
@@ -233,12 +297,48 @@ public class BanditCampsControl : MonoBehaviour, OrderedStart
 
 	public string GetRandomLoreFromFaction(int biome_id)
 	{
-		return null;
+		string key = "BANDIT_FACTION";
+		if (!faction_lore_files.ContainsKey(key))
+		{
+			faction_lore_files.Add(key, LoadBanditLoreList(key));
+		}
+		List<string> list = faction_lore_files[key].entries[DevBuildControl.BiomeIdToBiomeString(biome_id)];
+		if (list.Count != 0)
+		{
+			return list[Random.Range(0, list.Count)];
+		}
+		return "";
 	}
 
 	private FactionLoreFile LoadBanditLoreList(string faction)
 	{
-		return null;
+		bool file_exists = false;
+		Dictionary<string, List<string>> dictionary = new Dictionary<string, List<string>>();
+		file_exists = false;
+		List<string> textFileLines = ResourceControl.Instance.GetTextFileLines("FactionData/" + faction + "/" + faction + "_lore", ref file_exists);
+		if (file_exists)
+		{
+			string text = null;
+			foreach (string item in textFileLines)
+			{
+				if (item.StartsWith("[") && item.EndsWith("]"))
+				{
+					text = item.Trim('[', ']');
+					if (!dictionary.ContainsKey(text))
+					{
+						dictionary[text] = new List<string>();
+					}
+				}
+				else if (text != null && !string.IsNullOrWhiteSpace(item))
+				{
+					dictionary[text].Add(item);
+				}
+			}
+		}
+		return new FactionLoreFile
+		{
+			entries = dictionary
+		};
 	}
 
 	public string GetRandomBossNameFromFaction(int biome_id)
