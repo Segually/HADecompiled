@@ -334,6 +334,43 @@ public class BreedControl : MonoBehaviour, OrderedStart
 
 	public void TransitionBackToBreeder(breeder_transition transition)
 	{
+		GameController.Instance.enabled = false;
+		GameplayGUIControl.Instance.HideGameplayGui();
+		QualitySettings.shadows = ShadowQuality.HardOnly;
+		QualitySettings.shadowResolution = ShadowResolution.VeryHigh;
+		switch (transition)
+		{
+		case breeder_transition.on_death:
+		{
+			initial_pick_animal = true;
+			breeder_fine_details.SetActive(true);
+			SetUpBreeder(state.select_father);
+			GameController.Instance.SetBackground_Breeder();
+			PreloadChunks();
+			GameController.Instance.breeder_floor_plane.SetActive(true);
+			GameController.Instance.breeder_floor_plane.transform.position = Vector3.zero;
+			Texture2D texture2D = new Texture2D(2, 2);
+			Color[] array = new Color[4];
+			for (int i = 0; i < 4; i++)
+			{
+				array[i] = new Color(1f, 1f, 1f, 1f);
+			}
+			texture2D.SetPixels(0, 0, 2, 2, array);
+			texture2D.Apply();
+			GameController.Instance.breeder_floor_plane.GetComponent<Renderer>().material.mainTexture = texture2D;
+			break;
+		}
+		case breeder_transition.on_companion:
+			cam_lerp = true;
+			cam_lerp_speed = 5f;
+			ViewResult(CompanionController.Instance.EGG.transform, -1.5f);
+			GameController.Instance.SetBackground_NPC();
+			break;
+		case breeder_transition.on_mutation:
+			SetUpBreeder(state.select_mutant);
+			GameController.Instance.SetBackground_NPC();
+			break;
+		}
 	}
 
 	private void DestroyButtons()
@@ -1282,10 +1319,234 @@ public class BreedControl : MonoBehaviour, OrderedStart
 
 	public void OnMutateComplete()
 	{
+		if (state_t != state.select_mutant)
+		{
+			return;
+		}
+		lerp_mutants = false;
+		UnityEngine.Object.Destroy(mutant);
+		UnityEngine.Object.Destroy(bubbles);
+		ShowBanners(banner_type.mutate);
+		view_result_rotate = true;
+		AdjustCamHeightToCreatureHeight(result, true);
+		List<string> list = new List<string>();
+		foreach (string item in GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel.original.creatures_that_made_me)
+		{
+			list.Add(item);
+		}
+		list.Add(mutant.GetComponent<LiteModel>().original.creatures_that_made_me[0]);
+		result = CreatureMorpher.Instance.GetHybridLite(list);
+		result.GetComponent<LiteModel>().animation_choppiness = GraphicsControl.Instance.SpecialAnimationChoppiness();
+		result.transform.position = new Vector3(mid_mutant.position.x, 0f, mid_mutant.position.z);
+		result.transform.rotation = Quaternion.Euler(0f, 220f, 0f);
+		result.GetComponent<LiteModel>().StartAnimation(0);
+		string text = "?";
+		string text2 = "?";
+		string text3 = "?";
+		TranslationControl.languages use_language = TranslationControl.Instance.use_language;
+		switch (list.Count)
+		{
+		case 3:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "Mutant";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u043c\u0443\u0442\u0438\u0440\u043e\u0432\u0430\u0432\u0448\u0438\u0439";
+				text2 = "\u043c\u0443\u0442\u0438\u0440\u043e\u0432\u0430\u0432\u0448\u0430\u044f";
+				text3 = "\u043c\u0443\u0442\u0438\u0440\u043e\u0432\u0430\u0432\u0448\u0435\u0433\u043e";
+				break;
+			case TranslationControl.languages.Portuguese:
+			case TranslationControl.languages.Spanish:
+				text = "Mutante";
+				text2 = "Mutante";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Mutan";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e01\u0e25\u0e32\u0e22\u0e1e\u0e31\u0e19\u0e18\u0e38\u0e4c";
+				break;
+			}
+			break;
+		case 4:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "Legendary";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043d\u044b\u0439";
+				text2 = "\u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043d\u0430\u044f";
+				text3 = "\u043b\u0435\u0433\u0435\u043d\u0434\u0430\u0440\u043d\u043e\u0435";
+				break;
+			case TranslationControl.languages.Portuguese:
+				text = "Lend\u00e1rio";
+				text2 = "Lend\u00e1ria";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Legendaris";
+				break;
+			case TranslationControl.languages.Spanish:
+				text = "Legendario";
+				text2 = "Legendaria";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e15\u0e33\u0e19\u0e32\u0e19";
+				break;
+			}
+			break;
+		case 5:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "God";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u0411\u043e\u0433";
+				text3 = "\u0411\u043e\u0433";
+				text2 = "\u0411\u043e\u0433";
+				break;
+			case TranslationControl.languages.Portuguese:
+				text = "De Deus";
+				text2 = "De Deus";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Tuhan";
+				break;
+			case TranslationControl.languages.Spanish:
+				text = "Dios";
+				text2 = "Dios";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e1e\u0e23\u0e30 \u0e40\u0e08\u0e49\u0e32";
+				break;
+			}
+			break;
+		case 6:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "Mythical";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u043c\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0438\u0439";
+				text2 = "\u043c\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u0430\u044f";
+				text3 = "\u043c\u0438\u0444\u0438\u0447\u0435\u0441\u043a\u043e\u0435";
+				break;
+			case TranslationControl.languages.Portuguese:
+			case TranslationControl.languages.Spanish:
+				text = "M\u00edtico";
+				text2 = "M\u00edtica";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Mitos";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e15\u0e4d\u0e32\u0e19\u0e32\u0e19";
+				break;
+			}
+			break;
+		case 7:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "Unholy";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u0434\u0435\u043c\u043e\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439";
+				text2 = "\u0434\u0435\u043c\u043e\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439";
+				text3 = "\u0434\u0435\u043c\u043e\u043d\u0438\u0447\u0435\u0441\u043a\u043e\u0435";
+				break;
+			case TranslationControl.languages.Portuguese:
+			case TranslationControl.languages.Spanish:
+				text = "Demon\u00edaco";
+				text2 = "Demon\u00edaca";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Jurang";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e44\u0e21\u0e48\u0e2b\u0e21\u0e01\u0e2b\u0e27\u0e32";
+				break;
+			}
+			break;
+		default:
+			switch (use_language)
+			{
+			case TranslationControl.languages.English:
+				text = "Supreme";
+				break;
+			case TranslationControl.languages.Russian:
+				text = "\u0432\u0435\u0440\u0445\u043e\u0432\u043d\u044b\u0439";
+				text2 = "\u0432\u044b\u0441\u0448\u0430\u044f";
+				text3 = "\u0432\u044b\u0441\u0448\u0435\u0435";
+				break;
+			case TranslationControl.languages.Portuguese:
+			case TranslationControl.languages.Spanish:
+				text = "Supremo";
+				text2 = "Suprema";
+				break;
+			case TranslationControl.languages.Indonesian:
+				text = "Tertinggi";
+				break;
+			case TranslationControl.languages.Thai:
+				text = "\u0e0e\u0e35\u0e01\u0e32";
+				break;
+			}
+			break;
+		}
+		CreatureModel original = result.GetComponent<LiteModel>().original;
+		string creatureNameDeterminer = GetCreatureNameDeterminer(original.grammatical_gender);
+		string noun = original.noun;
+		string grammatical_gender = original.grammatical_gender;
+		string text4 = "???";
+		if (!Startup.StringNullOrWhitespace(noun))
+		{
+			text4 = char.ToUpper(noun[0]) + noun.Substring(1);
+		}
+		string text5 = ((grammatical_gender == "M" || grammatical_gender == "?") ? text : ((grammatical_gender == "F") ? text2 : ((!(grammatical_gender == "N")) ? "?" : text3)));
+		switch (TranslationControl.Instance.use_language)
+		{
+		case TranslationControl.languages.Portuguese:
+		case TranslationControl.languages.Indonesian:
+		case TranslationControl.languages.Spanish:
+			SetBannerText(text4 + " " + text5, creatureNameDeterminer);
+			break;
+		case TranslationControl.languages.English:
+		case TranslationControl.languages.Russian:
+			SetBannerText(text5 + " " + text4, creatureNameDeterminer);
+			break;
+		case TranslationControl.languages.Thai:
+			SetBannerText(text4 + text5, creatureNameDeterminer);
+			break;
+		}
+		UnityEngine.Object.Destroy(GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel.gameObject);
+		GameController.Instance.player.transform.position = new Vector3(mid_mutant.position.x, SharedCreature.H, mid_mutant.position.z);
+		GameController.Instance.player.transform.localScale = Vector3.one;
+		result.transform.SetParent(GameController.Instance.player.transform.Find("model goes here"));
+		result.transform.localPosition = Vector3.zero;
+		GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel = result.GetComponent<LiteModel>();
+		GameController.Instance.player.GetComponent<SharedCreature>().OnEquipmentChanged();
+		CreatureMorpher.Instance.CreateMutantParticle(GameController.Instance.player.GetComponent<SharedCreature>().myCreatureModel.GetComponent<LiteModel>());
 	}
 
 	public void AcceptMutant()
 	{
+		GameController.Instance.UNPAUSE_GAME();
+		EndBreeder();
+		result.transform.localRotation = Quaternion.identity;
+		GainExtraLevels(12);
+		PlayerData.Instance.SetSlotString("creatureName", text_result_name.text, PlayerData.filename_t.general);
+		GameController.Instance.player_parent_creatures.Add(mutant_creature);
+		GameController.Instance.SaveParentCreaturesToDisk();
+		GameServerSender.Instance.SendUpdateParentCreatures();
+		InitializeGameplay(true);
+		state_t = state.none;
+		GameController.Instance.GiveAllOverheads();
+		GameplayGUIControl.Instance.ShowGameplayGui();
+		StartCoroutine(DelayedHideBreeder(2f));
 	}
 
 	private IEnumerator DelayedCompanionAd()
@@ -1319,6 +1580,12 @@ public class BreedControl : MonoBehaviour, OrderedStart
 
 	public void SkipBreedScreenMapEditor()
 	{
+		elevator.transform.localPosition = pos_elevator_finished.transform.localPosition;
+		AudioControl.Instance.PlayIntroMusic();
+		GameController.Instance.EnableElevator(false);
+		InitializeGameplay(false);
+		ZoneDataControl.Instance.ChangeZone(ZoneDataControl.Instance.LoadOverworld(), ZoneDataControl.change_zone_type.custom_position, MapEditorControl.Instance.editor_start_position, null, true, false);
+		StartCoroutine(DelayedHideBreeder(0.1f));
 	}
 
 	public void LoadEverythingFromDisk(Vector3 player_start_position)
@@ -1350,6 +1617,19 @@ public class BreedControl : MonoBehaviour, OrderedStart
 
 	public void GainExtraLevels(int n_levelups)
 	{
+		int num = GameController.Instance.playerLevel;
+		int currentEXP = GameController.Instance.currentEXP;
+		int num2 = GameController.Instance.NextLevelExp(num);
+		int num3 = (int)((1f - (float)currentEXP / (float)num2) * (float)num2) + 2;
+		for (int i = 0; i < n_levelups - 1; i++)
+		{
+			num++;
+			num3 += GameController.Instance.NextLevelExp(num);
+		}
+		GameController.Instance.currentEXP = num3 + currentEXP;
+		GameController.Instance.SaveCurrentExpToDisk();
+		GameController.Instance.animate_exp_bar = true;
+		GameController.Instance.showOverheadNotif("+" + num3 + " Exp!", GameController.Instance.player.transform.position, true, true);
 	}
 
 	private void CreateParent(ref GameObject parent, Vector3 position, Quaternion rotation, string creature_name)
