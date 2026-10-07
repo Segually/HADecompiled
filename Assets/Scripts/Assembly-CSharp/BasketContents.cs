@@ -129,10 +129,25 @@ public class BasketContents
 
 	public BasketContents(Packet incoming)
 	{
+		ClearContents();
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			int slot = incoming.GetShort();
+			int quantity = incoming.GetShort();
+			stored_[slot] = new ItemCountPair(InventoryItem.UnpackFromWeb(incoming), quantity);
+		}
 	}
 
 	public void Pack(Packet outgoing)
 	{
+		outgoing.PutShort(stored_.Count);
+		foreach (KeyValuePair<int, ItemCountPair> entry in stored_)
+		{
+			outgoing.PutShort(entry.Key);
+			outgoing.PutShort(entry.Value.count);
+			entry.Value.item.PackForWeb(outgoing);
+		}
 	}
 
 	public List<int> FilledSlots()

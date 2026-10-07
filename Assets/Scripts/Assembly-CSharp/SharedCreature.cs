@@ -310,10 +310,27 @@ public class SharedCreature : MonoBehaviour
 
 	public void CreateMultiplayerDisplay(string username_punctuated, int level)
 	{
+		if (MP_display != null) return;
+		MP_display = Object.Instantiate(GameServerInterface.Instance.prefab_MP_display);
+		MP_display.transform.SetParent(MobControl.Instance.gameObject.transform);
+		MP_display.transform.SetAsFirstSibling();
+		MP_display.transform.localRotation = Quaternion.identity;
+		MP_display.transform.localPosition = Vector2.zero;
+		MP_display.transform.localScale = Vector3.one;
+		((RectTransform)MP_display.transform).anchorMax = Vector2.one * 10f;
+		((RectTransform)MP_display.transform).anchorMin = Vector2.one * 10f;
+		RedrawMultiplayerOverhead(username_punctuated, level);
+		GameController.Instance.possible_destroy.Add(MP_display);
 	}
 
 	public void RedrawMultiplayerOverhead(string username_punctuated, int level)
 	{
+		if (MP_display == null) return;
+		string color = GetLevelColor(GameController.Instance.playerLevel, level);
+		MP_display.transform.Find("username").Find("Text").gameObject.GetComponent<UnityEngine.UI.Text>().text = username_punctuated + " <color=" + color + "><size=15>(lvl " + level + ")</size></color>";
+		float width = MP_display.transform.Find("username").Find("Text").gameObject.GetComponent<UnityEngine.UI.Text>().preferredWidth;
+		RectTransform background = MP_display.transform.Find("username").Find("Image").gameObject.GetComponent<UnityEngine.UI.Image>().rectTransform;
+		background.sizeDelta = new Vector2(Mathf.Max(width + 35f, 130f), background.sizeDelta.y);
 	}
 
 	private string GetLevelColor(int my_level, int their_level)

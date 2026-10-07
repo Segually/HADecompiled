@@ -309,11 +309,73 @@ public class InventoryItem
 
 	public void PackForWeb(Packet outgoing)
 	{
+		Dictionary<string, short> shorts = new Dictionary<string, short>();
+		Dictionary<string, string> strings = new Dictionary<string, string>();
+		Dictionary<string, int> longs = new Dictionary<string, int>();
+		foreach (KeyValuePair<string, object> entry in data)
+		{
+			if (entry.Value == null)
+			{
+				Debug.Log("ERROR: trying to send InventoryItem with value=null [key=" + entry.Key + "]");
+			}
+			else if (entry.Value.GetType() == typeof(short))
+			{
+				short value = (short)entry.Value;
+				if (value != 0) shorts[entry.Key] = value;
+			}
+			else if (entry.Value.GetType() == typeof(string))
+			{
+				string value = (string)entry.Value;
+				if (!Startup.StringNullOrEmpty(value)) strings[entry.Key] = value;
+			}
+			else if (entry.Value.GetType() == typeof(int))
+			{
+				int value = (int)entry.Value;
+				if (value != 0) longs[entry.Key] = value;
+			}
+		}
+		outgoing.PutShort((float)shorts.Count);
+		foreach (KeyValuePair<string, short> entry in shorts)
+		{
+			outgoing.PutString(entry.Key);
+			outgoing.PutShort(entry.Value);
+		}
+		outgoing.PutShort((float)strings.Count);
+		foreach (KeyValuePair<string, string> entry in strings)
+		{
+			outgoing.PutString(entry.Key);
+			outgoing.PutString(entry.Value);
+		}
+		outgoing.PutShort((float)longs.Count);
+		foreach (KeyValuePair<string, int> entry in longs)
+		{
+			outgoing.PutString(entry.Key);
+			outgoing.PutLong(entry.Value);
+		}
 	}
 
 	public static InventoryItem UnpackFromWeb(Packet incoming)
 	{
-		return null;
+		InventoryItem item = new InventoryItem("");
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			string key = incoming.GetString();
+			item.data[key] = incoming.GetShort();
+		}
+		count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			string key = incoming.GetString();
+			item.data[key] = incoming.GetString();
+		}
+		count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			string key = incoming.GetString();
+			item.data[key] = incoming.GetLong();
+		}
+		return item;
 	}
 
 	public override bool Equals(object obj)

@@ -34,7 +34,33 @@ public class ZoneData
 
 	public static ZoneData UnpackFromWeb(Packet incoming, string zone_name)
 	{
-		return null;
+		InventoryItem item = InventoryItem.UnpackFromWeb(incoming);
+		int rotation = incoming.GetByte();
+		int chunkX = incoming.GetShort();
+		int chunkZ = incoming.GetShort();
+		int innerX = incoming.GetShort();
+		int innerZ = incoming.GetShort();
+		string outerZone = incoming.GetString();
+		Dictionary<string, LandClaimChunkTimer> timers = new Dictionary<string, LandClaimChunkTimer>();
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			string key = incoming.GetString();
+			int second = incoming.GetShort();
+			int minute = incoming.GetShort();
+			int hour = incoming.GetShort();
+			int day = incoming.GetShort();
+			int month = incoming.GetShort();
+			int year = incoming.GetShort();
+			string user0 = incoming.GetString();
+			string user1 = incoming.GetString();
+			string user2 = incoming.GetString();
+			LandClaimChunkTimer timer = ChunkData.CreateLandClaimChunkTimer(key, user0, user1, user2, new System.DateTime(year, month, day, hour, minute, second));
+			timers[timer.land_claim_str] = timer;
+		}
+		ZoneData result = new ZoneData(zone_name, item, rotation, outerZone, chunkX, chunkZ, innerX, innerZ);
+		result.outdoor_land_claim_chunk_timers = timers;
+		return result;
 	}
 
 	public void CalculateOutdoorLandClaims()
@@ -236,5 +262,26 @@ public class ZoneData
 
 	public void PackForWeb(Packet outgoing)
 	{
+		house_item.PackForWeb(outgoing);
+		outgoing.PutByte((byte)outer_item_rot);
+		outgoing.PutShort(interior_model_chunkX);
+		outgoing.PutShort(interior_model_chunkZ);
+		outgoing.PutShort(interior_model_innerX);
+		outgoing.PutShort(interior_model_innerZ);
+		outgoing.PutString(outer_item_zone);
+		outgoing.PutShort(outdoor_land_claim_chunk_timers.Count);
+		foreach (LandClaimChunkTimer timer in outdoor_land_claim_chunk_timers.Values)
+		{
+			outgoing.PutString(timer.land_claim_str);
+			outgoing.PutShort(timer.when_to_expire.Second);
+			outgoing.PutShort(timer.when_to_expire.Minute);
+			outgoing.PutShort(timer.when_to_expire.Hour);
+			outgoing.PutShort(timer.when_to_expire.Day);
+			outgoing.PutShort(timer.when_to_expire.Month);
+			outgoing.PutShort(timer.when_to_expire.Year);
+			outgoing.PutString(timer.land_claim_user0);
+			outgoing.PutString(timer.land_claim_user1);
+			outgoing.PutString(timer.land_claim_user2);
+		}
 	}
 }

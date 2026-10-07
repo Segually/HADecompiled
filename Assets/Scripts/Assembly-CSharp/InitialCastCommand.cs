@@ -27,9 +27,19 @@ public class InitialCastCommand
 
 	public void PackForWeb(Packet outgoing)
 	{
+		outgoing.PutShort(effect_names.Count);
+		foreach (string name in effect_names) outgoing.PutString(name);
+		outgoing.PutString(projectile_model);
+		outgoing.PutByte((byte)type);
+		outgoing.PutByte((byte)projectile_target_type);
 	}
 
 	public void UnpackFromWeb(Packet incoming)
 	{
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++) effect_names.Add(incoming.GetString());
+		projectile_model = incoming.GetString();
+		type = (initial_cast_type)incoming.GetByte();
+		projectile_target_type = (projectile_target)incoming.GetByte();
 	}
 }

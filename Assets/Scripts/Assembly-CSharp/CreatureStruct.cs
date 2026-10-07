@@ -169,11 +169,68 @@ public class CreatureStruct
 
 	public void Pack(Packet outgoing)
 	{
+		outgoing.PutShort(creatures.Count);
+		foreach (string creature in creatures) outgoing.PutString(creature);
+		outgoing.PutString(combat_name);
+		outgoing.PutLong(critterLevel);
+		outgoing.PutShort(critterSize * 10f);
+		outgoing.PutByte((byte)brain_type);
+		outgoing.PutShort(walk_speed * 1000f);
+		outgoing.PutLong(hp_regen * 10);
+		outgoing.PutLong(hp_max);
+		outgoing.PutLong(hp_curr);
+		outgoing.PutShort(ai_lockon_range * 10f);
+		outgoing.PutShort(wander_dist * 10f);
+		hat_.PackForWeb(outgoing);
+		body_.PackForWeb(outgoing);
+		hand_.PackForWeb(outgoing);
+		outgoing.PutString(creature_name);
+		outgoing.PutLong(respawn_seconds);
+		outgoing.PutString(skin_mat);
+		original_element_item.PackForWeb(outgoing);
+		outgoing.PutShort(original_element_rot);
+		outgoing.PutShort(icon_id);
+		outgoing.PutString(original_element_zone);
+		outgoing.PutShort(original_element_chunkX);
+		outgoing.PutShort(original_element_chunkZ);
+		outgoing.PutShort(original_element_innerX);
+		outgoing.PutShort(original_element_innerZ);
+		outgoing.PutShort(spawn_offset_x);
+		outgoing.PutShort(spawn_offset_z);
 	}
 
 	public static CreatureStruct PacketToCreatureStruct(Packet incoming)
 	{
-		return null;
+		List<string> creatures = new List<string>();
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++) creatures.Add(incoming.GetString());
+		string id = incoming.GetString();
+		int level = incoming.GetLong();
+		float size = incoming.GetShort() / 10f;
+		SharedCreature.brain_type_t brain = (SharedCreature.brain_type_t)incoming.GetByte();
+		float speed = incoming.GetShort() / 1000f;
+		int regen = (int)(incoming.GetLong() / 10f);
+		int max_hp = incoming.GetLong();
+		int hp = incoming.GetLong();
+		float lockon = incoming.GetShort() / 10f;
+		float wander = incoming.GetShort() / 10f;
+		InventoryItem hat = InventoryItem.UnpackFromWeb(incoming);
+		InventoryItem body = InventoryItem.UnpackFromWeb(incoming);
+		InventoryItem hand = InventoryItem.UnpackFromWeb(incoming);
+		string name = incoming.GetString();
+		int respawn = incoming.GetLong();
+		string skin = incoming.GetString();
+		InventoryItem element = InventoryItem.UnpackFromWeb(incoming);
+		int rot = incoming.GetShort();
+		int icon = incoming.GetShort();
+		string zone = incoming.GetString();
+		int chunkX = incoming.GetShort();
+		int chunkZ = incoming.GetShort();
+		int innerX = incoming.GetShort();
+		int innerZ = incoming.GetShort();
+		int offsetX = incoming.GetShort();
+		int offsetZ = incoming.GetShort();
+		return new CreatureStruct(id, creatures, level, size, brain, speed, regen, max_hp, hp, lockon, wander, hat, body, hand, name, respawn, skin, element, rot, icon, zone, chunkX, chunkZ, innerX, innerZ, offsetX, offsetZ);
 	}
 
 	public static CreatureStruct GenerateNewWildMob(ChunkData chunk_data, int innerX, int innerZ, float size, float level_mod, InventoryItem item, int rot)

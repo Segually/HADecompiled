@@ -786,6 +786,51 @@ public class ChunkData
 
 	public void PackForWeb(Packet outgoing)
 	{
+		outgoing.PutShort(X);
+		outgoing.PutShort(Z);
+		outgoing.PutString(zone);
+		outgoing.PutShort(biome);
+		outgoing.PutShort(floor_rotation);
+		outgoing.PutShort(floor_texture_index);
+		outgoing.PutShort(floor_model_id);
+		outgoing.PutString(biome_mobA);
+		outgoing.PutString(biome_mobB);
+		Dictionary<Vector3, List<ChunkElement>> cells = new Dictionary<Vector3, List<ChunkElement>>();
+		for (int x = 0; x < 10; x++)
+			for (int z = 0; z < 10; z++)
+			{
+				List<ChunkElement> elements = GetElementsAt(x, z);
+				if (elements.Count != 0) cells.Add(new Vector3(x, z, 0f), elements);
+			}
+		outgoing.PutByte((byte)cells.Count);
+		foreach (KeyValuePair<Vector3, List<ChunkElement>> cell in cells)
+		{
+			outgoing.PutByte((byte)cell.Key.x);
+			outgoing.PutByte((byte)cell.Key.y);
+			outgoing.PutShort(cell.Value.Count);
+			foreach (ChunkElement element in cell.Value)
+			{
+				outgoing.PutByte((byte)element.rot);
+				element.item.PackForWeb(outgoing);
+			}
+		}
+		outgoing.PutShort(land_claim_chunk_timers_.Count);
+		foreach (LandClaimChunkTimer timer in land_claim_chunk_timers_.Values)
+		{
+			outgoing.PutString(timer.land_claim_str);
+			outgoing.PutString(timer.land_claim_user0);
+			outgoing.PutString(timer.land_claim_user1);
+			outgoing.PutString(timer.land_claim_user2);
+			outgoing.PutShort(timer.when_to_expire.Second);
+			outgoing.PutShort(timer.when_to_expire.Minute);
+			outgoing.PutShort(timer.when_to_expire.Hour);
+			outgoing.PutShort(timer.when_to_expire.Day);
+			outgoing.PutShort(timer.when_to_expire.Month);
+			outgoing.PutShort(timer.when_to_expire.Year);
+		}
+		List<string> camps = DetermineBanditCampsWithinChunk(ZoneDataControl.Instance.LoadZoneDataFromDisk(zone).house_item);
+		outgoing.PutByte((byte)camps.Count);
+		foreach (string camp in camps) outgoing.PutString(camp);
 	}
 
 	public List<string> DetermineBanditCampsWithinChunk(InventoryItem zone_item)
@@ -823,5 +868,43 @@ public class ChunkData
 
 	public void UnpackFromWeb(Packet incoming)
 	{
+		X = incoming.GetShort();
+		Z = incoming.GetShort();
+		zone = incoming.GetString();
+		biome = incoming.GetShort();
+		floor_rotation = incoming.GetShort();
+		floor_texture_index = incoming.GetShort();
+		floor_model_id = incoming.GetShort();
+		biome_mobA = incoming.GetString();
+		biome_mobB = incoming.GetString();
+		int cells = incoming.GetByte();
+		for (int i = 0; i < cells; i++)
+		{
+			int x = incoming.GetByte();
+			int z = incoming.GetByte();
+			int count = incoming.GetShort();
+			for (int j = 0; j < count; j++)
+			{
+				byte rotation = incoming.GetByte();
+				InventoryItem item = InventoryItem.UnpackFromWeb(incoming);
+				mp_chunk_size += item.DataSize();
+				AddElement(x, z, new ChunkElement(item, rotation));
+			}
+		}
+		string chunkStr = ChunkControl.Instance.GetChunkString(zone, X, Z);
+		int timers = incoming.GetShort();
+		for (int i = 0; i < timers; i++)
+		{
+			string key = incoming.GetString();
+			string user0 = incoming.GetString();
+			string user1 = incoming.GetString();
+			string user2 = incoming.GetString();
+			int days = incoming.GetShort();
+			int hours = incoming.GetShort();
+			int minutes = incoming.GetShort();
+			int seconds = incoming.GetShort();
+			DateTime expire = DateTime.UtcNow.AddDays(days).AddHours(hours).AddMinutes(minutes).AddSeconds(seconds);
+			AddLandClaimChunkTimer(key, user0, user1, user2, chunkStr, expire, true);
+		}
 	}
 }

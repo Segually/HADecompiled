@@ -18,5 +18,9 @@ public class OnlinePlayer
 
 	public OnlinePlayer(string username_lower, string username_punctuated, OnlinePlayerData player_stats)
 	{
+		this.username_lower = username_lower;
+		this.username_punctuated = username_punctuated;
+		currently_using = player_stats.currently_using;
+		sitting_in_chair = player_stats.sitting_in_chair;
 	}
 }

@@ -21,11 +21,34 @@ public class BanditCampInstance
 
 	public void PackForWeb(Packet outgoing)
 	{
+		outgoing.PutString(instance_name);
+		outgoing.PutByte((byte)biome_id);
+		outgoing.PutString(template);
+		outgoing.PutByte((byte)instance_rot);
+		outgoing.PutLong((int)instance_depth);
+		outgoing.PutByte((byte)(flag_destroyed ? 1 : 0));
+		outgoing.PutShort(bandit_camp_data.Count);
+		foreach (KeyValuePair<string, string> entry in bandit_camp_data)
+		{
+			outgoing.PutString(entry.Key);
+			outgoing.PutString(entry.Value);
+		}
 	}
 
 	public static BanditCampInstance UnpackFromWeb(Packet incoming)
 	{
-		return null;
+		string name = incoming.GetString();
+		int biome = incoming.GetByte();
+		string template = incoming.GetString();
+		int rotation = incoming.GetByte();
+		int depth = incoming.GetLong();
+		bool destroyed = incoming.GetByte() == 1;
+		Dictionary<string, string> entries = new Dictionary<string, string>();
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++) entries.Add(incoming.GetString(), incoming.GetString());
+		BanditCampInstance result = new BanditCampInstance(name, biome, template, rotation, depth, destroyed, false);
+		result.bandit_camp_data = entries;
+		return result;
 	}
 
 	public void ClearBanditCampData()

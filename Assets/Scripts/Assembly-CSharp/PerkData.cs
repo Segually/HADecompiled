@@ -38,10 +38,41 @@ public class PerkData
 
 	public void PackForWeb(Packet outgoing)
 	{
+		outgoing.PutString(original_key);
+		outgoing.PutShort(on_initial_cast.Count);
+		foreach (InitialCastCommand command in on_initial_cast) command.PackForWeb(outgoing);
+		outgoing.PutShort(all_effects.Count);
+		foreach (KeyValuePair<string, SinglePerkEffect> effect in all_effects)
+		{
+			outgoing.PutString(effect.Key);
+			outgoing.PutShort(effect.Value.data.Count);
+			foreach (KeyValuePair<string, string> entry in effect.Value.data)
+			{
+				outgoing.PutString(entry.Key);
+				outgoing.PutString(entry.Value);
+			}
+		}
 	}
 
 	public void UnpackFromWeb(Packet incoming)
 	{
+		original_key = incoming.GetString();
+		int count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			InitialCastCommand command = new InitialCastCommand();
+			command.UnpackFromWeb(incoming);
+			on_initial_cast.Add(command);
+		}
+		count = incoming.GetShort();
+		for (int i = 0; i < count; i++)
+		{
+			string name = incoming.GetString();
+			Dictionary<string, string> data = new Dictionary<string, string>();
+			int n = incoming.GetShort();
+			for (int j = 0; j < n; j++) data.Add(incoming.GetString(), incoming.GetString());
+			all_effects.Add(name, new SinglePerkEffect(data));
+		}
 	}
 
 	public void AddEffect(string effect_name, Dictionary<string, string> data)

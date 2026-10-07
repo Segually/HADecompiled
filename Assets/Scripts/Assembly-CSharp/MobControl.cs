@@ -574,7 +574,11 @@ public class MobControl : MonoBehaviour, OrderedStart
 
 	public CreatureStruct ObjToCreatureStruct(GameObject critter)
 	{
-		return null;
+		SharedCreature creature = critter.GetComponent<SharedCreature>();
+		Combatant combatant = critter.GetComponent<Combatant>();
+		List<string> parents = new List<string>();
+		foreach (string parent in creature.myCreatureModel.original.creatures_that_made_me) parents.Add(parent);
+		return new CreatureStruct(combatant.combat_name, parents, creature.level, combatant.scale, creature.brain_type, creature.walk_speed, creature.hp_regen, combatant.HP_max, (int)combatant.hp, creature.ai_lockon_range, creature.wander_dist, creature.hat_, creature.body_, creature.hand_, creature.creature_name, combatant.respawn_time, creature.base_skin_material, combatant.original_element_item, combatant.original_element_rot, creature.icon_id, combatant.origin_zone, combatant.origin_chunkX, combatant.origin_chunkZ, combatant.origin_innerX, combatant.origin_innerZ, combatant.spawn_offset_x, combatant.spawn_offset_z);
 	}
 
 	public void TryInstantiateMob(CreatureStruct request, InventoryItem origin_item, int origin_rot, ChunkObj chunkObj)
@@ -632,6 +636,9 @@ public class MobControl : MonoBehaviour, OrderedStart
 
 	public void SpawnNetMob(CreatureStruct creature, Vector3 curr_pos, string combat_id)
 	{
+		GameObject morph = CreatureMorpher.Instance.GetHybridLite(creature.creatures);
+		GameObject obj = CreateGenericCreature(creature_type_t.network_mob, morph, curr_pos, combat_id, creature.critterLevel, creature.critterSize, creature.walk_speed, creature.hp_curr, creature.hp_max, creature.hp_regen, creature.brain_type, creature.original_element_zone, creature.original_element_chunkX, creature.original_element_chunkZ, creature.original_element_innerX, creature.original_element_innerZ, creature.ai_lockon_range, creature.wander_dist, creature.creature_name, creature.hat_, creature.body_, creature.hand_, creature.respawn_seconds, creature.skin_mat, creature.original_element_item, creature.original_element_rot, creature.icon_id, false, creature.spawn_offset_x, creature.spawn_offset_z);
+		obj.name = "Net Mob";
 	}
 
 	public GameObject SpawnCompanion(Vector3 pos, ActiveCompanion companion)
@@ -654,6 +661,13 @@ public class MobControl : MonoBehaviour, OrderedStart
 
 	public void SpawnOtherPlayer(OnlinePlayer player, OnlinePlayerData playerdata)
 	{
+		GameObject morph = CreatureMorpher.Instance.GetHybridLite(playerdata.creatures);
+		player.obj = CreateGenericCreature(creature_type_t.network_player, morph, playerdata.at, player.username_lower, playerdata.level, 1f, 0.051f, playerdata.hp, playerdata.hp_max, playerdata.hp_regen, (SharedCreature.brain_type_t)2, "", 0, 0, 0, 0, 0f, 0f, "", playerdata.hat_, playerdata.body_, playerdata.hand_, 0, "", new InventoryItem(""), 0, 0, false, 0, 0);
+		SharedCreature creature = player.obj.GetComponent<SharedCreature>();
+		creature.SetMoveTo(playerdata.to);
+		creature.SnapSpotterRotation(playerdata.rot);
+		if (playerdata.sitting_in_chair != "") creature.TrySitInChairObj(playerdata.sitting_in_chair);
+		if (WindowControl.Instance.ShouldRecreateOverheads()) creature.CreateMultiplayerDisplay(player.username_punctuated, creature.level);
 	}
 
 	public void SpawnMainPlayer(GameObject morph, Vector3 position, string combat_name)
