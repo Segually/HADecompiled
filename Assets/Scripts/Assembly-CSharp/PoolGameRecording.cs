@@ -47,10 +47,75 @@ public class PoolGameRecording
 
 	public byte[] pack_for_web()
 	{
-		return null;
+		Packet packet = new Packet();
+		packet.PutLong(frames.Count);
+		foreach (List<object> frame in frames)
+		{
+			packet.PutShort((float)frame.Count);
+			foreach (object item in frame)
+			{
+				if (item.GetType() == typeof(PoolGameRecording_UpdatePosition))
+				{
+					packet.PutByte(0);
+					PoolGameRecording_UpdatePosition updatePosition = (PoolGameRecording_UpdatePosition)item;
+					packet.PutByte((byte)updatePosition.ball_id);
+					packet.PutLong((int)updatePosition.localPosition.x);
+					packet.PutLong((int)updatePosition.localPosition.y);
+				}
+				else if (item.GetType() == typeof(PoolGameRecording_SinkBall))
+				{
+					packet.PutByte(1);
+					PoolGameRecording_SinkBall sinkBall = (PoolGameRecording_SinkBall)item;
+					packet.PutByte((byte)sinkBall.ball_id);
+				}
+				else if (item.GetType() == typeof(PoolGameRecording_SFX_collide))
+				{
+					packet.PutByte(2);
+					PoolGameRecording_SFX_collide collide = (PoolGameRecording_SFX_collide)item;
+					packet.PutByte((byte)collide.ball_id);
+					packet.PutShort((float)collide.velocity);
+				}
+			}
+		}
+		return packet.ToByteArray();
 	}
 
 	public void unpack_from_web(byte[] bytes)
 	{
+		Packet packet = new Packet(bytes);
+		frames = new List<List<object>>();
+		int frameCount = packet.GetLong();
+		for (int i = 0; i < frameCount; i++)
+		{
+			List<object> frame = new List<object>();
+			int eventCount = packet.GetShort();
+			for (int j = 0; j < eventCount; j++)
+			{
+				byte eventType = packet.GetByte();
+				if (eventType == 0)
+				{
+					PoolGameRecording_UpdatePosition updatePosition = new PoolGameRecording_UpdatePosition();
+					updatePosition.ball_id = packet.GetByte();
+					int x = packet.GetLong();
+					int y = packet.GetLong();
+					updatePosition.localPosition = new Vector3(x, y, 0f);
+					frame.Add(updatePosition);
+				}
+				else if (eventType == 1)
+				{
+					PoolGameRecording_SinkBall sinkBall = new PoolGameRecording_SinkBall();
+					sinkBall.ball_id = packet.GetByte();
+					frame.Add(sinkBall);
+				}
+				else if (eventType == 2)
+				{
+					PoolGameRecording_SFX_collide collide = new PoolGameRecording_SFX_collide();
+					collide.ball_id = packet.GetByte();
+					collide.velocity = packet.GetShort();
+					frame.Add(collide);
+				}
+			}
+			frames.Add(frame);
+		}
 	}
 }
