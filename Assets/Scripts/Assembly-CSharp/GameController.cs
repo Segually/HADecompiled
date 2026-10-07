@@ -1893,18 +1893,117 @@ public class GameController : MonoBehaviour, OrderedStart
 
 	public void OpenKaraoke()
 	{
+		if (!WindowControl.Instance.CanOpenGenericWindow())
+		{
+			return;
+		}
+		WindowControl.Instance.DoOpenGenericWindow();
+		WindowPrefabsControl.Instance.CreateScreen("Karaoke-BG", WindowPrefabsControl.build_into_t.GAME_CTR);
+		RectTransform rectTransform = (RectTransform)WindowPrefabsControl.Instance.GetScreen("Karaoke-BG").transform;
+		rectTransform.offsetMin = new Vector2(0f, rectTransform.offsetMin.y);
+		rectTransform.offsetMax = new Vector2(0f, rectTransform.offsetMax.y);
+		rectTransform.offsetMax = new Vector2(rectTransform.offsetMax.x, 0f);
+		rectTransform.offsetMin = new Vector2(rectTransform.offsetMin.x, 0f);
+		WindowPrefabsControl.Instance.CreateScreen("Karaoke-center", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowPrefabsControl.Instance.CreateScreen("Karaoke-top", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowPrefabsControl.Instance.CreateScreen("Karaoke-top-left", WindowPrefabsControl.build_into_t.GAME_CTR);
+		WindowPrefabsControl.Instance.CreateScreen("Karaoke-bottom", WindowPrefabsControl.build_into_t.GAME_CTR);
+		KaraokeControl.Instance = WindowPrefabsControl.Instance.GetScreen("Karaoke-center").GetComponent<KaraokeControl>();
+		WindowPrefabsControl.Instance.GetObject("Karaoke-bottom", "5-button-parent").transform.SetParent(KaraokeControl.Instance.transform);
+		WindowPrefabsControl.Instance.GetObject("Karaoke-bottom", "5-button-parent").transform.SetAsFirstSibling();
+		WindowControl.Instance.OpenWindow(WindowControl.window_type_t.karaoke_game);
+		WindowPrefabsControl.Instance.CreateScreen("MINIGAMES MENU", WindowPrefabsControl.build_into_t.GAME_CTR);
+		MinigameMenu.Instance = WindowPrefabsControl.Instance.GetScreen("MINIGAMES MENU").GetComponent<MinigameMenu>();
+		if (interacting_element_item == null)
+		{
+			return;
+		}
+		if (interacting_element_item.IsRespawnExpired("rewards_respawn"))
+		{
+			ItemCountPair[] items = MinigameMenu.GenerateNewRewards();
+			System.DateTime uTC_when = System.DateTime.UtcNow.AddSeconds(0.0).AddHours(2.0);
+			InventoryItem old_item = ChunkControl.Instance.EncodeItemListIntoItem("rewards_list", items, Instance.interacting_element_item);
+			ExtraInventoryData extraDataCopy = ChunkControl.Instance.EncodeRespawnIntoItem("rewards_respawn", old_item, uTC_when).GetExtraDataCopy();
+			int[] array = KaraokeControl.GenerateDailySongs();
+			extraDataCopy.SetShort("easy_song_id", array[0]);
+			extraDataCopy.SetShort("medium_song_id", array[1]);
+			extraDataCopy.SetShort("hard_song_id", array[2]);
+			extraDataCopy.SetShort("impossible_song_id", array[3]);
+			InventoryItem new_item = new InventoryItem("Karaoke", extraDataCopy);
+			ConstructionControl.Instance.PlayerReplaceInteracting(new_item, true);
+		}
+		short easy_song_id = Instance.interacting_element_item.GetShort("easy_song_id");
+		short medium_song_id = Instance.interacting_element_item.GetShort("medium_song_id");
+		short hard_song_id = Instance.interacting_element_item.GetShort("hard_song_id");
+		short impossible_song_id = Instance.interacting_element_item.GetShort("impossible_song_id");
+		MinigameMenu.Instance.rewards = ChunkControl.Instance.GetItemListFromItem("rewards_list", Instance.interacting_element_item);
+		MinigameMenu.Instance.loot_respawn_text.GetComponent<UnityEngine.UI.Text>().text = "???";
+		KaraokeControl.Instance.OnOpen(easy_song_id, medium_song_id, hard_song_id, impossible_song_id);
+		MinigameMenu.Instance.menu_header.text = "CREATURE KARAOKE";
+		if (!KaraokeControl.is_tweeto_version)
+		{
+			MinigameMenu.Instance.menu_header.color = MinigameMenu.Instance.karaoke_title;
+			MinigameMenu.Instance.menu_bg.color = MinigameMenu.Instance.karaoke_BG;
+			MinigameMenu.Instance.notif_bg.color = MinigameMenu.Instance.karaoke_BG_notif;
+		}
+		else
+		{
+			MinigameMenu.Instance.menu_header.color = MinigameMenu.Instance.karaoke2_title;
+			MinigameMenu.Instance.menu_bg.color = MinigameMenu.Instance.karaoke2_BG;
+			MinigameMenu.Instance.notif_bg.color = MinigameMenu.Instance.karaoke2_BG_notif;
+		}
 	}
 
 	public void DestroyKaraokeScreens()
 	{
+		KaraokeControl.Instance.resume_bg_music();
+		WindowPrefabsControl.Instance.DestroyScreen("Karaoke-BG");
+		WindowPrefabsControl.Instance.DestroyScreen("Karaoke-center");
+		WindowPrefabsControl.Instance.DestroyScreen("Karaoke-top");
+		WindowPrefabsControl.Instance.DestroyScreen("Karaoke-top-left");
+		WindowPrefabsControl.Instance.DestroyScreen("Karaoke-bottom");
+		WindowPrefabsControl.Instance.DestroyScreen("MINIGAMES MENU");
 	}
 
 	public void OpenPoolTable(string opponent, int[] ball_arrangement)
 	{
+		if (!WindowControl.Instance.CanOpenGenericWindow())
+		{
+			return;
+		}
+		WindowControl.Instance.DoOpenGenericWindow();
+		WindowControl.Instance.OpenWindow(WindowControl.window_type_t.pool_game);
+		WindowPrefabsControl.Instance.CreateScreen("POOL GAME", WindowPrefabsControl.build_into_t.GAME_CTR);
+		PoolGameControl.Instance = WindowPrefabsControl.Instance.GetScreen("POOL GAME").GetComponent<PoolGameControl>();
+		PoolGameControl.Instance.curr_opponent = opponent;
+		PoolGameControl.Instance.ArrangeBalls(ball_arrangement);
+		WindowPrefabsControl.Instance.CreateScreen("MINIGAMES MENU", WindowPrefabsControl.build_into_t.GAME_CTR);
+		MinigameMenu.Instance = WindowPrefabsControl.Instance.GetScreen("MINIGAMES MENU").GetComponent<MinigameMenu>();
+		if (interacting_element_item != null)
+		{
+			if (interacting_element_item.IsRespawnExpired("rewards_respawn"))
+			{
+				ItemCountPair[] items = MinigameMenu.GenerateNewRewards();
+				System.DateTime uTC_when = System.DateTime.UtcNow.AddHours(2.0);
+				InventoryItem old_item = ChunkControl.Instance.EncodeItemListIntoItem("rewards_list", items, Instance.interacting_element_item);
+				InventoryItem new_item = ChunkControl.Instance.EncodeRespawnIntoItem("rewards_respawn", old_item, uTC_when);
+				ConstructionControl.Instance.PlayerReplaceInteracting(new_item, true);
+			}
+			MinigameMenu.Instance.rewards = ChunkControl.Instance.GetItemListFromItem("rewards_list", Instance.interacting_element_item);
+			MinigameMenu.Instance.loot_respawn_text.GetComponent<UnityEngine.UI.Text>().text = "???";
+			MinigameMenu.Instance.menu_header.text = "MONSTER POOL";
+			MinigameMenu.Instance.menu_header.color = MinigameMenu.Instance.monster_pool_title;
+			MinigameMenu.Instance.menu_bg.color = MinigameMenu.Instance.monster_pool_BG;
+			MinigameMenu.Instance.notif_bg.color = MinigameMenu.Instance.monster_pool_BG_notif;
+		}
 	}
 
 	public void DestroyPoolScreen()
 	{
+		WindowPrefabsControl.Instance.DestroyScreen("POOL GAME");
+		WindowPrefabsControl.Instance.DestroyScreen("POOL GAME - lower");
+		WindowPrefabsControl.Instance.DestroyScreen("POOL GAME - upper");
+		WindowPrefabsControl.Instance.DestroyScreen("MINIGAMES MENU");
 	}
 
 	public void HideTargetCircle()

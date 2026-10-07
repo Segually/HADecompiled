@@ -8,5 +8,6 @@ public class KaraokeNoteClickable : MonoBehaviour
 
 	public void OnClick()
 	{
+		KaraokeControl.Instance.press_on_note(when, button_id);
 	}
 }

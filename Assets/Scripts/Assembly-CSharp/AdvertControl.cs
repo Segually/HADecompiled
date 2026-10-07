@@ -122,6 +122,43 @@ public class AdvertControl : MonoBehaviour, IUnityAdsInitializationListener, IUn
 
 	public void TryShowInterstitialAd(ad_context context)
 	{
+		if (context == ad_context.reward)
+		{
+			showingRewardAdUsingInterstitial = true;
+			if (!AdsActive() && reward_ad_type_t != reward_ad_type.on_free_gems_button)
+			{
+				return;
+			}
+		}
+		else
+		{
+			showingRewardAdUsingInterstitial = false;
+			if (!AdsActive())
+			{
+				OnInterstitialComplete(UnityAdsShowCompletionState.COMPLETED);
+				return;
+			}
+			switch (context)
+			{
+			case ad_context.after_few_levelups:
+				PopupControl.Instance.ShowRewardAskPopup(reward_ad_type.on_levelup);
+				AdvertUtils.Instance.ResetRewardSeconds();
+				return;
+			case ad_context.on_breeder:
+				ADS_num_rebreeds++;
+				if (ADS_num_rebreeds >= 2)
+				{
+					ShowInterstitial();
+					ADS_num_rebreeds = 0;
+				}
+				return;
+			default:
+				return;
+			case ad_context.FORCED:
+				break;
+			}
+		}
+		ShowInterstitial();
 	}
 
 	private void ShowInterstitial()
@@ -134,6 +171,41 @@ public class AdvertControl : MonoBehaviour, IUnityAdsInitializationListener, IUn
 
 	private void OnInterstitialComplete(UnityAdsShowCompletionState showCompletionState)
 	{
+		if (!showingRewardAdUsingInterstitial)
+		{
+			if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Game")
+			{
+				if (PoolGameControl.Instance != null)
+				{
+					PoolGameControl.Instance.AdFinished();
+				}
+				else if (KaraokeControl.Instance != null)
+				{
+					KaraokeControl.Instance.AdFinished();
+				}
+			}
+			PopupControl.Instance.HideAll();
+		}
+		else
+		{
+			switch (showCompletionState)
+			{
+			case UnityAdsShowCompletionState.SKIPPED:
+				PopupControl.Instance.HideAll();
+				PopupControl.Instance.ShowMessage(TranslationControl.Instance.TranslateGeneral("You must finish the whole video to receive the reward!", "Market"), PopupControl.context.reward_ad_skipped);
+				break;
+			case UnityAdsShowCompletionState.COMPLETED:
+				PopupControl.Instance.HideAll();
+				PopupControl.Instance.ShowRewardCompletePopup();
+				break;
+			default:
+				PopupControl.Instance.HideAll();
+				PopupControl.Instance.ShowMessage("Oops! The ad could not be loaded.", PopupControl.context.message);
+				break;
+			}
+			showingRewardAdUsingInterstitial = false;
+		}
+		LoadInterstitialAd();
 	}
 
 	private void OnInterstitialReady()

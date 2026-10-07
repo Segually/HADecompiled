@@ -12,5 +12,7 @@ public class KaraokeNote
 
 	public KaraokeNote(byte button_id, int timestamp)
 	{
+		this.button_id = button_id;
+		this.timestamp = timestamp;
 	}
 }
