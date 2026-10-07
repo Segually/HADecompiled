@@ -35,13 +35,18 @@ public class Friend
 
 	public DateTime last_online;
 
-	public ChatCollection chat;
+	public ChatCollection chat = new ChatCollection();
 
 	public Friend(string username, status status_t, string punctuated_username)
 	{
+		this.username_lower = username;
+		this.username_punctuated = punctuated_username;
+		this.status_t = status_t;
 	}
 
 	public void set_last_online(DateTime last_online)
 	{
+		this.last_online = last_online;
+		last_online_set = true;
 	}
 }

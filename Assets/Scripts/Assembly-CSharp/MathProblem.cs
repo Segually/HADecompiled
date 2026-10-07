@@ -36,10 +36,47 @@ public class MathProblem
 
 	public void Unpack(Packet packet)
 	{
+		header = packet.GetString();
+		type = (problem_type)packet.GetByte();
+		shift = packet.GetByte();
 	}
 
 	public int Solve()
 	{
-		return 0;
+		int left;
+		int right;
+		switch (type)
+		{
+			case (problem_type)0: left = 9; right = 12; break;
+			case (problem_type)1: left = 0; right = 2; break;
+			case (problem_type)2: left = 7; right = 8; break;
+			case (problem_type)3: left = 12; right = 13; break;
+			case (problem_type)4: left = 2; right = 9; break;
+			case (problem_type)5: left = 11; right = 11; break;
+			case (problem_type)6: left = 4; right = 7; break;
+			case (problem_type)7: left = 8; right = 11; break;
+			case (problem_type)8: left = 10; right = 11; break;
+			case (problem_type)9: left = 1; right = 5; break;
+			case (problem_type)10: left = 13; right = 13; break;
+			case (problem_type)11: left = 5; right = 13; break;
+			case (problem_type)12: left = 7; right = 10; break;
+			case (problem_type)13: left = 3; right = 4; break;
+			case (problem_type)14: left = 7; right = 9; break;
+			case (problem_type)15: left = 6; right = 11; break;
+			case (problem_type)16: left = 5; right = 6; break;
+			case (problem_type)17: left = 0; right = 12; break;
+			case (problem_type)18: left = 9; right = 10; break;
+			case (problem_type)19: left = 2; right = 6; break;
+			case (problem_type)20: left = 12; right = 13; break;
+			case (problem_type)21: left = 7; right = 8; break;
+			case (problem_type)22: left = 10; right = 11; break;
+			case (problem_type)23: left = 1; right = 3; break;
+			default: return -1;
+		}
+		left = (left + shift) % 14;
+		right = (right + shift) % 14;
+		if ((int)type < 8) return left + right;
+		if ((int)type < 16) return left * right;
+		return left - right;
 	}
 }

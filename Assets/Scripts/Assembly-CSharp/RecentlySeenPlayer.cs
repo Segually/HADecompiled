@@ -6,5 +6,5 @@ public class RecentlySeenPlayer
 
 	public string username_punctuated;
 
-	public List<string> game_chats;
+	public List<string> game_chats = new List<string>();
 }
