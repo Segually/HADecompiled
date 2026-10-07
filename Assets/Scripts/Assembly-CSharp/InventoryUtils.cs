@@ -747,6 +747,57 @@ public class InventoryUtils
 
 	public static List<UniqueIdStatus> GenerateUniqueIdSummary()
 	{
-		return null;
+		List<UniqueIdStatus> list = new List<UniqueIdStatus>();
+		string[] array = new string[2] { "basket_id", "shack_id" };
+		string[] files = System.IO.Directory.GetFiles(Application.dataPath + System.IO.Path.DirectorySeparatorChar + "SYNCHRONOUS/TextFiles/" + DevBuildControl.quest_scenics_folder_);
+		foreach (string path in files)
+		{
+			if (System.IO.Path.GetExtension(path) == ".meta")
+			{
+				continue;
+			}
+			string[] array2 = System.IO.File.ReadAllLines(path);
+			foreach (string text in array2)
+			{
+				for (int k = 0; k < array.Length; k++)
+				{
+					if (!text.Contains(array[k]))
+					{
+						continue;
+					}
+					int num = text.IndexOf("*long* ");
+					int id = int.Parse(text.Substring(num + 7, text.Length - (num + 7)), Startup.parse_culture);
+					if (array[k] == "basket_id")
+					{
+						list.Add(new UniqueIdStatus(id, UniqueIdStatus.status_.used_by_basket));
+					}
+					else if (array[k] == "shack_id")
+					{
+						list.Add(new UniqueIdStatus(id, UniqueIdStatus.status_.used_by_shack));
+					}
+					break;
+				}
+			}
+		}
+		List<UniqueIdStatus> list2 = new List<UniqueIdStatus>();
+		for (int l = ChunkControl.dedicated_quest_range_start; l < ChunkControl.dedicated_quest_range_start + 1000; l++)
+		{
+			UniqueIdStatus uniqueIdStatus = null;
+			foreach (UniqueIdStatus item in list)
+			{
+				if (item.id == l)
+				{
+					uniqueIdStatus = item;
+					break;
+				}
+			}
+			if (uniqueIdStatus != null)
+			{
+				list2.Add(uniqueIdStatus);
+				continue;
+			}
+			list2.Add(new UniqueIdStatus(l, UniqueIdStatus.status_.available));
+		}
+		return list2;
 	}
 }

@@ -312,10 +312,79 @@ public class PerkControl : MonoBehaviour, OrderedStart
 
 	public static void GeneratePollinatorSummary()
 	{
+		List<pollinator_summary_entry> list = new List<pollinator_summary_entry>();
+		string[] files = System.IO.Directory.GetFiles(Application.dataPath + "/SYNCHRONOUS/TextFiles/InventoryItems");
+		for (int i = 0; i < files.Length; i++)
+		{
+			string path = files[i];
+			if (System.IO.Path.GetExtension(path) == ".meta")
+			{
+				continue;
+			}
+			string fileNameWithoutExtension = System.IO.Path.GetFileNameWithoutExtension(path);
+			string[] array = System.IO.File.ReadAllLines(Application.dataPath + "/SYNCHRONOUS/TextFiles/InventoryItems/" + fileNameWithoutExtension + ".txt");
+			foreach (string text in array)
+			{
+				if (!text.Contains("Pollinator Regen Level = "))
+				{
+					continue;
+				}
+				int num = int.Parse(text.Replace("Pollinator Regen Level = ", ""), Startup.parse_culture);
+				pollinator_summary_entry item = new pollinator_summary_entry
+				{
+					level = num,
+					item = fileNameWithoutExtension
+				};
+				bool flag = false;
+				for (int k = 0; k < list.Count; k++)
+				{
+					if (num <= list[k].level)
+					{
+						list.Insert(k, item);
+						flag = true;
+						break;
+					}
+				}
+				if (!flag)
+				{
+					list.Add(item);
+				}
+			}
+		}
+		List<string> list2 = new List<string>();
+		foreach (pollinator_summary_entry item2 in list)
+		{
+			list2.Add("[" + item2.level + "] " + item2.item);
+		}
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/(Auto Gen) _DEBUG_pollinator.txt", list2.ToArray());
 	}
 
 	public static void GeneratePerkList()
 	{
+		List<string> list = new List<string>();
+		string[] files = System.IO.Directory.GetFiles(Application.dataPath + "/SYNCHRONOUS/TextFiles/PerkDefines");
+		int num = 0;
+		for (int i = 0; i < files.Length; i++)
+		{
+			string path = files[i];
+			if (!(System.IO.Path.GetExtension(path) == ".txt"))
+			{
+				continue;
+			}
+			list.Add(System.IO.Path.GetFileNameWithoutExtension(path));
+			string[] array = System.IO.File.ReadAllLines(path);
+			for (int j = 0; j < array.Length; j++)
+			{
+				if (array[j].Contains("Max level = "))
+				{
+					num++;
+					break;
+				}
+			}
+		}
+		string text = Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/";
+		Startup.WriteOnlyIfChanged(text + "(Auto Gen) Perks List.txt", list.ToArray());
+		Startup.WriteOnlyIfChanged(text + "(Auto Gen) Perks N Infinitely Levelable.txt", new string[1] { "" + (list.Count - num) });
 	}
 
 	private void LoadPerkFromDisk(string perk_key)

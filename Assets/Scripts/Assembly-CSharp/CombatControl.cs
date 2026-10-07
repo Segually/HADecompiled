@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class CombatControl : MonoBehaviour, OrderedStart
@@ -535,5 +536,13 @@ public class CombatControl : MonoBehaviour, OrderedStart
 
 	public static void GenerateCombatOutput()
 	{
+		List<string> list = new List<string>();
+		for (int i = 1; i < 100; i++)
+		{
+			int num = i * 6;
+			int hpMaxPlayer = GetHpMaxPlayer(num, 0.5f);
+			list.Add("PerkLevel=" + i + " ... PlayerLevel=" + num + " ... avg_HP=" + hpMaxPlayer + " ... old_fireball=" + (int)((float)hpMaxPlayer * 0.15f) + "... new_fireball=" + (int)((float)i * 1.75f + 0f));
+		}
+		Startup.WriteOnlyIfChanged(Application.dataPath + "/SYNCHRONOUS/TextFiles/AutoGen/" + "(Auto Gen) Combat Output.txt", list.ToArray());
 	}
 }
