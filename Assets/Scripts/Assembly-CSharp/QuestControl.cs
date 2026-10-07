@@ -35,7 +35,9 @@ public class QuestControl : MonoBehaviour, OrderedStart
 
 	public static QuestControl Instance;
 
+	// Changed so it works on any computer. The commented-out line below is how it looked on the developer's machine.
 	public static string quest_cache_path = Directory.CreateDirectory("Hybrid Animals Stuff/quest_scenics_CACHE").FullName;
+	// public static string quest_cache_path = "C:\\Hybrid Animals Stuff\\quest_scenics_CACHE";
 
 	public Dictionary<string, Quest> loaded_quests = new Dictionary<string, Quest>();
 

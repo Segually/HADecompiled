@@ -774,10 +774,12 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void ClearCachedFollowObj()
 	{
+		cached_follow_obj = null;
 	}
 
 	public void OverrideFollowObject(GameObject to_follow)
 	{
+		cached_follow_obj = to_follow;
 	}
 
 	private IEnumerator TrackPlayerChunk()
@@ -1022,6 +1024,21 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void DevRebuildChunkAt(Vector3 V)
 	{
+		Vector3 chunkCoords = GetChunkCoords(V);
+		int num = (int)chunkCoords.x;
+		int num2 = (int)chunkCoords.z;
+		string chunkString = GetChunkString(player_zone_cache, num, num2);
+		if (DevBuildControl.Instance.debug_bandit_camp_data == null)
+		{
+			string[] cached_files_full = new string[1] { QuestControl.quest_cache_path + System.IO.Path.DirectorySeparatorChar + chunkString + ".txt" };
+			string text = Application.dataPath + System.IO.Path.DirectorySeparatorChar + "SYNCHRONOUS/TextFiles" + System.IO.Path.DirectorySeparatorChar + DevBuildControl.quest_scenics_folder_ + System.IO.Path.DirectorySeparatorChar + chunkString + ".txt";
+			string[] game_files_full = ((!System.IO.File.Exists(text)) ? new string[0] : new string[1] { text });
+			QuestControl.ScanQuestDataForChanges(cached_files_full, game_files_full);
+		}
+		DeleteChunk(chunkString);
+		Chunks.Remove(chunkString);
+		MobControl.Instance.TryDeloadDistantMobs();
+		Chunks.Add(chunkString, new Chunk(Chunk.status_t.pls_load_and_build, player_zone_cache, num, num2, false));
 	}
 
 	private void DeleteChunk(string chunkStr)
@@ -1051,6 +1068,11 @@ public class ChunkControl : MonoBehaviour, OrderedStart
 
 	public void DevRebuildEntireChunk(string zone, int X, int Z)
 	{
+		string chunkString = GetChunkString(zone, X, Z);
+		if (IsChunkFullyLoadedOrMidload(chunkString))
+		{
+			DevRebuildChunkAt(new Vector3(X * 10 + 5, 0f, Z * 10 + 5));
+		}
 	}
 
 	public void RedrawAtSquare(string chunkStr, int innerX, int innerZ, bool log = false)

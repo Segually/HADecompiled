@@ -76,7 +76,8 @@ public class BanditCampsNewWindow : MonoBehaviour
 		{
 			return;
 		}
-		string text2 = Path.Combine(Path.Combine(Application.dataPath, "SYNCHRONOUS/TextFiles/bandit-camps"), text); // changed so it works on any computer
+		// Changed so it works on any computer. The commented-out line below is how it looked on the developer's machine.
+		string text2 = Path.Combine(Path.Combine(Application.dataPath, "SYNCHRONOUS/TextFiles/bandit-camps"), text);
 		// string text2 = Path.Combine("C:\\Hybrid Animals Stuff\\Hybrid Animals Mobile\\Assets\\SYNCHRONOUS\\TextFiles\\bandit-camps", text);
 		if (Directory.Exists(text2))
 		{
