@@ -106,9 +106,10 @@ public class Combatant : MonoBehaviour
 	{
 		hp = start_HP;
 		HP_max = (int)start_HP;
+		float startExp = start_exp_receie;
 		start_HP = 0f;
 		start_exp_receie = 0f;
-		exp_recieve = (int)start_exp_receie;
+		exp_recieve = (int)startExp;
 		combat_name = "";
 		GetComponent<PerkReceiver>().my_combatant = this;
 	}
