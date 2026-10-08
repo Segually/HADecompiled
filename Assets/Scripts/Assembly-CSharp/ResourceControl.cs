@@ -99,7 +99,9 @@ public class ResourceControl : MonoBehaviour, OrderedStart
 		{
 			if (!Application.isEditor)
 			{
-				AsyncOperationHandle<TextAsset> handle = Addressables.LoadAssetAsync<TextAsset>("Assets/SYNCHRONOUS/TextFiles/" + file_name + ".txt");
+				AsyncOperationHandle<TextAsset> handle = Addressables.LoadAssetAsync<TextAsset>("Assets/SYNCHRONOUS/TextFiles/" + file_name.Replace('\\', '/') + ".txt");
+				// Path separators are normalized to make Addressables keys work across all platforms.
+				// Original: AsyncOperationHandle<TextAsset> handle = Addressables.LoadAssetAsync<TextAsset>("Assets/SYNCHRONOUS/TextFiles/" + file_name + ".txt");
 				TextAsset textAsset = handle.WaitForCompletion();
 				if (textAsset != null)
 				{
